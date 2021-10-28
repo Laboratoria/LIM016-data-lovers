@@ -6,37 +6,65 @@
 
 body {
     height: 100%;
-    background-color:#EEE4E4;
+    background-color:#000000;
 }
 
 header {
     width: 100%;
-    height: 150px;
-    background-color:#BE627E;
+    height: 100px;
+    /* background-color:#BE627E; */
+    background-color:#157181;
     margin: 0 0 50px 0;
 }
 
 main {
     height: 100%;
     height: 100%;
+    /* background-color:#000000; */
+}
+
+h3 {
+    color: rgb(250, 114, 17);
+    font-size: 50px;
+    font-family:fantasy;
+    /* letter-spacing: 2px;  */
+}
+
+h1 {
+    color: rgb(235, 170, 124);
+    font-size: 40px;
+    font-family:fantasy;
+    letter-spacing: 1px; 
+}
+
+h2, p {
+    font-family:fantasy;
+    letter-spacing: 1px; 
 }
 
 /*------------------características del carrusel-----------------*/
+.mensaje_bienvenida {
+    display: flex; 
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    position: static;
+    width: 100%;
+    height: 400px;
+    background-color:#000000; 
+    margin-bottom: 40px;
+    color: beige;
+}
+
 .carrusel {
     width: 100%;
     height: 500px;
-    background-color:#524e4e;    
-    /* padding: 30px 0 30px 0; */
-    /* margin: 0 auto; */
-   /*  margin-top:50px; */
+    background-color:#524e4e;       
     position: relative;
     width: 100%;
-    height: 400px;
-   /*  padding-bottom: 38%; */
-    user-select: none;
-    /* background-color: black; */
-    /* border: solid 10px #616161; */
-    /* border-radius: 10px; */
+    height: 400px;   
+    user-select: none;    
 }
 
 #i1,#i2,#i3,#i4,#i5 {
@@ -104,7 +132,7 @@ label span{
     height: 14px;
     margin: 0 4px;
     position: relative;
-    border-radius:100%;
+    border-radius: 50%;
     display: inline-block;
     background-color: rgba(0,0,0,0.6);
     transition: .4s;
@@ -118,7 +146,7 @@ label span{
 
 .slide_img{z-index: -1;}
 
-    #i1:checked ~ #one  ,
+  #i1:checked ~ #one  ,
 	#i2:checked ~ #two  ,
 	#i3:checked ~ #three,
 	#i4:checked ~ #four ,
@@ -142,7 +170,8 @@ label span{
     width: 100%;
     height: 200px;
     justify-content: center;
-    background-color: #EEE4E4;
+    /* background-color: #EEE4E4; */
+    background-color:#000000;
 }
   
 .fila {
@@ -153,38 +182,72 @@ label span{
 }
   
 .portada {
-    height: 170px;
+    height: 164px;
     width: 100%;
     display: flex;
-    background-color: #ffffff;
+    background-color: #302e2e;
     margin: 18px 10px 20px 10px;
-    border: solid #030303;  
-    border-radius: 10px;     
+    /* border: solid #030303; */  
+    border-radius: 10px;        
 }
 
 .portada img {
     height: 164px;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
+    transition: transform .2s; /* Animation */  
 }
 
 .portada :hover {
-    border: 2px solid rgba(78, 12, 202, 0.1);
-    transition: 0.3s;
+    position: static;
+    /* border: 2px solid rgba(78, 12, 202, 0.1); */
+    transition: 0.2s;
+    transform: scale(1.1);             
 }
 
 /*---------------------------footer-------------------------*/
 footer {
     width: 100%;
-    height: 150px;
-    background-color:#BE627E;
+    height: 100px;
+    /* background-color:#BE627E; */
+    background-color:#157181;
     padding: 20px;
     justify-content: center;
     align-items: center;
     display: flex;  
-    vertical-align: middle;
+    /* vertical-align: middle; */
     font-size: 20px;
     position: static;
     flex-direction: column;   
-    color: #FFFF; 
+    color: rgb(236, 222, 222); 
 }
+
+/* 	{ background-color: rgba(255,255,255,.9);}
+
+    @keyframes scroll{
+        0%{	opacity:.4;}
+        100%{opacity:1;}
+    }		
+    
+    @media screen and (max-width: 685px){
+        .container{
+            border: none;
+            width: 100%;
+            height: 0;
+            padding-bottom: 55%; 
+        }	
+        
+        label span { font-size: 50pt; }
+        
+        .prev, .next{
+            width: 15%;
+        }	
+        #nav_slide .dots{
+            width: 12px;
+            height: 12px;
+        }
+    }
+    @media screen  and(min-width: 970px){
+        .me{ display: none;}
+    } */
+
