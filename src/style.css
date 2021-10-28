@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;      
+}
+
+body {
+    height: 100%;
+    background-color:#EEE4E4;
+}
+
+header {
+    width: 100%;
+    height: 150px;
+    background-color:#BE627E;
+    margin: 0 0 50px 0;
+}
+
+main {
+    height: 100%;
+    height: 100%;
+}
+
+/*------------------características del carrusel-----------------*/
+.carrusel {
+    width: 100%;
+    height: 500px;
+    background-color:#524e4e;    
+    /* padding: 30px 0 30px 0; */
+    /* margin: 0 auto; */
+   /*  margin-top:50px; */
+    position: relative;
+    width: 100%;
+    height: 400px;
+   /*  padding-bottom: 38%; */
+    user-select: none;
+    /* background-color: black; */
+    /* border: solid 10px #616161; */
+    /* border-radius: 10px; */
+}
+
+#i1,#i2,#i3,#i4,#i5 {
+    display: none;
+}
+
+.carrusel .slide_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.carrusel .slide_img img{
+    width: inherit;
+    height: inherit;
+}
+
+.prev, .next {
+    width: 5%;
+    height: inherit;
+    position: absolute;
+    top:0;
+    background-color: rgba(88,88,88, .2);
+    color: rgba(244,244,244, .9);
+    z-index: 99;
+    transition: .45s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.next {
+    right: 0;
+}
+
+.prev{
+    left:0;
+}
+
+label span{
+    position: absolute;
+    font-size: 40pt;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.prev:hover, .next:hover {
+    transform: .3s;
+    background-color: rgba(88, 88, 89, .8);
+    color: #FFFF;
+}
+
+#nav_slide{
+    width: 100%;
+    bottom: 12%;
+    height: 11px;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+    cursor: default;
+}
+
+#nav_slide .dots{
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    margin: 0 4px;
+    position: relative;
+    border-radius:100%;
+    display: inline-block;
+    background-color: rgba(0,0,0,0.6);
+    transition: .4s;
+}
+
+#nav_slide .dots:hover {
+    cursor: pointer;
+    background-color: rgba(255 ,255 ,255, 0.9);
+    transition: .25s;
+}
+
+.slide_img{z-index: -1;}
+
+    #i1:checked ~ #one  ,
+	#i2:checked ~ #two  ,
+	#i3:checked ~ #three,
+	#i4:checked ~ #four ,
+	#i5:checked ~ #five 
+	{z-index: 9; animation: scroll 1s ease-in-out;}
+
+	#i1:checked  ~  #nav_slide #dot1,
+	#i2:checked  ~  #nav_slide #dot2,
+	#i3:checked  ~  #nav_slide #dot3,
+	#i4:checked  ~  #nav_slide #dot4,
+	#i5:checked  ~  #nav_slide #dot5
+{ background-color: rgba(255,255,255,.9);}
+
+/*---------------------------características del catálogo de películas----------------*/
+.grid {
+    width: 100%;
+    margin: 40px 0 40px 0;
+}
+
+.catalogo {    
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    background-color: #EEE4E4;
+}
+  
+.fila {
+    width: 100%;    
+    height: 200px;
+    display: flex;
+    justify-content: space-around;       
+}
+  
+.portada {
+    height: 170px;
+    width: 100%;
+    display: flex;
+    background-color: #ffffff;
+    margin: 18px 10px 20px 10px;
+    border: solid #030303;  
+    border-radius: 10px;     
+}
+
+.portada img {
+    height: 164px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.portada :hover {
+    border: 2px solid rgba(78, 12, 202, 0.1);
+    transition: 0.3s;
+}
+
+/*---------------------------footer-------------------------*/
+footer {
+    width: 100%;
+    height: 150px;
+    background-color:#BE627E;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;  
+    vertical-align: middle;
+    font-size: 20px;
+    position: static;
+    flex-direction: column;   
+    color: #FFFF; 
+}
+
+
