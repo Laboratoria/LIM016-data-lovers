@@ -6,7 +6,50 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="container">
+        <input type="radio" id="i1" name="images" checked>
+        <input type="radio" id="i2" name="images">
+        <input type="radio" id="i3" name="images">
+        <input type="radio" id="i4" name="images">
+        <input type="radio" id="i5" name="images">
+
+        <div class="slide_img" id="one">
+            <img src="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555275062/shape/mentalfloss/60237-spiritedaway.jpg?itok=dh4znXAF" alt="Spirited Away">
+            <label for="i5" class="prev"><span>&#x2039</span></label>
+            <label for="i2" class="next"><span>&#x203a</span></label>
+        </div>
+        <div class="slide_img" id="two">
+          <img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg" alt="Castle in the Sky">
+          <label for="i1" class="prev"><span>&#x2039</span></label>
+          <label for="i3" class="next"><span>&#x203a</span></label>
+        </div>
+        <div class="slide_img" id="three">
+          <img src="https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg" alt="My Neighbor Totoro">
+          <label for="i2" class="prev"><span>&#x2039</span></label>
+          <label for="i4" class="next"><span>&#x203a</span></label>
+        </div>
+        <div class="slide_img" id="four">
+          <img src="https://static.wikia.nocookie.net/studio-ghibli/images/4/48/Kiki%27s_Delivery_Service_%282%29.jpg" alt="Kiki's Delivery Service">
+          <label for="i3" class="prev"><span>&#x2039</span></label>
+          <label for="i5" class="next"><span>&#x203a</span></label>
+        </div> <div class="slide_img" id="five">
+          <img src="https://static.wikia.nocookie.net/studio-ghibli/images/a/a5/Grave_of_the_Fireflies_Japanese_poster.jpg" alt="Grave of the Fireflies">
+          <label for="i4" class="prev"><span>&#x2039</span></label>
+          <label for="i1" class="next"><span>&#x203a</span></label>
+        </div>
+
+        <div id="nav_slide">
+          <label for="i1" class="dots" id="dot1"></label>
+          <label for="i2" class="dots" id="dot2"></label>
+          <label for="i3" class="dots" id="dot3"></label>
+          <label for="i4" class="dots" id="dot4"></label>
+          <label for="i5" class="dots" id="dot5"></label>
+        </div>
+
+    </div>
+
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
+
