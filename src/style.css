@@ -1,9 +1,102 @@
-header{
-    background-color: DBF537;
-    height: auto;
-    width:auto;
-}
-footer{
-    background-color: black;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.paises{
+    color: #6CC45E;
+}
+
+.deportes{
+    color: #944195;
+}
+
+.medallero{
+    color: #F1B839;
+}
+
+
+.btnGreen{
+    border-bottom: #6CC45E .3rem solid;
+}
+
+.btnPurple{
+    border-bottom: #944195 .3rem solid;
+   
+}
+
+.btnYellow{
+    border-bottom: #F1B839 .3rem solid;
+   
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 1rem;
+}
+
+h1{
+    text-align: center;
 }
