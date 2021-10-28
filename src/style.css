@@ -146,7 +146,7 @@ label span{
 
 .slide_img{z-index: -1;}
 
-    #i1:checked ~ #one  ,
+  #i1:checked ~ #one  ,
 	#i2:checked ~ #two  ,
 	#i3:checked ~ #three,
 	#i4:checked ~ #four ,
@@ -222,4 +222,32 @@ footer {
     color: rgb(236, 222, 222); 
 }
 
+/* 	{ background-color: rgba(255,255,255,.9);}
+
+    @keyframes scroll{
+        0%{	opacity:.4;}
+        100%{opacity:1;}
+    }		
+    
+    @media screen and (max-width: 685px){
+        .container{
+            border: none;
+            width: 100%;
+            height: 0;
+            padding-bottom: 55%; 
+        }	
+        
+        label span { font-size: 50pt; }
+        
+        .prev, .next{
+            width: 15%;
+        }	
+        #nav_slide .dots{
+            width: 12px;
+            height: 12px;
+        }
+    }
+    @media screen  and(min-width: 970px){
+        .me{ display: none;}
+    } */
 
