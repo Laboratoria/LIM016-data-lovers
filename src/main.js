@@ -116,7 +116,7 @@ tipos.addEventListener("change", (e) => {
   let tipos= arrayPokemon.filter(element=>
 
     element.type.includes(tipoPokemon)
-    
+
     )
 
   //element>5
@@ -134,3 +134,6 @@ rareza.addEventListener('change',()=>{
 
 
 mostrarPokemon(arrayPokemon)
+
+
+//hola merly
