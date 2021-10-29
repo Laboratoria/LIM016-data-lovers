@@ -136,4 +136,4 @@ rareza.addEventListener('change',()=>{
 mostrarPokemon(arrayPokemon)
 
 
-//hola merly
+//holii
