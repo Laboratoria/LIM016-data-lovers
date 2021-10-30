@@ -133,6 +133,16 @@ cp.addEventListener("change", (e) => {
   mostrarPokemon(arrayPokemon);
 })
 
+
+
+function prueba(){
+
+  const x=1
+return x
+}
+
+prueba()
+
 mostrarPokemon(arrayPokemon);
 
 document.querySelector(".hola").addEventListener("click",()=>{
