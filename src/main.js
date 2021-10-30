@@ -135,15 +135,11 @@ cp.addEventListener("change", (e) => {
 
 
 
-function prueba(){
-
-  const x=1
-return x
-}
-
-prueba()
 
 mostrarPokemon(arrayPokemon);
+
+
+console.log("nicol")
 
 document.querySelector(".hola").addEventListener("click",()=>{
   alert("hola")
