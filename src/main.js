@@ -141,7 +141,7 @@ mostrarPokemon(arrayPokemon);
 
 console.log("nicol")
 
-document.querySelector(".hola").addEventListener("click",()=>{
-  alert("hola")
+document.querySelector(".saludo").addEventListener("click",()=>{
+  console.log("hola")
 }
 )
