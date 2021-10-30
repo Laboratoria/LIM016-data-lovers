@@ -144,3 +144,8 @@ return x
 prueba()
 
 mostrarPokemon(arrayPokemon);
+
+document.querySelector(".hola").addEventListener("click",()=>{
+  alert("hola")
+}
+)
