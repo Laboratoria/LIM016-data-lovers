@@ -1,7 +1,7 @@
 import data from "./data/pokemon/pokemon.js";
 
 console.log(data.pokemon[0].stats["max-cp"]);
-// console.log(data.pokemon[0].evolution["next-evolution"][0]["next-evolution"][0].name)
+console.log(data.pokemon[0].evolution["next-evolution"]);
 // console.log(data.pokemon[0].type.includes('grass'));
 // console.log(data.pokemon[0].stats["max-hp"]);
 // console.log(data.pokemon.length);
@@ -23,17 +23,50 @@ function mostrarPokemon(array) {
 
   const numero = document.getElementById("parrafo");
   numero.innerHTML = `<p> Total :${array.length}</p>`;
+
+
+
+  //mostrar evoluciones Pokemon
   for (let i = 0; i < array.length; i++) {
     const parrafo = document.createElement("div");
     const imagen = document.createElement("img");
     const cpPokemon = document.createElement("p");
+    const evolucion = document.createElement("div");
+
+    let obj = arrayPokemon[i].evolution;
+    if (obj["next-evolution"]) {
+      for (let i = 0; i < obj["next-evolution"].length; i++) {
+        let next1 = document.createElement("p");
+        next1.innerHTML = `Next-evolution ${obj["next-evolution"][i].name}`;
+        evolucion.appendChild(next1);
+      }
+
+      if (obj["next-evolution"][0]["next-evolution"]) {
+        let next2 = document.createElement("p");
+        next2.innerHTML = `Next-evolution ${obj["next-evolution"][0]["next-evolution"][0].name}`;
+        evolucion.appendChild(next2);
+      }
+    }
+
+    if (obj["prev-evolution"]) {
+      let prev1 = document.createElement("p");
+      prev1.innerHTML = `Pre-evolution ${obj["prev-evolution"][0].name}`;
+      evolucion.appendChild(prev1);
+
+      if (obj["prev-evolution"][0]["prev-evolution"]) {
+        let prev2 = document.createElement("p");
+        prev2.innerHTML = `Pre-evolution  ${obj["prev-evolution"][0]["prev-evolution"][0].name}`;
+        evolucion.appendChild(prev2);
+      }
+    }
 
     imagen.src = `${array[i].img}`;
-    parrafo.innerHTML = `<p>Nombre:${array[i].name}</p>`;
+    parrafo.innerHTML = `<strong><p>Nombre:${array[i].name}</p></strong>`;
     cpPokemon.innerHTML = `<p>CP: ${array[i].stats["max-cp"]}</p>`;
 
     container.appendChild(parrafo);
     container.appendChild(cpPokemon);
+    container.appendChild(evolucion);
     container.appendChild(imagen);
   }
 }
@@ -131,17 +164,8 @@ cp.addEventListener("change", (e) => {
   }
 
   mostrarPokemon(arrayPokemon);
-})
-
+});
 
 
 
 mostrarPokemon(arrayPokemon);
-
-
-console.log("nicol")
-
-document.querySelector(".saludo").addEventListener("click",()=>{
-  console.log("hola")
-}
-)
