@@ -97,6 +97,47 @@ input{
     margin: 1rem;
 }
 
-h1{
+h2{
     text-align: center;
+}
+p{   /* Por ahora ahí se guarda los paises, deportes*/
+    border-bottom: #6CC45E .3rem solid;
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
+    background-color: rgb(238, 236, 236);
+    font-weight: lighter;
+}
+p:hover{
+    color:rgb(0, 31, 204);
+    cursor: pointer;
+}
+h4{
+    border-bottom: #944195 .3rem solid;
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
+    background-color: rgb(238, 236, 236);
+    font-size: small;  
+    font-weight: lighter;
+}
+h4:hover{
+    color:rgb(0, 31, 204);
+    cursor: pointer;
+}
+h5{
+    border-style: none;
+}
+#hereCountries{
+    overflow:scroll;
+    overflow-x: hidden;
+    margin-bottom: 1.5em;
+}
+#hereSports{
+    overflow:scroll;
+    overflow-x: hidden;
+    margin-bottom: 1.5em;
+}
+main{
+    height: 500px;
 }
