@@ -1,7 +1,7 @@
-// estas funciones son de ejemplo
+import data from './data/athletes/athletes.js';
+export const example = () =>{
 
-export const example = () => {
-  return 'example';
+  return example;
 };
 
 export const anotherExample = () => {
