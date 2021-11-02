@@ -23,7 +23,6 @@ text-align: center;
 
 .pokemon-block{
   background: white;
-
    padding: 2em;
    width: 80%;
    margin: auto;
@@ -38,9 +37,19 @@ text-align: center;
 
 .evolucion{
   background: violet;
+  display: flex;
+  flex-direction: row;
+
 }
 .divEvolucion{
 background: yellow;
 }
+.evol{
+width: 50%;
+height: 50%;
+}
 
+.imgEvol{
+  width: 50%;
+}
 

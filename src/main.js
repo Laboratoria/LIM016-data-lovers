@@ -62,17 +62,16 @@ function mostrarPokemon(array) {
     nombre.innerHTML = `<strong><p>Nombre:${array[i].name}</p></strong>`;
 
     //evoluciones
-    let obj = arrayPokemon[i].evolution;
+    let obj = array[i].evolution;
 
     let evolucionesPokemones = [];
-    if (obj["next-evolution"]!= null) {
-
+    if (obj["next-evolution"] != null) {
       for (let a = 0; a < obj["next-evolution"].length; a++) {
         let next1 = document.createElement("p");
         next1.innerHTML = `Next-evolution ${obj["next-evolution"][a].name}`;
-        let nombrePoke=obj["next-evolution"][a].name
+        let nombrePoke = obj["next-evolution"][a].name;
         evolucionesPokemones.push(nombrePoke);
-        evolucion.appendChild(next1);
+        // evolucion.appendChild(next1);
       }
 
       if (obj["next-evolution"][0]["next-evolution"]) {
@@ -81,27 +80,26 @@ function mostrarPokemon(array) {
         evolucionesPokemones.push(
           obj["next-evolution"][0]["next-evolution"][0].name
         );
-        evolucion.appendChild(next2);
+        // evolucion.appendChild(next2);
       }
     }
 
     if (obj["prev-evolution"]) {
       let prev1 = document.createElement("p");
       prev1.innerHTML = `Pre-evolution ${obj["prev-evolution"][0].name}`;
-      evolucion.appendChild(prev1);
+      // evolucion.appendChild(prev1);
       evolucionesPokemones.push(obj["prev-evolution"][0].name);
 
       if (obj["prev-evolution"][0]["prev-evolution"]) {
         let prev2 = document.createElement("p");
         prev2.innerHTML = `Pre-evolution  ${obj["prev-evolution"][0]["prev-evolution"][0].name}`;
-        evolucion.appendChild(prev2);
+        // evolucion.appendChild(prev2);
         evolucionesPokemones.push(
           obj["prev-evolution"][0]["prev-evolution"][0].name
         );
       }
-
     }
-    console.log(evolucionesPokemones)
+    evoluciones(evolucionesPokemones, evolucion);
 
     card.appendChild(spriteContainer);
     card.appendChild(numero);
@@ -127,6 +125,30 @@ function mostrarPokemon(array) {
 //     evolucion.appendChild(divNextEvol)
 //   }
 // }
+
+function evoluciones(array, evolucion) {
+  array.forEach((element) => {
+    for (let i = 0; i < arrayPokemon.length; i++) {
+      if (arrayPokemon[i].name === element) {
+
+        const divEvol = document.createElement("div");
+        divEvol.classList.add("evol");
+
+        const imgEvol = document.createElement("img");
+        imgEvol.classList.add("imgEvol");
+        imgEvol.src = arrayPokemon[i].img;
+
+        const nombreEvol=document.createElement('p')
+        nombreEvol.classList.add('nombreEvol')
+        nombreEvol.innerHTML=arrayPokemon[i].name
+
+        divEvol.appendChild(imgEvol);
+        divEvol.appendChild(nombreEvol)
+        evolucion.appendChild(divEvol);
+      }
+    }
+  });
+}
 
 //region pokemon
 region.addEventListener("change", (e) => {
@@ -231,7 +253,6 @@ egg.addEventListener("change", (e) => {
 
   mostrarPokemon(arrayEgg);
 });
-
 
 //Ordenar pokemon por N°
 ordenNumerico.addEventListener("change", (e) => {
