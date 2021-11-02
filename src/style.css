@@ -1,8 +1,12 @@
+
 *{
     font-family: 'Rowdies', cursive;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+header{
+    background-color: DBF537;
+    color: blue;
 }
 header{   /* HEADER*/
     background-color: #dbf537; /* #dbf537;*/
