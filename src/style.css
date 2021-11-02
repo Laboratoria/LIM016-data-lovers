@@ -1,8 +1,106 @@
+
+*{
+    font-family: 'Rowdies', cursive;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 header{
     background-color: DBF537;
     color: blue;
 }
-footer{
+header{   /* HEADER*/
+    background-color: #dbf537; /* #dbf537;*/
+    display: block;
+}
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.aro{
+    width: 170px;
+    height: 80px;
+}
+.nom-pagina{
+color: #1968c9;   /* #134785;*/
+font-size: 40px;
+letter-spacing: 0.1ex;
+}
+.mascota{
+    height: 100px;
+    width: 100px;
+}
+footer{    /* FOOTER*/
     background-color: black;
+    padding: 10px 0 10px 0;
+}
+.foot{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.info-footer{
+    color: white;
+    font-size: 40px; 
+}
+.social-media{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+#social1, #social2, #social3{
+    color: white;
+}
+#social1:hover, #social2:hover, #social3:hover{
+    cursor: pointer;
+    color: #dbf537;
+    }
+.paises{
+    color: #6CC45E;
+}
 
+.deportes{
+    color: #944195;
+}
+
+.medallero{
+    color: #F1B839;
+}
+
+
+.btnGreen{
+    border-bottom: #6CC45E .3rem solid;
+}
+
+.btnPurple{
+    border-bottom: #944195 .3rem solid;
+   
+}
+
+.btnYellow{
+    border-bottom: #F1B839 .3rem solid;
+   
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 1rem;
+}
+
+h1{
+    text-align: center;
 }
