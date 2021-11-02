@@ -4,14 +4,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
 header{
-    background-color: DBF537;
+    background-color: #DBF537;
     color: blue;
 }
-header{   /* HEADER*/
-    background-color: #dbf537; /* #dbf537;*/
-    display: block;
-}
+
 .head{
     display: flex;
     justify-content: space-around;
