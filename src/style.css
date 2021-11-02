@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(./fondo.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-size: 16px;
+
+
+}
+
+.pokemon-container{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+column-gap: 0em;
+row-gap: 4em;
+text-align: center;
+}
+
+.pokemon-block{
+  background: white;
+
+   padding: 2em;
+   width: 80%;
+   margin: auto;
+   background: linear-gradient(55.56deg, #FFFFFF 0%, rgba(255, 255, 255, 0.42) 100%);
+   border-radius: 20px
+
+}
+
+.img-container{
+  background: coral;
+}
+
+.evolucion{
+  background: violet;
+}
+.divEvolucion{
+background: yellow;
+}
+
+
