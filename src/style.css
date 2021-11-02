@@ -37,9 +37,19 @@ text-align: center;
 
 .evolucion{
   background: violet;
+  display: flex;
+  flex-direction: row;
+
 }
 .divEvolucion{
 background: yellow;
 }
+.evol{
+width: 50%;
+height: 50%;
+}
 
+.imgEvol{
+  width: 50%;
+}
 
