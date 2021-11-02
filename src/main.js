@@ -99,6 +99,23 @@ function mostrarPokemon(array) {
         );
       }
     }
+
+   //boton para mostrar pokemon
+  
+    const tarjetaPokemon = document.createElement("button");
+    tarjetaPokemon.classList.add("mostrarTarjeta")
+    tarjetaPokemon.type="button";
+    tarjetaPokemon.innerText="Más información"; 
+    
+    tarjetaPokemon.addEventListener("click",()=>{
+      console.log(array[i].name)
+      
+    })
+
+
+
+    //Items que se agregan al container y card
+    console.log(evolucionesPokemones)
     evoluciones(evolucionesPokemones, evolucion);
 
     card.appendChild(spriteContainer);
@@ -107,10 +124,11 @@ function mostrarPokemon(array) {
     card.appendChild(cpPokemon);
 
     card.appendChild(evolucion);
-
+    card.appendChild(tarjetaPokemon);
     container.appendChild(card);
   }
 }
+
 
 //imagenes de evoluciones pokemones
 
@@ -289,5 +307,6 @@ search.addEventListener("keyup", (e) => {
   }
   mostrarPokemon(array);
 });
+
 
 mostrarPokemon(arrayPokemon);
