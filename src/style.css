@@ -4,11 +4,11 @@
     margin: 0;
     padding: 0;
 }
-header{
-    background-color: #dbf537;
+header{   /* HEADER*/
+    background-color: #dbf537; /* #dbf537;*/
     display: block;
 }
-.line{
+.head{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -17,19 +17,20 @@ header{
     width: 170px;
     height: 80px;
 }
-.nom-pa{
-color: #134785;
+.nom-pagina{
+color: #1968c9;   /* #134785;*/
 font-size: 40px;
+letter-spacing: 0.1ex;
 }
 .mascota{
     height: 100px;
     width: 100px;
 }
-footer{
+footer{    /* FOOTER*/
     background-color: black;
     padding: 10px 0 10px 0;
 }
-.linef{
+.foot{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
