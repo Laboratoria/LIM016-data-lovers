@@ -112,11 +112,12 @@ function mostrarPokemon(array) {
       const cardInfo = document.createElement("div")
       cardInfo.classList.add("cardInfo")
 
-      /***boton de cerrar tarjeta de informacion
+      //boton de cerrar tarjeta de informacion
       const btnCerrar = document.createElement("button");
       btnCerrar.classList.add("btnCerrar");
       btnCerrar.type="button";
-      const crear_i = document.createElement("i");
+      btnCerrar.innerHTML=`<i class="fas fa-times-circle"></i>` //<button type="button" id="btnCerra"><i..................></button>
+      /*const crear_i = document.createElement("i");
       crear_i.classList.add("far fa-times-circle")
       btnCerrar.innerText=crear_i;*/
 
@@ -178,10 +179,13 @@ function mostrarPokemon(array) {
       //-------------agregar tipo---------------
       const typePokemon = document.createElement("div")
       typePokemon.innerHTML=array[i].type
+      
 
       //............agregar tamaño--------------
       const height = document.createElement("div");
       height.innerHTML=array[i].size.height;
+
+
       //Items que se agregaran a la tarjeta de informacion del pokemon
 
       features.appendChild(weight);
@@ -198,6 +202,7 @@ function mostrarPokemon(array) {
       containerVista.appendChild(vista1)
       vista1.appendChild(description_box)
       vista1.appendChild(features);
+      cardInfo.appendChild(btnCerrar);
       cardInfo.appendChild(containerImg);
       cardInfo.appendChild(containerVista);
       container.appendChild(cardInfo);
@@ -403,12 +408,6 @@ search.addEventListener("keyup", (e) => {
   }
   mostrarPokemon(array);
 });
-
-//funcion para mostrar tarjeta pokemon
-
-function infoCard(info){
-  console.log(array[i].name)
-}
 
 
 mostrarPokemon(arrayPokemon);

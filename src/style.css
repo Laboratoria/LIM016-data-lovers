@@ -31,12 +31,9 @@ text-align: center;
 
 }
 
-.img-container{
-  background: coral;
-}
 
 .evolucion{
-  background: violet;
+  background:white;
   display: flex;
   flex-direction: row;
 
@@ -51,6 +48,23 @@ height: 50%;
 
 .imgEvol{
   width: 50%;
+}
+
+/*DISEÑO DEL BOTON DE MAS INFO*/
+
+.mostrarTarjeta{
+  height:3em;
+  width: 10em;
+  border-radius: 10px;
+  border: 1px solid rgb(6, 182, 129);
+  font-weight: bold;
+  background-color: white;
+  margin-top:10px;
+}
+
+.mostrarTarjeta:hover{
+  color: white;
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
 }
 
 /* DISEÑO DE LA TARJETA POKEMON */
@@ -127,7 +141,6 @@ height: 50%;
 }
 
 .features div{
-  background-color: aqua;
   width: 6em;
   height: 3em;
   font-weight: bold;
