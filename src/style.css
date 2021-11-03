@@ -13,6 +13,36 @@ body{
 
 }
 
+/*ESTILOS DE LA BARRA NAVEGADOR*/
+.navegador{
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 3em;
+  background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
+  border-bottom: 1px solid white;
+  box-shadow: 5px 0 4px black;
+
+}
+
+.navegador .menu li{
+  display:inline-block;
+  margin-right: 0px;
+  border-radius: 3px;
+  margin: 0 15px;
+  color: white;
+  font-size: 18px;
+}
+
+.navegador .menu li:hover{
+  background-color: rgba(0, 0, 0, 0.303);
+  transition: 0.4s;
+  padding: 7px 13px
+
+}
+
 .pokemon-container{
 display: grid;
 grid-template-columns: repeat(3,1fr);
@@ -77,6 +107,21 @@ height: 50%;
   height: 640px;
   border-radius: 20px;
 
+}
+.btnCerrar{
+  background:none;
+  padding:0
+}
+.btnCerrar .fas{
+  position: absolute;
+  right: 20px;
+  font-size: 1.5em;
+  color: black;
+}
+
+.btnCerrar .fas:hover{
+  color: white;
+  text-shadow: 0 1px black;
 }
 
 .containerImg img {
