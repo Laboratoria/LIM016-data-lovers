@@ -13,6 +13,16 @@ body{
 
 }
 
+/*DANDO ESTILO AL NAVEGADOR*/
+
+.navegador{
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
+  width:100%;
+  height:3em;
+}
+
 .pokemon-container{
 display: grid;
 grid-template-columns: repeat(3,1fr);
@@ -93,6 +103,16 @@ height: 50%;
   margin-right: auto;
   border-radius: 20px;
 
+}
+.btnCerrar{
+  background:none;
+  padding:0
+}
+.btnCerrar .fas{
+  position: absolute;
+  right: 20px;
+  font-size: 1.5em;
+  color: rgb(55, 55, 55);
 }
 
 .containerImg {
