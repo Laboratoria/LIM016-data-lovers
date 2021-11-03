@@ -114,11 +114,11 @@ function mostrarPokemon(array) {
       //boton de cerrar tarjeta de informacion
       const btnCerrar = document.createElement("button");
       btnCerrar.classList.add("btnCerrar");
-      btnCerrar.type = "button";
-      btnCerrar.innerHTML = `<i class="fas fa-times-circle"></i>`; //<button type="button" id="btnCerra"><i..................></button>
-      /*const crear_i = document.createElement("i");
-      crear_i.classList.add("far fa-times-circle")
-      btnCerrar.innerText=crear_i;*/
+      btnCerrar.type="button";
+      btnCerrar.innerHTML=`<i class="fas fa-times-circle"></i>`
+      btnCerrar.addEventListener("click", ()=>{
+        cardInfo.style.display="none"
+      })
 
       //Crear imagen del pokemon
       const containerImg = document.createElement("div");
