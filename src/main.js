@@ -17,6 +17,7 @@ const ordenNumerico = document.getElementById("ordenNumerico");
 const egg = document.getElementById("egg");
 const search = document.getElementById("search");
 
+
 const arrayPokemon = data.pokemon;
 let arrayCambiante = "";
 
@@ -28,7 +29,6 @@ function mostrarPokemon(array) {
 
   numero.innerHTML = `<p> Total :${array.length}</p>`;
 
-  //mostrar evoluciones Pokemon
   for (let i = 0; i < array.length; i++) {
     //div que contendrá todas las caracteristicas de cada pokemon
     const card = document.createElement("div");
@@ -101,18 +101,112 @@ function mostrarPokemon(array) {
     }
 
    //boton para mostrar pokemon
-  
+    
     const tarjetaPokemon = document.createElement("button");
     tarjetaPokemon.classList.add("mostrarTarjeta")
     tarjetaPokemon.type="button";
     tarjetaPokemon.innerText="Más información"; 
     
     tarjetaPokemon.addEventListener("click",()=>{
-      console.log(array[i].name)
+      //contenedor de la tarjeta pokemon
+      const cardInfo = document.createElement("div")
+      cardInfo.classList.add("cardInfo")
+
+      /***boton de cerrar tarjeta de informacion
+      const btnCerrar = document.createElement("button");
+      btnCerrar.classList.add("btnCerrar");
+      btnCerrar.type="button";
+      const crear_i = document.createElement("i");
+      crear_i.classList.add("far fa-times-circle")
+      btnCerrar.innerText=crear_i;*/
+
+      //Crear imagen del pokemon
+      const containerImg = document.createElement("div");  
+      containerImg.classList.add("containerImg")
+      const infoPokemon = document.createElement("img");      
+      infoPokemon.src=array[i].img;
       
+
+      //crear contenedor de informacion pokemon
+      const containerVista = document.createElement("div");
+      containerVista.classList.add("containerVista");
+      const nameCardPokemon = document.createElement("h");
+      nameCardPokemon.innerHTML = array[i].name
+      console.log(array[i].name)
+
+      //Crear botones de vista de la tarjeta
+      //---------------btn1--------------------------
+      const navTarjeta = document.createElement("div");
+      navTarjeta.classList.add("botones-tarjetas")
+      const button1 = document.createElement("button");
+      button1.type="button";
+      button1.classList.add("btn");
+      button1.textContent = "About";
+
+      //-------------btn2------------------------------
+      const button2 = document.createElement("button");
+      button2.type="button";
+      button2.classList.add("btn");
+      button2.textContent = "Power";
+
+      //------------btn3-------------------------------
+      const button3 = document.createElement("button");
+      button3.type="button";
+      button3.classList.add("btn");
+      button3.textContent = "Moves";
+
+      //crear Vista 1
+      const vista1= document.createElement("div")
+      vista1.classList.add("vista1")
+
+      //crear DIV de descripción
+      const description_box = document.createElement("div");
+      description_box.classList.add("description")
+      const titulo = document.createElement("h");
+      titulo.innerHTML = "Descripción"+"<br>"
+      const about = document.createElement("p")
+      about.innerHTML = array[i].about;
+
+      //crear DIV con info del pokemon eso, etc...
+      const features = document.createElement("div");
+      features.classList.add("features");
+
+      //-------------agregar peso---------------
+      const weight = document.createElement("div");
+      weight.innerHTML=array[i].size.weight;
+
+      //-------------agregar tipo---------------
+      const typePokemon = document.createElement("div")
+      typePokemon.innerHTML=array[i].type
+
+      //............agregar tamaño--------------
+      const height = document.createElement("div");
+      height.innerHTML=array[i].size.height;
+      //Items que se agregaran a la tarjeta de informacion del pokemon
+      
+      features.appendChild(weight);
+      features.appendChild(typePokemon);
+      features.appendChild(height);
+      description_box.appendChild(titulo);
+      description_box.appendChild(about);
+      navTarjeta.appendChild(button1);
+      navTarjeta.appendChild(button2);
+      navTarjeta.appendChild(button3);
+      containerImg.appendChild(infoPokemon);
+      containerVista.appendChild(nameCardPokemon);
+      containerVista.appendChild(navTarjeta)
+      containerVista.appendChild(vista1)
+      vista1.appendChild(description_box)
+      vista1.appendChild(features);
+      cardInfo.appendChild(containerImg);
+      cardInfo.appendChild(containerVista);
+      container.appendChild(cardInfo);
+
     })
 
+    
 
+    
 
     //Items que se agregan al container y card
     console.log(evolucionesPokemones)
@@ -122,10 +216,12 @@ function mostrarPokemon(array) {
     card.appendChild(numero);
     card.appendChild(nombre);
     card.appendChild(cpPokemon);
-
     card.appendChild(evolucion);
     card.appendChild(tarjetaPokemon);
     container.appendChild(card);
+
+    //items que se agregaran al infocard y container
+    
   }
 }
 
@@ -307,6 +403,12 @@ search.addEventListener("keyup", (e) => {
   }
   mostrarPokemon(array);
 });
+
+//funcion para mostrar tarjeta pokemon
+
+function infoCard(info){
+  console.log(array[i].name)
+}
 
 
 mostrarPokemon(arrayPokemon);
