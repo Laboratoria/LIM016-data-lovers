@@ -131,12 +131,12 @@ h5{
     border-style: none;
 }
 #hereCountries{
-    overflow:scroll;
-    overflow-x: hidden;
-    margin-bottom: 1.5em;
+    overflow:auto;
+    overflow-x: hidden; 
+    margin-bottom: 1.5em; 
 }
 #hereSports{
-    overflow:scroll;
+    overflow: auto;
     overflow-x: hidden;
     margin-bottom: 1.5em;
 }

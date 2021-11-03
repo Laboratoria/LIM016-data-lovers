@@ -2,10 +2,10 @@ import data from './data/athletes/athletes.js';
 export const rio = () =>{
 
   let rio= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
-  //console.log(example);
+  // console.log(rio);
   
-  let equipos= rio.map(rio=>`<p>${rio.team}</p>`)
-  console.log(equipos);
+  let equipos= rio.map(rio=>`<p>${rio.team}</p>`);
+  //console.log(equipos);
   return equipos;
   
 };
