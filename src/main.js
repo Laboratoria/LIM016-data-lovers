@@ -34,9 +34,9 @@ function mostrarPokemon(array) {
     card.classList.add("pokemon-block");
 
     //cp del pokemon
-    const cpPokemon = document.createElement("p");
-    cpPokemon.classList.add("cp");
-    cpPokemon.innerHTML = `<p>CP: ${array[i].stats["max-cp"]}</p>`;
+    // const cpPokemon = document.createElement("p");
+    // cpPokemon.classList.add("cp");
+    // cpPokemon.innerHTML = `<p>CP: ${array[i].stats["max-cp"]}</p>`;
 
     //div que contiene las evoluciones
     const evolucion = document.createElement("div");
@@ -48,17 +48,24 @@ function mostrarPokemon(array) {
 
     const sprite = document.createElement("img");
     sprite.src = `${array[i].img}`;
-
     spriteContainer.appendChild(sprite);
 
     //numero de pokemon
-    const numero = document.createElement("p");
-    numero.innerHTML = `<p>N° ${array[i].num}</p>`;
+    const numero = document.createElement("div");
+    numero.classList.add('numero')
+    numero.innerHTML = `<p>#${array[i].num}</p>`;
 
     //nombre del pokemon
     const nombre = document.createElement("div");
     nombre.classList.add("name");
-    nombre.innerHTML = `<strong><p>Nombre:${array[i].name}</p></strong>`;
+    nombre.innerHTML = `<p>${array[i].name}</p>`;
+
+    //div que contiene el nombre y numero de pokemon
+    const nombreNumero = document.createElement("div");
+    nombreNumero.classList.add("nombreNumero");
+
+    nombreNumero.appendChild(nombre)
+    nombreNumero.appendChild(numero)
 
     //evoluciones
     let obj = array[i].evolution;
@@ -104,7 +111,7 @@ function mostrarPokemon(array) {
     const tarjetaPokemon = document.createElement("button");
     tarjetaPokemon.classList.add("mostrarTarjeta");
     tarjetaPokemon.type = "button";
-    tarjetaPokemon.innerText = "Más información";
+    tarjetaPokemon.innerText = "Saber más";
 
     tarjetaPokemon.addEventListener("click", () => {
       //contenedor de la tarjeta pokemon
@@ -114,11 +121,11 @@ function mostrarPokemon(array) {
       //boton de cerrar tarjeta de informacion
       const btnCerrar = document.createElement("button");
       btnCerrar.classList.add("btnCerrar");
-      btnCerrar.type="button";
-      btnCerrar.innerHTML=`<i class="fas fa-times-circle"></i>`
-      btnCerrar.addEventListener("click", ()=>{
-        cardInfo.style.display="none"
-      })
+      btnCerrar.type = "button";
+      btnCerrar.innerHTML = `<i class="fas fa-times-circle"></i>`;
+      btnCerrar.addEventListener("click", () => {
+        cardInfo.style.display = "none";
+      });
 
       //Crear imagen del pokemon
       const containerImg = document.createElement("div");
@@ -132,6 +139,8 @@ function mostrarPokemon(array) {
       const nameCardPokemon = document.createElement("h");
       nameCardPokemon.innerHTML = array[i].name;
       console.log(array[i].name);
+
+      //crear div que contiene nombre y número
 
       //Crear botones de vista de la tarjeta
       //---------------btn1--------------------------
@@ -182,9 +191,6 @@ function mostrarPokemon(array) {
       const height = document.createElement("div");
       height.innerHTML = array[i].size.height;
 
-
-
-
       //................div de las evoluciones.....
       const divTotalEvoluciones = document.createElement("div");
       divTotalEvoluciones.classList.add("divTotal");
@@ -205,7 +211,7 @@ function mostrarPokemon(array) {
       containerVista.appendChild(vista1);
       vista1.appendChild(description_box);
       vista1.appendChild(features);
-      vista1.appendChild(divTotalEvoluciones)
+      vista1.appendChild(divTotalEvoluciones);
       cardInfo.appendChild(btnCerrar);
       cardInfo.appendChild(containerImg);
       cardInfo.appendChild(containerVista);
@@ -217,9 +223,10 @@ function mostrarPokemon(array) {
     console.log(evolucionesPokemones);
 
     card.appendChild(spriteContainer);
-    card.appendChild(numero);
-    card.appendChild(nombre);
-    card.appendChild(cpPokemon);
+    card.appendChild(nombreNumero)
+    // card.appendChild(numero);
+    // card.appendChild(nombre);
+    // card.appendChild(cpPokemon);
     card.appendChild(evolucion);
     card.appendChild(tarjetaPokemon);
     container.appendChild(card);
@@ -246,8 +253,6 @@ function evoluciones(array, divTotalEvoluciones) {
   array.forEach((element) => {
     for (let i = 0; i < arrayPokemon.length; i++) {
       if (arrayPokemon[i].name === element) {
-
-
         const divEvol = document.createElement("div");
         divEvol.classList.add("evol");
 

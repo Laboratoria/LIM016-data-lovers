@@ -8,8 +8,8 @@ body{
   background-image: url(./fondo.jpg);
   background-repeat: repeat;
   background-attachment: fixed;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-
+  font-family: 'Spartan', sans-serif;
+  font-size: 16px;
 
 }
 
@@ -17,6 +17,7 @@ body{
 
 .navegador{
   display: flex;
+  /* position: fixed; */
   justify-content: space-between;
   background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
   width:100%;
@@ -25,19 +26,22 @@ body{
 
 .pokemon-container{
 display: grid;
-grid-template-columns: repeat(3,1fr);
-column-gap: 0em;
+grid-template-columns: repeat(4,1fr);
+grid-template-rows: repeat(1,2fr);
+column-gap: 1em;
 row-gap: 4em;
 text-align: center;
+
 }
 
 .pokemon-block{
-  background: white;
-  padding: 2em;
   width: 80%;
   margin: auto;
   background: linear-gradient(55.56deg, #FFFFFF 0%, rgba(255, 255, 255, 0.42) 100%);
-  border-radius: 20px
+  border-radius: 20px;
+  display: grid;
+  justify-content: center;
+height: 100%;
 
 }
 
@@ -69,19 +73,37 @@ width: 50%;
 height: 50%;
 }
 
+*/
+.nombreNumero{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  background:#676767;
+  border-radius: 10px;
+  height: 100%;
 
 
+}
+
+.nombreNumero p{
+color: #FFFFFF;
+font-size: 0.8em;
+font-weight: 800;
+font-family: 'Spartan', sans-serif;
+margin: 0.4em;
+}
 
 /*DISEÑO DEL BOTON DE MAS INFO*/
 
 .mostrarTarjeta{
-  height:3em;
-  width: 10em;
+height: 100%;
   border-radius: 10px;
   border: 1px solid rgb(6, 182, 129);
   font-weight: bold;
   background-color: white;
   margin-top:10px;
+
+
 }
 
 .mostrarTarjeta:hover{
