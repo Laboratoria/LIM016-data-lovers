@@ -1,15 +1,14 @@
-import data from './data/athletes/athletes.js';
-export const rio = () =>{
+
+export const teams = (data) =>{
 
   let rio= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
-  //console.log(example);
+ // console.log(rio);
   
-  let equipos= rio.map(rio=>`<p>${rio.team}</p>`)
-  console.log(equipos);
+  let equipos= rio.map(rio=>rio.team);
+  //console.log(equipos);
   return equipos;
   
 };
-
 export const rioDe = () =>{
 
   let rioDe= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
@@ -20,7 +19,6 @@ export const rioDe = () =>{
   return deport;
   
 };
-
 
 export const anotherExample = () => {
   return 'OMG';
