@@ -128,9 +128,10 @@ function mostrarPokemon(array) {
       btnCerrar.classList.add("btnCerrar");
       btnCerrar.type = "button";
       btnCerrar.innerHTML = `<i class="fas fa-times-circle"></i>`;
+
       btnCerrar.addEventListener("click", () => {
-        cardInfo.style.display = "none";
-        document.querySelector(".modal-container").style.display="none";
+      cardInfo.style.display = "none";
+      document.querySelector(".modal-container").style.display="none";
       });
 
       //Crear imagen del pokemon
@@ -202,7 +203,7 @@ function mostrarPokemon(array) {
       divTotalEvoluciones.classList.add("divTotal");
 
       //Items que se agregaran a la tarjeta de informacion del pokemon
-      
+
       features.appendChild(weight);
       features.appendChild(typePokemon);
       features.appendChild(height);
