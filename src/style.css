@@ -144,6 +144,15 @@ height: 100%;
 }
 
 /* DISEÑO DE LA TARJETA POKEMON */
+.modal-container{
+  background: rgba(0, 0, 0, 0.83);
+  position: absolute;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  top:0px;
+  width: 100%;
+  height: 965em;
+}
 .cardInfo{ /*container Modal*/
   position: fixed;
   font-size: 15px;

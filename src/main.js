@@ -115,6 +115,7 @@ function mostrarPokemon(array) {
 
     tarjetaPokemon.addEventListener("click", () => {
       //contenedor de la tarjeta pokemon
+      document.querySelector(".modal-container").style.display="block";
       const cardInfo = document.createElement("div");
       cardInfo.classList.add("cardInfo");
 
@@ -125,6 +126,7 @@ function mostrarPokemon(array) {
       btnCerrar.innerHTML = `<i class="fas fa-times-circle"></i>`;
       btnCerrar.addEventListener("click", () => {
         cardInfo.style.display = "none";
+        document.querySelector(".modal-container").style.display="none";
       });
 
       //Crear imagen del pokemon
@@ -196,7 +198,7 @@ function mostrarPokemon(array) {
       divTotalEvoluciones.classList.add("divTotal");
 
       //Items que se agregaran a la tarjeta de informacion del pokemon
-
+      
       features.appendChild(weight);
       features.appendChild(typePokemon);
       features.appendChild(height);
@@ -220,14 +222,14 @@ function mostrarPokemon(array) {
     });
 
     //Items que se agregan al container y card
-    console.log(evolucionesPokemones);
+   // console.log(evolucionesPokemones);
 
     card.appendChild(spriteContainer);
     card.appendChild(nombreNumero)
     // card.appendChild(numero);
     // card.appendChild(nombre);
     // card.appendChild(cpPokemon);
-    card.appendChild(evolucion);
+    //card.appendChild(evolucion);
     card.appendChild(tarjetaPokemon);
     container.appendChild(card);
 
