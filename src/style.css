@@ -60,7 +60,7 @@ body{
 .pokemon-container{
 display: grid;
 grid-template-columns: repeat(4,1fr);
-grid-template-rows: repeat(1,2fr);
+
 column-gap: 1em;
 row-gap: 4em;
 text-align: center;
@@ -133,6 +133,7 @@ height: 100%;
   font-weight: bold;
   background-color: white;
   margin-top:10px;
+  float: ;
 
 
 }
