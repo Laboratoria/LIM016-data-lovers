@@ -114,7 +114,7 @@ p:hover{
     color:rgb(0, 31, 204);
     cursor: pointer;
 }
-h4{
+/* h4{
     border-bottom: #944195 .3rem solid;
     margin: 1.5rem;
     padding: 0.2rem;
@@ -129,7 +129,7 @@ h4:hover{
 }
 h5{
     border-style: none;
-}
+} */
 #hereCountries{
     overflow:auto;
     overflow-x: hidden; 

@@ -1,27 +1,32 @@
-import data from './data/athletes/athletes.js';
-export const rio = () =>{
 
-  let rio= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
-  // console.log(rio);
-  
-  let equipos= rio.map(rio=>`<p>${rio.team}</p>`);
-  //console.log(equipos);
-  return equipos;
-  
+export const rio_teams = (data) =>{
+
+  let just_athletes_team= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
+  let justCountries= just_athletes_team.map(item=>item.team);
+   return justCountries;
+   
 };
 
-export const rioDe = () =>{
+export const rio_sports = (data) =>{
 
-  let rioDe= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
-  //console.log(example);
-  
-  let deport= rioDe.map(rioDe=>`<h4>${rioDe.sport}</h4>`)
-  console.log(deport);
-  return deport;
-  
+  let just_athletes_sport= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
+  let justSports= just_athletes_sport.map(item=>item.sport)
+   return justSports;
+
 };
 
-
-export const anotherExample = () => {
-  return 'OMG';
+export const timesRepeated = arr =>{
+  return arr.reduce((acc, item) =>{
+    if(!acc[item]){
+      acc[item]= 1;
+    }
+    else{
+      acc[item] = acc[item]+1;
+    }
+    return acc
+  }, {});
 };
+
+// export const anotherExample = () => {
+//   return 'OMG';
+// };
