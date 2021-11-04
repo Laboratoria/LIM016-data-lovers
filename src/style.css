@@ -19,11 +19,44 @@ body{
   display: flex;
   /* position: fixed; */
   justify-content: space-between;
-  background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
+  background: linear-gradient(90deg, rgba(4,0,61,1) 0%, rgba(1,1,71,1) 56%, rgba(5,106,152,1) 100%);
   width:100%;
-  height:3em;
+  height:3.5em;
+}
+.navegador .logo{
+  width: 7.5em;
+  padding-left: 1em;
+}
+.navegador .menu{
+  width: 50%;
+}
+.navegador button{
+  margin-top: 2%;
+  margin-left: 1.5%;
+  height: 60%;
+  width: 22%;
+  background:rgba(19, 7, 97, 0.3);
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 10px;
 }
 
+.navegador button:hover{
+  text-decoration: underline;
+  font-size: 1.1em;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: black;
+  box-shadow: 0 2px 4px black;
+}
+
+.navegador .pokebola{
+  margin-right: 2%;
+  margin-top: -0.6em;
+  height: 4.5em;
+}
+
+/*CONTENEDOR DE POKEMON*/
 .pokemon-container{
 display: grid;
 grid-template-columns: repeat(4,1fr);
@@ -44,8 +77,6 @@ text-align: center;
 height: 100%;
 
 }
-
-
 
 .divTotal{
 display: flex;
@@ -112,29 +143,34 @@ height: 100%;
 }
 
 /* DISEÑO DE LA TARJETA POKEMON */
-.cardInfo{
+.cardInfo{ /*container Modal*/
   position: fixed;
   font-size: 15px;
   background-image: url(./img/fondo-tarjeta.jpg);
-  width: 30%;
+  width: 25%;
   height: 90%;
-
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
-
 }
+
+
 .btnCerrar{
   background:none;
   padding:0
 }
 .btnCerrar .fas{
   position: absolute;
-  right: 20px;
-  font-size: 1.5em;
+  right: 7%;
+  top:15px;
+  font-size: 1.7em;
   color: rgb(55, 55, 55);
+}
+.btnCerrar .fas:hover{
+  color:white;
+  text-shadow: 0 0.05em black;
 }
 
 .containerImg {
@@ -206,6 +242,7 @@ margin-bottom: 0;}
   padding-top: 10px;
 }
 
+/*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
 @media (max-width: 600px) {
   .pokemon-container{
     grid-template-columns: repeat(1,1fr)
