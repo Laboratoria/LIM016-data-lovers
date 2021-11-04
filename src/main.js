@@ -182,9 +182,6 @@ function mostrarPokemon(array) {
       const height = document.createElement("div");
       height.innerHTML = array[i].size.height;
 
-
-
-
       //................div de las evoluciones.....
       const divTotalEvoluciones = document.createElement("div");
       divTotalEvoluciones.classList.add("divTotal");
