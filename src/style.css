@@ -150,19 +150,18 @@ height: 100%;
 /* DISEÑO DE LA TARJETA POKEMON */
 .modal-container{
   background: rgba(0, 0, 0, 0.83);
-  position: absolute;
-  background-repeat: repeat;
-  background-attachment: scroll;
+  position: fixed;
   top:0px;
   width: 100%;
-  height: 965em;
+  height: 100vh;
 }
 .cardInfo{ /*container Modal*/
   position: fixed;
   font-size: 0.8em;
   background-image: url(./img/fondo-tarjeta.jpg);
-  width: 25%;
+  width: 28%;
   height: 90%;
+  top:2em;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -198,7 +197,7 @@ margin-bottom: 0;}
   background-color: white;
   margin: 0.5em 0.5em;
   border-radius: 20px;
-  height: 70%;
+  height: 73%;
 }
 
 .containerVista h {
@@ -236,10 +235,10 @@ margin-bottom: 0;}
 }
 
 .description p{
-  font-size: 13px;
+  font-size: 10 px;
   text-align: justify;
   padding: 0 20px;
-  line-height: 22px;
+  line-height: 1.4em;
   border-bottom: 1px solid grey;
 }
 
