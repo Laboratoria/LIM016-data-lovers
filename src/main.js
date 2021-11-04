@@ -9,7 +9,7 @@ import {
   typePokemones,
   regionFuncion
 } from "./data.js";
-
+//const modalContainer = document.querySelector(".modal-container");
 const container = document.querySelector(".pokemon-container");
 const region = document.getElementById("region");
 const orden = document.getElementById("orden");
@@ -119,7 +119,9 @@ function mostrarPokemon(array) {
 
     tarjetaPokemon.addEventListener("click", () => {
       //contenedor de la tarjeta pokemon
-      document.querySelector(".modal-container").style.display="block";
+      const modalContainer = document.createElement("div");
+      modalContainer.classList.add("modal-container");
+      //modalContainer.style.display="block";
       const cardInfo = document.createElement("div");
       cardInfo.classList.add("cardInfo");
 
@@ -130,7 +132,7 @@ function mostrarPokemon(array) {
       btnCerrar.innerHTML = `<i class="fas fa-times-circle"></i>`;
       btnCerrar.addEventListener("click", () => {
         cardInfo.style.display = "none";
-        document.querySelector(".modal-container").style.display="none";
+        modalContainer.style.display="none";
       });
 
       //Crear imagen del pokemon
@@ -222,6 +224,7 @@ function mostrarPokemon(array) {
       cardInfo.appendChild(btnCerrar);
       cardInfo.appendChild(containerImg);
       cardInfo.appendChild(containerVista);
+      container.appendChild(modalContainer);
       container.appendChild(cardInfo);
       evoluciones(evolucionesPokemones, divTotalEvoluciones);
     });
