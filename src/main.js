@@ -1,11 +1,14 @@
 import data from "./data/pokemon/pokemon.js";
-
-console.log(data.pokemon[0].stats["max-cp"]);
-// console.log(data.pokemon[0].evolution["next-evolution"]);
-// console.log(data.pokemon[0].type.includes('grass'));
-// console.log(data.pokemon[0].stats["max-hp"]);
-// console.log(data.pokemon.length);
-// console.log(data.pokemon.length);
+import {
+  buscarPoke,
+  ordenNumeroPokemon,
+  huevitoPokemon,
+  filtarCp,
+  rarezaPokemon,
+  ordenAlfabetico,
+  typePokemones,
+  regionFuncion
+} from "./data.js";
 
 const container = document.querySelector(".pokemon-container");
 const region = document.getElementById("region");
@@ -21,6 +24,7 @@ const arrayPokemon = data.pokemon;
 let arrayCambiante = "";
 
 //funcion que muestra los pokemones
+
 function mostrarPokemon(array) {
   arrayCambiante = array;
 
@@ -52,7 +56,7 @@ function mostrarPokemon(array) {
 
     //numero de pokemon
     const numero = document.createElement("div");
-    numero.classList.add('numero')
+    numero.classList.add("numero");
     numero.innerHTML = `<p>#${array[i].num}</p>`;
 
     //nombre del pokemon
@@ -64,8 +68,8 @@ function mostrarPokemon(array) {
     const nombreNumero = document.createElement("div");
     nombreNumero.classList.add("nombreNumero");
 
-    nombreNumero.appendChild(nombre)
-    nombreNumero.appendChild(numero)
+    nombreNumero.appendChild(nombre);
+    nombreNumero.appendChild(numero);
 
     //evoluciones
     let obj = array[i].evolution;
@@ -214,6 +218,7 @@ function mostrarPokemon(array) {
       vista1.appendChild(description_box);
       vista1.appendChild(features);
       vista1.appendChild(divTotalEvoluciones);
+
       cardInfo.appendChild(btnCerrar);
       cardInfo.appendChild(containerImg);
       cardInfo.appendChild(containerVista);
@@ -225,7 +230,7 @@ function mostrarPokemon(array) {
    // console.log(evolucionesPokemones);
 
     card.appendChild(spriteContainer);
-    card.appendChild(nombreNumero)
+    card.appendChild(nombreNumero);
     // card.appendChild(numero);
     // card.appendChild(nombre);
     // card.appendChild(cpPokemon);
@@ -236,20 +241,6 @@ function mostrarPokemon(array) {
     //items que se agregaran al infocard y container
   }
 }
-
-//imagenes de evoluciones pokemones
-
-// const imgNextEvol = document.createElement("img");
-// const divNextEvol=document.createElement("div");
-// divNextEvol.classList.add('divEvolucion')
-
-// for (let i = 0; i < arrayPokemon.length; i++) {
-//   if (arrayPokemon[i].name == nombrePokemon) {
-//     imgNextEvol.src = arrayPokemon[i].img;
-//     divNextEvol.appendChild(imgNextEvol)
-//     evolucion.appendChild(divNextEvol)
-//   }
-// }
 
 function evoluciones(array, divTotalEvoluciones) {
   array.forEach((element) => {
@@ -279,102 +270,50 @@ region.addEventListener("change", (e) => {
   e.preventDefault();
   container.innerHTML = "";
   const valor = e.target.value;
-  console.log(valor);
-
-  regionFuncion(valor);
+  const arrayRegion=regionFuncion(valor, arrayPokemon)
+  mostrarPokemon(arrayRegion)
 });
 
-function regionFuncion(valor) {
-  let array = [];
-  for (let i = 0; i < arrayPokemon.length; i++) {
-    if (arrayPokemon[i].generation.name == valor) {
-      array.push(arrayPokemon[i]);
-    }
-  }
 
-  mostrarPokemon(array);
-}
 
 //orden alfabetico
 orden.addEventListener("change", (e) => {
   container.innerHTML = "";
   const typeOrden = e.target.value;
-
-  if (typeOrden == "az") {
-    arrayCambiante.sort((a, b) => {
-      if (a.name < b.name) {
-        return -1;
-      }
-      return 1;
-    });
-
-    mostrarPokemon(arrayCambiante);
-  } else {
-    arrayCambiante.sort((a, b) => {
-      if (a.name > b.name) {
-        return -1;
-      }
-      return 1;
-    });
-
-    mostrarPokemon(arrayCambiante);
-  }
+  const ordenAlfa = ordenAlfabetico(typeOrden, arrayCambiante);
+  mostrarPokemon(ordenAlfa);
 });
 
 //tipos de pokemones
 tipos.addEventListener("change", (e) => {
   container.innerHTML = "";
   const tipoPokemon = e.target.value;
-
-  let tipos = arrayPokemon.filter((element) =>
-    element.type.includes(tipoPokemon)
-  );
-
-  console.log(tipos);
-  mostrarPokemon(tipos);
+  const arraytipoPoke=typePokemones(tipoPokemon, arrayPokemon);
+  mostrarPokemon(arraytipoPoke)
 });
 
 //pokemon rarity
 rareza.addEventListener("change", (e) => {
   const tipoRareza = e.target.value;
   container.innerHTML = "";
-  let arrayRareza = arrayPokemon.filter(
-    (array) => array["pokemon-rarity"] == tipoRareza
-  );
-  mostrarPokemon(arrayRareza);
-
-  console.log(arrayRareza);
+  const rarezaPoke = rarezaPokemon(tipoRareza, arrayPokemon);
+  mostrarPokemon(rarezaPoke);
 });
 
 //cp
 cp.addEventListener("change", (e) => {
   container.innerHTML = "";
   const tipoCp = e.target.value;
-  if (tipoCp == "max") {
-    arrayPokemon.sort((a, b) => {
-      if (Number(a.stats["max-cp"]) > Number(b.stats["max-cp"])) {
-        return -1;
-      }
-      return 1;
-    });
-  } else if (tipoCp == "min") {
-    arrayPokemon.sort((a, b) => {
-      if (Number(a.stats["max-cp"]) < Number(b.stats["max-cp"])) {
-        return -1;
-      }
-      return 1;
-    });
-  }
-
-  mostrarPokemon(arrayPokemon);
+  const filtroPoke = filtarCp(tipoCp, arrayCambiante);
+  mostrarPokemon(filtroPoke);
 });
 
 //filtrar pokemon por huevito
 egg.addEventListener("change", (e) => {
   container.innerHTML = "";
   const eggType = e.target.value;
-  const arrayEgg = arrayPokemon.filter((item) => item.egg == eggType);
 
+  const arrayEgg = huevitoPokemon(eggType, arrayPokemon);
   mostrarPokemon(arrayEgg);
 });
 
@@ -382,22 +321,8 @@ egg.addEventListener("change", (e) => {
 ordenNumerico.addEventListener("change", (e) => {
   container.innerHTML = "";
   const ordenar = e.target.value;
-  if (ordenar == "1_251") {
-    arrayPokemon.sort((a, b) => {
-      if (a.num < b.num) {
-        return -1;
-      }
-      return 1;
-    });
-  } else {
-    arrayPokemon.sort((a, b) => {
-      if (a.num > b.num) {
-        return -1;
-      }
-      return 1;
-    });
-  }
-  mostrarPokemon(arrayPokemon);
+  const ordenNumPok = ordenNumeroPokemon(ordenar, arrayPokemon);
+  mostrarPokemon(ordenNumPok);
 });
 
 //buscador de pokemon
@@ -405,13 +330,8 @@ search.addEventListener("keyup", (e) => {
   container.innerHTML = "";
   const buscarPokemon = e.target.value;
 
-  let array = [];
-  for (let i = 0; i < arrayPokemon.length; i++) {
-    if (arrayPokemon[i].name == buscarPokemon) {
-      array.push(arrayPokemon[i]);
-    }
-  }
-  mostrarPokemon(array);
+  const search = buscarPoke(buscarPokemon, arrayPokemon);
+  mostrarPokemon(search);
 });
 
 mostrarPokemon(arrayPokemon);
