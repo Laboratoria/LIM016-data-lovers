@@ -1,11 +1,15 @@
 import data from "./data/pokemon/pokemon.js";
 import {
+<<<<<<< HEAD
   //buscarPoke,
   ordenNumeroPokemon,
+=======
+  buscarPoke,
+>>>>>>> 31a43321fc684cbdd039a3dccf9f3e8509382354
   huevitoPokemon,
   filtarCp,
   rarezaPokemon,
-  ordenAlfabetico,
+  ordenAlfaNumerico,
   typePokemones,
   regionFuncion
 } from "./data.js";
@@ -16,7 +20,6 @@ const orden = document.getElementById("orden");
 const tipos = document.getElementById("tipos");
 const rareza = document.getElementById("rareza");
 const cp = document.getElementById("cp");
-const ordenNumerico = document.getElementById("ordenNumerico");
 const egg = document.getElementById("egg");
 const search = document.getElementById("search");
 const botonBuscar = document.getElementById("botonBuscar");
@@ -131,6 +134,7 @@ function mostrarPokemon(array) {
       btnCerrar.classList.add("btnCerrar");
       btnCerrar.type = "button";
       btnCerrar.innerHTML = `<i class="fas fa-times-circle"></i>`;
+
       btnCerrar.addEventListener("click", () => {
         cardInfo.style.display = "none";
         modalContainer.style.display="none";
@@ -205,7 +209,7 @@ function mostrarPokemon(array) {
       divTotalEvoluciones.classList.add("divTotal");
 
       //Items que se agregaran a la tarjeta de informacion del pokemon
-      
+
       features.appendChild(weight);
       features.appendChild(typePokemon);
       features.appendChild(height);
@@ -280,13 +284,6 @@ region.addEventListener("change", (e) => {
 
 
 
-//orden alfabetico
-orden.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const typeOrden = e.target.value;
-  const ordenAlfa = ordenAlfabetico(typeOrden, arrayCambiante);
-  mostrarPokemon(ordenAlfa);
-});
 
 //tipos de pokemones
 tipos.addEventListener("change", (e) => {
@@ -321,13 +318,15 @@ egg.addEventListener("change", (e) => {
   mostrarPokemon(arrayEgg);
 });
 
-//Ordenar pokemon por N°
-ordenNumerico.addEventListener("change", (e) => {
+
+//orden alfabetico
+orden.addEventListener("change", (e) => {
   container.innerHTML = "";
-  const ordenar = e.target.value;
-  const ordenNumPok = ordenNumeroPokemon(ordenar, arrayPokemon);
-  mostrarPokemon(ordenNumPok);
+  const typeOrden = e.target.value;
+  const ordenAlfaNum = ordenAlfaNumerico(typeOrden, arrayCambiante);
+  mostrarPokemon(ordenAlfaNum);
 });
+
 
 //buscador de pokemon
 

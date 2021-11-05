@@ -9,25 +9,7 @@
 //   return array;
 // }
 
-//Ordenar pokemon por N°
-export function ordenNumeroPokemon(ordenar, arrayPokemon) {
-  if (ordenar == "1_251") {
-    arrayPokemon.sort((a, b) => {
-      if (a.num < b.num) {
-        return -1;
-      }
-      return 1;
-    });
-  } else {
-    arrayPokemon.sort((a, b) => {
-      if (a.num > b.num) {
-        return -1;
-      }
-      return 1;
-    });
-  }
-  return arrayPokemon;
-}
+
 
 //filtrar pokemon por huevito
 export function huevitoPokemon(eggType, arrayPokemon) {
@@ -65,7 +47,7 @@ export function rarezaPokemon(tipoRareza,arrayPokemon){
 }
 
 //orden alfabetico de pokemones
-export function ordenAlfabetico(typeOrden, arrayCambiante){
+export function ordenAlfaNumerico(typeOrden, arrayCambiante){
   if (typeOrden == "az") {
     arrayCambiante.sort((a, b) => {
       if (a.name < b.name) {
@@ -76,7 +58,7 @@ export function ordenAlfabetico(typeOrden, arrayCambiante){
 
     return arrayCambiante
 
-  } else {
+  } else if (typeOrden == "za"){
     arrayCambiante.sort((a, b) => {
       if (a.name > b.name) {
         return -1;
@@ -86,7 +68,26 @@ export function ordenAlfabetico(typeOrden, arrayCambiante){
 
     return arrayCambiante
   }
+
+  else if (typeOrden == "1_251") {
+    arrayCambiante.sort((a, b) => {
+      if (a.num < b.num) {
+        return -1;
+      }
+      return 1;
+    });
+    return arrayCambiante
+  } else {
+    arrayCambiante.sort((a, b) => {
+      if (a.num > b.num) {
+        return -1;
+      }
+      return 1;
+    });
+    return arrayCambiante
+  }
 }
+
 
 //tipos de pokemones
 export function typePokemones(tipoPokemon, arrayPokemon) {
