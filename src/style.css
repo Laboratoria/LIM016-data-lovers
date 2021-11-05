@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+*{
+    margin: 0%;
+    padding: 0%;
+    
+}
+.headerLogo{   
+    width: 100%;
+    height: 50%;;
+}
+.carousel .carouselImg{
+    width: 70px;
+}
+.filter{
+    background-color: #f4f5f6;
+    width: 20%;
+}
+.footer{
+    background-color: black;
+    color: white;
+    text-align:center;
+    font-family: 'Handlee', cursive;
+    padding: 20px;
+    margin-top: 10px;
+}
+.facebook{
+    border-radius: 50%;
+    width: 35px;
+    padding: 5px;
+    position: absolute;   
+    left: 800px;
+    top: 430px;
+}
+.instagram{
+    border-radius: 50%;
+    width: 35px;
+    padding: 5px;
+    position: absolute;   
+    left: 850px;
+    top: 430px;
+}
+.twitter{
+    border-radius: 50%;
+    width: 35px;
+    padding: 5px;
+    position: absolute;   
+    left: 900px;
+    top: 430px;
+}
+.youtube{
+    border-radius: 50%;
+    width: 35px;
+    padding: 5px;
+    position: absolute;   
+    left: 950px;
+    top: 430px;
+}
