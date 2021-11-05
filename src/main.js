@@ -1,11 +1,10 @@
 import data from "./data/pokemon/pokemon.js";
 import {
   buscarPoke,
-  ordenNumeroPokemon,
   huevitoPokemon,
   filtarCp,
   rarezaPokemon,
-  ordenAlfabetico,
+  ordenAlfaNumerico,
   typePokemones,
   regionFuncion
 } from "./data.js";
@@ -16,7 +15,6 @@ const orden = document.getElementById("orden");
 const tipos = document.getElementById("tipos");
 const rareza = document.getElementById("rareza");
 const cp = document.getElementById("cp");
-const ordenNumerico = document.getElementById("ordenNumerico");
 const egg = document.getElementById("egg");
 const search = document.getElementById("search");
 
@@ -280,13 +278,6 @@ region.addEventListener("change", (e) => {
 
 
 
-//orden alfabetico
-orden.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const typeOrden = e.target.value;
-  const ordenAlfa = ordenAlfabetico(typeOrden, arrayCambiante);
-  mostrarPokemon(ordenAlfa);
-});
 
 //tipos de pokemones
 tipos.addEventListener("change", (e) => {
@@ -321,13 +312,15 @@ egg.addEventListener("change", (e) => {
   mostrarPokemon(arrayEgg);
 });
 
-//Ordenar pokemon por N°
-ordenNumerico.addEventListener("change", (e) => {
+
+//orden alfabetico
+orden.addEventListener("change", (e) => {
   container.innerHTML = "";
-  const ordenar = e.target.value;
-  const ordenNumPok = ordenNumeroPokemon(ordenar, arrayPokemon);
-  mostrarPokemon(ordenNumPok);
+  const typeOrden = e.target.value;
+  const ordenAlfaNum = ordenAlfaNumerico(typeOrden, arrayCambiante);
+  mostrarPokemon(ordenAlfaNum);
 });
+
 
 //buscador de pokemon
 search.addEventListener("keyup", (e) => {
