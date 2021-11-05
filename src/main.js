@@ -1,6 +1,11 @@
 import data from "./data/pokemon/pokemon.js";
 import {
+<<<<<<< HEAD
+  //buscarPoke,
+  ordenNumeroPokemon,
+=======
   buscarPoke,
+>>>>>>> 31a43321fc684cbdd039a3dccf9f3e8509382354
   huevitoPokemon,
   filtarCp,
   rarezaPokemon,
@@ -17,6 +22,7 @@ const rareza = document.getElementById("rareza");
 const cp = document.getElementById("cp");
 const egg = document.getElementById("egg");
 const search = document.getElementById("search");
+const botonBuscar = document.getElementById("botonBuscar");
 
 const arrayPokemon = data.pokemon;
 let arrayCambiante = "";
@@ -323,12 +329,33 @@ orden.addEventListener("change", (e) => {
 
 
 //buscador de pokemon
-search.addEventListener("keyup", (e) => {
-  container.innerHTML = "";
-  const buscarPokemon = e.target.value;
 
-  const search = buscarPoke(buscarPokemon, arrayPokemon);
-  mostrarPokemon(search);
-});
+const filtrar = ()=>{
+  // console.log(search.value)
+  container.innerHTML = "";
+  const texto = search.value.toLowerCase();
+  let array=[]
+  for(let pokemon of arrayPokemon){
+    let namePokemon = pokemon.name
+    let numPokemon = pokemon.num
+    if(namePokemon.indexOf(texto) !== -1){
+      array.push(pokemon);
+    }
+    else if(numPokemon.indexOf(texto) !== -1){
+      array.push(pokemon);
+    }
+  }
+  mostrarPokemon(array)
+}
+
+botonBuscar.addEventListener("click",filtrar)
+search.addEventListener("keyup",filtrar)
+// search.addEventListener("keyup", (e) => {
+//   container.innerHTML = "";
+//   const buscarPokemon = e.target.value;
+
+//   const search = buscarPoke(buscarPokemon, arrayPokemon);
+//   mostrarPokemon(search);
+// });
 
 mostrarPokemon(arrayPokemon);

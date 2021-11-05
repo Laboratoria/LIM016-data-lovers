@@ -255,6 +255,40 @@ margin-bottom: 0;}
   padding-top: 10px;
 }
 
+/* DANDO ESTILO A LA BARRA DE BUSCAR*/
+#search{
+  border: 0.2em solid rgb(97, 97, 97);
+  border-radius:0.3em;
+  width:18%;
+  height:2.2em;
+  background: rgba(255, 255, 255, 0.556)
+}
+
+#search:focus{
+  box-shadow: 0 0 1.5em rgb(213, 213, 213);
+  background:white;
+}
+
+#search:hover{
+  cursor: text;
+  background-color:white;
+  border: 0.2em solid rgb(28, 28, 28);
+  transition: 0.5s;
+}
+
+#botonBuscar{
+  font-size: 1.3em;
+  padding: 0.2em 0.35em;
+  border-radius: 0.2em;
+  background-color:rgb(2, 22, 99);
+  color: white;
+}
+
+#botonBuscar:hover{
+  background-color:black;
+  transition: 0.3s
+}
+
 /*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
 @media (max-width: 600px) {
   .pokemon-container{
