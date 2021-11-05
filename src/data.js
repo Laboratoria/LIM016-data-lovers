@@ -1,9 +1,13 @@
-// estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
-};
+/*export const athletes = () => {
+  return 'athletes';
+};*/
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+import data from './data/athletes/athletes';// el punto es para indicar que quiero buscar justo donde me encuentro
+
+
+export const sortData = (data, sortBy, sortOrder) =>{
+
+ return dataAthletes.sort(sortBy);
+
+}

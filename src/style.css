@@ -1,0 +1,39 @@
+body {
+counter-reset: none;
+
+}
+
+.sportsContainer{
+    display: flex;
+     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #49d317d0;/* un fondo color verde para la imagen*/
+    border-radius: 20px;
+    height:fit-content;
+     width: fit-content;
+     margin-top: 1rem;
+    
+}
+.classAthlete{
+    border-radius: 15px;
+}
+.boxImgAthlete{
+    align-self: center;
+    justify-content: center;
+    min-width: max-content;
+    /*border-radius: 20px;*/
+}
+.tableAthletes{
+    justify-content: center;
+    min-width: max-content;
+    max-width: 100%;
+    max-height: 100%;
+    margin: .5em;
+}
+
+.grid {
+    display: flex;
+    flex-flow: wrap;
+    gap: 1rem 1rem;
+}

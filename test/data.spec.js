@@ -1,23 +1,21 @@
-import { example, anotherExample } from '../src/data.js';
+import { sortData } from '../src/data.js';
 
 
-describe('example', () => {
+describe('probando la funcion sortData', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof sortData).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+  
 });
 
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
+// describe('anotherExample', () => {
+//   it('is a function', () => {
+//     expect(typeof anotherExample).toBe('function');
+//   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
+//   it('returns `anotherExample`', () => {
+//     expect(anotherExample()).toBe('OMG');
+//   });
+// });
