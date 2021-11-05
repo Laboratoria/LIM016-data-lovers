@@ -1,13 +1,13 @@
 //buscador de pokemon
-export function buscarPoke(buscarPokemon, arrayPokemon) {
-  let array = [];
-  for (let i = 0; i < arrayPokemon.length; i++) {
-    if (arrayPokemon[i].name == buscarPokemon) {
-      array.push(arrayPokemon[i]);
-    }
-  }
-  return array;
-}
+// export function buscarPoke(buscarPokemon, arrayPokemon) {
+//   let array = [];
+//   for (let i = 0; i < arrayPokemon.length; i++) {
+//     if (arrayPokemon[i].name == buscarPokemon) {
+//       array.push(arrayPokemon[i]);
+//     }
+//   }
+//   return array;
+// }
 
 //Ordenar pokemon por N°
 export function ordenNumeroPokemon(ordenar, arrayPokemon) {
