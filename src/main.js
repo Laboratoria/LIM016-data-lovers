@@ -1,3 +1,4 @@
+import { sortData } from './data.js';
 import { functionAll } from './data.js';
 import datos from './data/athletes/athletes.js'; //jala de athletes.js
 
