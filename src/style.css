@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Red+Hat+Mono&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(192, 237, 226);
+}
+
+.imgTitulo{
+    height: 40%;
+    width: 40%;
+    margin: 25px;
+}
+header{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.home{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.cards{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(12, 12, 12);
+    border-style: solid;
+    border-width: 5px;
+    width: 338px;
+    height: 430px;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.61);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+
+}
+
+.cards:hover{
+    transform:translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
+}
+
+img{
+    width: 330px;
+    height: 280px;
+}
+h3 {
+    font-size: 35px;
+    font-family: 'Red Hat Mono', monospace;
+}
+
+h6{
+    font-size: 32px;
+    font-family: 'Red Hat Mono', monospace;
+}
+
+p{
+    font-family: 'Red Hat Mono', monospace;
+    padding: 0 1rem;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.piePagina {
+    display: flex;
+    align-items: center; /*ALINEA EN EL CENTRO VERTICALMENTE*/
+    justify-content: center; /*ALINEA EN EL CENTRO HORIZONTALMENTE*/
+    width: 100%; /* CUBRE TODO EL ANCHO DISPONIBLE */
+    height: 60px;
+    background-color: rgb(6, 32, 70);
+}
+.foot{
+    color: white;
+    font-size: 22px;
+}
