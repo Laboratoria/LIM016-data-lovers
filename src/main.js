@@ -1,11 +1,6 @@
 import data from "./data/pokemon/pokemon.js";
 import {
-<<<<<<< HEAD
-  //buscarPoke,
-  ordenNumeroPokemon,
-=======
-  buscarPoke,
->>>>>>> 31a43321fc684cbdd039a3dccf9f3e8509382354
+  // buscarPoke,
   huevitoPokemon,
   filtarCp,
   rarezaPokemon,

@@ -47,6 +47,7 @@ export function rarezaPokemon(tipoRareza,arrayPokemon){
 }
 
 //orden alfabetico de pokemones
+
 export function ordenAlfaNumerico(typeOrden, arrayCambiante){
   if (typeOrden == "az") {
     arrayCambiante.sort((a, b) => {
@@ -77,6 +78,7 @@ export function ordenAlfaNumerico(typeOrden, arrayCambiante){
       return 1;
     });
     return arrayCambiante
+
   } else {
     arrayCambiante.sort((a, b) => {
       if (a.num > b.num) {
