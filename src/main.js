@@ -1,11 +1,6 @@
 import data from "./data/pokemon/pokemon.js";
 import {
-<<<<<<< HEAD
   //buscarPoke,
-  ordenNumeroPokemon,
-=======
-  buscarPoke,
->>>>>>> 31a43321fc684cbdd039a3dccf9f3e8509382354
   huevitoPokemon,
   filtarCp,
   rarezaPokemon,
@@ -13,6 +8,8 @@ import {
   typePokemones,
   regionFuncion
 } from "./data.js";
+
+
 //const modalContainer = document.querySelector(".modal-container");
 const container = document.querySelector(".pokemon-container");
 const region = document.getElementById("region");
@@ -27,13 +24,22 @@ const botonBuscar = document.getElementById("botonBuscar");
 const arrayPokemon = data.pokemon;
 let arrayCambiante = "";
 
+// var dataArray = new Array;
+// for(const i in arrayPokemon){
+//   dataArray.push(arrayPokemon[i].stats["max-cp"]);
+// }
+// console.log(dataArray)
+// console.log(Math.max(...dataArray))
+
+
+
 //funcion que muestra los pokemones
 
 function mostrarPokemon(array) {
   arrayCambiante = array;
 
   const numero = document.getElementById("parrafo");
-
+  numero.classList.add("totalPokemons")
   numero.innerHTML = `<p> Total :${array.length}</p>`;
 
   for (let i = 0; i < array.length; i++) {
@@ -42,9 +48,9 @@ function mostrarPokemon(array) {
     card.classList.add("pokemon-block");
 
     //cp del pokemon
-    // const cpPokemon = document.createElement("p");
-    // cpPokemon.classList.add("cp");
-    // cpPokemon.innerHTML = `<p>CP: ${array[i].stats["max-cp"]}</p>`;
+    const cpPokemon = document.createElement("p");
+    cpPokemon.classList.add("cp");
+    cpPokemon.innerHTML = `<p>CP: ${array[i].stats["max-cp"]}</p>`;
 
     //div que contiene las evoluciones
     const evolucion = document.createElement("div");
@@ -125,9 +131,11 @@ function mostrarPokemon(array) {
       //contenedor de la tarjeta pokemon
       const modalContainer = document.createElement("div");
       modalContainer.classList.add("modal-container");
+      
       //modalContainer.style.display="block";
       const cardInfo = document.createElement("div");
       cardInfo.classList.add("cardInfo");
+      cardInfo.setAttribute(`id`,`${array[i].num}`);
 
       //boton de cerrar tarjeta de informacion
       const btnCerrar = document.createElement("button");
@@ -164,11 +172,23 @@ function mostrarPokemon(array) {
       button1.classList.add("btn");
       button1.textContent = "About";
 
+      button1.addEventListener("click",()=>{
+        vista2.style.display="none";
+        vista1.style.display="block";
+        
+      })
+
+
       //-------------btn2------------------------------
       const button2 = document.createElement("button");
       button2.type = "button";
       button2.classList.add("btn");
       button2.textContent = "Power";
+
+      button2.addEventListener("click",()=>{
+        vista2.style.display="block"
+        vista1.style.display="none"
+      })
 
       //------------btn3-------------------------------
       const button3 = document.createElement("button");
@@ -207,6 +227,107 @@ function mostrarPokemon(array) {
       //................div de las evoluciones.....
       const divTotalEvoluciones = document.createElement("div");
       divTotalEvoluciones.classList.add("divTotal");
+      
+      //VISTA 2
+      const vista2 = document.createElement("div");
+      vista1.classList.add("vista2");
+
+      vista2.style.display="none"
+
+      //-----------contenedor de cada habilidad----------
+      
+      const arrayStats = array[i].stats
+      console.log(arrayStats)
+      
+      for(const property in arrayStats){
+        const prueba = document.createElement("div");
+        prueba.classList.add("prueba");
+
+        const nameStats = document.createElement("h");
+        nameStats.innerHTML = `${property}`;
+        const barra = document.createElement("div");
+        barra.classList.add("barra");
+        const progreso = document.createElement("div");
+        progreso.classList.add("progreso");
+        const nombreStats = property
+        //progreso.style("--w:")
+        const stringStats = parseInt(arrayStats[property]);
+        const numStats = stringStats
+        let valorAlto = "";
+
+        if(nombreStats=="max-hp"){
+          let dataArray = new Array;
+          for(const i in arrayPokemon){
+          dataArray.push(arrayPokemon[i].stats["max-hp"]);
+          } 
+          //console.log(dataArray)
+          valorAlto = Math.max(...dataArray);
+          console.log(valorAlto)
+        }
+        if(nombreStats=="base-attack"){
+          let dataArray = new Array;
+          for(const i in arrayPokemon){
+          dataArray.push(arrayPokemon[i].stats["base-attack"]);
+          } 
+          // console.log(dataArray)
+          valorAlto = Math.max(...dataArray);
+          console.log(valorAlto)
+        }
+        if(nombreStats=="max-cp"){
+          let dataArray = new Array;
+          for(const i in arrayPokemon){
+          dataArray.push(arrayPokemon[i].stats["max-cp"]);
+          } 
+          // console.log(dataArray)
+          valorAlto = Math.max(...dataArray);
+          console.log(valorAlto)
+        }
+        if(nombreStats=="base-defense"){
+          let dataArray = new Array;
+          for(const i in arrayPokemon){
+          dataArray.push(arrayPokemon[i].stats["base-defense"]);
+          } 
+          // console.log(dataArray)
+          valorAlto = Math.max(...dataArray);
+          console.log(valorAlto)
+        }
+        if(nombreStats=="base-stamina"){
+          let dataArray = new Array;
+          for(const i in arrayPokemon){
+          dataArray.push(arrayPokemon[i].stats["base-stamina"]);
+          } 
+          // console.log(dataArray)
+          valorAlto = Math.max(...dataArray);
+          console.log(valorAlto)
+        }
+        
+
+        let porcentaje = ((numStats/valorAlto) *100).toFixed(2)
+
+        progreso.style.setProperty(`--w`, `${porcentaje}%`);
+        progreso.setAttribute(`id`,`${property}`);
+
+        const valorStat = document.createElement("p");
+        valorStat.innerHTML= stringStats
+
+        barra.appendChild(progreso);
+        prueba.appendChild(nameStats);
+        prueba.appendChild(barra);
+        prueba.appendChild(valorStat);
+        vista2.appendChild(prueba)
+        
+
+        // console.log(nameStats)
+        // console.log(stringStats)
+        // console.log(typeof(nombreStats))
+      }
+        
+      // });
+      // const statsPokemon = document.createElement("div");
+      // statsPokemon.classList.add("statsPokemon");
+
+      // const statsName = document.createElement("h");
+      // titulo.innerHTML = array[i];
 
       //Items que se agregaran a la tarjeta de informacion del pokemon
 
@@ -222,10 +343,10 @@ function mostrarPokemon(array) {
       containerVista.appendChild(nameCardPokemon);
       containerVista.appendChild(navTarjeta);
       containerVista.appendChild(vista1);
+      containerVista.appendChild(vista2);
       vista1.appendChild(description_box);
       vista1.appendChild(features);
       vista1.appendChild(divTotalEvoluciones);
-
       cardInfo.appendChild(btnCerrar);
       cardInfo.appendChild(containerImg);
       cardInfo.appendChild(containerVista);
@@ -357,5 +478,7 @@ search.addEventListener("keyup",filtrar)
 //   const search = buscarPoke(buscarPokemon, arrayPokemon);
 //   mostrarPokemon(search);
 // });
+
+
 
 mostrarPokemon(arrayPokemon);
