@@ -257,22 +257,55 @@ margin-bottom: 0;}
 
 .features{
   display: flex;
-  justify-content: space-between;
-  padding: 5px 10px;
+  justify-content: space-around;
+  padding: 5px 0px;
 }
 
 .features div{
-  width: 6em;
+  width: 30%;
   height: 3em;
   font-weight: bold;
   padding-top: 10px;
 }
-
-/*DANDO ESTILO A LA VISTA 2*/
-.vista2{
-  display:flex;
-  flex-wrap: wrap;
+.candyContainerPadre{
+  background-color: #e6e6e6;
+  height:3em;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content:space-between;
 }
+
+.palabraEvolucion{
+  background:#3fc7aa;
+  width: 45%;
+  height: 100%;
+  border-radius: 2em;
+  margin-left: -7px;
+  color: white;
+  font-size:1.2em;
+  padding: 3.5% 0px;
+}
+.candyContainer{
+  width: 40%;
+  height:100%;
+  padding: 3.2% 14%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.candyContainer img{
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 15%;
+}
+
+.candyContainer p{
+  padding-top: 11%;
+  font-weight: bold;
+}
+/*DANDO ESTILO A LA VISTA 2*/
+
 .prueba{
   padding: 2% 5%;
 }
