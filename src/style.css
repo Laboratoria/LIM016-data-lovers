@@ -10,7 +10,8 @@ body{
   background-attachment: fixed;
   font-family: 'Spartan', sans-serif;
   font-size: 16px;
-
+  cursor: url("//cur.cursors-4u.net/games/images6/gam548.gif") 32 32,
+  pointer;
 }
 
 /*DANDO ESTILO AL NAVEGADOR*/
@@ -42,6 +43,7 @@ body{
   font-family: 'Spartan', sans-serif;
   font-size: 1em;
   border-radius: 10px;
+
 }
 
 .navegador button:hover{
@@ -67,6 +69,13 @@ row-gap: 4em;
 text-align: center;
 margin:auto
 
+}
+
+.totalPokemons{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.6em;
+  line-height:2.5em;
 }
 
 .pokemon-block{
@@ -145,6 +154,7 @@ height: 100%;
 .mostrarTarjeta:hover{
   color: white;
   background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+  cursor: pointer
 }
 
 /* DISEÑO DE LA TARJETA POKEMON */
@@ -227,6 +237,9 @@ margin-bottom: 0;}
   transition: 0.3s;
 }
 
+
+/*DANDO ESTILOS A LA VISTA1*/
+
 .description h{
   text-align: left;
   font-size: 1em;
@@ -254,6 +267,67 @@ margin-bottom: 0;}
   font-weight: bold;
   padding-top: 10px;
 }
+
+/*DANDO ESTILO A LA VISTA 2*/
+.vista2{
+  display:flex;
+  flex-wrap: wrap;
+}
+.prueba{
+  padding: 2% 5%;
+}
+
+.prueba h{
+  font-size:1.1em;
+  text-align: left;
+  padding-bottom: 0.2em;
+}
+
+.prueba p{
+  position: absolute;
+  margin: -3.3% 40%;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+.barra{
+  width:100%;
+  height: 1.4em;
+  background: rgba(225,225,225,0.5);
+  border-radius: 0.6em;
+}
+.progreso{
+  width:var(--w);
+  height: 100%;
+  border-radius: 10px;
+  animation: transicion 3s ease;
+}
+@keyframes transicion {
+  0%{width: 0%;};
+  100%{width: var(--w);}
+}
+
+.barra #base-attack{
+  background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+}
+.barra #base-defense{
+  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+}
+.barra #base-stamina{
+  background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+}
+.barra #max-cp{
+  background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%);
+}
+.barra #max-hp{
+  background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+}
+
+
+
+/* DANDO ESTILO A VISTA3 */
+
+
+
 
 /* DANDO ESTILO A LA BARRA DE BUSCAR*/
 #search{
