@@ -32,7 +32,14 @@ let arrayCambiante = "";
 // console.log(Math.max(...dataArray))
 
 
+//PASAR DE INICIO AL POKEDEX
 
+const verPokedex = document.getElementById('verPokedex');
+
+verPokedex.addEventListener("click",()=>{
+  document.querySelector("#welcome").style.display="none";
+  document.querySelector("#pokedex").style.display="block";
+})
 
 //funcion que muestra los pokemones
 
@@ -170,12 +177,15 @@ function mostrarPokemon(array) {
       navTarjeta.classList.add("botones-tarjetas");
       const button1 = document.createElement("button");
       button1.type = "button";
-      button1.classList.add("btn");
+      button1.classList.add("active");
       button1.textContent = "About";
 
       button1.addEventListener("click",()=>{
         vista2.style.display="none";
         vista1.style.display="block";
+        button1.className = "active";
+        button2.className="";
+        button3.className="";
 
       })
 
@@ -187,8 +197,11 @@ function mostrarPokemon(array) {
       button2.textContent = "Power";
 
       button2.addEventListener("click",()=>{
-        vista2.style.display="block"
-        vista1.style.display="none"
+        vista2.style.display="block";
+        vista1.style.display="none";
+        button1.className="";
+        button3.className="";
+        button2.className = "active";
       })
 
       //------------btn3-------------------------------
@@ -196,6 +209,7 @@ function mostrarPokemon(array) {
       button3.type = "button";
       button3.classList.add("btn");
       button3.textContent = "Moves";
+      
 
       //crear Vista 1
       const vista1 = document.createElement("div");
@@ -508,14 +522,30 @@ const filtrar = ()=>{
 
 botonBuscar.addEventListener("click",filtrar)
 search.addEventListener("keyup",filtrar)
-// search.addEventListener("keyup", (e) => {
-//   container.innerHTML = "";
-//   const buscarPokemon = e.target.value;
-
-//   const search = buscarPoke(buscarPokemon, arrayPokemon);
-//   mostrarPokemon(search);
-// });
 
 
+// Boton subir
 
+const buttonUp = document.getElementById("button-up")
+
+buttonUp.addEventListener("click",scrollUp)
+function scrollUp(){
+  let currentScroll = document.documentElement.scrollTop;
+  if(currentScroll>0){
+    window.requestAnimationFrame(scrollUp);
+    window.scrollTo(0,currentScroll-(currentScroll/15));
+  }
+}
+
+window.onscroll = ()=>{
+  
+  let scroll = document.documentElement.scrollTop;
+
+  if(scroll>600){
+    buttonUp.style.transform = "scale(1)";
+  }
+  else if(scroll<500){
+    buttonUp.style.transform = "scale(0)";
+  }
+}
 mostrarPokemon(arrayPokemon);

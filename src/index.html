@@ -22,66 +22,103 @@
       </div>
       <img class="pokebola" src="img/pokebola.gif">
     </header>
+    
+    <section id="welcome"  style="display: block">
+      <div class="intro">
+        <div class="intro_background">
+        <div class="intro_background_image">
+          <picture>
+          <source
+          type="image/webp"
+          srcset="img/fondo-inicio.jpg"
+          media="(min-width: 768px) and (max-width: 1023px)"
+          >
+          <img
+          class="background"
+          src="img/fondo-inicio.jpg"
+          alt=""
+          width="100%" height="100%"
+          />
+          </picture>
+        </div>
+        <div class="intro_content">
+          <div class="intro_content_title">¡Les damos la bienvenida, entrenadores!</div>
+          <div class="intro_content_description">¡Descubre todos los pokemones que tenemos para ti...!</div>
+        </div>
+        <div class="intro_button">
+          <button id="verPokedex">Descubrir</button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="pokedex" style="display: none">
+      <select id="region">
+        <option value="" disabled selected>Region</option>
+        <option value="kanto" id="kanto">Kanto</option>
+        <option value="johto" id="johto">johnto</option>
+      </select>
+
+      <select id="cp">
+        <option value="" disabled selected>CP</option>
+        <option value="max">Max cp</option>
+        <option value="min">Min cp</option>
+      </select>
+
+      <select id="orden">
+        <option value="" disabled selected>ORDEN</option>
+        <option value="az">a-z</option>
+        <option value="za">z-a</option>
+        <option value="1_251">001-251</option>
+        <option value="251-_">251-001</option>
+      </select>
+
+      <select id="rareza">
+        <option value="" disabled selected>Rareza</option>
+        <option value="normal">normal</option>
+        <option value="mythic">mítico</option>
+        <option value="legendary">legendario</option>
+      </select>
+
+      <select id="tipos">
+        <option value="" disabled selected>Tipos</option>
+        <option value="ghost">Ghost</option>
+        <option value="water">water</option>
+        <option value="poison">poison</option>
+        <option value="flying">flying</option>
+        <option value="rock">rock</option>
+        <option value="dragon">dragon</option>
+        <option value="dark">dark</option> 
+        <option value="fairy">fairy</option>
+        <option value="ground">ground</option>
+      </select>
 
 
 
-    <select id="region">
-      <option value="" disabled selected>Region</option>
-      <option value="kanto" id="kanto">Kanto</option>
-      <option value="johto" id="johto">johnto</option>
+    <select id="egg">
+      <option value="" disabled selected>Egg</option>
+      <option value="2 km">2 km</option>
+      <option value="5 km">5 km</option>
+      <option value="7 km">7 km</option>
+      <option value="10 km">10 km</option>
     </select>
 
-    <select id="cp">
-      <option value="" disabled selected>CP</option>
-      <option value="max">Max cp</option>
-      <option value="min">Min cp</option>
-    </select>
+    <input type="text" id="search" placeholder="Search...">
+    <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button>
 
-    <select id="orden">
-      <option value="" disabled selected>ORDEN</option>
-      <option value="az">a-z</option>
-      <option value="za">z-a</option>
-      <option value="1_251">001-251</option>
-      <option value="251-_">251-001</option>
-    </select>
+    <p id="parrafo"></p>
 
-    <select id="rareza">
-      <option value="" disabled selected>Rareza</option>
-      <option value="normal">normal</option>
-      <option value="mythic">mítico</option>
-      <option value="legendary">legendario</option>
-    </select>
+    <div class="pokemon-container">
+    </div>
 
-    <select id="tipos">
-      <option value="" disabled selected>Tipos</option>
-      <option value="ghost">Ghost</option>
-      <option value="water">water</option>
-      <option value="poison">poison</option>
-      <option value="flying">flying</option>
-      <option value="rock">rock</option>
-      <option value="dragon">dragon</option>
-      <option value="dark">dark</option> 
-      <option value="fairy">fairy</option>
-      <option value="ground">ground</option>
-    </select>
+    <!-- Boton para subir -->
+    <div id="button-up">
+      <img src="img/subir.png" alt="subir">
+      <!-- <i class="fas fa-chevron-up"></i> -->
+    </div>
 
-
-
-<select id="egg">
-  <option value="" disabled selected>Egg</option>
-  <option value="2 km">2 km</option>
-  <option value="5 km">5 km</option>
-  <option value="7 km">7 km</option>
-  <option value="10 km">10 km</option>
-</select>
-
-<input type="text" id="search" placeholder="Search...">
-<button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button>
-
-<p id="parrafo"></p>
-
-<div class="pokemon-container">
-</div>
+  </section>
 
 <script src="main.js" type="module"></script>
 
