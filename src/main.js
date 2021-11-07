@@ -30,6 +30,16 @@ let arrayCambiante = "";
 // console.log(dataArray)
 // console.log(Math.max(...dataArray))
 
+
+//PASAR DE INICIO AL POKEDEX
+
+const verPokedex = document.getElementById('verPokedex');
+
+verPokedex.addEventListener("click",()=>{
+  document.querySelector("#welcome").style.display="none";
+  document.querySelector("#pokedex").style.display="block";
+})
+
 //funcion que muestra los pokemones
 
 function mostrarPokemon(array) {
@@ -167,14 +177,19 @@ function mostrarPokemon(array) {
       navTarjeta.classList.add("botones-tarjetas");
       const button1 = document.createElement("button");
       button1.type = "button";
-      button1.classList.add("btn");
+      button1.classList.add("active");
       button1.textContent = "About";
 
-      button1.addEventListener("click", () => {
-        vista2.style.display = "none";
-        vista1.style.display = "block";
-        vista3.style.display = "none";
-      });
+      button1.addEventListener("click",()=>{
+        vista2.style.display="none";
+        vista1.style.display="block";
+        vista3.style.display="none";
+        button1.className = "active";
+        button2.className="";
+        button3.className="";
+
+      })
+
 
       //-------------btn2------------------------------
       const button2 = document.createElement("button");
@@ -182,17 +197,22 @@ function mostrarPokemon(array) {
       button2.classList.add("btn");
       button2.textContent = "Power";
 
-      button2.addEventListener("click", () => {
-        vista2.style.display = "block";
-        vista1.style.display = "none";
-        vista3.style.display = "none";
-      });
+      button2.addEventListener("click",()=>{
+        vista2.style.display="block";
+        vista1.style.display="none";
+        vista3.style.display="none";
+        button1.className="";
+        button3.className="";
+        button2.className = "active";
+      })
 
       //------------btn3-------------------------------
       const button3 = document.createElement("button");
       button3.type = "button";
       button3.classList.add("btn");
       button3.textContent = "Moves";
+      
+
 
       //crear Vista 1
       const vista1 = document.createElement("div");
@@ -355,12 +375,15 @@ function mostrarPokemon(array) {
       const tabla1 = document.createElement("div");
       const tabla2 = document.createElement("div");
       vista3.style.display = "none";
-      vista1.classList.add("vista3");
+      //vista1.classList.add("vista3");
 
       button3.addEventListener("click", () => {
         vista3.style.display = "block";
         vista2.style.display = "none";
         vista1.style.display = "none";
+        button1.className="";
+        button2.className="";
+        button3.className = "active";
       });
 
       let quickName = array[i]["quick-move"];
@@ -668,14 +691,32 @@ const filtrar = () => {
   mostrarPokemon(array);
 };
 
-botonBuscar.addEventListener("click", filtrar);
-search.addEventListener("keyup", filtrar);
-// search.addEventListener("keyup", (e) => {
-//   container.innerHTML = "";
-//   const buscarPokemon = e.target.value;
+botonBuscar.addEventListener("click",filtrar)
+search.addEventListener("keyup",filtrar)
 
-//   const search = buscarPoke(buscarPokemon, arrayPokemon);
-//   mostrarPokemon(search);
-// });
 
+// Boton subir
+
+const buttonUp = document.getElementById("button-up")
+
+buttonUp.addEventListener("click",scrollUp)
+function scrollUp(){
+  let currentScroll = document.documentElement.scrollTop;
+  if(currentScroll>0){
+    window.requestAnimationFrame(scrollUp);
+    window.scrollTo(0,currentScroll-(currentScroll/15));
+  }
+}
+
+window.onscroll = ()=>{
+  
+  let scroll = document.documentElement.scrollTop;
+
+  if(scroll>600){
+    buttonUp.style.transform = "scale(1)";
+  }
+  else if(scroll<500){
+    buttonUp.style.transform = "scale(0)";
+  }
+}
 mostrarPokemon(arrayPokemon);
