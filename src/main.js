@@ -32,9 +32,15 @@ let arrayCambiante = "";
 
 
 //PASAR DE INICIO AL POKEDEX
+<<<<<<< HEAD
 
 const verPokedex = document.getElementById('verPokedex');
 
+=======
+
+const verPokedex = document.getElementById('verPokedex');
+
+>>>>>>> 79dbddd8e9f9465ee0da5910ed3e8a3c0f0e097e
 verPokedex.addEventListener("click",()=>{
   document.querySelector("#welcome").style.display="none";
   document.querySelector("#pokedex").style.display="block";
@@ -183,7 +189,10 @@ function mostrarPokemon(array) {
       button1.addEventListener("click",()=>{
         vista2.style.display="none";
         vista1.style.display="block";
+<<<<<<< HEAD
         vista3.style.display="none";
+=======
+>>>>>>> 79dbddd8e9f9465ee0da5910ed3e8a3c0f0e097e
         button1.className = "active";
         button2.className="";
         button3.className="";
@@ -200,7 +209,10 @@ function mostrarPokemon(array) {
       button2.addEventListener("click",()=>{
         vista2.style.display="block";
         vista1.style.display="none";
+<<<<<<< HEAD
         vista3.style.display="none";
+=======
+>>>>>>> 79dbddd8e9f9465ee0da5910ed3e8a3c0f0e097e
         button1.className="";
         button3.className="";
         button2.className = "active";
@@ -211,6 +223,7 @@ function mostrarPokemon(array) {
       button3.type = "button";
       button3.classList.add("btn");
       button3.textContent = "Moves";
+      
 
 
       //crear Vista 1
@@ -695,6 +708,7 @@ search.addEventListener("keyup",filtrar)
 
 
 // Boton subir
+<<<<<<< HEAD
 
 const buttonUp = document.getElementById("button-up")
 
@@ -707,6 +721,20 @@ function scrollUp(){
   }
 }
 
+=======
+
+const buttonUp = document.getElementById("button-up")
+
+buttonUp.addEventListener("click",scrollUp)
+function scrollUp(){
+  let currentScroll = document.documentElement.scrollTop;
+  if(currentScroll>0){
+    window.requestAnimationFrame(scrollUp);
+    window.scrollTo(0,currentScroll-(currentScroll/15));
+  }
+}
+
+>>>>>>> 79dbddd8e9f9465ee0da5910ed3e8a3c0f0e097e
 window.onscroll = ()=>{
   
   let scroll = document.documentElement.scrollTop;
