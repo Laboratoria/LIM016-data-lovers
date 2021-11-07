@@ -33,6 +33,7 @@ let arrayCambiante = "";
 
 
 
+
 //funcion que muestra los pokemones
 
 function mostrarPokemon(array) {
@@ -131,7 +132,7 @@ function mostrarPokemon(array) {
       //contenedor de la tarjeta pokemon
       const modalContainer = document.createElement("div");
       modalContainer.classList.add("modal-container");
-      
+
       //modalContainer.style.display="block";
       const cardInfo = document.createElement("div");
       cardInfo.classList.add("cardInfo");
@@ -175,7 +176,7 @@ function mostrarPokemon(array) {
       button1.addEventListener("click",()=>{
         vista2.style.display="none";
         vista1.style.display="block";
-        
+
       })
 
 
@@ -224,10 +225,45 @@ function mostrarPokemon(array) {
       const height = document.createElement("div");
       height.innerHTML = array[i].size.height;
 
+      //CREANDO DIV DE CARAMELOS POKEMON
+      const candyContainerPadre = document.createElement("div");
+      candyContainerPadre.classList.add("candyContainerPadre");
+
+      const palabraEvolucion = document.createElement("div");
+      palabraEvolucion.classList.add("palabraEvolucion");
+      palabraEvolucion.innerHTML = "Next evolution";
+
+      const candyContainer = document.createElement("div");
+      candyContainer.classList.add("candyContainer");
+
+      const imgCandy = document.createElement("img");
+      imgCandy.src = "img/caramelos.png"
+
+
+      let caramelos = ""
+
+      let evolutionProperty = Object.keys(obj)
+
+      if(evolutionProperty[1]=="next-evolution"){
+        caramelos = obj["next-evolution"][0]["candy-cost"]
+      }
+      else{
+        candyContainerPadre.style.display = "none"
+      }
+
+      const candy = document.createElement("p");
+      candy.innerHTML = caramelos
+
+      candyContainer.appendChild(imgCandy);
+      candyContainer.appendChild(candy);
+      candyContainerPadre.appendChild(palabraEvolucion);
+      candyContainerPadre.appendChild(candyContainer);
+      
+
       //................div de las evoluciones.....
       const divTotalEvoluciones = document.createElement("div");
       divTotalEvoluciones.classList.add("divTotal");
-      
+
       //VISTA 2
       const vista2 = document.createElement("div");
       vista1.classList.add("vista2");
@@ -235,10 +271,10 @@ function mostrarPokemon(array) {
       vista2.style.display="none"
 
       //-----------contenedor de cada habilidad----------
-      
+
       const arrayStats = array[i].stats
       console.log(arrayStats)
-      
+
       for(const property in arrayStats){
         const prueba = document.createElement("div");
         prueba.classList.add("prueba");
@@ -259,7 +295,7 @@ function mostrarPokemon(array) {
           let dataArray = new Array;
           for(const i in arrayPokemon){
           dataArray.push(arrayPokemon[i].stats["max-hp"]);
-          } 
+          }
           //console.log(dataArray)
           valorAlto = Math.max(...dataArray);
           console.log(valorAlto)
@@ -268,7 +304,7 @@ function mostrarPokemon(array) {
           let dataArray = new Array;
           for(const i in arrayPokemon){
           dataArray.push(arrayPokemon[i].stats["base-attack"]);
-          } 
+          }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
           console.log(valorAlto)
@@ -277,7 +313,7 @@ function mostrarPokemon(array) {
           let dataArray = new Array;
           for(const i in arrayPokemon){
           dataArray.push(arrayPokemon[i].stats["max-cp"]);
-          } 
+          }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
           console.log(valorAlto)
@@ -286,7 +322,7 @@ function mostrarPokemon(array) {
           let dataArray = new Array;
           for(const i in arrayPokemon){
           dataArray.push(arrayPokemon[i].stats["base-defense"]);
-          } 
+          }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
           console.log(valorAlto)
@@ -295,12 +331,12 @@ function mostrarPokemon(array) {
           let dataArray = new Array;
           for(const i in arrayPokemon){
           dataArray.push(arrayPokemon[i].stats["base-stamina"]);
-          } 
+          }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
           console.log(valorAlto)
         }
-        
+
 
         let porcentaje = ((numStats/valorAlto) *100).toFixed(2)
 
@@ -315,13 +351,13 @@ function mostrarPokemon(array) {
         prueba.appendChild(barra);
         prueba.appendChild(valorStat);
         vista2.appendChild(prueba)
-        
+
 
         // console.log(nameStats)
         // console.log(stringStats)
         // console.log(typeof(nombreStats))
       }
-        
+
       // });
       // const statsPokemon = document.createElement("div");
       // statsPokemon.classList.add("statsPokemon");
@@ -346,6 +382,7 @@ function mostrarPokemon(array) {
       containerVista.appendChild(vista2);
       vista1.appendChild(description_box);
       vista1.appendChild(features);
+      vista1.appendChild(candyContainerPadre);
       vista1.appendChild(divTotalEvoluciones);
       cardInfo.appendChild(btnCerrar);
       cardInfo.appendChild(containerImg);
