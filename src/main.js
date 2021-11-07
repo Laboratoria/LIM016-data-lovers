@@ -81,22 +81,24 @@ function mostrarPokemon(array) {
     //evoluciones
     let obj = array[i].evolution;
 
-    let evolucionesPokemones = [];
+    const nombrePrev = "Pre Evolutions";
+    const nombreNext = "Next Evolutions";
+
+    let nextEvolciones = [];
+    let prevEvoluciones = [];
     if (obj["next-evolution"] != null) {
       for (let a = 0; a < obj["next-evolution"].length; a++) {
         let next1 = document.createElement("p");
         next1.innerHTML = `Next-evolution ${obj["next-evolution"][a].name}`;
         let nombrePoke = obj["next-evolution"][a].name;
-        evolucionesPokemones.push(nombrePoke);
+        nextEvolciones.push(nombrePoke);
         // evolucion.appendChild(next1);
       }
 
       if (obj["next-evolution"][0]["next-evolution"]) {
         let next2 = document.createElement("p");
         next2.innerHTML = `Next-evolution ${obj["next-evolution"][0]["next-evolution"][0].name}`;
-        evolucionesPokemones.push(
-          obj["next-evolution"][0]["next-evolution"][0].name
-        );
+        nextEvolciones.push(obj["next-evolution"][0]["next-evolution"][0].name);
         // evolucion.appendChild(next2);
       }
     }
@@ -105,13 +107,13 @@ function mostrarPokemon(array) {
       let prev1 = document.createElement("p");
       prev1.innerHTML = `Pre-evolution ${obj["prev-evolution"][0].name}`;
       // evolucion.appendChild(prev1);
-      evolucionesPokemones.push(obj["prev-evolution"][0].name);
+      prevEvoluciones.push(obj["prev-evolution"][0].name);
 
       if (obj["prev-evolution"][0]["prev-evolution"]) {
         let prev2 = document.createElement("p");
         prev2.innerHTML = `Pre-evolution  ${obj["prev-evolution"][0]["prev-evolution"][0].name}`;
         // evolucion.appendChild(prev2);
-        evolucionesPokemones.push(
+        prevEvoluciones.push(
           obj["prev-evolution"][0]["prev-evolution"][0].name
         );
       }
@@ -131,7 +133,7 @@ function mostrarPokemon(array) {
       //modalContainer.style.display="block";
       const cardInfo = document.createElement("div");
       cardInfo.classList.add("cardInfo");
-      cardInfo.setAttribute(`id`, `${array[i].num}`);
+      cardInfo.setAttribute(`value`, `${array[i].num}`);
 
       //boton de cerrar tarjeta de informacion
       const btnCerrar = document.createElement("button");
@@ -184,7 +186,6 @@ function mostrarPokemon(array) {
         vista2.style.display = "block";
         vista1.style.display = "none";
         vista3.style.display = "none";
-
       });
 
       //------------btn3-------------------------------
@@ -220,6 +221,38 @@ function mostrarPokemon(array) {
       //............agregar tamaño--------------
       const height = document.createElement("div");
       height.innerHTML = array[i].size.height;
+
+      //CREANDO DIV DE CARAMELOS POKEMON
+      const candyContainerPadre = document.createElement("div");
+      candyContainerPadre.classList.add("candyContainerPadre");
+
+      const palabraEvolucion = document.createElement("div");
+      palabraEvolucion.classList.add("palabraEvolucion");
+      palabraEvolucion.innerHTML = "Next evolution";
+
+      const candyContainer = document.createElement("div");
+      candyContainer.classList.add("candyContainer");
+
+      const imgCandy = document.createElement("img");
+      imgCandy.src = "img/caramelos.png";
+
+      let caramelos = "";
+
+      let evolutionProperty = Object.keys(obj);
+
+      if (evolutionProperty[1] == "next-evolution") {
+        caramelos = obj["next-evolution"][0]["candy-cost"];
+      } else {
+        candyContainerPadre.style.display = "none";
+      }
+
+      const candy = document.createElement("p");
+      candy.innerHTML = caramelos;
+
+      candyContainer.appendChild(imgCandy);
+      candyContainer.appendChild(candy);
+      candyContainerPadre.appendChild(palabraEvolucion);
+      candyContainerPadre.appendChild(candyContainer);
 
       //................div de las evoluciones.....
       const divTotalEvoluciones = document.createElement("div");
@@ -317,142 +350,165 @@ function mostrarPokemon(array) {
         // console.log(typeof(nombreStats))
       }
 
-
       //VISTA 3
       const vista3 = document.createElement("div");
-      vista3.style.display="none"
+      const tabla1 = document.createElement("div");
+      const tabla2 = document.createElement("div");
+      vista3.style.display = "none";
       vista1.classList.add("vista3");
 
       button3.addEventListener("click", () => {
         vista3.style.display = "block";
         vista2.style.display = "none";
         vista1.style.display = "none";
+      });
 
-        })
+      let quickName = array[i]["quick-move"];
+      let specialName = array[i]["special-attack"];
 
-        let quickName=array[i]["quick-move"]
-        let specialName=array[i]["special-attack"]
+      const description = document.createElement("p");
+      description.innerHTML = `BD:Base Damage<br>
+        MD:Moves Duration(seg)`;
 
+      //quick-moves
+      let tituloTabla1 = document.createElement("h3");
+      tituloTabla1.innerHTML = `Quick Move`;
 
-        //quick-moves
-        let table = document.createElement("table");
-        let thead = document.createElement("thead");
-        let tbody = document.createElement("tbody");
+      let table = document.createElement("table");
+      let thead = document.createElement("thead");
+      let tbody = document.createElement("tbody");
 
-        table.appendChild(thead);
-        table.appendChild(tbody);
-        vista3.appendChild(table);
+      table.appendChild(thead);
+      table.appendChild(tbody);
+      vista3.appendChild(tituloTabla1);
+      tabla1.appendChild(table), vista3.appendChild(tabla1);
 
+      let titulo1 = document.createElement("tr");
+      let heading_1 = document.createElement("th");
+      heading_1.classList.add("nameTable");
+      heading_1.innerHTML = "Name";
 
+      let heading_2 = document.createElement("th");
+      heading_2.innerHTML = "Move";
+      heading_2.classList.add("moveTable");
 
+      let heading_3 = document.createElement("th");
+      heading_3.innerHTML = "BD";
+      heading_3.classList.add("bdTable");
 
-        let titulo1 = document.createElement("tr");
-        let heading_1 = document.createElement("th");
-        heading_1.innerHTML = "Name";
-        let heading_2 = document.createElement("th");
-        heading_2.innerHTML = "Move";
-        let heading_3 = document.createElement("th");
-        heading_3.innerHTML = "base-damage";
-        let heading_4 = document.createElement("th");
-        heading_4.innerHTML = "energy";
-        let heading_5 = document.createElement("th");
-        heading_5.innerHTML = "move-duration-seg";
+      let heading_4 = document.createElement("th");
+      heading_4.innerHTML = "Energy";
+      heading_4.classList.add("energyTable");
 
-        titulo1.appendChild(heading_1);
-        titulo1.appendChild(heading_2);
-        titulo1.appendChild(heading_3);
-        titulo1.appendChild(heading_4);
-        titulo1.appendChild(heading_5);
-        thead.appendChild(titulo1);
+      let heading_5 = document.createElement("th");
+      heading_5.innerHTML = "MD";
+      heading_5.classList.add("mdTable");
 
-        for(let a=0;a<quickName.length;a++){
-          // Creating and adding data to second row of the table
-          let row_2 = document.createElement("tr");
+      titulo1.appendChild(heading_1);
+      titulo1.appendChild(heading_2);
+      titulo1.appendChild(heading_3);
+      titulo1.appendChild(heading_4);
+      titulo1.appendChild(heading_5);
+      thead.appendChild(titulo1);
 
-          let row_2_data_1 = document.createElement("td");
-          row_2_data_1.innerHTML = `${quickName[a].name}`;
+      for (let a = 0; a < quickName.length; a++) {
+        // Creating and adding data to second row of the table
+        let row_2 = document.createElement("tr");
 
-          let row_2_data_2 = document.createElement("td");
-          row_2_data_2.innerHTML = `${quickName[a].type}`;
+        let row_2_data_1 = document.createElement("td");
+        row_2_data_1.innerHTML = `${quickName[a].name}`;
 
-          let row_2_data_3 = document.createElement("td");
-          row_2_data_3.innerHTML = `${quickName[a]["base-damage"]}`;
+        let row_2_data_2 = document.createElement("td");
+        row_2_data_2.innerHTML = `${quickName[a].type}`;
+        row_2_data_2.classList.add(`${quickName[a].type}`);
 
-          let row_2_data_4 = document.createElement("td");
-          row_2_data_4.innerHTML = `${quickName[a].energy}`;
+        let row_2_data_3 = document.createElement("td");
+        row_2_data_3.innerHTML = `${quickName[a]["base-damage"]}`;
 
-          let row_2_data_5 = document.createElement("td");
-          row_2_data_5.innerHTML = `${quickName[a]["move-duration-seg"]}`;
+        let row_2_data_4 = document.createElement("td");
+        row_2_data_4.innerHTML = `${quickName[a].energy}`;
 
-          row_2.appendChild(row_2_data_1);
-          row_2.appendChild(row_2_data_2);
-          row_2.appendChild(row_2_data_3);
-          row_2.appendChild(row_2_data_4);
-          row_2.appendChild(row_2_data_5);
-          tbody.appendChild(row_2);
-        }
+        let row_2_data_5 = document.createElement("td");
+        row_2_data_5.innerHTML = `${quickName[a]["move-duration-seg"]}`;
 
+        row_2.appendChild(row_2_data_1);
+        row_2.appendChild(row_2_data_2);
+        row_2.appendChild(row_2_data_3);
+        row_2.appendChild(row_2_data_4);
+        row_2.appendChild(row_2_data_5);
+        tbody.appendChild(row_2);
+      }
 
+      //special-attack
+      let tituloTabla2 = document.createElement("h3");
+      tituloTabla2.innerHTML = `Special Attack`;
 
-          //special-attack
+      let table2 = document.createElement("table");
+      let thead2 = document.createElement("thead");
+      let tbody2 = document.createElement("tbody");
 
+      table2.appendChild(thead2);
+      table2.appendChild(tbody2);
+      vista3.appendChild(tituloTabla2);
+      tabla2.appendChild(table2);
+      vista3.appendChild(tabla2);
+      vista3.appendChild(description);
 
-          let table2 = document.createElement("table");
-          let thead2 = document.createElement("thead");
-          let tbody2 = document.createElement("tbody");
+      let row_3 = document.createElement("tr");
+      let heading1 = document.createElement("th");
+      heading1.classList.add("nameTable");
+      heading1.innerHTML = "Name";
 
-          table2.appendChild(thead2);
-          table2.appendChild(tbody2);
-          vista3.appendChild(table2);
+      let heading2 = document.createElement("th");
+      heading2.innerHTML = "Move";
+      heading2.classList.add("moveTable");
 
-          let row_3 = document.createElement("tr");
-          let heading1 = document.createElement("th");
-          heading1.innerHTML = "Name";
-          let heading2 = document.createElement("th");
-          heading2.innerHTML = "Move";
-          let heading3 = document.createElement("th");
-          heading3.innerHTML = "base-damage";
-          let heading4 = document.createElement("th");
-          heading4.innerHTML = "energy";
-          let heading5 = document.createElement("th");
-          heading5.innerHTML = "move-duration-seg";
+      let heading3 = document.createElement("th");
+      heading3.innerHTML = "BD";
+      heading3.classList.add("bdTable");
 
-          row_3.appendChild(heading1);
-          row_3.appendChild(heading2);
-          row_3.appendChild(heading3);
-          row_3.appendChild(heading4);
-          row_3.appendChild(heading5);
-          thead2.appendChild(row_3);
+      let heading4 = document.createElement("th");
+      heading4.innerHTML = "Energy";
+      heading4.classList.add("energyTable");
 
-          for(let a=0;a<specialName.length;a++){
-            // Creating and adding data to second row of the table
-            let row2 = document.createElement("tr");
+      let heading5 = document.createElement("th");
+      heading5.innerHTML = "MD";
+      heading5.classList.add("mdTable");
 
-            let row2_data_1 = document.createElement("td");
-            row2_data_1.innerHTML = `${specialName[a].name}`;
+      row_3.appendChild(heading1);
+      row_3.appendChild(heading2);
+      row_3.appendChild(heading3);
+      row_3.appendChild(heading4);
+      row_3.appendChild(heading5);
+      thead2.appendChild(row_3);
 
-            let row2_data_2 = document.createElement("td");
-            row2_data_2.innerHTML = `${specialName[a].type}`;
+      for (let a = 0; a < specialName.length; a++) {
+        // Creating and adding data to second row of the table
+        let row2 = document.createElement("tr");
 
-            let row2_data_3 = document.createElement("td");
-            row2_data_3.innerHTML = `${specialName[a]["base-damage"]}`;
+        let row2_data_1 = document.createElement("td");
+        row2_data_1.innerHTML = `${specialName[a].name}`;
 
-            let row2_data_4 = document.createElement("td");
-            row2_data_4.innerHTML = `${specialName[a].energy}`;
+        let row2_data_2 = document.createElement("td");
+        row2_data_2.innerHTML = `${specialName[a].type}`;
+        row2_data_2.classList.add(`${specialName[a].type}`);
 
-            let row2_data_5 = document.createElement("td");
-            row2_data_5.innerHTML = `${specialName[a]["move-duration-seg"]}`;
+        let row2_data_3 = document.createElement("td");
+        row2_data_3.innerHTML = `${specialName[a]["base-damage"]}`;
 
-            row2.appendChild(row2_data_1);
-            row2.appendChild(row2_data_2);
-            row2.appendChild(row2_data_3);
-            row2.appendChild(row2_data_4);
-            row2.appendChild(row2_data_5);
-            tbody2.appendChild(row2);
+        let row2_data_4 = document.createElement("td");
+        row2_data_4.innerHTML = `${specialName[a].energy}`;
 
-  }
+        let row2_data_5 = document.createElement("td");
+        row2_data_5.innerHTML = `${specialName[a]["move-duration-seg"]}`;
 
-
+        row2.appendChild(row2_data_1);
+        row2.appendChild(row2_data_2);
+        row2.appendChild(row2_data_3);
+        row2.appendChild(row2_data_4);
+        row2.appendChild(row2_data_5);
+        tbody2.appendChild(row2);
+      }
 
       features.appendChild(weight);
       features.appendChild(typePokemon);
@@ -470,13 +526,15 @@ function mostrarPokemon(array) {
       containerVista.appendChild(vista3);
       vista1.appendChild(description_box);
       vista1.appendChild(features);
+      vista1.appendChild(candyContainerPadre);
       vista1.appendChild(divTotalEvoluciones);
       cardInfo.appendChild(btnCerrar);
       cardInfo.appendChild(containerImg);
       cardInfo.appendChild(containerVista);
       container.appendChild(modalContainer);
       container.appendChild(cardInfo);
-      evoluciones(evolucionesPokemones, divTotalEvoluciones);
+      evoluciones(prevEvoluciones, divTotalEvoluciones, nombrePrev );
+      evoluciones(nextEvolciones, divTotalEvoluciones, nombreNext);
     });
 
     //Items que se agregan al container y card
@@ -495,9 +553,25 @@ function mostrarPokemon(array) {
   }
 }
 
-function evoluciones(array, divTotalEvoluciones) {
+function evoluciones(array, divTotalEvoluciones, nombre) {
+
+  if(array.length>0){
+  const divGrupoEvol = document.createElement("div");
+  divGrupoEvol.classList.add('grupo')
+  const nombreEvol = document.createElement("p");
+
+  nombreEvol.innerHTML = nombre;
+
+  const divGrupoPok=document.createElement('div')
+  divGrupoPok.classList.add('solo')
+
+  divGrupoEvol.appendChild(nombreEvol);
+  divGrupoEvol.appendChild(divGrupoPok)
+
+
   array.forEach((element) => {
     for (let i = 0; i < arrayPokemon.length; i++) {
+
       if (arrayPokemon[i].name === element) {
         const divEvol = document.createElement("div");
         divEvol.classList.add("evol");
@@ -512,10 +586,17 @@ function evoluciones(array, divTotalEvoluciones) {
 
         divEvol.appendChild(imgEvol);
         divEvol.appendChild(nombreEvol);
-        divTotalEvoluciones.appendChild(divEvol);
+        divGrupoPok.appendChild(divEvol);
       }
     }
-  });
+  })
+  divTotalEvoluciones.appendChild(divGrupoEvol);
+}
+
+else{
+
+divTotalEvoluciones.innerHTML="Pokemon Legendary"
+}
 }
 
 //region pokemon
