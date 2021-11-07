@@ -6,9 +6,8 @@ import {
   rarezaPokemon,
   ordenAlfaNumerico,
   typePokemones,
-  regionFuncion
+  regionFuncion,
 } from "./data.js";
-
 
 //const modalContainer = document.querySelector(".modal-container");
 const container = document.querySelector(".pokemon-container");
@@ -47,7 +46,7 @@ function mostrarPokemon(array) {
   arrayCambiante = array;
 
   const numero = document.getElementById("parrafo");
-  numero.classList.add("totalPokemons")
+  numero.classList.add("totalPokemons");
   numero.innerHTML = `<p> Total :${array.length}</p>`;
 
   for (let i = 0; i < array.length; i++) {
@@ -92,22 +91,24 @@ function mostrarPokemon(array) {
     //evoluciones
     let obj = array[i].evolution;
 
-    let evolucionesPokemones = [];
+    const nombrePrev = "Pre Evolutions";
+    const nombreNext = "Next Evolutions";
+
+    let nextEvolciones = [];
+    let prevEvoluciones = [];
     if (obj["next-evolution"] != null) {
       for (let a = 0; a < obj["next-evolution"].length; a++) {
         let next1 = document.createElement("p");
         next1.innerHTML = `Next-evolution ${obj["next-evolution"][a].name}`;
         let nombrePoke = obj["next-evolution"][a].name;
-        evolucionesPokemones.push(nombrePoke);
+        nextEvolciones.push(nombrePoke);
         // evolucion.appendChild(next1);
       }
 
       if (obj["next-evolution"][0]["next-evolution"]) {
         let next2 = document.createElement("p");
         next2.innerHTML = `Next-evolution ${obj["next-evolution"][0]["next-evolution"][0].name}`;
-        evolucionesPokemones.push(
-          obj["next-evolution"][0]["next-evolution"][0].name
-        );
+        nextEvolciones.push(obj["next-evolution"][0]["next-evolution"][0].name);
         // evolucion.appendChild(next2);
       }
     }
@@ -116,13 +117,13 @@ function mostrarPokemon(array) {
       let prev1 = document.createElement("p");
       prev1.innerHTML = `Pre-evolution ${obj["prev-evolution"][0].name}`;
       // evolucion.appendChild(prev1);
-      evolucionesPokemones.push(obj["prev-evolution"][0].name);
+      prevEvoluciones.push(obj["prev-evolution"][0].name);
 
       if (obj["prev-evolution"][0]["prev-evolution"]) {
         let prev2 = document.createElement("p");
         prev2.innerHTML = `Pre-evolution  ${obj["prev-evolution"][0]["prev-evolution"][0].name}`;
         // evolucion.appendChild(prev2);
-        evolucionesPokemones.push(
+        prevEvoluciones.push(
           obj["prev-evolution"][0]["prev-evolution"][0].name
         );
       }
@@ -139,11 +140,10 @@ function mostrarPokemon(array) {
       //contenedor de la tarjeta pokemon
       const modalContainer = document.createElement("div");
       modalContainer.classList.add("modal-container");
-
       //modalContainer.style.display="block";
       const cardInfo = document.createElement("div");
       cardInfo.classList.add("cardInfo");
-      cardInfo.setAttribute(`id`,`${array[i].num}`);
+      cardInfo.setAttribute(`value`, `${array[i].num}`);
 
       //boton de cerrar tarjeta de informacion
       const btnCerrar = document.createElement("button");
@@ -153,7 +153,7 @@ function mostrarPokemon(array) {
 
       btnCerrar.addEventListener("click", () => {
         cardInfo.style.display = "none";
-        modalContainer.style.display="none";
+        modalContainer.style.display = "none";
       });
 
       //Crear imagen del pokemon
@@ -183,6 +183,7 @@ function mostrarPokemon(array) {
       button1.addEventListener("click",()=>{
         vista2.style.display="none";
         vista1.style.display="block";
+        vista3.style.display="none";
         button1.className = "active";
         button2.className="";
         button3.className="";
@@ -199,6 +200,7 @@ function mostrarPokemon(array) {
       button2.addEventListener("click",()=>{
         vista2.style.display="block";
         vista1.style.display="none";
+        vista3.style.display="none";
         button1.className="";
         button3.className="";
         button2.className = "active";
@@ -209,7 +211,7 @@ function mostrarPokemon(array) {
       button3.type = "button";
       button3.classList.add("btn");
       button3.textContent = "Moves";
-      
+
 
       //crear Vista 1
       const vista1 = document.createElement("div");
@@ -251,28 +253,25 @@ function mostrarPokemon(array) {
       candyContainer.classList.add("candyContainer");
 
       const imgCandy = document.createElement("img");
-      imgCandy.src = "img/caramelos.png"
+      imgCandy.src = "img/caramelos.png";
 
+      let caramelos = "";
 
-      let caramelos = ""
+      let evolutionProperty = Object.keys(obj);
 
-      let evolutionProperty = Object.keys(obj)
-
-      if(evolutionProperty[1]=="next-evolution"){
-        caramelos = obj["next-evolution"][0]["candy-cost"]
-      }
-      else{
-        candyContainerPadre.style.display = "none"
+      if (evolutionProperty[1] == "next-evolution") {
+        caramelos = obj["next-evolution"][0]["candy-cost"];
+      } else {
+        candyContainerPadre.style.display = "none";
       }
 
       const candy = document.createElement("p");
-      candy.innerHTML = caramelos
+      candy.innerHTML = caramelos;
 
       candyContainer.appendChild(imgCandy);
       candyContainer.appendChild(candy);
       candyContainerPadre.appendChild(palabraEvolucion);
       candyContainerPadre.appendChild(candyContainer);
-      
 
       //................div de las evoluciones.....
       const divTotalEvoluciones = document.createElement("div");
@@ -282,14 +281,14 @@ function mostrarPokemon(array) {
       const vista2 = document.createElement("div");
       vista1.classList.add("vista2");
 
-      vista2.style.display="none"
+      vista2.style.display = "none";
 
       //-----------contenedor de cada habilidad----------
 
-      const arrayStats = array[i].stats
-      console.log(arrayStats)
+      const arrayStats = array[i].stats;
+      console.log(arrayStats);
 
-      for(const property in arrayStats){
+      for (const property in arrayStats) {
         const prueba = document.createElement("div");
         prueba.classList.add("prueba");
 
@@ -299,87 +298,239 @@ function mostrarPokemon(array) {
         barra.classList.add("barra");
         const progreso = document.createElement("div");
         progreso.classList.add("progreso");
-        const nombreStats = property
+        const nombreStats = property;
         //progreso.style("--w:")
         const stringStats = parseInt(arrayStats[property]);
-        const numStats = stringStats
+        const numStats = stringStats;
         let valorAlto = "";
 
-        if(nombreStats=="max-hp"){
-          let dataArray = new Array;
-          for(const i in arrayPokemon){
-          dataArray.push(arrayPokemon[i].stats["max-hp"]);
+        if (nombreStats == "max-hp") {
+          let dataArray = new Array();
+          for (const i in arrayPokemon) {
+            dataArray.push(arrayPokemon[i].stats["max-hp"]);
           }
           //console.log(dataArray)
           valorAlto = Math.max(...dataArray);
-          console.log(valorAlto)
+          console.log(valorAlto);
         }
-        if(nombreStats=="base-attack"){
-          let dataArray = new Array;
-          for(const i in arrayPokemon){
-          dataArray.push(arrayPokemon[i].stats["base-attack"]);
+        if (nombreStats == "base-attack") {
+          let dataArray = new Array();
+          for (const i in arrayPokemon) {
+            dataArray.push(arrayPokemon[i].stats["base-attack"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
-          console.log(valorAlto)
+          console.log(valorAlto);
         }
-        if(nombreStats=="max-cp"){
-          let dataArray = new Array;
-          for(const i in arrayPokemon){
-          dataArray.push(arrayPokemon[i].stats["max-cp"]);
+        if (nombreStats == "max-cp") {
+          let dataArray = new Array();
+          for (const i in arrayPokemon) {
+            dataArray.push(arrayPokemon[i].stats["max-cp"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
-          console.log(valorAlto)
+          console.log(valorAlto);
         }
-        if(nombreStats=="base-defense"){
-          let dataArray = new Array;
-          for(const i in arrayPokemon){
-          dataArray.push(arrayPokemon[i].stats["base-defense"]);
+        if (nombreStats == "base-defense") {
+          let dataArray = new Array();
+          for (const i in arrayPokemon) {
+            dataArray.push(arrayPokemon[i].stats["base-defense"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
-          console.log(valorAlto)
+          console.log(valorAlto);
         }
-        if(nombreStats=="base-stamina"){
-          let dataArray = new Array;
-          for(const i in arrayPokemon){
-          dataArray.push(arrayPokemon[i].stats["base-stamina"]);
+        if (nombreStats == "base-stamina") {
+          let dataArray = new Array();
+          for (const i in arrayPokemon) {
+            dataArray.push(arrayPokemon[i].stats["base-stamina"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
-          console.log(valorAlto)
+          console.log(valorAlto);
         }
 
-
-        let porcentaje = ((numStats/valorAlto) *100).toFixed(2)
+        let porcentaje = ((numStats / valorAlto) * 100).toFixed(2);
 
         progreso.style.setProperty(`--w`, `${porcentaje}%`);
-        progreso.setAttribute(`id`,`${property}`);
+        progreso.setAttribute(`id`, `${property}`);
 
         const valorStat = document.createElement("p");
-        valorStat.innerHTML= stringStats
+        valorStat.innerHTML = stringStats;
 
         barra.appendChild(progreso);
         prueba.appendChild(nameStats);
         prueba.appendChild(barra);
         prueba.appendChild(valorStat);
-        vista2.appendChild(prueba)
-
+        vista2.appendChild(prueba);
 
         // console.log(nameStats)
         // console.log(stringStats)
         // console.log(typeof(nombreStats))
       }
 
-      // });
-      // const statsPokemon = document.createElement("div");
-      // statsPokemon.classList.add("statsPokemon");
+      //VISTA 3
+      const vista3 = document.createElement("div");
+      const tabla1 = document.createElement("div");
+      const tabla2 = document.createElement("div");
+      vista3.style.display = "none";
+      //vista1.classList.add("vista3");
 
-      // const statsName = document.createElement("h");
-      // titulo.innerHTML = array[i];
+      button3.addEventListener("click", () => {
+        vista3.style.display = "block";
+        vista2.style.display = "none";
+        vista1.style.display = "none";
+        button1.className="";
+        button2.className="";
+        button3.className = "active";
+      });
 
-      //Items que se agregaran a la tarjeta de informacion del pokemon
+      let quickName = array[i]["quick-move"];
+      let specialName = array[i]["special-attack"];
+
+      const description = document.createElement("p");
+      description.innerHTML = `BD:Base Damage<br>
+        MD:Moves Duration(seg)`;
+
+      //quick-moves
+      let tituloTabla1 = document.createElement("h3");
+      tituloTabla1.innerHTML = `Quick Move`;
+
+      let table = document.createElement("table");
+      let thead = document.createElement("thead");
+      let tbody = document.createElement("tbody");
+
+      table.appendChild(thead);
+      table.appendChild(tbody);
+      vista3.appendChild(tituloTabla1);
+      tabla1.appendChild(table), vista3.appendChild(tabla1);
+
+      let titulo1 = document.createElement("tr");
+      let heading_1 = document.createElement("th");
+      heading_1.classList.add("nameTable");
+      heading_1.innerHTML = "Name";
+
+      let heading_2 = document.createElement("th");
+      heading_2.innerHTML = "Move";
+      heading_2.classList.add("moveTable");
+
+      let heading_3 = document.createElement("th");
+      heading_3.innerHTML = "BD";
+      heading_3.classList.add("bdTable");
+
+      let heading_4 = document.createElement("th");
+      heading_4.innerHTML = "Energy";
+      heading_4.classList.add("energyTable");
+
+      let heading_5 = document.createElement("th");
+      heading_5.innerHTML = "MD";
+      heading_5.classList.add("mdTable");
+
+      titulo1.appendChild(heading_1);
+      titulo1.appendChild(heading_2);
+      titulo1.appendChild(heading_3);
+      titulo1.appendChild(heading_4);
+      titulo1.appendChild(heading_5);
+      thead.appendChild(titulo1);
+
+      for (let a = 0; a < quickName.length; a++) {
+        // Creating and adding data to second row of the table
+        let row_2 = document.createElement("tr");
+
+        let row_2_data_1 = document.createElement("td");
+        row_2_data_1.innerHTML = `${quickName[a].name}`;
+
+        let row_2_data_2 = document.createElement("td");
+        row_2_data_2.innerHTML = `${quickName[a].type}`;
+        row_2_data_2.classList.add(`${quickName[a].type}`);
+
+        let row_2_data_3 = document.createElement("td");
+        row_2_data_3.innerHTML = `${quickName[a]["base-damage"]}`;
+
+        let row_2_data_4 = document.createElement("td");
+        row_2_data_4.innerHTML = `${quickName[a].energy}`;
+
+        let row_2_data_5 = document.createElement("td");
+        row_2_data_5.innerHTML = `${quickName[a]["move-duration-seg"]}`;
+
+        row_2.appendChild(row_2_data_1);
+        row_2.appendChild(row_2_data_2);
+        row_2.appendChild(row_2_data_3);
+        row_2.appendChild(row_2_data_4);
+        row_2.appendChild(row_2_data_5);
+        tbody.appendChild(row_2);
+      }
+
+      //special-attack
+      let tituloTabla2 = document.createElement("h3");
+      tituloTabla2.innerHTML = `Special Attack`;
+
+      let table2 = document.createElement("table");
+      let thead2 = document.createElement("thead");
+      let tbody2 = document.createElement("tbody");
+
+      table2.appendChild(thead2);
+      table2.appendChild(tbody2);
+      vista3.appendChild(tituloTabla2);
+      tabla2.appendChild(table2);
+      vista3.appendChild(tabla2);
+      vista3.appendChild(description);
+
+      let row_3 = document.createElement("tr");
+      let heading1 = document.createElement("th");
+      heading1.classList.add("nameTable");
+      heading1.innerHTML = "Name";
+
+      let heading2 = document.createElement("th");
+      heading2.innerHTML = "Move";
+      heading2.classList.add("moveTable");
+
+      let heading3 = document.createElement("th");
+      heading3.innerHTML = "BD";
+      heading3.classList.add("bdTable");
+
+      let heading4 = document.createElement("th");
+      heading4.innerHTML = "Energy";
+      heading4.classList.add("energyTable");
+
+      let heading5 = document.createElement("th");
+      heading5.innerHTML = "MD";
+      heading5.classList.add("mdTable");
+
+      row_3.appendChild(heading1);
+      row_3.appendChild(heading2);
+      row_3.appendChild(heading3);
+      row_3.appendChild(heading4);
+      row_3.appendChild(heading5);
+      thead2.appendChild(row_3);
+
+      for (let a = 0; a < specialName.length; a++) {
+        // Creating and adding data to second row of the table
+        let row2 = document.createElement("tr");
+
+        let row2_data_1 = document.createElement("td");
+        row2_data_1.innerHTML = `${specialName[a].name}`;
+
+        let row2_data_2 = document.createElement("td");
+        row2_data_2.innerHTML = `${specialName[a].type}`;
+        row2_data_2.classList.add(`${specialName[a].type}`);
+
+        let row2_data_3 = document.createElement("td");
+        row2_data_3.innerHTML = `${specialName[a]["base-damage"]}`;
+
+        let row2_data_4 = document.createElement("td");
+        row2_data_4.innerHTML = `${specialName[a].energy}`;
+
+        let row2_data_5 = document.createElement("td");
+        row2_data_5.innerHTML = `${specialName[a]["move-duration-seg"]}`;
+
+        row2.appendChild(row2_data_1);
+        row2.appendChild(row2_data_2);
+        row2.appendChild(row2_data_3);
+        row2.appendChild(row2_data_4);
+        row2.appendChild(row2_data_5);
+        tbody2.appendChild(row2);
+      }
 
       features.appendChild(weight);
       features.appendChild(typePokemon);
@@ -394,6 +545,7 @@ function mostrarPokemon(array) {
       containerVista.appendChild(navTarjeta);
       containerVista.appendChild(vista1);
       containerVista.appendChild(vista2);
+      containerVista.appendChild(vista3);
       vista1.appendChild(description_box);
       vista1.appendChild(features);
       vista1.appendChild(candyContainerPadre);
@@ -403,11 +555,12 @@ function mostrarPokemon(array) {
       cardInfo.appendChild(containerVista);
       container.appendChild(modalContainer);
       container.appendChild(cardInfo);
-      evoluciones(evolucionesPokemones, divTotalEvoluciones);
+      evoluciones(prevEvoluciones, divTotalEvoluciones, nombrePrev );
+      evoluciones(nextEvolciones, divTotalEvoluciones, nombreNext);
     });
 
     //Items que se agregan al container y card
-   // console.log(evolucionesPokemones);
+    // console.log(evolucionesPokemones);
 
     card.appendChild(spriteContainer);
     card.appendChild(nombreNumero);
@@ -422,9 +575,25 @@ function mostrarPokemon(array) {
   }
 }
 
-function evoluciones(array, divTotalEvoluciones) {
+function evoluciones(array, divTotalEvoluciones, nombre) {
+
+  if(array.length>0){
+  const divGrupoEvol = document.createElement("div");
+  divGrupoEvol.classList.add('grupo')
+  const nombreEvol = document.createElement("p");
+
+  nombreEvol.innerHTML = nombre;
+
+  const divGrupoPok=document.createElement('div')
+  divGrupoPok.classList.add('solo')
+
+  divGrupoEvol.appendChild(nombreEvol);
+  divGrupoEvol.appendChild(divGrupoPok)
+
+
   array.forEach((element) => {
     for (let i = 0; i < arrayPokemon.length; i++) {
+
       if (arrayPokemon[i].name === element) {
         const divEvol = document.createElement("div");
         divEvol.classList.add("evol");
@@ -439,10 +608,17 @@ function evoluciones(array, divTotalEvoluciones) {
 
         divEvol.appendChild(imgEvol);
         divEvol.appendChild(nombreEvol);
-        divTotalEvoluciones.appendChild(divEvol);
+        divGrupoPok.appendChild(divEvol);
       }
     }
-  });
+  })
+  divTotalEvoluciones.appendChild(divGrupoEvol);
+}
+
+else{
+
+divTotalEvoluciones.innerHTML="Pokemon Legendary"
+}
 }
 
 //region pokemon
@@ -450,19 +626,16 @@ region.addEventListener("change", (e) => {
   e.preventDefault();
   container.innerHTML = "";
   const valor = e.target.value;
-  const arrayRegion=regionFuncion(valor, arrayPokemon)
-  mostrarPokemon(arrayRegion)
+  const arrayRegion = regionFuncion(valor, arrayPokemon);
+  mostrarPokemon(arrayRegion);
 });
-
-
-
 
 //tipos de pokemones
 tipos.addEventListener("change", (e) => {
   container.innerHTML = "";
   const tipoPokemon = e.target.value;
-  const arraytipoPoke=typePokemones(tipoPokemon, arrayPokemon);
-  mostrarPokemon(arraytipoPoke)
+  const arraytipoPoke = typePokemones(tipoPokemon, arrayPokemon);
+  mostrarPokemon(arraytipoPoke);
 });
 
 //pokemon rarity
@@ -490,7 +663,6 @@ egg.addEventListener("change", (e) => {
   mostrarPokemon(arrayEgg);
 });
 
-
 //orden alfabetico
 orden.addEventListener("change", (e) => {
   container.innerHTML = "";
@@ -499,26 +671,24 @@ orden.addEventListener("change", (e) => {
   mostrarPokemon(ordenAlfaNum);
 });
 
-
 //buscador de pokemon
 
-const filtrar = ()=>{
+const filtrar = () => {
   // console.log(search.value)
   container.innerHTML = "";
   const texto = search.value.toLowerCase();
-  let array=[]
-  for(let pokemon of arrayPokemon){
-    let namePokemon = pokemon.name
-    let numPokemon = pokemon.num
-    if(namePokemon.indexOf(texto) !== -1){
+  let array = [];
+  for (let pokemon of arrayPokemon) {
+    let namePokemon = pokemon.name;
+    let numPokemon = pokemon.num;
+    if (namePokemon.indexOf(texto) !== -1) {
       array.push(pokemon);
-    }
-    else if(numPokemon.indexOf(texto) !== -1){
+    } else if (numPokemon.indexOf(texto) !== -1) {
       array.push(pokemon);
     }
   }
-  mostrarPokemon(array)
-}
+  mostrarPokemon(array);
+};
 
 botonBuscar.addEventListener("click",filtrar)
 search.addEventListener("keyup",filtrar)

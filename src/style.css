@@ -141,9 +141,22 @@ padding-top: 0;
 
 }
 
+
+
 .divTotal{
 display: flex;
-flex-direction: row;}
+flex-direction: row;
+justify-content: center;}
+
+
+
+/* evoluciones */
+
+.solo{
+  display: flex;
+  flex-direction: row;
+}
+
 
 .evol{
   width: 50%;
@@ -358,7 +371,11 @@ margin-bottom: 0;}
   padding-top: 11%;
   font-weight: bold;
 }
+
+
+
 /*DANDO ESTILO A LA VISTA 2*/
+
 
 .prueba{
   padding: 2% 5%;
@@ -409,6 +426,60 @@ margin-bottom: 0;}
   background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
 }
 
+
+
+/* DANDO ESTILO A VISTA3 */
+
+
+
+/* DANDO ESTILO A LAS TABLAS */
+
+.grass{
+  background: green;
+  color: white;
+}
+
+.normal{
+  background: rgb(221, 184, 19);
+  color: white;
+
+}
+
+.poison{
+  background:violet;
+  color: white;
+}
+.dark{
+  background:black;
+  color: white;
+}
+.electric{
+  background:violet;
+  color: white;
+}
+.water{
+  background:rgb(68, 204, 238);
+  color: white;
+}
+
+.nameTable{
+  width: 30%;
+}
+.moveTable{
+  width: 25%;
+  border-radius: 30px;
+}
+
+.bdTable{
+  width: 10%;
+}
+.energyTable{
+  width: 10%;
+}
+
+.mdTable{
+  width: 10%;
+}
 
 /* DANDO ESTILO A LA BARRA DE BUSCAR*/
 #search{
