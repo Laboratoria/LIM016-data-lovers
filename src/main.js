@@ -16,19 +16,5 @@ import data from './data/ghibli/ghibli.js';
 
 // asyn await  obtener peliculas
 
-const obtenerAnimaciones= async( ) => {
-try {
- const res= await fetch ('./data/ghibli/ghibli.json')
- const data= await res.json()
- const arrayTitle= data.films.map(anim => anim.title)
-     console.log(data.films)
-const arrayFilm= data.films.filter(anim => anim.producer !="Isao Takahata")
-
-console.log(arrayFilm)
-}catch (error){
-    console.log(error)
-}
-}
-
-obtenerAnimaciones();
-
+//async function obtenerAnimaciones() {
+   
