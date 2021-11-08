@@ -2,12 +2,37 @@ import { /*anotherExample,*/rio_teams, rio_sports, timesRepeated} from './data.j
 
 import data from './data/athletes/athletes.js'; //la data del proyecto
 
+let home_click= document.getElementById("home-click");
+home_click.addEventListener("click", (e)=>{
+  e.preventDefault(); 
+  document.getElementById("contaiiner").style.display = "block";
+  document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
+  document.getElementById("countries").style.display = "none";
+});
+
+let sports_click= document.getElementById("sports-click");
+sports_click.addEventListener("click", (e)=>{
+  e.preventDefault(); 
+  document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("sports").style.display = "block";
+  document.getElementById("athletes").style.display = "none";
+});
 
 let teams_click= document.getElementById("teams-click");
 teams_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
   document.getElementById("countries").style.display = "block";
+  document.getElementById("sports").style.display = "none";
+});
+
+let athletes_click= document.getElementById("athletes-click");
+athletes_click.addEventListener("click", (e)=>{
+  e.preventDefault(); 
+  document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("athletes").style.display = "block";
+  document.getElementById("countries").style.display = "none";
 });
 
 
