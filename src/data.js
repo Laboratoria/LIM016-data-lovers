@@ -17,7 +17,7 @@ export const rio_sports = (data) =>{
 
 export const timesRepeated = arr =>{
   return arr.reduce((acc, item) =>{
-    if(!acc[item]){
+    if(!acc[item]){  
       acc[item]= 1;
     }
     else{
@@ -27,6 +27,7 @@ export const timesRepeated = arr =>{
   }, {});
 };
 
-// export const anotherExample = () => {
+// export const anotherExample = (data) => {
 //   return 'OMG';
 // };
+
