@@ -22,7 +22,7 @@ const botonBuscar = document.getElementById("botonBuscar");
 
 const arrayPokemon = data.pokemon;
 let arrayCambiante = "";
-
+console.log(arrayPokemon[175].evolution["next-evolution"][0].name);
 // var dataArray = new Array;
 // for(const i in arrayPokemon){
 //   dataArray.push(arrayPokemon[i].stats["max-cp"]);
@@ -30,15 +30,14 @@ let arrayCambiante = "";
 // console.log(dataArray)
 // console.log(Math.max(...dataArray))
 
-
 //PASAR DE INICIO AL POKEDEX
 
-const verPokedex = document.getElementById('verPokedex');
+const verPokedex = document.getElementById("verPokedex");
 
-verPokedex.addEventListener("click",()=>{
-  document.querySelector("#welcome").style.display="none";
-  document.querySelector("#pokedex").style.display="block";
-})
+verPokedex.addEventListener("click", () => {
+  document.querySelector("#welcome").style.display = "none";
+  document.querySelector("#pokedex").style.display = "block";
+});
 
 //funcion que muestra los pokemones
 
@@ -96,15 +95,16 @@ function mostrarPokemon(array) {
 
     let nextEvolciones = [];
     let prevEvoluciones = [];
-    if (obj["next-evolution"] != null) {
-      for (let a = 0; a < obj["next-evolution"].length; a++) {
-        let next1 = document.createElement("p");
-        next1.innerHTML = `Next-evolution ${obj["next-evolution"][a].name}`;
-        let nombrePoke = obj["next-evolution"][a].name;
-        nextEvolciones.push(nombrePoke);
-        // evolucion.appendChild(next1);
+    if (obj["next-evolution"]) {
+      if (obj["next-evolution"][0].name) {
+        for (let a = 0; a < obj["next-evolution"].length; a++) {
+          let next1 = document.createElement("p");
+          next1.innerHTML = `Next-evolution ${obj["next-evolution"][a].name}`;
+          let nombrePoke = obj["next-evolution"][a].name;
+          nextEvolciones.push(nombrePoke);
+          // evolucion.appendChild(next1);
+        }
       }
-
       if (obj["next-evolution"][0]["next-evolution"]) {
         let next2 = document.createElement("p");
         next2.innerHTML = `Next-evolution ${obj["next-evolution"][0]["next-evolution"][0].name}`;
@@ -143,7 +143,7 @@ function mostrarPokemon(array) {
       //modalContainer.style.display="block";
       const cardInfo = document.createElement("div");
       cardInfo.classList.add("cardInfo");
-      cardInfo.setAttribute(`value`, `${array[i].num}`);
+      cardInfo.setAttribute(`id`, `${array[i].num}`);
 
       //boton de cerrar tarjeta de informacion
       const btnCerrar = document.createElement("button");
@@ -180,16 +180,14 @@ function mostrarPokemon(array) {
       button1.classList.add("active");
       button1.textContent = "About";
 
-      button1.addEventListener("click",()=>{
-        vista2.style.display="none";
-        vista1.style.display="block";
-        vista3.style.display="none";
+      button1.addEventListener("click", () => {
+        vista2.style.display = "none";
+        vista1.style.display = "block";
+        vista3.style.display = "none";
         button1.className = "active";
-        button2.className="";
-        button3.className="";
-
-      })
-
+        button2.className = "";
+        button3.className = "";
+      });
 
       //-------------btn2------------------------------
       const button2 = document.createElement("button");
@@ -197,22 +195,20 @@ function mostrarPokemon(array) {
       button2.classList.add("btn");
       button2.textContent = "Power";
 
-      button2.addEventListener("click",()=>{
-        vista2.style.display="block";
-        vista1.style.display="none";
-        vista3.style.display="none";
-        button1.className="";
-        button3.className="";
+      button2.addEventListener("click", () => {
+        vista2.style.display = "block";
+        vista1.style.display = "none";
+        vista3.style.display = "none";
+        button1.className = "";
+        button3.className = "";
         button2.className = "active";
-      })
+      });
 
       //------------btn3-------------------------------
       const button3 = document.createElement("button");
       button3.type = "button";
       button3.classList.add("btn");
       button3.textContent = "Moves";
-      
-
 
       //crear Vista 1
       const vista1 = document.createElement("div");
@@ -236,7 +232,14 @@ function mostrarPokemon(array) {
 
       //-------------agregar tipo---------------
       const typePokemon = document.createElement("div");
-      typePokemon.innerHTML = array[i].type;
+      typePokemon.classList.add('divTipo');
+      (array[i].type).forEach(element=>{
+const tipoLog=document.createElement('p')
+tipoLog.innerHTML=`${element}<img class="logo-${element}">`
+        typePokemon.appendChild(tipoLog)
+      })
+
+
 
       //............agregar tamaño--------------
       const height = document.createElement("div");
@@ -375,14 +378,15 @@ function mostrarPokemon(array) {
       const tabla1 = document.createElement("div");
       const tabla2 = document.createElement("div");
       vista3.style.display = "none";
+      vista3.classList.add("vista3");
       //vista1.classList.add("vista3");
 
       button3.addEventListener("click", () => {
         vista3.style.display = "block";
         vista2.style.display = "none";
         vista1.style.display = "none";
-        button1.className="";
-        button2.className="";
+        button1.className = "";
+        button2.className = "";
         button3.className = "active";
       });
 
@@ -556,8 +560,18 @@ function mostrarPokemon(array) {
       cardInfo.appendChild(containerVista);
       container.appendChild(modalContainer);
       container.appendChild(cardInfo);
-      evoluciones(prevEvoluciones, divTotalEvoluciones, nombrePrev );
-      evoluciones(nextEvolciones, divTotalEvoluciones, nombreNext);
+      evoluciones(
+        prevEvoluciones,
+        divTotalEvoluciones,
+        nombrePrev,
+        array[i]["pokemon-rarity"]
+      );
+      evoluciones(
+        nextEvolciones,
+        divTotalEvoluciones,
+        nombreNext,
+        array[i]["pokemon-rarity"]
+      );
     });
 
     //Items que se agregan al container y card
@@ -576,50 +590,53 @@ function mostrarPokemon(array) {
   }
 }
 
-function evoluciones(array, divTotalEvoluciones, nombre) {
+function evoluciones(array, divTotalEvoluciones, nombre, tipo) {
+  if (array.length > 0) {
+    const divGrupoEvol = document.createElement("div");
+    divGrupoEvol.classList.add("grupo");
+    const nombreEvol = document.createElement("p");
 
-  if(array.length>0){
-  const divGrupoEvol = document.createElement("div");
-  divGrupoEvol.classList.add('grupo')
-  const nombreEvol = document.createElement("p");
+    nombreEvol.innerHTML = `<strong>${nombre}</strong>`;
 
-  nombreEvol.innerHTML = nombre;
+    const divGrupoPok = document.createElement("div");
+    divGrupoPok.classList.add("solo");
 
-  const divGrupoPok=document.createElement('div')
-  divGrupoPok.classList.add('solo')
+    divGrupoEvol.appendChild(nombreEvol);
+    divGrupoEvol.appendChild(divGrupoPok);
 
-  divGrupoEvol.appendChild(nombreEvol);
-  divGrupoEvol.appendChild(divGrupoPok)
+    array.forEach((element) => {
+      for (let i = 0; i < arrayPokemon.length; i++) {
+        if (arrayPokemon[i].name === element) {
+          const divEvol = document.createElement("div");
+          divEvol.classList.add("evol");
 
+          const imgEvol = document.createElement("img");
+          imgEvol.classList.add("imgEvol");
+          imgEvol.src = arrayPokemon[i].img;
 
-  array.forEach((element) => {
-    for (let i = 0; i < arrayPokemon.length; i++) {
+          const nombreEvol = document.createElement("p");
+          nombreEvol.classList.add("nombreEvol");
+          nombreEvol.innerHTML = arrayPokemon[i].name;
 
-      if (arrayPokemon[i].name === element) {
-        const divEvol = document.createElement("div");
-        divEvol.classList.add("evol");
-
-        const imgEvol = document.createElement("img");
-        imgEvol.classList.add("imgEvol");
-        imgEvol.src = arrayPokemon[i].img;
-
-        const nombreEvol = document.createElement("p");
-        nombreEvol.classList.add("nombreEvol");
-        nombreEvol.innerHTML = arrayPokemon[i].name;
-
-        divEvol.appendChild(imgEvol);
-        divEvol.appendChild(nombreEvol);
-        divGrupoPok.appendChild(divEvol);
+          divEvol.appendChild(imgEvol);
+          divEvol.appendChild(nombreEvol);
+          divGrupoPok.appendChild(divEvol);
+        }
       }
+    });
+    divTotalEvoluciones.appendChild(divGrupoEvol);
+  } else {
+    if (tipo == "legendary") {
+      console.log(tipo);
+      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Legendary</h3><br><img src="./img/logo1.png"></div>`
+
     }
-  })
-  divTotalEvoluciones.appendChild(divGrupoEvol);
-}
+    else if (tipo == "mythic") {
+      console.log(tipo);
+      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Mithic</h3><br><img src="./img/logo2.jpg"></div>`
+    }
 
-else{
-
-divTotalEvoluciones.innerHTML="Pokemon Legendary"
-}
+  }
 }
 
 //region pokemon
@@ -691,32 +708,29 @@ const filtrar = () => {
   mostrarPokemon(array);
 };
 
-botonBuscar.addEventListener("click",filtrar)
-search.addEventListener("keyup",filtrar)
-
+botonBuscar.addEventListener("click", filtrar);
+search.addEventListener("keyup", filtrar);
 
 // Boton subir
 
-const buttonUp = document.getElementById("button-up")
+const buttonUp = document.getElementById("button-up");
 
-buttonUp.addEventListener("click",scrollUp)
-function scrollUp(){
+buttonUp.addEventListener("click", scrollUp);
+function scrollUp() {
   let currentScroll = document.documentElement.scrollTop;
-  if(currentScroll>0){
+  if (currentScroll > 0) {
     window.requestAnimationFrame(scrollUp);
-    window.scrollTo(0,currentScroll-(currentScroll/15));
+    window.scrollTo(0, currentScroll - currentScroll / 15);
   }
 }
 
-window.onscroll = ()=>{
-  
+window.onscroll = () => {
   let scroll = document.documentElement.scrollTop;
 
-  if(scroll>600){
+  if (scroll > 600) {
     buttonUp.style.transform = "scale(1)";
-  }
-  else if(scroll<500){
+  } else if (scroll < 500) {
     buttonUp.style.transform = "scale(0)";
   }
-}
+};
 mostrarPokemon(arrayPokemon);
