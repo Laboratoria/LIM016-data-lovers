@@ -38,6 +38,8 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
    /* boton para volver al principal*/
    document.getElementById("logo").addEventListener("click",()=>window.location.reload());
 
+
+
 //Traer todos los titulos de cada pelicula
    ///const arrayTitle= data.films.map(anim => anim.title)
      //console.log(arrayTitle)
@@ -50,8 +52,7 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
 
 
 
-
-    const containerFilmografia = document.getElementById("containerFilmografia");
+const containerFilmografia = document.getElementById("containerFilmografia");
  
 recorrerCadaPelicula();
 
