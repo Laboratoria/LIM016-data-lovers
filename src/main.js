@@ -1,6 +1,6 @@
 import { /*anotherExample,*/rio_teams, rio_sports, timesRepeated} from './data.js'; //las funciones
 
-import data from './data/athletes/athletes.js'; //la data del proyecto
+import data from './data/athletes/athletes.js'; 
 
 let home_click= document.getElementById("home-click");
 home_click.addEventListener("click", (e)=>{
@@ -18,6 +18,7 @@ sports_click.addEventListener("click", (e)=>{
   document.getElementById("sports").style.display = "block";
   document.getElementById("athletes").style.display = "none";
 });
+
 
 let teams_click= document.getElementById("teams-click");
 teams_click.addEventListener("click", (e)=>{
@@ -59,3 +60,28 @@ for( let i=0; i<finalSports.length; i++){
 }
 
 
+
+
+const contAthletes = (event,athlete) => {
+  console.log(event.target.innerHTML)
+  console.log(athlete)
+  
+}
+
+const prueba = ()=>{
+  const athlete= document.getElementById("hereAthletes")
+  data.athletes.forEach((item, index)=>{
+    let {name}=item;
+    
+    let athletes_screen= document.createElement("li");
+    athletes_screen.className="btnYellow";
+    athletes_screen.innerHTML= name;
+    athletes_screen.onclick= (e)=>contAthletes(e,item);
+    //athletes_screen.value=name[index]
+    athlete.appendChild(athletes_screen)
+ 
+  })
+  //document.getSelection("li").onclick(contAthletes)
+}
+
+prueba()

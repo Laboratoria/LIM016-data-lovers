@@ -1,4 +1,3 @@
-
 *{
     box-sizing: border-box;
     margin: 0;
@@ -150,6 +149,11 @@ p{   /* Por ahora ahí se guarda los paises, deportes*/
     overflow-x: hidden;
     margin-bottom: 1.5em;
 }
+
+main{
+    height: 500px;
+}
+
 .sports {
     display:none;
 }
