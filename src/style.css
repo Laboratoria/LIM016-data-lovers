@@ -1,5 +1,4 @@
 *{
-    font-family: 'Rowdies', cursive;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -17,6 +16,7 @@
     height: 7rem;
 }
 .page-name{
+    font-family: 'Bebas Neue', cursive;
     color: white;   
     font-size: 4rem;
     padding-right: 14rem;
@@ -27,6 +27,7 @@
 .navBar a{
     font-size: 40px;
     color: white;
+    font-family: 'Bebas Neue', cursive;
     text-decoration: none;
     line-height: 1.5em;   
 }
@@ -62,10 +63,13 @@ a:hover{
     text-align: center;
     padding: 2rem;
     align-self: center;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 .about-right{
     text-align: justify;
     padding: 2rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bolder;
 }
 
 /*--------------------------------------CONTAINER-EL PROYECTO*/
