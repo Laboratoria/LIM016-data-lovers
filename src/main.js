@@ -9,6 +9,15 @@ import {
   regionFuncion,
 } from "./data.js";
 
+// const botones del navegador
+
+const btnInicio = document.getElementById('btnInicio');
+const btnPokedex = document.getElementById('btnPokedex');
+const btnTipo = document.getElementById('btnTipo');
+const btnRegion = document.getElementById('btnRegion');
+const btnRareza = document.getElementById('btnRareza');
+
+
 //const modalContainer = document.querySelector(".modal-container");
 const container = document.querySelector(".pokemon-container");
 const region = document.getElementById("region");
@@ -30,6 +39,16 @@ let arrayCambiante = "";
 // console.log(dataArray)
 // console.log(Math.max(...dataArray))
 
+//BOTON PARA VOLVER AL INICION
+
+btnInicio.addEventListener("click",()=>{
+  document.querySelector("#welcome").style.display="block";
+  document.querySelector("#pokedex").style.display="none";
+  document.querySelector(".menu").style.display="none";
+  btnPokedex.className = "";
+  btnInicio.className="activeButton"
+
+})
 
 //PASAR DE INICIO AL POKEDEX
 
@@ -38,6 +57,9 @@ const verPokedex = document.getElementById('verPokedex');
 verPokedex.addEventListener("click",()=>{
   document.querySelector("#welcome").style.display="none";
   document.querySelector("#pokedex").style.display="block";
+  document.querySelector(".menu").style.display="block";
+  btnPokedex.className = "activeButton";
+  btnInicio.className=""
 })
 
 //funcion que muestra los pokemones
