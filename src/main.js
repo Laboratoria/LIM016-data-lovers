@@ -177,6 +177,8 @@ function mostrarPokemon(array) {
       btnCerrar.addEventListener("click", () => {
         cardInfo.style.display = "none";
         modalContainer.style.display = "none";
+        container.removeChild(modalContainer);
+        container.removeChild(cardInfo)
       });
 
       //Crear imagen del pokemon
