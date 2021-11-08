@@ -1,6 +1,8 @@
 import data from './data/ghibli/ghibli.js';
 console.log(data.films);
 
+//comentario para reparar git commit
+
 /*botones para  ingresar a cada seccion*/
 
 document.getElementById("filmografia").addEventListener("click", ()=>{
