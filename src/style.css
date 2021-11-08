@@ -9,9 +9,8 @@ body{
 }
 
 .imgTitulo{
-    height: 40%;
-    width: 40%;
-    margin: 25px;
+    height: 50%;
+    width: 100%;
 }
 header{
     display: flex;
