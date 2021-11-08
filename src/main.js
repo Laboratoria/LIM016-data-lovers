@@ -9,6 +9,15 @@ import {
   regionFuncion,
 } from "./data.js";
 
+// const botones del navegador
+
+const btnInicio = document.getElementById('btnInicio');
+const btnPokedex = document.getElementById('btnPokedex');
+const btnTipo = document.getElementById('btnTipo');
+const btnRegion = document.getElementById('btnRegion');
+const btnRareza = document.getElementById('btnRareza');
+
+
 //const modalContainer = document.querySelector(".modal-container");
 const container = document.querySelector(".pokemon-container");
 const region = document.getElementById("region");
@@ -30,14 +39,28 @@ console.log(arrayPokemon[175].evolution["next-evolution"][0].name);
 // console.log(dataArray)
 // console.log(Math.max(...dataArray))
 
+//BOTON PARA VOLVER AL INICION
+
+btnInicio.addEventListener("click",()=>{
+  document.querySelector("#welcome").style.display="block";
+  document.querySelector("#pokedex").style.display="none";
+  document.querySelector(".menu").style.display="none";
+  btnPokedex.className = "";
+  btnInicio.className="activeButton"
+
+})
+
 //PASAR DE INICIO AL POKEDEX
 
 const verPokedex = document.getElementById("verPokedex");
 
-verPokedex.addEventListener("click", () => {
-  document.querySelector("#welcome").style.display = "none";
-  document.querySelector("#pokedex").style.display = "block";
-});
+verPokedex.addEventListener("click",()=>{
+  document.querySelector("#welcome").style.display="none";
+  document.querySelector("#pokedex").style.display="block";
+  document.querySelector(".menu").style.display="block";
+  btnPokedex.className = "activeButton";
+  btnInicio.className=""
+})
 
 //funcion que muestra los pokemones
 
@@ -234,12 +257,10 @@ function mostrarPokemon(array) {
       const typePokemon = document.createElement("div");
       typePokemon.classList.add('divTipo');
       (array[i].type).forEach(element=>{
-const tipoLog=document.createElement('p')
-tipoLog.innerHTML=`${element}<img class="logo-${element}">`
+      const tipoLog=document.createElement('p')
+      tipoLog.innerHTML=`${element}<img class="logo-${element}">`
         typePokemon.appendChild(tipoLog)
       })
-
-
 
       //............agregar tamaño--------------
       const height = document.createElement("div");
