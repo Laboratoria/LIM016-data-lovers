@@ -5,55 +5,73 @@
     margin: 0;
     padding: 0;
 }
-header{
-    background-color: #DBF537;
-    color: blue;
-}
-
+/*-------------------------------------------HEADER*/
 .head{
     display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #DBF537; 
+}
+.mascots{
+    width: 10rem;   
+    height: 7rem;
+}
+.page-name{
+    color: white;   
+    font-size: 4rem;
+    padding-right: 14rem;
+}
+.navBar{
+    background-color: #00A0DB;
+}
+.navBar a{
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    line-height: 1.5em;   
+}
+a:hover{
+    color: #6e6e6e;
+}
+.info{
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-.aro{
-    width: 170px;
-    height: 80px;
-}
-.nom-pagina{
-color: #1968c9;   /* #134785;*/
-font-size: 40px;
-letter-spacing: 0.1ex;
-}
-.mascota{
-    height: 100px;
-    width: 100px;
-}
-footer{    /* FOOTER*/
-    background-color: black;
-    padding: 10px 0 10px 0;
-}
-.foot{
+
+/*-------------------------------------CONTAINER-SLIDER----*/
+.slides{
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-between;
 }
-.info-footer{
-    color: white;
-    font-size: 40px; 
+.slide-img{
+    display: block;
+    margin:auto;
 }
-.social-media{
-    display: flex;
-    gap: 40px;
-    align-items: center;
+
+/*--------------------------------------CONTAINER-ABOUT RIO*/
+.rio-info{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
 }
-#social1, #social2, #social3{
-    color: white;
+.about-left{
+    font-size: xx-large;
+    text-align: center;
+    padding: 2rem;
+    align-self: center;
 }
-#social1:hover, #social2:hover, #social3:hover{
-    cursor: pointer;
-    color: #dbf537;
-    }
-.paises{
+.about-right{
+    text-align: justify;
+    padding: 2rem;
+}
+
+/*--------------------------------------CONTAINER-EL PROYECTO*/
+
+.paises{    /* son los h2*/
     color: #6CC45E;
 }
 
@@ -61,27 +79,32 @@ footer{    /* FOOTER*/
     color: #944195;
 }
 
-.medallero{
+.atleta{
     color: #F1B839;
 }
 
-
-.btnGreen{
+.btnGreen{   /*la info de cada uno*/
     border-bottom: #6CC45E .3rem solid;
+
 }
 
 .btnPurple{
     border-bottom: #944195 .3rem solid;
    
 }
+.btnPurple:hover{
+    color:rgb(0, 31, 204);
+    cursor: pointer;
+
+}
 
 .btnYellow{
     border-bottom: #F1B839 .3rem solid;
-   
+
 }
 
-main{
-    display: flex;
+.todo{   /*donde está encerra la info*/
+
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
@@ -103,33 +126,16 @@ h2{
     text-align: center;
 }
 p{   /* Por ahora ahí se guarda los paises, deportes*/
-    border-bottom: #6CC45E .3rem solid;
     margin: 1.5rem;
     padding: 0.2rem;
     text-align: center;
     background-color: rgb(238, 236, 236);
-    font-weight: lighter;
+    font-weight: lighter; 
 }
-p:hover{
-    color:rgb(0, 31, 204);
-    cursor: pointer;
+.info-rio{
+    background-color: white;
+    text-align: justify;
 }
-/* h4{
-    border-bottom: #944195 .3rem solid;
-    margin: 1.5rem;
-    padding: 0.2rem;
-    text-align: center;
-    background-color: rgb(238, 236, 236);
-    font-size: small;  
-    font-weight: lighter;
-}
-h4:hover{
-    color:rgb(0, 31, 204);
-    cursor: pointer;
-}
-h5{
-    border-style: none;
-} */
 #hereCountries{
     overflow:auto;
     overflow-x: hidden; 
@@ -140,6 +146,44 @@ h5{
     overflow-x: hidden;
     margin-bottom: 1.5em;
 }
-main{
-    height: 500px;
+.sports {
+    display:none;
+}
+.countries{
+    display:none;
+}
+.athletes{
+    display:none;
+}
+ /*------------------------------------------ FOOTER*/
+footer{   
+    background-color: black;
+    padding: 10px 0 10px 0;
+    position:absolute;
+    width: 100%;    
+}
+.foot{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
+}
+.ring{
+    width: 170px;
+    height: 80px;
+}
+.info-footer{
+    color: white;
+    font-size: 40px; 
+}
+.social-media{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+#social1, #social2, #social3{
+    color: white;
+}
+#social1:hover, #social2:hover, #social3:hover{
+    cursor: pointer;
+    color: #dbf537;
 }
