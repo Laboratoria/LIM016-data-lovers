@@ -62,11 +62,37 @@ for( let i=0; i<finalSports.length; i++){
 
 
 
-const contAthletes = (event,athlete) => {
-  console.log(event.target.innerHTML)
-  console.log(athlete)
-  
+const contAthletes = (event,athletes) => {
+  //console.log(event.target.innerHTML)
+  //console.log(athletes)
+
+  let listAthlete= document.getElementById("cardAthlete")
+ 
+    let nameAthlete= document.getElementById("name")
+    nameAthlete.innerHTML= athletes.name;
+
+    let genderAthlete= document.getElementById("gender")
+    genderAthlete.innerHTML= athletes.gender;
+
+    let heightAthlete= document.getElementById("height")
+    heightAthlete.innerHTML= athletes.height;
+
+    let weightAthlete= document.getElementById("weight")
+    weightAthlete.innerHTML= athletes.weight;
+
+    let sportAthlete= document.getElementById("sport")
+    sportAthlete.innerHTML= athletes.sport;
+
+    let teamAthlete= document.getElementById("team")
+    teamAthlete.innerHTML= athletes.team;
+
+    let ageAthlete= document.getElementById("age")
+    ageAthlete.innerHTML= athletes.age;
+
+    listAthlete.appendChild(cardAthlete)
+    
 }
+
 
 const prueba = ()=>{
   const athlete= document.getElementById("hereAthletes")
@@ -75,13 +101,13 @@ const prueba = ()=>{
     
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
+    athletes_screen.style.width = "25%";
+    athletes_screen.style.display = "flex";
+    athletes_screen.style.flexDirection = "row"
     athletes_screen.innerHTML= name;
     athletes_screen.onclick= (e)=>contAthletes(e,item);
-    //athletes_screen.value=name[index]
     athlete.appendChild(athletes_screen)
  
   })
-  //document.getSelection("li").onclick(contAthletes)
 }
-
 prueba()
