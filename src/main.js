@@ -55,38 +55,112 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
 
 
 const containerFilmografia = document.getElementById("containerFilmografia");
- 
-recorrerCadaPelicula();
-
-function recorrerCadaPelicula () {
-    let arreglo = [];
-    arreglo = data.films;
-    for (let i = 0; i<arreglo.length; i++){ 
-        let titulo = arreglo[i].title;
-        let refImagen = arreglo[i].poster;
-        console.log(titulo);
 
 
-    //manipulando dinamicamente la seccion filmografia
 
-    //creando div para la tarjeta
-    const filmoDiv = document.createElement("div");
-    filmoDiv.setAttribute("class", 'classFilmo');
-    containerFilmografia.appendChild(filmoDiv);
+recorrerCadaPelicula ( ) ;
 
-    const tituloDeFilmo = document.createElement("h2");
-    filmoDiv.appendChild(tituloDeFilmo);
-    const textDeFilmo = document.createTextNode(titulo);
-    tituloDeFilmo.appendChild(textDeFilmo);
+function  recorrerCadaPelicula  ( )  {
+    deje  arreglo  =  [ ] ;
+    arreglo  =  datos . películas ;
 
-    const divImagen = document.createElement("div");
-    divImagen.setAttribute("class", 'divImagen');
-    filmoDiv.appendChild(divImagen);
-
-    const imagen = document.createElement("img");
-    imagen.setAttribute("class", 'imagen');
-    divImagen.appendChild(imagen);
-    imagen.src = refImagen;
+    para  ( sea  i  =  0 ;  i < arreglo . longitud ;  i ++ ) { 
+        sea  titulo  =  arreglo [ i ] . título ;
+        deje  refImagen  =  arreglo [ i ] . cartel ;
+        deje  descripción  =  arreglo [ i ] . descripción ;
+        deja  productor  =  arreglo [ i ] . productor ;
+        sea  director  =  arreglo [ i ] . director ;
+        vamos  año  =  arreglo [ i ] . release_date ;
+        let  score  =  arreglo [ i ] . rt_score ;
+    / * Aqui hicimos este array vacio para empujar los datos de weather a traves de un for que toma los datos 
+    de una propiedad dentro de una propiedad * /
+        dejar  clima  = [ ] ;
+        para  ( sea  a = 0 ;  a < ( arreglo [ i ] . ubicaciones ) . longitud ;  a ++ ) {
+        clima  =  arreglo [ i ] . ubicaciones [ a ] . climático ;
+        //console.log(climate)
     }
 
+         dejar que la  gente  =  [ ] ;
+        para  ( sea  p = 0 ;  p < ( arreglo [ i ] . personas ) . longitud ;  p ++ )  {
+        gente  =  arreglo [ i ] . gente [ p ] . img ;
+        consola . log ( personas )
+    }
+    const  filmoDiv  =  documento . createElement ( "div" ) ;
+    filmoDiv . setAttribute ( "clase" ,  'classFilmo' ) ;
+    containerFilmografia . appendChild ( filmoDiv ) ;
+
+/ * Para crear un elemento como un <h2> es necesario usar createElement y luego acompañado de un createTextNode 
+para insertar texto dentro de la etiqueta h2 (nodo de texto) * /
+    const  tituloDeFilmo  =  documento . createElement ( "h2" ) ;
+    filmoDiv . appendChild ( tituloDeFilmo ) ;
+    const  textDeFilmo  =  documento . createTextNode ( titulo ) ;
+    tituloDeFilmo . appendChild ( textDeFilmo ) ;
+
+/ * Se crea un div para contener la imagen dentro, se le agrega con setAttribute un class y el no, bre del class
+por ultimo se le asigna como padre a filmoDiv, que es el segundo mayor div * /
+    const  divImagen  =  documento . createElement ( "div" ) ;
+    divImagen . setAttribute ( "clase" ,  'divImagen' ) ;
+    filmoDiv . appendChild ( divImagen ) ;
+
+/ * se crea el elemento img para extraer la imagen. Se le xrea un class y su nombre. Se le asigna como padre a
+divImagen para que esté dentro de este div. Por ultimo con .src se le indica la ruta * /
+    const  imagen  =  documento . createElement ( "img" ) ;
+    imagen . setAttribute ( "clase" ,  'imagen' ) ;
+    divImagen . appendChild ( imagen ) ;
+    imagen . src  =  refImagen ;
+
+    const  divContenido  =  documento . createElement ( "div" ) ;
+    divContenido . setAttribute ( "clase" ,  'classDivContenido' ) ;
+    filmoDiv . appendChild ( divContenido ) ;
+
+    const  descriptionFilm  =  documento . createElement ( "p" ) ;
+    filmoDiv . appendChild ( descriptionFilm ) ;
+    const  textDescription  =  documento . createTextNode ( descripción ) ;
+    descriptionFilm . appendChild ( textDescription ) ;
+
+    const  producerFilm  =  documento . createElement ( "p" ) ;
+    filmoDiv . appendChild ( productorFilm ) ;
+    const  textProducer  =  documento . createTextNode ( productor ) ;
+    productorFilm . appendChild ( textProducer ) ;
+
+    const  directorFilm  =  documento . createElement ( "p" ) ;
+    filmoDiv . appendChild ( directorFilm ) ;
+    const  textDirector  =  documento . createTextNode ( director ) ;
+    directorFilm . appendChild ( textDirector ) ;
+
+    const  añoFilm  =  documento . createElement ( "p" ) ;
+    filmoDiv . appendChild ( añoFilm ) ;
+    const  textAño =  documento . createTextNode ( año ) ;
+    añoFilm . appendChild ( textAño ) ;
+
+    const  scoreFilm  =  documento . createElement ( "p" ) ;
+    filmoDiv . appendChild ( scoreFilm ) ;
+    const  textScore =  documento . createTextNode ( puntuación ) ;
+    scoreFilm . appendChild ( textScore ) ;
+    
+
+    const  tiendaDiv  =  documento . createElement ( "div" ) ;
+    tiendaDiv . setAttribute ( "clase" ,  'classTienda' ) ;
+    containerTienda . appendChild ( tiendaDiv ) ;
+
+    const  divImagenT  =  documento . createElement ( "div" ) ;
+    divImagenT . setAttribute ( "clase" ,  'divImagenT' ) ;
+    tiendaDiv . appendChild ( divImagenT ) ;
+
+     const  imagenT  =  documento . createElement ( "img" ) ;
+     imagenT . setAttribute ( "clase" ,  'imagenT' ) ;
+     divImagenT . appendChild ( imagenT ) ;
+     imagenT . src  =  gente ;
+
+     const  personajeDiv  =  documento . createElement ( "div" ) ;
+    personajeDiv . setAttribute ( "clase" ,  'classPersonaje' ) ;
+    containerPersonajes . appendChild ( personajeDiv ) ;
+
+    const  imagenP  =  documento . createElement ( "img" ) ;
+    imagenP . setAttribute ( "clase" ,  'imagenP' ) ;
+    personajeDiv . appendChild ( imagenP ) ;
+    imagenP . src  =  gente ;
+     
+
+}
 }
