@@ -169,7 +169,7 @@ divImagen para que esté dentro de este div. Por ultimo con .src se le indica la
     imagenP.setAttribute("class", 'imagenP');
     personajeDiv.appendChild(imagenP);
     imagenP.src = people;
-     
 
 }
 }
+//nuevo comentario
