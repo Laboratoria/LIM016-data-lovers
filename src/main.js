@@ -172,4 +172,4 @@ divImagen para que esté dentro de este div. Por ultimo con .src se le indica la
 
 }
 }
-   
+//nuevo coment
