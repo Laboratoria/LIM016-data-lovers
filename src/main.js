@@ -1,6 +1,6 @@
 import { /*anotherExample,*/rio_teams, noRepeated, rio_sports, timesRepeated} from './data.js'; //las funciones
 
-import data from './data/athletes/athletes.js'; //la data del proyecto
+import data from './data/athletes/athletes.js'; 
 
 let home_click= document.getElementById("home-click");
 home_click.addEventListener("click", (e)=>{
@@ -19,6 +19,7 @@ sports_click.addEventListener("click", (e)=>{
   document.getElementById("athletes").style.display = "none";
 });
 
+
 let teams_click= document.getElementById("teams-click");
 teams_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
@@ -31,7 +32,6 @@ let athletes_click= document.getElementById("athletes-click");
 athletes_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
-  document.getElementById("athletes").style.display = "block";
   document.getElementById("countries").style.display = "none";
 });
 
@@ -80,3 +80,52 @@ for( let i=0; i<finalCountry.length; i++){
 //  // console.log(sport_screen.length);
 // }
 
+
+
+const contAthletes = (event,athletes) => {
+ 
+  let listAthlete= document.getElementById("cardAthlete")
+ 
+    let nameAthlete= document.getElementById("name")
+    nameAthlete.innerHTML= athletes.name;
+
+    let genderAthlete= document.getElementById("gender")
+    genderAthlete.innerHTML= athletes.gender;
+
+    let heightAthlete= document.getElementById("height")
+    heightAthlete.innerHTML= athletes.height;
+
+    let weightAthlete= document.getElementById("weight")
+    weightAthlete.innerHTML= athletes.weight;
+
+    let sportAthlete= document.getElementById("sport")
+    sportAthlete.innerHTML= athletes.sport;
+
+    let teamAthlete= document.getElementById("team")
+    teamAthlete.innerHTML= athletes.team;
+
+    let ageAthlete= document.getElementById("age")
+    ageAthlete.innerHTML= athletes.age;
+
+    listAthlete.appendChild(cardAthlete)
+    
+}
+
+
+const prueba = ()=>{
+  const athlete= document.getElementById("hereAthletes")
+  data.athletes.forEach((item, index)=>{
+    let {name}=item;
+    
+    let athletes_screen= document.createElement("li");
+    athletes_screen.className="btnYellow";
+    athletes_screen.style.width = "25%";
+    athletes_screen.style.display = "flex";
+    athletes_screen.style.flexDirection = "row"
+    athletes_screen.innerHTML= name;
+    athletes_screen.onclick= (e)=>contAthletes(e,item);
+    athlete.appendChild(athletes_screen)
+ 
+  })
+}
+prueba()

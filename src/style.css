@@ -1,4 +1,3 @@
-
 *{
     box-sizing: border-box;
     margin: 0;
@@ -162,6 +161,11 @@ p{   /* Por ahora ahí se guarda los paises, deportes*/
     overflow-x: hidden;
     margin-bottom: 1.5em;
 }
+
+main{
+    height: 500px;
+}
+
 .sports {
     display:block;
 }
@@ -170,12 +174,45 @@ p{   /* Por ahora ahí se guarda los paises, deportes*/
 }
 .athletes{
     display:none;
+    width: 100%;
+}
+
+
+
+.listAthletes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#hereAthletes{
+    display: flex;
+    flex-direction: column;
+    width: 70%; 
+    margin-left: 5rem;
+}
+#cardAthlete{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 40%;
+    border: solid #F1B839;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+.texCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.title{
+    text-align: center;
 }
  /*------------------------------------------ FOOTER*/
 footer{   
-    background-color: black;
+    /*background-color: black;*/
     padding: 10px 0 10px 0;
-    position:absolute;
+    /*position:absolute;*/
     width: 100%;    
 }
 .foot{
