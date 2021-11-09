@@ -1,6 +1,7 @@
+import {computeData} from "./data.js";
 import { sortData } from './data.js';
 import { functionAll } from './data.js';
-import datos from './data/athletes/athletes.js'; //jala de athletes.js
+import datos from "./data/athletes/athletes.js";
 
 console.log(functionAll(datos));
 //----------------SELECTOR DINÁMICO PARA EL FILTRO DE PAÍSES----------------
@@ -106,6 +107,25 @@ const sortByCountry = (athlete1,athlete2) => {
 };
  
 const htmlAthletes = sortData(arrayAthletes, sortByName,).map(generateAthleteTemplate).join('');
+////////////////////////////////////
 
 */
+computeData(datos.athletes,"Gold") 
+computeData(datos.athletes,"Silver") 
+computeData(datos.athletes,"Bronze") 
+
+/*
+const open = document.getElementById("open");
+const modalContainer = document.getElementById("modal-container");
+const close = document.getElementById("close");
+
+
+open.addEventListener("click", () =>{
+    modalContainer.classList.add("show");
+});
+close.addEventListener("click", ()=>{
+    modalContainer.classList.remove("show");
+});
+*/
+
 
