@@ -1,4 +1,4 @@
-import { /*anotherExample,*/rio_teams, rio_sports, timesRepeated} from './data.js'; //las funciones
+import { /*anotherExample,*/rio_teams, noRepeated, rio_sports, timesRepeated} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; 
 
@@ -17,6 +17,7 @@ sports_click.addEventListener("click", (e)=>{
   document.getElementById("contaiiner").style.display = "none";
   document.getElementById("sports").style.display = "block";
   document.getElementById("athletes").style.display = "none";
+  document.getElementById("countries").style.display = "none";
 });
 
 
@@ -26,14 +27,17 @@ teams_click.addEventListener("click", (e)=>{
   document.getElementById("contaiiner").style.display = "none";
   document.getElementById("countries").style.display = "block";
   document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
 });
 
 let athletes_click= document.getElementById("athletes-click");
 athletes_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
+
   document.getElementById("contaiiner").style.display = "none";
-  document.getElementById("countries").style.display = "none";
   document.getElementById("athletes").style.display = "block";
+  document.getElementById("countries").style.display = "none";
+  document.getElementById("sports").style.display = "none";
 });
 
 
@@ -48,17 +52,38 @@ for( let i=0; i<finalCountry.length; i++){
   document.getElementById("hereCountries").appendChild(country_screen)
 }
 
-let sports= rio_sports(data);  //me trae los paises
-let sportsCounter= timesRepeated(sports);
+let sports= rio_sports(data).sort();  //me trae los paises
+let sportsCounter= noRepeated(sports);
 let finalSports= Object.entries(sportsCounter);
 
 for( let i=0; i<finalSports.length; i++){
   let sport_screen= document.createElement("p");
-  sport_screen.className="btnPurple"
-  sport_screen.innerHTML= finalSports[i].join("<br>")+ " athlete(s)";
+  sport_screen.className="btnBlue"
+  sport_screen.innerHTML= finalSports[i].join("<br>");
   document.getElementById("hereSports").appendChild(sport_screen);
 }
 
+// let mapOtro= rio_sports(data);
+// let sportsNoRepeated= noRepeated(mapOtro);
+//   let event_screen= document.createElement("p");
+//  let finalSports= Object.entries(sportsNoRepeated);
+//  let fianl= finalSports.sort();
+ 
+// const functionSports= (event)=>{
+  
+//   let event_screen= document.createElement("p");
+//  event_screen.innerHTML= "archery";
+// document.getElementById("hereEvents").appendChild(event_screen);
+// }
+
+// for( let i=0; i<fianl.length; i++){
+//   let sport_screen= document.createElement("p");
+//   sport_screen.className="btnPurple"
+//   sport_screen.onclick= (e)=> functionSports(e);
+//   sport_screen.innerHTML= fianl[i].join("<br>");
+//   document.getElementById("hereSports").appendChild(sport_screen);
+//  // console.log(sport_screen.length);
+// }
 
 
 
@@ -87,8 +112,7 @@ const contAthletes = (event,athletes) => {
     let ageAthlete= document.getElementById("age")
     ageAthlete.innerHTML= athletes.age;
 
-    listAthlete.appendChild(cardAthlete)
-    
+    listAthlete.appendChild(cardAthlete)  
 }
 
 
@@ -99,8 +123,7 @@ const prueba = ()=>{
     
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
-    athletes_screen.style.width = "25%";
-    athletes_screen.style.display = "flex";
+    //athletes_screen.style.display = "flex";
     athletes_screen.style.flexDirection = "row"
     athletes_screen.innerHTML= name;
     athletes_screen.onclick= (e)=>contAthletes(e,item);
