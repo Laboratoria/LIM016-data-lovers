@@ -8,9 +8,22 @@
     width: 100%;
     height: 50%;;
 }
-.carousel .carouselImg{
-    width: 70px;
+
+.carousel{
+    display:inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width:-webkit-fill-available;
+    height: 50px;
 }
+   
+.carouselImg{
+    height:140px;
+    width: 900px;
+    margin: 2px;
+    padding: 5px
+}
+
 .filter{
     background-color: #f4f5f6;
     width: 20%;
