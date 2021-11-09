@@ -1,171 +1,195 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-*{
+* {
     margin: 0%;
     padding: 0%;
-    box-sizing: border-box; /*para mover el modelo de caja*/
+    box-sizing: border-box;
+    /*para mover el modelo de caja*/
 }
+
 body {
     counter-reset: none;
 }
 
-.headerLogo{   
+.headerLogo {
     width: 100%;
-    height: 50%;;
+    height: 50%;
+    ;
 }
 
-.carousel{
-    display:inline-flex;
+.carousel {
+    display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width:-webkit-fill-available;
+    width: -webkit-fill-available;
     height: 50px;
 }
-   
-.carouselImg{
-    height:140px;
+
+.carouselImg {
+    height: 140px;
     width: 900px;
     margin: 2px;
     padding: 5px
 }
 
-.filterContainer{
+.filterContainer {
     background-color: #EDCF36;
     margin: auto;
     height: 60px;
 }
 
-.filter{
+.filter {
     width: 33%;
-    padding: 5px;   
+    padding: 5px;
     margin: auto;
-    position: relative; /*contenedor padre*/ 
-    
+    position: relative;
+    /*contenedor padre*/
 }
-.select{
+
+.select {
     background-color: white;
     border-radius: 5px;
     height: 50px;
     cursor: pointer;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     color: #5A5A5A;
     align-items: center;
 }
-.select:hover{
-    border: 2px solid #325665;  
-    box-shadow:1px 5px 5px -5px gray;
+
+.select:hover {
+    border: 2px solid #325665;
+    box-shadow: 1px 5px 5px -5px gray;
 }
-.select i{
+
+.select i {
     font-size: 17px;
     margin-right: 10px;
     color: #325665;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.titulo{
+
+.titulo {
     font-family: 'Handlee', cursive;
     font-size: 20px;
-    margin-left: 10px ;
+    margin-left: 10px;
     color: black;
     margin: 5px;
 }
-.options{
+
+.options {
     background-color: white;
     border-radius: 5px;
     cursor: pointer;
     max-height: 195px;
     width: 100%;
     overflow: auto;
-    z-index: 100; /*para que quede por encima de los elementos*/
+    z-index: 100;
+    /*para que quede por encima de los elementos*/
     display: none;
     transition: 700ms;
 }
-.options.active{ /*la clase active para esconder y ocultar contenido*/
+
+.options.active {
+    /*la clase active para esconder y ocultar contenido*/
     display: block;
 }
+
 /*ANIMACIÓN PARA ABRIR Y ESCONDER OPCIONES*/
 
-.contentOption{
+.contentOption {
     display: flex;
     align-items: center;
     border-bottom: 2px;
     padding: 8px;
 }
-.contentOption img{
+
+.contentOption img {
     width: 50px;
     margin-right: 20px;
     margin-left: 15px;
 }
-.contentOption:hover{
-    background-color: #b4b79b;  
+
+.contentOption:hover {
+    background-color: #b4b79b;
 }
-.contentOption:hover .titulo{
+
+.contentOption:hover .titulo {
     color: #355562;
 }
-.footer{
+
+.footer {
     background-color: black;
     color: white;
-    text-align:center;
+    text-align: center;
     font-family: 'Handlee', cursive;
     padding: 20px;
     margin-top: 10px;
 }
-.facebook{
+
+.facebook {
     border-radius: 50%;
     width: 35px;
     padding: 5px;
-    position: absolute;   
+    position: absolute;
     left: 800px;
     top: 430px;
 }
-.instagram{
+
+.instagram {
     border-radius: 50%;
     width: 35px;
     padding: 5px;
-    position: absolute;   
+    position: absolute;
     left: 850px;
     top: 430px;
 }
-.twitter{
+
+.twitter {
     border-radius: 50%;
     width: 35px;
     padding: 5px;
-    position: absolute;   
+    position: absolute;
     left: 900px;
     top: 430px;
 }
-.youtube{
+
+.youtube {
     border-radius: 50%;
     width: 35px;
     padding: 5px;
-    position: absolute;   
+    position: absolute;
     left: 950px;
     top: 430px;
-  }
+}
 
-.sportsContainer{
+.sportsContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: #49d317d0;/* un fondo color verde para la imagen*/
+    background: #49d317d0;
+    /* un fondo color verde para la imagen*/
     border-radius: 20px;
-    height:fit-content;
+    height: fit-content;
     width: fit-content;
     margin-top: 1rem;
-    
 }
-.classAthlete{
+
+.classAthlete {
     border-radius: 15px;
 }
-.boxImgAthlete{
+
+.boxImgAthlete {
     align-self: center;
     justify-content: center;
     min-width: max-content;
     /*border-radius: 20px;*/
 }
-.tableAthletes{
+
+.tableAthletes {
     justify-content: center;
     min-width: max-content;
     max-width: 100%;
@@ -180,34 +204,38 @@ a{
 }
 
 /* VENTANA MODAL DE LA TABLA DETALLADA*/
-.modal-container{
-position: fixed;
-display: flex;
-background-color: rgb(255, 255, 255);
-opacity: 1;
-top: 10%;
-left: 0;
-width: 100%;
-height: 80%;
+
+.modal-container {
+    position: fixed;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    display: none;
 }
-.show{
+
+.show {
     pointer-events: auto;
     opacity: 1;
 }
-.detailsMedal{
-table-layout: fixed;
-width: 100%;
-justify-content: center;
+
+.detailsMedal {
+    table-layout: fixed;
+    width: 100%;
+    justify-content: center;
 }
-tr{
-width: 100%;
-left: 10%;
-top: 40px;
-font-family: Handlee;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 35px;
-text-align: center;
-color: #000000;
+
+tr {
+    width: 100%;
+    left: 10%;
+    top: 40px;
+    font-family: Handlee;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    color: #000000;
 }
