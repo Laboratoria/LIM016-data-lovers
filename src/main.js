@@ -1,4 +1,4 @@
-import { /*anotherExample,*/rio_teams, rio_sports, timesRepeated} from './data.js'; //las funciones
+import { /*anotherExample,*/rio_teams, noRepeated, rio_sports, timesRepeated} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; //la data del proyecto
 
@@ -47,15 +47,36 @@ for( let i=0; i<finalCountry.length; i++){
   document.getElementById("hereCountries").appendChild(country_screen)
 }
 
-let sports= rio_sports(data);  //me trae los paises
-let sportsCounter= timesRepeated(sports);
-let finalSports= Object.entries(sportsCounter);
+// let sports= rio_sports(data);  //me trae los paises
+// let sportsCounter= timesRepeated(sports);
+//let finalSports= Object.entries(sportsCounter);
 
-for( let i=0; i<finalSports.length; i++){
-  let sport_screen= document.createElement("p");
-  sport_screen.className="btnPurple"
-  sport_screen.innerHTML= finalSports[i].join("<br>")+ " athlete(s)";
-  document.getElementById("hereSports").appendChild(sport_screen);
-}
+// for( let i=0; i<finalSports.length; i++){
+//   let sport_screen= document.createElement("p");
+//   sport_screen.className="btnPurple"
+//   sport_screen.innerHTML= finalSports[i].join("<br>")+ " athlete(s)";
+//   document.getElementById("hereSports").appendChild(sport_screen);
+// }
 
+// let mapOtro= rio_sports(data);
+// let sportsNoRepeated= noRepeated(mapOtro);
+//   let event_screen= document.createElement("p");
+//  let finalSports= Object.entries(sportsNoRepeated);
+//  let fianl= finalSports.sort();
+ 
+// const functionSports= (event)=>{
+  
+//   let event_screen= document.createElement("p");
+//  event_screen.innerHTML= "archery";
+// document.getElementById("hereEvents").appendChild(event_screen);
+// }
+
+// for( let i=0; i<fianl.length; i++){
+//   let sport_screen= document.createElement("p");
+//   sport_screen.className="btnPurple"
+//   sport_screen.onclick= (e)=> functionSports(e);
+//   sport_screen.innerHTML= fianl[i].join("<br>");
+//   document.getElementById("hereSports").appendChild(sport_screen);
+//  // console.log(sport_screen.length);
+// }
 

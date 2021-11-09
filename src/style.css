@@ -4,6 +4,9 @@
     margin: 0;
     padding: 0;
 }
+.container{
+    display:none;
+}
 /*-------------------------------------------HEADER*/
 .head{
     display: flex;
@@ -21,6 +24,7 @@
     color: white;   
     font-size: 4rem;
     padding-right: 14rem;
+    letter-spacing: 0.1em;
 }
 .navBar{
     background-color: #00A0DB;
@@ -31,6 +35,8 @@
     font-family: 'Bebas Neue', cursive;
     text-decoration: none;
     line-height: 1.5em;   
+    letter-spacing: 0.1ex;
+    
 }
 a:hover{
     color: #6e6e6e;
@@ -108,7 +114,8 @@ a:hover{
 }
 
 .todo{   /*donde está encerra la info*/
-
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
@@ -144,6 +151,11 @@ p{   /* Por ahora ahí se guarda los paises, deportes*/
     overflow:auto;
     overflow-x: hidden; 
     margin-bottom: 1.5em; 
+
+}
+.sport_ev{
+    display:flex;
+    align-content: center;
 }
 #hereSports{
     overflow: auto;
@@ -151,7 +163,7 @@ p{   /* Por ahora ahí se guarda los paises, deportes*/
     margin-bottom: 1.5em;
 }
 .sports {
-    display:none;
+    display:block;
 }
 .countries{
     display:none;
