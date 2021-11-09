@@ -71,11 +71,13 @@ console.log(arrayPokemon[175].evolution["next-evolution"][0].name);
 //BOTON PARA VOLVER AL INICION
 
 btnInicio.addEventListener("click", () => {
-  document.querySelector("#welcome").style.display = "block";
-  document.querySelector("#pokedex").style.display = "none";
-  document.querySelector(".menu").style.display = "none";
+  // document.querySelector("#welcome").style.display = "block";
+  // document.querySelector("#pokedex").style.display = "none";
+  // document.querySelector(".menu").style.display = "none";
   btnPokedex.className = "";
   btnInicio.className = "activeButton";
+  window.location.reload(); 
+  document.documentElement.scrollTop=0
 });
 
 //PASAR DE INICIO AL POKEDEX
@@ -88,6 +90,7 @@ verPokedex.addEventListener("click", () => {
   document.querySelector(".menu").style.display = "block";
   btnPokedex.className = "activeButton";
   btnInicio.className = "";
+  document.documentElement.scrollTop=0
 });
 
 //funcion que muestra los pokemones
