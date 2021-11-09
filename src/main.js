@@ -76,7 +76,7 @@ btnInicio.addEventListener("click", () => {
   // document.querySelector(".menu").style.display = "none";
   btnPokedex.className = "";
   btnInicio.className = "activeButton";
-  window.location.reload(); 
+  window.location.reload();
   document.documentElement.scrollTop=0
 });
 
@@ -783,4 +783,37 @@ window.onscroll = () => {
     buttonUp.style.transform = "scale(0)";
   }
 };
+
+
+
+document.querySelector('.divPrueba').addEventListener('click',(e)=>{
+e.preventDefault()
+
+if(e.target.classList.contains('ghost')){
+
+  document.querySelector("#pokedex").style.backgroundImage = "url(https://images2.alphacoders.com/107/thumb-1920-1073326.jpg)"
+
+  container.innerHTML=""
+  console.log("1")
+  console.log(e.target.className)
+const tipoP = e.target.className
+const arraytipoPoke = typePokemones(tipoP, arrayPokemon);
+mostrarPokemon(arraytipoPoke);
+}
+
+
+else if(e.target.classList.contains('rock')){
+  container.innerHTML=""
+  console.log("2")
+  console.log(e.target.className)
+const tipoP = e.target.className
+const arraytipoPoke = typePokemones(tipoP, arrayPokemon);
+mostrarPokemon(arraytipoPoke)
+}
+
+
+})
+
 mostrarPokemon(arrayPokemon);
+
+
