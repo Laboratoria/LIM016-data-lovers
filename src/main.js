@@ -32,7 +32,6 @@ let athletes_click= document.getElementById("athletes-click");
 athletes_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
-  document.getElementById("athletes").style.display = "block";
   document.getElementById("countries").style.display = "none";
 });
 
@@ -63,9 +62,7 @@ for( let i=0; i<finalSports.length; i++){
 
 
 const contAthletes = (event,athletes) => {
-  //console.log(event.target.innerHTML)
-  //console.log(athletes)
-
+ 
   let listAthlete= document.getElementById("cardAthlete")
  
     let nameAthlete= document.getElementById("name")
