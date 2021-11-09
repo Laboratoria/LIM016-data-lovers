@@ -2,8 +2,12 @@
 *{
     margin: 0%;
     padding: 0%;
-    
+    box-sizing: border-box; /*para mover el modelo de caja*/
 }
+body {
+    counter-reset: none;
+}
+
 .headerLogo{   
     width: 100%;
     height: 50%;;
@@ -24,9 +28,80 @@
     padding: 5px
 }
 
+.filterContainer{
+    background-color: #EDCF36;
+    margin: auto;
+    height: 60px;
+}
+
 .filter{
-    background-color: #f4f5f6;
-    width: 20%;
+    width: 33%;
+    padding: 5px;   
+    margin: auto;
+    position: relative; /*contenedor padre*/ 
+    
+}
+.select{
+    background-color: white;
+    border-radius: 5px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content:space-between;
+    color: #5A5A5A;
+    align-items: center;
+}
+.select:hover{
+    border: 2px solid #325665;  
+    box-shadow:1px 5px 5px -5px gray;
+}
+.select i{
+    font-size: 17px;
+    margin-right: 10px;
+    color: #325665;
+}
+a{
+    text-decoration: none;
+}
+.titulo{
+    font-family: 'Handlee', cursive;
+    font-size: 20px;
+    margin-left: 10px ;
+    color: black;
+    margin: 5px;
+}
+.options{
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    max-height: 195px;
+    width: 100%;
+    overflow: auto;
+    z-index: 100; /*para que quede por encima de los elementos*/
+    display: none;
+    transition: 700ms;
+}
+.options.active{ /*la clase active para esconder y ocultar contenido*/
+    display: block;
+}
+/*ANIMACIÓN PARA ABRIR Y ESCONDER OPCIONES*/
+
+.contentOption{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px;
+    padding: 8px;
+}
+.contentOption img{
+    width: 50px;
+    margin-right: 20px;
+    margin-left: 15px;
+}
+.contentOption:hover{
+    background-color: #b4b79b;  
+}
+.contentOption:hover .titulo{
+    color: #355562;
 }
 .footer{
     background-color: black;
@@ -68,21 +143,17 @@
     left: 950px;
     top: 430px;
   }
-body {
-counter-reset: none;
-
-}
 
 .sportsContainer{
     display: flex;
-     align-items: center;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     background: #49d317d0;/* un fondo color verde para la imagen*/
     border-radius: 20px;
     height:fit-content;
-     width: fit-content;
-     margin-top: 1rem;
+    width: fit-content;
+    margin-top: 1rem;
     
 }
 .classAthlete{

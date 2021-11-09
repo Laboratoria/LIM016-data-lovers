@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/c47856f5c7.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -16,12 +17,77 @@
         <img src="./imagenes/carruselThree.jpg" alt="Debut de atletas peruanas" class="carouselImg">
         <img src="./imagenes/carruselFour.jpg" alt="Vista panorámicas de las sedes" class="carouselImg">
         <img src="./imagenes/carruselFive.jpg" alt="atletas femeninas" class="carouselImg">
-      </section>
-      <section id="barraMenu">
-        <div id="filter" class="filter">
-          
-        </div>       
-      </section>
+      </section>     
+      <section id="filterContainer" class="filterContainer"> <!--MENÚ-->
+          <div id="filter" class="filter"> <!--LO QUE CONTIENE A TODO-->
+            <div id="select" class="select">
+              <div id="contentSelect" class="contentSelect"><!--EL CONTENIDO (escrito)-->
+                <h3 class="titulo">Selecciona un país</h3>
+              </div>
+              <i class="fas fa-angle-down"></i>
+            </div>
+
+            <div class="options" id="options">
+              <a href="#" class="option">
+                <div class="contentOption">
+                  <img src="./imagenes/banderas/united-states.png" alt="Estados Unidos" title="Estados Unidos">
+                  <div class="texts">
+                    <h3 class="titulo">Estados Unidos</h3>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="option">
+                <div class="contentOption">
+                  <img src="./imagenes/banderas/francia.png" alt="Francia" title="Francia">
+                  <div class="texts">
+                    <h3 class="titulo">Francia</h3>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="option">
+                <div class="contentOption">
+                  <img src="./imagenes/banderas/peru.png" alt="Perú" title="Perú">
+                  <div class="texts">
+                    <h3 class="titulo">Perú</h3>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="option">
+                <div class="contentOption">
+                  <img src="./imagenes/banderas/venezuela.png" alt="Venezuela" title="Venezuela">
+                  <div class="texts">
+                    <h3 class="titulo">Venezuela</h3>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="option">
+                <div class="contentOption">
+                  <img src="./imagenes/banderas/alemania.png" alt="Alemania" title="Alemania">
+                  <div class="texts">
+                    <h3 class="titulo">Alemania</h3>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="option">
+                <div class="contentOption">
+                  <img src="./imagenes/banderas/espana.png" alt="España" title="España">
+                  <div class="texts">
+                    <h3 class="titulo">España</h3>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="option">
+                <div class="contentOption">
+                  <img src="./imagenes/banderas/brasil.png" alt="Brasil" title="Brasil">
+                  <div class="texts">
+                    <h3 class="titulo">Brasil</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <input type="hidden" name="pais" id="inputSelect" value="">
+          </div>
+      </section>     
     </header>
     <main>
       <section id="MainPage" class="MainPage">  
@@ -125,6 +191,7 @@
           <input type="image" src="./imagenes/weightlifting.png">
           <input type="image" src="./imagenes/wrestling.png">
       </section>
+
     <!---------------------------------------------------------------------------------------> 
     
       <!-- Lista de selección -->
@@ -138,10 +205,11 @@
           <option id="nameFalling" value="3">nombres de manera descendente</option>
         </select>
       </section>
-
 <!-------------------------------------------------------------------------------------------------->
       <section id="gridForTest" class="grid">
-      </section>                    
+
+      <section class="grid">
+                        
     </main>
     <footer class="footer">
       <p>© Todos los derechos reservados | Juegos Olímpicos - Río 2016</p>

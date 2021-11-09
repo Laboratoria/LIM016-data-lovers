@@ -1,28 +1,17 @@
 import { sortData } from './data.js';
 import { functionAll } from './data.js';
-import datos from './data/athletes/athletes.js';
+import datos from './data/athletes/athletes.js'; //jala de athletes.js
 
-let printFilter = document.getElementById('printFilter');
-let arrFilter  = [];
-let checkboxes = document.querySelectorAll('.checkbox');
-///////////////////////////////////////////////////////////////////////////////////////
-
-/*
-const sortByCountry = (athlete1,athlete2) => {
-
-    if (athlete1.team > athlete2.team) {
-        return 1;
-      }
-      if (athlete1.team < athlete2.team) {
-        return -1;
-      }
-      return 0;
-};
- 
-const htmlAthletes = sortData(arrayAthletes, sortByName,).map(generateAthleteTemplate).join('');
-
-*/
-
+console.log(functionAll(datos));
+//----------------SELECTOR DINÁMICO PARA EL FILTRO DE PAÍSES----------------
+//Para esconder y mostrar las opciones
+const select = document.querySelector('.select');
+select.addEventListener('click', function(){
+    document.getElementById('options').classList.toggle('active');
+});
+//Para que el contenido de las opciones se muestreen la parte superior
+//const contentSelect = document.querySelector('.contentSelect');
+//const inputSelect = document.querySelector('#inputSelect');
 
 const arrayAthletes = datos.athletes;//aqui guardo la data de todos los atletas
 
@@ -43,8 +32,6 @@ const generateAthleteTemplate = (athlete) => {/* una funcion  que retorna con la
     </section>
   </article>`
 }
-
-//insertHtmlAtheles(htmlAthletes);//utilzo como argumento mi nuevo arreglo que converti en string.
 
 const optionAge = document.getElementById('optionAge');
 const nameOpward = document.getElementById('nameOpward');
@@ -105,20 +92,20 @@ document.getElementById("orderBySelect").addEventListener('change', (event) => {
     }
 });
 
-// optionAge.addEventListener('click', () =>{
-//      const htmlAthletesAge = sortData(arrayAthletes, sortByAge,true).map(generateAthleteTemplate).join('');
-//      insertHtmlAtheles(htmlAthletesAge);//utilzo como argumento mi nuevo arreglo que converti en string.
-// });
 
-// nameOpward.addEventListener('click', () =>{
-//     const htmlAthletesName= sortData(arrayAthletes, sortByName,true).map(generateAthleteTemplate).join('');
-//     insertHtmlAtheles(htmlAthletesName);
+/*
+const sortByCountry = (athlete1,athlete2) => {
 
-// });
+    if (athlete1.team > athlete2.team) {
+        return 1;
+      }
+      if (athlete1.team < athlete2.team) {
+        return -1;
+      }
+      return 0;
+};
+ 
+const htmlAthletes = sortData(arrayAthletes, sortByName,).map(generateAthleteTemplate).join('');
 
-// nameFallig.addEventListener('click', () =>{
-//     const htmlAthletesNameReverse= sortData(arrayAthletes, sortByName,false).map(generateAthleteTemplate).join('');
-//     insertHtmlAtheles(htmlAthletesNameReverse);
-
-// });
+*/
 

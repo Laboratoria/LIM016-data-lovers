@@ -1,30 +1,13 @@
-
 export const functionAll = (datos) => {
-  const arr = datos.athletes;
+  const arrayAthletes = datos.athletes;
   const arr2 = [];
-  arr.filter(function (person) { //person es el nuevo objeto recorrido
-    console.table(person);
+  arrayAthletes.filter(function (person) { //person es el nuevo objeto recorrido
+    //console.table(person, 'hola'); //para filtrar toda la tabla de datos
+    console.log(person.team, 'holi'); //para filtrar por categorias
     return person.age;
     
   });
 
-
-  //console.log(data.athletes, 'holi');
-
-  //FILTRAR POR EDAD
-  /*let ageFilter = data.filter(function(data){
-    return data.age===21;
-  })
-  console.log(ageFilter);*/
-
-
-  // let gender = athletes.filter(function(athletes){
-  // return athletes.gender === 'M';
-  // });
-  // console.log(gender);
-
-
-};
 
 /*exporto mi funcion para usarla en otro partes de la aplicacion*/ 
 // Este funcion recive 3 parametros, el primero es un Array de Athletas
