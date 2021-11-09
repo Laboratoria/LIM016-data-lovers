@@ -16,7 +16,7 @@ body {
   background-image: url(./fondo.jpg);
   background-repeat: repeat;
   background-attachment: fixed;
-  min-height: 90vh;
+  min-height: 100vh;
   padding-top: 5em;
 }
 
@@ -78,21 +78,26 @@ body {
 
 /* VISTA DE LA PAGINA DE INICIO */
 .intro_background{
+  position: relative;
   padding-top: 4em;
+  width: 100%;
+  height: 100%; 
 }
 
-.intro_background_image{
+.intro_background_image img{
   position: relative;
   filter: brightness(60%);
-  height: 100%;
+  width: 100%;
+  min-height: 100%;
 }
 
 .intro_content {
   position: absolute;
-  width: 50%;
-  height: 25%;
-  top: 50%;
-  left: 25%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 .intro_content {
@@ -103,28 +108,20 @@ body {
 }
 
 .intro_content_title {
+  margin-top: 270px;
   font-weight: bold;
-  font-size: 2em;
+  font-size:2em;
 }
 
 .intro_button {
-  position: absolute;
-  top: 85%;
-  left: 40%;
-  width: 20%;
-  height: 10%;
+  margin: auto;
 }
 
 .intro_button button {
-  width: 100%;
-  height: 100%;
-  border-radius: 2em;
-  background: linear-gradient(
-    90deg,
-    rgba(4, 0, 61, 1) 0%,
-    rgba(1, 1, 71, 1) 56%,
-    rgba(5, 106, 152, 1) 100%
-  );
+  width: 8em;
+  height: 2em;
+  border-radius: 1.6em;
+  background: linear-gradient(90deg,rgba(4, 0, 61, 1) 0%,rgba(1, 1, 71, 1) 56%,rgba(5, 106, 152, 1) 100%);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.535);
   font-weight: bold;
   font-size: 1.7em;
@@ -138,12 +135,11 @@ body {
 
 
 .carrusel{
-  width: 100vw;
-   display: flex;
+  width: 100%;
+  display: flex;
   flex-direction: row;
   align-items: center;
-
- position: relative;
+  position: relative;
 }
 
 .carrusel:hover{
@@ -154,7 +150,7 @@ body {
   display: flex;
   overflow-x: hidden;
   overflow-y: hidden;
-  border: 1px solid red;
+
   padding: 20px 0px;
 
 }
@@ -199,16 +195,138 @@ transform: scale(1.2);
 
 
 /*CONTENEDOR DE NOTICIAS POKEMON*/
+.intro-peliculas{
+  background-image: url(img/fondo-peliculas.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.tittle{
+  padding: 0.5em 0;
+  font-size:40px;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.tittle img{
+  max-width:400px;
+  max-height:100%;
+}
 .contenedor-peliculas{
   display: grid;
-  grid-template-columns:1fr 1fr
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  position: relative;
 }
 
-.contenedor-peliculas a img{
-  width: 20rem;
-  height: 10rem;
+#pelicula1{
+  grid-column: 1/4;
 }
 
+#pelicula2{
+  grid-column: 4/7;
+}
+
+#pelicula3{
+  grid-column: 1/3;
+}
+#pelicula4{
+  grid-column: 3/5;
+}
+#pelicula5{
+  grid-column: 5/7;
+}
+
+.pelicula{
+  background: #333;
+    padding-top: 56.25%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+
+.imagen-pelicula{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.imagen-pelicula img{
+  width: 100%;
+  height: 100%;
+}
+
+.contenido-pelicula{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(8, 34, 78, 0.8) 100%);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+} 
+
+.titulo-pelicula{
+  max-height: 54px;
+  padding-left: 15px;
+  padding-bottom: 80px;
+  box-sizing: inherit;
+}
+
+.titulo-pelicula h{
+  font-weight: bold;
+  line-height:1.2cm;
+  font-size: 22px;
+}
+
+
+.titulo-pelicula p{
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size:19px;
+  padding-left: 30px;
+}
+
+.contenedor-play{
+  position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.604);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.far{
+  font-size: 60px;
+  background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.far:hover{
+  font-size: 65px;
+}
+.pelicula:hover .contenedor-play{
+  visibility: visible;
+
+}
 /*CONTENEDOR DE POKEMON*/
 .pokemon-container {
   display: grid;
@@ -247,10 +365,33 @@ transform: scale(1.2);
   flex-direction: row;
   justify-content: center;
   margin-top: 1em;
+  text-transform: capitalize;
 }
 
-.logo img {
-  width: 30%;
+/*DISEÑANDO LOS SELECT*/
+#region,
+#tipos,
+#cp,
+#orden,
+#rareza,
+#egg{
+  width: 8%;
+  height:35px;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#region:hover,
+#tipos:hover,
+#cp:hover,
+#orden:hover,
+#rareza:hover,
+#egg:hover{
+  box-shadow: 0 2px 4px black;
+  background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
 }
 
 /* evoluciones */
@@ -299,6 +440,7 @@ height: 50%;
   font-weight: 800;
   font-family: "Spartan", sans-serif;
   margin: 0.4em;
+  text-transform: capitalize;
 }
 
 /*DISEÑO DEL BOTON DE MAS INFO*/
@@ -408,19 +550,83 @@ height: 50%;
 
 
 /* DANDO ESTILO A LOS ICONS DE LOS TIPOS DE POKEMONES*/
+.logo-steel {
+  content: url("./img/steel.png");
+  width:20%;
+}
 .logo-water {
-  content: url("./img/caramelos.png");
+  content: url("./img/water.png");
+  width:20%;
+}
+.logo-bug {
+  content: url("./img/bug.png");
+  width:20%;
+}
+.logo-dragon {
+  content: url("./img/dragon.png");
+  width:20%;
+}
+.logo-electric {
+  content: url("./img/electric.png");
+  width:20%;
+}
+.logo-gosth {
+  content: url("./img/gosth.png");
+  width:20%;
+}
+.logo-fire {
+  content: url("./img/fire.png");
+  width:20%;
+}
+.logo-fairy {
+  content: url("./img/fairy.png");
+  width:20%;
+}
+.logo-ice {
+  content: url("./img/ice.png");
+  width:20%;
+}
+.logo-fight {
+  content: url("./img/fight.png");
+  width:20%;
+}
+.logo-normal {
+  content: url("./img/normal.png");
+  width:20%;
+}
+.logo-grass {
+  content: url("./img/grass.png");
+  width:20%;
+}
+.logo-psychic {
+  content: url("./img/psychic.png");
+  width:20%;
+}
+.logo-dark {
+  content: url("./img/dark.png");
+  width:20%;
+}
+.logo-rock {
+  content: url("./img/rock.png");
+  width:20%;
+}
+.logo-ground {
+  content: url("./img/ground.png");
+  width:20%;
+}
+.logo-poison {
+  content: url("./img/poison.png");
+  width:20%;
+}
+.logo-poison {
+  content: url("./img/poison.png");
   width:20%;
 }
 
-.logo-ghost{
+.logo-flying{
 
-  content: url("./img/caramelos.png");
+  content: url("./img/flying.png");
   width:20%;
-}
-
-.logo-rock{
-
 }
 
 .divTipo {
@@ -445,7 +651,7 @@ flex-direction: column;
 .description p {
   font-size: 10 px;
   text-align: justify;
-  padding: 0 20px;
+  padding: 0 10px;
   line-height: 1.4em;
   border-bottom: 1px solid grey;
 }
@@ -453,15 +659,15 @@ flex-direction: column;
 .features {
   display: flex;
   justify-content: space-around;
-  padding: 2px 0px;
+
 }
 
 .features div {
   display: flex;
   width: 30%;
-  height: 6em;
+  height: 5em;
   font-weight: bold;
-  padding-top: 10px;
+  padding-top: 1px;
   justify-content: center;
   align-items: center;
 }
@@ -502,7 +708,10 @@ flex-direction: column;
   padding-top: 11%;
   font-weight: bold;
 }
+.logo img {
+  width: 60px;
 
+}
 /*DANDO ESTILO A LA VISTA 2*/
 
 .prueba {
@@ -760,6 +969,8 @@ table {
   width: 18%;
   height: 2.2em;
   background: rgba(255, 255, 255, 0.556);
+  margin-left: 25px;
+
 }
 
 #search:focus {
@@ -780,6 +991,7 @@ table {
   border-radius: 0.2em;
   background-color: rgb(2, 22, 99);
   color: white;
+  margin-right: 25px;
 }
 
 #botonBuscar:hover {
@@ -812,6 +1024,14 @@ table {
 #button-up img:hover {
   transform: scale(1.1);
 }
+
+
+/*FOOTER*/
+.footer{
+  height: 50px;
+  background: linear-gradient(90deg, rgba(4,0,61,1) 0%, rgba(1,1,71,1) 56%, rgba(5,106,152,1) 100%);
+  z-index: -1;
+}
 /*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
 @media (max-width: 600px) {
   .pokemon-container {
@@ -829,5 +1049,96 @@ table {
 
   .containerVista {
     height: 70%;
+  }
+
+}
+@media (max-width: 750px) {
+  .intro_button button {
+    font-size: 0.8em;
+  }
+
+  .intro_content_title {
+    font-size:0.7em;
+    line-height:1em;
+  }
+  .intro_content_title {
+    margin-top: 200px;
+
+  }
+}
+
+@media (max-width: 500px) {
+  .intro_button button {
+    font-size: 0.6em;
+  }
+
+  .intro_content_title {
+    font-size:0.7em;
+    line-height:2em;
+  }
+  .intro_content_title {
+    margin-top: 130px;
+
+  }
+  .intro_content_description{
+    line-height: 1em;
+    font-size:0.6em;
+  }
+
+  .contenedor-peliculas{
+ 
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+  }
+  
+  #pelicula1{
+    grid-column: 1/3;
+  }
+  
+  #pelicula2{
+    grid-column: 3/5;
+  }
+  
+  #pelicula3{
+    grid-column: 1/3;
+  }
+  #pelicula4{
+    grid-column: 3/5;
+  }
+  #pelicula5{
+    grid-column: 2/4;
+  }
+
+  .pelicula{
+      border-radius: 15px;
+  }
+  .titulo-pelicula h{
+    line-height:0.5cm;
+    font-size: 12px;
+  }
+  
+  
+  .titulo-pelicula p{
+    font-size:10px;
+    padding-left: 30px;
+  }
+  .titulo-pelicula{
+    max-height: 40px;
+    padding-left: 15px;
+    padding-bottom: 30px;
+  }
+  
+  .tittle{
+    padding: 0.5em 0;
+    font-size:20px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .tittle img{
+    max-width:120px;
+    max-height:90px;
   }
 }

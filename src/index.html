@@ -23,7 +23,7 @@
       </div>
       <img class="pokebola" src="img/pokebola.gif">
     </header>
-
+    
     <section id="welcome"  style="display: block">
       <div class="intro">
         <div class="intro_background">
@@ -41,17 +41,17 @@
           width="100%" height="100%"
           />
           </picture>
+          <div class="intro_content">
+            <div class="intro_content_title">¡Les damos la bienvenida, entrenadores!</div>
+            <div class="intro_content_description">¡Descubre todos los pokemones que tenemos para ti...!</div>
+            <div class="intro_button">
+              <button id="verPokedex">Descubrir</button>
+            </div>
+          </div>
         </div>
-        <div class="intro_content">
-          <div class="intro_content_title">¡Les damos la bienvenida, entrenadores!</div>
-          <div class="intro_content_description">¡Descubre todos los pokemones que tenemos para ti...!</div>
-        </div>
-        <div class="intro_button">
-          <button id="verPokedex">Descubrir</button>
-        </div>
-        </div>
-
-<!-- carrusel -->
+        
+        
+        <!-- carrusel -->
       <div class="carrusel">
         <div class="carrusel-items">
 
@@ -113,58 +113,73 @@
           </div>
         </div>
       </div>
-
-
-
-
-
         <!-- peliculas -->
+
         <div class="intro-peliculas">
-        <h>Peliculas Pokemon</h>
+        <h class="tittle"><img src="img/logo-pelicula.png"> Peliculas Pokemon</h>
         <div class="contenedor-peliculas">
-          <a class="pelicula" href="https://cuevana3.io/8345/pokemon-the-movie-the-power-of-us" title="pelicula">
+          <a class="pelicula" id="pelicula1" href="https://cuevana3.io/8345/pokemon-the-movie-the-power-of-us" title="pelicula">
             <div class="imagen-pelicula">
-              <img src="img/pelicula1.jpg" alt=""></div>
+              <img src="img/pelicula1.jpg" alt="">
+              
+            </div>
               <div class="contenido-pelicula">
                 <div class="titulo-pelicula" title="pelicula">
-                  <span> pelicula</span> <span>1</span>
+                  <h> Pokémon:</h> 
+                  <p>El poder de todos</p>
                 </div>
               </div>
+            <div class="contenedor-play">
+              <i class="far fa-play-circle"></i>
+            </div>
           </a>
-          <a class="pelicula" href="https://cuevana3.io/4011/ber-gekijouban-poketto-monsuta-kimi-ni-kimeta" title="pelicula">
-            <div class="imagen-pelicula">
-              <img src="img/pelicula2.jpg" alt=""></div>
-              <div class="contenido-pelicula">
-                <div class="titulo-pelicula" title="pelicula">
-                  <span> pelicula</span> <span>1</span>
-                </div>
-              </div>
-          </a>
-          <a class="pelicula" href="https://cuevana3.io/49902/gekijouban-poketto-monsuta-koko" title="pelicula">
+          <a class="pelicula" id="pelicula2" href="https://cuevana3.io/49902/gekijouban-poketto-monsuta-koko" title="pelicula">
             <div class="imagen-pelicula">
               <img src="img/pelicula3.jpg" alt=""></div>
               <div class="contenido-pelicula">
                 <div class="titulo-pelicula" title="pelicula">
-                  <span> pelicula</span> <span>1</span>
+                  <h> Pokémon: </h> <p>Los secretos de la selva</p>
                 </div>
               </div>
+              <div class="contenedor-play">
+                <i class="far fa-play-circle"></i>
+              </div>
           </a>
-          <a class="pelicula" href="https://cuevana3.io/14108/pokemon-detective-pikachu" title="pelicula">
+          <a class="pelicula" id="pelicula3" href="https://cuevana3.io/4011/ber-gekijouban-poketto-monsuta-kimi-ni-kimeta" title="pelicula">
+            <div class="imagen-pelicula">
+              <img src="img/pelicula2.jpg" alt=""></div>
+              <div class="contenido-pelicula">
+                <div class="titulo-pelicula" title="pelicula">
+                  <h> Pokémon La Película:</h> <p>¡Te Elijo A Ti!</p>
+                </div>
+              </div>
+              <div class="contenedor-play">
+                <i class="far fa-play-circle"></i>
+              </div>
+          </a>
+          
+          <a class="pelicula" id="pelicula4" href="https://cuevana3.io/14108/pokemon-detective-pikachu" title="pelicula">
             <div class="imagen-pelicula">
               <img src="img/pelicula4.jpeg" alt=""></div>
               <div class="contenido-pelicula">
                 <div class="titulo-pelicula" title="pelicula">
-                  <span> pelicula</span> <span>1</span>
+                  <h> Pokémon:</h> <p> Detective Pikachu</p>
                 </div>
               </div>
+              <div class="contenedor-play">
+                <i class="far fa-play-circle"></i>
+              </div>
           </a>
-          <a class="pelicula" href="https://cuevana3.io/26796/pokemon-mewtwo-strikes-back-evolution" title="pelicula">
+          <a class="pelicula" id="pelicula5" href="https://cuevana3.io/26796/pokemon-mewtwo-strikes-back-evolution" title="pelicula">
             <div class="imagen-pelicula">
               <img src="img/pelicula5.jpeg" alt=""></div>
               <div class="contenido-pelicula">
                 <div class="titulo-pelicula" title="pelicula">
-                  <span> pelicula</span> <span>1</span>
+                  <h> Pokémon:</h> <p> Mewtwo contraataca: Evolución</p>
                 </div>
+              </div>
+              <div class="contenedor-play">
+                <i class="far fa-play-circle"></i>
               </div>
           </a>
         </div>
@@ -174,6 +189,11 @@
 
 
     <section id="pokedex" style="display: none">
+
+      
+    <input type="text" id="search" placeholder="Search...">
+    <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button> 
+    
       <select id="region">
         <option value="" disabled selected>Region</option>
         <option value="kanto" id="kanto">Kanto</option>
@@ -209,9 +229,14 @@
         <option value="flying">flying</option>
         <option value="rock">rock</option>
         <option value="dragon">dragon</option>
-        <option value="dark">dark</option>
+        <option value="dark">dark</option> 
         <option value="fairy">fairy</option>
         <option value="ground">ground</option>
+        <option value="psychic">psychic</option>
+        <option value="ice">ice</option>
+        <option value="normal">normal</option>
+        <option value="steel">steel</option>
+        <option value="electric">electric</option>
       </select>
 
 
@@ -224,8 +249,6 @@
       <option value="10 km">10 km</option>
     </select>
 
-    <input type="text" id="search" placeholder="Search...">
-    <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button>
 
     <p id="parrafo"></p>
 
@@ -239,6 +262,10 @@
     </div>
 
   </section>
+
+  <footer class="footer">
+
+  </footer>
 
 <script src="main.js" type="module"></script>
 
