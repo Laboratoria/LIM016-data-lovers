@@ -84,6 +84,10 @@
               <td id="tenthTotal"></td>
             </tr>        
           </table>
+          <!--Boton para ver detalles de las medallas === Se abre ventana modal-->
+          <button class="open" id="open">
+            ver detalle
+          </button>
       </section>
       <section id="imgContainer" class="imgContainer">
         <input type="image" src="./imagenes/archery.png">
@@ -128,7 +132,7 @@
       <section class="grid">
         <article class="sportsContainer">
           <section class="boxImgAthlete">
-              <img class="classAthlete" src="imagenes/classAthlete.PNG">
+              <img class="classAthlete" src="./imagenes/classAthelete.PNG">
           </section>
           <section class="tableAthletes">
               <p>&#128308 nombre:</p>
@@ -140,7 +144,106 @@
               <p>&#128308 medalla:oro</p>
           </section>
         </article>      
-      </section>                    
+      </section> 
+
+      <!--Ventana Modal para mostrar las posiciones detalladas-->
+      <section class="modal-container" id="modal-container">
+        <div>
+        <table class="detailsMedal">
+          <tr>
+            <th>Posiciones</th>
+            <th>Paises</th>
+            <th>Oro</th>
+            <th>Plata</th>
+            <th>Bronce</th>
+            <th>Total</th>
+          </tr>
+          <tr>
+            <td id="firstPlace">1</td>
+            <td id="firstCountry">EE.UU</td>
+            <td id="firstGold">34</td>
+            <td id="firstSilver">45</td>
+            <td id="firstBronze">55</td>
+            <td id="firstTotal">121</td>
+          </tr>
+          <tr>
+            <td id="secondPlace">2</td>
+            <td id="secondCountry"></td>
+            <td id="secondGold">34</td>
+            <td id="secondSilver">45</td>
+            <td id="secondBronze">55</td>
+            <td id="secondTotal">121</td>
+          </tr>
+          <tr>
+            <td id="thirdPlace">3</td>
+            <td id="thirdCountry"></td>
+            <td id="thirdGold">34</td>
+            <td id="thirdSilver">45</td>
+            <td id="thirdBronze">55</td>
+            <td id="thirdTotal">121</td>
+          </tr>
+          <tr>
+            <td id="fourthPlace">4</td>
+            <td id="fourthCountry"></td>
+            <td id="fourthGold">34</td>
+            <td id="fourthSilver">45</td>
+            <td id="fourthBronze">55</td>
+            <td id="fourthTotal">121</td>
+          </tr>
+          <tr>
+            <td id="fifthPlace">5</td>
+            <td id="fifthCountry"></td>
+            <td id="fifthGold">34</td>
+            <td id="fifthSilver">45</td>
+            <td id="fifthBronze">55</td>
+            <td id="fifthTotal">121</td>
+          </tr>
+          <tr>
+            <td id="sixthPlace">6</td>
+            <td id="sixthCountry"></td>
+            <td id="sixthGold">34</td>
+            <td id="sixthSilver">45</td>
+            <td id="sixthBronze">55</td>
+            <td id="sixthTotal">121</td>
+          </tr>
+          <tr>
+            <td id="seventhPlace">7</td>
+            <td id="seventhCountry"></td>
+            <td id="seventhGold">34</td>
+            <td id="seventhSilver">45</td>
+            <td id="seventhBronze">55</td>
+            <td id="seventhTotal">121</td>
+          </tr>
+          <tr>
+            <td id="eighthPlace">8</td>
+            <td id="eighthCountry"></td>
+            <td id="eighthGold">34</td>
+            <td id="eighthSilver">45</td>
+            <td id="eighthBronze">55</td>
+            <td id="eighthTotal">121</td>
+          </tr>
+          <tr>
+            <td id="ninthPlace">9</td>
+            <td id="ninthCountry"></td>
+            <td id="ninthGold">34</td>
+            <td id="ninthSilver">45</td>
+            <td id="ninthBronze">55</td>
+            <td id="ninthTotal">121</td>
+          </tr>
+          <tr>
+            <td id="tenthPlace">10</td>
+            <td id="tenthCountry"></td>
+            <td id="tenthGold">34</td>
+            <td id="tenthSilver">45</td>
+            <td id="tenthBronze">55</td>
+            <td id="tenthTotal">121</td>
+          </tr>      
+        </table>
+        <button class="close" id="close">
+          Volver
+        </button> 
+      </div> 
+        </section>                   
     </main>
     <footer class="footer">
       <p>© Todos los derechos reservados | Juegos Olímpicos - Río 2016</p>
