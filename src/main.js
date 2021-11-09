@@ -17,6 +17,7 @@ sports_click.addEventListener("click", (e)=>{
   document.getElementById("contaiiner").style.display = "none";
   document.getElementById("sports").style.display = "block";
   document.getElementById("athletes").style.display = "none";
+  document.getElementById("countries").style.display = "none";
 });
 
 
@@ -26,13 +27,17 @@ teams_click.addEventListener("click", (e)=>{
   document.getElementById("contaiiner").style.display = "none";
   document.getElementById("countries").style.display = "block";
   document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
 });
 
 let athletes_click= document.getElementById("athletes-click");
 athletes_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
+
   document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("athletes").style.display = "block";
   document.getElementById("countries").style.display = "none";
+  document.getElementById("sports").style.display = "none";
 });
 
 
@@ -47,16 +52,16 @@ for( let i=0; i<finalCountry.length; i++){
   document.getElementById("hereCountries").appendChild(country_screen)
 }
 
-// let sports= rio_sports(data);  //me trae los paises
-// let sportsCounter= timesRepeated(sports);
-//let finalSports= Object.entries(sportsCounter);
+let sports= rio_sports(data).sort();  //me trae los paises
+let sportsCounter= noRepeated(sports);
+let finalSports= Object.entries(sportsCounter);
 
-// for( let i=0; i<finalSports.length; i++){
-//   let sport_screen= document.createElement("p");
-//   sport_screen.className="btnPurple"
-//   sport_screen.innerHTML= finalSports[i].join("<br>")+ " athlete(s)";
-//   document.getElementById("hereSports").appendChild(sport_screen);
-// }
+for( let i=0; i<finalSports.length; i++){
+  let sport_screen= document.createElement("p");
+  sport_screen.className="btnBlue"
+  sport_screen.innerHTML= finalSports[i].join("<br>");
+  document.getElementById("hereSports").appendChild(sport_screen);
+}
 
 // let mapOtro= rio_sports(data);
 // let sportsNoRepeated= noRepeated(mapOtro);
@@ -107,8 +112,7 @@ const contAthletes = (event,athletes) => {
     let ageAthlete= document.getElementById("age")
     ageAthlete.innerHTML= athletes.age;
 
-    listAthlete.appendChild(cardAthlete)
-    
+    listAthlete.appendChild(cardAthlete)  
 }
 
 

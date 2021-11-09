@@ -4,7 +4,7 @@
     padding: 0;
 }
 .container{
-    display:none;
+    display:block;
 }
 /*-------------------------------------------HEADER*/
 .head{
@@ -59,6 +59,11 @@ a:hover{
 }
 
 /*--------------------------------------CONTAINER-ABOUT RIO*/
+h4{
+    font-size: 3ex;
+    text-transform: uppercase;
+    font-weight: 900;
+}
 .rio-info{
     padding: 2rem;
     display: grid;
@@ -77,39 +82,53 @@ a:hover{
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bolder;
 }
-
+.venues{
+    font-size: 4ex;
+}
 /*--------------------------------------CONTAINER-EL PROYECTO*/
-
+h2{
+    text-align: left;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-left: 1ex;
+}
 .paises{    /* son los h2*/
     color: #6CC45E;
 }
 
 .deportes{
-    color: #944195;
+    color: #24A4E1;
 }
 
 .atleta{
     color: #F1B839;
+    padding-left: 3ex;
 }
 
 .btnGreen{   /*la info de cada uno*/
     border-bottom: #6CC45E .3rem solid;
-
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
 }
 
-.btnPurple{
-    border-bottom: #944195 .3rem solid;
-   
+.btnBlue{
+    border-bottom: #48c2f3 .3rem solid;
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
 }
-.btnPurple:hover{
+/* .btnPurple:hover{
     color:rgb(0, 31, 204);
     cursor: pointer;
 
-}
+} */
 
 .btnYellow{
     border-bottom: #F1B839 .3rem solid;
-
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
 }
 
 .todo{   /*donde está encerra la info*/
@@ -132,42 +151,37 @@ input{
     margin: 1rem;
 }
 
-h2{
-    text-align: center;
-}
-p{   /* Por ahora ahí se guarda los paises, deportes*/
+
+p{/* Por ahora ahí se guarda los paises, deportes*/
     margin: 1.5rem;
     padding: 0.2rem;
     text-align: center;
-    background-color: rgb(238, 236, 236);
-    font-weight: lighter; 
-}
+} 
 .info-rio{
     background-color: white;
     text-align: justify;
-}
-#hereCountries{
-    overflow:auto;
-    overflow-x: hidden; 
-    margin-bottom: 1.5em; 
-
+    line-height: 2.4ex;
+    font-size: 2.5ex;
 }
 .sport_ev{
     display:flex;
     align-content: center;
 }
-#hereSports{
-    overflow: auto;
-    overflow-x: hidden;
-    margin-bottom: 1.5em;
-}
-
-main{
-    height: 500px;
-}
 
 .sports {
-    display:block;
+    display:none;
+}
+.hereSports{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; */
+}
+.hereCountries{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
 .countries{
     display:none;
@@ -176,9 +190,6 @@ main{
     display:none;
     width: 100%;
 }
-
-
-
 .listAthletes{
     width: 100%;
     display: flex;
@@ -199,11 +210,18 @@ main{
     border: solid #F1B839;
     border-radius: 10px;
     padding: 0.5rem;
+    margin-right: 7ex;
+    line-height: 0ex;
 }
 .texCard{
     display: flex;
     flex-direction: row;
     align-items: center;
+  
+}
+
+ul:hover{
+    cursor: pointer;
 }
 .title{
     text-align: center;
