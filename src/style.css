@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+.container{
+    display:block;
+}
 /*-------------------------------------------HEADER*/
 .head{
     display: flex;
@@ -20,6 +23,7 @@
     color: white;   
     font-size: 4rem;
     padding-right: 14rem;
+    letter-spacing: 0.1em;
 }
 .navBar{
     background-color: #00A0DB;
@@ -30,6 +34,8 @@
     font-family: 'Bebas Neue', cursive;
     text-decoration: none;
     line-height: 1.5em;   
+    letter-spacing: 0.1ex;
+    
 }
 a:hover{
     color: #6e6e6e;
@@ -53,6 +59,11 @@ a:hover{
 }
 
 /*--------------------------------------CONTAINER-ABOUT RIO*/
+h4{
+    font-size: 3ex;
+    text-transform: uppercase;
+    font-weight: 900;
+}
 .rio-info{
     padding: 2rem;
     display: grid;
@@ -71,43 +82,58 @@ a:hover{
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bolder;
 }
-
+.venues{
+    font-size: 4ex;
+}
 /*--------------------------------------CONTAINER-EL PROYECTO*/
-
+h2{
+    text-align: left;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-left: 1ex;
+}
 .paises{    /* son los h2*/
     color: #6CC45E;
 }
 
 .deportes{
-    color: #944195;
+    color: #24A4E1;
 }
 
 .atleta{
     color: #F1B839;
+    padding-left: 3ex;
 }
 
 .btnGreen{   /*la info de cada uno*/
     border-bottom: #6CC45E .3rem solid;
-
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
 }
 
-.btnPurple{
-    border-bottom: #944195 .3rem solid;
-   
+.btnBlue{
+    border-bottom: #48c2f3 .3rem solid;
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
 }
-.btnPurple:hover{
+/* .btnPurple:hover{
     color:rgb(0, 31, 204);
     cursor: pointer;
 
-}
+} */
 
 .btnYellow{
     border-bottom: #F1B839 .3rem solid;
-
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
 }
 
 .todo{   /*donde está encerra la info*/
-
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
@@ -125,37 +151,37 @@ input{
     margin: 1rem;
 }
 
-h2{
-    text-align: center;
-}
-p{   /* Por ahora ahí se guarda los paises, deportes*/
+
+p{/* Por ahora ahí se guarda los paises, deportes*/
     margin: 1.5rem;
     padding: 0.2rem;
     text-align: center;
-    background-color: rgb(238, 236, 236);
-    font-weight: lighter; 
-}
+} 
 .info-rio{
     background-color: white;
     text-align: justify;
+    line-height: 2.4ex;
+    font-size: 2.5ex;
 }
-#hereCountries{
-    overflow:auto;
-    overflow-x: hidden; 
-    margin-bottom: 1.5em; 
-}
-#hereSports{
-    overflow: auto;
-    overflow-x: hidden;
-    margin-bottom: 1.5em;
-}
-
-main{
-    height: 500px;
+.sport_ev{
+    display:flex;
+    align-content: center;
 }
 
 .sports {
     display:none;
+}
+.hereSports{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; */
+}
+.hereCountries{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
 .countries{
     display:none;
@@ -163,21 +189,26 @@ main{
 .athletes{
     display:none;
     width: 100%;
+    background-image: url('https://images.vexels.com/media/users/3/77434/raw/70da17038368661b93b985dd3a79b363-rio-2016-ahtletics-100m.jpg');
+    background-repeat: no-repeat;
+    background-position:top;
+    
 }
-
-
-
+.athletes image{
+    opacity: 0.5;
+}
 .listAthletes{
     width: 100%;
     display: flex;
     flex-direction: row;
+    font-size: 1.2rem;
 }
 
 #hereAthletes{
-    display: flex;
     flex-direction: column;
-    width: 70%; 
-    margin-left: 5rem;
+    width: 60%; 
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
 #cardAthlete{
     display: flex;
@@ -187,20 +218,31 @@ main{
     border: solid #F1B839;
     border-radius: 10px;
     padding: 0.5rem;
+    margin: 3rem;
+    box-shadow:  16px 16px 44px #5c5606, 
+             -16px -16px 44px #282a28;
+    transition: 0.3s all ease-in-out;
+
 }
 .texCard{
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 4.5rem;
+}
+
+ul:hover{
+    cursor: pointer;
 }
 .title{
     text-align: center;
 }
+
  /*------------------------------------------ FOOTER*/
 footer{   
-    /*background-color: black;*/
+    background-color: black;
     padding: 10px 0 10px 0;
-    /*position:absolute;*/
+    position:absolute;
     width: 100%;    
 }
 .foot{
