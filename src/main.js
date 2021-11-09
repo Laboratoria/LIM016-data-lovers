@@ -2,13 +2,13 @@ import { sortData } from './data.js';
 import { functionAll } from './data.js';
 import datos from './data/athletes/athletes.js'; //jala de athletes.js
 
-// import data from './data/lol/lol.js';
-// import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-
-//import datos from './data/athletes/athletes.js';
 console.log(functionAll(datos));
-
-let printFilter = document.getElementById('printFilter');
-let arrFilter  = [];
-let checkboxes = document.querySelectorAll('.checkbox');
+//----------------SELECTOR DINÁMICO PARA EL FILTRO DE PAÍSES----------------
+//Para esconder y mostrar las opciones
+const select = document.querySelector('.select');
+select.addEventListener('click', function(){
+    document.getElementById('options').classList.toggle('active');
+});
+//Para que el contenido de las opciones se muestreen la parte superior
+const contentSelect = document.querySelector('.contentSelect');
+const inputSelect = document.querySelector('#inputSelect');

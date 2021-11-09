@@ -1,4 +1,4 @@
-import data from './data/athletes/athletes';// el punto es para indicar que quiero buscar justo donde me encuentro
+//import data from './data/athletes/athletes';// el punto es para indicar que quiero buscar justo donde me encuentro
 
 
 export const sortData = (data, sortBy, sortOrder) =>{
@@ -16,10 +16,11 @@ export const sortData = (data, sortBy, sortOrder) =>{
  };*/
 
 export const functionAll = (datos) => {
-  const arr = datos.athletes;
+  const arrayAthletes = datos.athletes;
   const arr2 = [];
-  arr.filter(function (person) { //person es el nuevo objeto recorrido
-    console.table(person);
+  arrayAthletes.filter(function (person) { //person es el nuevo objeto recorrido
+    //console.table(person, 'hola'); //para filtrar toda la tabla de datos
+    console.log(person.team, 'holi'); //para filtrar por categorias
     return person.age;
     
   });
