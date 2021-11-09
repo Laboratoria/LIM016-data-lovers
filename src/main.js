@@ -123,8 +123,7 @@ const prueba = ()=>{
     
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
-    athletes_screen.style.width = "25%";
-    athletes_screen.style.display = "flex";
+    //athletes_screen.style.display = "flex";
     athletes_screen.style.flexDirection = "row"
     athletes_screen.innerHTML= name;
     athletes_screen.onclick= (e)=>contAthletes(e,item);

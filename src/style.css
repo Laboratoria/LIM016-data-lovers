@@ -189,18 +189,26 @@ p{/* Por ahora ahí se guarda los paises, deportes*/
 .athletes{
     display:none;
     width: 100%;
+    background-image: url('https://images.vexels.com/media/users/3/77434/raw/70da17038368661b93b985dd3a79b363-rio-2016-ahtletics-100m.jpg');
+    background-repeat: no-repeat;
+    background-position:top;
+    
+}
+.athletes image{
+    opacity: 0.5;
 }
 .listAthletes{
     width: 100%;
     display: flex;
     flex-direction: row;
+    font-size: 1.2rem;
 }
 
 #hereAthletes{
-    display: flex;
     flex-direction: column;
-    width: 70%; 
-    margin-left: 5rem;
+    width: 60%; 
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 }
 #cardAthlete{
     display: flex;
@@ -210,14 +218,17 @@ p{/* Por ahora ahí se guarda los paises, deportes*/
     border: solid #F1B839;
     border-radius: 10px;
     padding: 0.5rem;
-    margin-right: 7ex;
-    line-height: 0ex;
+    margin: 3rem;
+    box-shadow:  16px 16px 44px #5c5606, 
+             -16px -16px 44px #282a28;
+    transition: 0.3s all ease-in-out;
+
 }
 .texCard{
     display: flex;
     flex-direction: row;
     align-items: center;
-  
+    height: 4.5rem;
 }
 
 ul:hover{
@@ -226,6 +237,7 @@ ul:hover{
 .title{
     text-align: center;
 }
+
  /*------------------------------------------ FOOTER*/
 footer{   
     background-color: black;
