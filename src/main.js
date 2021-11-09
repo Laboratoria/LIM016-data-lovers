@@ -1,7 +1,8 @@
+import datos from "./data/athletes/athletes.js";
 import {computeData} from "./data.js";
 import { sortData } from './data.js';
 import { functionAll } from './data.js';
-import datos from "./data/athletes/athletes.js";
+
 
 console.log(functionAll(datos));
 //----------------SELECTOR DINÁMICO PARA EL FILTRO DE PAÍSES----------------

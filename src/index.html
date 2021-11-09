@@ -1,326 +1,335 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/c47856f5c7.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header>
-      <section  >
-        <img src="./imagenes/headerOne.PNG" alt="Header Logo" class="headerLogo">
-      </section>
-      
-      </section>
-      <section class="carousel">
-        <img src="./imagenes/carruselOne.jpg" alt="Ceremonia de Clausura" class="carouselImg">
-        <img src="./imagenes/carruselTwo.jpg" alt="Ceremonia de inauguración" class="carouselImg">
-        <img src="./imagenes/carruselThree.jpg" alt="Debut de atletas peruanas" class="carouselImg">
-        <img src="./imagenes/carruselFour.jpg" alt="Vista panorámicas de las sedes" class="carouselImg">
-        <img src="./imagenes/carruselFive.jpg" alt="atletas femeninas" class="carouselImg">
-      </section>     
-      <section id="filterContainer" class="filterContainer"> <!--MENÚ-->
-         <!-- Lista de selección -->
-      <section>
-          <h2>Ordenar por:</h2>
-        <select id="orderBySelect" name="combo" class="orderBy">
-          <!-- Opciones de la lista (*con selected puedo colocar una opcion por defecto* OJO) -->
-          <option id ="optionAge" value="1">Edad</option>
-          <option id="nameOpward" value="2" >nombres de manera ascendente</option> 
-          <option id="nameFalling" value="3">nombres de manera descendente</option>
-        </select>
-       <!--> 
-          <div id="filter" class="filter"> <!--LO QUE CONTIENE A TODO-->
-      
-            <div id="select" class="select">
-              <div id="contentSelect" class="contentSelect"><!--EL CONTENIDO (escrito)-->
-                <h3 class="titulo">Selecciona un país</h3>
-              </div>
-              <i class="fas fa-angle-down"></i>
-            </div>
 
-            <div class="options" id="options">
-              <a href="#" class="option">
-                <div class="contentOption">
-                  <img src="./imagenes/banderas/united-states.png" alt="Estados Unidos" title="Estados Unidos">
-                  <div class="texts">
-                    <h3 class="titulo">Estados Unidos</h3>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="option">
-                <div class="contentOption">
-                  <img src="./imagenes/banderas/francia.png" alt="Francia" title="Francia">
-                  <div class="texts">
-                    <h3 class="titulo">Francia</h3>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="option">
-                <div class="contentOption">
-                  <img src="./imagenes/banderas/peru.png" alt="Perú" title="Perú">
-                  <div class="texts">
-                    <h3 class="titulo">Perú</h3>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="option">
-                <div class="contentOption">
-                  <img src="./imagenes/banderas/venezuela.png" alt="Venezuela" title="Venezuela">
-                  <div class="texts">
-                    <h3 class="titulo">Venezuela</h3>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="option">
-                <div class="contentOption">
-                  <img src="./imagenes/banderas/alemania.png" alt="Alemania" title="Alemania">
-                  <div class="texts">
-                    <h3 class="titulo">Alemania</h3>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="option">
-                <div class="contentOption">
-                  <img src="./imagenes/banderas/espana.png" alt="España" title="España">
-                  <div class="texts">
-                    <h3 class="titulo">España</h3>
-                  </div>
-                </div>
-              </a>
-              <a href="#" class="option">
-                <div class="contentOption">
-                  <img src="./imagenes/banderas/brasil.png" alt="Brasil" title="Brasil">
-                  <div class="texts">
-                    <h3 class="titulo">Brasil</h3>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <input type="hidden" name="pais" id="inputSelect" value="">
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/c47856f5c7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <section>
+      <img src="./imagenes/headerOne.PNG" alt="Header Logo" class="headerLogo">
+    </section>
+
+    </section>
+    <section class="carousel">
+      <img src="./imagenes/carruselOne.jpg" alt="Ceremonia de Clausura" class="carouselImg">
+      <img src="./imagenes/carruselTwo.jpg" alt="Ceremonia de inauguración" class="carouselImg">
+      <img src="./imagenes/carruselThree.jpg" alt="Debut de atletas peruanas" class="carouselImg">
+      <img src="./imagenes/carruselFour.jpg" alt="Vista panorámicas de las sedes" class="carouselImg">
+      <img src="./imagenes/carruselFive.jpg" alt="atletas femeninas" class="carouselImg">
+    </section>
+    <section id="filterContainer" class="filterContainer">
+      <!--MENÚ-->
+
+      <div id="filter" class="filter">
+        <!--LO QUE CONTIENE A TODO-->
+
+        <div id="select" class="select">
+          <div id="contentSelect" class="contentSelect">
+            <!--EL CONTENIDO (escrito)-->
+            <h3 class="titulo">Selecciona un país</h3>
           </div>
-      </section>     
-    </header>
-    <main>
-      <section id="MainPage" class="MainPage">  
-          <h4>TOP 10 DE PAÍSES CON MEDALLAS GANADAS</h4>
-          <table class="top10">
+          <i class="fas fa-angle-down"></i>
+        </div>
+
+        <div class="options" id="options">
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/united-states.png" alt="Estados Unidos" title="Estados Unidos">
+              <div class="texts">
+                <h3 class="titulo">Estados Unidos</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/francia.png" alt="Francia" title="Francia">
+              <div class="texts">
+                <h3 class="titulo">Francia</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/peru.png" alt="Perú" title="Perú">
+              <div class="texts">
+                <h3 class="titulo">Perú</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/venezuela.png" alt="Venezuela" title="Venezuela">
+              <div class="texts">
+                <h3 class="titulo">Venezuela</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/alemania.png" alt="Alemania" title="Alemania">
+              <div class="texts">
+                <h3 class="titulo">Alemania</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/espana.png" alt="España" title="España">
+              <div class="texts">
+                <h3 class="titulo">España</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/brasil.png" alt="Brasil" title="Brasil">
+              <div class="texts">
+                <h3 class="titulo">Brasil</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+        <input type="hidden" name="pais" id="inputSelect" value="">
+      </div>
+    </section>
+  </header>
+  <main>
+    <section id="MainPage" class="MainPage">
+      <h4>TOP 10 DE PAÍSES CON MEDALLAS GANADAS</h4>
+      <table class="top10">
+        <tr>
+          <th>POSICIONES</th>
+          <th>PAÍSES</th>
+          <td rowspan="11"><canvas class="bars"> </canvas></td>
+          <th>TOTAL</th>
+        </tr>
+        <tr>
+          <td id="firstPlace">1</td>
+          <td id="firstCountry">EE.UU</td>
+          <td id="firstTotal">120</td>
+        </tr>
+        <tr>
+          <td id="secondPlace">2</td>
+          <td id="secondCountry"></td>
+          <td id="secondTotal"></td>
+        </tr>
+        <tr>
+          <td id="thirdPlace">3</td>
+          <td id="thirdCountry"></td>
+          <td id="thirdTotal"></td>
+        </tr>
+        <tr>
+          <td id="fourthPlace">4</td>
+          <td id="fourthCountry"></td>
+          <td id="fourthTotal"></td>
+        </tr>
+        <tr>
+          <td id="fifthPlace">5</td>
+          <td id="fifthCountry"></td>
+          <td id="fifthTotal"></td>
+        </tr>
+        <tr>
+          <td id="sixthPlace">6</td>
+          <td id="sixthCountry"></td>
+          <td id="sixthTotal"></td>
+        </tr>
+        <tr>
+          <td id="seventhPlace">7</td>
+          <td id="seventhCountry"></td>
+          <td id="seventhTotal"></td>
+        </tr>
+        <tr>
+          <td id="eighthPlace">8</td>
+          <td id="eighthCountry"></td>
+          <td id="eighthTotal"></td>
+        </tr>
+        <tr>
+          <td id="ninthPlace">9</td>
+          <td id="ninthCountry"></td>
+          <td id="ninthTotal"></td>
+        </tr>
+        <tr>
+          <td id="tenthPlace">10</td>
+          <td id="tenthCountry"></td>
+          <td id="tenthTotal"></td>
+        </tr>
+      </table>
+      <!--Boton para ver detalles de las medallas === Se abre ventana modal-->
+      <button class="open" id="open">
+        ver detalle
+      </button>
+    </section>
+    <section id="imgContainer" class="imgContainer">
+      <input type="image" src="./imagenes/archery.png">
+      <input type="image" src="./imagenes/artistic gymnastics.png">
+      <input type="image" src="./imagenes/athetics.png">
+      <input type="image" src="./imagenes/badminton.png">
+      <input type="image" src="./imagenes/basketball.png">
+      <input type="image" src="./imagenes/beach volleyball.png">
+      <input type="image" src="./imagenes/boxing.png">
+      <input type="image" src="./imagenes/canoe slalom.png">
+      <input type="image" src="./imagenes/canoe sprint.png">
+      <input type="image" src="./imagenes/cycling bmx.png">
+      <input type="image" src="./imagenes/cycling mountain bike.png">
+      <input type="image" src="./imagenes/cycling road.png">
+      <input type="image" src="./imagenes/cycling track.png">
+      <input type="image" src="./imagenes/diving.png">
+      <input type="image" src="./imagenes/equestrian.png">
+      <input type="image" src="./imagenes/fencing.png">
+      <input type="image" src="./imagenes/football.png">
+      <input type="image" src="./imagenes/golf.png">
+      <input type="image" src="./imagenes/handball.png">
+      <input type="image" src="./imagenes/hockey.png">
+      <input type="image" src="./imagenes/judo.png">
+      <input type="image" src="./imagenes/marathon.png">
+      <input type="image" src="./imagenes/rhythmic.png">
+      <input type="image" src="./imagenes/rowing.png">
+      <input type="image" src="./imagenes/rugby.png">
+      <input type="image" src="./imagenes/sailing.png">
+      <input type="image" src="./imagenes/shooting.png">
+      <input type="image" src="./imagenes/swimming.png">
+      <input type="image" src="./imagenes/synchronised.png">
+      <input type="image" src="./imagenes/table tennis.png">
+      <input type="image" src="./imagenes/taekwondo.png">
+      <input type="image" src="./imagenes/tenis.png">
+      <input type="image" src="./imagenes/trampolin.png">
+      <input type="image" src="./imagenes/triatlon.png">
+      <input type="image" src="./imagenes/volleyball.png">
+      <input type="image" src="./imagenes/water polo.png">
+      <input type="image" src="./imagenes/weightlifting.png">
+      <input type="image" src="./imagenes/wrestling.png">
+    </section>
+
+    <!------------------------------------------------>
+    <!-- Lista de selección -->
+    <section>
+      <h2>Ordenar por:</h2>
+      <select id="orderBySelect" name="combo" class="orderBy">
+        <!-- Opciones de la lista (*con selected puedo colocar una opcion por defecto* OJO) -->
+        <option id="optionAge" value="1">Edad</option>
+        <option id="nameOpward" value="2">nombres de manera ascendente</option>
+        <option id="nameFalling" value="3">nombres de manera descendente</option>
+      </select>
+
+      <section id="gridForTest" class="grid">
+        <section class="grid">
+        </section>
+      </section>
+    </section>
+
+      <!--Ventana Modal para mostrar las posiciones detalladas-->
+      <section class="modal-container" id="modal-container">
+        <div>
+          <table class="detailsMedal">
             <tr>
-              <th>POSICIONES</th>
-              <th>PAÍSES</th>
-              <td rowspan="11"><canvas class="bars"> </canvas></td>
-              <th>TOTAL</th>
+              <th>Posiciones</th>
+              <th>Paises</th>
+              <th>Oro</th>
+              <th>Plata</th>
+              <th>Bronce</th>
+              <th>Total</th>
             </tr>
             <tr>
               <td id="firstPlace">1</td>
               <td id="firstCountry">EE.UU</td>
-              <td id="firstTotal">120</td>
+              <td id="firstGold">34</td>
+              <td id="firstSilver">45</td>
+              <td id="firstBronze">55</td>
+              <td id="firstTotal">121</td>
             </tr>
             <tr>
               <td id="secondPlace">2</td>
               <td id="secondCountry"></td>
-              <td id="secondTotal"></td>
+              <td id="secondGold">34</td>
+              <td id="secondSilver">45</td>
+              <td id="secondBronze">55</td>
+              <td id="secondTotal">121</td>
             </tr>
             <tr>
               <td id="thirdPlace">3</td>
               <td id="thirdCountry"></td>
-              <td id="thirdTotal"></td>
+              <td id="thirdGold">34</td>
+              <td id="thirdSilver">45</td>
+              <td id="thirdBronze">55</td>
+              <td id="thirdTotal">121</td>
             </tr>
             <tr>
               <td id="fourthPlace">4</td>
               <td id="fourthCountry"></td>
-              <td id="fourthTotal"></td>
+              <td id="fourthGold">34</td>
+              <td id="fourthSilver">45</td>
+              <td id="fourthBronze">55</td>
+              <td id="fourthTotal">121</td>
             </tr>
             <tr>
               <td id="fifthPlace">5</td>
               <td id="fifthCountry"></td>
-              <td id="fifthTotal"></td>
+              <td id="fifthGold">34</td>
+              <td id="fifthSilver">45</td>
+              <td id="fifthBronze">55</td>
+              <td id="fifthTotal">121</td>
             </tr>
             <tr>
               <td id="sixthPlace">6</td>
               <td id="sixthCountry"></td>
-              <td id="sixthTotal"></td>
+              <td id="sixthGold">34</td>
+              <td id="sixthSilver">45</td>
+              <td id="sixthBronze">55</td>
+              <td id="sixthTotal">121</td>
             </tr>
             <tr>
               <td id="seventhPlace">7</td>
               <td id="seventhCountry"></td>
-              <td id="seventhTotal"></td>
+              <td id="seventhGold">34</td>
+              <td id="seventhSilver">45</td>
+              <td id="seventhBronze">55</td>
+              <td id="seventhTotal">121</td>
             </tr>
             <tr>
               <td id="eighthPlace">8</td>
               <td id="eighthCountry"></td>
-              <td id="eighthTotal"></td>
+              <td id="eighthGold">34</td>
+              <td id="eighthSilver">45</td>
+              <td id="eighthBronze">55</td>
+              <td id="eighthTotal">121</td>
             </tr>
             <tr>
               <td id="ninthPlace">9</td>
               <td id="ninthCountry"></td>
-              <td id="ninthTotal"></td>
+              <td id="ninthGold">34</td>
+              <td id="ninthSilver">45</td>
+              <td id="ninthBronze">55</td>
+              <td id="ninthTotal">121</td>
             </tr>
             <tr>
               <td id="tenthPlace">10</td>
               <td id="tenthCountry"></td>
-              <td id="tenthTotal"></td>
-            </tr>        
+              <td id="tenthGold">34</td>
+              <td id="tenthSilver">45</td>
+              <td id="tenthBronze">55</td>
+              <td id="tenthTotal">121</td>
+            </tr>
           </table>
-          <!--Boton para ver detalles de las medallas === Se abre ventana modal-->
-          <button class="open" id="open">
-            ver detalle
+          <button class="close" id="close">
+            Volver
           </button>
-      </section>
-      <section id="imgContainer" class="imgContainer">
-        <input type="image" src="./imagenes/archery.png">
-          <input type="image" src="./imagenes/artistic gymnastics.png">
-          <input type="image" src="./imagenes/athetics.png">
-          <input type="image" src="./imagenes/badminton.png">
-          <input type="image" src="./imagenes/basketball.png">
-          <input type="image" src="./imagenes/beach volleyball.png">
-          <input type="image" src="./imagenes/boxing.png">
-          <input type="image" src="./imagenes/canoe slalom.png">
-          <input type="image" src="./imagenes/canoe sprint.png">
-          <input type="image" src="./imagenes/cycling bmx.png">
-          <input type="image" src="./imagenes/cycling mountain bike.png">
-          <input type="image" src="./imagenes/cycling road.png">
-          <input type="image" src="./imagenes/cycling track.png">
-          <input type="image" src="./imagenes/diving.png">
-          <input type="image" src="./imagenes/equestrian.png">
-          <input type="image" src="./imagenes/fencing.png">
-          <input type="image" src="./imagenes/football.png">
-          <input type="image" src="./imagenes/golf.png">
-          <input type="image" src="./imagenes/handball.png">
-          <input type="image" src="./imagenes/hockey.png">
-          <input type="image" src="./imagenes/judo.png">
-          <input type="image" src="./imagenes/marathon.png">
-          <input type="image" src="./imagenes/rhythmic.png">
-          <input type="image" src="./imagenes/rowing.png">
-          <input type="image" src="./imagenes/rugby.png">
-          <input type="image" src="./imagenes/sailing.png">
-          <input type="image" src="./imagenes/shooting.png">
-          <input type="image" src="./imagenes/swimming.png">
-          <input type="image" src="./imagenes/synchronised.png">
-          <input type="image" src="./imagenes/table tennis.png">
-          <input type="image" src="./imagenes/taekwondo.png">
-          <input type="image" src="./imagenes/tenis.png">
-          <input type="image" src="./imagenes/trampolin.png">
-          <input type="image" src="./imagenes/triatlon.png">
-          <input type="image" src="./imagenes/volleyball.png">
-          <input type="image" src="./imagenes/water polo.png">
-          <input type="image" src="./imagenes/weightlifting.png">
-          <input type="image" src="./imagenes/wrestling.png">
+        </div>
       </section>
 
-    <!------------------------------------------------> 
-     <section id="gridForTest" class="grid">
-      <section class="grid">
-<!------------------------------------------->
-     
-      <!--Ventana Modal para mostrar las posiciones detalladas-->
-      <section class="modal-container" id="modal-container">
-        <div>
-        <table class="detailsMedal">
-          <tr>
-            <th>Posiciones</th>
-            <th>Paises</th>
-            <th>Oro</th>
-            <th>Plata</th>
-            <th>Bronce</th>
-            <th>Total</th>
-          </tr>
-          <tr>
-            <td id="firstPlace">1</td>
-            <td id="firstCountry">EE.UU</td>
-            <td id="firstGold">34</td>
-            <td id="firstSilver">45</td>
-            <td id="firstBronze">55</td>
-            <td id="firstTotal">121</td>
-          </tr>
-          <tr>
-            <td id="secondPlace">2</td>
-            <td id="secondCountry"></td>
-            <td id="secondGold">34</td>
-            <td id="secondSilver">45</td>
-            <td id="secondBronze">55</td>
-            <td id="secondTotal">121</td>
-          </tr>
-          <tr>
-            <td id="thirdPlace">3</td>
-            <td id="thirdCountry"></td>
-            <td id="thirdGold">34</td>
-            <td id="thirdSilver">45</td>
-            <td id="thirdBronze">55</td>
-            <td id="thirdTotal">121</td>
-          </tr>
-          <tr>
-            <td id="fourthPlace">4</td>
-            <td id="fourthCountry"></td>
-            <td id="fourthGold">34</td>
-            <td id="fourthSilver">45</td>
-            <td id="fourthBronze">55</td>
-            <td id="fourthTotal">121</td>
-          </tr>
-          <tr>
-            <td id="fifthPlace">5</td>
-            <td id="fifthCountry"></td>
-            <td id="fifthGold">34</td>
-            <td id="fifthSilver">45</td>
-            <td id="fifthBronze">55</td>
-            <td id="fifthTotal">121</td>
-          </tr>
-          <tr>
-            <td id="sixthPlace">6</td>
-            <td id="sixthCountry"></td>
-            <td id="sixthGold">34</td>
-            <td id="sixthSilver">45</td>
-            <td id="sixthBronze">55</td>
-            <td id="sixthTotal">121</td>
-          </tr>
-          <tr>
-            <td id="seventhPlace">7</td>
-            <td id="seventhCountry"></td>
-            <td id="seventhGold">34</td>
-            <td id="seventhSilver">45</td>
-            <td id="seventhBronze">55</td>
-            <td id="seventhTotal">121</td>
-          </tr>
-          <tr>
-            <td id="eighthPlace">8</td>
-            <td id="eighthCountry"></td>
-            <td id="eighthGold">34</td>
-            <td id="eighthSilver">45</td>
-            <td id="eighthBronze">55</td>
-            <td id="eighthTotal">121</td>
-          </tr>
-          <tr>
-            <td id="ninthPlace">9</td>
-            <td id="ninthCountry"></td>
-            <td id="ninthGold">34</td>
-            <td id="ninthSilver">45</td>
-            <td id="ninthBronze">55</td>
-            <td id="ninthTotal">121</td>
-          </tr>
-          <tr>
-            <td id="tenthPlace">10</td>
-            <td id="tenthCountry"></td>
-            <td id="tenthGold">34</td>
-            <td id="tenthSilver">45</td>
-            <td id="tenthBronze">55</td>
-            <td id="tenthTotal">121</td>
-          </tr>      
-        </table>
-        <button class="close" id="close">
-          Volver
-        </button> 
-      </div> 
-        </section>                   
+  </main>
+  <footer class="footer">
+    <p>© Todos los derechos reservados | Juegos Olímpicos - Río 2016</p>
+    <img src="./imagenes/facebook.jpg" alt="facebook" class="facebook">
+    <img src="./imagenes/instagram.jpg" alt="instagram" class="instagram">
+    <img src="./imagenes/twitter.jpg" alt="twitter" class="twitter">
+    <img src="./imagenes/youtube.jpg" alt="youtube" class="youtube">
+  </footer>
+  <script src="main.js" type="module"></script>
+</body>
 
-    </main>
-    <footer class="footer">
-      <p>© Todos los derechos reservados | Juegos Olímpicos - Río 2016</p>
-      <img src="./imagenes/facebook.jpg" alt="facebook" class="facebook">
-      <img src="./imagenes/instagram.jpg" alt="instagram" class="instagram">
-      <img src="./imagenes/twitter.jpg" alt="twitter" class="twitter">
-      <img src="./imagenes/youtube.jpg" alt="youtube" class="youtube">
-    </footer>
-    <script src="main.js" type="module"></script>
-  </body>
 </html>
