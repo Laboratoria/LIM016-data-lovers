@@ -163,8 +163,9 @@ main{
 .athletes{
     display:none;
     width: 100%;
+   /* background-image: url('https://st2.depositphotos.com/1823350/11516/v/950/depositphotos_115160408-stock-illustration-banners-set-olympic-games-2016.jpg');
+    background-repeat: no-repeat;*/
 }
-
 
 
 .listAthletes{
@@ -198,9 +199,9 @@ main{
 }
  /*------------------------------------------ FOOTER*/
 footer{   
-    /*background-color: black;*/
+    background-color: black;
     padding: 10px 0 10px 0;
-    /*position:absolute;*/
+    position:absolute;
     width: 100%;    
 }
 .foot{

@@ -33,6 +33,7 @@ athletes_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
   document.getElementById("countries").style.display = "none";
+  document.getElementById("athletes").style.display = "block";
 });
 
 
