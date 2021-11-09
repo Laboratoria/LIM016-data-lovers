@@ -90,10 +90,3 @@ function recorrerCadaPelicula () {
     }
 
 }
-
-
-       
-
-
-
-
