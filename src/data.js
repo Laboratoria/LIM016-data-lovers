@@ -1,9 +1,33 @@
-import data from './data/athletes/athletes.js';
-export const example = () =>{
 
-  return example;
+export const rio_teams = (data) =>{
+
+  let just_athletes_team= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
+  let justCountries= just_athletes_team.map(item=>item.team);
+   return justCountries;
+   
 };
 
-export const anotherExample = () => {
-  return 'OMG';
+export const rio_sports = (data) =>{
+
+  let just_athletes_sport= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
+  let justSports= just_athletes_sport.map(item=>item.sport)
+   return justSports;
+
 };
+
+export const timesRepeated = arr =>{
+  return arr.reduce((acc, item) =>{
+    if(!acc[item]){  
+      acc[item]= 1;
+    }
+    else{
+      acc[item] = acc[item]+1;
+    }
+    return acc
+  }, {});
+};
+
+// export const anotherExample = (data) => {
+//   return 'OMG';
+// };
+
