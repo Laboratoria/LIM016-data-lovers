@@ -9,14 +9,43 @@ import {
   regionFuncion,
 } from "./data.js";
 
+// CARRUSEL
+const carrusel = document.querySelector(".carrusel-items");
+
+let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
+let intervalo = null;
+let step = 1;
+const start = () => {
+  intervalo = setInterval(function () {
+    carrusel.scrollLeft = carrusel.scrollLeft + step;
+    if (carrusel.scrollLeft === maxScrollLeft) {
+      step = step * -1;
+    } else if (carrusel.scrollLeft === 0) {
+      step = step * -1;
+    }
+  }, 10);
+};
+
+const stop = () => {
+  clearInterval(intervalo);
+};
+
+carrusel.addEventListener("mouseover", () => {
+  stop();
+});
+
+carrusel.addEventListener("mouseout", () => {
+  start();
+});
+
+start();
 // const botones del navegador
 
-const btnInicio = document.getElementById('btnInicio');
-const btnPokedex = document.getElementById('btnPokedex');
-const btnTipo = document.getElementById('btnTipo');
-const btnRegion = document.getElementById('btnRegion');
-const btnRareza = document.getElementById('btnRareza');
-
+const btnInicio = document.getElementById("btnInicio");
+const btnPokedex = document.getElementById("btnPokedex");
+// const btnTipo = document.getElementById('btnTipo');
+// const btnRegion = document.getElementById('btnRegion');
+// const btnRareza = document.getElementById('btnRareza');
 
 //const modalContainer = document.querySelector(".modal-container");
 const container = document.querySelector(".pokemon-container");
@@ -41,26 +70,25 @@ console.log(arrayPokemon[175].evolution["next-evolution"][0].name);
 
 //BOTON PARA VOLVER AL INICION
 
-btnInicio.addEventListener("click",()=>{
-  document.querySelector("#welcome").style.display="block";
-  document.querySelector("#pokedex").style.display="none";
-  document.querySelector(".menu").style.display="none";
+btnInicio.addEventListener("click", () => {
+  document.querySelector("#welcome").style.display = "block";
+  document.querySelector("#pokedex").style.display = "none";
+  document.querySelector(".menu").style.display = "none";
   btnPokedex.className = "";
-  btnInicio.className="activeButton"
-
-})
+  btnInicio.className = "activeButton";
+});
 
 //PASAR DE INICIO AL POKEDEX
 
 const verPokedex = document.getElementById("verPokedex");
 
-verPokedex.addEventListener("click",()=>{
-  document.querySelector("#welcome").style.display="none";
-  document.querySelector("#pokedex").style.display="block";
-  document.querySelector(".menu").style.display="block";
+verPokedex.addEventListener("click", () => {
+  document.querySelector("#welcome").style.display = "none";
+  document.querySelector("#pokedex").style.display = "block";
+  document.querySelector(".menu").style.display = "block";
   btnPokedex.className = "activeButton";
-  btnInicio.className=""
-})
+  btnInicio.className = "";
+});
 
 //funcion que muestra los pokemones
 
@@ -171,14 +199,13 @@ function mostrarPokemon(array) {
       //boton de cerrar tarjeta de informacion
       const btnCerrar = document.createElement("button");
       btnCerrar.classList.add("btnCerrar");
+
       btnCerrar.type = "button";
       btnCerrar.innerHTML = `<i class="fas fa-times-circle"></i>`;
 
       btnCerrar.addEventListener("click", () => {
-        cardInfo.style.display = "none";
-        modalContainer.style.display = "none";
-        container.removeChild(modalContainer);
-        container.removeChild(cardInfo)
+        cardInfo.remove();
+        modalContainer.remove();
       });
 
       //Crear imagen del pokemon
@@ -257,12 +284,12 @@ function mostrarPokemon(array) {
 
       //-------------agregar tipo---------------
       const typePokemon = document.createElement("div");
-      typePokemon.classList.add('divTipo');
-      (array[i].type).forEach(element=>{
-      const tipoLog=document.createElement('p')
-      tipoLog.innerHTML=`${element}<img class="logo-${element}">`
-        typePokemon.appendChild(tipoLog)
-      })
+      typePokemon.classList.add("divTipo");
+      array[i].type.forEach((element) => {
+        const tipoLog = document.createElement("p");
+        tipoLog.innerHTML = `${element}<img class="logo-${element}">`;
+        typePokemon.appendChild(tipoLog);
+      });
 
       //............agregar tamaño--------------
       const height = document.createElement("div");
@@ -651,14 +678,11 @@ function evoluciones(array, divTotalEvoluciones, nombre, tipo) {
   } else {
     if (tipo == "legendary") {
       console.log(tipo);
-      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Legendary</h3><br><img src="./img/logo1.png"></div>`
-
-    }
-    else if (tipo == "mythic") {
+      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Legendary</h3><br><img src="./img/logo1.png"></div>`;
+    } else if (tipo == "mythic") {
       console.log(tipo);
-      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Mithic</h3><br><img src="./img/logo2.jpg"></div>`
+      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Mithic</h3><br><img src="./img/logo2.jpg"></div>`;
     }
-
   }
 }
 
