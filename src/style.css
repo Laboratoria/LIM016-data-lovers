@@ -27,13 +27,22 @@ header{
     margin: auto;
 }
 
+.container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
 .cards{
     background-color: rgb(255, 255, 255);
     border-color: rgb(12, 12, 12);
     border-style: solid;
     border-width: 5px;
-    width: 338px;
-    height: 430px;
+    width: 15%;
+    height: 45%;
     border-radius: 12px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.61);
     overflow: hidden;
@@ -48,19 +57,22 @@ header{
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
 }
 
-img{
-    width: 330px;
-    height: 280px;
+.imgPokemon{
+    width: 90%;
+    height: 60%;
 }
+
+.nomPokemon {
+    text-transform: uppercase;
+    font-size: 26px;
+    font-family: 'Red Hat Mono', monospace;
+}
+
 h3 {
     font-size: 35px;
     font-family: 'Red Hat Mono', monospace;
 }
 
-h6{
-    font-size: 32px;
-    font-family: 'Red Hat Mono', monospace;
-}
 
 p{
     font-family: 'Red Hat Mono', monospace;
@@ -69,15 +81,42 @@ p{
     font-weight: 300;
 }
 
-.piePagina {
-    display: flex;
-    align-items: center; /*ALINEA EN EL CENTRO VERTICALMENTE*/
-    justify-content: center; /*ALINEA EN EL CENTRO HORIZONTALMENTE*/
+.foot {
     width: 100%; /* CUBRE TODO EL ANCHO DISPONIBLE */
     height: 60px;
     background-color: rgb(6, 32, 70);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.foot{
+.information{
+    color: blanchedalmond;
+    font-size: 18px;
+    text-align: right;
+    
+}
+.informationMore{
+    color: blanchedalmond;
+    text-align: right;
+    font-size: 18px;
+    text-decoration: none; 
+}
+.authors {
     color: white;
-    font-size: 22px;
+    font-size: 18px;
+    text-align: center;
+
+}
+.iconDownloands{
+    width: 30%;
+    height:90%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.copyright {
+    text-align: center;
+    font-size: small;
+}
+.downloands {
+text-align:right;
 }
