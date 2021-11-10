@@ -43,16 +43,16 @@ start();
 
 const btnInicio = document.getElementById("btnInicio");
 const btnPokedex = document.getElementById("btnPokedex");
-// const btnTipo = document.getElementById('btnTipo');
+const btnTipo = document.getElementById('btnTipo');
 // const btnRegion = document.getElementById('btnRegion');
 // const btnRareza = document.getElementById('btnRareza');
 
 //const modalContainer = document.querySelector(".modal-container");
 const container = document.querySelector(".pokemon-container");
-const region = document.getElementById("region");
+// const region = document.getElementById("region");
 const orden = document.getElementById("orden");
 // const tipos = document.getElementById("tipos");
-const rareza = document.getElementById("rareza");
+// const rareza = document.getElementById("rareza");
 const cp = document.getElementById("cp");
 const egg = document.getElementById("egg");
 const search = document.getElementById("search");
@@ -92,6 +92,20 @@ verPokedex.addEventListener("click", () => {
   btnInicio.className = "";
   document.documentElement.scrollTop = 0;
 });
+
+//PASAR A LA VISTA POKEDEX 
+
+btnTipo.addEventListener("click", () => {
+  document.querySelector("#welcome").style.display = "none";
+  document.querySelector(".container-buscar").style.display = "none";
+  document.querySelector("#divTiposPokemones").style.display = "block";
+  btnPokedex.className = "activeButton";
+  btnInicio.className = "";
+  document.documentElement.scrollTop = 0;
+});
+
+
+
 
 //funcion que muestra los pokemones
 
@@ -681,22 +695,22 @@ function evoluciones(array, divTotalEvoluciones, nombre, tipo) {
   } else {
     if (tipo == "legendary") {
       console.log(tipo);
-      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Legendary</h3><br><img src="./img/logo1.png"></div>`;
+      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Legendary</h3><br><img src="./img/poke-legendario.png"></div>`;
     } else if (tipo == "mythic") {
       console.log(tipo);
-      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Mithic</h3><br><img src="./img/logo2.jpg"></div>`;
+      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Mithic</h3><br><img src="./img/poke-mitico.png"></div>`;
     }
   }
 }
 
 //region pokemon
-region.addEventListener("change", (e) => {
-  e.preventDefault();
-  container.innerHTML = "";
-  const valor = e.target.value;
-  const arrayRegion = regionFuncion(valor, arrayPokemon);
-  mostrarPokemon(arrayRegion);
-});
+// region.addEventListener("change", (e) => {
+//   e.preventDefault();
+//   container.innerHTML = "";
+//   const valor = e.target.value;
+//   const arrayRegion = regionFuncion(valor, arrayPokemon);
+//   mostrarPokemon(arrayRegion);
+// });
 
 //tipos de pokemones
 // tipos.addEventListener("change", (e) => {
@@ -706,13 +720,13 @@ region.addEventListener("change", (e) => {
 //   mostrarPokemon(arraytipoPoke);
 // });
 
-//pokemon rarity
-rareza.addEventListener("change", (e) => {
-  const tipoRareza = e.target.value;
-  container.innerHTML = "";
-  const rarezaPoke = rarezaPokemon(tipoRareza, arrayPokemon);
-  mostrarPokemon(rarezaPoke);
-});
+// //pokemon rarity
+// rareza.addEventListener("change", (e) => {
+//   const tipoRareza = e.target.value;
+//   container.innerHTML = "";
+//   const rarezaPoke = rarezaPokemon(tipoRareza, arrayPokemon);
+//   mostrarPokemon(rarezaPoke);
+// });
 
 //cp
 cp.addEventListener("change", (e) => {
@@ -723,13 +737,13 @@ cp.addEventListener("change", (e) => {
 });
 
 //filtrar pokemon por huevito
-egg.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const eggType = e.target.value;
+// egg.addEventListener("change", (e) => {
+//   container.innerHTML = "";
+//   const eggType = e.target.value;
 
-  const arrayEgg = huevitoPokemon(eggType, arrayPokemon);
-  mostrarPokemon(arrayEgg);
-});
+//   const arrayEgg = huevitoPokemon(eggType, arrayPokemon);
+//   mostrarPokemon(arrayEgg);
+// });
 
 //orden alfabetico
 orden.addEventListener("change", (e) => {
@@ -796,4 +810,36 @@ document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
   }
 });
 
+document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (e.target.getAttribute('id')) {
+    container.innerHTML = "";
+    console.log(e.target.getAttribute('id'))
+    const regionP = e.target.getAttribute('id')
+    const arrayRegionPoke = regionFuncion(regionP, arrayPokemon);
+    mostrarPokemon(arrayRegionPoke);
+  }
+});
+
+document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (e.target.getAttribute('id')) {
+    container.innerHTML = "";
+    console.log(e.target.getAttribute('id'))
+    const rarezaP = e.target.getAttribute('id')
+    const arrayRarezaPoke = rarezaPokemon(rarezaP, arrayPokemon);
+    mostrarPokemon(arrayRarezaPoke);
+  }
+});
+
+
+// //pokemon rarity
+// rareza.addEventListener("change", (e) => {
+//   const tipoRareza = e.target.value;
+//   container.innerHTML = "";
+//   const rarezaPoke = rarezaPokemon(tipoRareza, arrayPokemon);
+//   mostrarPokemon(rarezaPoke);
+// });
 mostrarPokemon(arrayPokemon);

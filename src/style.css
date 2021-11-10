@@ -1025,13 +1025,101 @@ table {
   transform: scale(1.1);
 }
 
+/* DANDO ESTILO A BOTONES DE FILTRADO*/
 
+/*--------------por tipo------------*/
+
+#divTiposPokemones{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+  }
+  
+.tipoDiv{
+  border: 1px solid black;
+  justify-content: center;
+  margin: auto;
+  font-size: 0.8em;
+  text-align: center;
+}
+  
+.tipoPokeInicio{
+  margin: auto;
+  width: 90%;
+  justify-content: center;
+}
+  
+  
+#divTiposPokemones div img {
+    width: 80%;
+    justify-content: center;
+}
+
+.regionDiv{
+  border: 1px solid black;
+  justify-content: center;
+  margin: auto;
+  font-size: 0.8em;
+  text-align: center;
+}
+/*--------------por region------------*/
+
+#divRegionPokemon{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: center;
+  width: 30%;
+  margin: auto;
+}
+
+#divRegionPokemon div img {
+    width: 100%;
+    justify-content: center;
+}
+.regionDiv{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  border: 1px solid black;
+  font-weight: bold;
+  margin: auto;
+  font-size: 1em;
+  text-align: center;
+}
+
+/*--------------por rareza------------*/
+
+#divRarezaPokemon{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  }
+
+#divRarezaPokemon div img {
+    width: 80%;
+    justify-content: center;
+}
+
+.rarezaDiv{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  border: 1px solid black;
+  font-weight: bold;
+  margin: auto;
+  font-size: 1em;
+  text-align: center;
+}
 /*FOOTER*/
 .footer{
   height: 50px;
   background: linear-gradient(90deg, rgba(4,0,61,1) 0%, rgba(1,1,71,1) 56%, rgba(5,106,152,1) 100%);
   z-index: -1;
 }
+
+
 /*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
 @media (max-width: 600px) {
   .pokemon-container {
@@ -1142,6 +1230,8 @@ table {
     max-height:90px;
   }
 
+
+  
   #divTiposPokemones{
 
     grid-template-columns: repeat(3,1fr);
@@ -1150,39 +1240,3 @@ table {
     }
 }
 
-
-#divTiposPokemones{
-display: grid;
-grid-template-columns: repeat(7,1fr);
-justify-content: center;
-width: 50%;
-margin: auto;
-background-color: cyan;
-}
-
- #tipoDiv{
-  border: 1px solid black;
-  justify-content: center;
-  margin: auto;
-  font-size: 0.8em;
-  text-align: center;
-
-}
-
-#tipoPokeInicio{
-margin: auto;
-width: 70%;
-justify-content: center;
-text-align: center;
-border-radius: 30px;
-background-color: chartreuse;
-
-
-}
-
-
-#divTiposPokemones div img {
-  width: 80%;
-  justify-content: center;
-
-  }
