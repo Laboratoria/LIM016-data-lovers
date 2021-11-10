@@ -198,3 +198,5 @@ const imagenP = document.createElement("img");
 imagenP.setAttribute("class", 'imagenP');
 personajeDiv.appendChild(imagenP);
 imagenP.src = people;
+
+
