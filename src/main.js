@@ -51,7 +51,7 @@ const btnPokedex = document.getElementById("btnPokedex");
 const container = document.querySelector(".pokemon-container");
 const region = document.getElementById("region");
 const orden = document.getElementById("orden");
-const tipos = document.getElementById("tipos");
+// const tipos = document.getElementById("tipos");
 const rareza = document.getElementById("rareza");
 const cp = document.getElementById("cp");
 const egg = document.getElementById("egg");
@@ -77,7 +77,7 @@ btnInicio.addEventListener("click", () => {
   btnPokedex.className = "";
   btnInicio.className = "activeButton";
   window.location.reload();
-  document.documentElement.scrollTop=0
+  document.documentElement.scrollTop = 0;
 });
 
 //PASAR DE INICIO AL POKEDEX
@@ -90,7 +90,7 @@ verPokedex.addEventListener("click", () => {
   document.querySelector(".menu").style.display = "block";
   btnPokedex.className = "activeButton";
   btnInicio.className = "";
-  document.documentElement.scrollTop=0
+  document.documentElement.scrollTop = 0;
 });
 
 //funcion que muestra los pokemones
@@ -500,7 +500,7 @@ function mostrarPokemon(array) {
 
         let row_2_data_2 = document.createElement("td");
         row_2_data_2.innerHTML = `${quickName[a].type}`;
-        row_2_data_2.classList.add(`${quickName[a].type}`);
+        row_2_data_2.classList.add(`tabla-${quickName[a].type}`);
 
         let row_2_data_3 = document.createElement("td");
         row_2_data_3.innerHTML = `${quickName[a]["base-damage"]}`;
@@ -571,7 +571,7 @@ function mostrarPokemon(array) {
 
         let row2_data_2 = document.createElement("td");
         row2_data_2.innerHTML = `${specialName[a].type}`;
-        row2_data_2.classList.add(`${specialName[a].type}`);
+        row2_data_2.classList.add(`tabla-${specialName[a].type}`);
 
         let row2_data_3 = document.createElement("td");
         row2_data_3.innerHTML = `${specialName[a]["base-damage"]}`;
@@ -699,12 +699,12 @@ region.addEventListener("change", (e) => {
 });
 
 //tipos de pokemones
-tipos.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const tipoPokemon = e.target.value;
-  const arraytipoPoke = typePokemones(tipoPokemon, arrayPokemon);
-  mostrarPokemon(arraytipoPoke);
-});
+// tipos.addEventListener("change", (e) => {
+//   container.innerHTML = "";
+//   const tipoPokemon = e.target.value;
+//   const arraytipoPoke = typePokemones(tipoPokemon, arrayPokemon);
+//   mostrarPokemon(arraytipoPoke);
+// });
 
 //pokemon rarity
 rareza.addEventListener("change", (e) => {
@@ -784,36 +784,16 @@ window.onscroll = () => {
   }
 };
 
+document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
+  e.preventDefault();
 
-
-document.querySelector('.divPrueba').addEventListener('click',(e)=>{
-e.preventDefault()
-
-if(e.target.classList.contains('ghost')){
-
-  document.querySelector("#pokedex").style.backgroundImage = "url(https://images2.alphacoders.com/107/thumb-1920-1073326.jpg)"
-
-  container.innerHTML=""
-  console.log("1")
-  console.log(e.target.className)
-const tipoP = e.target.className
-const arraytipoPoke = typePokemones(tipoP, arrayPokemon);
-mostrarPokemon(arraytipoPoke);
-}
-
-
-else if(e.target.classList.contains('rock')){
-  container.innerHTML=""
-  console.log("2")
-  console.log(e.target.className)
-const tipoP = e.target.className
-const arraytipoPoke = typePokemones(tipoP, arrayPokemon);
-mostrarPokemon(arraytipoPoke)
-}
-
-
-})
+  if (e.target.getAttribute('id')) {
+    container.innerHTML = "";
+    console.log(e.target.getAttribute('id'))
+    const tipoP = e.target.getAttribute('id')
+    const arraytipoPoke = typePokemones(tipoP, arrayPokemon);
+    mostrarPokemon(arraytipoPoke);
+  }
+});
 
 mostrarPokemon(arrayPokemon);
-
-

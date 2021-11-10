@@ -808,13 +808,13 @@ table {
 
 /* DANDO ESTILO A LAS TABLAS */
 
-.grass {
+.tabla-grass {
   background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
   color: white;
   border-radius: 10px;
 }
 
-.normal {
+.tabla-normal {
   background-image: linear-gradient(
     -225deg,
     #3d4e81 0%,
@@ -825,12 +825,12 @@ table {
   color: white;
 }
 
-.poison {
+.tabla-poison {
   background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border-radius: 10px;
 }
-.dark {
+.tabla-dark {
   background: rgb(195, 195, 205);
   background: radial-gradient(
     circle,
@@ -843,23 +843,23 @@ table {
   color: white;
   border-radius: 10px;
 }
-.electric {
+.tabla-electric {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   color: white;
   border-radius: 10px;
 }
-.water {
+.tabla-water {
   background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
   color: white;
   border-radius: 10px;
 }
 
-.dragon {
+.tabla-dragon {
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
   color: rgb(236, 207, 207);
   border-radius: 10px;
 }
-.rock {
+.tabla-rock {
   background: #3c3b3f; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -874,18 +874,18 @@ table {
   color: white;
   border-radius: 10px;
 }
-.fighting {
+.tabla-fighting {
   background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
   color: white;
   border-radius: 10px;
 }
 
-.ghost {
+.tabla-ghost {
   background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
   color: white;
   border-radius: 10px;
 }
-.flying {
+.tabla-flying {
   background-image: linear-gradient(
     to top,
     #0c3483 0%,
@@ -896,48 +896,48 @@ table {
   color: white;
   border-radius: 10px;
 }
-.bug {
+.tabla-bug {
   background: rgb(176, 100, 66);
   background: rgb(58, 34, 195);
   background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
   color: white;
   border-radius: 10px;
 }
-.fairy {
+.tabla-fairy {
   background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
   color: white;
   border-radius: 10px;
 }
-.ice {
+.tabla-ice {
   background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
   color: white;
   border-radius: 10px;
 }
 
-.psychic {
+.tabla-psychic {
   background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
   color: white;
   border-radius: 10px;
 }
 
-.steel {
+.tabla-steel {
   background-image: linear-gradient(to top, #b3ffab 0%, #12fff7 100%);
   color: white;
   border-radius: 10px;
 }
-.fire {
+.tabla-fire {
   background: #d63031;
   color: white;
   border-radius: 10px;
 }
 
-.fight {
+.tabla-fight {
   background: #cc8e35;
   color: white;
   border-radius: 10px;
 }
 
-.ground {
+.tabla-ground {
   color: white;
   border-radius: 10px;
   background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%);
@@ -1141,25 +1141,48 @@ table {
     max-width:120px;
     max-height:90px;
   }
+
+  #divTiposPokemones{
+
+    grid-template-columns: repeat(3,1fr);
+    width: 100vw;
+
+    }
 }
 
 
-.divPrueba{
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-}
-
-.divPrueba div {
+#divTiposPokemones{
 display: grid;
+grid-template-columns: repeat(7,1fr);
+justify-content: center;
+width: 50%;
+margin: auto;
+background-color: cyan;
+}
+
+ #tipoDiv{
+  border: 1px solid black;
+  justify-content: center;
+  margin: auto;
+  font-size: 0.8em;
+  text-align: center;
+
+}
+
+#tipoPokeInicio{
+margin: auto;
+width: 70%;
 justify-content: center;
 text-align: center;
-background:crimson;
-margin: auto;
+border-radius: 30px;
+background-color: chartreuse;
+
+
 }
 
 
-.divPrueba div img {
-  width: 50%;
+#divTiposPokemones div img {
+  width: 80%;
   justify-content: center;
+
   }
