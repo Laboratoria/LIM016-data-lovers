@@ -174,3 +174,29 @@ divImagen para que esté dentro de este div. Por ultimo con .src se le indica la
 }
 //nuevo coment 
 //nuevo coment
+
+// trabajando locaciones
+
+const tiendaDiv = document.createElement("div");
+tiendaDiv.setAttribute("class", 'classTienda');
+containerTienda.appendChild(tiendaDiv);
+
+const divImagenT = document.createElement("div");
+divImagenT.setAttribute("class", 'divImagenT');
+tiendaDiv.appendChild(divImagenT);
+
+ const imagenT = document.createElement("img");
+ imagenT.setAttribute("class", 'imagenT');
+ divImagenT.appendChild(imagenT);
+ imagenT.src = people;
+
+ const personajeDiv = document.createElement("div");
+personajeDiv.setAttribute("class", 'classPersonaje');
+containerPersonajes.appendChild(personajeDiv);
+
+const imagenP = document.createElement("img");
+imagenP.setAttribute("class", 'imagenP');
+personajeDiv.appendChild(imagenP);
+imagenP.src = people;
+
+
