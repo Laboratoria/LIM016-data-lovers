@@ -90,10 +90,12 @@ function recorrerCadaPelicula () {
         people = arreglo[i].people[p].img;
         console.log(people)
     }
+ 
+
 
     //manipulando dinamicamente la seccion filmografia
 
-    //creando div para la tarjeta
+    /*creando div para la tarjeta*/
     const filmoDiv = document.createElement("div");
     filmoDiv.setAttribute("class", 'classFilmo');
     containerFilmografia.appendChild(filmoDiv);
@@ -147,7 +149,7 @@ divImagen para que esté dentro de este div. Por ultimo con .src se le indica la
     const textScore= document.createTextNode(score);
     scoreFilm.appendChild(textScore);
     
-
+/*
     const tiendaDiv = document.createElement("div");
     tiendaDiv.setAttribute("class", 'classTienda');
     containerTienda.appendChild(tiendaDiv);
@@ -168,9 +170,7 @@ divImagen para que esté dentro de este div. Por ultimo con .src se le indica la
     const imagenP = document.createElement("img");
     imagenP.setAttribute("class", 'imagenP');
     personajeDiv.appendChild(imagenP);
-    imagenP.src = people;
+    imagenP.src = people; */
 
 }
 }
-//nuevo coment 
-//nuevo coment
