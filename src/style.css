@@ -21,6 +21,7 @@
   
   
   #filmografia{
+    display: flex;
   position: absolute;
   left: 10.28%;
   right: 72.22%;
@@ -38,9 +39,10 @@
   bottom: 43.75%;
   
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
+  }   
   
   #personajes{
+  
   position: absolute;
   left: 10%;
   right: 72.5%;
@@ -85,10 +87,12 @@
 
 
   .classFilmo {
+    position: relative;
     text-align: justify;
+    float: left;
     width: 100%;
     padding: 2pc;
-    margin-left: 20px;
+    margin-right: 100px;
   }
 
 
@@ -98,11 +102,78 @@
   }
 
   h2 {
-    position: relative;
+      position: relative;
       font-size: 2em;
       font-weight: 10px;
       margin-bottom: 20px;
       width: 100%;
+
   }
 
-    
+ main{
+  min-height: 100vh;
+  background: linear-gradient(to right top, #7b83ca, #9da2e7); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+ 
+
+.glass{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 112px;
+  top: 56px;
+
+  background: rgba(188, 247, 255, 0.6);
+  mix-blend-mode: normal;
+  border-radius: 73px;
+  
+}
+
+.dashboard{
+position: absolute;
+width: 368px;
+height: 798px;
+left: 90px;
+top: 54px;
+background: #FFFFFF;
+border-radius: 71px 0px 0px 71px;
+
+}
+
+
+.menu {
+  display: flex;
+  margin: 2rem 0rem;
+  padding: 1rem 5rem;
+  align-items:center;
+}
+
+.btn {
+
+  border-radius: 4pc;
+  background-color:white; 
+}
+
+
+p {
+  position: relative;
+  
+}
+
+
+#containerFilmografia{
+  position: absolute;
+  display: flex;
+  width: 80%;
+  height: 500px;
+  left: ;
+  right: 200px ;
+  top: 56px;
+
+
+
+}
