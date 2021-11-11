@@ -38,9 +38,9 @@ export function filtarCp(tipoCp , arrayCambiante){
 }
 
 //filtro por rareza de pokemon
-export function rarezaPokemon(tipoRareza,arrayPokemon){
+export function rarezaPokemon(rarezaP,arrayPokemon){
   let arrayRareza = arrayPokemon.filter(
-    (array) => array["pokemon-rarity"] == tipoRareza
+    (array) => array["pokemon-rarity"] == rarezaP
   );
   return arrayRareza;
 
@@ -103,10 +103,10 @@ export function typePokemones(tipoPokemon, arrayPokemon) {
 }
 
 //region de pokemones
-export function regionFuncion(valor , arrayPokemon) {
+export function regionFuncion(regionP , arrayPokemon) {
   let array = [];
   for (let i = 0; i < arrayPokemon.length; i++) {
-    if (arrayPokemon[i].generation.name == valor) {
+    if (arrayPokemon[i].generation.name == regionP) {
       array.push(arrayPokemon[i]);
     }
   }

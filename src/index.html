@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/37946f5dd4.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
   </head>
   <body>
 
@@ -21,11 +20,12 @@
         <button id="btnTipo" class="btnNav">TIPO</button>
         <button id="btnRegion" class="btnNav">REGION</button>
         <button id="btnRareza" class="btnNav">RAREZA</button>
+        <button id="btnStats" class="btnNav">ESTADISTICAS</button>
       </div>
       <img class="pokebola" src="img/pokebola.gif">
     </header>
 
-    <section id="welcome"  style="display: block">
+    <section id="welcome"  style="display: none">
       <div class="intro">
         <div class="intro_background">
         <div class="intro_background_image">
@@ -189,17 +189,17 @@
     </section>
 
 
-    <section id="pokedex" style="display: none">
+    <section id="pokedex" style="display: block">
 
-
+    <div class="container-buscar">
     <input type="text" id="search" placeholder="Search...">
-    <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button>
+    <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button></div>
 
-      <select id="region">
+      <!-- <select id="region">
         <option value="" disabled selected>Region</option>
         <option value="kanto" id="kanto">Kanto</option>
         <option value="johto" id="johto">johnto</option>
-      </select>
+      </select> -->
 
       <select id="cp">
         <option value="" disabled selected>CP</option>
@@ -215,45 +215,59 @@
         <option value="251-_">251-001</option>
       </select>
 
-      <select id="rareza">
+      <!-- <select id="rareza">
         <option value="" disabled selected>Rareza</option>
         <option value="normal">normal</option>
         <option value="mythic">mítico</option>
         <option value="legendary">legendario</option>
-      </select>
+      </select> -->
 
 
 
 
 
-    <select id="egg">
+    <!-- <select id="egg">
       <option value="" disabled selected>Egg</option>
       <option value="2 km">2 km</option>
       <option value="5 km">5 km</option>
       <option value="7 km">7 km</option>
       <option value="10 km">10 km</option>
-    </select>
+    </select> -->
 
 
 
 
-<div id="divTiposPokemones">
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="ghost" src="./img/gosth.png"></div>Ghost</div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="water" src="./img/water.png"></div>Water</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="poison" src="./img/poison.png"></div>Poison</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="flying" src="./img/flying.png"></div>Flying</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="rock" src="./img/rock.png"></div>Rock</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="dragon" src="./img/dragon.png"></div>Dragon</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="dark" src="./img/dark.png"></div>Dark</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="fairy" src="./img/fairy.png"></div>Fairy</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="ground" src="./img/ground.png"></div>Ground</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="psychic" src="./img/psychic.png"></div>Psychic</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="ice" src="./img/ice.png"></div>Ice</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="normal" src="./img/normal.png"></div>Normal</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="steel" src="./img/steel.png"></div>Steel</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="electric" src="./img/electric.png"></div>Electric</div>
+<div id="divTiposPokemones" style="display:none">
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="ghost" src="./img/tipo-ghost.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="water" src="./img/tipo-agua.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="poison" src="./img/tipo-poison.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="flying" src="./img/tipo-flying.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="rock" src="./img/tipo-rock.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="dragon" src="./img/tipo-dragon.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="dark" src="./img/tipo-dark.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="fairy" src="./img/tipo-fairy.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="ground" src="./img/tipo-ground.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="psychic" src="./img/tipo-psychic.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="ice" src="./img/tipo-ice.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="normal" src="./img/tipo-normal.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="steel" src="./img/tipo-steel.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="grass" src="./img/tipo-grass.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="fighting" src="./img/tipo-fight.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="electric" src="./img/tipo-electrico.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="fire" src="./img/tipo-fuego.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="bug" src="./img/tipo-bug.png"></div></div>
 </div>
 
+<div id="divRegionPokemon"  style="display:none">
+  <div class="regionDiv"><div class="regionPokeInicio"><img id="johto" src="./img/johto.png"></div>JOHTO</div>
+  <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/kanto.png"></div>KANTO</div>
+</div>
+
+<div id="divRarezaPokemon" style="display:none">
+  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img id="normal" src="./img/poke-normal.png"></div>NORMAL</div>
+  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img id="mythic" src="./img/poke-mitico.png"></div>MYTHIC</div>
+  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img id="legendary" src="./img/poke-legendario.png"></div>LEGENDARY</div>
+</div>
 
     <p id="parrafo"></p>
 
@@ -265,9 +279,23 @@
       <img src="img/subir.png" alt="subir">
       <!-- <i class="fas fa-chevron-up"></i> -->
     </div>
+</section>
 
-  </section>
+<section id="container-stats" style="display:block">
+  <div class="container-chart">
+    <canvas class="chart uno" id="myChart1"></canvas>
+  </div>
+  <div class="container-chart">
+  <canvas class="chart dos" id="myChart2"></canvas>
+  </div>
+  <div class="container-chart">
+    <canvas class="container-chart" id='rarezaChart' ></canvas>
+  </div>
 
+  <div class="container-chart">
+    <canvas class="chart tres" id='eggChart' ></canvas>
+  </div>
+</section>
 
   <footer class="footer">
 
@@ -275,12 +303,7 @@
 
 
 
-<div id="container-chart">
-  <canvas id="myChart1" width="400" height="400"></canvas>
 
-  <canvas id="myChart2" width="400" height="400"></canvas>
-
-</div>
 
 <script src="main.js" type="module"></script>
 
