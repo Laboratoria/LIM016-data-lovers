@@ -7,12 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/37946f5dd4.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   </head>
   <body>
 
 
-    <header class="navegador">
+    <header class="navegador" >
       <img class="logo" src="img/logo.png"></label>
       <div class="menu" style="display: none;">
         <button id="btnInicio" class="activeButton">INICIO</button>
@@ -238,7 +239,7 @@
 
 <div id="divTiposPokemones">
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="ghost" src="./img/gosth.png"></div>Ghost</div>
-<div id="tipoDiv"><div id="tipoPokeInicio"><img class="water" src="./img/water.png"></div>Water</div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="water" src="./img/water.png"></div>Water</div>
 <div id="tipoDiv"><div id="tipoPokeInicio"><img class="poison" src="./img/poison.png"></div>Poison</div>
 <div id="tipoDiv"><div id="tipoPokeInicio"><img class="flying" src="./img/flying.png"></div>Flying</div>
 <div id="tipoDiv"><div id="tipoPokeInicio"><img class="rock" src="./img/rock.png"></div>Rock</div>
@@ -267,11 +268,22 @@
 
   </section>
 
+
   <footer class="footer">
 
   </footer>
 
+
+
+<div id="container-chart">
+  <canvas id="myChart1" width="400" height="400"></canvas>
+
+  <canvas id="myChart2" width="400" height="400"></canvas>
+
+</div>
+
 <script src="main.js" type="module"></script>
+
 
 </body>
 </html>

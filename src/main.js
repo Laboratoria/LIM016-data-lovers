@@ -796,4 +796,97 @@ document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
   }
 });
 
+
+
+
+// pokemon por region
+const regionCanva = ["kanto", "johto"];
+const resultadoRegion1 = regionFuncion(regionCanva[0], arrayPokemon).length;
+const resultadoRegion2 = regionFuncion(regionCanva[1], arrayPokemon).length;
+
+
+console.log(resultadoRegion1)
+
+
+// tipos de pokemones
+const tipos = [
+  "ghost",
+  "water",
+  "poison",
+  "flying",
+  "rock",
+  "dragon",
+  "dark",
+  "fairy",
+  "ground",
+  "psychic",
+  "ice",
+  "normal",
+  "steel",
+  "electric",
+];
+
+const arrayNumeroTipos = tipos.map((element) => {
+  let tipos = arrayPokemon.filter((x) => x.type.includes(element));
+  return tipos.length;
+});
+
+
+
+
+
+const ctx = document.getElementById('myChart1').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: regionCanva,
+        datasets: [{
+            label: '# of Votes',
+            data: [resultadoRegion1, resultadoRegion2],
+            backgroundColor: [
+
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+const ctx2 = document.getElementById('myChart2').getContext('2d');
+const myChart2 = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: tipos,
+        datasets: [{
+            label: '# of Votes',
+            data: arrayNumeroTipos,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
 mostrarPokemon(arrayPokemon);
