@@ -4,19 +4,50 @@
     margin: 0px;
     padding: 0px;
 }
+
 body{
     background-color: rgb(192, 237, 226);
 }
 
-.imgTitulo{
-    height: 50%;
-    width: 100%;
-}
 header{
     display: flex;
-    justify-content: center;
-    
+    flex-direction: column;    
 }
+
+.imgBanner{
+    height: 50%;
+    width: 100%;
+    z-index: 2;
+}
+
+.buscador{
+    display: flex;
+    justify-content: flex-end;
+}
+
+input{
+    
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: white;
+    text-align: center;
+    
+    font-size: 25px;
+    margin-right: 30px;
+    position: relative;
+    top: -75px;
+    z-index: 2;
+}
+
+input:focus{
+    outline: none;
+}
+
+::placeholder{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 550;
+}  
 
 .home{
     width: 100%;
@@ -27,7 +58,7 @@ header{
     margin: auto;
 }
 
-.container {
+.container-pokemons {
     width: 100%;
     height: max-content;
     display: flex;
@@ -36,23 +67,23 @@ header{
     align-content: flex-start;
 }
 
-.cards{
+.card{
     background-color: rgb(255, 255, 255);
-    border-color: rgb(12, 12, 12);
+    border-color: rgb(6, 32, 70);
     border-style: solid;
-    border-width: 5px;
+    border-width: 3px;
     width: 15%;
-    height: 45%;
+    min-height: 45%;
     border-radius: 12px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.61);
     overflow: hidden;
     margin: 20px;
     text-align: center;
     transition: all 0.25s;
-
+    padding: 15px;
 }
 
-.cards:hover{
+.card:hover{
     transform:translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
 }
@@ -89,34 +120,39 @@ p{
     align-items: center;
     justify-content: space-evenly;
 }
+
 .information{
     color: blanchedalmond;
     font-size: 18px;
     text-align: right;
     
 }
+
 .informationMore{
     color: blanchedalmond;
     text-align: right;
     font-size: 18px;
     text-decoration: none; 
 }
+
 .authors {
     color: white;
     font-size: 18px;
     text-align: center;
-
 }
+
 .iconDownloands{
     width: 30%;
     height:90%;
     border-radius: 10px;
     margin-top: 10px;
 }
+
 .copyright {
     text-align: center;
     font-size: small;
 }
+
 .downloands {
 text-align:right;
 }
