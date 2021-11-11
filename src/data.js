@@ -91,6 +91,9 @@ export function ordenAlfaNumerico(typeOrden, arrayCambiante){
 }
 
 
+
+
+
 //tipos de pokemones
 export function typePokemones(tipoPokemon, arrayPokemon) {
   let tipos = arrayPokemon.filter((element) =>
@@ -109,3 +112,5 @@ export function regionFuncion(regionP , arrayPokemon) {
   }
   return array
 }
+
+

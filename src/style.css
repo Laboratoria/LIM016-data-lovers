@@ -532,7 +532,7 @@ height: 50%;
 }
 .botones-tarjetas button {
   background-color: #ebebeb;
-  width: 100px;
+  width: 80px;
   height: 35px;
   border: 0.1px solid rgb(72, 72, 72);
 }
@@ -572,7 +572,7 @@ height: 50%;
   content: url("./img/electric.png");
   width:20%;
 }
-.logo-gosth {
+.logo-ghost {
   content: url("./img/gosth.png");
   width:20%;
 }
@@ -588,7 +588,7 @@ height: 50%;
   content: url("./img/ice.png");
   width:20%;
 }
-.logo-fight {
+.logo-fighting {
   content: url("./img/fight.png");
   width:20%;
 }
@@ -964,6 +964,16 @@ table {
   width: 10%;
 }
 
+/* DANDO ESTILO A LA VISTA 4*/
+.resistant{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr)
+}
+
+.weaknesses{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr)
+}
 /* DANDO ESTILO A LA BARRA DE BUSCAR*/
 #search {
   border: 0.2em solid rgb(97, 97, 97);

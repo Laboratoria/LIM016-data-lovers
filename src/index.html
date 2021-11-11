@@ -12,7 +12,7 @@
   <body>
 
 
-    <header class="navegador">
+    <header class="navegador" >
       <img class="logo" src="img/logo.png"></label>
       <div class="menu" style="display: none;">
         <button id="btnInicio" class="activeButton">INICIO</button>
@@ -25,7 +25,7 @@
       <img class="pokebola" src="img/pokebola.gif">
     </header>
 
-    <section id="welcome"  style="display: block">
+    <section id="welcome"  style="display: none">
       <div class="intro">
         <div class="intro_background">
         <div class="intro_background_image">
@@ -189,7 +189,7 @@
     </section>
 
 
-    <section id="pokedex" style="display: none">
+    <section id="pokedex" style="display: block">
 
     <div class="container-buscar">
     <input type="text" id="search" placeholder="Search...">
@@ -281,20 +281,32 @@
     </div>
 </section>
 
-<section id="container-stats" style="display:none">
+<section id="container-stats" style="display:block">
+  <div class="container-chart">
+    <canvas class="chart uno" id="myChart1"></canvas>
+  </div>
+  <div class="container-chart">
+  <canvas class="chart dos" id="myChart2"></canvas>
+  </div>
   <div class="container-chart">
     <canvas class="container-chart" id='rarezaChart' ></canvas>
   </div>
 
   <div class="container-chart">
-    <canvas class="container-chart" id='eggChart' ></canvas>
+    <canvas class="chart tres" id='eggChart' ></canvas>
   </div>
 </section>
+
   <footer class="footer">
 
   </footer>
 
+
+
+
+
 <script src="main.js" type="module"></script>
+
 
 </body>
 </html>
