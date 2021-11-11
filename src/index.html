@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/37946f5dd4.js" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
 
@@ -20,6 +20,7 @@
         <button id="btnTipo" class="btnNav">TIPO</button>
         <button id="btnRegion" class="btnNav">REGION</button>
         <button id="btnRareza" class="btnNav">RAREZA</button>
+        <button id="btnStats" class="btnNav">ESTADISTICAS</button>
       </div>
       <img class="pokebola" src="img/pokebola.gif">
     </header>
@@ -236,7 +237,7 @@
 
 
 
-<div id="divTiposPokemones">
+<div id="divTiposPokemones" style="display:none">
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="ghost" src="./img/tipo-ghost.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="water" src="./img/tipo-agua.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="poison" src="./img/tipo-poison.png"></div></div>
@@ -250,14 +251,14 @@
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="ice" src="./img/tipo-ice.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="normal" src="./img/tipo-normal.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="steel" src="./img/tipo-steel.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="gras" src="./img/tipo-grass.png"></div></div>
+<div class="tipoDiv"><div class="tipoPokeInicio"><img id="grass" src="./img/tipo-grass.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="fighting" src="./img/tipo-fight.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="electric" src="./img/tipo-electrico.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="fire" src="./img/tipo-fuego.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="bug" src="./img/tipo-bug.png"></div></div>
 </div>
 
-<div id="divRegionPokemon" style="display:none">
+<div id="divRegionPokemon"  style="display:none">
   <div class="regionDiv"><div class="regionPokeInicio"><img id="johto" src="./img/johto.png"></div>JOHTO</div>
   <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/kanto.png"></div>KANTO</div>
 </div>
@@ -278,9 +279,17 @@
       <img src="img/subir.png" alt="subir">
       <!-- <i class="fas fa-chevron-up"></i> -->
     </div>
+</section>
 
-  </section>
+<section id="container-stats" style="display:none">
+  <div class="container-chart">
+    <canvas class="container-chart" id='rarezaChart' ></canvas>
+  </div>
 
+  <div class="container-chart">
+    <canvas class="container-chart" id='eggChart' ></canvas>
+  </div>
+</section>
   <footer class="footer">
 
   </footer>
