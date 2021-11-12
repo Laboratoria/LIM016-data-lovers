@@ -1,17 +1,6 @@
-//buscador de pokemon
-// export function buscarPoke(buscarPokemon, arrayPokemon) {
-//   let array = [];
-//   for (let i = 0; i < arrayPokemon.length; i++) {
-//     if (arrayPokemon[i].name == buscarPokemon) {
-//       array.push(arrayPokemon[i]);
-//     }
-//   }
-//   return array;
-// }
-
-
 
 //filtrar pokemon por huevito
+
 export function huevitoPokemon(eggType, arrayPokemon) {
   const arrayEgg = arrayPokemon.filter((item) => item.egg == eggType);
   return arrayEgg;

@@ -13,7 +13,7 @@
 
 
     <header class="navegador" >
-      <img class="logo" src="img/logo.png"></label>
+      <img class="logo" src="img/logo.png">
       <div class="menu" style="display: none;">
         <button id="btnInicio" class="activeButton">INICIO</button>
         <button id="btnPokedex" class="btnNav">POKEDEX</button>
@@ -186,6 +186,7 @@
         </div>
         </div>
       </div>
+    </div>
     </section>
 
 
@@ -195,11 +196,6 @@
     <input type="text" id="search" placeholder="Search...">
     <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button></div>
 
-      <!-- <select id="region">
-        <option value="" disabled selected>Region</option>
-        <option value="kanto" id="kanto">Kanto</option>
-        <option value="johto" id="johto">johnto</option>
-      </select> -->
 
       <select id="cp">
         <option value="" disabled selected>CP</option>
@@ -215,29 +211,23 @@
         <option value="251-_">251-001</option>
       </select>
 
-      <!-- <select id="rareza">
-        <option value="" disabled selected>Rareza</option>
-        <option value="normal">normal</option>
-        <option value="mythic">mítico</option>
-        <option value="legendary">legendario</option>
-      </select> -->
 
 
 
-
-
-    <!-- <select id="egg">
+<select id="egg">
       <option value="" disabled selected>Egg</option>
       <option value="2 km">2 km</option>
       <option value="5 km">5 km</option>
       <option value="7 km">7 km</option>
       <option value="10 km">10 km</option>
-    </select> -->
+    </select>
 
 
 
 
-<div id="divTiposPokemones" style="display:none">
+
+
+<div id="divTiposPokemones" >
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="ghost" src="./img/tipo-ghost.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="water" src="./img/tipo-agua.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="poison" src="./img/tipo-poison.png"></div></div>
@@ -263,10 +253,11 @@
   <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/kanto.png"></div>KANTO</div>
 </div>
 
+
 <div id="divRarezaPokemon" style="display:none">
-  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img id="normal" src="./img/poke-normal.png"></div>NORMAL</div>
-  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img id="mythic" src="./img/poke-mitico.png"></div>MYTHIC</div>
-  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img id="legendary" src="./img/poke-legendario.png"></div>LEGENDARY</div>
+  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="normal" src="./img/poke-normal.png"></div>NORMAL</div>
+  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="mythic" src="./img/poke-mitico.png"></div>MYTHIC</div>
+  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="legendary" src="./img/poke-legendario.png"></div>LEGENDARY</div>
 </div>
 
     <p id="parrafo"></p>
@@ -289,21 +280,17 @@
   <canvas class="chart dos" id="myChart2"></canvas>
   </div>
   <div class="container-chart">
-    <canvas class="container-chart" id='rarezaChart' ></canvas>
+    <canvas class="container-chart" id="rarezaChart" ></canvas>
   </div>
 
   <div class="container-chart">
-    <canvas class="chart tres" id='eggChart' ></canvas>
+    <canvas class="chart tres" id="eggChart" ></canvas>
   </div>
 </section>
 
   <footer class="footer">
 
   </footer>
-
-
-
-
 
 <script src="main.js" type="module"></script>
 
