@@ -144,9 +144,9 @@ body {
   position: relative;
 }
 
-.carrusel:hover{
+/* .carrusel:hover{
 
-}
+} */
 
 .carrusel-items{
   display: flex;
@@ -404,10 +404,10 @@ transform: scale(1.2);
   justify-content: center;
 }
 
-.evol {
-  /* width: 50%;
-  height: 50%; */
-}
+/* .evol {
+  width: 50%;
+  height: 50%; 
+} */
 .imgEvol {
   width: 50%;
 }

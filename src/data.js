@@ -1,15 +1,3 @@
-//buscador de pokemon
-// export function buscarPoke(buscarPokemon, arrayPokemon) {
-//   let array = [];
-//   for (let i = 0; i < arrayPokemon.length; i++) {
-//     if (arrayPokemon[i].name == buscarPokemon) {
-//       array.push(arrayPokemon[i]);
-//     }
-//   }
-//   return array;
-// }
-
-
 
 //filtrar pokemon por huevito
 export function huevitoPokemon(eggType, arrayPokemon) {
@@ -92,8 +80,6 @@ export function ordenAlfaNumerico(typeOrden, arrayCambiante){
 
 
 
-
-
 //tipos de pokemones
 export function typePokemones(tipoPokemon, arrayPokemon) {
   let tipos = arrayPokemon.filter((element) =>
@@ -112,5 +98,18 @@ export function regionFuncion(regionP , arrayPokemon) {
   }
   return array
 }
-
+//buscador de pokemon
+export function buscarPoke(texto, arrayPokemon) {
+  let array = [];
+  for (let pokemon of arrayPokemon) {
+    let namePokemon = pokemon.name;
+    let numPokemon = pokemon.num;
+    if (namePokemon.indexOf(texto) !== -1) {
+      array.push(pokemon);
+    } else if (numPokemon.indexOf(texto) !== -1) {
+      array.push(pokemon);
+    }
+  }
+  return array;
+}
 
