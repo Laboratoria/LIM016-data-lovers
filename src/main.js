@@ -122,18 +122,36 @@ createElement.innerHTML= template
 
 
 const arrayGhibli = data.films
+//console.log(arrayGhibli[0].people[0])
 
-console.log(arrayGhibli[0].people[0])
-
-
-const arrayPeople = []
+let arrayPeople = [];
 for(let i=0; i<arrayGhibli.length;i++){
     arrayPeople.push(arrayGhibli[i].people)
 }
-
 console.log(arrayPeople)
 
-const sectionPeople = arrayPeople.forEach(( a , b, c) => {
+
+arrayPeople.flat(1).forEach(function (element) { 
+  const createElement= document.createElement("div")
+
+  const template= `<ul>
+  <li>Nombre: ${element.name} </li>
+  <li>Genero: ${element.gender}</li>
+  <li>Color de Ojos: ${element.eye_color}</li>
+  <li>Color de Cabello ${element.hair_color}</li>
+  <li>Especie: ${element.specie}</li>     
+  <div class="box"><img src= ${element.img}></div> 
+</ul>`;
+createElement.innerHTML= template
+//console.log(createElement);
+containerPeople.appendChild(createElement);
+return template;
+});
+
+
+
+
+/*const sectionPeople = arrayPeople.forEach((a) => { 
     const createElement= document.createElement("div")
   
     const template= `<ul>
@@ -148,8 +166,7 @@ const sectionPeople = arrayPeople.forEach(( a , b, c) => {
   console.log(createElement);
   containerPeople.appendChild(createElement);
   return template;
-})
-  
+})*/
 
 
 
