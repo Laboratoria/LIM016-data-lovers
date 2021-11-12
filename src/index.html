@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -14,7 +15,7 @@
       <div class="dashboard">
        <div class="reinicio" id="volverPrincipal">
         <input type="image" src="img/Logo.png" id="logo" >
-       </div>
+       </div >
         <!-- <div id="principal"> -->
         <!-- <h2>Principal</h2> -->
         <!-- </div> -->
@@ -28,18 +29,19 @@
          </div>
         </div>
       <div id="filmo" style="display: none" class="secciones">
-        <h2></h2><br>
+        <h2>Filmografia</h2><br>
+        <div id="botones" class="menu">
+          <div><input type="button" id="año" value="Año"  class="btnsFiltradores"></div>
+          <div><input type="button" id="director" value="Director" class="btnsFiltradores"></div>
+          <div><input type="button" id="productor" value="Productor" class="btnsFiltradores" ></div>
+          <div><input type="button" id="climas" value="Climas" class="btnsFiltradores"></div>
+          <div><input type="button" id="cleanFilmografia" value="Clean" class="btnsFiltradores"> </div>
+        </div>
         
-          <input type="button" id="año" value="Año"  class="btnsFiltradores">
-          <input type="button" id="director" value="Director" class="btnsFiltradores">
-          <input type="button" id="locacion" value="Locacion"class="btnsFiltradores" >
-          <input type="button" id="productor" value="Productor" class="btnsFiltradores" >
-          <input type="button" id="climas" value="Climas" class="btnsFiltradores">
-          <input type="button" id="cleanFilmografia" value="Clean" class="btnsFiltradores"> 
-        </class>  
-        
-        <div id="containerFilmografia">
+        <div id="containerFilmo">
+          <div id="divf">
 
+          </div>
         </div>
       </div>
     
@@ -50,20 +52,22 @@
           <input type="button" id="edad" value="Edad" class="btnsFiltradores" >
       <input type="button" id="cleanPersonajes" value="Clean" class="btnsFiltradores" >
 
-      <div id="containerPersonajes">
+      <div id="containerPeople">
           
       </div>
+    </div>
 
       
     
 
-      <div id="estre" style="display: none" class="secciones" >
+      <div id="estre" style="display:none" class="secciones" >
         <h2>Estrenos</h2>
-          <input type="button" id="precio" value="Precio" class="btnsFiltradores" >
-          <input type="button" id="losMasVistos" value="Los mas vistos" class="btnsFiltradores" >
-         <input type="button" id="cleanEstrenos"
-         
-         value="Clean" class="btnsFiltradores" >
+          <div>
+          <div><input type="button" id="precio" value="Precio" class="btnsFiltradores" ></div>
+          <div><input type="button" id="losMasVistos" value="Los mas vistos" class="btnsFiltradores" ></div>
+        
+          </div>
+        
     
          <div id="containerEstrenos">
           
@@ -71,7 +75,7 @@
 
       </div>
       
-       <div id="tda" style="display: none" class="secciones">
+       <div id="tda" style="display:none" class="secciones">
         <h2>Tienda</h2>
           <input type="button" id="masVendidos" value="Mas Vendidos" class="btnsFiltradores" >
           <input type="button" id="Precio" value="Precio" class="btnsFiltradores" >
