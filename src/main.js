@@ -126,14 +126,14 @@ const arrayGhibli = data.films
 console.log(arrayGhibli[0].people[0])
 
 
-const arrayPeople = []
+//const arrayPeople = []
 for(let i=0; i<arrayGhibli.length;i++){
     arrayPeople.push(arrayGhibli[i].people)
 }
 
-console.log(arrayPeople)
+console.log(arrayPeople)//
 
-const sectionPeople = arrayPeople.forEach(( a , b, c) => {
+const sectionPeople = arrayPeople.forEach(({name, gener, eye_color, hair_color ,specie, img}) => {
     const createElement= document.createElement("div")
   
     const template= `<ul>
@@ -150,12 +150,6 @@ const sectionPeople = arrayPeople.forEach(( a , b, c) => {
   return template;
 })
   
-
-
-
-
-
-
 
 
 
