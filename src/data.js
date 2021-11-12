@@ -1,5 +1,6 @@
 
 //filtrar pokemon por huevito
+
 export function huevitoPokemon(eggType, arrayPokemon) {
   const arrayEgg = arrayPokemon.filter((item) => item.egg == eggType);
   return arrayEgg;
