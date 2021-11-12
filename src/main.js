@@ -1,13 +1,7 @@
 import data from "./data/pokemon/pokemon.js";
-<<<<<<< HEAD
-// import cargarJson from "./jason.js";
-import {
-  buscarPoke,
-=======
 
 import {
-  //buscarPoke,
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
+  buscarPoke,
   huevitoPokemon,
   filtarCp,
   rarezaPokemon,
@@ -17,7 +11,7 @@ import {
 } from "./data.js";
 
 
-// const arrayP = 
+// const arrayP = []
     
 // fetch('./data/pokemon/pokemon.json')
 // .then(function(res){
@@ -28,10 +22,13 @@ import {
 
 // })
 // .then(function(dataPokemon){
-//     Object.assign(arrayP, dataPokemon)
+//     dataPokemon.forEach((element)=>{
+//       arrayP.push(element)
+//     })
 
-// })
-// ;
+// });
+// console.log(arrayP.length)
+
 
 // CARRUSEL
 const carrusel = document.querySelector(".carrusel-items");
@@ -63,6 +60,7 @@ carrusel.addEventListener("mouseout", () => {
 });
 
 start();
+
 // const botones del navegador
 
 const btnInicio = document.getElementById("btnInicio");
@@ -72,42 +70,18 @@ const btnRegion = document.getElementById("btnRegion");
 const btnRareza = document.getElementById("btnRareza");
 const btnStats = document.getElementById("btnStats");
 
-//const modalContainer = document.querySelector(".modal-container");
+
 const container = document.querySelector(".pokemon-container");
-// const region = document.getElementById("region");
 const orden = document.getElementById("orden");
-// const tipos = document.getElementById("tipos");
-// const rareza = document.getElementById("rareza");
 const cp = document.getElementById("cp");
-<<<<<<< HEAD
-const egg = document.getElementById("egg");
-=======
 const eggPoke = document.getElementById("egg");
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
 const search = document.getElementById("search");
-// const botonBuscar = document.getElementById("botonBuscar");
+
 
 const arrayPokemon = data.pokemon;
 let arrayCambiante = "";
-<<<<<<< HEAD
 
-console.log(arrayPokemon)
-=======
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
-// console.log(arrayPokemon[175].evolution["next-evolution"][0].name);
-// var dataArray = new Array;
-// for(const i in arrayPokemon){
-//   dataArray.push(arrayPokemon[i].stats["max-cp"]);
-// }
-// console.log(dataArray)
-// console.log(Math.max(...dataArray))
-
-// console.log(arrayPokemon[1].resistant)
-// console.log(arrayPokemon[1].weaknesses)
-
-//BOTON PARA VOLVER AL INICION
-
-btnInicio.addEventListener("click", () => {
+btnInicio.addEventListener("click", () => { //--------BOTON PARA VOLVER AL INICIO
   document.querySelector("#welcome").style.display = "block";
   document.querySelector("#pokedex").style.display = "none";
   document.querySelector(".menu").style.display = "none";
@@ -117,9 +91,7 @@ btnInicio.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-//PASAR DE INICIO AL POKEDEX
-
-const verPokedex = document.getElementById("verPokedex");
+const verPokedex = document.getElementById("verPokedex"); //-------------PASAR DE INICIO AL POKEDEX
 
 verPokedex.addEventListener("click", () => {
   document.querySelector("#welcome").style.display = "none";
@@ -134,8 +106,8 @@ verPokedex.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-// //PASAR A LA VISTA DEL POKEDEX
-btnPokedex.addEventListener("click", () => {
+btnPokedex.addEventListener("click", () => { //----------------PASAR A LA VISTA DEL POKEDEX
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "block";
@@ -151,12 +123,11 @@ btnPokedex.addEventListener("click", () => {
   btnStats.className = "";
 });
 
-// //PASAR A LA VISTA TIPO
-
-btnTipo.addEventListener("click", () => {
+btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
-
-  document.querySelector("#welcome").style.display = "none";
+  
+  document. querySelector("#welcome").style.display = "none";
   document.querySelector(".container-buscar").style.display = "none";
   document.querySelector("#divTiposPokemones").style.display = "grid";
   document.querySelector("#divRegionPokemon").style.display = "none";
@@ -171,9 +142,8 @@ btnTipo.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-// //PASAR A LA VISTA REGION
-
-btnRegion.addEventListener("click", () => {
+btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VISTA REGION
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
@@ -190,9 +160,8 @@ btnRegion.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-// //PASAR A LA VISTA RAREZA
-
-btnRareza.addEventListener("click", () => {
+btnRareza.addEventListener("click", () => { //-------------------------PASAR A LA VISTA RAREZA
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
@@ -209,9 +178,8 @@ btnRareza.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-//PASAR A LA VISTA RAREZA
-
-btnStats.addEventListener("click", () => {
+btnStats.addEventListener("click", () => { //----------------PASAR A LA VISTA RAREZA
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
@@ -229,9 +197,7 @@ btnStats.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-//funcion que muestra los pokemones
-
-function mostrarPokemon(array) {
+function mostrarPokemon(array) { //-------------funcion que muestra los pokemones
   arrayCambiante = array;
 
   const numero = document.getElementById("parrafo");
@@ -358,7 +324,6 @@ function mostrarPokemon(array) {
       containerVista.classList.add("containerVista");
       const nameCardPokemon = document.createElement("h");
       nameCardPokemon.innerHTML = array[i].name;
-      // console.log(array[i].name);
 
       //crear div que contiene nombre y número
 
@@ -845,14 +810,8 @@ function mostrarPokemon(array) {
 
     card.appendChild(spriteContainer);
     card.appendChild(nombreNumero);
-    // card.appendChild(numero);
-    // card.appendChild(nombre);
-    // card.appendChild(cpPokemon);
-    //card.appendChild(evolucion);
     card.appendChild(tarjetaPokemon);
     container.appendChild(card);
-
-    //items que se agregaran al infocard y container
   }
 }
 
@@ -893,44 +852,12 @@ function evoluciones(array, divTotalEvoluciones, nombre, tipo) {
     divTotalEvoluciones.appendChild(divGrupoEvol);
   } else {
     if (tipo == "legendary") {
-<<<<<<< HEAD
-      // console.log(tipo);
       divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Legendary</h3><br><img src="./img/poke-legendario.png"></div>`;
     } else if (tipo == "mythic") {
-      // console.log(tipo);
-=======
-      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Legendary</h3><br><img src="./img/poke-legendario.png"></div>`;
-    } else if (tipo == "mythic") {
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
       divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Mithic</h3><br><img src="./img/poke-mitico.png"></div>`;
     }
   }
 }
-
-//region pokemon
-// region.addEventListener("change", (e) => {
-//   e.preventDefault();
-//   container.innerHTML = "";
-//   const valor = e.target.value;
-//   const arrayRegion = regionFuncion(valor, arrayPokemon);
-//   mostrarPokemon(arrayRegion);
-// });
-
-//tipos de pokemones
-// tipos.addEventListener("change", (e) => {
-//   container.innerHTML = "";
-//   const tipoPokemon = e.target.value;
-//   const arraytipoPoke = typePokemones(tipoPokemon, arrayPokemon);
-//   mostrarPokemon(arraytipoPoke);
-// });
-
-// //pokemon rarity
-// rareza.addEventListener("change", (e) => {
-//   const tipoRareza = e.target.value;
-//   container.innerHTML = "";
-//   const rarezaPoke = rarezaPokemon(tipoRareza, arrayPokemon);
-//   mostrarPokemon(rarezaPoke);
-// });
 
 //cp
 cp.addEventListener("change", (e) => {
@@ -940,12 +867,8 @@ cp.addEventListener("change", (e) => {
   mostrarPokemon(filtroPoke);
 });
 
-<<<<<<< HEAD
-egg.addEventListener("change", (e) => {
-=======
 // filtrar pokemon por huevito
 eggPoke.addEventListener("change", (e) => {
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
   container.innerHTML = "";
   const eggType = e.target.value;
 
@@ -961,8 +884,6 @@ orden.addEventListener("change", (e) => {
   mostrarPokemon(ordenAlfaNum);
 });
 
-
-<<<<<<< HEAD
 // botonBuscar.addEventListener("click", filtrar);
 search.addEventListener("keyup", ()=>{
   container.innerHTML = "";
@@ -970,54 +891,8 @@ search.addEventListener("keyup", ()=>{
   const arrayBuscar = buscarPoke(texto, arrayPokemon) 
   mostrarPokemon(arrayBuscar);
 });
-=======
-// const filtrar = () => {
-//   container.innerHTML = "";
-//   const texto = search.value.toLowerCase();
-//   let array = [];
-//   for (let pokemon of arrayPokemon) {
-//     let namePokemon = pokemon.name;
-//     let numPokemon = pokemon.num;
-//     if (namePokemon.indexOf(texto) !== -1) {
-//       array.push(pokemon);
-//     } else if (numPokemon.indexOf(texto) !== -1) {
-//       array.push(pokemon);
-//     }
-//   }
-//   mostrarPokemon(array);
-// };
-
-// botonBuscar.addEventListener("click", );
-
-search.addEventListener("keyup", () => {
-  container.innerHTML = "";
-  const texto = search.value.toLowerCase();
-  let array = [];
-  const hola = buscar(texto, arrayPokemon, array);
-  mostrarPokemon(hola);
-
-})
-function buscar(texto, arrayPokemon,array) {
-  for (let pokemon of arrayPokemon) {
-    let namePokemon = pokemon.name;
-    let numPokemon = pokemon.num;
-    if (namePokemon.indexOf(texto) !== -1) {
-      array.push(pokemon);
-    } else if (numPokemon.indexOf(texto) !== -1) {
-      array.push(pokemon);
-    }
-  }
-  return array;
-}
-
-
-
-
-
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
 
 // Boton subir
-
 const buttonUp = document.getElementById("button-up");
 
 buttonUp.addEventListener("click", scrollUp);
@@ -1045,15 +920,10 @@ document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
   if (e.target.getAttribute("id")) {
     container.innerHTML = "";
     // console.log(e.target.getAttribute('id'))
-<<<<<<< HEAD
-    const tipoP = e.target.getAttribute('id')
-=======
     const tipoP = e.target.getAttribute("id");
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
     const arraytipoPoke = typePokemones(tipoP, arrayPokemon);
     mostrarPokemon(arraytipoPoke);
-  }
-});
+  }});
 
 document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
   e.preventDefault();
@@ -1061,51 +931,29 @@ document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
   if (e.target.getAttribute("id")) {
     container.innerHTML = "";
     // console.log(e.target.getAttribute('id'))
-<<<<<<< HEAD
     const regionP = e.target.getAttribute('id')
-=======
-    const regionP = e.target.getAttribute("id");
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
     const arrayRegionPoke = regionFuncion(regionP, arrayPokemon);
     mostrarPokemon(arrayRegionPoke);
-  }
-});
+  }});
 
 document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
   e.preventDefault();
 
-<<<<<<< HEAD
-  if (e.target.getAttribute('value')) {
+  if (e.target.getAttribute("value")) {
     container.innerHTML = "";
-    // console.log(e.target.getAttribute('value'))
-    const rarezaP = e.target.getAttribute('value')
-=======
-  if (e.target.value) {
-    container.innerHTML = "";
-    const rarezaP = e.target.value;
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
+    const rarezaP = e.target.getAttribute("value");
     const arrayRarezaPoke = rarezaPokemon(rarezaP, arrayPokemon);
     mostrarPokemon(arrayRarezaPoke);
-  }
-});
+  }});
 
 // pokemon por region
 const regionCanva = ["kanto", "johto"];
 const resultadoRegion1 = regionFuncion(regionCanva[0], arrayPokemon).length;
 const resultadoRegion2 = regionFuncion(regionCanva[1], arrayPokemon).length;
 
-<<<<<<< HEAD
-
-// console.log(resultadoRegion1)
-
-=======
-// console.log(resultadoRegion1)
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
-
 // tipos de pokemones
 const tipos = ["ghost","water","poison","flying","rock","dragon","dark","fairy","ground","psychic","ice",
 "normal","steel","electric","grass","normal","fire","fighting"];
-
 
 const arrayNumeroTipos = tipos.map((element) => {
   let tipos = arrayPokemon.filter((x) => x.type.includes(element));
@@ -1114,22 +962,6 @@ const arrayNumeroTipos = tipos.map((element) => {
 
 const ctx = document.getElementById("myChart1").getContext("2d");
 new Chart(ctx, {
-<<<<<<< HEAD
-    type: 'pie',
-    data: {
-        labels: regionCanva,
-        datasets: [{
-            label: '# of Votes',
-            data: [resultadoRegion1, resultadoRegion2],
-            backgroundColor: [
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-=======
   type: "pie",
   data: {
     labels: regionCanva,
@@ -1148,7 +980,6 @@ new Chart(ctx, {
       y: {
         beginAtZero: true,
       },
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
     },
   },
 });
@@ -1187,19 +1018,7 @@ let arrayMythic = arrayPokemon.filter(
 
 let arrayLegendary = arrayPokemon.filter(
   (array) => array["pokemon-rarity"] == "legendary"
-<<<<<<< HEAD
 ).length
-
-// console.log(arrayMythic);
-// console.log(arrayNormal);
-// console.log(arrayLegendary);
-=======
-).length;
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
-
-// console.log(arrayMythic);
-// console.log(arrayNormal);
-// console.log(arrayLegendary);
 
 let rarezaPoke = document.getElementById("rarezaChart").getContext("2d");
 new Chart(rarezaPoke, {
@@ -1255,36 +1074,6 @@ let array7km = arrayPokemon.filter((array) => array["egg"] == "5 km").length;
 
 let array10km = arrayPokemon.filter((array) => array["egg"] == "10 km").length;
 
-<<<<<<< HEAD
-let eggPoke = document.getElementById('eggChart').getContext('2d');
-/* eslint no-undef: "off"*/
-new Chart(eggPoke, {
-    type: 'bar',
-    data: {
-        labels: ['2 km', '5 km', '7 km', '10km'],
-        datasets: [{
-            axis: 'y',
-            label: ['2 km', '5 km', '7 km', '10km'],
-            data: [array2km, array5km, array7km, array10km],
-            fill: false,
-            backgroundColor: [
-              'rgba(150, 99, 132, 0.6)',
-              'rgba(180, 99, 132, 0.6)',
-              'rgba(210, 99, 132, 0.6)',
-              'rgba(240, 99, 132, 0.6)'
-
-            ],
-            borderColor: [
-              'rgba(150, 99, 132, 1)',
-              'rgba(180, 99, 132, 1)',
-              'rgba(210, 99, 132, 1)',
-              'rgba(240, 99, 132, 1)'
-
-            ],
-            borderWidth: 2,
-            hoverBorderWidth: 0
-        }]
-=======
 let egg = document.getElementById("eggChart").getContext("2d");
 new Chart(egg, {
   type: "bar",
@@ -1322,14 +1111,8 @@ new Chart(egg, {
           color: "rgb(255, 99, 132)",
         },
       },
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
     },
   },
 });
 
-<<<<<<< HEAD
-
-mostrarPokemon(arrayPokemon)
-=======
 mostrarPokemon(arrayPokemon);
->>>>>>> d6954a2cfe1d91f9c319b42b2f775c68a995e550
