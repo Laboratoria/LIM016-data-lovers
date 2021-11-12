@@ -1,7 +1,7 @@
 import data from "./data/pokemon/pokemon.js";
 
 import {
-  //buscarPoke,
+  buscarPoke,
   huevitoPokemon,
   filtarCp,
   rarezaPokemon,
@@ -9,6 +9,26 @@ import {
   typePokemones,
   regionFuncion,
 } from "./data.js";
+
+
+// const arrayP = []
+    
+// fetch('./data/pokemon/pokemon.json')
+// .then(function(res){
+//     return res.json();
+// })
+// .then(function(data){
+//     return data.pokemon
+
+// })
+// .then(function(dataPokemon){
+//     dataPokemon.forEach((element)=>{
+//       arrayP.push(element)
+//     })
+
+// });
+// console.log(arrayP.length)
+
 
 // CARRUSEL
 const carrusel = document.querySelector(".carrusel-items");
@@ -40,6 +60,7 @@ carrusel.addEventListener("mouseout", () => {
 });
 
 start();
+
 // const botones del navegador
 
 const btnInicio = document.getElementById("btnInicio");
@@ -49,33 +70,18 @@ const btnRegion = document.getElementById("btnRegion");
 const btnRareza = document.getElementById("btnRareza");
 const btnStats = document.getElementById("btnStats");
 
-//const modalContainer = document.querySelector(".modal-container");
+
 const container = document.querySelector(".pokemon-container");
-// const region = document.getElementById("region");
 const orden = document.getElementById("orden");
-// const tipos = document.getElementById("tipos");
-// const rareza = document.getElementById("rareza");
 const cp = document.getElementById("cp");
 const eggPoke = document.getElementById("egg");
 const search = document.getElementById("search");
-// const botonBuscar = document.getElementById("botonBuscar");
+
 
 const arrayPokemon = data.pokemon;
 let arrayCambiante = "";
-// console.log(arrayPokemon[175].evolution["next-evolution"][0].name);
-// var dataArray = new Array;
-// for(const i in arrayPokemon){
-//   dataArray.push(arrayPokemon[i].stats["max-cp"]);
-// }
-// console.log(dataArray)
-// console.log(Math.max(...dataArray))
 
-// console.log(arrayPokemon[1].resistant)
-// console.log(arrayPokemon[1].weaknesses)
-
-//BOTON PARA VOLVER AL INICION
-
-btnInicio.addEventListener("click", () => {
+btnInicio.addEventListener("click", () => { //--------BOTON PARA VOLVER AL INICIO
   document.querySelector("#welcome").style.display = "block";
   document.querySelector("#pokedex").style.display = "none";
   document.querySelector(".menu").style.display = "none";
@@ -85,9 +91,7 @@ btnInicio.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-//PASAR DE INICIO AL POKEDEX
-
-const verPokedex = document.getElementById("verPokedex");
+const verPokedex = document.getElementById("verPokedex"); //-------------PASAR DE INICIO AL POKEDEX
 
 verPokedex.addEventListener("click", () => {
   document.querySelector("#welcome").style.display = "none";
@@ -102,8 +106,8 @@ verPokedex.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-// //PASAR A LA VISTA DEL POKEDEX
-btnPokedex.addEventListener("click", () => {
+btnPokedex.addEventListener("click", () => { //----------------PASAR A LA VISTA DEL POKEDEX
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "block";
@@ -119,12 +123,11 @@ btnPokedex.addEventListener("click", () => {
   btnStats.className = "";
 });
 
-// //PASAR A LA VISTA TIPO
-
-btnTipo.addEventListener("click", () => {
+btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
-
-  document.querySelector("#welcome").style.display = "none";
+  
+  document. querySelector("#welcome").style.display = "none";
   document.querySelector(".container-buscar").style.display = "none";
   document.querySelector("#divTiposPokemones").style.display = "grid";
   document.querySelector("#divRegionPokemon").style.display = "none";
@@ -139,9 +142,8 @@ btnTipo.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-// //PASAR A LA VISTA REGION
-
-btnRegion.addEventListener("click", () => {
+btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VISTA REGION
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
@@ -158,9 +160,8 @@ btnRegion.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-// //PASAR A LA VISTA RAREZA
-
-btnRareza.addEventListener("click", () => {
+btnRareza.addEventListener("click", () => { //-------------------------PASAR A LA VISTA RAREZA
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
@@ -177,9 +178,8 @@ btnRareza.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-//PASAR A LA VISTA RAREZA
-
-btnStats.addEventListener("click", () => {
+btnStats.addEventListener("click", () => { //----------------PASAR A LA VISTA RAREZA
+  container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
@@ -197,9 +197,7 @@ btnStats.addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
 });
 
-//funcion que muestra los pokemones
-
-function mostrarPokemon(array) {
+function mostrarPokemon(array) { //-------------funcion que muestra los pokemones
   arrayCambiante = array;
 
   const numero = document.getElementById("parrafo");
@@ -326,7 +324,6 @@ function mostrarPokemon(array) {
       containerVista.classList.add("containerVista");
       const nameCardPokemon = document.createElement("h");
       nameCardPokemon.innerHTML = array[i].name;
-      // console.log(array[i].name);
 
       //crear div que contiene nombre y número
 
@@ -813,14 +810,8 @@ function mostrarPokemon(array) {
 
     card.appendChild(spriteContainer);
     card.appendChild(nombreNumero);
-    // card.appendChild(numero);
-    // card.appendChild(nombre);
-    // card.appendChild(cpPokemon);
-    //card.appendChild(evolucion);
     card.appendChild(tarjetaPokemon);
     container.appendChild(card);
-
-    //items que se agregaran al infocard y container
   }
 }
 
@@ -868,31 +859,6 @@ function evoluciones(array, divTotalEvoluciones, nombre, tipo) {
   }
 }
 
-//region pokemon
-// region.addEventListener("change", (e) => {
-//   e.preventDefault();
-//   container.innerHTML = "";
-//   const valor = e.target.value;
-//   const arrayRegion = regionFuncion(valor, arrayPokemon);
-//   mostrarPokemon(arrayRegion);
-// });
-
-//tipos de pokemones
-// tipos.addEventListener("change", (e) => {
-//   container.innerHTML = "";
-//   const tipoPokemon = e.target.value;
-//   const arraytipoPoke = typePokemones(tipoPokemon, arrayPokemon);
-//   mostrarPokemon(arraytipoPoke);
-// });
-
-// //pokemon rarity
-// rareza.addEventListener("change", (e) => {
-//   const tipoRareza = e.target.value;
-//   container.innerHTML = "";
-//   const rarezaPoke = rarezaPokemon(tipoRareza, arrayPokemon);
-//   mostrarPokemon(rarezaPoke);
-// });
-
 //cp
 cp.addEventListener("change", (e) => {
   container.innerHTML = "";
@@ -918,54 +884,15 @@ orden.addEventListener("change", (e) => {
   mostrarPokemon(ordenAlfaNum);
 });
 
-//buscador de pokemon
-
-// const filtrar = () => {
-//   container.innerHTML = "";
-//   const texto = search.value.toLowerCase();
-//   let array = [];
-//   for (let pokemon of arrayPokemon) {
-//     let namePokemon = pokemon.name;
-//     let numPokemon = pokemon.num;
-//     if (namePokemon.indexOf(texto) !== -1) {
-//       array.push(pokemon);
-//     } else if (numPokemon.indexOf(texto) !== -1) {
-//       array.push(pokemon);
-//     }
-//   }
-//   mostrarPokemon(array);
-// };
-
-// botonBuscar.addEventListener("click", );
-
-search.addEventListener("keyup", () => {
+// botonBuscar.addEventListener("click", filtrar);
+search.addEventListener("keyup", ()=>{
   container.innerHTML = "";
   const texto = search.value.toLowerCase();
-  let array = [];
-  const hola = buscar(texto, arrayPokemon, array);
-  mostrarPokemon(hola);
-
-})
-function buscar(texto, arrayPokemon,array) {
-  for (let pokemon of arrayPokemon) {
-    let namePokemon = pokemon.name;
-    let numPokemon = pokemon.num;
-    if (namePokemon.indexOf(texto) !== -1) {
-      array.push(pokemon);
-    } else if (numPokemon.indexOf(texto) !== -1) {
-      array.push(pokemon);
-    }
-  }
-  return array;
-}
-
-
-
-
-
+  const arrayBuscar = buscarPoke(texto, arrayPokemon) 
+  mostrarPokemon(arrayBuscar);
+});
 
 // Boton subir
-
 const buttonUp = document.getElementById("button-up");
 
 buttonUp.addEventListener("click", scrollUp);
@@ -996,8 +923,7 @@ document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
     const tipoP = e.target.getAttribute("id");
     const arraytipoPoke = typePokemones(tipoP, arrayPokemon);
     mostrarPokemon(arraytipoPoke);
-  }
-});
+  }});
 
 document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
   e.preventDefault();
@@ -1005,47 +931,29 @@ document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
   if (e.target.getAttribute("id")) {
     container.innerHTML = "";
     // console.log(e.target.getAttribute('id'))
-    const regionP = e.target.getAttribute("id");
+    const regionP = e.target.getAttribute('id')
     const arrayRegionPoke = regionFuncion(regionP, arrayPokemon);
     mostrarPokemon(arrayRegionPoke);
-  }
-});
+  }});
 
 document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
   e.preventDefault();
 
-  if (e.target.value) {
+  if (e.target.getAttribute("value")) {
     container.innerHTML = "";
-    const rarezaP = e.target.value;
+    const rarezaP = e.target.getAttribute("value");
     const arrayRarezaPoke = rarezaPokemon(rarezaP, arrayPokemon);
     mostrarPokemon(arrayRarezaPoke);
-  }
-});
+  }});
 
 // pokemon por region
 const regionCanva = ["kanto", "johto"];
 const resultadoRegion1 = regionFuncion(regionCanva[0], arrayPokemon).length;
 const resultadoRegion2 = regionFuncion(regionCanva[1], arrayPokemon).length;
 
-// console.log(resultadoRegion1)
-
 // tipos de pokemones
-const tipos = [
-  "ghost",
-  "water",
-  "poison",
-  "flying",
-  "rock",
-  "dragon",
-  "dark",
-  "fairy",
-  "ground",
-  "psychic",
-  "ice",
-  "normal",
-  "steel",
-  "electric",
-];
+const tipos = ["ghost","water","poison","flying","rock","dragon","dark","fairy","ground","psychic","ice",
+"normal","steel","electric","grass","normal","fire","fighting"];
 
 const arrayNumeroTipos = tipos.map((element) => {
   let tipos = arrayPokemon.filter((x) => x.type.includes(element));
@@ -1110,11 +1018,7 @@ let arrayMythic = arrayPokemon.filter(
 
 let arrayLegendary = arrayPokemon.filter(
   (array) => array["pokemon-rarity"] == "legendary"
-).length;
-
-// console.log(arrayMythic);
-// console.log(arrayNormal);
-// console.log(arrayLegendary);
+).length
 
 let rarezaPoke = document.getElementById("rarezaChart").getContext("2d");
 new Chart(rarezaPoke, {

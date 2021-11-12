@@ -7,14 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/37946f5dd4.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
 
 
     <header class="navegador" >
       <img class="logo" src="img/logo.png">
-      <div class="menu" style="display: none;">
+      <div class="menu" style="display: block">
         <button id="btnInicio" class="activeButton">INICIO</button>
         <button id="btnPokedex" class="btnNav">POKEDEX</button>
         <button id="btnTipo" class="btnNav">TIPO</button>
@@ -186,7 +186,7 @@
         </div>
         </div>
       </div>
-    </div>
+      </div>
     </section>
 
 
@@ -221,9 +221,6 @@
       <option value="7 km">7 km</option>
       <option value="10 km">10 km</option>
     </select>
-
-
-
 
 
 
@@ -293,8 +290,7 @@
   </footer>
 
 <script src="main.js" type="module"></script>
-
-
+<script src="gibli.js" type="module"></script>
 </body>
 </html>
 
