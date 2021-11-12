@@ -59,7 +59,7 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
 
 
 
-const containerFilmografia = document.getElementById("containerFilmografia");
+const containerFilmo = document.getElementById("containerFilmo");
 const containerPeople = document.getElementById("containerPeople");
 const containerEstrenos = document.getElementById("containerEstrenos");
 const containerTienda = document.getElementById("containerTienda");
@@ -80,7 +80,7 @@ const sectionFilm = films.forEach(({title , description , producer, poster , rt_
    <img src= ${poster}> 
 </ul>`;
  createElement.innerHTML= template
- containerFilmografia.appendChild(createElement);
+ containerFilmo.appendChild(createElement);
  return template;
 } )
 
@@ -133,19 +133,18 @@ for(let i=0; i<arrayGhibli.length;i++){
 
 console.log(arrayPeople)
 
-const sectionPeople = arrayPeople.forEach((name, gender, age, eye_color, hair_color, specie, img) => {
+const sectionPeople = arrayPeople.forEach(( a , b, c) => {
     const createElement= document.createElement("div")
   
     const template= `<ul>
-    <li>Nombre: ${name} </li>
-    <li>Genero: ${gender}</li>
-    <li>Edad: ${age}</li>
-    <li>Color de Ojos: ${eye_color}</li>
-    <li>Color de Cabello ${hair_color}</li>
-    <li>Especie: ${specie}</li>
-    <img src= ${img}> 
+    <li>Nombre: ${a.name} </li>
+    <li>Genero: ${a.gender}</li>
+    <li>Color de Ojos: ${a.eye_color}</li>
+    <li>Color de Cabello ${a.hair_color}</li>
+    <li>Especie: ${a.specie}</li>     
+    <div class="box"><img src= ${a.img}></div> 
  </ul>`;
- createElement.innerHTML= template
+  createElement.innerHTML= template
   console.log(createElement);
   containerPeople.appendChild(createElement);
   return template;
