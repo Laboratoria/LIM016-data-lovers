@@ -18,7 +18,8 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
      document.getElementById("filmo").style.display="none";
      document.getElementById("estre").style.display="none";
      document.getElementById("tda").style.display="none";
-     document.getElementById("principal").style.display="none";
+     //document.getElementById("principal").style.display="none";
+     /*People();*/
    })
    
    document.getElementById("estrenos").addEventListener("click", ()=> {
@@ -58,14 +59,133 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
 
 
 
-const containerFilmografia = document.getElementById("containerFilmografia");
-const containerPersonajes = document.getElementById("containerPersonajes");
+const containerFilmo = document.getElementById("containerFilmo");
+const containerPeople = document.getElementById("containerPeople");
 const containerEstrenos = document.getElementById("containerEstrenos");
 const containerTienda = document.getElementById("containerTienda");
 
-recorrerCadaPelicula();
+let films = [];
+films = data.films;
 
-function recorrerCadaPelicula () {
+const sectionFilm = films.forEach(({title , description , producer, poster , rt_score , release_date, director}) => {
+  const createElement= document.createElement("div")
+
+    const template= `<ul>
+   <li>Titulo: ${title} </li>
+   <li>Descripción: ${description}</li>
+   <li>Productor: ${producer}</li>
+   <li>Score: ${rt_score}</li>
+   <li>Director ${director}</li>
+   <li>Año: ${release_date}</li>
+   <img src= ${poster}> 
+</ul>`;
+ createElement.innerHTML= template
+ containerFilmo.appendChild(createElement);
+ return template;
+} )
+
+/* for (let i = 0; i<films.length; i++) {
+        let people= films[i].people */
+        /* for (let p=0 ; p<films[i].people.length; p++) {
+        personajes = films[i].people[p];
+     */
+       
+   
+/*console.log(films);
+
+function People (){
+    
+    films.forEach(e => templateDos(e.people) );
+
+}
+ function templateDos(e){
+ console.log(e) 
+ for( let i=0; i< e.length; i++) {
+  const createElement= document.createElement("div")
+
+    
+   const template= `<ul>
+   <li>Nombre: ${e[i].name} </li>
+   <li>Genero: ${e[i].gender}</li>
+   <li>Edad: ${e[i].age}</li>
+   <li>Color de Ojos: ${e[i].eye_color}</li>
+   <li>Color de Cabello ${e[i].hair_color}</li>
+   <li>Especie: ${e[i].specie}</li>
+   <li>people: ${e[i].people}</li>
+   <img src= ${e[i].img}> 
+</ul>`;
+createElement.innerHTML= template
+ console.log(createElement);
+ containerPeople.appendChild(createElement);
+ return template;
+}}*/
+
+
+const arrayGhibli = data.films
+
+console.log(arrayGhibli[0].people[0])
+
+
+const arrayPeople = []
+for(let i=0; i<arrayGhibli.length;i++){
+    arrayPeople.push(arrayGhibli[i].people)
+}
+
+console.log(arrayPeople)
+
+const sectionPeople = arrayPeople.forEach(( a , b, c) => {
+    const createElement= document.createElement("div")
+  
+    const template= `<ul>
+    <li>Nombre: ${a.name} </li>
+    <li>Genero: ${a.gender}</li>
+    <li>Color de Ojos: ${a.eye_color}</li>
+    <li>Color de Cabello ${a.hair_color}</li>
+    <li>Especie: ${a.specie}</li>     
+    <div class="box"><img src= ${a.img}></div> 
+ </ul>`;
+  createElement.innerHTML= template
+  console.log(createElement);
+  containerPeople.appendChild(createElement);
+  return template;
+})
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //recorrerCadaPelicula();
+
+/*function recorrerCadaPelicula () {
     let arreglo = [];
     arreglo = data.films;
 
@@ -79,7 +199,7 @@ function recorrerCadaPelicula () {
         let score = arreglo[i].rt_score;
     /*Aqui hicimos este array vacio para empujar los datos de climate a traves de un for que toma los datos 
     de una propiedad dentro de una propiedad*/
-        let climate =[];
+        /*let climate =[];
         for (let a=0; a<(arreglo[i].locations).length; a++){
         climate = arreglo[i].locations[a].climate;
         //console.log(climate)
@@ -88,115 +208,9 @@ function recorrerCadaPelicula () {
          let people = [];
         for (let p=0; p<(arreglo[i].people).length; p++) {
         people = arreglo[i].people[p].img;
-        console.log(people)
-    }
+        console.log(people)*/
 
-    //manipulando dinamicamente la seccion filmografia
+  
+   
 
-    //creando div para la tarjeta
-    const filmoDiv = document.createElement("div");
-    filmoDiv.setAttribute("class", 'classFilmo');
-    containerFilmografia.appendChild(filmoDiv);
-
-/*Para crear un elemento como un <h2> es necesario usar createElement y luego acompañado de un createTextNode 
-para insertar texto dentro de la etiqueta h2(nodo de texto)*/
-    const tituloDeFilmo = document.createElement("h2");
-    filmoDiv.appendChild(tituloDeFilmo);
-    const textDeFilmo = document.createTextNode(titulo);
-    tituloDeFilmo.appendChild(textDeFilmo);
-
-/* Se crea un div para contener la imagen dentro, se le agrega con setAttribute un class y el no, bre del class
-por ultimo se le asigna como padre a filmoDiv, que es el segundo mayor div*/
-    const divImagen = document.createElement("div");
-    divImagen.setAttribute("class", 'divImagen');
-    filmoDiv.appendChild(divImagen);
-
-/*se crea el elemento img para extraer la imagen. Se le xrea un class y su nombre. Se le asigna como padre a 
-divImagen para que esté dentro de este div. Por ultimo con .src se le indica la ruta*/
-    const imagen = document.createElement("img");
-    imagen.setAttribute("class", 'imagen');
-    divImagen.appendChild(imagen);
-    imagen.src = refImagen;
-
-    const divContenido = document.createElement("div");
-    divContenido.setAttribute("class", 'classDivContenido');
-    filmoDiv.appendChild(divContenido);
-
-    const descriptionFilm = document.createElement("p");
-    filmoDiv.appendChild(descriptionFilm);
-    const textDescription = document.createTextNode(description);
-    descriptionFilm.appendChild(textDescription);
-
-    const producerFilm = document.createElement("p");
-    filmoDiv.appendChild(producerFilm);
-    const textProducer = document.createTextNode(producer);
-    producerFilm.appendChild(textProducer);
-
-    const directorFilm = document.createElement("p");
-    filmoDiv.appendChild(directorFilm);
-    const textDirector = document.createTextNode(director);
-    directorFilm.appendChild(textDirector);
-
-    const añoFilm = document.createElement("p");
-    filmoDiv.appendChild(añoFilm);
-    const textAño= document.createTextNode(año);
-    añoFilm.appendChild(textAño);
-
-    const scoreFilm = document.createElement("p");
-    filmoDiv.appendChild(scoreFilm);
-    const textScore= document.createTextNode(score);
-    scoreFilm.appendChild(textScore);
-    
-
-    const tiendaDiv = document.createElement("div");
-    tiendaDiv.setAttribute("class", 'classTienda');
-    containerTienda.appendChild(tiendaDiv);
-
-    const divImagenT = document.createElement("div");
-    divImagenT.setAttribute("class", 'divImagenT');
-    tiendaDiv.appendChild(divImagenT);
-
-     const imagenT = document.createElement("img");
-     imagenT.setAttribute("class", 'imagenT');
-     divImagenT.appendChild(imagenT);
-     imagenT.src = people;
-
-     const personajeDiv = document.createElement("div");
-    personajeDiv.setAttribute("class", 'classPersonaje');
-    containerPersonajes.appendChild(personajeDiv);
-
-    const imagenP = document.createElement("img");
-    imagenP.setAttribute("class", 'imagenP');
-    personajeDiv.appendChild(imagenP);
-    imagenP.src = people;
-
-}
-}
-//nuevo coment 
-//nuevo coment
-
-// trabajando locaciones
-
-const tiendaDiv = document.createElement("div");
-tiendaDiv.setAttribute("class", 'classTienda');
-containerTienda.appendChild(tiendaDiv);
-
-const divImagenT = document.createElement("div");
-divImagenT.setAttribute("class", 'divImagenT');
-tiendaDiv.appendChild(divImagenT);
-
- const imagenT = document.createElement("img");
- imagenT.setAttribute("class", 'imagenT');
- divImagenT.appendChild(imagenT);
- imagenT.src = people;
-
- const personajeDiv = document.createElement("div");
-personajeDiv.setAttribute("class", 'classPersonaje');
-containerPersonajes.appendChild(personajeDiv);
-
-const imagenP = document.createElement("img");
-imagenP.setAttribute("class", 'imagenP');
-personajeDiv.appendChild(imagenP);
-imagenP.src = people;
-
-
+ 
