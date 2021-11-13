@@ -1,15 +1,25 @@
 import data from './data/pokemon/pokemon.js';
-const lista=document.getElementById("container-pokemons");
+import { buscarPokemon, mostraPokemon } from './data.js';
+
+const input=document.querySelector(".buscarPokemon");
+const container=document.querySelector(".container-pokemons");
+
 const fragment=document.createDocumentFragment();
-const template=document.getElementById("templateCard").content;
+const template=document.getElementById("templateCard");
 
-for(let i=0;i<data.pokemon.length;i++){
-template.querySelector(".numPokemon").textContent=data.pokemon[i].num;
-template.querySelector(".imgPokemon").src=data.pokemon[i].img;
-template.querySelector(".nomPokemon").textContent=data.pokemon[i].name;
-template.querySelector(".nomRegion").textContent=data.pokemon[i].generation.name;
+window.onload=()=>{
+mostraPokemon(data.pokemon, fragment, template, container);}
 
-const clone=template.cloneNode(true);
-fragment.appendChild(clone);
+
+function limpiar(){ 
+    let nodosEliminar=document.querySelectorAll(".card");
+    nodosEliminar.forEach((nodo)=>{nodo.remove();});
 }
-lista.appendChild(fragment);
+
+input.addEventListener("keyup",(e)=>{
+        limpiar();
+        let valorInput = e.target.value;
+        input.value = valorInput;
+        buscarPokemon(data.pokemon,valorInput,fragment, template, container);
+    
+});
