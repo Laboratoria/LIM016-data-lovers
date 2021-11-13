@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/37946f5dd4.js" crossorigin="anonymous"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="./img/Pokebolasinfondo.ico">
   </head>
   <body>
 
 
     <header class="navegador" >
       <img class="logo" src="img/logo.png">
-      <div class="menu" style="display: block">
+      <div class="menu" style="display: none">
         <button id="btnInicio" class="activeButton">INICIO</button>
         <button id="btnPokedex" class="btnNav">POKEDEX</button>
         <button id="btnTipo" class="btnNav">TIPO</button>
@@ -25,7 +26,7 @@
       <img class="pokebola" src="img/pokebola.gif">
     </header>
 
-    <section id="welcome"  style="display: none">
+    <section id="welcome"  style="display: block">
       <div class="intro">
         <div class="intro_background">
         <div class="intro_background_image">
@@ -53,43 +54,15 @@
 
 
         <!-- carrusel -->
-      <div class="carrusel">
-        <div class="carrusel-items">
+        <div class="carrusel">
+          <div class="carrusel-items">
 
-          <div class="carrusel-item">
-            <img src="./img/pokemon1.jpg" alt="">
-            <!-- <h4>NOMBRE</h4>
-            <button class="btn-carrusel">VER MAS</button> -->
-          </div>
-
-          <div class="carrusel-item">
-            <img src="./img/pokemon2.jpeg" alt="">
-            <!-- <h4>NOMBRE</h4>
-            <button class="btn-carrusel">VER MAS</button> -->
-          </div>
-          <div class="carrusel-item">
-            <img src="./img/pokemon3.jpg" alt="">
-            <!-- <h4>NOMBRE</h4>
-
-            <button class="btn-carrusel">VER MAS</button> -->
-          </div>
-          <div class="carrusel-item">
-            <img src="./img/pokemon4.jpg" alt="">
-            <!-- <h4>NOMBRE</h4>
-
-            <button class="btn-carrusel">VER MAS</button> -->
-          </div>
-          <div class="carrusel-item">
-            <img src="./img/pokemon5.jpg" alt="">
-            <!-- <h4>NOMBRE</h4>
-            <button class="btn-carrusel">VER MAS</button> -->
-          </div>
             <div class="carrusel-item">
-              <img src="./img/pokemon2.jpeg" alt="">
+              <img src="./img/pokemon1.jpg" alt="">
               <!-- <h4>NOMBRE</h4>
-
               <button class="btn-carrusel">VER MAS</button> -->
             </div>
+
             <div class="carrusel-item">
               <img src="./img/pokemon2.jpeg" alt="">
               <!-- <h4>NOMBRE</h4>
@@ -100,20 +73,45 @@
               <!-- <h4>NOMBRE</h4>
               <button class="btn-carrusel">VER MAS</button> -->
             </div>
-
             <div class="carrusel-item">
               <img src="./img/pokemon4.jpg" alt="">
               <!-- <h4>NOMBRE</h4>
               <button class="btn-carrusel">VER MAS</button> -->
             </div>
-
             <div class="carrusel-item">
-              <img src="./img/pokemon1.jpg" alt="">
+              <img src="./img/pokemon5.jpg" alt="">
               <!-- <h4>NOMBRE</h4>
-            <button class="btn-carrusel">VER MAS</button> -->
+              <button class="btn-carrusel">VER MAS</button> -->
+            </div>
+              <div class="carrusel-item">
+                <img src="./img/pokemon2.jpeg" alt="">
+                <!-- <h4>NOMBRE</h4>
+                <button class="btn-carrusel">VER MAS</button> -->
+              </div>
+              <div class="carrusel-item">
+                <img src="./img/pokemon2.jpeg" alt="">
+                <!-- <h4>NOMBRE</h4>
+                <button class="btn-carrusel">VER MAS</button> -->
+              </div>
+              <div class="carrusel-item">
+                <img src="./img/pokemon3.jpg" alt="">
+                <!-- <h4>NOMBRE</h4>
+                <button class="btn-carrusel">VER MAS</button> -->
+              </div>
+
+              <div class="carrusel-item">
+                <img src="./img/pokemon4.jpg" alt="">
+                <!-- <h4>NOMBRE</h4>
+                <button class="btn-carrusel">VER MAS</button> -->
+              </div>
+
+              <div class="carrusel-item">
+                <img src="./img/pokemon1.jpg" alt="">
+                <!-- <h4>NOMBRE</h4>
+              <button class="btn-carrusel">VER MAS</button> -->
+            </div>
           </div>
         </div>
-      </div>
         <!-- peliculas -->
 
         <div class="intro-peliculas">
@@ -190,13 +188,14 @@
     </section>
 
 
-    <section id="pokedex" style="display: block">
+    <section id="pokedex" style="display: none">
 
     <div class="container-buscar">
     <input type="text" id="search" placeholder="Search...">
-    <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button></div>
+    <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button>
+  </div>
 
-
+<div class="">
       <select id="cp">
         <option value="" disabled selected>CP</option>
         <option value="max">Max cp</option>
@@ -208,13 +207,13 @@
         <option value="az">a-z</option>
         <option value="za">z-a</option>
         <option value="1_251">001-251</option>
-        <option value="251-_">251-001</option>
+        <option value="251_1">251-001</option>
       </select>
 
+</div>
 
 
-
-<select id="egg">
+<select id="egg" style="display: none">
       <option value="" disabled selected>Egg</option>
       <option value="2 km">2 km</option>
       <option value="5 km">5 km</option>
@@ -224,7 +223,7 @@
 
 
 
-<div id="divTiposPokemones" >
+<div id="divTiposPokemones" style="display: none" >
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="ghost" src="./img/tipo-ghost.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="water" src="./img/tipo-agua.png"></div></div>
 <div class="tipoDiv"><div class="tipoPokeInicio"><img id="poison" src="./img/tipo-poison.png"></div></div>
@@ -246,15 +245,15 @@
 </div>
 
 <div id="divRegionPokemon"  style="display:none">
-  <div class="regionDiv"><div class="regionPokeInicio"><img id="johto" src="./img/johto.png"></div>JOHTO</div>
-  <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/kanto.png"></div>KANTO</div>
+  <div class="regionDiv"><div class="regionPokeInicio"><img id="johto" src="./img/jhoto1.png"></div>JOHTO</div>
+  <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/khanto1.png"></div>KANTO</div>
 </div>
 
 
 <div id="divRarezaPokemon" style="display:none">
-  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="normal" src="./img/poke-normal.png"></div>NORMAL</div>
-  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="mythic" src="./img/poke-mitico.png"></div>MYTHIC</div>
-  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="legendary" src="./img/poke-legendario.png"></div>LEGENDARY</div>
+  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="normal" src="./img/3.png"></div><p>NORMAL</p></div>
+  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="mythic" src="./img/1.png"></div><p>MYTHIC</p></div>
+  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="legendary" src="./img/2.png"></div><p>LEGENDARY</p></div>
 </div>
 
     <p id="parrafo"></p>
@@ -269,19 +268,19 @@
     </div>
 </section>
 
-<section id="container-stats" style="display:block">
-  <div class="container-chart">
-    <canvas class="chart uno" id="myChart1"></canvas>
+<section id="container-stats" style="display:none">
+  <div class="container-chart1">
+    <canvas class="chart-uno" id="myChart1"></canvas>
   </div>
-  <div class="container-chart">
-  <canvas class="chart dos" id="myChart2"></canvas>
+  <div class="container-chart2">
+  <canvas class="chart-dos" id="myChart2"></canvas>
   </div>
-  <div class="container-chart">
-    <canvas class="container-chart" id="rarezaChart" ></canvas>
+  <div class="container-chart3">
+    <canvas class="chart-tres" id="rarezaChart" ></canvas>
   </div>
 
-  <div class="container-chart">
-    <canvas class="chart tres" id="eggChart" ></canvas>
+  <div class="container-chart4">
+    <canvas class="chart-cuatro" id="eggChart" ></canvas>
   </div>
 </section>
 
@@ -290,7 +289,12 @@
   </footer>
 
 <script src="main.js" type="module"></script>
-<script src="gibli.js" type="module"></script>
+<script src="carrusel.js" type="module"></script>
+<script src="vistas.js" type="module"></script>
+<script src="graficas.js" type="module"></script>
+
+
+
 </body>
 </html>
 

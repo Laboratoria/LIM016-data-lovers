@@ -11,9 +11,6 @@ describe('huevitoPokemon', () => {
   });
 });
 
-
-
-
 describe('filtarCp', () => {
   it('is a function', () => {
     expect(typeof filtarCp).toBe('function');
@@ -32,7 +29,7 @@ describe('ordenAlfaNumerico', () => {
     expect(typeof ordenAlfaNumerico).toBe('function');
   });
 
-  
+
 it('should return', () => {
   expect((ordenAlfaNumerico("az", data.pokemon))[0].name).toBe("abra")
 });
