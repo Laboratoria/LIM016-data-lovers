@@ -247,8 +247,7 @@ h2 {
 
 .Glass{
   background-color: rgba(177, 225, 233, 0.3);
-  backdrop-filter: blur(10px);s
-  height: 400px;
+  backdrop-filter: blur(10px);
   border: solid 1px (255, 255, 255, 05);
   border-radius: 10px;
 
