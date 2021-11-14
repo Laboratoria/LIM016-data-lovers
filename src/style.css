@@ -5,13 +5,15 @@
   }
   
   body{
-  
-   display: grid;
+  display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
+  background-image: url(img/backgroundTotoro.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   }
   
-  .footer{
+  /*.footer{
   width: 100vw;
   height: 134px;
   left: 0px;
@@ -169,9 +171,6 @@ p {
   width: 80%;
   height: 500px;
   right: 200px ;
-  top: 56px;
+  top: 56px
+}*/
 
-
-
-
-}
