@@ -5,86 +5,42 @@
     <title>Data Lovers - POKEMON</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="../IMAGENES/pokebola.png" type="png" />
+    <script src="https://kit.fontawesome.com/15c8445c30.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="root">
       <header>
-        <img class="imgTitulo" src="../IMAGENES/encabezadoPok.jpg" alt="">
+        <section class="banner">
+          <img class="imgBanner" src="../IMAGENES/encabezadoPok.jpg" alt="">
+        </section>
+        <section class="buscador">
+          <input type="search" name="inputBuscador" class="buscarPokemon" placeholder="Ejemplo: pikachu ">
+        </section>
       </header>
+      
       <div class="home">
-        <div class="container">
-
-          <div class="cards">
-            <h3 class="numPokemon">001</h3>
-            <img src="../IMAGENES/BULBASAUR.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">BULBASAUR</h6>
-            <p class="nomRegion">Kanto</p>
+        <div class="vertical-menu">
+          <div class="icono-menu">
+            <i class="fas fa-filter" id="icono-menu"></i>
           </div>
-
-          <div class="cards">
-            <h3 class="numPokemon">002</h3>
-            <img src="../IMAGENES/IVYSAUR.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">IVYSAUR</h6>
-            <p class="nomRegion">Kanto</p>
+          <div class="contenido-menu" id="menu">
+            <ul>
+              <li> REGION </li>
+              <li> ELEMENTO </li>
+            </ul>
           </div>
+        </div>
+        <div class="container-pokemons" id="container-pokemons">
+
+          <template id="templateCard">
+            <div class="card">
+              <h3 class="numPokemon"></h3>
+              <img src=" " alt="" class="imgPokemon">
+              <h6 class="nomPokemon"></h6>
+              <p class="nomRegion"></p>
+            </div>
+          </template>
           
-          <div class="cards">
-            <h3 class="numPokemon">003</h3>
-            <img src="https://www.serebii.net/pokemongo/pokemon/003.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">VENUSAUR</h6>
-            <p class="nomRegion">Kanto</p>
-          </div>
-
-          <div class="cards">
-            <h3 class="numPokemon">004</h3>
-            <img src="https://www.serebii.net/pokemongo/pokemon/004.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">CHARMANDER</h6>
-            <p class="nomRegion">Kanto</p>
-          </div>
-          
-          <div class="cards">
-            <h3 class="numPokemon">005</h3>
-            <img src="https://www.serebii.net/pokemongo/pokemon/005.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">CHARMELEON</h6>
-            <p class="nomRegion">Kanto</p>
-          </div>
-
-          <div class="cards">
-            <h3 class="numPokemon">006</h3>
-            <img src="https://www.serebii.net/pokemongo/pokemon/006.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">charizard</h6>
-            <p class="nomRegion">Kanto</p>
-          </div>
-
-          <div class="cards">
-            <h3 class="numPokemon">007</h3>
-            <img src="https://www.serebii.net/pokemongo/pokemon/007.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">CHARMANDER</h6>
-            <p class="nomRegion">Kanto</p>
-          </div>
-          
-          <div class="cards">
-            <h3 class="numPokemon">008</h3>
-            <img src="https://www.serebii.net/pokemongo/pokemon/008.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">CHARMELEON</h6>
-            <p class="nomRegion">Kanto</p>
-          </div>
-
-          <div class="cards">
-            <h3 class="numPokemon">009</h3>
-            <img src="https://www.serebii.net/pokemongo/pokemon/009.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">VENUSAUR</h6>
-            <p class="nomRegion">Kanto</p>
-          </div>
-
-          <div class="cards">
-            <h3 class="numPokemon">010</h3>
-            <img src="https://www.serebii.net/pokemongo/pokemon/010.png" alt="" class="imgPokemon">
-            <h6 class="nomPokemon">CHARMANDER</h6>
-            <p class="nomRegion">Kanto</p>
-          </div>
-          
-
         </div>
       </div>
 
@@ -92,13 +48,15 @@
           <section class="information">
             <a href="https://pokemongolive.com/es/"><p class="informationMore">Más información</p></a>
           </section>
-         <section class="copyright"><p class="authors"> Copyright © 2021 - Derechos reservados</p></section>
-         <section class="downloands">
-         <a target="_blank" href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=es_PE&gl=US"> <img class="iconDownloands" src="../IMAGENES/googlePlay.png" alt="" srcset=""></a>
-         <a target="_blank" href="https://apps.apple.com/es/app/pok%C3%A9mon-go/id1094591345"> <img class="iconDownloands" src="../IMAGENES/appStore.png" alt="" srcset=""></a>
-         </section>
-
+          <section class="copyright">
+            <p class="authors"> Copyright © 2021 - Derechos reservados</p>
+          </section>
+          <section class="downloands">
+            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=es_PE&gl=US"> <img class="iconDownloands" src="../IMAGENES/googlePlay.png" alt="" srcset=""></a>
+            <a target="_blank" href="https://apps.apple.com/es/app/pok%C3%A9mon-go/id1094591345"> <img class="iconDownloands" src="../IMAGENES/appStore.png" alt="" srcset=""></a>
+          </section>
         </footer>
+
       </div>
     <script src="main.js" type="module"></script>
   </body>
