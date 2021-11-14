@@ -39,10 +39,10 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
    document.getElementById("logo").addEventListener("click",()=>window.location.reload());
 
 
-const containerFilmo = document.getElementById("containerFilmo");
-const containerPeople = document.getElementById("containerPeople");
-const containerLocation = document.getElementById("containerLocation");
-const containerVehiculos = document.getElementById("containerVehiculos");
+const containerFilmo = document.getElementById("filmo");
+const containerPeople = document.getElementById("persona");
+const containerLocation = document.getElementById("locations");
+const containerVehiculos = document.getElementById("vehiculos");
 
 
 let films = [];
@@ -59,7 +59,7 @@ const sectionFilm = films.forEach(({title , description , producer, poster , rt_
    <div class="box"><img src= ${poster}></div> 
 </ul></div>`;
  createElement.innerHTML= template
- containerFilmo.appendChild(createElement);
+ filmo.appendChild(createElement);
  return template;
 } )
 
@@ -84,14 +84,14 @@ arrayPeople.flat(1).forEach(({name, gender, eye_color, hair_color, specie ,img})
 </ul>
 </div>`;
 createElement.innerHTML= template;
-containerPeople.appendChild(createElement);
+persona.appendChild(createElement);
 return template;
 });
 
 
 
 
-/*const intento =data.films[0].people;
+const intento =data.films[0].locations;
 intento.forEach((el) => {
   const createElement= document.createElement("div")
   const intentoDos =data.films;
@@ -117,7 +117,7 @@ createElement.innerHTML= template;
 containerPeople.appendChild(createElement);
 createElement.appendChild(createDiv)
 return template;
-})*/
+})
 
   
    
