@@ -8,66 +8,118 @@
   </head>
     
    <body>   
-    <script src="main.js" type="module"></script>
-      <main>
-    
-     <section class="glass">
-      <div class="dashboard">
-       <div class="reinicio" id="volverPrincipal">
-        <input type="image" src="img/Logo.png" id="logo" >
-       </div >
-        <div id="principal">
-        <!-- <h2>Principal</h2> -->
-        <!-- </div> -->
-      
-         
-         <div  class="menu">
-         <div><input type="button" id="filmografia" value="Filmografia" class="btn"></div>
-         <div><input type="button" id="personajes" value="Personajes" class=""></div>
-         <div><input type="button" id="locations" value="Locations" class=""></div>
-         <div><input type="button" id="vehicles" value="Vehiculos" class=""></div>
-         </div>
-        </div>
-      <div id="filmo" style="display: none" class="secciones">
-        <h2>Filmografia</h2><br>
-        <div id="botones" class="menu">
-          <div><input type="button" id="año" value="Año"  class="btnsFiltradores"></div>
-          <div><input type="button" id="director" value="Director" class="btnsFiltradores"></div>
-          <div><input type="button" id="productor" value="Productor" class="btnsFiltradores" ></div>
-          <div><input type="button" id="climas" value="Climas" class="btnsFiltradores"></div>
-          <div><input type="button" id="cleanFilmografia" value="Clean" class="btnsFiltradores"> </div>
-        </div>
-        
-        <div id="containerFilmo">
-          <div id="divf">
 
+    <!-- dasboard contiene el menu para navegar por todas las secciones, el logo y los iconos-->
+      <nav class="dashboard">
+
+        <div class="conteinerLogo">
+          <div class="img-logo">
+            <input type="image" src="img/logoTotoro.png" id="logo">
           </div>
         </div>
-      </div>
-    
-      <div id="persona" style="display: none"class="secciones">
-        <h2>Personajes</h2>
-          <input type="button" id="genero" value="Género" class="btnsFiltradores">
-          <input type="button" id="especie" value="Especie" class="btnsFiltradores">
-          <input type="button" id="edad" value="Edad" class="btnsFiltradores" >
-      <input type="button" id="cleanPersonajes" value="Clean" class="btnsFiltradores" >
 
-      <div id="containerPeople">
-          
-      </div>
-    </div>
+        <div class="socialIcons">
+          <div class="iconFacebook"></div>
+          <div class="iconTwitter"></div>
+          <div class="iconiconIg"></div>
+          <div class="iconYoutube"></div>
+        </div>
 
-      
-    
+        <div class="boton-menu">
 
-      <div id="estre" style="display:none" class="secciones" >
-        <h2>Estrenos</h2>
-          <div>
-          <div><input type="button" id="precio" value="Precio" class="btnsFiltradores" ></div>
-          <div><input type="button" id="losMasVistos" value="Los mas vistos" class="btnsFiltradores" ></div>
-        
+          <div class="divcontenedorboton">
+            <div class="botonfilmo">
+              <input type="button" id="filmografia" value="Filmografia">
           </div>
+        </div>
+
+          <div class="divcontenedorboton">
+            <div class="botonpeople">
+              <input type="button" id="personajes" value="Personajes">
+            </div>
+          </div>
+
+          <div class="divcontenedorboton">
+            <div class="botonlocations">
+              <input type="button" id="locations" value="Locaciones">
+            </div>
+          </div>
+
+          <div class="divcontenedorboton">
+            <div class="botonvehicules">
+              <input type="button" id="vehicles" value="Vehiculos">
+            </div>
+          </div>
+
+        </div>
+      </nav>
+
+
+      <!--Glass contiene toda la data-->
+      <div class="Glass">
+
+        <div class="portada" id="portada">
+          <h1>PORTADA</h1>
+        </div>
+
+        <div class="divFilmo">
+
+          <div class="divFilmoTitle">
+            <div class="filmoTittle">
+              <h2> Filmografia </h2>
+            </div>
+          </div>
+
+          <div class="divbtnsFilter">
+            <ul class=navBtn> 
+
+              <li><a id="">Directores</a>
+                <ul>
+                    <li><a id="">Hayao Miyazaki</a></li>
+                    <li><a id="">Hiroyuki Morita</a></li>
+                    <li><a id="">Gorō Miyazaki</a></li>
+                    <li><a id="">Hiromasa Yonebayashi</a></li>
+                    <li><a id="">Isao Takahata</a></li>
+                    <li><a id="">Yoshifumi Kondō</a></li>
+                </ul>
+              </li>
+              <li><a id="">Productores</a>
+              <ul>
+                    <li><a id="">Toshio Suzuki</a></li>
+                    <li><a id="">Hayao Miyazaki</a></li>
+                    <li><a id="">Toru Hara</a></li>
+                    <li><a id="">Yoshiaki Nishimura</a></li>
+                    <li><a id="">Isao Takahata</a></li>
+              </ul>
+              </li>
+              <li><a id="">Año de Lanzamiento</a>
+                <ul>
+                  <li><a id="">1986 - 1990</a></li>
+                  <li><a id="">1991 - 1995</a></li>
+                  <li><a id="">1997 - 2000</a></li>
+                  <li><a id="">2001 - 2005</a></li>
+                  <li><a id="">2006 - 2010</a></li>
+                  <li><a id="">2011 - 2015</a></li>
+            </ul>
+              </li>
+              <li><a id="">Score</a>
+                <ul>
+                  <li><a id="">41 - 78</a></li>
+                  <li><a id="">83 - 91</a></li>
+                  <li><a id="">92 - 95</a></li>
+                  <li><a id="">96 - 100</a></li>
+                </ul>
+              </li>
+              <li><a id="">Clean</a></li>
+          </div>
+
+          <div class="conteinerFilmo">
+            <!--Manipulacion dinamica del DOM-->
+          </div>
+        </div>
+
         
+<<<<<<< HEAD
     
          <div id="containerLocation">
           
@@ -83,34 +135,232 @@
      
          <div id="containerVehiculos">
           
+=======
+        <div class="divPeople">
+
+          <div class="divPeopleTitle">
+            <div class="peopleTittle">
+              <h2> Personajes </h2>
+            </div>
+          </div>
+
+          <div class="divbtnsFilter">
+            <ul class=navBtn> 
+
+              <li><a id="">Género</a>
+                <ul>
+                    <li><a id="">Mujer</a></li>
+                    <li><a id="">Hombre</a></li>
+                    <li><a id="">NA</a></li>
+                </ul>
+              </li>
+              <li><a id="">Color de Ojos</a>
+              <ul>
+                    <li><a id="">Oscuros</a>
+                      <ul>
+                        <li><a id=""> Marrón </a>"></li>
+                        <li><a id=""> Marrón Oscuro </a>"></li>
+                        <li><a id=""> Marrón Oscuro Negro </a>"></li>
+                        <li><a id=""> Negro </a>"></li>
+                        </ul> 
+                    </li>
+                    <li><a id="">Otros Colores</a>
+                      <ul>
+                        <li><a id=""> Gris </a>></li>
+                        <li><a id=""> Amarrillo </a>"></li>
+                        <li><a id=""> Hazel </a></li>
+                        <li><a id=""> Rojo </a></li>
+                        <li><a id=""> Verde </a></li>
+                        <li><a id=""> Verde Claro </a></li>
+                        <li><a id=""> Azules </a></li>
+                        <li><a id=""> Violetas </a></li>
+                        </ul> 
+                    </li>
+                    <li><a id="">NA</a></li>
+              </ul>
+              </li>
+              <li><a id="">Edad</a>
+                <ul>
+                  <li><a id="">0 - 10</a></li>
+                  <li><a id="">11 - 15</a></li>
+                  <li><a id="">16 - 20</a></li>
+                  <li><a id="">Adultos</a>
+                    <ul>
+                    <li><a id=""> 21 - 30 </a>"></li>
+                    <li><a id=""> 31 - 40 </a>"></li>
+                    <li><a id=""> 41 - 50 </a>"></li>
+                    <li><a id=""> 51 - 59 </a>"></li>
+                    </ul> 
+                  </li>
+                  <li><a id="">Adulto Mayor</a>
+                    <ul>
+                      <li><a id=""> 60 - 70 </a>"></li>
+                      <li><a id=""> 71 - 82 </a>"></li>
+                      <li><a id=""> 83 - 82 </a>"></li>
+                      </ul>
+                  </li>
+                  <li><a id=""> Edades Superiores </a></li>
+                  <li><a id=""> No Especificado </a></li>
+            </ul>
+              </li>
+              <li><a id="">Especie</a>
+                <ul>
+                  <li><a id=""> Humano </a></li>
+                  <li><a id=""> Espíritu</a></li>
+                  <li><a id=""> Deidad </a></li>
+                  <li><a id=""> Animales </a>
+                    <ul>
+                      <li><a id=""> Lobo </a></li>
+                      <li><a id=""> Gato </a></li>
+                      <li><a id=""> Alce Rojo </a></li>
+                      <li><a id=""> Perro Mapache </a></li>
+                      <li><a id=""> Pájaro </a></li>
+                      </ul>
+                  </li>
+                  <li><a id=""> NA </a></li>                                                                     
+                </ul>
+              </li>
+              <li><a id="">Clean</a></li>
+          </div>
+
+          <div class="containerPeople">
+            <!--Manipulacion dinamica del DOM-->
+          </div>
         </div>
 
-       </div>
-     </div>
-     </section>
-    
-      </main>
-    
-      <footer class="footer">
-      <div class="container--flex">
-    
-      <div class="column">
-      
+
+        <div class="divVehicles">
+
+          <div class="divVehiclesTitle">
+            <div class="vehiclesTittle">
+              <h2> Vehiculos </h2>
+            </div>
+          </div>
+
+          <div class="divbtnsFilter">
+            <ul class=navBtn> 
+
+              <li><a id=""> Tipo de Vehículo </a>
+                <ul>
+                    <li><a id=""> Aéreo </a>
+                      <ul>
+                        <li><a id=""> Castillo Móvil </a></li>
+                        <li><a id=""> Aeroplano </a></li>
+                        <li><a id=""> Avión de Guerra </a></li>
+                        <li><a id=""> Dirigible </a></li>
+                    </ul>
+                    </li>
+                    <li><a id=""> Marítimo </a>
+                      <ul>
+                        <li><a id=""> Barco </a></li>
+                        <li><a id=""> Barco de Batalla </a></li>
+                    </ul>
+                    </li>
+                    <li><a id=""> Longitud </a>
+                      <ul>
+                        <li><a id=""> 5 - 10 </a></li>
+                        <li><a id=""> 11 -20 </a></li>
+                          <li><a id=""> 1000 </a></li>
+                          <li><a id=""> NA </a></li>
+                      </ul>
+              </li>
+              <li><a id="">Clean</a></li>
+              </ul>
+              </li>
+          </div>
+
+          <div class="conteinerVehicles">
+            <!--Manipulacion dinamica del DOM-->
+          </div>
+>>>>>>> c05e1359c669d63c621c412dc0ef001baa753b6f
+        </div>
+
+
+        <div class="divLocations">
+
+          <div class="divLocationsTitle">
+            <div class="locationsTittle">
+              <h2> Locaciones </h2>
+            </div>
+          </div>
+
+          <div class="divbtnsFilter">
+            <ul class=navBtn> 
+
+              <li><a id=""> Clima </a>
+                <ul>
+                    <li><a id="">Tropical</a></li>
+                    <li><a id="">Húmedo</a></li> 
+                    <li><a id="">Cálido</a></li>
+                    <li><a id="">Leve</a></li>
+                    <li><a id="">Lluvioso</a></li>
+                    <li><a id="">Continental</a></li>
+                    <li><a id="">De Todo Tipo</a></li>
+                </ul>
+              </li>
+              <li><a id="">Terrenos</a>
+              <ul>
+                <li><a id="">  </a></li>
+                <li><a id=""> Montañoso </a></li>
+                <li><a id=""> Ciudad </a></li>
+              </ul>
+              </li>
+              <li><a id="">Clean</a></li>
+              </ul>
+          </div>
+
+          <div class="conteinerLocations">
+            <!--Manipulacion dinamica del DOM-->
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
-      
-      <div class="column">
-      <a href=""></a>
+      <div class="divContainerFooter">
+        <div class="divFooter">
+          <div class="divcolumna1">
+            <div class="divContactanos"></div>
+            <div class="divFAQs"></div>
+          </div>
+          <div class="divcolumna2">
+            <div class="divbtnSubscribe"></div>
+            <div class="divform"></div>
+            <div class="divContactFAQs"></div>
+          </div>
+          <div class="divcolumna3"></div>
+        </div>
       </div>
-       <div class="column">
+
     
-      </div>
-      </footer>
-    
-    
-    
-    
-    
-    
-       
-      </body>
+    <script src="main.js" type="module"></script>
+    </body>
 </html>
