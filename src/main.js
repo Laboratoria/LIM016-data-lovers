@@ -6,34 +6,34 @@ import data from './data/ghibli/ghibli.js';
 document.getElementById("filmografia").addEventListener("click", ()=>{
     document.getElementById("filmo").style.display="block";
     document.getElementById("persona").style.display="none";
-    document.getElementById("estre").style.display="none";
-    document.getElementById("tda").style.display="none";
-    document.getElementById("principal").style.display="none";
+    document.getElementById("vehiculos").style.display="none";
+    document.getElementById("locations").style.display="none";
+    document.getElementById("portada").style.display="none";
   })
    
    document.getElementById("personajes").addEventListener("click", ()=> {
      document.getElementById("persona").style.display="block";
      document.getElementById("filmo").style.display="none";
-     document.getElementById("estre").style.display="none";
-     document.getElementById("tda").style.display="none";
-     document.getElementById("principal").style.display="none";
+     document.getElementById("vehiculos").style.display="none";
+     document.getElementById("locations").style.display="none";
+     document.getElementById("portada").style.display="none";
    })
    
-  /* document.getElementById("estrenos").addEventListener("click", ()=> {
-     document.getElementById("estre").style.display="block";
+   document.getElementById("locations").addEventListener("click", ()=> {
+     document.getElementById("locations").style.display="block";
      document.getElementById("filmo").style.display="none";
      document.getElementById("persona").style.display="none";
-     document.getElementById("tda").style.display="none";
-     document.getElementById("principal").style.display="none";
-   })*/
+     document.getElementById("vehiculos").style.display="none";
+     document.getElementById("portada").style.display="none";
+   })
    
-   /*document.getElementById("tienda").addEventListener("click", ()=> {
-     document.getElementById("tda").style.display="block";
+     document.getElementById("vehicles").addEventListener("click", ()=> {
+     document.getElementById("vehiculos").style.display="block";
      document.getElementById("filmo").style.display="none";
-     document.getElementById("estre").style.display="none";
+     document.getElementById("locations").style.display="none";
      document.getElementById("persona").style.display="none";
-    document.getElementById("principal").style.display="none";
-   })*/
+    document.getElementById("portada").style.display="none";
+   })
    
    /* boton para volver al principal*/
    document.getElementById("logo").addEventListener("click",()=>window.location.reload());
@@ -45,7 +45,7 @@ const containerLocation = document.getElementById("containerLocation");
 const containerVehiculos = document.getElementById("containerVehiculos");
 
 
-/*let films = [];
+let films = [];
 films = data.films;
 const sectionFilm = films.forEach(({title , description , producer, poster , rt_score , release_date, director}) => {
   const createElement= document.createElement("div")
@@ -61,7 +61,7 @@ const sectionFilm = films.forEach(({title , description , producer, poster , rt_
  createElement.innerHTML= template
  containerFilmo.appendChild(createElement);
  return template;
-} )*/
+} )
 
 
 const arrayGhibli = data.films;
@@ -70,23 +70,23 @@ for(let i=0; i<arrayGhibli.length;i++){
     arrayPeople.push(arrayGhibli[i].people)
 }
 
-/*arrayPeople.flat(1).forEach((element) => { 
+arrayPeople.flat(1).forEach(({name, gender, eye_color, hair_color, specie ,img}) => {    
   const createElement= document.createElement("div")
 
   const template= `<div id= "divCardPeople">
   <ul>
-  <li>Nombre: ${element.name} </li>
-  <li>Genero: ${element.gender}</li>
-  <li>Color de Ojos: ${element.eye_color}</li>
-  <li>Color de Cabello: ${element.hair_color}</li>
-  <li>Especie: ${element.specie}</li>     
-  <div class="box"><img src= ${element.img}></div> 
+  <li>Nombre: ${name} </li>
+  <li>Genero: ${gender}</li>
+  <li>Color de Ojos: ${eye_color}</li>
+  <li>Color de Cabello: ${hair_color}</li>
+  <li>Especie: ${specie}</li>     
+  <div class="box"><img src= ${img}></div> 
 </ul>
 </div>`;
 createElement.innerHTML= template;
 containerPeople.appendChild(createElement);
 return template;
-});*/
+});
 
 
 
