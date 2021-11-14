@@ -1,7 +1,7 @@
 import data from './data/ghibli/ghibli.js';
-console.log(data.films);
+console.log(data.films[0].people[0]);
 
-//comentario para reparar git commit
+
 
 /*botones para  ingresar a cada seccion*/
 
@@ -61,24 +61,27 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
 
 const containerFilmo = document.getElementById("containerFilmo");
 const containerPeople = document.getElementById("containerPeople");
-const containerEstrenos = document.getElementById("containerEstrenos");
-const containerTienda = document.getElementById("containerTienda");
+const containerLocation = document.getElementById("containerLocation");
+const containerVehiculos = document.getElementById("containerVehiculos");
 
 let films = [];
 films = data.films;
 
+
+
+
 const sectionFilm = films.forEach(({title , description , producer, poster , rt_score , release_date, director}) => {
   const createElement= document.createElement("div")
 
-    const template= `<ul>
+    const template= `<div class=containerPelicula><ul>
    <li>Titulo: ${title} </li>
    <li>Descripción: ${description}</li>
    <li>Productor: ${producer}</li>
    <li>Score: ${rt_score}</li>
    <li>Director ${director}</li>
    <li>Año: ${release_date}</li>
-   <img src= ${poster}> 
-</ul>`;
+   <div class="box"><img src= ${poster}></div> 
+</ul></div>`;
  createElement.innerHTML= template
  containerFilmo.appendChild(createElement);
  return template;
@@ -126,23 +129,22 @@ const arrayGhibli = data.films
 console.log(arrayGhibli[0].people[0])
 
 
-//const arrayPeople = []
+const arrayPeople = []
 for(let i=0; i<arrayGhibli.length;i++){
     arrayPeople.push(arrayGhibli[i].people)
 }
 
-console.log(arrayPeople)//
 
-const sectionPeople = arrayPeople.forEach(({name, gener, eye_color, hair_color ,specie, img}) => {
+const sectionPeople = arrayPeople.flat(1).forEach(({name, gender, eye_color, hair_color ,specie, img}) => {
     const createElement= document.createElement("div")
   
     const template= `<ul>
-    <li>Nombre: ${a.name} </li>
-    <li>Genero: ${a.gender}</li>
-    <li>Color de Ojos: ${a.eye_color}</li>
-    <li>Color de Cabello ${a.hair_color}</li>
-    <li>Especie: ${a.specie}</li>     
-    <div class="box"><img src= ${a.img}></div> 
+    <li>Nombre: ${name} </li>
+    <li>Genero: ${gender}</li>
+    <li>Color de Ojos: ${eye_color}</li>
+    <li>Color de Cabello ${hair_color}</li>
+    <li>Especie: ${specie}</li>     
+    <div class="box"><img src= ${img}></div> 
  </ul>`;
   createElement.innerHTML= template
   console.log(createElement);
@@ -151,11 +153,56 @@ const sectionPeople = arrayPeople.forEach(({name, gener, eye_color, hair_color ,
 })
   
 
+const arrayLocation = []
+for(let i=0; i<arrayGhibli.length;i++){
+    arrayLocation.push(arrayGhibli[i].locations)
+}
 
 
+const sectionLocation = arrayLocation.flat(1).forEach(({name, climate, terrain, surface_water ,residents, img}) => {
+    const createElement= document.createElement("div")
+  
+    const template = 
+    `<div><ul>
+    <li>Nombre: ${name} </li>
+    <li>Clima: ${climate}</li>
+    <li>Terreno: ${terrain}</li>
+    <li>Color de Cabello: ${surface_water}</li>
+    <li>Residentes: ${residents}</li>
+    </div>      
+    <div class="box1"><img src= ${img}></div> 
+ </ul>`;
+  createElement.innerHTML= template
+  console.log(createElement);
+  containerLocation.appendChild(createElement);
+  return template;
+})
+  
+const arrayVehicles = []
+for(let i=0; i<arrayGhibli.length;i++){
+    arrayVehicles.push(arrayGhibli[i].vehicles)
+}
 
 
-
+const sectionVehiculos = arrayVehicles.flat(2).forEach(({name, description, vehicle_class, length ,pilot, img}) => {
+    const createElement= document.createElement("div")
+  
+    const template = 
+    `<div><ul>
+    <li>Nombre: ${name} </li>
+    <li>Description: ${description}</li>
+    <li>Clase de Vehiculo: ${vehicle_class}</li> 
+    <li>Largo: ${length}</li>
+    <li>Piloto: ${pilot}</li>
+    </div>    
+    <div class="box1"><img src= ${img}></div> 
+ </ul>`;
+  createElement.innerHTML= template
+  console.log(createElement);
+  containerVehiculos.appendChild(createElement);
+  return template;
+})
+  
 
 
 
