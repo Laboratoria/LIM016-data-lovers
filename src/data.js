@@ -18,7 +18,7 @@ export const buscarPokemon = (pokemon, input, fragment, template, container) => 
       template.content.querySelector(".imgPokemon").src=pokemon[i].img;
       template.content.querySelector(".nomPokemon").textContent=pokemon[i].name;
       template.content.querySelector(".nomRegion").textContent=pokemon[i].generation.name;
-      
+      console.log(pokemon[i].img);
       const clone=template.content.cloneNode(true);
       fragment.appendChild(clone); 
     }
