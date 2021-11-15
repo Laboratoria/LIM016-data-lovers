@@ -12,8 +12,9 @@ export const mostraPokemon = (pokemon, fragment, template, container) => {
 };
 
 export const buscarPokemon = (pokemon, input, fragment, template, container) => {
+
   for(let i=0;i<pokemon.length;i++){
-    if(pokemon[i].name.includes(input)){
+  if(pokemon[i].name.includes(input)){
       template.content.querySelector(".numPokemon").textContent=pokemon[i].num;
       template.content.querySelector(".imgPokemon").src=pokemon[i].img;
       template.content.querySelector(".nomPokemon").textContent=pokemon[i].name;
