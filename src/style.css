@@ -187,14 +187,8 @@ list-style: none;
   background-color: rgba(197, 197, 191, 0.582);
   color:rgba(8, 15, 19, 0.863);
   text-decoration:none ;
-  padding: 10px 10px;
+  padding: 10px 15px;
   display: block;
-}
-
- .navBtn li button:hover {
-  background-color: rgb(237, 242, 245)
-  
-
 }
 
 .navBtn > li{
@@ -202,6 +196,13 @@ list-style: none;
   float: left;
 
 }
+ .navBtn li button:hover {
+  background-color: rgb(237, 242, 245)
+  
+
+}
+
+
 
 .navBtn li ul {
  display: none;
@@ -224,7 +225,7 @@ list-style: none;
 
 .navBtn li ul li ul {
  
-  right: 140px;
+  right: -140px;
   top:0; 
 
 
@@ -263,4 +264,15 @@ list-style: none;
  
 }
 
+.buscar{
+  position: absolute;
+  top:20%;
+  left:20%;
+  transform: translate(-50%, -50%): ;
 
+}
+
+input.btn-buscar{
+ padding: 9px 10px 9px 32px;
+
+}
