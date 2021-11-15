@@ -53,8 +53,8 @@ input:focus{
     width: 100%;
     max-width: 1200px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
     margin: auto;
 }
 
@@ -72,9 +72,9 @@ input:focus{
     border-color: rgb(6, 32, 70);
     border-style: solid;
     border-width: 3px;
-    width: 15%;
-    min-height: 45%;
-    border-radius: 12px;
+    width: 200px;
+    min-height: 500px;
+    border-radius: 12px 12px 0px 0px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.61);
     overflow: hidden;
     margin: 20px;
@@ -111,7 +111,12 @@ p{
     font-size: 25px;
     font-weight: 300;
 }
-
+.region{
+    color: rgb(6, 32, 70);
+}
+.elemento {
+    color: rgb(6, 32, 70);
+}
 .foot {
     width: 100%; /* CUBRE TODO EL ANCHO DISPONIBLE */
     height: 60px;
@@ -155,4 +160,63 @@ p{
 
 .downloands {
 text-align:right;
+}
+
+
+/* Filtros */
+.cont-menu{
+    width: 400px;
+    margin: 50px auto;
+}
+
+.cont-menu .cont-enlace{
+    box-shadow: 0px 0px 2px 1px white;
+}
+
+/* Estilos para las opciones */
+.cont-menu .cont-enlace .opcion{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(6, 32, 70);
+    color: white;
+    padding: 13px 15px;
+    font-size: 22px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Estilos para el simbolo '+' */
+.cont-menu .cont-enlace .opcion .icono{
+    background-color: white;
+    color: rgb(6, 32, 70);
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    width: 26px;
+    border-radius: 5px;
+}
+
+/* Efecto para aparacer y desaparecer enlaces */
+.cont-menu .cont-enlace .enlace{
+    height: 0;
+    overflow: hidden;
+}
+
+.cont-menu .cont-enlace .animation{
+    height: 100%;
+}
+
+/* Estilos para los enlaces */
+.cont-menu .cont-enlace .enlace a{
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgba(0,0,0,.8);
+    background-color: white;
+}
+
+.cont-menu .cont-enlace .enlace a:hover{
+    background-color: #1a567e;
+    color: white;
 }
