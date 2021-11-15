@@ -11,7 +11,7 @@ import {
 } from "./data.js";
 
 
-// const arrayP = []
+const arrayP = []
 
 // fetch('./data/pokemon/pokemon.json')
 // .then(function(res){
@@ -23,13 +23,20 @@ import {
 // })
 // .then(function(dataPokemon){
 //     dataPokemon.forEach((element)=>{
-//       arrayP.push(element)
+//       arrayP.push(Object(element))
 //     })
 
 // });
 // console.log(arrayP.length)
+// console.log(arrayP[0])
+// console.log(Object.values(arrayP))
 
+const navToggle = document.querySelector("#toggle");
+const navMenu = document.querySelector(".menu");
 
+navToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("nav-menu_visible")
+})
 
 
 const container = document.querySelector(".pokemon-container");
@@ -189,6 +196,7 @@ export function mostrarPokemon(array) {
         button1.className = "active";
         button2.className = "";
         button3.className = "";
+        button4.className = ""
       });
 
       //-------------btn2------------------------------
@@ -205,6 +213,7 @@ export function mostrarPokemon(array) {
         button1.className = "";
         button3.className = "";
         button2.className = "active";
+        button4.className = ""
       });
 
       //------------btn3-------------------------------
@@ -404,7 +413,8 @@ export function mostrarPokemon(array) {
         vista4.style.display = "none";
         button1.className = "";
         button2.className = "";
-        button3.className = "active";
+        button3.className = "active"
+        button4.className = "";
       });
 
       let quickName = array[i]["quick-move"];

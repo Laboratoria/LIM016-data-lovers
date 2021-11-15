@@ -48,7 +48,7 @@ return arrayCambiante
     }
     else {
       arrayCambiante.sort((a, b) => {
-         (a.name < b.name)
+        (a.name < b.name)
           return 1;
 
       })

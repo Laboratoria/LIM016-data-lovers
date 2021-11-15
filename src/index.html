@@ -15,14 +15,16 @@
 
     <header class="navegador" >
       <img class="logo" src="img/logo.png">
-      <div class="menu" style="display: none">
-        <button id="btnInicio" class="activeButton">INICIO</button>
-        <button id="btnPokedex" class="btnNav">POKEDEX</button>
-        <button id="btnTipo" class="btnNav">TIPO</button>
-        <button id="btnRegion" class="btnNav">REGION</button>
-        <button id="btnRareza" class="btnNav">RAREZA</button>
-        <button id="btnStats" class="btnNav">ESTADISTICAS</button>
-      </div>
+      <button id="toggle">
+      <i class="fas fa-bars"></i></button>
+      <ul class="menu" >
+        <li><button id="btnInicio" class="activeButton">INICIO</button></li>
+        <li><button id="btnPokedex" class="btnNav">POKEDEX</button></li>
+        <li><button id="btnTipo" class="btnNav">TIPO</button></li>
+        <li><button id="btnRegion" class="btnNav">REGION</button></li>
+        <li><button id="btnRareza" class="btnNav">RAREZA</button></li>
+        <li><button id="btnStats" class="btnNav">ESTADISTICAS</button></li>
+      </ul>
       <img class="pokebola" src="img/pokebola.gif">
     </header>
 
@@ -188,73 +190,74 @@
     </section>
 
 
-    <section id="pokedex" style="display: none">
+  <section id="pokedex" style="display: none">
 
-    <div class="container-buscar">
-    <input type="text" id="search" placeholder="Search...">
-    <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button>
+  
+    <div id="divTiposPokemones" style="display: none" >
+    <div class="tipoDiv">GHOST<div class="tipoPokeInicio"><img id="ghost" src="./img/tipo-ghost.png"></div></div>
+    <div class="tipoDiv">WATER<div class="tipoPokeInicio"><img id="water" src="./img/tipo-agua.png"></div></div>
+    <div class="tipoDiv">POISON<div class="tipoPokeInicio"><img id="poison" src="./img/tipo-poison.png"></div></div>
+    <div class="tipoDiv">FLYING<div class="tipoPokeInicio"><img id="flying" src="./img/tipo-flying.png"></div></div>
+    <div class="tipoDiv">ROCK<div class="tipoPokeInicio"><img id="rock" src="./img/tipo-rock.png"></div></div>
+    <div class="tipoDiv">DRAGON<div class="tipoPokeInicio"><img id="dragon" src="./img/tipo-dragon.png"></div></div>
+    <div class="tipoDiv">DARK<div class="tipoPokeInicio"><img id="dark" src="./img/tipo-dark.png"></div></div>
+    <div class="tipoDiv">FAIRY<div class="tipoPokeInicio"><img id="fairy" src="./img/tipo-fairy.png"></div></div>
+    <div class="tipoDiv">GROUND<div class="tipoPokeInicio"><img id="ground" src="./img/tipo-ground.png"></div></div>
+    <div class="tipoDiv">PSYCHIC<div class="tipoPokeInicio"><img id="psychic" src="./img/tipo-psychic.png"></div></div>
+    <div class="tipoDiv">ICE<div class="tipoPokeInicio"><img id="ice" src="./img/tipo-ice.png"></div></div>
+    <div class="tipoDiv">NORMAL<div class="tipoPokeInicio"><img id="normal" src="./img/tipo-normal.png"></div></div>
+    <div class="tipoDiv">STEEL<div class="tipoPokeInicio"><img id="steel" src="./img/tipo-steel.png"></div></div>
+    <div class="tipoDiv">GRASS<div class="tipoPokeInicio"><img id="grass" src="./img/tipo-grass.png"></div></div>
+    <div class="tipoDiv">FIGHT<div class="tipoPokeInicio"><img id="fighting" src="./img/tipo-fight.png"></div></div>
+    <div class="tipoDiv">ELECTRIC<div class="tipoPokeInicio"><img id="electric" src="./img/tipo-electrico.png"></div></div>
+    <div class="tipoDiv">FIRE<div class="tipoPokeInicio"><img id="fire" src="./img/tipo-fuego.png"></div></div>
+    <div class="tipoDiv">BUG<div class="tipoPokeInicio"><img id="bug" src="./img/tipo-bug.png"></div></div>
+    </div>
+
+    <div id="divRegionPokemon"  style="display:none">
+      <div class="regionDiv"><div class="regionPokeInicio"><img id="johto" src="./img/jhoto1.png"></div>JOHTO</div>
+      <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/khanto1.png"></div>KANTO</div>
+    </div>
+
+
+    <div id="divRarezaPokemon" style="display:none">
+      <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="normal" src="./img/3.png"></div><p>NORMAL</p></div>
+      <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="mythic" src="./img/1.png"></div><p>MYTHIC</p></div>
+      <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="legendary" src="./img/2.png"></div><p>LEGENDARY</p></div>
+    </div>
+
+    <div class="container-botones-filtro">
+
+      <div class="container-buscar">
+        <input type="text" id="search" placeholder="Search...">
+        <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="container-filtro">
+        <select id="cp">
+          <option value="" disabled selected>CP</option>
+          <option value="max">Max cp</option>
+          <option value="min">Min cp</option>
+        </select>
+
+        <select id="orden">
+          <option value="" disabled selected>ORDEN</option>
+          <option value="az">a-z</option>
+          <option value="za">z-a</option>
+          <option value="1_251">001-251</option>
+          <option value="251_1">251-001</option>
+        </select>
+
+          <select id="egg">
+            <option value="" disabled selected>Egg</option>
+            <option value="2 km">2 km</option>
+            <option value="5 km">5 km</option>
+            <option value="7 km">7 km</option>
+            <option value="10 km">10 km</option>
+          </select>
+
+      </div>
   </div>
-
-<div class="">
-      <select id="cp">
-        <option value="" disabled selected>CP</option>
-        <option value="max">Max cp</option>
-        <option value="min">Min cp</option>
-      </select>
-
-      <select id="orden">
-        <option value="" disabled selected>ORDEN</option>
-        <option value="az">a-z</option>
-        <option value="za">z-a</option>
-        <option value="1_251">001-251</option>
-        <option value="251_1">251-001</option>
-      </select>
-
-</div>
-
-
-<select id="egg" style="display: none">
-      <option value="" disabled selected>Egg</option>
-      <option value="2 km">2 km</option>
-      <option value="5 km">5 km</option>
-      <option value="7 km">7 km</option>
-      <option value="10 km">10 km</option>
-    </select>
-
-
-
-<div id="divTiposPokemones" style="display: none" >
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="ghost" src="./img/tipo-ghost.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="water" src="./img/tipo-agua.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="poison" src="./img/tipo-poison.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="flying" src="./img/tipo-flying.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="rock" src="./img/tipo-rock.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="dragon" src="./img/tipo-dragon.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="dark" src="./img/tipo-dark.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="fairy" src="./img/tipo-fairy.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="ground" src="./img/tipo-ground.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="psychic" src="./img/tipo-psychic.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="ice" src="./img/tipo-ice.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="normal" src="./img/tipo-normal.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="steel" src="./img/tipo-steel.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="grass" src="./img/tipo-grass.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="fighting" src="./img/tipo-fight.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="electric" src="./img/tipo-electrico.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="fire" src="./img/tipo-fuego.png"></div></div>
-<div class="tipoDiv"><div class="tipoPokeInicio"><img id="bug" src="./img/tipo-bug.png"></div></div>
-</div>
-
-<div id="divRegionPokemon"  style="display:none">
-  <div class="regionDiv"><div class="regionPokeInicio"><img id="johto" src="./img/jhoto1.png"></div>JOHTO</div>
-  <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/khanto1.png"></div>KANTO</div>
-</div>
-
-
-<div id="divRarezaPokemon" style="display:none">
-  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="normal" src="./img/3.png"></div><p>NORMAL</p></div>
-  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="mythic" src="./img/1.png"></div><p>MYTHIC</p></div>
-  <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="legendary" src="./img/2.png"></div><p>LEGENDARY</p></div>
-</div>
 
     <p id="parrafo"></p>
 
@@ -269,6 +272,7 @@
 </section>
 
 <section id="container-stats" style="display:none">
+  <h1>ESTADISTICAS POKEMON</h1>
   <div class="container-chart1">
     <canvas class="chart-uno" id="myChart1"></canvas>
   </div>

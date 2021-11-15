@@ -34,7 +34,7 @@ const verPokedex = document.getElementById("verPokedex");
 verPokedex.addEventListener("click", () => {
   document.querySelector("#welcome").style.display = "none";
   document.querySelector("#pokedex").style.display = "block";
-  document.querySelector(".menu").style.display = "block";
+  document.querySelector(".menu").style.display = "flex";
   document.querySelector("#pokedex").style.display = "block";
   btnPokedex.className = "activeButton";
   btnInicio.className = "";
@@ -48,7 +48,7 @@ btnPokedex.addEventListener("click", () => { //----------------PASAR A LA VISTA 
   container.innerHTML = "";
   mostrarPokemon(arrayPokemon);
 
-  document.querySelector(".container-buscar").style.display = "block";
+  document.querySelector(".container-buscar").style.display = "flex";
   document.querySelector("#divTiposPokemones").style.display = "none";
   document.querySelector("#divRegionPokemon").style.display = "none";
   document.querySelector("#divRarezaPokemon").style.display = "none";
