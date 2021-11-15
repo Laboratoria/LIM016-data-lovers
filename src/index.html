@@ -33,31 +33,64 @@
           </div>           
         </div>
         <div class= "rio-info">
-          <div class="about-left">
-           <h4>About Rio</h4> 
+          <div class="first-row">
+           <div class="title-container"><h4 class= "rio-info-title">ABOUT RIO</h4></div> 
+            <p class="info-rio-par">The 2016 Olympic Games in Rio de Janeiro took place between August 5 and 21. 
+               It was the first time that an Olympic event has been  held in a South American country.<br><br>
+            Over 11 000 athletes participated in this edition of the Olympic Games. <br><br>
+            </p>
           </div>
-          <div class= "about-right"> 
-           <p class="info-rio">The 2016 Olympic Games in Rio de Janeiro took place between August 5 and 21.  It was the first time that an Olympic event has been  held in a South American country.<br><br>
-           Over 11 000 athletes participated in this edition of the Olympic Games. <br><br>
-            <span class="venues">Venues</span>
-             <br><br>
-           The competitions were held in 33 sports venues in four Rio de Janeiro neighborhoods - Maracanã, Barra da Tijuca, Deodoro and Copacabana - and in five stadiums located in the cities of São Paulo, Belo Horizonte, Salvador da Bahia, Brasilia and Manaus.
-           </p>
+          <div class="second-row">
+              <div class="title-container">
+                 <p class="rio-info-title">VENUES</p>
+               </div>
+              <div>
+                <p class="info-rio-par">The competitions were held in 33 sports venues in four Rio de Janeiro neighborhoods:
+                 Maracanã, Barra da Tijuca, Deodoro and Copacabana and in five stadiums located in the cities of São Paulo, Belo Horizonte, Salvador da Bahia, Brasilia and Manaus.
+                </p>
+              </div>
           </div>
-        </div>      
-      </div>
+          <div class="third-row">
+              <div class="title-container">
+                <p class="rio-info-title">THE ATHLETES</p>
+              </div>
+              <div><p class="info-rio-par">There was never a shortage of emotions during the Olympic Games.
+                      After 17 days of intense competitions, the Games left us with many impressive stories,
+                      new World and Olympic records that will be remembered due to the high-performing athletes. <br><br>
+                     <span class="link" id="link_medals"><span class="arrow">»</span> Check out all the athletes
+                        that won medals competing in more than one event.<br><br></span>
+                      Rio was also a place that saw many women shine in different sports and events such as Simone Biles and Katinka Hozzsu. <br><br>
+                     <span class="link" id="link_female"><span class="arrow">»</span>	Check out all the female athletes
+                        that participated in RIO 2016.<br><br></span>
+                      Finally, Rio was a historic opportunity to see the farewell of legends such as Michael Phelps and Usain Bolt.
+                   </p>
+              </div>
+          </div>
+        </div>
+      </div>   <!--aquí termina la primera pantalla-->
 
-      <section class= "todo">
+  <section class= "todo">
       <section class="countries" id="countries"> <br>
         <h2 class="paises">TEAMS</h2>
         <div class= "hereCountries" id= "hereCountries"></div>
       </section>
  
-      <section class= "sports" id="sports"> <br>
+      <section class="sports" id="sports"> <br>
         <h2 class="deportes">SPORTS</h2>
         <div class="sport_ev">
-        <div class= "hereSports" id= "hereSports"></div>
-        <div id="hereEvents"></div>
+          <div class="searchSports">
+            <input type="text" name="search" id="search" class="search" placeholder="Search your sports">
+            <table id="myTable" class="sportTable">
+              <thead>
+                <tr class= "header">
+                 <th >SPORT</th>
+                 <th >EVENTS</th> 
+                </tr>
+              </thead>
+              <tbody id= "tableData">
+              </tbody> 
+            </table> 
+          </div>          
       </div>
       </section>
     
@@ -96,9 +129,19 @@
             </div>
           </div>
         </div>
-        
       </section>
-    </section>
+     
+      <section class="multipleMedals" id="multipleMedals">
+           <h2 class="multiple-title">MULTIPLE MEDAL WINNERS</h2>
+             <p class="multipleMedals-Info-text">Below lies a list with all the athletes 
+                 that won multiple medals at RIO 2016.</p> 
+                 <div class="searchAndSort">
+                  <input type="text" class="searchMultipleWinners" id="searchMultipleWinners" placeholder="Search your athletes">
+              </div>          
+              <div id="hereAthletes_multiple_medals"> 
+                </div>                 
+      </section>
+  </section>
     <script src="main.js" type="module"></script>
     </main>  
     <footer>

@@ -1,6 +1,7 @@
-import { /*anotherExample,*/rio_teams, noRepeated, rio_sports, timesRepeated} from './data.js'; //las funciones
+import { /*anotherExample,*/rio_teams, noRepeated, rio_sports, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; 
+
 
 let home_click= document.getElementById("home-click");
 home_click.addEventListener("click", (e)=>{
@@ -9,6 +10,7 @@ home_click.addEventListener("click", (e)=>{
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "none";
 });
 
 let sports_click= document.getElementById("sports-click");
@@ -18,6 +20,7 @@ sports_click.addEventListener("click", (e)=>{
   document.getElementById("sports").style.display = "block";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "none";
 });
 
 
@@ -28,6 +31,7 @@ teams_click.addEventListener("click", (e)=>{
   document.getElementById("countries").style.display = "block";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "none";
 });
 
 let athletes_click= document.getElementById("athletes-click");
@@ -38,8 +42,19 @@ athletes_click.addEventListener("click", (e)=>{
   document.getElementById("athletes").style.display = "block";
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "none";
 });
 
+let text_click= document.getElementById("link_medals");
+text_click.addEventListener("click", (e)=>{
+  e.preventDefault(); 
+
+  document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "block";
+  document.getElementById("countries").style.display = "none";
+  document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
+});
 
 let country= rio_teams(data).sort();  //trayendo a los países y lo ordemo
 let countryCounter= timesRepeated(country); //trayendo la función que me hace el recuento
@@ -51,42 +66,50 @@ for( let i=0; i<finalCountry.length; i++){
   country_screen.innerHTML= finalCountry[i].join("<br>")+ " athlete(s)";
   document.getElementById("hereCountries").appendChild(country_screen)
 }
+let sports= data["athletes"];
+let result =sports.reduce(
+  (acc, element) => 
+  Object.assign(acc, {[element.sport]:(acc[element.sport] || [])
+    .concat([element.event])
+  }), {}
+  )
 
-let sports= rio_sports(data).sort();  //me trae los paises
-let sportsCounter= noRepeated(sports);
-let finalSports= Object.entries(sportsCounter);
+  let arr= Object.entries(result).sort();
+  const tableBody= document.getElementById("tableData");
+  let dataHTML= "";
 
-for( let i=0; i<finalSports.length; i++){
-  let sport_screen= document.createElement("p");
-  sport_screen.className="btnBlue"
-  sport_screen.innerHTML= finalSports[i].join("<br>");
-  document.getElementById("hereSports").appendChild(sport_screen);
+  for(const [key,value] of Object.values(arr)){
+    dataHTML+= `<tr>
+    <td>${key}</td>
+    <td>${"-"+ Object.keys(noRepeated(value)).join("<br>-")}</td>
+            <tr>
+           `;
+tableBody.innerHTML= dataHTML;
+// console.log(dataHTML);  
 }
 
-// let mapOtro= rio_sports(data);
-// let sportsNoRepeated= noRepeated(mapOtro);
-//   let event_screen= document.createElement("p");
-//  let finalSports= Object.entries(sportsNoRepeated);
-//  let fianl= finalSports.sort();
- 
-// const functionSports= (event)=>{
+const searchSport= document.getElementById("search");
+searchSport.addEventListener("keyup", (e)=> {
+  var filter, table, tr, td, i, txtValue;
+  filter = searchSport.value.toLowerCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
   
-//   let event_screen= document.createElement("p");
-//  event_screen.innerHTML= "archery";
-// document.getElementById("hereEvents").appendChild(event_screen);
-// }
-
-// for( let i=0; i<fianl.length; i++){
-//   let sport_screen= document.createElement("p");
-//   sport_screen.className="btnPurple"
-//   sport_screen.onclick= (e)=> functionSports(e);
-//   sport_screen.innerHTML= fianl[i].join("<br>");
-//   document.getElementById("hereSports").appendChild(sport_screen);
-//  // console.log(sport_screen.length);
-// }
-
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toLowerCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+});
 
 
+/////////////////////////////////////////////////////////////
 const contAthletes = (event,athletes) => {
  
   let listAthlete= document.getElementById("cardAthlete")
@@ -132,3 +155,43 @@ const prueba = ()=>{
   })
 }
 prueba()
+
+///////////////////////////código de los deportistas con diferentes medallas
+let variousMedals =Object.entries(sports.reduce(
+  (acc, element) => 
+  Object.assign(acc, {[element.name]:(acc[element.name] || [])
+    .concat([element.event]).concat([element.medal])
+  }), {}
+  ));
+
+  let medal_athlete= document.getElementById("hereAthletes_multiple_medals");
+
+  for(const [key, value] of Object.values(variousMedals)){
+    if(value.length >2){
+      let dataAthleteMedal= document.createElement("ul");
+      dataAthleteMedal.className="medal_athletesContainer"
+      dataAthleteMedal.innerHTML=`
+          <li><span class="keyAthlete">${key}</span> <br>
+         ${"-"+spliceIntoChunks(value, 2).join("<br>-")}
+         </li>
+                  `;
+                  medal_athlete.appendChild(dataAthleteMedal);  
+    }
+  }
+//  console.log(medal_athlete)
+let searchM_winners= document.getElementById("searchMultipleWinners");
+
+searchM_winners.addEventListener("keyup", (e)=>{
+  //console.log(e)
+  let key_Athlete, i;
+  let search_winners= searchM_winners.value.toLowerCase();
+  key_Athlete= document.getElementsByClassName("medal_athletesContainer");
+
+  for (i = 0; i < key_Athlete.length; i++) {
+    if (key_Athlete[i].innerText.toLowerCase().includes(search_winners)) {
+      key_Athlete[i].style.display = "block";
+    } else {
+      key_Athlete[i].style.display = "none";
+    }
+  }
+})

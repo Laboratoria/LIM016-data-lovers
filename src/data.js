@@ -42,7 +42,14 @@ export const noRepeated = arr =>{
     return acc
   }, {});
 };
-
+export const spliceIntoChunks= (arr, chunkSize) =>{
+  const res = [];
+  while (arr.length > 0) {
+      const chunk = arr.splice(0, chunkSize);
+      res.push(chunk);
+  }
+  return res;
+}
 // export const anotherExample = (data) => {
 //   return 'OMG';
 // };
