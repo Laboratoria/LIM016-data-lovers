@@ -77,6 +77,7 @@
  
       <section class="sports" id="sports"> <br>
         <h2 class="deportes">SPORTS</h2>
+        <img src="viniciuslucha.png" class="img_sport" alt="">
         <div class="sport_ev">
           <div class="searchSports">
             <input type="text" name="search" id="search" class="search" placeholder="Search your sports">
@@ -95,7 +96,9 @@
       </section>
     
       <section class="athletes" id="athletes"><br>
+           <div class="atletes_container">
             <h2 class="atleta">ATHLETES</h2>
+            <img src="simone1.png" class="rioAtletas" alt="">
             <div id="searchWrapper">
               <input
                   type="text"
@@ -103,21 +106,26 @@
                   id="searchBar"
                   placeholder="search for a character"
               />
+             
             </div>
         <div class="listAthletes" id="listAthletes">
           <ul id= "hereAthletes"></ul>
+       
         </div>
+           </div>
       </section>
   
       <section class="multipleMedals" id="multipleMedals">
-           <h2 class="multiple-title">MULTIPLE MEDAL WINNERS</h2>
-             <p class="multipleMedals-Info-text">Below lies a list with all the athletes 
-                 that won multiple medals at RIO 2016.</p> 
-                 <div class="searchAndSort">
-                  <input type="text" class="searchMultipleWinners" id="searchMultipleWinners" placeholder="Search your athletes">
-              </div>          
-              <div id="hereAthletes_multiple_medals"> 
-                </div>                 
+           <div class="multipleMedals_container">
+            <h2 class="multiple-title">MULTIPLE MEDAL WINNERS</h2>
+            <p class="multipleMedals-Info-text">Below lies a list with all the athletes 
+                that won multiple medals at RIO 2016.</p> 
+                <div class="searchAndSort">
+                 <input type="text" class="searchMultipleWinners" id="searchMultipleWinners" placeholder="Search your athletes">
+             </div>          
+             <div id="hereAthletes_multiple_medals"> 
+               </div>   
+           </div>              
       </section>
   </section>
   <!-------------------------el modal------------------------------>
@@ -142,7 +150,7 @@
       </div>
       <div class="texCard">
         <h4 class="title">Sport:</h4>
-        <p class="texTitle" id="sport">Rowing</p>
+        <p class="texTitle" id="sport"> Rowing</p>
       </div>
       <div class="texCard">
         <h4 class="title">Team:</h4>

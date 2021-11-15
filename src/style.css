@@ -10,15 +10,19 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
+       
+    background-color: rgb(241, 240, 240);
     /* border-style: solid; */
 }
 
 body{
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
+       
+    background-color: rgb(241, 240, 240);
 }
 .container{
-    display:none;  /*cambiar a block*/
+    display:block;  /*cambiar a block*/
     background-color: rgb(241, 240, 240);
 }
 /* modal*/
@@ -61,6 +65,7 @@ body{
     align-items: center;
     line-height: 2.4rem;
     color:black;
+    justify-content: center;
 }
 .title{
     text-align: center;
@@ -72,19 +77,32 @@ body{
     font-size: 1.5rem;
     margin-left: 0.2rem;
 }
+.rioAtletas{
+    width: 20%;
+    height: 20%;
+    border-radius: 1rem;
+    display: block;
+    margin:auto;
+}
+.img_sport{
+    width: 20%;
+    height: 20%;
+    display: block;
+    margin:auto;
+}
 /*-------------------------------------------los atletas*/
 .athletes{
     display:none;  /*cambiar a none*/
     width: 100%;
-    margin: 1rem 3rem;
 }
-
-/* .listAthletes{
+.atletes_container{
+    margin: 0 3rem;
+}
+.listAthletes{
     width: 100%;
     display: flex;
     flex-direction: row;
-    font-size: 1.2rem;
-} */
+}
 
 #hereAthletes{
     width: 100%; 
@@ -265,17 +283,15 @@ h2{
     border-radius: 0.5em;
     /* width: 100%; */
     list-style: none;
-}
-section{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(241, 240, 240);
+
 }
 
 /*donde se encierra la info de los deportes y eventos*/
 .sports {
     display:none; /*cambiar a none*/
     /* border-style: solid; */
+     display: flex;
+    flex-direction: column;
 }
 .sport_ev{
     width: 100%;
@@ -333,6 +349,8 @@ section{
 /*----------------------------los países*/
 .countries{
     display:none;
+     display: flex;
+    flex-direction: column;
 }
 .hereCountries{
     display: grid;
@@ -341,13 +359,15 @@ section{
 
 
 /*-------------------------atletas varias medallas*/
-
+.multipleMedals_container{
+    margin: 1rem 6rem;
+    padding: 0 1rem;
+}
 .multipleMedals{
     display: none;  /*cambiar a none*/
     width: 100%;
     /* border-style: solid; */
-    margin: 1rem 6rem;
-    padding: 0 1rem;
+    
 }
 .multipleMedals-Info-text{
     font-size: 1rem;
