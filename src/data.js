@@ -12,7 +12,6 @@ export function filtarCp(tipoCp, arrayCambiante) {
       if (Number(a.stats["max-cp"]) > Number(b.stats["max-cp"])) {
         return -1;
       }
-      return 1;
     });
   } else{
     arrayCambiante.sort((a, b) => {
@@ -49,7 +48,7 @@ return arrayCambiante
     }
     else {
       arrayCambiante.sort((a, b) => {
-         (a.name < b.name)
+        (a.name < b.name)
           return 1;
 
       })
@@ -63,7 +62,6 @@ return arrayCambiante.reverse()
       if (a.num < b.num) {
         return -1;
       }
-      return 1;
     });
     return arrayCambiante;
   } else {

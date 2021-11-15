@@ -1,4 +1,4 @@
-// import data from "./data/pokemon/pokemon.js";
+import data from "./data/pokemon/pokemon.js";
 
 import {
   buscarPoke,
@@ -10,8 +10,6 @@ import {
   regionFuncion,
 } from "./data.js";
 
-
-
 import {start} from './carrusel.js'
 
 start()
@@ -21,6 +19,14 @@ const orden = document.getElementById("orden");
 const cp = document.getElementById("cp");
 const eggPoke = document.getElementById("egg");
 const search = document.getElementById("search");
+
+
+const navToggle = document.querySelector("#toggle");
+const navMenu = document.querySelector(".menu");
+
+navToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("nav-menu_visible")
+})
 
 // let arrayPokemon;
 
@@ -39,6 +45,7 @@ function fetchPokemon() {
     });
 }
 
+const arrayPokeP =  data.pokemon
 
 function handleDivRegion(data) {
   document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
@@ -273,6 +280,7 @@ export function mostrarPokemon(array) {
         button1.className = "active";
         button2.className = "";
         button3.className = "";
+        button4.className = ""
       });
 
       //-------------btn2------------------------------
@@ -289,6 +297,7 @@ export function mostrarPokemon(array) {
         button1.className = "";
         button3.className = "";
         button2.className = "active";
+        button4.className = ""
       });
 
       //------------btn3-------------------------------
@@ -410,8 +419,8 @@ export function mostrarPokemon(array) {
 
         if (nombreStats == "max-hp") {
           let dataArray = new Array();
-          for (const i in array) {
-            dataArray.push(array[i].stats["max-hp"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["max-hp"]);
           }
           //console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -419,8 +428,8 @@ export function mostrarPokemon(array) {
         }
         if (nombreStats == "base-attack") {
           let dataArray = new Array();
-          for (const i in array) {
-            dataArray.push(array[i].stats["base-attack"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["base-attack"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -428,8 +437,8 @@ export function mostrarPokemon(array) {
         }
         if (nombreStats == "max-cp") {
           let dataArray = new Array();
-          for (const i in array) {
-            dataArray.push(array[i].stats["max-cp"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["max-cp"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -437,8 +446,8 @@ export function mostrarPokemon(array) {
         }
         if (nombreStats == "base-defense") {
           let dataArray = new Array();
-          for (const i in array) {
-            dataArray.push(array[i].stats["base-defense"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["base-defense"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -446,8 +455,8 @@ export function mostrarPokemon(array) {
         }
         if (nombreStats == "base-stamina") {
           let dataArray = new Array();
-          for (const i in array) {
-            dataArray.push(array[i].stats["base-stamina"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["base-stamina"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -482,7 +491,8 @@ export function mostrarPokemon(array) {
         vista4.style.display = "none";
         button1.className = "";
         button2.className = "";
-        button3.className = "active";
+        button3.className = "active"
+        button4.className = "";
       });
 
       let quickName = array[i]["quick-move"];
