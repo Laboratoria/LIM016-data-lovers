@@ -3,7 +3,6 @@ import data from "./data/pokemon/pokemon.js";
 import {mostrarPokemon} from './main.js'
 
 
-
 // const botones del navegador
 
 const container = document.querySelector(".pokemon-container");

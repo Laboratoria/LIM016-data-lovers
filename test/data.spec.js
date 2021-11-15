@@ -2,6 +2,11 @@ import { huevitoPokemon , filtarCp , rarezaPokemon , ordenAlfaNumerico, typePoke
 
 import data from "../src/data/pokemon/pokemon.js";
 
+
+
+
+
+
 describe('huevitoPokemon', () => {
   it('is a function', () => {
     expect(typeof huevitoPokemon).toBe('function');
