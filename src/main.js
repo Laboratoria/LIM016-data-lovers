@@ -19,13 +19,7 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
      document.getElementById("portada").style.display="none";
    })
    
-   document.getElementById("locations").addEventListener("click", ()=> {
-     document.getElementById("locations").style.display="block";
-     document.getElementById("filmo").style.display="none";
-     document.getElementById("persona").style.display="none";
-     document.getElementById("vehiculos").style.display="none";
-     document.getElementById("portada").style.display="none";
-   })
+  
    
      document.getElementById("vehicles").addEventListener("click", ()=> {
      document.getElementById("vehiculos").style.display="block";
@@ -35,6 +29,14 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
     document.getElementById("portada").style.display="none";
    })
    
+
+   document.getElementById("locations").addEventListener("click", ()=> {
+    document.getElementById("locations").style.display="block";
+    document.getElementById("filmo").style.display="none";
+    document.getElementById("persona").style.display="none";
+    document.getElementById("vehiculos").style.display="none";
+    document.getElementById("portada").style.display="none";
+  })
    /* boton para volver al principal*/
    document.getElementById("logo").addEventListener("click",()=>window.location.reload());
 
@@ -59,12 +61,12 @@ const sectionFilm = films.forEach(({title , description , producer, poster , rt_
    <div class="box"><img src= ${poster}></div> 
 </ul></div>`;
  createElement.innerHTML= template
- filmo.appendChild(createElement);
+ containerFilmo.appendChild(createElement);
  return template;
 } )
 
 
-const arrayGhibli = data.films;
+/*const arrayGhibli = data.films;
 let arrayPeople = [];
 for(let i=0; i<arrayGhibli.length;i++){
     arrayPeople.push(arrayGhibli[i].people)
@@ -84,7 +86,7 @@ arrayPeople.flat(1).forEach(({name, gender, eye_color, hair_color, specie ,img})
 </ul>
 </div>`;
 createElement.innerHTML= template;
-persona.appendChild(createElement);
+containerPeople.appendChild(createElement);
 return template;
 });
 
@@ -114,10 +116,10 @@ return templateDos;
 </ul>
 </div>`;
 createElement.innerHTML= template;
-containerPeople.appendChild(createElement);
+containerLocation.appendChild(createElement);
 createElement.appendChild(createDiv)
 return template;
-})
+})*/
 
   
    
