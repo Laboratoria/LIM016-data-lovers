@@ -278,11 +278,22 @@ list-style: none;
   position: absolute;
   top:20%;
   left:20%;
-  transform: translate(-50%, -50%) ;
+
 
 }
 
 input.btn-buscar{
- padding: 9px 10px 9px 32px;
+  width: 240px;
+  height: 40px;
+  padding: 0 20px;
+  font-size: 18px;
+  color: #000;
+  outline:none;
+  border: 1px solid silver;
+  border-radius: 30px;
+
+}
+.btn_buscar.icon{
+
 
 }
