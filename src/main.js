@@ -111,52 +111,97 @@ searchSport.addEventListener("keyup", (e)=> {
 });
 
 
-/////////////////////////////////////////////////////////////
-const contAthletes = (event,athletes) => {
- 
-  let listAthlete= document.getElementById("cardAthlete")
- 
-    let nameAthlete= document.getElementById("name")
-    nameAthlete.innerHTML= athletes.name;
+/*------------------------------código de los atletas*/
+/* .....Realizando un nuevo array para motrar en pantalla............. */
+let newListsAthlete= data.athletes.map(item=>{
+  return [item.name,item]
+});
 
-    let genderAthlete= document.getElementById("gender")
-    genderAthlete.innerHTML= athletes.gender;
+var personasMapArr = new Map(newListsAthlete); 
+let unicos = [...personasMapArr.values()]; // Conversión a un array
 
-    let heightAthlete= document.getElementById("height")
-    heightAthlete.innerHTML= athletes.height;
-
-    let weightAthlete= document.getElementById("weight")
-    weightAthlete.innerHTML= athletes.weight;
-
-    let sportAthlete= document.getElementById("sport")
-    sportAthlete.innerHTML= athletes.sport;
-
-    let teamAthlete= document.getElementById("team")
-    teamAthlete.innerHTML= athletes.team;
-
-    let ageAthlete= document.getElementById("age")
-    ageAthlete.innerHTML= athletes.age;
-
-    listAthlete.appendChild(cardAthlete)  
-}
-
-
-const prueba = ()=>{
+/* .....Funcion para crear la lista de atletas con el nuevo array...... */
+function listName(e) {
   const athlete= document.getElementById("hereAthletes")
-  data.athletes.forEach((item, index)=>{
-    let {name}=item;
-    
+
+  let span = document.getElementById("close");
+span.addEventListener("click", (e)=>{
+  modal.style.display="block";
+})
+  let onlyAhtete =e.forEach((index)=>{
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
-    //athletes_screen.style.display = "flex";
     athletes_screen.style.flexDirection = "row"
-    athletes_screen.innerHTML= name;
-    athletes_screen.onclick= (e)=>contAthletes(e,item);
+    athletes_screen.innerHTML= index.name;
+    athletes_screen.onclick= (e)=>contAthletes(e,index);
     athlete.appendChild(athletes_screen)
- 
+    
+athletes_screen.addEventListener("click", (e)=>{
+  modalAthlete.style.display="block";
+})
+
   })
 }
-prueba()
+const modalAthlete= document.getElementById("modal");
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+/* .....Funcion para crear el card con el nuevo array................. */
+const prueba = listName(unicos)
+const contAthletes = (event,unicos) => {
+  
+  let nameAthlete= document.getElementById("name")
+  nameAthlete.innerHTML= unicos.name; 
+  
+  let genderAthlete= document.getElementById("gender")
+  genderAthlete.innerHTML= unicos.gender;
+  
+  let heightAthlete= document.getElementById("height")
+  heightAthlete.innerHTML= unicos.height;
+  
+  let weightAthlete= document.getElementById("weight")
+  weightAthlete.innerHTML= unicos.weight;
+  
+  let sportAthlete= document.getElementById("sport")
+  sportAthlete.innerHTML= unicos.sport;
+  
+  let teamAthlete= document.getElementById("team")
+  teamAthlete.innerHTML= unicos.team;
+  
+  let ageAthlete= document.getElementById("age")
+  ageAthlete.innerHTML= unicos.age;
+  
+  let eventAthlete= document.getElementById("event")
+  eventAthlete.innerHTML= unicos.event; 
+}
+
+
+  /* ..........Funcionalidad con el Search............. */
+  const search = document.getElementById("searchBar");
+const results = document.getElementById("hereAthletes");
+let search_term = "";
+
+
+const showList = () => {
+  results.innerHTML = "";
+  let atlhete=unicos.filter((item) => { 
+  /* ...Busco en todo mi array las coincidencias de mi search........ */
+      return (item.name.toLowerCase().includes(search_term));
+  })
+  /* ...Estoy colocando en pantalla el resultado del filter........ */
+  listName(atlhete)
+};
+showList();
+
+/* ......Guarda el valor de mi search imput y la iguala a mi variable vacia........ */
+search.addEventListener('input', (event) => {
+  search_term = event.target.value.toLowerCase();
+  showList();
+});
 
 /*--------------------------------código de los deportistas con diferentes medallas*/
 

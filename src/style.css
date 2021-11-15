@@ -18,9 +18,97 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
 }
 .container{
-    display:block;  /*cambiar a block*/
+    display:none;  /*cambiar a block*/
     background-color: rgb(241, 240, 240);
 }
+/* modal*/
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,5); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+.close{
+    color:white;
+}
+/*-------------------------------------------los atletas*/
+.athletes{
+    display:block;  /*cambiar a none*/
+    width: 100%;
+}
+
+.listAthletes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+}
+
+#hereAthletes{
+    flex-direction: column;
+    width: 60%; 
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+#cardAthlete{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 28rem;
+    border: solid #F1B839;
+    border-radius: 20px;
+    padding: 1.2rem;
+    margin-left: 4rem;
+    margin-top: 2rem;
+    box-shadow:  16px 16px 44px #5c5606, 
+             -16px -16px 44px #282a28;
+    transition: 0.3s all ease-in-out;
+    /*position: fixed;*/
+    left: 60%;
+    background-color: white;
+}
+.texCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3.7rem;
+}
+
+ul:hover{
+    cursor: pointer;
+}
+.title{
+    text-align: center;
+    font-size: 1.5rem;
+}
+#searchWrapper {
+    display: flex;
+    justify-content: end;
+    align-items: center;  
+    
+}    /*position: relative;*/
+#searchBar {
+    width: 30%;
+    height: 38px;
+    border-radius: 5px;
+    border: 1px solid #484242;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#searchWrapper::after {
+    content: '🔍';
+    position: absolute;
+    right: 23px;
+}
+
 /*-------------------------------------------HEADER*/
 header{
     width: 100%;
@@ -64,7 +152,6 @@ a:hover{
     justify-content: space-around;
     align-items: center;
 }
-
 /*-------------------------------------CONTAINER-SLIDER----*/
 .slides{
     width: 100%;
@@ -236,58 +323,8 @@ section{
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
-/*-------------------------------------------los atletas*/
-.athletes{
-    display:none;
-    width: 100%;
-    background-image: url('https://images.vexels.com/media/users/3/77434/raw/70da17038368661b93b985dd3a79b363-rio-2016-ahtletics-100m.jpg');
-    background-repeat: no-repeat;
-    background-position:top;
-    
-}
-.athletes image{
-    opacity: 0.5;
-}
-.listAthletes{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    font-size: 1.2rem;
-}
 
-#hereAthletes{
-    flex-direction: column;
-    width: 60%; 
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
-#cardAthlete{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    height: 40%;
-    border: solid #F1B839;
-    border-radius: 10px;
-    padding: 0.5rem;
-    margin: 3rem;
-    box-shadow:  16px 16px 44px #5c5606, 
-             -16px -16px 44px #282a28;
-    transition: 0.3s all ease-in-out;
 
-}
-.texCard{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 4.5rem;
-}
-
-ul:hover{    /*ponerle clase*/
-    cursor: pointer;
-}
-.title{
-    text-align: center;
-}
 /*-------------------------atletas varias medallas*/
 
 .multipleMedals{
@@ -344,8 +381,7 @@ ul:hover{    /*ponerle clase*/
     padding: 0.2rem;
     text-align: center;
 }
-
- /*------------------------------------------ FOOTER*/
+/*------------------------------------------ FOOTER*/
 footer{   
     background-color: black;
     padding: 10px 0 10px 0;
