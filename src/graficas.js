@@ -1,28 +1,49 @@
 import data from "./data/pokemon/pokemon.js";
 
-import {regionFuncion} from "./data.js";
+import { regionFuncion } from "./data.js";
 const arrayPokemon = data.pokemon;
 
-// eslint-disable-next-line no-use-before-define
 // pokemon por region
+
+/*-eslint-disable-*/
+//eslint-disable-next-line no-use-before-define
 const regionCanva = ["kanto", "johto"];
 const resultadoRegion1 = regionFuncion(regionCanva[0], arrayPokemon).length;
 const resultadoRegion2 = regionFuncion(regionCanva[1], arrayPokemon).length;
 
 // tipos de pokemones
-const tipos = ["ghost","water","poison","flying","rock","dragon","dark","fairy","ground","psychic","ice",
-"normal","steel","electric","grass","normal","fire","fighting"];
+const tipos = [
+  "ghost",
+  "water",
+  "poison",
+  "flying",
+  "rock",
+  "dragon",
+  "dark",
+  "fairy",
+  "ground",
+  "psychic",
+  "ice",
+  "normal",
+  "steel",
+  "electric",
+  "grass",
+  "normal",
+  "fire",
+  "fighting",
+];
 
 const arrayNumeroTipos = tipos.map((element) => {
   let tipos = arrayPokemon.filter((x) => x.type.includes(element));
   return tipos.length;
 });
 
+// eslint-disable-line
 const ctx = document.getElementById("myChart1").getContext("2d");
 new Chart(ctx, {
   type: "pie",
   data: {
-    labels: regionCanva ,
+    labels: regionCanva,
     datasets: [
       {
         label: regionCanva,
@@ -46,7 +67,7 @@ new Chart(ctx, {
       },
       title: {
         display: true,
-        text: 'GRAFICA N° 1: Datos de pokemon por región',
+        text: "GRAFICA N° 1: Datos de pokemon por región",
         padding: {
           top: 10,
           bottom: 10,
@@ -56,15 +77,30 @@ new Chart(ctx, {
   },
 });
 
-
-
-
 const ctx2 = document.getElementById("myChart2").getContext("2d");
 new Chart(ctx2, {
   type: "bar",
   data: {
-    labels: ["ghost","water","poison","flying","rock","dragon","dark","fairy","ground","psychic","ice",
-    "normal","steel","electric","grass","normal","fire","fighting"],
+    labels: [
+      "ghost",
+      "water",
+      "poison",
+      "flying",
+      "rock",
+      "dragon",
+      "dark",
+      "fairy",
+      "ground",
+      "psychic",
+      "ice",
+      "normal",
+      "steel",
+      "electric",
+      "grass",
+      "normal",
+      "fire",
+      "fighting",
+    ],
     datasets: [
       {
         label: ["# de Pokemones"],
@@ -87,18 +123,18 @@ new Chart(ctx2, {
         labels: {
           color: "#2d3436",
         },
-    },
-    title: {
-      display: true,
-      text: 'GRAFICA N° 2: Datos de pokemon por tipo',
-      padding: {
-        top: 10,
-        bottom: 10,
+      },
+      title: {
+        display: true,
+        text: "GRAFICA N° 2: Datos de pokemon por tipo",
+        padding: {
+          top: 10,
+          bottom: 10,
+        },
       },
     },
   },
-},
-})
+});
 
 let arrayNormal = arrayPokemon.filter(
   (array) => array["pokemon-rarity"] == "normal"
@@ -110,7 +146,7 @@ let arrayMythic = arrayPokemon.filter(
 
 let arrayLegendary = arrayPokemon.filter(
   (array) => array["pokemon-rarity"] == "legendary"
-).length
+).length;
 
 let rarezaPoke = document.getElementById("rarezaChart").getContext("2d");
 new Chart(rarezaPoke, {
@@ -122,14 +158,8 @@ new Chart(rarezaPoke, {
         label: ["Normal", "Mythic", "Legendary"],
         data: [arrayNormal, arrayMythic, arrayLegendary],
 
-        backgroundColor: [
-          "#e84393",
-          "#feca57",
-          "#5f27cd"
-        ],
-        borderColor: [
-          "#222f3e"
-        ],
+        backgroundColor: ["#e84393", "#feca57", "#5f27cd"],
+        borderColor: ["#222f3e"],
         borderWidth: 1,
         hoverBorderWidth: 0,
       },
@@ -157,7 +187,6 @@ new Chart(rarezaPoke, {
 });
 
 let array2km = arrayPokemon.filter((array) => array["egg"] == "2 km").length;
-console.log(array2km)
 let array5km = arrayPokemon.filter((array) => array["egg"] == "5 km").length;
 
 let array7km = arrayPokemon.filter((array) => array["egg"] == "5 km").length;
@@ -171,20 +200,11 @@ new Chart(egg, {
     labels: ["2 km", "5 km", "7 km", "10km"],
     datasets: [
       {
-
         label: "km por recorrer",
         data: [array2km, array5km, array7km, array10km],
         fill: false,
-        backgroundColor: [
-          "#45aaf2",
-          "#4b7bec",
-          "#a55eea",
-          "#26de81"
-
-        ],
-        borderColor: [
-          "#2d3436"
-        ],
+        backgroundColor: ["#45aaf2", "#4b7bec", "#a55eea", "#26de81"],
+        borderColor: ["#2d3436"],
         borderWidth: 1,
         hoverBorderWidth: 0,
       },
@@ -201,7 +221,7 @@ new Chart(egg, {
       },
       title: {
         display: true,
-        text: 'GRAFICA N° 4: Datos de pokemon km a recorrer ',
+        text: "GRAFICA N° 4: Datos de pokemon km a recorrer ",
         padding: {
           top: 10,
           bottom: 10,

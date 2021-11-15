@@ -10,34 +10,9 @@ import {
   regionFuncion,
 } from "./data.js";
 
+import {start} from './carrusel.js'
 
-
-
-// fetch('./data/pokemon/pokemon.json')
-// .then(function(res){
-//     return res.json();
-// })
-// .then(function(data){
-//     return data.pokemon
-
-// })
-// .then(function(dataPokemon){
-//     dataPokemon.forEach((element)=>{
-//       arrayP.push(Object(element))
-//     })
-
-// });
-// console.log(arrayP.length)
-// console.log(arrayP[0])
-// console.log(Object.values(arrayP))
-
-const navToggle = document.querySelector("#toggle");
-const navMenu = document.querySelector(".menu");
-
-navToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("nav-menu_visible")
-})
-
+start()
 
 const container = document.querySelector(".pokemon-container");
 const orden = document.getElementById("orden");
@@ -46,11 +21,122 @@ const eggPoke = document.getElementById("egg");
 const search = document.getElementById("search");
 
 
-const arrayPokemon = data.pokemon;
+const navToggle = document.querySelector("#toggle");
+const navMenu = document.querySelector(".menu");
+
+navToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("nav-menu_visible")
+})
+
+// let arrayPokemon;
+
+function fetchPokemon() {
+  fetch("./data/pokemon/pokemon.json")
+    .then((resp) => resp.json())
+    .then((data) => {
+      // let arrayPokemon = data;
+
+      mostrarPokemon(data.pokemon);
+      handleDivRegion(data);
+      eggPokemon(data);
+      buscarPokemon(data);
+      filtrarTiposPokemon(data)
+      filtrarRarezaPokemon(data)
+    });
+}
+
+const arrayPokeP =  data.pokemon
+
+function handleDivRegion(data) {
+  document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    if (e.target.getAttribute("id")) {
+      container.innerHTML = "";
+      // console.log(e.target.getAttribute('id'))
+      const regionP = e.target.getAttribute("id");
+      const arrayRegionPoke = regionFuncion(regionP, data.pokemon);
+      mostrarPokemon(arrayRegionPoke);
+    }
+  });
+}
+
+//cp
+cp.addEventListener("change", (e) => {
+  container.innerHTML = "";
+  const tipoCp = e.target.value;
+  const filtroPoke = filtarCp(tipoCp, arrayCambiante);
+  mostrarPokemon(filtroPoke);
+});
+
+// filtrar pokemon por huevito
+
+function eggPokemon(data) {
+  eggPoke.addEventListener("change", (e) => {
+    container.innerHTML = "";
+    const eggType = e.target.value;
+
+    const arrayEgg = huevitoPokemon(eggType, data.pokemon);
+    mostrarPokemon(arrayEgg);
+  });
+}
+
+//orden alfabetico
+orden.addEventListener("change", (e) => {
+  container.innerHTML = "";
+  const typeOrden = e.target.value;
+  const ordenAlfaNum = ordenAlfaNumerico(typeOrden, arrayCambiante);
+  mostrarPokemon(ordenAlfaNum);
+});
+
+//buscar pokemon
+function buscarPokemon(data){
+  search.addEventListener("keyup", () => {
+      container.innerHTML = "";
+      const texto = search.value.toLowerCase();
+      const arrayBuscar = buscarPoke(texto, data.pokemon);
+      mostrarPokemon(arrayBuscar);
+
+});
+}
+
+
+
+function filtrarTiposPokemon(data){
+ document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
+  e.preventDefault();
+
+      if (e.target.getAttribute("id")) {
+        container.innerHTML = "";
+        // console.log(e.target.getAttribute('id'))
+        const tipoP = e.target.getAttribute("id");
+        const arraytipoPoke = typePokemones(tipoP, data.pokemon);
+        mostrarPokemon(arraytipoPoke);
+      }
+});
+}
+
+
+function filtrarRarezaPokemon(data){
+
+  document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
+  e.preventDefault();
+
+      let pruebaFetch = data.pokemon;
+      if (e.target.getAttribute("value")) {
+        container.innerHTML = "";
+        const rarezaP = e.target.getAttribute("value");
+        const arrayRarezaPoke = rarezaPokemon(rarezaP, pruebaFetch);
+        mostrarPokemon(arrayRarezaPoke);
+      }
+})
+}
+
+
+// const arrayPokemon = data.pokemon;
 let arrayCambiante = "";
 
-
-  //-------------funcion que muestra los pokemones
+//-------------funcion que muestra los pokemones
 
 export function mostrarPokemon(array) {
   arrayCambiante = array;
@@ -95,9 +181,7 @@ export function mostrarPokemon(array) {
     const nombreNumero = document.createElement("div");
     nombreNumero.classList.add("nombreNumero");
 
-
-    nombreNumero.append(nombre,numero);
-
+    nombreNumero.append(nombre, numero);
 
     //evoluciones
     let obj = array[i].evolution;
@@ -299,8 +383,8 @@ export function mostrarPokemon(array) {
       const candy = document.createElement("p");
       candy.innerHTML = caramelos;
 
-      candyContainer.append(imgCandy,candy);
-      candyContainerPadre.append(palabraEvolucion,candyContainer);
+      candyContainer.append(imgCandy, candy);
+      candyContainerPadre.append(palabraEvolucion, candyContainer);
 
       //................div de las evoluciones.....
       const divTotalEvoluciones = document.createElement("div");
@@ -335,8 +419,8 @@ export function mostrarPokemon(array) {
 
         if (nombreStats == "max-hp") {
           let dataArray = new Array();
-          for (const i in arrayPokemon) {
-            dataArray.push(arrayPokemon[i].stats["max-hp"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["max-hp"]);
           }
           //console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -344,8 +428,8 @@ export function mostrarPokemon(array) {
         }
         if (nombreStats == "base-attack") {
           let dataArray = new Array();
-          for (const i in arrayPokemon) {
-            dataArray.push(arrayPokemon[i].stats["base-attack"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["base-attack"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -353,8 +437,8 @@ export function mostrarPokemon(array) {
         }
         if (nombreStats == "max-cp") {
           let dataArray = new Array();
-          for (const i in arrayPokemon) {
-            dataArray.push(arrayPokemon[i].stats["max-cp"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["max-cp"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -362,8 +446,8 @@ export function mostrarPokemon(array) {
         }
         if (nombreStats == "base-defense") {
           let dataArray = new Array();
-          for (const i in arrayPokemon) {
-            dataArray.push(arrayPokemon[i].stats["base-defense"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["base-defense"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -371,8 +455,8 @@ export function mostrarPokemon(array) {
         }
         if (nombreStats == "base-stamina") {
           let dataArray = new Array();
-          for (const i in arrayPokemon) {
-            dataArray.push(arrayPokemon[i].stats["base-stamina"]);
+          for (const i in arrayPokeP) {
+            dataArray.push(arrayPokeP[i].stats["base-stamina"]);
           }
           // console.log(dataArray)
           valorAlto = Math.max(...dataArray);
@@ -388,15 +472,9 @@ export function mostrarPokemon(array) {
         valorStat.innerHTML = stringStats;
 
         barra.appendChild(progreso);
-        prueba.append(nameStats,barra,valorStat)
+        prueba.append(nameStats, barra, valorStat);
         vista2.appendChild(prueba);
       }
-
-
-
-
-
-
 
       //VISTA 3
       const vista3 = document.createElement("div");
@@ -432,10 +510,9 @@ export function mostrarPokemon(array) {
       let thead = document.createElement("thead");
       let tbody = document.createElement("tbody");
 
-      table.append(thead ,tbody );
+      table.append(thead, tbody);
       vista3.appendChild(tituloTabla1);
-      tabla1.appendChild(table),
-      vista3.appendChild(tabla1);
+      tabla1.appendChild(table), vista3.appendChild(tabla1);
 
       let titulo1 = document.createElement("tr");
       let heading_1 = document.createElement("th");
@@ -458,9 +535,8 @@ export function mostrarPokemon(array) {
       heading_5.innerHTML = "MD";
       heading_5.classList.add("mdTable");
 
-      titulo1.append(heading_1,heading_2,heading_3,heading_4,heading_5),
-
-      thead.appendChild(titulo1);
+      titulo1.append(heading_1, heading_2, heading_3, heading_4, heading_5),
+        thead.appendChild(titulo1);
 
       for (let a = 0; a < quickName.length; a++) {
         // Creating and adding data to second row of the table
@@ -575,7 +651,7 @@ export function mostrarPokemon(array) {
       const resistant = document.createElement("div");
       resistant.classList.add("resistant");
 
-      let arrayResistant = arrayPokemon[i].resistant;
+      let arrayResistant = array[i].resistant;
 
       for (let i = 0; i < arrayResistant.length; i++) {
         const imgResistant = document.createElement("div");
@@ -600,7 +676,7 @@ export function mostrarPokemon(array) {
       const weaknesses = document.createElement("div");
       weaknesses.classList.add("weaknesses");
 
-      let arrayWeaknesses = arrayPokemon[i].weaknesses;
+      let arrayWeaknesses = array[i].weaknesses;
 
       for (let i = 0; i < arrayWeaknesses.length; i++) {
         const imgWeaknesses = document.createElement("div");
@@ -615,17 +691,28 @@ export function mostrarPokemon(array) {
         weaknesses.appendChild(imgWeaknesses);
       }
 
-      containerResistant.append(tituloUno,resistant,tituloDos, weaknesses);
-      vista4.append(containerResistant, containerWeaknesses );
-      features.append(weight, typePokemon,height );
+      containerResistant.append(tituloUno, resistant, tituloDos, weaknesses);
+      vista4.append(containerResistant, containerWeaknesses);
+      features.append(weight, typePokemon, height);
       description_box.append(titulo, about);
-      navTarjeta.append(button1,button2,button3,  button4 );
+      navTarjeta.append(button1, button2, button3, button4);
       containerImg.append(infoPokemon);
 
-      containerVista.append(nameCardPokemon, navTarjeta,vista1,vista2,vista3,vista4    );
+      containerVista.append(
+        nameCardPokemon,
+        navTarjeta,
+        vista1,
+        vista2,
+        vista3,
+        vista4
+      );
 
-      vista1.append(description_box,features,candyContainerPadre,divTotalEvoluciones   );
-
+      vista1.append(
+        description_box,
+        features,
+        candyContainerPadre,
+        divTotalEvoluciones
+      );
 
       cardInfo.appendChild(btnCerrar);
       cardInfo.appendChild(containerImg);
@@ -634,12 +721,14 @@ export function mostrarPokemon(array) {
       container.appendChild(cardInfo);
 
       evoluciones(
+        array,
         prevEvoluciones,
         divTotalEvoluciones,
         nombrePrev,
         array[i]["pokemon-rarity"]
       );
       evoluciones(
+        array,
         nextEvolciones,
         divTotalEvoluciones,
         nombreNext,
@@ -654,8 +743,9 @@ export function mostrarPokemon(array) {
   }
 }
 
-function evoluciones(array, divTotalEvoluciones, nombre, tipo) {
-  if (array.length > 0) {
+function evoluciones(array, arrayP, divTotalEvoluciones, nombre, tipo) {
+  // console.log("hola" + arrayP);
+  if (arrayP.length > 0) {
     const divGrupoEvol = document.createElement("div");
     divGrupoEvol.classList.add("grupo");
     const nombreEvol = document.createElement("p");
@@ -668,19 +758,19 @@ function evoluciones(array, divTotalEvoluciones, nombre, tipo) {
     divGrupoEvol.appendChild(nombreEvol);
     divGrupoEvol.appendChild(divGrupoPok);
 
-    array.forEach((element) => {
-      for (let i = 0; i < arrayPokemon.length; i++) {
-        if (arrayPokemon[i].name === element) {
+    arrayP.forEach((element) => {
+      for (let i = 0; i < array.length; i++) {
+        if (array[i].name === element) {
           const divEvol = document.createElement("div");
           divEvol.classList.add("evol");
 
           const imgEvol = document.createElement("img");
           imgEvol.classList.add("imgEvol");
-          imgEvol.src = arrayPokemon[i].img;
+          imgEvol.src = array[i].img;
 
           const nombreEvol = document.createElement("p");
           nombreEvol.classList.add("nombreEvol");
-          nombreEvol.innerHTML = arrayPokemon[i].name;
+          nombreEvol.innerHTML = array[i].name;
 
           divEvol.appendChild(imgEvol);
           divEvol.appendChild(nombreEvol);
@@ -698,94 +788,77 @@ function evoluciones(array, divTotalEvoluciones, nombre, tipo) {
   }
 }
 
-//cp
-cp.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const tipoCp = e.target.value;
-  const filtroPoke = filtarCp(tipoCp, arrayCambiante);
-  mostrarPokemon(filtroPoke);
-});
+// //cp
+// cp.addEventListener("change", (e) => {
+//   container.innerHTML = "";
+//   const tipoCp = e.target.value;
+//   const filtroPoke = filtarCp(tipoCp, arrayCambiante);
+//   mostrarPokemon(filtroPoke);
+// });
 
-// filtrar pokemon por huevito
-eggPoke.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const eggType = e.target.value;
+// // filtrar pokemon por huevito
+// eggPoke.addEventListener("change", (e) => {
+//   fetch("./data/pokemon/pokemon.json")
+//     .then((resp) => resp.json())
+//     .then((data) => {
+//       container.innerHTML = "";
+//       const eggType = e.target.value;
 
-  const arrayEgg = huevitoPokemon(eggType, arrayPokemon);
-  mostrarPokemon(arrayEgg);
-});
+//       const arrayEgg = huevitoPokemon(eggType, data.pokemon);
+//       mostrarPokemon(arrayEgg);
+//     });
+// });
 
-//orden alfabetico
-orden.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const typeOrden = e.target.value;
-  const ordenAlfaNum = ordenAlfaNumerico(typeOrden, arrayCambiante);
-  mostrarPokemon(ordenAlfaNum);
-});
+// //orden alfabetico
+// orden.addEventListener("change", (e) => {
+//   container.innerHTML = "";
+//   const typeOrden = e.target.value;
+//   const ordenAlfaNum = ordenAlfaNumerico(typeOrden, arrayCambiante);
+//   mostrarPokemon(ordenAlfaNum);
+// });
 
-// botonBuscar.addEventListener("click", filtrar);
-search.addEventListener("keyup", ()=>{
-  container.innerHTML = "";
-  const texto = search.value.toLowerCase();
-  const arrayBuscar = buscarPoke(texto, arrayPokemon)
-  mostrarPokemon(arrayBuscar);
-});
+// // botonBuscar.addEventListener("click", filtrar);
+// search.addEventListener("keyup", () => {
+//   fetch("./data/pokemon/pokemon.json")
+//     .then((resp) => resp.json())
+//     .then((data) => {
+//       container.innerHTML = "";
+//       const texto = search.value.toLowerCase();
+//       const arrayBuscar = buscarPoke(texto, data.pokemon);
+//       mostrarPokemon(arrayBuscar);
+//     });
+// });
 
-// Boton subir
-const buttonUp = document.getElementById("button-up");
+// document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   fetch("./data/pokemon/pokemon.json")
+//     .then((resp) => resp.json())
+//     .then((data) => {
+//       if (e.target.getAttribute("id")) {
+//         container.innerHTML = "";
+//         // console.log(e.target.getAttribute('id'))
+//         const tipoP = e.target.getAttribute("id");
+//         const arraytipoPoke = typePokemones(tipoP, data.pokemon);
+//         mostrarPokemon(arraytipoPoke);
+//       }
+//     });
+// });
 
-buttonUp.addEventListener("click", scrollUp);
-function scrollUp() {
-  let currentScroll = document.documentElement.scrollTop;
-  if (currentScroll > 0) {
-    window.requestAnimationFrame(scrollUp);
-    window.scrollTo(0, currentScroll - currentScroll / 15);
-  }
-}
+// document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   fetch("./data/pokemon/pokemon.json")
+//     .then((resp) => resp.json())
+//     .then((data) => {
+//       let pruebaFetch = data.pokemon;
+//       if (e.target.getAttribute("value")) {
+//         container.innerHTML = "";
+//         const rarezaP = e.target.getAttribute("value");
+//         const arrayRarezaPoke = rarezaPokemon(rarezaP, pruebaFetch);
+//         mostrarPokemon(arrayRarezaPoke);
+//       }
+//     });
+// });
 
-window.onscroll = () => {
-  let scroll = document.documentElement.scrollTop;
-
-  if (scroll > 600) {
-    buttonUp.style.transform = "scale(1)";
-  } else if (scroll < 500) {
-    buttonUp.style.transform = "scale(0)";
-  }
-};
-
-document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
-  e.preventDefault();
-
-  if (e.target.getAttribute("id")) {
-    container.innerHTML = "";
-    // console.log(e.target.getAttribute('id'))
-    const tipoP = e.target.getAttribute("id");
-    const arraytipoPoke = typePokemones(tipoP, arrayPokemon);
-    mostrarPokemon(arraytipoPoke);
-  }});
-
-document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
-  e.preventDefault();
-
-  if (e.target.getAttribute("id")) {
-    container.innerHTML = "";
-    // console.log(e.target.getAttribute('id'))
-    const regionP = e.target.getAttribute('id')
-    const arrayRegionPoke = regionFuncion(regionP, arrayPokemon);
-    mostrarPokemon(arrayRegionPoke);
-  }});
-
-document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
-  e.preventDefault();
-
-  if (e.target.getAttribute("value")) {
-    container.innerHTML = "";
-    const rarezaP = e.target.getAttribute("value");
-    const arrayRarezaPoke = rarezaPokemon(rarezaP, arrayPokemon);
-    mostrarPokemon(arrayRarezaPoke);
-  }});
-
-
-mostrarPokemon(arrayPokemon);
-
-
+// let arrayPokemon=data.pokemon
+// mostrarPokemon(arrayPokemon);
+fetchPokemon();
