@@ -11,7 +11,7 @@ import {
 } from "./data.js";
 
 
-const arrayP = []
+
 
 // fetch('./data/pokemon/pokemon.json')
 // .then(function(res){
