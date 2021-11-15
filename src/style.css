@@ -38,75 +38,84 @@ body{
 .close{
     color:white;
 }
-/*-------------------------------------------los atletas*/
-.athletes{
-    display:block;  /*cambiar a none*/
-    width: 100%;
-}
-
-.listAthletes{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    font-size: 1.2rem;
-}
-
-#hereAthletes{
-    flex-direction: column;
-    width: 60%; 
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
 #cardAthlete{
     display: flex;
     flex-direction: column;
+    justify-items: center;
     width: 30%;
-    height: 28rem;
-    border: solid #F1B839;
-    border-radius: 20px;
+    border: 0.4rem solid #F1B839;
+    border-radius: 2rem;
     padding: 1.2rem;
-    margin-left: 4rem;
     margin-top: 2rem;
     box-shadow:  16px 16px 44px #5c5606, 
              -16px -16px 44px #282a28;
     transition: 0.3s all ease-in-out;
     /*position: fixed;*/
-    left: 60%;
     background-color: white;
+    font-size:1rem;
+    margin: 4rem 32rem;
 }
 .texCard{
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 3.7rem;
-}
-
-ul:hover{
-    cursor: pointer;
+    line-height: 2.4rem;
+    color:black;
 }
 .title{
     text-align: center;
     font-size: 1.5rem;
 }
+.texTitle{
+    color:black;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+/*-------------------------------------------los atletas*/
+.athletes{
+    display:none;  /*cambiar a none*/
+    width: 100%;
+    margin: 1rem 3rem;
+}
+
+/* .listAthletes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+} */
+
+#hereAthletes{
+    width: 100%; 
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#hereAthletes:hover{
+    cursor: pointer;
+}
+
 #searchWrapper {
     display: flex;
-    justify-content: end;
-    align-items: center;  
-    
-}    /*position: relative;*/
+    justify-content: center;    
+    position: relative;
+} 
 #searchBar {
-    width: 30%;
-    height: 38px;
-    border-radius: 5px;
-    border: 1px solid #484242;
-    padding: 5px 10px;
-    font-size: 12px;
+    border-radius: 0.5em ;
+    padding: 1em;
+    width:100%;
+    border:rgb(241, 240, 240);
+    outline: none;
+    margin:3rem
 }
 
 #searchWrapper::after {
     content: '🔍';
     position: absolute;
-    right: 23px;
+    top: 3.5rem;
+    right: 4rem;
+}
+#searchBar:focus{
+    border: 3px solid #ecc100;
 }
 
 /*-------------------------------------------HEADER*/
@@ -251,6 +260,10 @@ h2{
     margin: 1.5rem;
     padding: 0.2rem;
     text-align: center;
+    background-color: white;  /*los 4 de abajo aumente*/
+    border-radius: 0.5em;
+    /* width: 100%; */
+    list-style: none;
 }
 section{
     display: flex;
@@ -272,7 +285,8 @@ section{
     border-radius: 0.5em ;
     padding: 1em;
     width:100%;
-    border:rgb(241, 240, 240);
+    outline: none;
+    border:none;
 }
 .search:focus{
     border: 3px solid #77c2ff;
