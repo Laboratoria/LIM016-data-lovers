@@ -1,15 +1,44 @@
 body{
-  margin: 0;
+  /*margin: 0;
   display: grid;
   min-height: 100vh;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;*/
   background-image: url(img/backgroundTotoro.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-
   }
 
+  .conteiner {
+    display: grid;
+    grid-template-columns: 7fr 10fr; 
+    grid-template-rows: 1fr; 
+    width: 95%;
+    max-width: 130pc;
+    margin: 38px auto;
+  }
+
+  .dashboard{
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 346px;
+    height: 560px;
+    background: rgb(250, 250, 252);
+    color: black;
+  }
+  
+  .Glass{
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: auto;
+    backGround-color: rgba(2, 248, 248, 0.22);
+    backdrop-filter: blur(3px);
+    border: solid 1px (255, 255, 255, 05);
+    border-radius: 10px;
+    width: 950px;
+    height: 560px;
+  }
   
   
   /*.footer{
@@ -240,27 +269,8 @@ list-style: none;
   float:right ;
 }
 */
-.dashboard{
-  position: absolute;
-  width:250px;
-  height:100%;
-  background: rgb(21, 22, 105);
-  color: black;
 
-
-}
-
-.Glass{
-  backGround-color: rgba(162, 217, 226, 0.226);
-  height:879px;
-  backdrop-filter: blur(10px);
-  border: solid 1px (255, 255, 255, 05);
-  border-radius: 10px;
-  width: 70%;
-  left: 0 ;
-  display:flex;
-  margin:0 auto;
  
-}
+
 
 
