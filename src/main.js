@@ -9,7 +9,6 @@ const template=document.getElementById("templateCard");
 
 window.onload = () => mostraPokemon(data.pokemon, fragment, template, container);
 
-
 function limpiar(){ 
     let nodosEliminar=document.querySelectorAll(".card");
     nodosEliminar.forEach(nodo => nodo.remove());

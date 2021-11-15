@@ -72,6 +72,7 @@ input:focus{
     border-color: rgb(6, 32, 70);
     border-style: solid;
     border-width: 3px;
+
     width: 200px;
     min-height: 500px;
     border-radius: 12px 12px 0px 0px;

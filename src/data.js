@@ -11,7 +11,7 @@ export const mostraPokemon = (pokemon, fragment, template, container) => {
   container.appendChild(fragment);
 };
 
-export const buscarPokemon = (pokemon, input, fragment, template,container) => {
+export const buscarPokemon = (pokemon, input, fragment, template, container) => {
 
   for(let i=0;i<pokemon.length;i++){
   if(pokemon[i].name.includes(input)){
@@ -22,8 +22,7 @@ export const buscarPokemon = (pokemon, input, fragment, template,container) => {
       
       const clone=template.content.cloneNode(true);
       fragment.appendChild(clone); 
-      }
-      }
-     
+    }
+  }
       container.appendChild(fragment);
 };
