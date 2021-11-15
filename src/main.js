@@ -55,7 +55,7 @@ text_click.addEventListener("click", (e)=>{
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
 });
-
+/*---------------------------------------se trabajan los países*/
 let country= rio_teams(data).sort();  //trayendo a los países y lo ordemo
 let countryCounter= timesRepeated(country); //trayendo la función que me hace el recuento
 let finalCountry= Object.entries(countryCounter); //convirtiendo a array
@@ -66,16 +66,17 @@ for( let i=0; i<finalCountry.length; i++){
   country_screen.innerHTML= finalCountry[i].join("<br>")+ " athlete(s)";
   document.getElementById("hereCountries").appendChild(country_screen)
 }
-let sports= data["athletes"];
-let result =sports.reduce(
+/*--------------------------------se trabajan los deportes y eventos*/
+let sports= data["athletes"]; //utilizando solo los atletas
+let result =sports.reduce(       //un objeto con los deportes y las coincidencias de los eventos
   (acc, element) => 
   Object.assign(acc, {[element.sport]:(acc[element.sport] || [])
     .concat([element.event])
   }), {}
   )
 
-  let arr= Object.entries(result).sort();
-  const tableBody= document.getElementById("tableData");
+  let arr= Object.entries(result).sort();//ordenando 
+  const tableBody= document.getElementById("tableData"); //me trae el body de la tabla
   let dataHTML= "";
 
   for(const [key,value] of Object.values(arr)){
@@ -85,12 +86,13 @@ let result =sports.reduce(
             <tr>
            `;
 tableBody.innerHTML= dataHTML;
-// console.log(dataHTML);  
+ 
 }
 
-const searchSport= document.getElementById("search");
+const searchSport= document.getElementById("search");  //el buscador de deportes
 searchSport.addEventListener("keyup", (e)=> {
-  var filter, table, tr, td, i, txtValue;
+
+  let filter, table, tr, td, i, txtValue;
   filter = searchSport.value.toLowerCase();
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
@@ -156,15 +158,16 @@ const prueba = ()=>{
 }
 prueba()
 
-///////////////////////////código de los deportistas con diferentes medallas
-let variousMedals =Object.entries(sports.reduce(
+/*--------------------------------código de los deportistas con diferentes medallas*/
+
+let variousMedals =Object.entries(sports.reduce(    //un array con los nombres y acumulando los eventos y medallas
   (acc, element) => 
   Object.assign(acc, {[element.name]:(acc[element.name] || [])
     .concat([element.event]).concat([element.medal])
   }), {}
   ));
 
-  let medal_athlete= document.getElementById("hereAthletes_multiple_medals");
+  let medal_athlete= document.getElementById("hereAthletes_multiple_medals");//donde se almacenará la información
 
   for(const [key, value] of Object.values(variousMedals)){
     if(value.length >2){
@@ -178,8 +181,8 @@ let variousMedals =Object.entries(sports.reduce(
                   medal_athlete.appendChild(dataAthleteMedal);  
     }
   }
-//  console.log(medal_athlete)
-let searchM_winners= document.getElementById("searchMultipleWinners");
+
+let searchM_winners= document.getElementById("searchMultipleWinners");//el buscador 
 
 searchM_winners.addEventListener("keyup", (e)=>{
   //console.log(e)
