@@ -36,8 +36,22 @@ function fetchPokemon() {
       buscarPokemon(data);
       filtrarTiposPokemon(data)
       filtrarRarezaPokemon(data)
+      arrayGeneral(data.pokemon)
     });
 }
+
+
+function arrayGeneral(data){
+  let pruebita=data
+  // console.log(pruebita)
+
+return pruebita
+}
+
+const hola=arrayGeneral()
+
+console.log(hola)
+
 
 
 function handleDivRegion(data) {
