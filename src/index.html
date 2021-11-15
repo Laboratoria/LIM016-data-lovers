@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
     
-   <body>   
+    
 
     <!-- dasboard contiene el menu para navegar por todas las secciones, el logo y los iconos-->
-      <nav class="dashboard">
+      <nav class="dashboard" >
 
         <div class="conteinerLogo">
           <div class="img-logo">
@@ -25,7 +25,7 @@
           <div class="iconYoutube"></div>
         </div>
 
-        <div class="boton-menu">
+        <div class="boton-menu-colapsed" id="menu" >
 
           <div class="divcontenedorboton">
             <div class="botonfilmo">
@@ -53,16 +53,17 @@
 
         </div>
       </nav>
-
-
-      <!--Glass contiene toda la data-->
+    
+   
+      <body> 
+      <!--Glass contiene toda la data  --> 
       <div class="Glass">
 
-        <div class="portada" id="portada">
+        <div class="portada" id="portada" style=>
           <h1>PORTADA</h1>
         </div>
 
-        <div class="divFilmo">
+        <div class="divFilmo" id="filmo" style="display:none">
 
           <div class="divFilmoTitle">
             <div class="filmoTittle">
@@ -73,53 +74,53 @@
           <div class="divbtnsFilter">
             <ul class=navBtn> 
 
-              <li><a id="">Directores</a>
+              <li><button id="">Directores</button>
                 <ul>
-                    <li><a id="">Hayao Miyazaki</a></li>
-                    <li><a id="">Hiroyuki Morita</a></li>
-                    <li><a id="">Gorō Miyazaki</a></li>
-                    <li><a id="">Hiromasa Yonebayashi</a></li>
-                    <li><a id="">Isao Takahata</a></li>
-                    <li><a id="">Yoshifumi Kondō</a></li>
+                      <li><button id="" type="button">Hayao Miyazaki</button></li>
+                      <li><button id="" type="button" >Hiroyuki Morita</button></li>
+                      <li><button id="" type="button" >Gorō Miyazaki</button></li>
+                      <li><button id="" type="button" >Hiromasa Yonebayashi</button></li>
+                      <li><button id="" type="button" >Isao Takahata</button></li>
+                      <li><button id="" type="button" >Yoshifumi Kondō</button></li>
                 </ul>
               </li>
-              <li><a id="">Productores</a>
-              <ul>
-                    <li><a id="">Toshio Suzuki</a></li>
-                    <li><a id="">Hayao Miyazaki</a></li>
-                    <li><a id="">Toru Hara</a></li>
-                    <li><a id="">Yoshiaki Nishimura</a></li>
-                    <li><a id="">Isao Takahata</a></li>
-              </ul>
+              <li><button id="">Productores</button>
+                  <ul>
+                      <li><button id="">Toshio Suzuki</button></li>
+                      <li><button d="">Hayao Miyazaki</button></li>
+                      <li><button id="">Toru Hara</button></li>
+                      <li><button id="">Yoshiaki Nishimura</button></li>
+                      <li><button id="">Isao Takahata</button></li>
+                  </ul>
               </li>
-              <li><a id="">Año de Lanzamiento</a>
-                <ul>
-                  <li><a id="">1986 - 1990</a></li>
-                  <li><a id="">1991 - 1995</a></li>
-                  <li><a id="">1997 - 2000</a></li>
-                  <li><a id="">2001 - 2005</a></li>
-                  <li><a id="">2006 - 2010</a></li>
-                  <li><a id="">2011 - 2015</a></li>
-            </ul>
+              <li><button id="">Año de Lanzamiento</button>
+                 <ul>
+                    <li><button id="">1986 - 1990</button></li>
+                    <li><button id="">1991 - 1995</button></li>
+                    <li><button id="">1997 - 2000</button></li>
+                    <li><button id="">2001 - 2005</button></li>
+                    <li><button id="">2006 - 2010</button></li>
+                    <li><button id="">2011 - 2015</button></li>
+               </ul>
               </li>
-              <li><a id="">Score</a>
+              <li><button id="">Score</button>
                 <ul>
-                  <li><a id="">41 - 78</a></li>
-                  <li><a id="">83 - 91</a></li>
-                  <li><a id="">92 - 95</a></li>
-                  <li><a id="">96 - 100</a></li>
+                  <li><button id="">41 - 78</button></li>
+                  <li><button id="">83 - 91</button></li>
+                  <li><button id="">92 - 95</button></li>
+                  <li><button id="">96 - 100</button></li>
                 </ul>
               </li>
-              <li><a id="">Clean</a></li>
+              <li><button id="">Clean</button></li>
           </div>
 
           <div class="conteinerFilmo">
-            <!--Manipulacion dinamica del DOM-->
+            <!--Manipulacion dinamica del DOM -->
           </div>
         </div>
 
         
-        <div class="divPeople">
+        <div class="divPeople" id="persona" style="display:none">
 
           <div class="divPeopleTitle">
             <div class="peopleTittle">
@@ -130,89 +131,90 @@
           <div class="divbtnsFilter">
             <ul class=navBtn> 
 
-              <li><a id="">Género</a>
+              <li><button id="">Género</button>
                 <ul>
-                    <li><a id="">Mujer</a></li>
-                    <li><a id="">Hombre</a></li>
-                    <li><a id="">NA</a></li>
+                    <li><button id="">Mujer</button></li>
+                    <li><button id="">Hombre</button></li>
+                    <li><button id="">NA</button></li>
                 </ul>
               </li>
-              <li><a id="">Color de Ojos</a>
+              <li><button id="">Color de Ojos</button>
               <ul>
-                    <li><a id="">Oscuros</a>
+                    <li><button id="">Oscuros</button>
                       <ul>
-                        <li><a id=""> Marrón </a>"></li>
-                        <li><a id=""> Marrón Oscuro </a>"></li>
-                        <li><a id=""> Marrón Oscuro Negro </a>"></li>
-                        <li><a id=""> Negro </a>"></li>
+                        <li><button type="button" id=""> Marrón</button> </li>
+                        <li><button type="button" id=""> Marrón Oscuro</button></li>
+                        <li><button type="button" id=""> Marrón Oscuro Negro </button> </li>
+                        <li><button type="button" id=""> Negro </button></li>
                         </ul> 
                     </li>
-                    <li><a id="">Otros Colores</a>
+                    <li><button id="">Otros Colores</button>
                       <ul>
-                        <li><a id=""> Gris </a>></li>
-                        <li><a id=""> Amarrillo </a>"></li>
-                        <li><a id=""> Hazel </a></li>
-                        <li><a id=""> Rojo </a></li>
-                        <li><a id=""> Verde </a></li>
-                        <li><a id=""> Verde Claro </a></li>
-                        <li><a id=""> Azules </a></li>
-                        <li><a id=""> Violetas </a></li>
+                        <li><button type="button" id=""> Gris </button> </li>
+                        <li><button type="button" id=""> Amarrillo </button></li>
+                        <li><button type="button" id=""> Hazel </button></li>
+                        <li><button type="button" id=""> Rojo </button></li>
+                        <li><button type="button" id=""> Verde </button> </li>
+                        <li><button type="button" id=""> Verde Claro </button> </li>
+                        <li><button type="button" id=""> Azules </button> </li>
+                        <li><button type="button" id=""> Violetas </button> </li>
                         </ul> 
                     </li>
-                    <li><a id="">NA</a></li>
+                    <li><button id="">NA</button></li>
               </ul>
               </li>
-              <li><a id="">Edad</a>
+              <li><button id="">Edad</button>
                 <ul>
-                  <li><a id="">0 - 10</a></li>
-                  <li><a id="">11 - 15</a></li>
-                  <li><a id="">16 - 20</a></li>
-                  <li><a id="">Adultos</a>
+                  <li><button type="button" id="">0 - 10</button></li>
+                  <li><button type="button"id="">11 - 15</button></li>
+                  <li><button type="button" id="">16 - 20</button></li>
+                  <li><button type="button" id="">Adultos</button></li>
                     <ul>
-                    <li><a id=""> 21 - 30 </a>"></li>
-                    <li><a id=""> 31 - 40 </a>"></li>
-                    <li><a id=""> 41 - 50 </a>"></li>
-                    <li><a id=""> 51 - 59 </a>"></li>
+                    <li><button type="button" id=""> 21 - 30 </button></li>
+                    <li><button type="button" id=""> 31 - 40 </button></li>
+                    <li><button type="button" id=""> 41 - 50 </button></li>
+                    <li><button type="button" id=""> 51 - 59 </button></li>
                     </ul> 
                   </li>
                   <li><a id="">Adulto Mayor</a>
                     <ul>
-                      <li><a id=""> 60 - 70 </a>"></li>
-                      <li><a id=""> 71 - 82 </a>"></li>
-                      <li><a id=""> 83 - 82 </a>"></li>
+                      <li><button type="button" id=""> 60 - 70 </button></li>
+                      <li><button type="button" id=""> 71 - 82 </button></li>
+                      <li><button type="button" id=""> 83 - 82 </button></li>
                       </ul>
                   </li>
-                  <li><a id=""> Edades Superiores </a></li>
-                  <li><a id=""> No Especificado </a></li>
+                  <li><button id=""> Edades Superiores </button></li>
+                  <li><button id=""> Edades Superiores </button></li>
+                  <li><button id=""> No Especificado </button></li>
             </ul>
               </li>
-              <li><a id="">Especie</a>
+              <li><button id="">Especie</button>
                 <ul>
-                  <li><a id=""> Humano </a></li>
-                  <li><a id=""> Espíritu</a></li>
-                  <li><a id=""> Deidad </a></li>
-                  <li><a id=""> Animales </a>
+                  <li><button type= button id=""> Humano </button> </li>
+                  <li><button type= button id=""> Espíritu</button></li>
+                  <li><button type= button id=""> Deidad </button> </li>
+                  <li><button type= button  id=""> Animales </button></li>
                     <ul>
-                      <li><a id=""> Lobo </a></li>
-                      <li><a id=""> Gato </a></li>
-                      <li><a id=""> Alce Rojo </a></li>
-                      <li><a id=""> Perro Mapache </a></li>
-                      <li><a id=""> Pájaro </a></li>
+                      <li><button type= button id="" > Lobo </button> </li>
+                      <li><button type= button id="" > Gato </button></li>
+                      <li><button type= button id=""> Alce Rojo </button> </li>
+                      <li><button type= button id=""> Perro Mapache </button></li>
+                      <li><button type= button id=""> Pájaro </button></li>
                       </ul>
                   </li>
-                  <li><a id=""> NA </a></li>                                                                     
+                  <li><button id=""> NA </button></li>                                                                     
                 </ul>
               </li>
-              <li><a id="">Clean</a></li>
+              <li><button id="">Clean</button></li>
           </div>
 
           <div class="containerPeople">
-            <!--Manipulacion dinamica del DOM-->
+            <!--Manipulacion dinamica del DOM -->
           </div>
         </div>
 
 
-        <div class="divVehicles">
+        <div class="divVehicles" id="vehiculos" style="display:none">
 
           <div class="divVehiclesTitle">
             <div class="vehiclesTittle">
@@ -223,42 +225,42 @@
           <div class="divbtnsFilter">
             <ul class=navBtn> 
 
-              <li><a id=""> Tipo de Vehículo </a>
+              <li><button id=""> Tipo de Vehículo </button>
                 <ul>
-                    <li><a id=""> Aéreo </a>
+                    <li><button id=""> Aéreo </button>
                       <ul>
-                        <li><a id=""> Castillo Móvil </a></li>
-                        <li><a id=""> Aeroplano </a></li>
-                        <li><a id=""> Avión de Guerra </a></li>
-                        <li><a id=""> Dirigible </a></li>
+                        <li><button id=""> Castillo Móvil </button></li>
+                        <li><button id=""> Aeroplano </button></li>
+                        <li><button id=""> Avión de Guerra </button></li>
+                        <li><button id=""> Dirigible </button></li>
                     </ul>
                     </li>
-                    <li><a id=""> Marítimo </a>
+                    <li><button id=""> Marítimo </button>
                       <ul>
-                        <li><a id=""> Barco </a></li>
-                        <li><a id=""> Barco de Batalla </a></li>
+                        <li><button id=""> Barco </button></li>
+                        <li><button id=""> Barco de Batalla </button></li>
                     </ul>
                     </li>
-                    <li><a id=""> Longitud </a>
+                    <li><button id=""> Longitud </button>
                       <ul>
-                        <li><a id=""> 5 - 10 </a></li>
-                        <li><a id=""> 11 -20 </a></li>
-                          <li><a id=""> 1000 </a></li>
-                          <li><a id=""> NA </a></li>
+                        <li><button id=""> 5 - 10 </button></li>
+                        <li><button id=""> 11 -20 </button></li>
+                          <li><button id=""> 1000 </button></li>
+                          <li><button id=""> NA </button></li>
                       </ul>
               </li>
-              <li><a id="">Clean</a></li>
+              <li><button id="">Clean</button></li>
               </ul>
               </li>
           </div>
 
           <div class="conteinerVehicles">
-            <!--Manipulacion dinamica del DOM-->
+            <!--Manipulacion dinamica del DOM
           </div>
         </div>
 
 
-        <div class="divLocations">
+        <div class="divLocations" id="locations"  style="display:none">
 
           <div class="divLocationsTitle">
             <div class="locationsTittle">
@@ -269,62 +271,32 @@
           <div class="divbtnsFilter">
             <ul class=navBtn> 
 
-              <li><a id=""> Clima </a>
+              <li><button id=""> Clima </button>
                 <ul>
-                    <li><a id="">Tropical</a></li>
-                    <li><a id="">Húmedo</a></li> 
-                    <li><a id="">Cálido</a></li>
-                    <li><a id="">Leve</a></li>
-                    <li><a id="">Lluvioso</a></li>
-                    <li><a id="">Continental</a></li>
-                    <li><a id="">De Todo Tipo</a></li>
+                    <li><button id="">Tropical</button></li>
+                    <li><button  id="">Húmedo</button></li> 
+                    <li><button  id="">Cálido</button></li>
+                    <li><button  id="">Leve</button></li>
+                    <li><button  id="">Lluvioso</button></li>
+                    <li><button  id="">Continental</button></li>
+                    <li><button  id="">De Todo Tipo</button></li>
                 </ul>
               </li>
-              <li><a id="">Terrenos</a>
+              <li><button id="" id="">Terrenos</button>
               <ul>
-                <li><a id="">  </a></li>
-                <li><a id=""> Montañoso </a></li>
-                <li><a id=""> Ciudad </a></li>
+                <li><button id="">Mar</button></li>
+                <li><button  id=""> Montañoso </button></li>
+                <li><button  id=""> Ciudad </button></li>
               </ul>
               </li>
-              <li><a id="">Clean</a></li>
+              <li><button id="">Clean</button></li>
               </ul>
           </div>
 
-          <div class="conteinerLocations">
-            <!--Manipulacion dinamica del DOM-->
+          <div class="conteinerLocations">-->
+            <!--Manipulacion dinamica del DOM
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       </div>
       <div class="divContainerFooter">
@@ -340,8 +312,8 @@
           </div>
           <div class="divcolumna3"></div>
         </div>
-      </div>
-
+      </div>-->
+       
     
     <script src="main.js" type="module"></script>
     </body>
