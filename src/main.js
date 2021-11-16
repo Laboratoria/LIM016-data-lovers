@@ -3,6 +3,12 @@ import data from './data/ghibli/ghibli.js';
 
 /*botones para  ingresar a cada seccion*/
 
+
+import {
+  filtrarNombre, ordenarCampeones, filtrandoRoles, calculoStats,
+} from './data.js';
+
+
 document.getElementById("filmografia").addEventListener("click", ()=>{
     document.getElementById("filmo").style.display="block";
     document.getElementById("persona").style.display="none";
@@ -93,7 +99,7 @@ return template;
 
 
 
-/*const intento =data.films[0].locations;
+const intento =data.films[0].locations;
 intento.forEach((el) => {
   const createElement= document.createElement("div")
   const intentoDos =data.films;
@@ -119,7 +125,7 @@ createElement.innerHTML= template;
 containerLocation.appendChild(createElement);
 createElement.appendChild(createDiv)
 return template;
-})*/
+})
 
 
 let arrayVehicules = [];
