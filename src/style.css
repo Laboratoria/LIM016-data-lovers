@@ -254,17 +254,17 @@ ul.slider li:target {
     opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
 }
 
-.menu{
+.menuSlider{
   text-align: center;
   margin: 20px;
 }
 
-.menu li{
+.menuSlider li{
   display: inline-block;
   text-align: center;
 }
 
-.menu li a{
+.menuSlider li a{
   display: inline-block;
   color: white;
   text-decoration: none;
