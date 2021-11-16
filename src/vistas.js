@@ -80,6 +80,8 @@ btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
   document.querySelector("#divRarezaPokemon").style.display = "none";
   document.querySelector("#container-stats").style.display = "none";
   document.querySelector("#egg").style.display="none";
+  document.querySelector("#pokedex").style.display = "block";
+
 
   if(document.querySelector("#container-filtro").className=="container-filtro"){
     document.querySelector("#container-filtro").className="container-filtro2"
@@ -109,7 +111,7 @@ btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VIS
   if(document.querySelector("#container-filtro").className=="container-filtro"){
     document.querySelector("#container-filtro").className="container-filtro2"
   }
-  
+
 
   btnRegion.className = "activeButton";
   btnPokedex.className = "";
@@ -154,7 +156,7 @@ btnStats.addEventListener("click", () => { //----------------PASAR A LA VISTA RA
   document.querySelector("#divRegionPokemon").style.display = "none";
   document.querySelector("#pokedex").style.display = "none";
   document.querySelector("#container-stats").style.display = "block";
-  
+
 
   btnRareza.className = "";
   btnRegion.className = "";

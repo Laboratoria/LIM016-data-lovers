@@ -54,7 +54,7 @@ new Chart(ctx, {
         borderColor: ["#2d3436"],
         borderWidth: 1,
         hoverBorderWidth: 0,
-
+        
       },
     ],
   },
@@ -160,7 +160,6 @@ new Chart(rarezaPoke, {
         display: true,
         labels: {
           color: "#2d3436",
-
         },
       },
     },

@@ -12,7 +12,6 @@ export function filtarCp(tipoCp, arrayCambiante) {
       return -1;
     }
   });
-
   if (tipoCp == "min") {
     return arrayCambiante;
   } else {
@@ -26,28 +25,19 @@ export function rarezaPokemon(rarezaP, arrayPokemon) {
   );
   return arrayRareza;
 }
-
 //orden alfabetico de pokemones
-
 export function ordenAlfaNumerico(typeOrden, arrayCambiante) {
   if (typeOrden == "az" || typeOrden == "za") {
-
       arrayCambiante.sort((a, b) => {
         if (a.name < b.name)
-
         {return -1}
       })
   if (typeOrden=="az") {
-
-        return arrayCambiante
-      }
+        return arrayCambiante}
       else{
         return arrayCambiante.reverse();
       }
-
     }
-
-
   else {
     arrayCambiante.sort((a, b) => {
       if (a.num < b.num) {
@@ -70,6 +60,7 @@ export function typePokemones(tipoPokemon, arrayPokemon) {
   return tipos;
 }
 
+
 //region de pokemones
 export function regionFuncion(regionP, arrayPokemon) {
   let array = [];
@@ -80,6 +71,7 @@ export function regionFuncion(regionP, arrayPokemon) {
   }
   return array;
 }
+
 
 //buscador de pokemon
 export function buscarPoke(texto, arrayPokemon) {

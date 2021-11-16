@@ -44,7 +44,7 @@ body {
   padding-left: 1em;
 }
 .menu {
-  display: flex;
+  display:flex;
   justify-content: space-between;
   list-style: none;
   padding-right: 30px;
@@ -71,11 +71,11 @@ body {
   transition: 0.5s;
 }
 
-#toggle {
+#toggle{
   color: white;
-  background: none;
+  background:none;
   border: none;
-  font-size: 20px;
+  font-size:20px;
   padding: 12px 0px;
   display: none;
 }
@@ -92,12 +92,12 @@ body {
   box-shadow: 0 2px 4px black;
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px){
   .navegador {
     height: 3em;
   }
   .navegador .logo {
-    width: 4.5em;
+    width:4.5em;
     padding: 10px 10px;
   }
   .menu {
@@ -118,10 +118,10 @@ body {
     padding: 5px 0px;
     height: calc(100% - 3em);
     overflow-y: auto;
-    left: 100%;
+    left:100%;
     transition: left 0.5s ease;
   }
-  .menu li {
+.menu li{
     line-height: 15px;
   }
 
@@ -129,14 +129,14 @@ body {
     margin: 2em 0em;
     height: content;
     width: 10em;
-    background: none;
+    background:none;
     color: white;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     border-radius: 10px;
   }
-  /*
+/*
   .navegador button:hover {
     text-decoration: underline;
     font-size: 0.9em;
@@ -151,7 +151,7 @@ body {
     margin-right: 4%;
     height: 4em;
   }
-  .navegador li button {
+  .navegador li button{
     background: none;
   }
   .navegador .activeButton,
@@ -161,11 +161,11 @@ body {
     font-weight: bold;
     box-shadow: none;
   }
-  #toggle {
+#toggle{
     display: block;
   }
-  .nav-menu_visible {
-    left: 0%;
+  .nav-menu_visible{
+    left:0%;
   }
 }
 /* VISTA DE LA PAGINA DE INICIO */
@@ -226,6 +226,7 @@ body {
   color: white;
 }
 
+
 /* CARRUSEL */
 
 .parrafoCarrusel{
@@ -236,8 +237,6 @@ body {
   font-size: 1.2em;
   width: 30%;
 }
-
-
 .carrusel {
   width: 100%;
   display: flex;
@@ -245,31 +244,35 @@ body {
   align-items: center;
   position: relative;
 }
-
-.carrusel-items {
+/* .carrusel:hover{
+} */
+.carrusel-items{
   display: flex;
   overflow-x: hidden;
   overflow-y: hidden;
   padding: 20px 0px;
   justify-content: center;
   height: 50%;
-
 }
+.carrusel-item{
+min-width: 20%;
+max-width: 20%;
+min-height: 40%;
+outline: 3px solid black;
+/* position: relative; */}
 .carrusel-item {
   min-width: 20%;
   max-width: 20%;
   max-height: 15%;
   outline: 0px solid black;
   background: #3B3B98;
-
 }
-
-.carrusel-item img {
+.carrusel-item img{
   width: 100%;
+  height: 100%;
   height: 60%;
   object-fit: cover;
 }
-
 .contenido {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -282,7 +285,6 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
-
 .contenido2 {
   display: flex;
   justify-content: center;
@@ -290,19 +292,7 @@ body {
   margin: auto;
 }
 
-.carrusel-item h4 {
-  /* position: absolute;
-  top: 50%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%); */
-}
 
-.carrusel-item button {
-  /* position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-}
 
 .carrusel-item:hover {
   transform: scale(1.2);
@@ -1093,10 +1083,10 @@ table {
 }
 /* DANDO ESTILO A LA BARRA DE BUSCAR*/
 
-.container-botones-filtro {
+.container-botones-filtro{
   display: flex;
-  justify-content: space-between;
-  margin-left: auto;
+  justify-content:space-between;
+
 }
 .container-filtro-padre{
   display: flex;
@@ -1113,7 +1103,7 @@ table {
 .container-filtro2 select{
   margin: 0 10px;
 }
-.container-buscar {
+.container-buscar{
   display: flex;
   justify-content:right;
   width:100%;
@@ -1163,8 +1153,11 @@ table {
   border-radius: 50%;
   background-color: rgb(2, 22, 99);
   color: white;
+  margin-right: 5px;
 }
+
 #botonBuscar:hover {
+  background-color: black;
   transition: 0.3s;
 }
 
@@ -1265,6 +1258,8 @@ table {
   margin-left: calc(100% - 70%);
 }
 
+
+
 #divRarezaPokemon div img {
   width: 90%;
   justify-content: center;
@@ -1272,7 +1267,7 @@ table {
 
 .rarezaDiv {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
   font-weight: bold;
   margin: auto;
   font-size: 0.8em;
@@ -1292,12 +1287,11 @@ table {
   background-attachment: fixed;
   min-height: 100vh;
 }
-#container-stats h1 {
-  font-size: 40px;
+#container-stats h1{
+  font-size:40px;
   font-weight: bold;
   background: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
   /* clip informático */
-  margin: auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-filter: drop-shadow(3px 3px 1px rgba(124, 124, 124, 0.59));
@@ -1321,6 +1315,7 @@ table {
 
 .container-chart2,
 .container-chart4 {
+
   width: 60%;
   margin:auto;
   background: rgba(225, 225, 225, 0.611);
@@ -1328,7 +1323,7 @@ table {
   padding: 2em;
   border-radius: 30px;
   height: 100%;
-  margin: auto;
+
 }
 
 .container-title{
@@ -1386,33 +1381,22 @@ table {
     margin-top: 200px;
   }
 
+
   /*FORMATO AL CHART*/
 
-  .container-chart1,
-  .container-chart3 {
-    width: 50vw;
-    margin: 2em;
-    margin: auto;
-  }
+.container-chart1,
+.container-chart3 {
+  width: 50vw;
+  margin: 2em;
+  margin: auto;
+}
 
-  .container-chart2,
-  .container-chart4 {
-    width: 70vw;
-    margin: 2em;
-    margin: auto;
-  }
-
-  .parrafoCarrusel{
-
-    font-size: 0.8em;
-    width: 50%;
-  }
-
-  .carrusel-item {
-font-size: 0.5em;
-    /* color: white; */
-    font-weight: 100;
-  }
+.container-chart2,
+.container-chart4 {
+  width: 70vw;
+  margin: 2em;
+  margin: auto;
+}
 
 }
 
@@ -1493,19 +1477,22 @@ font-size: 0.5em;
     width: 100vw;
   }
 
-  /*FORMATO AL CHART*/
 
-  .container-chart1,
-  .container-chart3 {
-    width: 90vw;
-    margin: 2em;
-    margin: auto;
-  }
 
-  .container-chart2,
-  .container-chart4 {
-    width: 100vw;
-    margin: 2em;
-    margin: auto;
-  }
+/*FORMATO AL CHART*/
+
+.container-chart1,
+.container-chart3 {
+  width: 90vw;
+  margin: 2em;
+  margin: auto;
+}
+
+.container-chart2,
+.container-chart4 {
+  width: 100vw;
+  margin: 2em;
+  margin: auto;
+}
+
 }
