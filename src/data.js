@@ -18,7 +18,6 @@ export function filtarCp(tipoCp, arrayCambiante) {
       if (Number(a.stats["max-cp"]) < Number(b.stats["max-cp"])) {
         return -1;
       }
-      return 1;
     });
   }
   return arrayCambiante;

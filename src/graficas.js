@@ -73,7 +73,26 @@ new Chart(ctx, {
           bottom: 10,
         },
       },
-    },
+
+
+
+
+        scales: {
+        yAxes:[{
+        ticks:{
+        beginAtZero:true,
+        fontColor:["rgba(255,255,255)"],
+        }
+        }],
+        xAxes:[{
+        ticks:{
+        fontColor: ["rgba(255,255,255)"],
+        fontSize: ["20"]
+        }
+        }]
+        }
+
+      }
   },
 });
 
@@ -172,6 +191,7 @@ new Chart(rarezaPoke, {
         display: true,
         labels: {
           color: "#2d3436",
+
         },
       },
       title: {
@@ -181,6 +201,9 @@ new Chart(rarezaPoke, {
           top: 10,
           bottom: 10,
         },
+        labels:{
+          color:"#2d3436"
+        }
       },
     },
   },
