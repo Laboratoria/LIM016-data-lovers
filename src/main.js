@@ -643,14 +643,14 @@ export function mostrarPokemon(array) {
       container.appendChild(cardInfo);
 
       evoluciones(
-        array,
+        arrayPokeP,
         prevEvoluciones,
         divTotalEvoluciones,
         nombrePrev,
         array[i]["pokemon-rarity"]
       );
       evoluciones(
-        array,
+        arrayPokeP,
         nextEvolciones,
         divTotalEvoluciones,
         nombreNext,
@@ -665,7 +665,7 @@ export function mostrarPokemon(array) {
   }
 }
 
-function evoluciones(array, arrayP, divTotalEvoluciones, nombre, tipo) {
+function evoluciones(arrayPokeP, arrayP, divTotalEvoluciones, nombre, tipo) {
   // console.log("hola" + arrayP);
   if (arrayP.length > 0) {
     const divGrupoEvol = document.createElement("div");
@@ -681,18 +681,18 @@ function evoluciones(array, arrayP, divTotalEvoluciones, nombre, tipo) {
     divGrupoEvol.appendChild(divGrupoPok);
 
     arrayP.forEach((element) => {
-      for (let i = 0; i < array.length; i++) {
-        if (array[i].name === element) {
+      for (let i = 0; i < arrayPokeP.length; i++) {
+        if (arrayPokeP[i].name === element) {
           const divEvol = document.createElement("div");
           divEvol.classList.add("evol");
 
           const imgEvol = document.createElement("img");
           imgEvol.classList.add("imgEvol");
-          imgEvol.src = array[i].img;
+          imgEvol.src = arrayPokeP[i].img;
 
           const nombreEvol = document.createElement("p");
           nombreEvol.classList.add("nombreEvol");
-          nombreEvol.innerHTML = array[i].name;
+          nombreEvol.innerHTML =arrayPokeP[i].name;
 
           divEvol.appendChild(imgEvol);
           divEvol.appendChild(nombreEvol);
