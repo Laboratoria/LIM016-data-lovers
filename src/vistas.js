@@ -80,6 +80,7 @@ btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
   document.querySelector("#divRarezaPokemon").style.display = "none";
   document.querySelector("#container-stats").style.display = "none";
   document.querySelector("#egg").style.display="none";
+  document.querySelector("#pokedex").style.display = "block";
 
   if(document.querySelector("#container-filtro").className=="container-filtro"){
     document.querySelector("#container-filtro").className="container-filtro2"
