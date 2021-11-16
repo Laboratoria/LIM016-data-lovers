@@ -57,14 +57,14 @@ body {
   background: rgba(19, 7, 97, 0.3);
   color: white;
   font-weight: bold;
-  font-family: "Spartan", sans-serif;
-  font-size: 0.8em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
   border-radius: 10px;
 }
 
 .navegador li button:hover {
   text-decoration: underline;
-  font-size: 0.9em;
+  font-size: 1em;
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   color: black;
   box-shadow: 0 2px 4px black;
@@ -132,8 +132,8 @@ body {
     background:none;
     color: white;
     font-weight: bold;
-    font-family: "Spartan", sans-serif;
-    font-size: 0.9em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
     border-radius: 10px;
   }
 /*   
@@ -141,7 +141,7 @@ body {
     text-decoration: underline;
     font-size: 0.9em;
     background-image:none;
-    color: rgb(51, 51, 51);
+    color: rgb(f51, 51, 51);
     box-shadow: 0 2px 4px black;
     transition: 0.5s;
   }
@@ -472,6 +472,7 @@ transform: scale(1.2);
   text-align: center;
   font-weight: bold;
   text-transform: capitalize;
+  border: 1px solid gray
 }
 
 #region:hover,
@@ -608,40 +609,39 @@ height: 50%;
   background-color: white;
   margin: 0.5em 0.5em;
   border-radius: 20px;
-  height: 73%;
+  height: 74%;
 }
 
 .containerVista h {
   display: block;
+  padding-top: 0.3em;
   text-transform: capitalize;
   font-weight: bold;
   font-size: 22px;
 }
 /* ---------Diseño de los botones de la tarjeta--------------- */
 .botones-tarjetas {
-  display: inline-block;
-  justify-content: space-around;
-  line-height: 4.5em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 97%;
+  margin: 10px auto;
 }
 .botones-tarjetas button {
   background-color: #ebebeb;
-  width: 80px;
-  height: 35px;
+  width: auto;
+  height: 30px;
   border: 0.1px solid rgb(72, 72, 72);
+  margin: 0;
 }
 
-.botones-tarjetas button:hover {
-  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
-  font-weight: bold;
-  box-shadow: 0 2px rgb(5, 5, 5, 0.5);
-  transition: 0.3s;
-}
-
+.botones-tarjetas button:hover,
 .active {
   background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
   font-weight: bold;
-  box-shadow: 0 2px rgb(5, 5, 5, 0.5);
+  box-shadow: 0 1px rgb(5, 5, 5, 0.5);
+  transition: 0.3s;
 }
+
 
 /* DANDO ESTILO A LOS ICONS DE LOS TIPOS DE POKEMONES*/
 .logo-steel {
@@ -742,7 +742,9 @@ height: 50%;
 }
 
 .description p {
-  font-size: 10 px;
+  width: 95%;
+  margin: auto;
+  font-size: 11px;
   text-align: justify;
   padding: 0 10px;
   line-height: 1.4em;
@@ -762,6 +764,7 @@ height: 50%;
   padding-top: 1px;
   justify-content: center;
   align-items: center;
+  line-height:1.5em;
 }
 .candyContainerPadre {
   background-color: #e6e6e6;
@@ -1068,29 +1071,49 @@ table {
 .container-botones-filtro{
   display: flex;
   justify-content:space-between;
-  margin-left: auto;
-}
 
+}
+.container-filtro-padre{
+  display: flex;
+  width: 100%;
+
+}
 .container-filtro{
   display: flex;
   justify-content:left;
-  width:60%;
+  width: 80%;
 }
-.container-filtro select{
-  margin: 0 5px;
+
+.container-filtro select,
+.container-filtro2 select{
+  margin: 0 10px;
 }
 .container-buscar{
   display: flex;
-  justify-content: right;
-  width:40%;
+  justify-content:right;
+  width:100%;
+  padding-right: 30px;
+  align-items: center;
+}
+
+.container-filtro2{
+  display: flex;
+  justify-content:left;
+  margin: auto;
+  width: 50%;
+}
+
+.container-tipo-rareza-region{
+  width: 100%;
 }
 
 #search {
   border: 0.2em solid rgb(97, 97, 97);
   border-radius: 0.3em;
   width: 50%;
-  height: 2.2em;
-  background: rgba(255, 255, 255, 0.556);
+  height: 2.7em;
+  background-color:rgba(255, 255, 255, 0.576);
+  outline: none;
 }
 
 #search:focus {
@@ -1106,13 +1129,16 @@ table {
 }
 
 #botonBuscar {
-  font-size: 1.3em;
-  padding: 0.2em 0.35em;
-  border-radius: 0.2em;
+  position:absolute;
+  
+  font-size: 1.1em;
+  width: 1.7em;
+  height: 1.7em;
+  padding: 0.19em 0.35em;
+  border-radius: 50%;
   background-color: rgb(2, 22, 99);
   color: white;
-  margin-right: 25px;
-
+  margin-right: 5px;
 }
 
 #botonBuscar:hover {
@@ -1122,8 +1148,8 @@ table {
 
 /* BOTON PARA IR ARRIBA */
 #button-up {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 5.5rem;
+  height: 5.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1154,14 +1180,15 @@ table {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   justify-content: center;
-  width: 55%;
-  margin: auto;
+  width: 80%;
+  margin-left: calc(100% - 85%);
 }
 
 .tipoDiv {
   justify-content: center;
   margin: auto;
-  font-size: 0.8em;
+  font-size: 0.7em;
+  font-weight:bold;
   text-align: center;
 }
 
@@ -1187,22 +1214,23 @@ table {
 #divRegionPokemon {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  width: 30%;
-  margin: auto;
+  justify-content: space-between;
+  width: 50%;
+  margin-left: calc(100% - 55%);
 }
 
 #divRegionPokemon div img {
-  width: 100%;
+  width: 80%;
   justify-content: center;
 }
+
 .regionDiv {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   font-weight: bold;
   margin: auto;
-  font-size: 1em;
-  text-align: center;
+  font-size: 0.8em;
+    align-items: center;
 }
 
 /*--------------por rareza------------*/
@@ -1211,8 +1239,8 @@ table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  width: 45%;
-  margin: auto;
+  width: 60%;
+  margin-left: calc(100% - 70%);
 }
 
 
@@ -1227,8 +1255,8 @@ table {
   grid-template-columns: repeat(2,1fr);
   font-weight: bold;
   margin: auto;
-  font-size: 1em;
-  text-align: center;
+  font-size: 0.8em;
+  align-items: center;
   width: 100%;
 }
 
@@ -1239,7 +1267,7 @@ table {
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
-  background-image: url("./img/fondo-intro.jpg");
+  background-image: url("./img/GYM3.jpg");
   background-size: 100% 100%;
   background-attachment: fixed;
   min-height: 100vh;
@@ -1247,23 +1275,26 @@ table {
 #container-stats h1{
   font-size:40px;
   font-weight: bold;
-  background: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+  background: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
   /* clip informático */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(3px 3px 1px rgba(124, 124, 124, 0.59));
   text-align: center;
   align-items: center;
+  margin-top: 25px;
 } 
 .container-chart1,
 .container-chart3 {
   width: 25%;
   margin-top: 3em;
+  margin-bottom: 3em;;
+  margin: 3em auto;
+  background: rgba(165, 212, 255, 0.611);
   
-  margin-left: 5%;
-  background:rgba(28, 28, 28, 0.357);
   padding: 2em;
   border-radius: 30px;
-
+  font-style: italic;
 
 }
 
@@ -1271,12 +1302,24 @@ table {
 .container-chart4 {
 
   width: 60%;
-  background: rgba(13, 0, 94, 0.357);
-  margin-left:calc(100% - 65%);
+  margin:auto;
+  background: rgba(225, 225, 225, 0.611);
+  
   padding: 2em;
   border-radius: 30px;
   height: 100%;
 
+}
+
+.container-title{
+  font-size:14px;
+  text-align:center;
+  line-height: 1.5em;
+  font-style: normal;
+}
+.title-chart{
+  font-size:15px;
+  font-weight: bold ;
 }
 
 /*FOOTER*/
