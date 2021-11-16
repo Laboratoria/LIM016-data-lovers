@@ -14,6 +14,7 @@ import {start} from './carrusel.js'
 
 start()
 
+
 const container = document.querySelector(".pokemon-container");
 const orden = document.getElementById("orden");
 const cp = document.getElementById("cp");
@@ -35,116 +36,21 @@ function fetchPokemon() {
     .then((resp) => resp.json())
     .then((data) => {
       // let arrayPokemon = data;
-
       mostrarPokemon(data.pokemon);
       handleDivRegion(data);
       eggPokemon(data);
       buscarPokemon(data);
       filtrarTiposPokemon(data)
       filtrarRarezaPokemon(data)
-      arrayGeneral(data.pokemon)
+      // arrayGeneral(data.pokemon)
     });
 }
 
+
+
 const arrayPokeP =  data.pokemon
 
-function arrayGeneral(data){
-  let pruebita=data
-  // console.log(pruebita)
 
-return pruebita
-}
-
-const hola=arrayGeneral()
-
-console.log(hola)
-
-
-
-function handleDivRegion(data) {
-  document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
-    e.preventDefault();
-
-    if (e.target.getAttribute("id")) {
-      container.innerHTML = "";
-      // console.log(e.target.getAttribute('id'))
-      const regionP = e.target.getAttribute("id");
-      const arrayRegionPoke = regionFuncion(regionP, data.pokemon);
-      mostrarPokemon(arrayRegionPoke);
-    }
-  });
-}
-
-//cp
-cp.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const tipoCp = e.target.value;
-  const filtroPoke = filtarCp(tipoCp, arrayCambiante);
-  mostrarPokemon(filtroPoke);
-});
-
-// filtrar pokemon por huevito
-
-function eggPokemon(data) {
-  eggPoke.addEventListener("change", (e) => {
-    container.innerHTML = "";
-    const eggType = e.target.value;
-
-    const arrayEgg = huevitoPokemon(eggType, data.pokemon);
-    mostrarPokemon(arrayEgg);
-  });
-}
-
-//orden alfabetico
-orden.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const typeOrden = e.target.value;
-  const ordenAlfaNum = ordenAlfaNumerico(typeOrden, arrayCambiante);
-  mostrarPokemon(ordenAlfaNum);
-});
-
-//buscar pokemon
-function buscarPokemon(data){
-  search.addEventListener("keyup", () => {
-      container.innerHTML = "";
-      const texto = search.value.toLowerCase();
-      const arrayBuscar = buscarPoke(texto, data.pokemon);
-      mostrarPokemon(arrayBuscar);
-
-});
-}
-
-
-
-function filtrarTiposPokemon(data){
- document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
-  e.preventDefault();
-
-      if (e.target.getAttribute("id")) {
-        container.innerHTML = "";
-        // console.log(e.target.getAttribute('id'))
-        const tipoP = e.target.getAttribute("id");
-        const arraytipoPoke = typePokemones(tipoP, data.pokemon);
-        mostrarPokemon(arraytipoPoke);
-      }
-});
-}
-
-
-function filtrarRarezaPokemon(data){
-
-  document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
-  e.preventDefault();
-
-      let pruebaFetch = data.pokemon;
-      if (e.target.getAttribute("value")) {
-        container.innerHTML = "";
-        const rarezaP = e.target.getAttribute("value");
-        const arrayRarezaPoke = rarezaPokemon(rarezaP, pruebaFetch);
-        mostrarPokemon(arrayRarezaPoke);
-      }
-})
-}
 
 
 // const arrayPokemon = data.pokemon;
@@ -153,6 +59,8 @@ let arrayCambiante = "";
 //-------------funcion que muestra los pokemones
 
 export function mostrarPokemon(array) {
+
+
   arrayCambiante = array;
 
   const numero = document.getElementById("parrafo");
@@ -795,12 +703,101 @@ function evoluciones(array, arrayP, divTotalEvoluciones, nombre, tipo) {
     divTotalEvoluciones.appendChild(divGrupoEvol);
   } else {
     if (tipo == "legendary") {
-      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Legendary</h3><br><img src="./img/poke-legendario.png"></div>`;
+      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Legendary</h3><br><img src="./img/2.png"></div>`;
     } else if (tipo == "mythic") {
-      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Mithic</h3><br><img src="./img/poke-mitico.png"></div>`;
+      divTotalEvoluciones.innerHTML = `<div class="logo"><h3>Pokemon Mithic</h3><br><img src="./img/1.png"></div>`;
     }
   }
 }
+
+
+
+function handleDivRegion(data) {
+  document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    if (e.target.getAttribute("id")) {
+      container.innerHTML = "";
+      // console.log(e.target.getAttribute('id'))
+      const regionP = e.target.getAttribute("id");
+      const arrayRegionPoke = regionFuncion(regionP, data.pokemon);
+      mostrarPokemon(arrayRegionPoke);
+    }
+  });
+}
+
+//cp
+cp.addEventListener("change", (e) => {
+  container.innerHTML = "";
+  const tipoCp = e.target.value;
+  const filtroPoke = filtarCp(tipoCp, arrayCambiante);
+  mostrarPokemon(filtroPoke);
+});
+
+// filtrar pokemon por huevito
+
+function eggPokemon(data) {
+  eggPoke.addEventListener("change", (e) => {
+    container.innerHTML = "";
+    const eggType = e.target.value;
+
+    const arrayEgg = huevitoPokemon(eggType, data.pokemon);
+    mostrarPokemon(arrayEgg);
+  });
+}
+
+//orden alfabetico
+orden.addEventListener("change", (e) => {
+  container.innerHTML = "";
+  const typeOrden = e.target.value;
+  const ordenAlfaNum = ordenAlfaNumerico(typeOrden, arrayCambiante);
+  mostrarPokemon(ordenAlfaNum);
+});
+
+//buscar pokemon
+function buscarPokemon(data){
+  search.addEventListener("keyup", () => {
+      container.innerHTML = "";
+      const texto = search.value.toLowerCase();
+      const arrayBuscar = buscarPoke(texto, data.pokemon);
+      mostrarPokemon(arrayBuscar);
+
+});
+}
+
+
+
+function filtrarTiposPokemon(data){
+ document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
+  e.preventDefault();
+
+      if (e.target.getAttribute("id")) {
+        container.innerHTML = "";
+        // console.log(e.target.getAttribute('id'))
+        const tipoP = e.target.getAttribute("id");
+        const arraytipoPoke = typePokemones(tipoP, data.pokemon);
+        mostrarPokemon(arraytipoPoke);
+      }
+});
+}
+
+
+function filtrarRarezaPokemon(data){
+
+  document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
+  e.preventDefault();
+
+      let pruebaFetch = data.pokemon;
+      if (e.target.getAttribute("value")) {
+        container.innerHTML = "";
+        const rarezaP = e.target.getAttribute("value");
+        const arrayRarezaPoke = rarezaPokemon(rarezaP, pruebaFetch);
+        mostrarPokemon(arrayRarezaPoke);
+      }
+})
+}
+
+
 
 // //cp
 // cp.addEventListener("change", (e) => {

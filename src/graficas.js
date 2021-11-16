@@ -38,6 +38,8 @@ const arrayNumeroTipos = tipos.map((element) => {
   return tipos.length;
 });
 
+
+
 // eslint-disable-line
 const ctx = document.getElementById("myChart1").getContext("2d");
 new Chart(ctx, {
@@ -52,6 +54,7 @@ new Chart(ctx, {
         borderColor: ["#2d3436"],
         borderWidth: 1,
         hoverBorderWidth: 0,
+
       },
     ],
   },
@@ -65,36 +68,10 @@ new Chart(ctx, {
           color: "#2d3436",
         },
       },
-      title: {
-        display: true,
-        text: "GRAFICA N° 1: Datos de pokemon por región",
-        padding: {
-          top: 10,
-          bottom: 10,
-        },
-      },
-
-
-
-
-        scales: {
-        yAxes:[{
-        ticks:{
-        beginAtZero:true,
-        fontColor:["rgba(255,255,255)"],
-        }
-        }],
-        xAxes:[{
-        ticks:{
-        fontColor: ["rgba(255,255,255)"],
-        fontSize: ["20"]
-        }
-        }]
-        }
-
-      }
+    },
   },
 });
+
 
 const ctx2 = document.getElementById("myChart2").getContext("2d");
 new Chart(ctx2, {
@@ -143,14 +120,6 @@ new Chart(ctx2, {
           color: "#2d3436",
         },
       },
-      title: {
-        display: true,
-        text: "GRAFICA N° 2: Datos de pokemon por tipo",
-        padding: {
-          top: 10,
-          bottom: 10,
-        },
-      },
     },
   },
 });
@@ -194,17 +163,6 @@ new Chart(rarezaPoke, {
 
         },
       },
-      title: {
-        display: true,
-        text: 'GRAFICA N° 3: "Datos de pokemon por rareza"',
-        padding: {
-          top: 10,
-          bottom: 10,
-        },
-        labels:{
-          color:"#2d3436"
-        }
-      },
     },
   },
 });
@@ -230,6 +188,7 @@ new Chart(egg, {
         borderColor: ["#2d3436"],
         borderWidth: 1,
         hoverBorderWidth: 0,
+
       },
     ],
   },
@@ -240,14 +199,6 @@ new Chart(egg, {
         display: true,
         labels: {
           color: "#2d3436",
-        },
-      },
-      title: {
-        display: true,
-        text: "GRAFICA N° 4: Datos de pokemon km a recorrer ",
-        padding: {
-          top: 10,
-          bottom: 10,
         },
       },
     },

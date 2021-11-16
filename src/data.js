@@ -63,7 +63,7 @@ return arrayCambiante.reverse()
       }
     });
     return arrayCambiante;
-  } else {
+  } else{
     arrayCambiante.sort((a, b) => {
       if (a.num > b.num) {
         return -1;

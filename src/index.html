@@ -67,7 +67,7 @@
 
 
 
-          <div class="parrafoCarrusel">Pokemones Destacados<img src=""></div>
+          <div class="parrafoCarrusel">Pokemones Destacados<img></div>
           <div class="carrusel">
             <div class="carrusel-items">
 
@@ -508,6 +508,7 @@
       </div>
 
       <p id="parrafo"></p>
+      <p id="hola"></p>
 
       <div class="pokemon-container"></div>
 
@@ -518,20 +519,24 @@
       </div>
     </section>
 
-    <section id="container-stats" style="display: none">
+    <section id="container-stats" style="display:none">
       <h1>ESTADISTICAS POKEMON</h1>
       <div class="container-chart1">
+        <p class="container-title"><span class="title-chart">GRAFICA N°1:</span><br> Datos de pokemon por region</p>
         <canvas class="chart-uno" id="myChart1"></canvas>
       </div>
       <div class="container-chart2">
-        <canvas class="chart-dos" id="myChart2"></canvas>
+        <p class="container-title"><span class="title-chart">GRAFICA N°2:</span> Datos de pokemon por su tipo/naturaleza</p>
+      <canvas class="chart-dos" id="myChart2"></canvas>
       </div>
       <div class="container-chart3">
-        <canvas class="chart-tres" id="rarezaChart"></canvas>
+        <p class="container-title"><span class="title-chart">GRAFICA N°3:</span><br> Datos pokemon por su rareza</p>
+        <canvas class="chart-tres" id="rarezaChart" ></canvas>
       </div>
 
       <div class="container-chart4">
-        <canvas class="chart-cuatro" id="eggChart"></canvas>
+        <p class="container-title"><span class="title-chart">GRAFICA N°4:</span> Cantidad de pokemon por tipo de huevo</p>
+        <canvas class="chart-cuatro" id="eggChart" ></canvas>
       </div>
     </section>
 
@@ -540,5 +545,7 @@
     <script src="main.js" type="module"></script>
     <script src="vistas.js" type="module"></script>
     <script src="graficas.js" type="module"></script>
+
+
   </body>
 </html>
