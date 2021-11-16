@@ -258,18 +258,6 @@ list-style: none;
 } 
 
 
-/*h2 {
-  position: relative;
-  font-size: 2em;
-  font-weight: 10px;
-  margin-bottom: 20px;
-  width: 100%;
-  float:right ;
-}
-*/
-
- 
-/*barra de busqueda*/
 .buscar{
   position: absolute;
   top:20%;
