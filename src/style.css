@@ -87,11 +87,13 @@ body{
       display: flex;
       flex-direction: column;
       width: 340px;
+      height: 300px;
       margin-top: 9px;
       margin-bottom: 9px;
       align-items: center;
     }
     #filmografia, #locations, #personajes, #vehicles {
+      
       background-color: white;
       border-radius: 16px;
       border-color: rgba(0, 0, 0, 0.603);
@@ -124,7 +126,7 @@ body{
 
     }
   
-
+/*
   #filmografia{
     display: flex;
   position: absolute;
