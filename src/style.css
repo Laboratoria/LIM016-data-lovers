@@ -3,45 +3,271 @@
     margin: 0;
     padding: 0;
 }
+/*prueba*/
 
-.todo{   /*donde está encerra la info*/
-    
+
+/*-------------------------*/
+
+.todo{  /* donde está encerra la info */
     font-weight: bold;
-    flex-direction: row;
-    justify-content: space-around;
+    /* flex-direction: row;
+    justify-content: space-around; */
     width: 100%;
-       
-    background-color: rgb(241, 240, 240);
-    /* border-style: solid; */
-}
+    /* background-color: rgb(249, 249, 249);  */
+     /* border-style: solid;*/
+} 
 
 body{
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
-       
-    background-color: rgb(241, 240, 240);
+    /* background-color: rgb(241, 240, 240); */
 }
+
+/*-------------------------------------------HEADER--------------------------------------*/
+header{
+    width: 100%;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #099c3a/*#009933*/;     /*#09d7df   #046ce2*/
+}
+.mascots{
+    width: 10%;   
+    height: 7%
+}
+.page-name{
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(255, 255, 255);   
+    font-size: 4em;
+    padding-right: 14rem;
+    letter-spacing: 0.1em;
+}
+.navBar{
+    background-color: black;  /*#3cfa02*/
+}
+.navBar a{
+    font-size: 40px;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    text-decoration: none;
+    line-height: 1.5em;   
+    letter-spacing: 0.1ex;
+    
+}
+a:hover{
+    color: #3cfa02;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+/*--------------------------------------CONTAINER-ABOUT RIO------------------------------*/
+
+.rio-info{
+    padding: 4rem;
+}
+/* .title-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
 .container{
-    display:block;  /*cambiar a block*/
-    background-color: rgb(241, 240, 240);
+    background-color: rgb(236, 236, 236);
 }
-/* modal*/
+.homeImage{
+    width:100%;
+    height: 100%;
+}
+.homeInfo{
+    padding: 2em;
+    /* border: 0.19rem solid rgb(214, 214, 214) ;*/
+}
+.rio-info-title{
+    font-size: 4ex;
+    font-weight: 900;
+    color: black;
+}
+.info-rio-par{
+    text-align: justify;
+    line-height: 1.4em;
+    font-size: 1em;
+    font-weight: 501;
+}
+.arrow{
+    font-size:1.5rem;
+}
+.link{
+    color:blue;
+    margin-left: 0.8rem;
+    text-align: justify;
+    border-bottom: 0.1em solid blue;
+}
+.link:hover{
+cursor: pointer;
+
+}
+.first-row, .second-row, .third-row{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-bottom: 2.5em;
+    padding: 2em 0 2em 1;
+    background-color: white;
+    width:100%;
+    border-radius: 1.3rem; 
+}
+.slide_img{
+    width:100%;
+    height:100%;
+}
+/*-------------------------------------------------------CONTAINER-EL PROYECTO--------------------------------------------------------------*/
+h2{
+    text-align: left;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-left: 1ex;
+}
+
+.btnBlue{
+    border-bottom: #48c2f3 .3rem solid;
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
+}
+.btnYellow{
+    border-bottom: #4682B4.3rem solid;
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
+    background-color: white;  /*los 4 de abajo aumente*/
+    /* width: 100%; */
+    list-style: none;
+}
+
+/*-------------------Donde se encierra la info de los DEPORTES y EVENTOS----------------*/
+#sports{
+    display:none;
+}
+.sports_container{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+.sports {
+    display:none; /*cambiar a none*/
+}
+.deportes{ /*es el título*/
+    color:   #18286B /*#21368B*/;  /*rgb(11, 10, 68)*/  /*18286B*/
+    font-size: 5rem;
+}
+.img_sport{
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin:auto;
+}
+.searchSports{
+    width:100%;
+    overflow: hidden;
+}
+.search{
+    border-radius: 0.5em ;
+    padding: 1em;
+    width:100%;
+    outline: none;
+    border:0.2rem solid rgb(139, 139, 139);
+}
+html{
+    scroll-behavior: smooth;
+}
+.search:focus{
+    border: 0.2rem solid #18286B ;
+}
+.sportTable{
+    border-collapse: collapse;
+    margin: 1.5rem auto;    
+    width: 100%;
+    font-size: 0.7em;
+    background-color: white;
+    overflow: hidden;
+}
+.sportTable thead tr{
+    background-color: #ffd700;  /*#169385*/ /*rgb(3, 123, 221)*/
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.sportTable td,.sportTable th{
+    text-align: left;
+    padding: 0.7rem 2rem;
+    line-height: 2rem;
+} 
+.sportTable tbody tr{
+    border: 0.2rem solid #ffd700;
+    font-size: 1.5em;
+    border-left: solid 0.4rem #ffd700;  /*rgb(3, 123, 221)*/
+    border-right: solid 0.4rem #ffd700;
+}
+.sportTable tbody tr:hover{  
+    background-color: rgb(230, 253, 253);
+    transform: scale(1.02);
+} 
+
+/*----------------------------Donde se encierra los PAISES-------------------------------*/
+#countries{   /*es el section*/
+    display:none;
+   
+}
+.countries{
+    display:none;
+    display:flex;
+    flex-direction:column;
+}
+.countries_container{
+    padding: 2rem;
+}
+.paises{    /* son los h2, títulos*/
+    color: #39f077 ;/* #6CC45E; */
+    font-size: 5rem;
+}
+.btnGreen{   /*la info de cada uno*/
+    border-bottom: #d0fa5e .3rem solid;
+    margin: 1.5rem;
+    padding: 0.2rem;
+    text-align: center;
+    background-color: white;
+    /* border-radius: 0.5em; */
+    background-color: white;
+}
+.hereCountries{  /*donde están los países*/
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+/*------------------------------------------------------Donde se encierran los ATLETAS-------------------------------*/
+/* --------el MODAL--------*/
 .modal{
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,5); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,5);
+    background-color: rgba(0,0,0,0.4);
   }
 .close{
     color:white;
 }
+/*-------------------------*/
 #cardAthlete{
     display: flex;
     flex-direction: column;
@@ -84,27 +310,30 @@ body{
     display: block;
     margin:auto;
 }
-.img_sport{
-    width: 20%;
-    height: 20%;
-    display: block;
-    margin:auto;
+
+/*-------------------------------------------------------INFO DE LOS  ATLETAS----------------------------*/
+
+#athletes{
+    display:none;
 }
-/*-------------------------------------------los atletas*/
 .athletes{
     display:none;  /*cambiar a none*/
     width: 100%;
 }
 .atletes_container{
-    margin: 0 3rem;
+    padding: 2rem;
 }
 .listAthletes{
     width: 100%;
     display: flex;
     flex-direction: row;
+    padding-left:5rem;
 }
-
-#hereAthletes{
+.atleta{   /*es el título*/
+    color: #FF8000;
+    font-size: 5rem;
+}
+#hereAthletes{   /*donde se encuentra el nombre de c/atleta*/
     width: 100%; 
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -112,281 +341,61 @@ body{
 #hereAthletes:hover{
     cursor: pointer;
 }
-
-#searchWrapper {
+#searchWrapper {  /*el div donde está el buscador*/
     display: flex;
     justify-content: center;    
     position: relative;
 } 
-#searchBar {
+#searchBar {  /*es el buscador*/
     border-radius: 0.5em ;
     padding: 1em;
     width:100%;
-    border:rgb(241, 240, 240);
+    border:0.2rem solid rgb(139, 139, 139);
     outline: none;
-    margin:3rem
 }
-
+#searchBar:focus{
+    border: 3px solid #FF8000;
+}
 #searchWrapper::after {
     content: '🔍';
     position: absolute;
-    top: 3.5rem;
-    right: 4rem;
-}
-#searchBar:focus{
-    border: 3px solid #ecc100;
+    top: 0.7rem;
+    right: 1rem;
 }
 
-/*-------------------------------------------HEADER*/
-header{
-    width: 100%;
-}
-.head{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    align-items: center;
-    background-color: #09d7df; 
-}
-.mascots{
-    width: 10%;   
-    height: 7%
-}
-.page-name{
-    font-family: 'Bebas Neue', cursive;
-    color: rgb(255, 255, 255);   
-    font-size: 4em;
-    padding-right: 14rem;
-    letter-spacing: 0.1em;
-}
-.navBar{
-    background-color: #3cfa02;
-}
-.navBar a{
-    font-size: 40px;
-    color: white;
-    font-family: 'Bebas Neue', cursive;
-    text-decoration: none;
-    line-height: 1.5em;   
-    letter-spacing: 0.1ex;
-    
-}
-a:hover{
-    color: #030303;
-}
-.info{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-/*-------------------------------------CONTAINER-SLIDER----*/
-.slides{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.slide-img{
-    display: block;
-    margin:auto;
-}
+/*-------------------------Donde se encierran los ATLETAS CON VARIAS MEDALLAS--------------------------------------------*/
 
-/*--------------------------------------CONTAINER-ABOUT RIO*/
-
-.rio-info{
-    padding: 4rem;
-}
-.title-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.rio-info-title{
-    font-size: 3ex;
-    font-weight: 900;
-    color: #3cda36;
-}
-.info-rio-par{
-    text-align: justify;
-    line-height: 1.4em;
-    font-size: 1em;
-    font-weight: 501;
-}
-.arrow{
-    font-size:1.5rem;
-}
-.link{
-    color:blue;
-    margin-left: 0.8rem;
-    text-align: justify;
-    border-bottom: 0.1em solid blue;
-}
-.link:hover{
-cursor: pointer;
-
-}
-.first-row, .second-row, .third-row{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    margin-bottom: 2.5em;
-    /* border-style: solid; */
-    padding: 2em 2em;
-    background-color: white;
-    width:100%;
-    border-radius: 2em;
-}
-
-/*--------------------------------------CONTAINER-EL PROYECTO*/
-h2{
-    text-align: left;
-    font-weight: bolder;
-    font-size: 50px;
-    padding-left: 1ex;
-}
-.multiple-title{
-    color: #F1B839;
-}
-.paises{    /* son los h2*/
-    color: #6CC45E;
-}
-
-.deportes{
-    color: #24A4E1;
-}
-
-.atleta{
-    color: #F1B839;
-    padding-left: 3ex;
-}
-
-.btnGreen{   /*la info de cada uno*/
-    border-bottom: #6CC45E .3rem solid;
-    margin: 1.5rem;
-    padding: 0.2rem;
-    text-align: center;
-    background-color: white;
-    border-radius: 0.5em;
-}
-
-.btnBlue{
-    border-bottom: #48c2f3 .3rem solid;
-    margin: 1.5rem;
-    padding: 0.2rem;
-    text-align: center;
-}
-.btnYellow{
-    border-bottom: #F1B839 .3rem solid;
-    margin: 1.5rem;
-    padding: 0.2rem;
-    text-align: center;
-    background-color: white;  /*los 4 de abajo aumente*/
-    border-radius: 0.5em;
-    /* width: 100%; */
-    list-style: none;
-
-}
-
-/*donde se encierra la info de los deportes y eventos*/
-.sports {
-    display:none; /*cambiar a none*/
-    /* border-style: solid; */
-     display: flex;
-    flex-direction: column;
-}
-.sport_ev{
-    width: 100%;
-    /* border-style: solid; */
-    padding: 1rem;
-}
-.search{
-    border-radius: 0.5em ;
-    padding: 1em;
-    width:100%;
-    outline: none;
-    border:none;
-}
-.search:focus{
-    border: 3px solid #77c2ff;
-}
-.sportTable{
-    border-collapse: collapse;
-    margin: 1.5rem auto;
-    min-width: 25rem;
-    left: 50%;
-    right: 50;
-    width: 100%;
-    font-size: 0.7em;
-    border-radius: 0.5em 0.5em ;
-    overflow: hidden;
-    background-color: white;
-}
-.sportTable thead tr{
-    background-color: rgb(22, 190, 202);
-    color: white;
-    text-align: left;
-    font-weight: bold;
-    font-size: 2.5rem;
-}
-.sportTable td,.sportTable th{
-    text-align: left;
-    padding: 0.7rem 0.9rem;
-    line-height: 2rem;
-} 
-
-.sportTable tbody tr{
-    border-bottom: 0.2rem solid rgb(142, 183, 216) ;
-    font-size: 1.5em;
-}
-.sportTable tbody tr:last-of-type{
-    border-bottom: 0.5rem solid rgb(22, 190, 202) ;
-}
-
-.sportTable tbody tr:hover{  
-    background-color: rgb(242, 247, 247);
-    transform: scale(1.04);
-} 
-
-/*----------------------------los países*/
-.countries{
-    display:none;
-     display: flex;
-    flex-direction: column;
-}
-.hereCountries{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
-
-
-/*-------------------------atletas varias medallas*/
 .multipleMedals_container{
-    margin: 1rem 6rem;
-    padding: 0 1rem;
+    padding: 2rem;
 }
-.multipleMedals{
+#multipleMedals{
     display: none;  /*cambiar a none*/
     width: 100%;
     /* border-style: solid; */
     
 }
-.multipleMedals-Info-text{
-    font-size: 1rem;
-    padding: 1.5em;
-    text-align: justify;
+.multiple-title{   /*atletas multimedallistas*/
+    color: #FF6103;
+    font-size: 5rem;
 }
-.searchAndSort{
-    margin: 1.5em;
+.keyAthlete{ /*salio del js:nombre de atletas*/
+    font-weight: bolder;
+    font-size: 1.5em;
+    border-bottom: #00688B .2rem solid;
+    font-weight: 900;
+    margin: 1.5rem;
+    padding: 0.2rem;
 }
 .searchMultipleWinners{
-  width:100%; 
-  outline: none;
-  border-radius: 0.5em ;
-  padding: 1em;
-  border:none;
-  margin-top: 0.5rem;
+    border-radius: 0.5em;
+    padding: 1em;
+    width:100%;
+    border:0.2rem solid rgb(139, 139, 139);
+    outline: none;
+    margin-bottom: 1rem;
 }
 .searchMultipleWinners:focus{
-    border: 3px solid #77c2ff;
+    border: 3px solid #FF6103;
 }
 .medal_athletesContainer{  /*este es el ul*/
     list-style:none;
@@ -407,16 +416,79 @@ h2{
     gap:1rem;
     display:grid;
     grid-template-columns: repeat(2,1fr);
+    padding-left: 12rem;
 }
-.keyAthlete{ /*salio del js:nombre de atletas*/
-    font-weight: bolder;
-    font-size: 1em;
-    border-bottom: #F1B839 .2rem solid;
-    margin: 1.5rem;
-    padding: 0.2rem;
-    text-align: center;
+.usain, .phelps{
+    width: 20%;
+    height: 20%;
+    border-radius: 1rem;
+    display: block;
+    margin:auto;
 }
-/*------------------------------------------ FOOTER*/
+.img-flex{
+    margin-top: 1rem;
+    display: flex;
+}
+/*------------------------------Donde se encierra la info de las atletas femeninas------*/
+#female{
+    display: none;
+    width: 100%;
+}
+.female_container{   /*chequear si es el correcto*/
+    padding: 2rem;
+}
+.female_title{   /*verificar con los otros títulos*/
+    color: #DD1717;
+    font-size:5rem;
+}
+.hereFemaleAthletes{
+    padding: 0rem 20rem;
+}
+.female_table{
+    border-collapse: collapse;
+    margin: 1.5rem auto;
+    width: 100%;
+    font-size: 0.7em;
+    overflow: hidden;
+    background-color: white;
+}
+.female_table thead tr{
+    background-color: #0F4392;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.female_table td,.female_table th{
+    text-align: left;
+    padding: 0.7rem 0.9rem;
+    line-height: 2rem;
+} 
+.female_table tbody tr{
+    border-bottom: 0.2rem solid #0F4392;;
+    font-size: 1.5em;
+    border-left: solid 0.4rem #0F4392;  /*rgb(3, 123, 221)*/
+    border-right: solid 0.4rem #0F4392;
+}
+.female_table tbody tr td{
+    font-weight: 900;
+}
+.female_table tbody tr:hover{  
+    background-color: rgb(231, 229, 228);
+    transform: scale(1.02);
+} 
+.searchFemAthl{   /*comparar con los otro*/
+    border-radius: 0.5em ;
+    padding: 1em;
+    width:100%;
+    outline: none;
+    border:0.2rem solid rgb(139, 139, 139);
+  }
+  .searchFemAthl:focus{
+      border: 0.2rem solid #DD1717;
+  }
+/*------------------------------------------ FOOTER-----------------------------------------------------------------------*/
+
 footer{   
     background-color: black;
     padding: 10px 0 10px 0;

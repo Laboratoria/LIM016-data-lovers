@@ -7,17 +7,17 @@ export const rio_teams = (data) =>{
    
 };
 
-export const rio_sports = (data) =>{
+// export const rio_sports = (data) =>{
 
-  let just_athletes_sport= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
-  let justSports= just_athletes_sport.map(item=>
-    [(`
-  ${item.sport}
-  `)]
-  );
-  return justSports;
+//   let just_athletes_sport= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
+//   let justSports= just_athletes_sport.map(item=>
+//     [(`
+//   ${item.sport}
+//   `)]
+//   );
+//   return justSports;
 
-};
+// };
 
 export const timesRepeated = arr =>{
   return arr.reduce((acc, item) =>{
@@ -50,6 +50,12 @@ export const spliceIntoChunks= (arr, chunkSize) =>{
   }
   return res;
 }
+
+export const justFemale=(arr)=>{
+  let female= Object.values(arr.filter(item=> (item.gender=== "F")));
+  return female;
+}
+
 // export const anotherExample = (data) => {
 //   return 'OMG';
 // };

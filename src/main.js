@@ -1,4 +1,4 @@
-import { /*anotherExample,*/rio_teams, noRepeated, rio_sports, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
+import { /*anotherExample,*/rio_teams, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; 
 
@@ -11,6 +11,7 @@ home_click.addEventListener("click", (e)=>{
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
   document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("female").style.display = "none";
 });
 
 let sports_click= document.getElementById("sports-click");
@@ -21,6 +22,7 @@ sports_click.addEventListener("click", (e)=>{
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
   document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("female").style.display = "none";
 });
 
 
@@ -32,6 +34,7 @@ teams_click.addEventListener("click", (e)=>{
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("female").style.display = "none";
 });
 
 let athletes_click= document.getElementById("athletes-click");
@@ -43,6 +46,7 @@ athletes_click.addEventListener("click", (e)=>{
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
   document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("female").style.display = "none";
 });
 
 let text_click= document.getElementById("link_medals");
@@ -54,7 +58,21 @@ text_click.addEventListener("click", (e)=>{
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
+  document.getElementById("female").style.display = "none";
 });
+
+let link_female= document.getElementById("link_female");
+link_female.addEventListener("click", (e)=>{
+  e.preventDefault(); 
+
+  document.getElementById("contaiiner").style.display = "none"; 
+  document.getElementById("female").style.display = "block";
+  document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("countries").style.display = "none";
+  document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
+});
+
 /*---------------------------------------se trabajan los países*/
 let country= rio_teams(data).sort();  //trayendo a los países y lo ordemo
 let countryCounter= timesRepeated(country); //trayendo la función que me hace el recuento
@@ -243,3 +261,48 @@ searchM_winners.addEventListener("keyup", (e)=>{
     }
   }
 })
+/*------------------------Código de las atletas femeninas*/
+
+let female_athletes= justFemale(sports);
+//console.log(mujeres)
+
+let womenMap = female_athletes.map(item=>{
+  return [item.name,item.sport]
+});
+
+var womenMapArr = new Map(womenMap); // Pares de clave y valor sin repetición
+
+let womenFinal = [...womenMapArr.entries()]; // Conversión a un array
+
+const table_female= document.getElementById("hereFemale");
+      let femaleHTML= "";
+      for(const [key, value] of Object.values(womenFinal)){
+        femaleHTML+= `<tr>
+        <td>${key}</td>
+        <td>${value}</td>
+                <tr>
+               `;
+               table_female.innerHTML= femaleHTML;
+    }
+
+//-----------------el buscador---------------
+let searchFemAthlete= document.getElementById("searchFemAthl");
+searchFemAthlete.addEventListener("keyup", (e)=> {
+  var filter, table, tr, td, i, txtValue;
+  filter = searchFemAthlete.value.toLowerCase();
+  table = document.getElementById("female_table");   
+  tr = table.getElementsByTagName("tr");
+  
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toLowerCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+});
+
