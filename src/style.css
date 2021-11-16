@@ -212,11 +212,12 @@ list-style: none;
 }
 
 .navBtn li button {
-  background-color: rgba(197, 197, 191, 0.582);
-  color:rgba(8, 15, 19, 0.863);
+  background-color: rgb(255, 255, 255);
   text-decoration:none ;
   padding: 10px 15px;
   display: block;
+  border-radius: 50px;
+  border-color: rgb(255, 255, 255);
 }
 
 .navBtn > li{
