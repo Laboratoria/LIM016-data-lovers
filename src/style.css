@@ -1,8 +1,5 @@
 body{
-  /*margin: 0;
-  display: grid;
   min-height: 100vh;
-  grid-template-rows: auto 1fr auto;*/
   background-image: url(img/backgroundTotoro.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -11,45 +8,123 @@ body{
 
   .conteiner {
     display: grid;
-    grid-template-columns: 7fr 10fr; 
+    width: 85%;
+    max-width: 1000px;
+    margin: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: 1fr; 
-    width: 95%;
-    max-width: 130pc;
-    margin: 38px auto;
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "dashboard Glass Glass"
+      "divContainerFooter divContainerFooter divContainerFooter"; 
   }
 
   .dashboard{
     display: grid;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    width: 346px;
+    grid-area: dashboard; 
+    width: 335px;
     height: 560px;
     background: rgb(250, 250, 252);
     color: black;
+    border-top-left-radius : 70px;
+    border-bottom-left-radius : 70px;
   }
   
   .Glass{
     display: grid;
-    grid-column-start: 2;
-    grid-column-end: auto;
-    backGround-color: rgba(2, 248, 248, 0.22);
+    grid-area: Glass;
+    backGround-color: rgba(188, 247, 255, 0.580);
     backdrop-filter: blur(3px);
-    border: solid 1px (255, 255, 255, 05);
-    border-radius: 10px;
-    width: 950px;
+    border-top-right-radius : 70px;
+    border-bottom-right-radius : 70px;
+    width: 900px;
     height: 560px;
+    
   }
-  
-  
-  /*.footer{
-  width: 100vw;
-  height: 134px;
-  left: 0px;
-  top: 1440px;
-  background: #1B1470;
+  .conteinerDashboard {
+    display: flex;
+    flex-direction: column;
   }
+  .conteinerLogo {
+    display: flex;
+    justify-content: center;
+    height: 180px ;
+    margin-top: 12.5px;
+    margin-left: 5px;
+  }
+  #logo {
+     width: 285px;
+    }
+
+    .socialIcons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 259px;
+      margin-left: 39px;
+      padding: 3px;
+      border-top: 1px solid rgb(0, 0, 0);
+      border-bottom: 1px solid rgb(0, 0, 0);
+    }
+    #iconYT {
+      width: 30px;
+    }#iconFB {
+      width: 26px;
+      height: 29px;
+    }#iconIG {
+      width: 25px;
+    }#iconTW {
+      width: 25px;
+    }
+
+    .boton-menu-colapsed {
+      display: flex;
+      height: 300px;
+    }
+    .conteinerBtns {
+      display: flex;
+      flex-direction: column;
+      width: 340px;
+      margin-top: 9px;
+      margin-bottom: 9px;
+      align-items: center;
+    }
+    #filmografia, #locations, #personajes, #vehicles {
+      background-color: white;
+      border-radius: 16px;
+      border-color: rgba(0, 0, 0, 0.603);
+      box-shadow: gray(4px);
+      width: 165px;
+      height: 50px;
+      padding-top : 5px;
+      padding-bottom: 5px;
+      margin-top: 22px;
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      letter-spacing: 1px;}
+
+    #filmografia:hover {
+      box-shadow: 0 10px 13px 0 rgba(0,0,0,0.24), 0 14px 45px 0 rgba(0,0,0,0.19);
+    }
+    #locations:hover {
+      box-shadow: 0 10px 13px 0 rgba(0,0,0,0.24), 0 14px 45px 0 rgba(0,0,0,0.19);
+    }
+    #personajes:hover {
+      box-shadow: 0 10px 13px 0 rgba(0,0,0,0.24), 0 14px 45px 0 rgba(0,0,0,0.19);
+    }
+    #vehicles:hover {
+      box-shadow: 0 10px 13px 0 rgba(0,0,0,0.24), 0 14px 45px 0 rgba(0,0,0,0.19);
+    }
   
+
+    .divFilmo {
+      display:grid;
+
+    }
   
+
   #filmografia{
     display: flex;
   position: absolute;
@@ -82,40 +157,12 @@ body{
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   
-  #tienda{
-  position: absolute;
-  left: 10.28%;
-  right: 72.22%;
-  top: 68.46%;
-  bottom: 24.12%;
-  
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  
   .btnsFiltradores {
   position: relative;
   bottom: 55px ;
   left: 167px;
   }
   
-  #logo {
-  position: relative;
-  bottom: 0px ;
-  left: 0px;
-  width: 160px;
-  height: 94px ;
-  }
-
-  .divImagen {
-      border-color: black;
-      margin: 100px;
-  }
-
-  .imagen {
-      border-color: rgb(174, 174, 207);
-  }
-
-
   .classFilmo {
     position: relative;
     text-align: justify;
@@ -124,56 +171,6 @@ body{
     padding: 2pc;
     margin-right: 100px;
   }
-
-
-  .divImagen {
-      float: right;
-
-  }
-
- 
-
-  }
-
- main{
-  min-height: 100vh;
-  background: linear-gradient(to right top, #7b83ca, #9da2e7); 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
- 
- 
-
-.glass{
-  position: relative;
-  width: 1500px;
-  height: 970px;
-  top: 5px;
-  background: rgba(188, 247, 255, 0.6);
-  mix-blend-mode: normal;
-  border-radius: 73px;
-  
-}
-
-.dashboard{
-position: absolute;
-width: 368px;
-height: 798px;
-left: 90px;
-top: 54px;
-background: #FFFFFF;
-border-radius: 71px 0px 0px 71px;
-
-}
-
-
-.menu {
-  display: flex;
-  margin: 2rem 0rem;
-  padding: 1rem 5rem;
-  align-items:center;
-}
 
 .btn {
 
