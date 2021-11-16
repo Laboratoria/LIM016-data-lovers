@@ -121,7 +121,35 @@ createElement.appendChild(createDiv)
 return template;
 })*/
 
-  
-   
+let pelicula= data.films
+ const fomulario= document.querySelector ("#fomulario"); 
+ const boton= document.querySelector ("#boton");
+ const resultado= document.querySelector ("#resultado");
 
- 
+ const filtrar  =  () =>{
+  //console.log (formulario.value);
+  const texto= fomulario.value.toLowerCase();
+
+
+  for( let titulo of films ){
+
+   let title= films.title.toLowerCase();
+   
+   if ( title.indexOf(texto)  !== -1){
+
+   resultado.innerHTML += `
+
+   <li>${titulo.title}<li>
+   `
+   }
+  }
+
+    if (resultado.innerHtml === ""){
+    resultado.innerHtml += `
+        <li> Producto no encontrado... <li>`
+
+   } 
+ }
+ boton.addEventListener("click", filtrar);
+ fomulario.addEventListener("keyup", filtrar);
+ filtrar ();
