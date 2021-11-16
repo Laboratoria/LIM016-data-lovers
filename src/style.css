@@ -1134,7 +1134,7 @@ table {
 
 #search {
   border: 0.2em solid rgb(97, 97, 97);
-  border-radius:3em;
+  border-radius: 0.3em;
   width: 50%;
   height: 2.7em;
   background-color:rgba(255, 255, 255, 0.576);

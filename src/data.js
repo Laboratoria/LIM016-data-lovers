@@ -39,7 +39,8 @@ export function ordenAlfaNumerico(typeOrden, arrayCambiante) {
       })
   if (typeOrden=="az") {
 
-        return arrayCambiante}
+        return arrayCambiante
+      }
       else{
         return arrayCambiante.reverse();
       }
