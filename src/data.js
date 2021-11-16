@@ -7,18 +7,24 @@ export function huevitoPokemon(eggType, arrayPokemon) {
 
 //filtro por Cp de pokemon
 export function filtarCp(tipoCp, arrayCambiante) {
-  arrayCambiante.sort((a, b) => {
-    if (Number(a.stats["max-cp"]) < Number(b.stats["max-cp"])) {
-      return -1;
-    }
-  });
-
-  if (tipoCp == "min") {
-    return arrayCambiante;
-  } else {
-    return arrayCambiante.reverse();
+  if (tipoCp == "max") {
+    arrayCambiante.sort((a, b) => {
+      if (Number(a.stats["max-cp"]) > Number(b.stats["max-cp"])) {
+        return -1;
+      }
+    });
+  } else{
+    arrayCambiante.sort((a, b) => {
+      if (Number(a.stats["max-cp"]) < Number(b.stats["max-cp"])) {
+        return -1;
+      }
+      return 1;
+    });
   }
+  return arrayCambiante;
 }
+
+
 //filtro por rareza de pokemon
 export function rarezaPokemon(rarezaP, arrayPokemon) {
   let arrayRareza = arrayPokemon.filter(
@@ -32,32 +38,40 @@ export function rarezaPokemon(rarezaP, arrayPokemon) {
 export function ordenAlfaNumerico(typeOrden, arrayCambiante) {
   if (typeOrden == "az" || typeOrden == "za") {
 
+    if (typeOrden == "az") {
       arrayCambiante.sort((a, b) => {
         if (a.name < b.name)
+          return -1;
 
-        {return -1}
       })
-  if (typeOrden=="az") {
-
-        return arrayCambiante}
-      else{
-        return arrayCambiante.reverse();
-      }
-
+return arrayCambiante
     }
+    else {
+      arrayCambiante.sort((a, b) => {
+        (a.name < b.name)
+          return 1;
 
+      })
+return arrayCambiante.reverse()
+  }
 
-  else {
+}
+
+  else if (typeOrden == "1_251") {
     arrayCambiante.sort((a, b) => {
       if (a.num < b.num) {
         return -1;
       }
     });
-    if (typeOrden == "1_251") {
-      return arrayCambiante;
-    } else {
-      return arrayCambiante.reverse();
-    }
+    return arrayCambiante;
+  } else {
+    arrayCambiante.sort((a, b) => {
+      if (a.num > b.num) {
+        return -1;
+      }
+      return 1;
+    });
+    return arrayCambiante;
   }
 }
 
@@ -69,6 +83,7 @@ export function typePokemones(tipoPokemon, arrayPokemon) {
   return tipos;
 }
 
+
 //region de pokemones
 export function regionFuncion(regionP, arrayPokemon) {
   let array = [];
@@ -79,6 +94,7 @@ export function regionFuncion(regionP, arrayPokemon) {
   }
   return array;
 }
+
 
 //buscador de pokemon
 export function buscarPoke(texto, arrayPokemon) {

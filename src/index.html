@@ -3,25 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <title>Data Lovers</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Spartan&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/37946f5dd4.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/37946f5dd4.js" crossorigin="anonymous"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="icon" href="./img/Pokebolasinfondo.ico" />
+    <link rel="icon" href="./img/Pokebolasinfondo.ico">
   </head>
   <body>
-    <header class="navegador">
-      <img class="logo" src="img/logo.png" />
+
+
+    <header class="navegador" >
+      <img class="logo" src="img/logo.png">
       <button id="toggle">
       <i class="fas fa-bars"></i></button>
-      <ul class="menu" style="display: none" >
+      <ul class="menu" >
         <li><button id="btnInicio" class="activeButton">INICIO</button></li>
         <li><button id="btnPokedex" class="btnNav">POKEDEX</button></li>
         <li><button id="btnTipo" class="btnNav">TIPO</button></li>
@@ -29,374 +28,217 @@
         <li><button id="btnRareza" class="btnNav">RAREZA</button></li>
         <li><button id="btnStats" class="btnNav">ESTADISTICAS</button></li>
       </ul>
-      <img class="pokebola" src="img/pokebola.gif" />
+      <img class="pokebola" src="img/pokebola.gif">
     </header>
 
-    <section id="welcome" style="display: block">
+    <section id="welcome"  style="display: block">
       <div class="intro">
         <div class="intro_background">
-          <div class="intro_background_image">
-            <picture>
-              <source
-                type="image/webp"
-                srcset="img/fondo-inicio.jpg"
-                media="(min-width: 768px) and (max-width: 1023px)"
-              />
-              <img
-                class="background"
-                src="img/fondo-inicio.jpg"
-                alt=""
-                width="100%"
-                height="100%"
-              />
-            </picture>
-            <div class="intro_content">
-              <div class="intro_content_title">
-                ¡Les damos la bienvenida, entrenadores!
-              </div>
-              <div class="intro_content_description">
-                ¡Descubre todos los pokemones que tenemos para ti...!
-              </div>
-              <div class="intro_button">
-                <button id="verPokedex">Descubrir</button>
-              </div>
-            </div>
-          </div>
-
-
-
-
-          <div class="parrafoCarrusel">Pokemones Destacados<img></div>
-          <div class="carrusel">
-            <div class="carrusel-items">
-
-              <div class="carrusel-item">
-                <img src="./img/pokemon1.jpg" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Mewtwo</h4>
-                    <h3>#150</h3>
-
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:4178</h4>
-                    <h4>HP:180</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carrusel-item">
-                <img src="./img/carrusel2.jpg" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Ho-Oh</h4>
-                    <h3>#250</h3>
-
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:3863</h4>
-                    <h4>HP:180</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carrusel-item">
-                <img src="./img/tyranitar.jpg" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Tyranitar</h4>
-                    <h3>#248</h3>
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:3863</h4>
-                    <h4>HP:180</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carrusel-item">
-                <img src="./img/dragonite.jpg" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Dragonite</h4>
-                    <h3>#149</h3>
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:3792</h4>
-                    <h4>HP:177</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carrusel-item">
-                <img src="./img/carrusel5.jpg" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Lugia</h4>
-                    <h3>#249</h3>
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:3703</h4>
-                    <h4>HP:197</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carrusel-item">
-                <img src="./img/zapdos.jpg" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Zapdos</h4>
-                    <h3>#145</h3>
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:3527</h4>
-                    <h4>HP:175</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carrusel-item">
-                <img src="./img/pokemon5.jpg" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Entei</h4>
-                    <h3>#244</h3>
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:3473</h4>
-                    <h4>HP:210</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carrusel-item">
-                <img src="./img/moltres.jpg" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Moltres</h4>
-                    <h3>#146</h3>
-
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:3465</h4>
-                    <h4>HP:175</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carrusel-item">
-                <img src="./img/raikou.webp" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Raikou</h4>
-                    <h3>#243</h3>
-
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:3452</h4>
-                    <h4>HP:175</h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carrusel-item">
-                <img src="./img/gyarados.jpg" alt="" />
-                <div class="contenido">
-                  <div class="contenido1">
-                    <h4>Gyarados</h4>
-                    <h3>#130</h3>
-
-                  </div>
-                  <div class="contenido2">
-                    <h4>CP:3391</h4>
-                    <h4>HP:182</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- peliculas -->
-
-          <div class="intro-peliculas">
-            <h class="tittle"
-              ><img src="img/logo-pelicula.png" /> Peliculas Pokemon</h
-            >
-            <div class="contenedor-peliculas">
-              <a
-                class="pelicula"
-                id="pelicula1"
-                href="https://cuevana3.io/8345/pokemon-the-movie-the-power-of-us"
-                title="pelicula"
-              >
-                <div class="imagen-pelicula">
-                  <img src="img/pelicula1.jpg" alt="" />
-                </div>
-                <div class="contenido-pelicula">
-                  <div class="titulo-pelicula" title="pelicula">
-                    <h> Pokémon:</h>
-                    <p>El poder de todos</p>
-                  </div>
-                </div>
-                <div class="contenedor-play">
-                  <i class="far fa-play-circle"></i>
-                </div>
-              </a>
-              <a
-                class="pelicula"
-                id="pelicula2"
-                href="https://cuevana3.io/49902/gekijouban-poketto-monsuta-koko"
-                title="pelicula"
-              >
-                <div class="imagen-pelicula">
-                  <img src="img/pelicula3.jpg" alt="" />
-                </div>
-                <div class="contenido-pelicula">
-                  <div class="titulo-pelicula" title="pelicula">
-                    <h> Pokémon: </h>
-                    <p>Los secretos de la selva</p>
-                  </div>
-                </div>
-                <div class="contenedor-play">
-                  <i class="far fa-play-circle"></i>
-                </div>
-              </a>
-              <a
-                class="pelicula"
-                id="pelicula3"
-                href="https://cuevana3.io/4011/ber-gekijouban-poketto-monsuta-kimi-ni-kimeta"
-                title="pelicula"
-              >
-                <div class="imagen-pelicula">
-                  <img src="img/pelicula2.jpg" alt="" />
-                </div>
-                <div class="contenido-pelicula">
-                  <div class="titulo-pelicula" title="pelicula">
-                    <h> Pokémon La Película:</h>
-                    <p>¡Te Elijo A Ti!</p>
-                  </div>
-                </div>
-                <div class="contenedor-play">
-                  <i class="far fa-play-circle"></i>
-                </div>
-              </a>
-
-              <a
-                class="pelicula"
-                id="pelicula4"
-                href="https://cuevana3.io/14108/pokemon-detective-pikachu"
-                title="pelicula"
-              >
-                <div class="imagen-pelicula">
-                  <img src="img/pelicula4.jpeg" alt="" />
-                </div>
-                <div class="contenido-pelicula">
-                  <div class="titulo-pelicula" title="pelicula">
-                    <h> Pokémon:</h>
-                    <p>Detective Pikachu</p>
-                  </div>
-                </div>
-                <div class="contenedor-play">
-                  <i class="far fa-play-circle"></i>
-                </div>
-              </a>
-              <a
-                class="pelicula"
-                id="pelicula5"
-                href="https://cuevana3.io/26796/pokemon-mewtwo-strikes-back-evolution"
-                title="pelicula"
-              >
-                <div class="imagen-pelicula">
-                  <img src="img/pelicula5.jpeg" alt="" />
-                </div>
-                <div class="contenido-pelicula">
-                  <div class="titulo-pelicula" title="pelicula">
-                    <h> Pokémon:</h>
-                    <p>Mewtwo contraataca: Evolución</p>
-                  </div>
-                </div>
-                <div class="contenedor-play">
-                  <i class="far fa-play-circle"></i>
-                </div>
-              </a>
+        <div class="intro_background_image">
+          <picture>
+          <source
+          type="image/webp"
+          srcset="img/fondo-inicio.jpg"
+          media="(min-width: 768px) and (max-width: 1023px)"
+          >
+          <img
+          class="background"
+          src="img/fondo-inicio.jpg"
+          alt=""
+          width="100%" height="100%"
+          />
+          </picture>
+          <div class="intro_content">
+            <div class="intro_content_title">¡Les damos la bienvenida, entrenadores!</div>
+            <div class="intro_content_description">¡Descubre todos los pokemones que tenemos para ti...!</div>
+            <div class="intro_button">
+              <button id="verPokedex">Descubrir</button>
             </div>
           </div>
         </div>
+
+
+        <!-- carrusel -->
+        <div class="carrusel">
+          <div class="carrusel-items">
+
+            <div class="carrusel-item">
+              <img src="./img/pokemon1.jpg" alt="">
+              <!-- <h4>NOMBRE</h4>
+              <button class="btn-carrusel">VER MAS</button> -->
+            </div>
+
+            <div class="carrusel-item">
+              <img src="./img/pokemon2.jpeg" alt="">
+              <!-- <h4>NOMBRE</h4>
+              <button class="btn-carrusel">VER MAS</button> -->
+            </div>
+            <div class="carrusel-item">
+              <img src="./img/pokemon3.jpg" alt="">
+              <!-- <h4>NOMBRE</h4>
+              <button class="btn-carrusel">VER MAS</button> -->
+            </div>
+            <div class="carrusel-item">
+              <img src="./img/pokemon4.jpg" alt="">
+              <!-- <h4>NOMBRE</h4>
+              <button class="btn-carrusel">VER MAS</button> -->
+            </div>
+            <div class="carrusel-item">
+              <img src="./img/pokemon5.jpg" alt="">
+              <!-- <h4>NOMBRE</h4>
+              <button class="btn-carrusel">VER MAS</button> -->
+            </div>
+              <div class="carrusel-item">
+                <img src="./img/pokemon2.jpeg" alt="">
+                <!-- <h4>NOMBRE</h4>
+                <button class="btn-carrusel">VER MAS</button> -->
+              </div>
+              <div class="carrusel-item">
+                <img src="./img/pokemon2.jpeg" alt="">
+                <!-- <h4>NOMBRE</h4>
+                <button class="btn-carrusel">VER MAS</button> -->
+              </div>
+              <div class="carrusel-item">
+                <img src="./img/pokemon3.jpg" alt="">
+                <!-- <h4>NOMBRE</h4>
+                <button class="btn-carrusel">VER MAS</button> -->
+              </div>
+
+              <div class="carrusel-item">
+                <img src="./img/pokemon4.jpg" alt="">
+                <!-- <h4>NOMBRE</h4>
+                <button class="btn-carrusel">VER MAS</button> -->
+              </div>
+
+              <div class="carrusel-item">
+                <img src="./img/pokemon1.jpg" alt="">
+                <!-- <h4>NOMBRE</h4>
+              <button class="btn-carrusel">VER MAS</button> -->
+            </div>
+          </div>
+        </div>
+        <!-- peliculas -->
+
+        <div class="intro-peliculas">
+        <h class="tittle"><img src="img/logo-pelicula.png"> Peliculas Pokemon</h>
+        <div class="contenedor-peliculas">
+          <a class="pelicula" id="pelicula1" href="https://cuevana3.io/8345/pokemon-the-movie-the-power-of-us" title="pelicula">
+            <div class="imagen-pelicula">
+              <img src="img/pelicula1.jpg" alt="">
+
+            </div>
+              <div class="contenido-pelicula">
+                <div class="titulo-pelicula" title="pelicula">
+                  <h> Pokémon:</h>
+                  <p>El poder de todos</p>
+                </div>
+              </div>
+            <div class="contenedor-play">
+              <i class="far fa-play-circle"></i>
+            </div>
+          </a>
+          <a class="pelicula" id="pelicula2" href="https://cuevana3.io/49902/gekijouban-poketto-monsuta-koko" title="pelicula">
+            <div class="imagen-pelicula">
+              <img src="img/pelicula3.jpg" alt=""></div>
+              <div class="contenido-pelicula">
+                <div class="titulo-pelicula" title="pelicula">
+                  <h> Pokémon: </h> <p>Los secretos de la selva</p>
+                </div>
+              </div>
+              <div class="contenedor-play">
+                <i class="far fa-play-circle"></i>
+              </div>
+          </a>
+          <a class="pelicula" id="pelicula3" href="https://cuevana3.io/4011/ber-gekijouban-poketto-monsuta-kimi-ni-kimeta" title="pelicula">
+            <div class="imagen-pelicula">
+              <img src="img/pelicula2.jpg" alt=""></div>
+              <div class="contenido-pelicula">
+                <div class="titulo-pelicula" title="pelicula">
+                  <h> Pokémon La Película:</h> <p>¡Te Elijo A Ti!</p>
+                </div>
+              </div>
+              <div class="contenedor-play">
+                <i class="far fa-play-circle"></i>
+              </div>
+          </a>
+
+          <a class="pelicula" id="pelicula4" href="https://cuevana3.io/14108/pokemon-detective-pikachu" title="pelicula">
+            <div class="imagen-pelicula">
+              <img src="img/pelicula4.jpeg" alt=""></div>
+              <div class="contenido-pelicula">
+                <div class="titulo-pelicula" title="pelicula">
+                  <h> Pokémon:</h> <p> Detective Pikachu</p>
+                </div>
+              </div>
+              <div class="contenedor-play">
+                <i class="far fa-play-circle"></i>
+              </div>
+          </a>
+          <a class="pelicula" id="pelicula5" href="https://cuevana3.io/26796/pokemon-mewtwo-strikes-back-evolution" title="pelicula">
+            <div class="imagen-pelicula">
+              <img src="img/pelicula5.jpeg" alt=""></div>
+              <div class="contenido-pelicula">
+                <div class="titulo-pelicula" title="pelicula">
+                  <h> Pokémon:</h> <p> Mewtwo contraataca: Evolución</p>
+                </div>
+              </div>
+              <div class="contenedor-play">
+                <i class="far fa-play-circle"></i>
+              </div>
+          </a>
+        </div>
+        </div>
+      </div>
       </div>
     </section>
 
-    <section id="pokedex" style="display: none">
 
-      <div class="container-botones-filtro">
-        <div class="container-buscar">
-          <input type="text" id="search" placeholder="Search..." />
-          <button class="btn-info" id="botonBuscar">
-            <i class="fas fa-search"></i>
-          </button>
+  <section id="pokedex" style="display: none">
+
+    <div class="container-botones-filtro">
+
+      <div class="container-buscar">
+        <input type="text" id="search" placeholder="Search..." >
+        <button class="btn-info" id="botonBuscar"><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="container-filtro-padre">
+        <div class="container-tipo-rareza-region"  style="display: none">
+          <div id="divTiposPokemones" style="display: none" >
+            <div class="tipoDiv">GHOST<div class="tipoPokeInicio"><img id="ghost" src="./img/tipo-ghost.png"></div></div>
+            <div class="tipoDiv">WATER<div class="tipoPokeInicio"><img id="water" src="./img/tipo-agua.png"></div></div>
+            <div class="tipoDiv">POISON<div class="tipoPokeInicio"><img id="poison" src="./img/tipo-poison.png"></div></div>
+            <div class="tipoDiv">FLYING<div class="tipoPokeInicio"><img id="flying" src="./img/tipo-flying.png"></div></div>
+            <div class="tipoDiv">ROCK<div class="tipoPokeInicio"><img id="rock" src="./img/tipo-rock.png"></div></div>
+            <div class="tipoDiv">DRAGON<div class="tipoPokeInicio"><img id="dragon" src="./img/tipo-dragon.png"></div></div>
+            <div class="tipoDiv">DARK<div class="tipoPokeInicio"><img id="dark" src="./img/tipo-dark.png"></div></div>
+            <div class="tipoDiv">FAIRY<div class="tipoPokeInicio"><img id="fairy" src="./img/tipo-fairy.png"></div></div>
+            <div class="tipoDiv">GROUND<div class="tipoPokeInicio"><img id="ground" src="./img/tipo-ground.png"></div></div>
+            <div class="tipoDiv">PSYCHIC<div class="tipoPokeInicio"><img id="psychic" src="./img/tipo-psychic.png"></div></div>
+            <div class="tipoDiv">ICE<div class="tipoPokeInicio"><img id="ice" src="./img/tipo-ice.png"></div></div>
+            <div class="tipoDiv">NORMAL<div class="tipoPokeInicio"><img id="normal" src="./img/tipo-normal.png"></div></div>
+            <div class="tipoDiv">STEEL<div class="tipoPokeInicio"><img id="steel" src="./img/tipo-steel.png"></div></div>
+            <div class="tipoDiv">GRASS<div class="tipoPokeInicio"><img id="grass" src="./img/tipo-grass.png"></div></div>
+            <div class="tipoDiv">FIGHT<div class="tipoPokeInicio"><img id="fighting" src="./img/tipo-fight.png"></div></div>
+            <div class="tipoDiv">ELECTRIC<div class="tipoPokeInicio"><img id="electric" src="./img/tipo-electrico.png"></div></div>
+            <div class="tipoDiv">FIRE<div class="tipoPokeInicio"><img id="fire" src="./img/tipo-fuego.png"></div></div>
+            <div class="tipoDiv">BUG<div class="tipoPokeInicio"><img id="bug" src="./img/tipo-bug.png"></div></div>
+            </div>
+        
+            <div id="divRegionPokemon"  style="display:none">
+              <div class="regionDiv"><div class="regionPokeInicio"><img id="johto" src="./img/jhoto1.png"></div>JOHTO</div>
+              <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/khanto1.png"></div>KANTO</div>
+            </div>
+        
+        
+            <div id="divRarezaPokemon" style="display:none">
+              <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="normal" src="./img/3.png"></div><p>NORMAL</p></div>
+              <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="mythic" src="./img/1.png"></div><p>MYTHIC</p></div>
+              <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="legendary" src="./img/2.png"></div><p>LEGENDARY</p></div>
+            </div>
         </div>
+        <div class="container-filtro" id="container-filtro">
 
-        <div class="container-filtro-padre">
-          <div class="container-tipo-rareza-region"  style="display: none">
-            <div id="divTiposPokemones" style="display: none" >
-              <div class="tipoDiv">GHOST<div class="tipoPokeInicio"><img id="ghost" src="./img/tipo-ghost.png"></div></div>
-              <div class="tipoDiv">WATER<div class="tipoPokeInicio"><img id="water" src="./img/tipo-agua.png"></div></div>
-              <div class="tipoDiv">POISON<div class="tipoPokeInicio"><img id="poison" src="./img/tipo-poison.png"></div></div>
-              <div class="tipoDiv">FLYING<div class="tipoPokeInicio"><img id="flying" src="./img/tipo-flying.png"></div></div>
-              <div class="tipoDiv">ROCK<div class="tipoPokeInicio"><img id="rock" src="./img/tipo-rock.png"></div></div>
-              <div class="tipoDiv">DRAGON<div class="tipoPokeInicio"><img id="dragon" src="./img/tipo-dragon.png"></div></div>
-              <div class="tipoDiv">DARK<div class="tipoPokeInicio"><img id="dark" src="./img/tipo-dark.png"></div></div>
-              <div class="tipoDiv">FAIRY<div class="tipoPokeInicio"><img id="fairy" src="./img/tipo-fairy.png"></div></div>
-              <div class="tipoDiv">GROUND<div class="tipoPokeInicio"><img id="ground" src="./img/tipo-ground.png"></div></div>
-              <div class="tipoDiv">PSYCHIC<div class="tipoPokeInicio"><img id="psychic" src="./img/tipo-psychic.png"></div></div>
-              <div class="tipoDiv">ICE<div class="tipoPokeInicio"><img id="ice" src="./img/tipo-ice.png"></div></div>
-              <div class="tipoDiv">NORMAL<div class="tipoPokeInicio"><img id="normal" src="./img/tipo-normal.png"></div></div>
-              <div class="tipoDiv">STEEL<div class="tipoPokeInicio"><img id="steel" src="./img/tipo-steel.png"></div></div>
-              <div class="tipoDiv">GRASS<div class="tipoPokeInicio"><img id="grass" src="./img/tipo-grass.png"></div></div>
-              <div class="tipoDiv">FIGHT<div class="tipoPokeInicio"><img id="fighting" src="./img/tipo-fight.png"></div></div>
-              <div class="tipoDiv">ELECTRIC<div class="tipoPokeInicio"><img id="electric" src="./img/tipo-electrico.png"></div></div>
-              <div class="tipoDiv">FIRE<div class="tipoPokeInicio"><img id="fire" src="./img/tipo-fuego.png"></div></div>
-              <div class="tipoDiv">BUG<div class="tipoPokeInicio"><img id="bug" src="./img/tipo-bug.png"></div></div>
-              </div>
-  
-              <div id="divRegionPokemon"  style="display:none">
-                <div class="regionDiv"><div class="regionPokeInicio"><img id="johto" src="./img/jhoto1.png"></div>JOHTO</div>
-                <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/khanto1.png"></div>KANTO</div>
-              </div>
-  
-  
-              <div id="divRarezaPokemon" style="display:none">
-                <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="normal" src="./img/3.png"></div><p>NORMAL</p></div>
-                <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="mythic" src="./img/1.png"></div><p>MYTHIC</p></div>
-                <div class="rarezaDiv"><div class="rarezaPokeInicio"><img value="legendary" src="./img/2.png"></div><p>LEGENDARY</p></div>
-              </div>
-          </div>
-          <div class="container-filtro" id="container-filtro">
-  
-            <select id="cp">
-              <option value="" disabled selected>CP</option>
-              <option value="max">Max cp</option>
-              <option value="min">Min cp</option>
-            </select>
-  
-            <select id="orden">
-              <option value="" disabled selected>ORDEN</option>
-              <option value="az">a-z</option>
-              <option value="za">z-a</option>
-              <option value="1_251">001-251</option>
-              <option value="251_1">251-001</option>
-            </select>
-  
-              <select id="egg">
-                <option value="" disabled selected>Egg</option>
-                <option value="2 km">2 km</option>
-                <option value="5 km">5 km</option>
-                <option value="7 km">7 km</option>
-                <option value="10 km">10 km</option>
-              </select>
-  
-          </div>
-
-        <!-- <div class="container-filtro">
           <select id="cp">
             <option value="" disabled selected>CP</option>
             <option value="max">Max cp</option>
@@ -411,55 +253,63 @@
             <option value="251_1">251-001</option>
           </select>
 
-          <select id="egg">
-            <option value="" disabled selected>Egg</option>
-            <option value="2 km">2 km</option>
-            <option value="5 km">5 km</option>
-            <option value="7 km">7 km</option>
-            <option value="10 km">10 km</option>
-          </select>
-        </div> -->
+            <select id="egg">
+              <option value="" disabled selected>Egg</option>
+              <option value="2 km">2 km</option>
+              <option value="5 km">5 km</option>
+              <option value="7 km">7 km</option>
+              <option value="10 km">10 km</option>
+            </select>
+
+        </div>
       </div>
+    </div>
 
-      <p id="parrafo"></p>
-      <p id="hola"></p>
+    <p id="parrafo"></p>
 
-      <div class="pokemon-container"></div>
+    <div class="pokemon-container">
+    </div>
 
-      <!-- Boton para subir -->
-      <div id="button-up">
-        <img src="img/subir.png" alt="subir" />
-        <!-- <i class="fas fa-chevron-up"></i> -->
-      </div>
-    </section>
+    <!-- Boton para subir -->
+    <div id="button-up" title="SUBIR">
+      <img src="img/subir.png" alt="subir" title="SUBIR"><br>
+      <!-- <i class="fas fa-chevron-up"></i> -->
+    </div>
+</section>
 
-    <section id="container-stats" style="display:none">
-      <h1>ESTADISTICAS POKEMON</h1>
-      <div class="container-chart1">
-        <p class="container-title"><span class="title-chart">GRAFICA N°1:</span><br> Datos de pokemon por region</p>
-        <canvas class="chart-uno" id="myChart1"></canvas>
-      </div>
-      <div class="container-chart2">
-        <p class="container-title"><span class="title-chart">GRAFICA N°2:</span> Datos de pokemon por su tipo/naturaleza</p>
-      <canvas class="chart-dos" id="myChart2"></canvas>
-      </div>
-      <div class="container-chart3">
-        <p class="container-title"><span class="title-chart">GRAFICA N°3:</span><br> Datos pokemon por su rareza</p>
-        <canvas class="chart-tres" id="rarezaChart" ></canvas>
-      </div>
+<section id="container-stats" style="display:none">
+  <h1>ESTADISTICAS POKEMON</h1>
+  <div class="container-chart1">
+    <p class="container-title"><span class="title-chart">GRAFICA N°1:</span><br> Datos de pokemon por region</p>
+    <canvas class="chart-uno" id="myChart1"></canvas>
+  </div>
+  <div class="container-chart2">
+    <p class="container-title"><span class="title-chart">GRAFICA N°2:</span> Datos de pokemon por su tipo/naturaleza</p>
+  <canvas class="chart-dos" id="myChart2"></canvas>
+  </div>
+  <div class="container-chart3">
+    <p class="container-title"><span class="title-chart">GRAFICA N°3:</span><br> Datos pokemon por su rareza</p>
+    <canvas class="chart-tres" id="rarezaChart" ></canvas>
+  </div>
 
-      <div class="container-chart4">
-        <p class="container-title"><span class="title-chart">GRAFICA N°4:</span> Cantidad de pokemon por tipo de huevo</p>
-        <canvas class="chart-cuatro" id="eggChart" ></canvas>
-      </div>
-    </section>
+  <div class="container-chart4">
+    <p class="container-title"><span class="title-chart">GRAFICA N°4:</span> Cantidad de pokemon por tipo de huevo</p>
+    <canvas class="chart-cuatro" id="eggChart" ></canvas>
+  </div>
+</section>
 
-    <footer class="footer"></footer>
+  <footer class="footer">
 
-    <script src="main.js" type="module"></script>
-    <script src="vistas.js" type="module"></script>
-    <script src="graficas.js" type="module"></script>
+  </footer>
+
+<script src="main.js" type="module"></script>
+<script src="vistas.js" type="module"></script>
+<script src="graficas.js" type="module"></script>
 
 
-  </body>
+
+</body>
 </html>
+
+
+
