@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo&family=Questrial&display=swap" rel="stylesheet">
   </head>
     
   <body>
@@ -13,7 +14,7 @@
 
     <!-- dasboard contiene el menu para navegar por todas las secciones, el logo y los iconos-->
       <nav class="dashboard" >
-
+<div class = "conteinerDashboard">
         <div class="conteinerLogo">
           <div class="img-logo">
             <input type="image" src="img/logoTotoro.png" id="logo">
@@ -21,37 +22,33 @@
         </div>
 
         <div class="socialIcons">
-          <div class="iconFacebook"></div>
-          <div class="iconTwitter"></div>
-          <div class="iconiconIg"></div>
-          <div class="iconYoutube"></div>
+          <div class="iconYT">
+            <input type="image" src="img/youtube.png" id="iconYT">
+          </div>
+          <div class="iconIG">
+            <input type="image" src="img/instagram.png" id="iconIG">
+          </div>
+          <div class="iconFB">
+            <input type="image" src="img/facebook.png" id="iconFB">
+          </div>
+          <div class="iconTW">
+            <input type="image" src="img/twitter.png" id="iconTW">
+          </div>
         </div>
 
         <div class="boton-menu-colapsed" id="menu" >
+<div class = "conteinerBtns">
+            
+              <input type="button" id="filmografia" value="Filmografía">
 
-          <div class="divcontenedorboton">
-            <div class="botonfilmo">
-              <input type="button" id="filmografia" value="Filmografia">
-          </div>
-        </div>
+              <input type="button" id="personajes" value="Personajes" >
 
-          <div class="divcontenedorboton">
-            <div class="botonpeople">
-              <input type="button" id="personajes" value="Personajes">
-            </div>
-          </div>
-
-          <div class="divcontenedorboton">
-            <div class="botonlocations">
               <input type="button" id="locations" value="Locaciones">
-            </div>
-          </div>
 
-          <div class="divcontenedorboton">
-            <div class="botonvehicules">
-              <input type="button" id="vehicles" value="Vehiculos">
-            </div>
-          </div>
+              <input type="button" id="vehicles" value="Vehículos">
+            
+        </div>
+        </div>
 
         </div>
       </nav>
