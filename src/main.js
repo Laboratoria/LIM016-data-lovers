@@ -66,7 +66,7 @@ const sectionFilm = films.forEach(({title , description , producer, poster , rt_
 } )
 
 
-/*const arrayGhibli = data.films;
+const arrayGhibli = data.films;
 let arrayPeople = [];
 for(let i=0; i<arrayGhibli.length;i++){
     arrayPeople.push(arrayGhibli[i].people)
@@ -93,7 +93,7 @@ return template;
 
 
 
-const intento =data.films[0].locations;
+/*const intento =data.films[0].locations;
 intento.forEach((el) => {
   const createElement= document.createElement("div")
   const intentoDos =data.films;
@@ -120,6 +120,58 @@ containerLocation.appendChild(createElement);
 createElement.appendChild(createDiv)
 return template;
 })*/
+
+
+let arrayVehicules = [];
+for(let i=0; i<arrayGhibli.length;i++){
+    arrayVehicules.push(arrayGhibli[i].vehicles)
+}
+
+arrayVehicules.flat(1).forEach(({name, description, vehicle_class, length ,img, pilot}) => {    
+  const createElement= document.createElement("div")
+
+  const template3= `<div id= "divCardPeople">
+  <ul>
+  <li>Nombre: ${name} </li>
+  <li>Descripcion: ${description}</li>
+  <li>Tipo de vehiculo: ${vehicle_class}</li>
+  <li>Largo ${length}</li>
+  <li>Piloto: ${pilot.name}</li>     
+  <div class="box"><img src= ${img}></div> 
+</ul>
+</div>`;
+createElement.innerHTML= template3;
+containerVehiculos.appendChild(createElement);
+return template3;
+});
+
+
+
+let arrayLocations = [];
+for(let i=0; i<arrayGhibli.length;i++){
+    arrayLocations.push(arrayGhibli[i].locations)
+}
+
+arrayLocations.flat(1).forEach(({img, climate , terrain, surface_water, residents, name}) => {    
+  const createElement= document.createElement("div")
+
+  const template4= `<div id= "divCardPeople">
+  <ul>
+  <li>Nombre: ${name} </li>
+  <li>Clima: ${climate}</li>
+  <li>Terreno: ${terrain}</li>
+  <li>Nivel del mar: ${surface_water}</li>
+  <li>Residentes: ${residents}</li>     
+  <div class="box"><img src= ${img}></div> 
+</ul>
+</div>`;
+createElement.innerHTML= template4;
+containerLocation.appendChild(createElement);
+return template4;
+});
+
+
+
 
 let pelicula= data.films
  const fomulario= document.querySelector ("#fomulario"); 
