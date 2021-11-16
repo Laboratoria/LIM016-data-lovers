@@ -7,7 +7,7 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
     document.getElementById("filmo").style.display="block";
     document.getElementById("persona").style.display="none";
     document.getElementById("vehiculos").style.display="none";
-    document.getElementById("locations").style.display="none";
+    document.getElementById("locaciones").style.display="none";
     document.getElementById("portada").style.display="none";
   })
    
@@ -15,7 +15,7 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
      document.getElementById("persona").style.display="block";
      document.getElementById("filmo").style.display="none";
      document.getElementById("vehiculos").style.display="none";
-     document.getElementById("locations").style.display="none";
+     document.getElementById("locaciones").style.display="none";
      document.getElementById("portada").style.display="none";
    })
    
@@ -24,14 +24,14 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
      document.getElementById("vehicles").addEventListener("click", ()=> {
      document.getElementById("vehiculos").style.display="block";
      document.getElementById("filmo").style.display="none";
-     document.getElementById("locations").style.display="none";
+     document.getElementById("locaciones").style.display="none";
      document.getElementById("persona").style.display="none";
     document.getElementById("portada").style.display="none";
    })
    
 
    document.getElementById("locations").addEventListener("click", ()=> {
-    document.getElementById("locations").style.display="block";
+    document.getElementById("locaciones").style.display="block";
     document.getElementById("filmo").style.display="none";
     document.getElementById("persona").style.display="none";
     document.getElementById("vehiculos").style.display="none";
@@ -43,7 +43,7 @@ document.getElementById("filmografia").addEventListener("click", ()=>{
 
 const containerFilmo = document.getElementById("filmo");
 const containerPeople = document.getElementById("persona");
-const containerLocation = document.getElementById("locations");
+const containerLocation = document.getElementById("locaciones");
 const containerVehiculos = document.getElementById("vehiculos");
 
 
