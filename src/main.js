@@ -331,7 +331,7 @@ export function mostrarPokemon(array) {
       const description_box = document.createElement("div");
       description_box.classList.add("description");
       const titulo = document.createElement("h");
-      titulo.innerHTML = "Descripción" + "<br>";
+      titulo.innerHTML = "Description";
       const about = document.createElement("p");
       about.innerHTML = array[i].about;
 
@@ -341,7 +341,7 @@ export function mostrarPokemon(array) {
 
       //-------------agregar peso---------------
       const weight = document.createElement("div");
-      weight.innerHTML = array[i].size.weight;
+      weight.innerHTML = `Weight: <br> ${array[i].size.weight}`;
 
       //-------------agregar tipo---------------
       const typePokemon = document.createElement("div");
@@ -354,7 +354,7 @@ export function mostrarPokemon(array) {
 
       //............agregar tamaño--------------
       const height = document.createElement("div");
-      height.innerHTML = array[i].size.height;
+      height.innerHTML = `Height:<br>${array[i].size.height}`;
 
       //CREANDO DIV DE CARAMELOS POKEMON
       const candyContainerPadre = document.createElement("div");
@@ -787,6 +787,28 @@ function evoluciones(array, arrayP, divTotalEvoluciones, nombre, tipo) {
     }
   }
 }
+
+const buttonUp = document.getElementById("button-up");
+
+buttonUp.addEventListener("click", scrollUp);
+function scrollUp() {
+  let currentScroll = document.documentElement.scrollTop;
+  if (currentScroll > 0) {
+    window.requestAnimationFrame(scrollUp);
+    window.scrollTo(0, currentScroll - currentScroll / 15);
+  }
+}
+
+window.onscroll = () => {
+  let scroll = document.documentElement.scrollTop;
+
+  if (scroll > 600) {
+    buttonUp.style.transform = "scale(1)";
+  } else if (scroll < 500) {
+    buttonUp.style.transform = "scale(0)";
+  }
+};
+
 
 // //cp
 // cp.addEventListener("change", (e) => {
