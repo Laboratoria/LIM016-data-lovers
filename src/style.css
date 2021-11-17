@@ -44,7 +44,7 @@ body {
   padding-left: 1em;
 }
 .menu {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   list-style: none;
   padding-right: 30px;
@@ -57,7 +57,7 @@ body {
   background: rgba(19, 7, 97, 0.3);
   color: white;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.9em;
   border-radius: 10px;
 }
@@ -71,11 +71,11 @@ body {
   transition: 0.5s;
 }
 
-#toggle{
+#toggle {
   color: white;
-  background:none;
+  background: none;
   border: none;
-  font-size:20px;
+  font-size: 20px;
   padding: 12px 0px;
   display: none;
 }
@@ -92,12 +92,12 @@ body {
   box-shadow: 0 2px 4px black;
 }
 
-@media (max-width:768px){
+@media (max-width: 768px) {
   .navegador {
     height: 3em;
   }
   .navegador .logo {
-    width:4.5em;
+    width: 4.5em;
     padding: 10px 10px;
   }
   .menu {
@@ -118,10 +118,10 @@ body {
     padding: 5px 0px;
     height: calc(100% - 3em);
     overflow-y: auto;
-    left:100%;
+    left: 100%;
     transition: left 0.5s ease;
   }
-.menu li{
+  .menu li {
     line-height: 15px;
   }
 
@@ -129,14 +129,14 @@ body {
     margin: 2em 0em;
     height: content;
     width: 10em;
-    background:none;
+    background: none;
     color: white;
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1em;
     border-radius: 10px;
   }
-/*
+  /*
   .navegador button:hover {
     text-decoration: underline;
     font-size: 0.9em;
@@ -151,7 +151,7 @@ body {
     margin-right: 4%;
     height: 4em;
   }
-  .navegador li button{
+  .navegador li button {
     background: none;
   }
   .navegador .activeButton,
@@ -161,11 +161,11 @@ body {
     font-weight: bold;
     box-shadow: none;
   }
-#toggle{
+  #toggle {
     display: block;
   }
-  .nav-menu_visible{
-    left:0%;
+  .nav-menu_visible {
+    left: 0%;
   }
 }
 /* VISTA DE LA PAGINA DE INICIO */
@@ -226,27 +226,42 @@ body {
   color: white;
 }
 
-
 /* CARRUSEL */
 
-.parrafoCarrusel{
-  background: #3B3B98;
+
+
+.estrella{
+width: 20%;
+}
+
+.parrafoCarrusel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 0, 61, 1) 0%,
+    rgba(1, 1, 71, 1) 56%,
+    rgba(5, 106, 152, 1) 100%
+  );
   color: white;
   font-weight: 500;
   padding: 1em;
   font-size: 1.2em;
-  width: 30%;
+  width: 35%;
+
 }
 .carrusel {
-  width: 100%;
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: relative;
+  margin: auto;
 }
-/* .carrusel:hover{
-} */
-.carrusel-items{
+
+.carrusel-items {
+  width: 100%;
   display: flex;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -254,20 +269,15 @@ body {
   justify-content: center;
   height: 50%;
 }
-.carrusel-item{
-min-width: 20%;
-max-width: 20%;
-min-height: 40%;
-outline: 3px solid black;
-/* position: relative; */}
+
 .carrusel-item {
   min-width: 20%;
   max-width: 20%;
-  max-height: 15%;
+  height: 300px;
   outline: 0px solid black;
-  background: #3B3B98;
+  background: rgba(1, 1, 71, 1);
 }
-.carrusel-item img{
+.carrusel-item img {
   width: 100%;
   height: 100%;
   height: 60%;
@@ -277,7 +287,10 @@ outline: 3px solid black;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   height: 20%;
+  font-size: 1em;
+  padding: 1em;
 }
+
 
 .contenido1 {
   display: flex;
@@ -291,8 +304,6 @@ outline: 3px solid black;
   flex-direction: column;
   margin: auto;
 }
-
-
 
 .carrusel-item:hover {
   transform: scale(1.2);
@@ -487,7 +498,7 @@ outline: 3px solid black;
   text-align: center;
   font-weight: bold;
   text-transform: capitalize;
-  border: 1px solid gray
+  border: 1px solid gray;
 }
 
 #region:hover,
@@ -657,7 +668,6 @@ height: 50%;
   transition: 0.3s;
 }
 
-
 /* DANDO ESTILO A LOS ICONS DE LOS TIPOS DE POKEMONES*/
 .logo-steel {
   content: url("./img/steel.png");
@@ -779,7 +789,7 @@ height: 50%;
   padding-top: 1px;
   justify-content: center;
   align-items: center;
-  line-height:1.5em;
+  line-height: 1.5em;
 }
 .candyContainerPadre {
   background-color: #e6e6e6;
@@ -1083,42 +1093,40 @@ table {
 }
 /* DANDO ESTILO A LA BARRA DE BUSCAR*/
 
-.container-botones-filtro{
+.container-botones-filtro {
   display: flex;
-  justify-content:space-between;
-
+  justify-content: space-between;
 }
-.container-filtro-padre{
+.container-filtro-padre {
   display: flex;
   width: 100%;
-
 }
-.container-filtro{
+.container-filtro {
   display: flex;
-  justify-content:left;
+  justify-content: left;
   width: 80%;
 }
 
 .container-filtro select,
-.container-filtro2 select{
+.container-filtro2 select {
   margin: 0 10px;
 }
-.container-buscar{
+.container-buscar {
   display: flex;
-  justify-content:right;
-  width:100%;
+  justify-content: right;
+  width: 100%;
   padding-right: 30px;
   align-items: center;
 }
 
-.container-filtro2{
+.container-filtro2 {
   display: flex;
-  justify-content:left;
+  justify-content: left;
   margin: auto;
   width: 50%;
 }
 
-.container-tipo-rareza-region{
+.container-tipo-rareza-region {
   width: 100%;
 }
 
@@ -1127,7 +1135,7 @@ table {
   border-radius: 0.3em;
   width: 50%;
   height: 2.7em;
-  background-color:rgba(255, 255, 255, 0.576);
+  background-color: rgba(255, 255, 255, 0.576);
   outline: none;
 }
 
@@ -1144,7 +1152,7 @@ table {
 }
 
 #botonBuscar {
-  position:absolute;
+  position: absolute;
 
   font-size: 1.1em;
   width: 1.7em;
@@ -1203,7 +1211,7 @@ table {
   justify-content: center;
   margin: auto;
   font-size: 0.7em;
-  font-weight:bold;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -1245,7 +1253,7 @@ table {
   font-weight: bold;
   margin: auto;
   font-size: 0.8em;
-    align-items: center;
+  align-items: center;
 }
 
 /*--------------por rareza------------*/
@@ -1258,8 +1266,6 @@ table {
   margin-left: calc(100% - 70%);
 }
 
-
-
 #divRarezaPokemon div img {
   width: 90%;
   justify-content: center;
@@ -1267,7 +1273,7 @@ table {
 
 .rarezaDiv {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   font-weight: bold;
   margin: auto;
   font-size: 0.8em;
@@ -1287,8 +1293,8 @@ table {
   background-attachment: fixed;
   min-height: 100vh;
 }
-#container-stats h1{
-  font-size:40px;
+#container-stats h1 {
+  font-size: 40px;
   font-weight: bold;
   background: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
   /* clip informático */
@@ -1303,38 +1309,35 @@ table {
 .container-chart3 {
   width: 25%;
   margin-top: 3em;
-  margin-bottom: 3em;;
+  margin-bottom: 3em;
   margin: 3em auto;
   background: rgba(165, 212, 255, 0.611);
 
   padding: 2em;
   border-radius: 30px;
   font-style: italic;
-
 }
 
 .container-chart2,
 .container-chart4 {
-
   width: 60%;
-  margin:auto;
+  margin: auto;
   background: rgba(225, 225, 225, 0.611);
 
   padding: 2em;
   border-radius: 30px;
   height: 100%;
-
 }
 
-.container-title{
-  font-size:14px;
-  text-align:center;
+.container-title {
+  font-size: 14px;
+  text-align: center;
   line-height: 1.5em;
   font-style: normal;
 }
-.title-chart{
-  font-size:15px;
-  font-weight: bold ;
+.title-chart {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 /*FOOTER*/
@@ -1350,6 +1353,57 @@ table {
 }
 
 /*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
+@media (max-width: 750px) {
+  .intro_button button {
+    font-size: 0.8em;
+  }
+
+  .intro_content_title {
+    font-size: 0.7em;
+    line-height: 1em;
+  }
+  .intro_content_title {
+    margin-top: 200px;
+  }
+
+  /*FORMATO AL CHART*/
+
+  .container-chart1,
+  .container-chart3 {
+    width: 50vw;
+    margin: 2em;
+    margin: auto;
+  }
+
+  .container-chart2,
+  .container-chart4 {
+    width: 70vw;
+    margin: 2em;
+    margin: auto;
+  }
+
+  /* carrusel */
+  .carrusel-item {
+    min-width: 30%;
+    max-height: 30%;
+  }
+
+  .contenido {
+    font-size: 0.7em;
+  }
+
+  .tittle {
+    font-size: 25px;
+  }
+
+  .parrafoCarrusel {
+    font-size: 0.9em;
+    width: 50%;
+  }
+  .carrusel-item {
+    height: 200px;
+  }
+}
 @media (max-width: 600px) {
   .pokemon-container {
     grid-template-columns: repeat(1, 1fr);
@@ -1367,37 +1421,11 @@ table {
   .containerVista {
     height: 70%;
   }
-}
-@media (max-width: 750px) {
-  .intro_button button {
-    font-size: 0.8em;
+
+  .parrafoCarrusel {
+    font-size: 1em;
+    width: 60%;
   }
-
-  .intro_content_title {
-    font-size: 0.7em;
-    line-height: 1em;
-  }
-  .intro_content_title {
-    margin-top: 200px;
-  }
-
-
-  /*FORMATO AL CHART*/
-
-.container-chart1,
-.container-chart3 {
-  width: 50vw;
-  margin: 2em;
-  margin: auto;
-}
-
-.container-chart2,
-.container-chart4 {
-  width: 70vw;
-  margin: 2em;
-  margin: auto;
-}
-
 }
 
 @media (max-width: 500px) {
@@ -1477,22 +1505,50 @@ table {
     width: 100vw;
   }
 
+  /*FORMATO AL CHART*/
+
+  .container-chart1,
+  .container-chart3 {
+    width: 90vw;
+    margin: 2em;
+    margin: auto;
+  }
+
+  .container-chart2,
+  .container-chart4 {
+    width: 100vw;
+    margin: 2em;
+    margin: auto;
+  }
+
+  /* carrusel */
+  .contenido {
+    font-size: 0.5em;
+  }
+
+  .carrusel-item {
+    min-width: 40%;
+    max-height: 40%;
+
+    height: 200px;
+  }
+
+  .tittle {
+    font-size: 20px;
+  }
 
 
-/*FORMATO AL CHART*/
-
-.container-chart1,
-.container-chart3 {
-  width: 90vw;
-  margin: 2em;
-  margin: auto;
+  .parrafoCarrusel {
+    font-size: 0.7em;
+    width: 70%;
+  }
 }
 
-.container-chart2,
-.container-chart4 {
-  width: 100vw;
-  margin: 2em;
-  margin: auto;
-}
+@media (max-width: 300px) {
+  .parrafoCarrusel {
+    font-size: 0.7em;
+    width: 70%;
+  }
+
 
 }

@@ -1,4 +1,4 @@
-import data from "./data/pokemon/pokemon.js";
+// import data from "./data/pokemon/pokemon.js";
 
 import {
   buscarPoke,
@@ -10,9 +10,9 @@ import {
   regionFuncion,
 } from "./data.js";
 
-import {start} from './carrusel.js'
+import { start } from "./carrusel.js";
 
-start()
+start();
 
 const container = document.querySelector(".pokemon-container");
 const orden = document.getElementById("orden");
@@ -20,34 +20,43 @@ const cp = document.getElementById("cp");
 const eggPoke = document.getElementById("egg");
 const search = document.getElementById("search");
 
-
 const navToggle = document.querySelector("#toggle");
 const navMenu = document.querySelector(".menu");
 
 navToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("nav-menu_visible")
-})
+  navMenu.classList.toggle("nav-menu_visible");
+});
 
-// let arrayPokemon;
+let arrayCambiante = "";
 
-function fetchPokemon() {
-  fetch("./data/pokemon/pokemon.json")
-    .then((resp) => resp.json())
-    .then((data) => {
-      // let arrayPokemon = data;
 
-      mostrarPokemon(data.pokemon);
-      handleDivRegion(data);
-      eggPokemon(data);
-      buscarPokemon(data);
-      filtrarTiposPokemon(data)
-      filtrarRarezaPokemon(data)
-    });
+
+
+async function fetchPokemon() {
+  const jsondata = await fetch("./data/pokemon/pokemon.json");
+  const data = await jsondata.json();
+
+  const arrayPokeP = data.pokemon;
+
+
+  mostrarPokemon(data.pokemon, arrayPokeP);
+  handleDivRegion(data, arrayPokeP);
+  eggPokemon(data, arrayPokeP);
+  buscarPokemon(data, arrayPokeP);
+  filtrarTiposPokemon(data, arrayPokeP);
+  filtrarRarezaPokemon(data, arrayPokeP);
+  filtroCP(arrayPokeP);
+  filtroOrdenAlfaNumerico(arrayPokeP);
+
+  return data.pokemon;
 }
 
-const arrayPokeP =  data.pokemon
 
-function handleDivRegion(data) {
+fetchPokemon();
+
+// const arrayPokeP =  data.pokemon
+
+function handleDivRegion(data, arrayPokeP) {
   document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -56,89 +65,87 @@ function handleDivRegion(data) {
       // console.log(e.target.getAttribute('id'))
       const regionP = e.target.getAttribute("id");
       const arrayRegionPoke = regionFuncion(regionP, data.pokemon);
-      mostrarPokemon(arrayRegionPoke);
+      mostrarPokemon(arrayRegionPoke, arrayPokeP);
     }
   });
 }
 
 //cp
-cp.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const tipoCp = e.target.value;
-  const filtroPoke = filtarCp(tipoCp, arrayCambiante);
-  mostrarPokemon(filtroPoke);
-});
+
+function filtroCP(arrayPokeP) {
+  cp.addEventListener("change", (e) => {
+    container.innerHTML = "";
+    const tipoCp = e.target.value;
+    const filtroPoke = filtarCp(tipoCp, arrayCambiante);
+    mostrarPokemon(filtroPoke, arrayPokeP);
+  });
+}
 
 // filtrar pokemon por huevito
 
-function eggPokemon(data) {
+function eggPokemon(data, arrayPokeP) {
   eggPoke.addEventListener("change", (e) => {
     container.innerHTML = "";
     const eggType = e.target.value;
 
     const arrayEgg = huevitoPokemon(eggType, data.pokemon);
-    mostrarPokemon(arrayEgg);
+    mostrarPokemon(arrayEgg, arrayPokeP);
   });
 }
 
 //orden alfabetico
-orden.addEventListener("change", (e) => {
-  container.innerHTML = "";
-  const typeOrden = e.target.value;
-  const ordenAlfaNum = ordenAlfaNumerico(typeOrden, arrayCambiante);
-  mostrarPokemon(ordenAlfaNum);
-});
 
+function filtroOrdenAlfaNumerico(arrayPokeP) {
+  orden.addEventListener("change", (e) => {
+    container.innerHTML = "";
+    const typeOrden = e.target.value;
+    const ordenAlfaNum = ordenAlfaNumerico(typeOrden, arrayCambiante);
+    mostrarPokemon(ordenAlfaNum, arrayPokeP);
+  });
+}
 //buscar pokemon
-function buscarPokemon(data){
+function buscarPokemon(data, arrayPokeP) {
   search.addEventListener("keyup", () => {
-      container.innerHTML = "";
-      const texto = search.value.toLowerCase();
-      const arrayBuscar = buscarPoke(texto, data.pokemon);
-      mostrarPokemon(arrayBuscar);
-
-});
+    container.innerHTML = "";
+    const texto = search.value.toLowerCase();
+    const arrayBuscar = buscarPoke(texto, data.pokemon);
+    mostrarPokemon(arrayBuscar, arrayPokeP);
+  });
 }
 
-
-
-function filtrarTiposPokemon(data){
- document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
-  e.preventDefault();
+function filtrarTiposPokemon(data, arrayPokeP) {
+  document
+    .getElementById("divTiposPokemones")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
 
       if (e.target.getAttribute("id")) {
         container.innerHTML = "";
         // console.log(e.target.getAttribute('id'))
         const tipoP = e.target.getAttribute("id");
         const arraytipoPoke = typePokemones(tipoP, data.pokemon);
-        mostrarPokemon(arraytipoPoke);
+        mostrarPokemon(arraytipoPoke, arrayPokeP);
       }
-});
+    });
 }
 
-
-function filtrarRarezaPokemon(data){
-
+function filtrarRarezaPokemon(data, arrayPokeP) {
   document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-      let pruebaFetch = data.pokemon;
-      if (e.target.getAttribute("value")) {
-        container.innerHTML = "";
-        const rarezaP = e.target.getAttribute("value");
-        const arrayRarezaPoke = rarezaPokemon(rarezaP, pruebaFetch);
-        mostrarPokemon(arrayRarezaPoke);
-      }
-})
+    let pruebaFetch = data.pokemon;
+    if (e.target.getAttribute("value")) {
+      container.innerHTML = "";
+      const rarezaP = e.target.getAttribute("value");
+      const arrayRarezaPoke = rarezaPokemon(rarezaP, pruebaFetch);
+      mostrarPokemon(arrayRarezaPoke, arrayPokeP);
+    }
+  });
 }
-
-
-// const arrayPokemon = data.pokemon;
-let arrayCambiante = "";
 
 //-------------funcion que muestra los pokemones
 
-export function mostrarPokemon(array) {
+export function mostrarPokemon(array, arrayPokeP) {
   arrayCambiante = array;
 
   const numero = document.getElementById("parrafo");
@@ -280,7 +287,7 @@ export function mostrarPokemon(array) {
         button1.className = "active";
         button2.className = "";
         button3.className = "";
-        button4.className = ""
+        button4.className = "";
       });
 
       //-------------btn2------------------------------
@@ -297,7 +304,7 @@ export function mostrarPokemon(array) {
         button1.className = "";
         button3.className = "";
         button2.className = "active";
-        button4.className = ""
+        button4.className = "";
       });
 
       //------------btn3-------------------------------
@@ -491,7 +498,7 @@ export function mostrarPokemon(array) {
         vista4.style.display = "none";
         button1.className = "";
         button2.className = "";
-        button3.className = "active"
+        button3.className = "active";
         button4.className = "";
       });
 
@@ -809,7 +816,6 @@ window.onscroll = () => {
   }
 };
 
-
 // //cp
 // cp.addEventListener("change", (e) => {
 //   container.innerHTML = "";
@@ -883,4 +889,4 @@ window.onscroll = () => {
 
 // let arrayPokemon=data.pokemon
 // mostrarPokemon(arrayPokemon);
-fetchPokemon();
+// fetchPokemon();
