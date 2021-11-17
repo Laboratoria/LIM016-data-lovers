@@ -167,7 +167,7 @@ arrayLocations.flat(1).forEach(({img, climate , terrain, surface_water, resident
   <li>Clima: ${climate}</li>
   <li>Terreno: ${terrain}</li>
   <li>Nivel del mar: ${surface_water}</li>
-  <li>Residentes: ${residents}</li>     
+  <li>Residentes: ${residents.name}</li>     
   <div class="box"><img src= ${img}></div> 
 </ul>
 </div>`;
@@ -179,7 +179,7 @@ return template4;
 
 
 
-let pelicula= data.films
+/*let pelicula= data.films
  const fomulario= document.querySelector ("#fomulario"); 
  const boton= document.querySelector ("#boton");
  const resultado= document.querySelector ("#resultado");
@@ -210,4 +210,4 @@ let pelicula= data.films
  }
  boton.addEventListener("click", filtrar);
  fomulario.addEventListener("keyup", filtrar);
- filtrar ();
+ filtrar ();*/
