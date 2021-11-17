@@ -7,3 +7,7 @@ export const example = () => {
 export const anotherExample = () => {
   return 'OMG';
 };
+
+export const data = () => {
+  return data;
+};
