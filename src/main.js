@@ -135,7 +135,6 @@ filterPeopleLocationsVehicles("vehicles", films).flat(1).forEach((el) => {
   <li>Tipo de Vehículo: ${el.vehicle_class}</li>
   <li>Largo: ${el.length}</li>
   <li>Piloto: ${el.pilot.name}</li>     
-  <div class="box"><img src= ${el.img}></div> 
 </ul>
 </div>
 </div>`;
