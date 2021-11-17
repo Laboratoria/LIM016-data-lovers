@@ -1,4 +1,4 @@
-import { huevitoPokemon , filtarCp , rarezaPokemon , ordenAlfaNumerico, typePokemones, regionFuncion, buscarPoke } from '../src/data.js';
+import { huevitoPokemon , filtarCp , rarezaPokemon , ordenAlfaNumerico, typePokemones, regionFuncion, buscarPoke, regionSelect, rarezaSelect, tiposSelect } from '../src/data.js';
 
 import data from "../src/data/pokemon/pokemon.js";
 
@@ -493,3 +493,31 @@ describe('buscarPoke', () => {
     expect(buscarPoke("194",data.pokemon)).toStrictEqual([wooper]);
   });
 });
+
+describe('regionSelect', () => {
+  it('is a function', () => {
+    expect(typeof regionSelect).toBe('function');
+  });
+
+    it('returns `150`', () => {
+      expect(regionSelect("kanto",data.pokemon)).toHaveLength(151);
+    });
+  });
+
+  describe('rarezaSelect', () => {
+    it('is a function', () => {
+      expect(typeof rarezaSelect).toBe('function');
+    });
+    it('should return', () => {
+      expect(rarezaSelect("normal", arrayPrueba)).toHaveLength(3)
+    });
+  });
+
+  describe('tiposSelect', () => {
+    it('is a function', () => {
+      expect(typeof tiposSelect).toBe('function');
+    });
+    it('should return', () => {
+      expect(tiposSelect("normal", arrayPrueba)).toStrictEqual([eevee]);
+    });
+  });

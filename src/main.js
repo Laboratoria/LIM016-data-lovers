@@ -8,29 +8,37 @@ import {
   ordenAlfaNumerico,
   typePokemones,
   regionFuncion,
+  tiposSelect,
+  regionSelect,
+  rarezaSelect
 } from "./data.js";
 
 import { start } from "./carrusel.js";
 
-start();
+window.addEventListener("load", () => {
+  document.getElementById("loader").classList.toggle("loader2")
+})
+
+start()
 
 const container = document.querySelector(".pokemon-container");
 const orden = document.getElementById("orden");
 const cp = document.getElementById("cp");
 const eggPoke = document.getElementById("egg");
 const search = document.getElementById("search");
-
+const tipos = document.getElementById("tipos");
+const region = document.getElementById("region");
+const rareza = document.getElementById("rareza");
 const navToggle = document.querySelector("#toggle");
 const navMenu = document.querySelector(".menu");
 
 navToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("nav-menu_visible");
-});
+  navMenu.classList.toggle("nav-menu_visible")
+})
+
+// let arrayPokemon;
 
 let arrayCambiante = "";
-
-
-
 
 async function fetchPokemon() {
   const jsondata = await fetch("./data/pokemon/pokemon.json");
@@ -38,6 +46,7 @@ async function fetchPokemon() {
 
   const arrayPokeP = data.pokemon;
 
+  console.log(data.pokemon)
 
   mostrarPokemon(data.pokemon, arrayPokeP);
   handleDivRegion(data, arrayPokeP);
@@ -47,6 +56,9 @@ async function fetchPokemon() {
   filtrarRarezaPokemon(data, arrayPokeP);
   filtroCP(arrayPokeP);
   filtroOrdenAlfaNumerico(arrayPokeP);
+  filtrarTiposSelect(data, arrayPokeP);
+  filtrarRegionSelect(data, arrayPokeP);
+  filtrarRarezaSelect(data, arrayPokeP);
 
   return data.pokemon;
 }
@@ -113,11 +125,10 @@ function buscarPokemon(data, arrayPokeP) {
   });
 }
 
-function filtrarTiposPokemon(data, arrayPokeP) {
-  document
-    .getElementById("divTiposPokemones")
-    .addEventListener("click", (e) => {
-      e.preventDefault();
+//tipos de pokemon x botones
+function filtrarTiposPokemon(data, arrayPokeP){
+  document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
+  e.preventDefault();
 
       if (e.target.getAttribute("id")) {
         container.innerHTML = "";
@@ -127,6 +138,41 @@ function filtrarTiposPokemon(data, arrayPokeP) {
         mostrarPokemon(arraytipoPoke, arrayPokeP);
       }
     });
+}
+
+//tipos de pokemon x select
+function filtrarTiposSelect(data, arrayPokeP) {
+  tipos.addEventListener("change", (e) => {
+    container.innerHTML = "";
+    const tipoSelect = e.target.value;
+    const arrayTipoSelect = tiposSelect(tipoSelect, data.pokemon);
+    mostrarPokemon(arrayTipoSelect, arrayPokeP);
+  });
+}
+
+//region de pokemon x select 
+
+function filtrarRegionSelect(data, arrayPokeP){
+  region.addEventListener("change", (e) => {
+    e.preventDefault();
+    container.innerHTML = "";
+    const valorSelect = e.target.value;
+    const arrayRegionSelect = regionSelect(valorSelect, data.pokemon);
+
+    mostrarPokemon(arrayRegionSelect, arrayPokeP);
+  });
+}
+
+//rareza de pokemon x select
+
+function filtrarRarezaSelect(data, arrayPokeP) {
+  rareza.addEventListener("change", (e) => {
+    container.innerHTML = "";
+    const rarezaPoke = e.target.value;
+    const arrayRarezaSelect = rarezaSelect(rarezaPoke, data.pokemon)
+
+    mostrarPokemon(arrayRarezaSelect, arrayPokeP)
+});
 }
 
 function filtrarRarezaPokemon(data, arrayPokeP) {
