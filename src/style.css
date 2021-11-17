@@ -1,222 +1,187 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Red+Hat+Mono&display=swap');
+/* IMPORTAR PARA APLICAR FUENTE */
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Indie+Flower&display=swap');
 
+/*QUITAR EL MARGIN Y PADDING PREDEFINIDOS*/
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Aldrich', sans-serif;
 }
 
+/*BODY - COLOR DE FONDO A LA PAGINA*/
 body{
     background-color: rgb(192, 237, 226);
 }
 
+/*CABECERA*/
 header{
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;  
 }
 
+/*IMAGEN DEL BANNER*/
 .imgBanner{
-    height: 50%;
+    height: 80%;
     width: 100%;
-    z-index: 2;
 }
 
+/*CONTENEDOR DEL BUSCADOR*/
 .buscador{
     display: flex;
     justify-content: flex-end;
 }
 
-input{
-    
-    width: 350px;
-    height: 50px;
+/*INPUT DE BUSCAR POKEMON*/
+input{  
+    width: 20%;
+    height: 90px;
+
     border-radius: 10px;
-    border-color: white;
-    text-align: center;
+    border-width: 6px;
+    border-color: rgb(61, 92, 138);
     
-    font-size: 25px;
-    margin-right: 30px;
+    text-align: center;
+    font-size: 250%;
+
     position: relative;
-    top: -75px;
-    z-index: 2;
+    top: -140px;
+    right: 50px;
 }
 
-input:focus{
-    outline: none;
-}
-
+/*TODOS LOS PLACEHOLDER */
 ::placeholder{
-    font-family: "Font Awesome 5 Free"; 
-    font-weight: 550;
+    font-weight: 800;
 }  
 
+/*MAIN HOME*/
 .home{
     width: 100%;
-    max-width: 1200px;
     display: flex;
     flex-direction: row;
-    margin: auto;
+    align-content: flex-start;
 }
 
-.container-pokemons {
+/*CONTENEDOR DE CARDS DE POKEMONS*/
+.container-pokemons{
     width: 100%;
     height: max-content;
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
-    align-content: flex-start;
+    justify-content: center;
 }
 
+/*TARJETA POKEMON*/
 .card{
     background-color: rgb(255, 255, 255);
-    border-color: rgb(6, 32, 70);
+    border-color: rgb(43, 43, 44);
     border-style: solid;
-    border-width: 3px;
+    border-width: 4px;
 
-    width: 200px;
-    min-height: 500px;
-    border-radius: 12px 12px 0px 0px;
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 50px 50px 0px 0px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.61);
     overflow: hidden;
-    margin: 20px;
+    margin: 80px;
     text-align: center;
     transition: all 0.25s;
     padding: 15px;
 }
 
+/*POSICIONARSE EN LA TARJETA POKEMON*/
 .card:hover{
     transform:translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
 }
 
+/*NUMERO DRE POKEMON*/
+.numPokemon{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/*IMAGEN DEL POKEMON*/
 .imgPokemon{
     width: 90%;
     height: 60%;
+    padding: 20px;
 }
 
-.nomPokemon {
+/*NOMBRE DEL POKEMON*/
+.nomPokemon{
     text-transform: uppercase;
-    font-size: 26px;
-    font-family: 'Red Hat Mono', monospace;
+    font-size: 30px;
 }
 
-h3 {
-    font-size: 35px;
-    font-family: 'Red Hat Mono', monospace;
+/*NOMBRE DE LA REGION*/
+.nomRegion{
+    font-size: 30px;
 }
 
+/*BOTON DE IR HACIA ARRIBA*/
+.button-up{
+    width: 100px;
+    height: 100px;
+    background: rgb(6, 32, 70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 400px;
+    right: 50px;
+    cursor: pointer;
+    border: 4px solid transparent;
+    transition: all 200ms ease;
+    visibility: hidden;
+}
 
-p{
-    font-family: 'Red Hat Mono', monospace;
-    padding: 0 1rem;
-    font-size: 25px;
-    font-weight: 300;
+/*POSICIONARSE EN EL BOTON DE IR HACIA ARRIBA*/
+.button-up:hover{
+    transform: scale(1.1);
+    border-color: rgba(0,0,0,0.1);
 }
-.region{
-    color: rgb(6, 32, 70);
-}
-.elemento {
-    color: rgb(6, 32, 70);
-}
+
+/*CONTENEDOR DE PIE DE PAGINA*/
 .foot {
     width: 100%; /* CUBRE TODO EL ANCHO DISPONIBLE */
-    height: 60px;
+    height: 350px;
     background-color: rgb(6, 32, 70);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.information{
-    color: blanchedalmond;
-    font-size: 18px;
-    text-align: right;
-    
-}
-
+/*MAS INFORMACION*/
 .informationMore{
-    color: blanchedalmond;
+    color: white;
+    font-size: 35px;
     text-align: right;
-    font-size: 18px;
-    text-decoration: none; 
 }
 
+/*AUTORES*/
 .authors {
     color: white;
-    font-size: 18px;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 35px;
     text-align: center;
 }
 
+/*ICONOS DE DESCARGA*/
 .iconDownloands{
-    width: 30%;
-    height:90%;
+    width: 60%;
+    height: 120%;
     border-radius: 10px;
-    margin-top: 10px;
+    margin: 20px;
 }
 
-.copyright {
-    text-align: center;
-    font-size: small;
-}
-
-.downloands {
-text-align:right;
-}
-
-
-/* Filtros */
+/* CONTENEDOR DEL MENU DESPLEGABLE */
 .cont-menu{
     width: 400px;
-    margin: 50px auto;
-}
-
-.cont-menu .cont-enlace{
-    box-shadow: 0px 0px 2px 1px white;
-}
-
-/* Estilos para las opciones */
-.cont-menu .cont-enlace .opcion{
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(6, 32, 70);
-    color: white;
-    padding: 13px 15px;
-    font-size: 22px;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* Estilos para el simbolo '+' */
-.cont-menu .cont-enlace .opcion .icono{
-    background-color: white;
-    color: rgb(6, 32, 70);
-    font-weight: bold;
-    font-size: 22px;
-    text-align: center;
-    width: 26px;
-    border-radius: 5px;
-}
-
-/* Efecto para aparacer y desaparecer enlaces */
-.cont-menu .cont-enlace .enlace{
-    height: 0;
-    overflow: hidden;
-}
-
-.cont-menu .cont-enlace .animation{
-    height: 100%;
-}
-
-/* Estilos para los enlaces */
-.cont-menu .cont-enlace .enlace a{
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 20px;
-    color: rgba(0,0,0,.8);
-    background-color: white;
-}
-
-.cont-menu .cont-enlace .enlace a:hover{
-    background-color: #cc2e3b;
-    color: white;
+    position: relative;
+    top: -95px;
+    right: 0;  
 }
