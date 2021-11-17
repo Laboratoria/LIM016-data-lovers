@@ -1,7 +1,7 @@
 import data from './data/ghibli/ghibli.js';
 //console.log(data.films[0].people[0])
 
-/*botones para  ingresar a cada seccion*/
+/*botones para  ingresar a cada seccion*/ 
 
 
 import {
