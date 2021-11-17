@@ -8,9 +8,16 @@ import {
   ordenAlfaNumerico,
   typePokemones,
   regionFuncion,
+  tiposSelect,
+  regionSelect,
+  rarezaSelect
 } from "./data.js";
 
 import {start} from './carrusel.js'
+
+window.addEventListener("load", () => {
+  document.getElementById("loader").classList.toggle("loader2")
+})
 
 start()
 
@@ -19,8 +26,9 @@ const orden = document.getElementById("orden");
 const cp = document.getElementById("cp");
 const eggPoke = document.getElementById("egg");
 const search = document.getElementById("search");
-
-
+const tipos = document.getElementById("tipos");
+const region = document.getElementById("region");
+const rareza = document.getElementById("rareza");
 const navToggle = document.querySelector("#toggle");
 const navMenu = document.querySelector(".menu");
 
@@ -41,7 +49,10 @@ function fetchPokemon() {
       eggPokemon(data);
       buscarPokemon(data);
       filtrarTiposPokemon(data)
-      filtrarRarezaPokemon(data)
+      filtrarRarezaPokemon(data);
+      filtrarTiposSelect(data);
+      filtrarRegionSelect(data);
+      filtrarRarezaSelect(data);
     });
 }
 
@@ -100,10 +111,9 @@ function buscarPokemon(data){
 });
 }
 
-
-
+//tipos de pokemon x botones
 function filtrarTiposPokemon(data){
- document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
+  document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
   e.preventDefault();
 
       if (e.target.getAttribute("id")) {
@@ -113,6 +123,41 @@ function filtrarTiposPokemon(data){
         const arraytipoPoke = typePokemones(tipoP, data.pokemon);
         mostrarPokemon(arraytipoPoke);
       }
+});
+}
+
+//tipos de pokemon x select
+function filtrarTiposSelect(data) {
+  tipos.addEventListener("change", (e) => {
+    container.innerHTML = "";
+    const tipoSelect = e.target.value;
+    const arrayTipoSelect = tiposSelect(tipoSelect, data.pokemon);
+    mostrarPokemon(arrayTipoSelect);
+  });
+}
+
+//region de pokemon x select 
+
+function filtrarRegionSelect(data){
+  region.addEventListener("change", (e) => {
+    e.preventDefault();
+    container.innerHTML = "";
+    const valorSelect = e.target.value;
+    const arrayRegionSelect = regionSelect(valorSelect, data.pokemon);
+
+    mostrarPokemon(arrayRegionSelect);
+  });
+}
+
+//rareza de pokemon x select
+
+function filtrarRarezaSelect(data) {
+  rareza.addEventListener("change", (e) => {
+    container.innerHTML = "";
+    const rarezaPoke = e.target.value;
+    const arrayRarezaSelect = rarezaSelect(rarezaPoke, data.pokemon)
+
+    mostrarPokemon(arrayRarezaSelect)
 });
 }
 

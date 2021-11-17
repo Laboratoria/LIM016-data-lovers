@@ -1,6 +1,7 @@
 * {
   margin: 0;
   border: 0;
+  padding:0;
   box-sizing: border-box;
 }
 
@@ -505,6 +506,32 @@ outline: 3px solid black;
   );
 }
 
+#tipos,
+#region,
+#rareza{
+  display:none
+}
+@media (max-width:768px){
+  .tipos{
+    display:block !important
+  }
+  .region{
+    display:block !important;
+  }
+
+  .rareza{
+    display:block !important;
+  }
+  #pokedex .container-tipo-rareza-region{
+    display: none !important;
+  }
+
+
+  #container-filtro{
+    width:100%;
+    justify-content: center;
+  }
+}
 /* evoluciones */
 
 .solo {
@@ -1349,6 +1376,29 @@ table {
   z-index: -1;
 }
 
+/*formato del loading*/
+#loader img{
+  width: 10%;
+}
+.loader{
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 100000;
+  
+  transform: scale(1.1);
+}
+
+.loader2{
+  transition: all 5s ease-in-out;
+  transform: scale(0);
+}
 /*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
 @media (max-width: 600px) {
   .pokemon-container {
@@ -1471,12 +1521,6 @@ table {
     max-width: 120px;
     max-height: 90px;
   }
-
-  #divTiposPokemones {
-    grid-template-columns: repeat(3, 1fr);
-    width: 100vw;
-  }
-
 
 
 /*FORMATO AL CHART*/

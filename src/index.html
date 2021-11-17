@@ -15,12 +15,11 @@
   </head>
   <body>
 
-
     <header class="navegador" >
       <img class="logo" src="img/logo.png">
       <button id="toggle">
       <i class="fas fa-bars"></i></button>
-      <ul class="menu" >
+      <ul class="menu" style="display: none;" >
         <li><button id="btnInicio" class="activeButton">INICIO</button></li>
         <li><button id="btnPokedex" class="btnNav">POKEDEX</button></li>
         <li><button id="btnTipo" class="btnNav">TIPO</button></li>
@@ -280,8 +279,8 @@
       </div>
 
       <div class="container-filtro-padre">
-        <div class="container-tipo-rareza-region"  style="display: none">
-          <div id="divTiposPokemones" style="display: none" >
+        <div class="container-tipo-rareza-region">
+          <div id="divTiposPokemones" style="display:none" >
             <div class="tipoDiv">GHOST<div class="tipoPokeInicio"><img id="ghost" src="./img/tipo-ghost.png"></div></div>
             <div class="tipoDiv">WATER<div class="tipoPokeInicio"><img id="water" src="./img/tipo-agua.png"></div></div>
             <div class="tipoDiv">POISON<div class="tipoPokeInicio"><img id="poison" src="./img/tipo-poison.png"></div></div>
@@ -315,7 +314,42 @@
             </div>
         </div>
         <div class="container-filtro" id="container-filtro">
+          
+          <select class = "" id="tipos">
+          <option value="" disabled selected>Type</option>
+          <option value="ghost">Ghost</option>
+          <option value="water">water</option>
+          <option value="poison">poison</option>
+          <option value="flying">flying</option>
+          <option value="rock">rock</option>
+          <option value="dragon">dragon</option>
+          <option value="dark">dark</option>
+          <option value="fairy">fairy</option>
+          <option value="grass">grass</option>
+          <option value="electric">electric</option>
+          <option value="fighting">fighting</option>
+          <option value="fire">fire</option>
+          <option value="psychic">psychic</option>
+          <option value="normal">normal</option>
+          <option value="bug">bug</option>
+          <option value="ice">ice</option>
+          <option value="steel">steel</option>
+          <option value="ground">ground</option>
 
+          </select>
+
+          <select class="" id="region" >
+            <option value="" disabled selected>Region</option>
+            <option value="kanto" >Kanto</option>
+            <option value="johto" >johnto</option>
+          </select>
+
+          <select id="rareza">
+            <option value="" disabled selected>Rareza</option>
+            <option value="normal" >normal</option>
+            <option  value="mythic" >mítico</option>
+            <option  value="legendary" >legendario</option>
+          </select>
           <select id="cp">
             <option value="" disabled selected>CP</option>
             <option value="max">Max cp</option>
@@ -330,14 +364,14 @@
             <option value="251_1">251-001</option>
           </select>
 
-            <select id="egg">
-              <option value="" disabled selected>Egg</option>
-              <option value="2 km">2 km</option>
-              <option value="5 km">5 km</option>
-              <option value="7 km">7 km</option>
-              <option value="10 km">10 km</option>
-            </select>
-
+          <select id="egg">
+            <option value="" disabled selected>Egg</option>
+            <option value="2 km">2 km</option>
+            <option value="5 km">5 km</option>
+            <option value="7 km">7 km</option>
+            <option value="10 km">10 km</option>
+          </select>
+          <p><button type="reset">Reset</button></p>
         </div>
       </div>
     </div>
@@ -375,9 +409,11 @@
   </div>
 </section>
 
-  <footer class="footer">
+  <footer class="footer" style="display: block">
 
   </footer>
+
+  <div class="lds-roller loader" id="loader" ><img src="./img/loader.gif"></div>
 
 <script src="main.js" type="module"></script>
 <script src="vistas.js" type="module"></script>

@@ -72,6 +72,34 @@ export function regionFuncion(regionP, arrayPokemon) {
   return array;
 }
 
+//select region pokemon
+export function regionSelect(valorSelect, arrayPokemon){
+  let array = [];
+  for (let i = 0; i < arrayPokemon.length; i++) {
+    if (arrayPokemon[i].generation.name == valorSelect) {
+      array.push(arrayPokemon[i]);
+    }
+  }
+  return array;
+}
+
+//select rareza
+export function rarezaSelect(rarezaSelect, arrayPokemon) {
+  let arrayRarezaSelect = arrayPokemon.filter(
+    (array) => array["pokemon-rarity"] == rarezaSelect
+  );
+  return arrayRarezaSelect;
+}
+
+
+//select de tipos
+export function tiposSelect(tipo, arrayPokemon) {
+  let tipoSelect= arrayPokemon.filter(element=>
+    element.type.includes(tipo)
+    );
+  return tipoSelect
+}
+
 
 //buscador de pokemon
 export function buscarPoke(texto, arrayPokemon) {
@@ -87,3 +115,4 @@ export function buscarPoke(texto, arrayPokemon) {
   }
   return array;
 }
+
