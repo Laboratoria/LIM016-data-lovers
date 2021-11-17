@@ -9,7 +9,7 @@ import {
 } from './data.js';
 
 
-document.getElementById("filmografia").addEventListener("click", ()=>{
+  document.getElementById("filmografia").addEventListener("click", ()=>{
     document.getElementById("filmo").style.display="block";
     document.getElementById("persona").style.display="none";
     document.getElementById("vehiculos").style.display="none";
