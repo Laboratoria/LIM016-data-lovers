@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers - POKEMON</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="../IMAGENES/pokebola.png" type="png" />
-    <script src="https://kit.fontawesome.com/15c8445c30.js" crossorigin="anonymous"></script>
+    <title>Data Lovers - POKEMON</title> <!-- TITULO EN LA PESTAÑA DEL NAVEGADOR -->
+    <link rel="stylesheet" href="style.css" /> <!-- LINKEAR EL ARCHIVO CSS -->
+    <link rel="shortcut icon" href="../IMAGENES/pokebola.png" type="png" /> <!-- ICONO EN LA PESTAÑA DEL NAVEGADOR -->
+    <script src="https://kit.fontawesome.com/15c8445c30.js" crossorigin="anonymous"></script> <!-- USAR LOS ICONOS DE FONTAWESOME -->
   </head>
-  <body>
-    <div id="root">
-      <header>
-        <section class="banner">
-          <img class="imgBanner" src="../IMAGENES/encabezadoPok.jpg" alt="">
-        </section>
-        <section class="buscador">
-          <input type="search" name="inputBuscador" class="buscarPokemon" placeholder="Ejemplo: pikachu ">
-        </section>
-      </header>
-      
-      <div class="home">
 
-        <div class="cont-menu">
+  <body>
+    <!-- CABECERA (BANNER Y BUSCADOR DE POKEMON) -->
+    <header>
+      <!-- BANNER -->
+      <section class="banner">
+        <img class="imgBanner" src="../IMAGENES/encabezadoPok.jpg" alt="">
+      </section>
+
+      <!-- BUSCADOR DE POKEMON -->
+      <section class="buscador">
+        <input type="search" name="inputBuscador" class="buscarPokemon" placeholder="Ejemplo: pikachu">
+      </section>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="home">
+      <!-- CONTENEDOR DEL MENU DESPLEGABLE -->
+      <div class="cont-menu">
 
           <div class="cont-enlace">
             <div class="opcion ">
@@ -91,36 +97,46 @@
           </div>          
             
         </div>
-        <div class="container-pokemons" id="container-pokemons">
 
-          <template id="templateCard">
-            <div class="card">
-              <h3 class="numPokemon"></h3>
-              <img src=" " alt="" class="imgPokemon">
-              <h6 class="nomPokemon"></h6>
-              <p class="nomRegion"></p>
-            </div>
-          </template>
+      <!-- CONTENEDOR DE TODOS LOS CARDS DE POKEMONES -->
+      <div class="container-pokemons" id="container-pokemons">
+        <!-- PLANTILLA DE CARD DE POKEMON -->
+        <template id="templateCard">
+          <div class="card">
+            <p class="numPokemon"></p>
+            <img src=" " alt="" class="imgPokemon">
+            <p class="nomPokemon"></p>
+            <p class="nomRegion"></p>
+          </div>
+        </template>
           
-        </div>
-        </div>
-        
       </div>
 
-        <footer class="foot">
-          <section class="information">
-            <a href="https://pokemongolive.com/es/"><p class="informationMore">Más información</p></a>
-          </section>
-          <section class="copyright">
-            <p class="authors"> Copyright © 2021 - Derechos reservados</p>
-          </section>
-          <section class="downloands">
-            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=es_PE&gl=US"> <img class="iconDownloands" src="../IMAGENES/googlePlay.png" alt="" srcset=""></a>
-            <a target="_blank" href="https://apps.apple.com/es/app/pok%C3%A9mon-go/id1094591345"> <img class="iconDownloands" src="../IMAGENES/appStore.png" alt="" srcset=""></a>
-          </section>
-        </footer>
+    </main>
 
-      </div>
+    <!-- CONTENEDOR DEL BOTON DE SUBIR -->
+    <div class="button-up">
+      <i class="fas fa-arrow-up"></i> <!-- ICONO DE SUBIR -->
+    </div>
+
+    <!-- CONTENEDOR DEL PIE DE PAGINA -->
+    <footer class="foot">
+      <!-- SECCION DE MAS INFORMACION -->
+      <section class="information">
+        <a href="https://pokemongolive.com/es/"><p class="informationMore">Más información</p></a>
+      </section>
+      <!-- SECCION DE COPYRIGHT -->
+      <section class="copyright">
+        <p class="authors"> Copyright © 2021 - Derechos reservados</p>
+      </section>
+      <!-- SECCION DE ENLACES DE DESCARGA DEL JUEGO -->
+      <section class="downloands">
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=es_PE&gl=US"> <img class="iconDownloands" src="../IMAGENES/googlePlay.png" alt="" srcset=""></a>
+        <a target="_blank" href="https://apps.apple.com/es/app/pok%C3%A9mon-go/id1094591345"> <img class="iconDownloands" src="../IMAGENES/appStore.png" alt="" srcset=""></a>
+      </section>
+    </footer>
+    
+    <!-- LINKEAR ARCHIVO MAIN.JS -->
     <script src="main.js" type="module"></script>
   </body>
 </html>

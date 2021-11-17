@@ -1,19 +1,26 @@
+// IMPORTAR DATA DE POKEMON.JS
 import data from './data/pokemon/pokemon.js';
 import { buscarPokemon, mostraPokemon } from './data.js';
 
+// DECLARACION DE VARIABLES
 const input=document.querySelector(".buscarPokemon");
 const container=document.querySelector(".container-pokemons");
 
 const fragment=document.createDocumentFragment();
 const template=document.getElementById("templateCard");
 
-window.onload = () => mostraPokemon(data.pokemon, fragment, template, container);
+const up=document.querySelector(".button-up");
 
+// FUNCIÓN PARA LIMPIAR LAS TARJETAS
 function limpiar(){ 
     let nodosEliminar=document.querySelectorAll(".card");
     nodosEliminar.forEach(nodo => nodo.remove());
 }
 
+// CUANDO CARGA LA PAGINA
+window.onload = () => mostraPokemon(data.pokemon, fragment, template, container);
+
+// EVENTO AL PRESIONAR UNA TECLA EN EL INPUT BUSCADOR
 input.addEventListener("keyup",(e)=>{
         limpiar();
         let valorInput = e.target.value;
@@ -69,3 +76,21 @@ elemento.forEach(e=>{
         buscarPokemon(pokemonsFilter,input.value,fragment, template, container);
     });
 });
+
+up.addEventListener("click", scrollUp);
+
+function scrollUp(){
+    let desplaScroll=document.documentElement.scrollTop;
+    if(desplaScroll>10){
+        window.requestAnimationFrame(scrollUp);
+        window.scrollTo(0,desplaScroll-(desplaScroll/50));
+    }
+    else {up.style.visibility="hidden";}
+}
+
+window.onscroll=function(){
+    let scroll=document.documentElement.scrollTop;
+    if(scroll>10){
+        up.style.visibility="visible";}
+    else {up.style.visibility="hidden";}
+}
