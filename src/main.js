@@ -8,9 +8,6 @@ console.log (filterPeopleLocationsVehicles("people", films))
 /*botones para  ingresar a cada seccion*/ 
 
 
-import {
-  filtrarNombre, ordenarCampeones, filtrandoRoles, calculoStats,
-} from './data.js';
 
 
   document.getElementById("filmografia").addEventListener("click", ()=>{
