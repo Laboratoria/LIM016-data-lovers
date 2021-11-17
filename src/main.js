@@ -108,8 +108,8 @@ tableBody.innerHTML= dataHTML;
 }
 
 const searchSport= document.getElementById("search");  //el buscador de deportes
-searchSport.addEventListener("keyup", (e)=> {
-
+searchSport.addEventListener("keyup", searchSportEvent); 
+function searchSportEvent(){
   let filter, table, tr, td, i, txtValue;
   filter = searchSport.value.toLowerCase();
   table = document.getElementById("myTable");
@@ -126,7 +126,7 @@ searchSport.addEventListener("keyup", (e)=> {
       }
     }       
   }
-});
+}
 
 
 /*------------------------------código de los atletas*/
@@ -135,18 +135,14 @@ let newListsAthlete= data.athletes.map(item=>{
   return [item.name,item]
 });
 
-var personasMapArr = new Map(newListsAthlete); 
+var personasMapArr= new Map(newListsAthlete); 
 let unicos = [...personasMapArr.values()]; // Conversión a un array
 
 /* .....Funcion para crear la lista de atletas con el nuevo array...... */
 function listName(e) {
   const athlete= document.getElementById("hereAthletes")
 
-  let span = document.getElementById("close");
-span.addEventListener("click", (e)=>{
-  modal.style.display="block";
-})
-  let onlyAhtete =e.forEach((index)=>{
+let onlyAhtete =e.forEach((index)=>{
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
     athletes_screen.style.flexDirection = "row"
@@ -154,22 +150,23 @@ span.addEventListener("click", (e)=>{
     athletes_screen.onclick= (e)=>contAthletes(e,index);
     athlete.appendChild(athletes_screen)
     
-athletes_screen.addEventListener("click", (e)=>{
+athletes_screen.addEventListener("click", showModal);
+function showModal(){
   modalAthlete.style.display="block";
-})
+}
 
-  })
+})
 }
 const modalAthlete= document.getElementById("modal");
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modalAthlete) {
+    modalAthlete.style.display = "none";
   }
 }
 
 
 /* .....Funcion para crear el card con el nuevo array................. */
-const prueba = listName(unicos)
+//const prueba = listName(unicos)
 const contAthletes = (event,unicos) => {
   
   let nameAthlete= document.getElementById("name")
@@ -247,8 +244,8 @@ let variousMedals =Object.entries(sports.reduce(    //un array con los nombres y
 
 let searchM_winners= document.getElementById("searchMultipleWinners");//el buscador 
 
-searchM_winners.addEventListener("keyup", (e)=>{
-  //console.log(e)
+searchM_winners.addEventListener("keyup", winners)
+function winners(){
   let key_Athlete, i;
   let search_winners= searchM_winners.value.toLowerCase();
   key_Athlete= document.getElementsByClassName("medal_athletesContainer");
@@ -260,7 +257,7 @@ searchM_winners.addEventListener("keyup", (e)=>{
       key_Athlete[i].style.display = "none";
     }
   }
-})
+}
 /*------------------------Código de las atletas femeninas*/
 
 let female_athletes= justFemale(sports);
@@ -287,7 +284,8 @@ const table_female= document.getElementById("hereFemale");
 
 //-----------------el buscador---------------
 let searchFemAthlete= document.getElementById("searchFemAthl");
-searchFemAthlete.addEventListener("keyup", (e)=> {
+searchFemAthlete.addEventListener("keyup", female);
+function female(){
   var filter, table, tr, td, i, txtValue;
   filter = searchFemAthlete.value.toLowerCase();
   table = document.getElementById("female_table");   
@@ -304,5 +302,5 @@ searchFemAthlete.addEventListener("keyup", (e)=> {
       }
     }       
   }
-});
+}
 
