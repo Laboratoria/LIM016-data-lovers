@@ -1,5 +1,9 @@
 import data from './data/ghibli/ghibli.js';
-//console.log(data.films[0].people[0])
+import {filterPeopleLocationsVehicles} from  './data.js';
+ 
+let films = [];
+films = data.films;
+console.log (filterPeopleLocationsVehicles("people", films))
 
 /*botones para  ingresar a cada seccion*/ 
 
@@ -24,7 +28,6 @@ import {
      document.getElementById("locaciones").style.display="none";
      document.getElementById("portada").style.display="none";
    })
-   
   
    
      document.getElementById("vehicles").addEventListener("click", ()=> {
@@ -53,98 +56,91 @@ const containerLocation = document.getElementById("locaciones");
 const containerVehiculos = document.getElementById("vehiculos");
 
 
-let films = [];
-films = data.films;
 const sectionFilm = films.forEach(({title , description , producer, poster , rt_score , release_date, director}) => {
   const createElement= document.createElement("div")
-    const template= `<ul>
+  createElement.setAttribute("class", 'contenedorCardFilm');
+    const template= ` <div class = "conteinerTextFilm">
+    <ul>
    <li>Titulo: ${title} </li>
    <li>Descripción: ${description}</li>
    <li>Productor: ${producer}</li>
    <li>Score: ${rt_score}</li>
    <li>Director ${director}</li>
    <li>Año: ${release_date}</li>
-   <div class="box"><img src= ${poster}></div> 
-</ul></div>`;
+</ul>
+</div>
+<div class="box1"><img src= ${poster} id ="imgPosterFilm"></div> `;
  createElement.innerHTML= template
  containerFilmo.appendChild(createElement);
  return template;
 } )
 
 
-const arrayGhibli = data.films;
-let arrayPeople = [];
-for(let i=0; i<arrayGhibli.length;i++){
-    arrayPeople.push(arrayGhibli[i].people)
-}
-
-arrayPeople.flat(1).forEach(({name, gender, eye_color, hair_color, specie ,img}) => {    
+filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {    
   const createElement= document.createElement("div")
-
-  const template= `<div id= "divCardPeople">
+  createElement.setAttribute("class", 'contenedorCardPeople');
+  const template1= `<div id= "divCardPeople">
+  <div class="frontCard"
+  <h3>${el.name} </h3>
+  <div class="box2"><img src= ${el.img} id ="imgPosterPeople"></div> 
+  </div>
+  <div class="backCard">
   <ul>
-  <li>Nombre: ${name} </li>
-  <li>Genero: ${gender}</li>
-  <li>Color de Ojos: ${eye_color}</li>
-  <li>Color de Cabello: ${hair_color}</li>
-  <li>Especie: ${specie}</li>     
-  <div class="box"><img src= ${img}></div> 
-</ul>
-</div>`;
-createElement.innerHTML= template;
-containerPeople.appendChild(createElement);
-return template;
-});
-
-
-
-
-const intento =data.films[0].locations;
-intento.forEach((el) => {
-  const createElement= document.createElement("div")
-  const intentoDos =data.films;
-  intentoDos.forEach((t) => {
- let createDiv = document.createElement("div");
-let templateDos =
- `<div id= "peopleTitle">
-<h2> ${t.title} </h2>
-</div>`;
-return templateDos;
-  })
-  const template= `<div id= "divCardPeople">
-  <ul>
-  <li>Nombre: ${el.name} </li>
   <li>Genero: ${el.gender}</li>
   <li>Color de Ojos: ${el.eye_color}</li>
   <li>Color de Cabello: ${el.hair_color}</li>
   <li>Especie: ${el.specie}</li>     
+</ul>
+</div>
+</div>`;
+createElement.innerHTML= template1;
+containerPeople.appendChild(createElement);
+return template1;
+});
+
+
+  /* <li>Residentes: ${el.residents[0].name}</li> */
+filterPeopleLocationsVehicles("locations", films).flat(2).forEach((el) => {    
+  const createElement= document.createElement("div")
+  createElement.setAttribute("class", 'contenedorCardLocations');
+  const template2= `<div id= "divCardLocations">
+  <div class="frontCard">
+  <p>${el.name} </p>
+  <div class="box3"><img src= ${el.img} id ="imgPosterLocations"></div>
+  </div>
+  <div class="backCard">
+  <ul>
+  <li>Clima: ${el.climate}</li>
+  <li>Terreno: ${el.terrain}</li>
+  <li>Nivel del mar: ${el.surface_water}</li>
+  <li>Residentes: ${el.residents}</li>     
+</ul>
+</div>
+</div>`;
+console.log(template2)
+createElement.innerHTML= template2;
+containerLocation.appendChild(createElement);
+return template2;
+});
+
+
+filterPeopleLocationsVehicles("vehicles", films).flat(1).forEach((el) => {    
+  const createElement= document.createElement("div");
+  createElement.setAttribute("class", 'contenedorCardVehicles');
+  const template3= `<div id= "divCardVehicles">
+  <div class="frontCard">
+  <p> ${el.name} </p>
+  <div class="box4"><img src= ${el.img} id ="imgPosterVehicles"></div>
+  </div>
+  <div class="backCard">
+  <ul>
+  <li>Descripción: ${el.description}</li>
+  <li>Tipo de Vehículo: ${el.vehicle_class}</li>
+  <li>Largo: ${el.length}</li>
+  <li>Piloto: ${el.pilot.name}</li>     
   <div class="box"><img src= ${el.img}></div> 
 </ul>
-</div>`;
-createElement.innerHTML= template;
-containerLocation.appendChild(createElement);
-createElement.appendChild(createDiv)
-return template;
-})
-
-
-let arrayVehicules = [];
-for(let i=0; i<arrayGhibli.length;i++){
-    arrayVehicules.push(arrayGhibli[i].vehicles)
-}
-
-arrayVehicules.flat(1).forEach(({name, description, vehicle_class, length ,img, pilot}) => {    
-  const createElement= document.createElement("div")
-
-  const template3= `<div id= "divCardPeople">
-  <ul>
-  <li>Nombre: ${name} </li>
-  <li>Descripcion: ${description}</li>
-  <li>Tipo de vehiculo: ${vehicle_class}</li>
-  <li>Largo ${length}</li>
-  <li>Piloto: ${pilot.name}</li>     
-  <div class="box"><img src= ${img}></div> 
-</ul>
+</div>
 </div>`;
 createElement.innerHTML= template3;
 containerVehiculos.appendChild(createElement);
@@ -153,28 +149,10 @@ return template3;
 
 
 
-let arrayLocations = [];
-for(let i=0; i<arrayGhibli.length;i++){
-    arrayLocations.push(arrayGhibli[i].locations)
-}
 
-arrayLocations.flat(1).forEach(({img, climate , terrain, surface_water, residents, name}) => {    
-  const createElement= document.createElement("div")
 
-  const template4= `<div id= "divCardPeople">
-  <ul>
-  <li>Nombre: ${name} </li>
-  <li>Clima: ${climate}</li>
-  <li>Terreno: ${terrain}</li>
-  <li>Nivel del mar: ${surface_water}</li>
-  <li>Residentes: ${residents.name}</li>     
-  <div class="box"><img src= ${img}></div> 
-</ul>
-</div>`;
-createElement.innerHTML= template4;
-containerLocation.appendChild(createElement);
-return template4;
-});
+
+
 
 
 
@@ -184,7 +162,10 @@ return template4;
  const boton= document.querySelector ("#boton");
  const resultado= document.querySelector ("#resultado");
 
- const filtrar  =  () =>{
+
+
+
+/*const filtrar  =  () =>{
   //console.log (formulario.value);
   const texto= fomulario.value.toLowerCase();
 
@@ -208,6 +189,7 @@ return template4;
 
    } 
  }
+ /*
  boton.addEventListener("click", filtrar);
  fomulario.addEventListener("keyup", filtrar);
  filtrar ();*/
