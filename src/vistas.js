@@ -14,6 +14,18 @@ const btnTipo = document.getElementById("btnTipo");
 const btnRegion = document.getElementById("btnRegion");
 const btnRareza = document.getElementById("btnRareza");
 const btnStats = document.getElementById("btnStats");
+const btnInicioLogo=document.getElementById('btnInicioLogo')
+
+
+
+btnInicioLogo.addEventListener('click',()=>{
+  document.querySelector("#welcome").style.display = "block";
+  document.querySelector("#pokedex").style.display = "none";
+  document.querySelector(".menu").style.display = "none";
+  btnInicio.className = "activeButton";
+  window.location.reload();
+  document.documentElement.scrollTop = 0;
+})
 
 
 
@@ -46,7 +58,7 @@ verPokedex.addEventListener("click", () => {
 
 btnPokedex.addEventListener("click", () => { //----------------PASAR A LA VISTA DEL POKEDEX
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon);
+  mostrarPokemon(arrayPokemon ,arrayPokemon );
 
   document.querySelector(".container-buscar").style.display = "flex";
   document.querySelector("#divTiposPokemones").style.display = "none";
@@ -74,7 +86,7 @@ btnPokedex.addEventListener("click", () => { //----------------PASAR A LA VISTA 
 
 btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon);
+  mostrarPokemon(arrayPokemon , arrayPokemon);
 
   document. querySelector("#welcome").style.display = "none";
   document.querySelector(".container-buscar").style.display = "none";
@@ -103,7 +115,7 @@ btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
 
 btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VISTA REGION
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon);
+  mostrarPokemon(arrayPokemon, arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
   document.querySelector("#divTiposPokemones").style.display = "none";
@@ -132,7 +144,7 @@ btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VIS
 
 btnRareza.addEventListener("click", () => { //-------------------------PASAR A LA VISTA RAREZA
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon);
+  mostrarPokemon(arrayPokemon, arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
   document.querySelector("#divRarezaPokemon").style.display = "grid";
@@ -160,7 +172,7 @@ btnRareza.addEventListener("click", () => { //-------------------------PASAR A L
 
 btnStats.addEventListener("click", () => { //----------------PASAR A LA VISTA RAREZA
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon);
+  mostrarPokemon(arrayPokemon, arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
   document.querySelector("#divRarezaPokemon").style.display = "none";

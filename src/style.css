@@ -1,7 +1,7 @@
 * {
   margin: 0;
   border: 0;
-  padding:0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -13,6 +13,11 @@ body {
   font-size: 16px;
   cursor: url("//rw-designer.com/cursor-view/45695.gif") 10 10, pointer;
 }
+
+/* .activeButton:hover{
+background: none;
+} */
+
 #pokedex {
   background-image: url(./fondo.jpg);
   background-repeat: repeat;
@@ -229,10 +234,8 @@ body {
 
 /* CARRUSEL */
 
-
-
-.estrella{
-width: 20%;
+.estrella {
+  width: 20%;
 }
 
 .parrafoCarrusel {
@@ -250,7 +253,6 @@ width: 20%;
   padding: 1em;
   font-size: 1.2em;
   width: 35%;
-
 }
 .carrusel {
   color: white;
@@ -291,7 +293,6 @@ width: 20%;
   font-size: 1em;
   padding: 1em;
 }
-
 
 .contenido1 {
   display: flex;
@@ -447,7 +448,7 @@ width: 20%;
 /*CONTENEDOR DE POKEMON*/
 .pokemon-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 1em;
   row-gap: 4em;
   text-align: center;
@@ -475,6 +476,12 @@ width: 20%;
   height: 100%;
   padding-bottom: 2em;
   padding-top: 0;
+}
+
+.pokemon-block:hover {
+  box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.67);
+  -webkit-box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.67);
 }
 
 .divTotal {
@@ -519,27 +526,26 @@ width: 20%;
 
 #tipos,
 #region,
-#rareza{
-  display:none
+#rareza {
+  display: none;
 }
-@media (max-width:768px){
-  .tipos{
-    display:block !important
+@media (max-width: 768px) {
+  .tipos {
+    display: block !important;
   }
-  .region{
-    display:block !important;
+  .region {
+    display: block !important;
   }
 
-  .rareza{
-    display:block !important;
+  .rareza {
+    display: block !important;
   }
-  #pokedex .container-tipo-rareza-region{
+  #pokedex .container-tipo-rareza-region {
     display: none !important;
   }
 
-
-  #container-filtro{
-    width:100%;
+  #container-filtro {
+    width: 100%;
     justify-content: center;
   }
 }
@@ -1380,223 +1386,282 @@ table {
 }
 
 /*formato del loading*/
-#loader img{
+#loader img {
   width: 10%;
 }
-.loader{
+.loader {
   backdrop-filter: blur(10px);
   width: 100%;
   height: 100vh;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  position:fixed;
-  top:0;
-  left:0;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 100000;
-  
+
   transform: scale(1.1);
 }
 
-.loader2{
+.loader2 {
   transition: all 5s ease-in-out;
   transform: scale(0);
 }
 
-
 /*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
-@media (max-width: 750px) {
-  .intro_button button {
-    font-size: 0.8em;
+
+@media (max-width: 1000px) {
+  #divTiposPokemones {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    justify-content: center;
+    width: 80%;
+    margin-left: calc(100% - 85%);
   }
 
-  .intro_content_title {
-    font-size: 0.7em;
-    line-height: 1em;
-  }
-  .intro_content_title {
-    margin-top: 200px;
-  }
-
-  /*FORMATO AL CHART*/
-
-  .container-chart1,
-  .container-chart3 {
-    width: 50vw;
-    margin: 2em;
+  .tipoDiv {
+    justify-content: center;
     margin: auto;
+    font-size: 0.5em;
+    font-weight: bold;
+    text-align: center;
   }
 
-  .container-chart2,
-  .container-chart4 {
-    width: 70vw;
-    margin: 2em;
-    margin: auto;
+  .container-filtro2 {
+    width: 70%;
   }
 
-  /* carrusel */
-  .carrusel-item {
-    min-width: 30%;
-    max-height: 30%;
+  /* rareza pokebolas */
+
+  #divRarezaPokemon {
+    width: 70%;
   }
 
-  .contenido {
-    font-size: 0.7em;
-  }
-
-  .tittle {
-    font-size: 25px;
-  }
-
-  .parrafoCarrusel {
-    font-size: 0.9em;
+  #divRarezaPokemon .rarezaPokeInicio img {
     width: 50%;
-  }
-  .carrusel-item {
-    height: 200px;
-  }
-}
-@media (max-width: 600px) {
-  .pokemon-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .pokemon-block {
-    width: 60%;
-  }
-
-  .cardInfo {
-    font-size: 0.7em;
-    width: 90%;
-    height: 80%;
-  }
-
-  .containerVista {
-    height: 70%;
-  }
-
-  .parrafoCarrusel {
-    font-size: 1em;
-    width: 60%;
-  }
-}
-
-@media (max-width: 500px) {
-  .intro_button button {
-    font-size: 0.6em;
-  }
-
-  .intro_content_title {
-    font-size: 0.7em;
-    line-height: 2em;
-  }
-  .intro_content_title {
-    margin-top: 130px;
-  }
-  .intro_content_description {
-    line-height: 1em;
-    font-size: 0.6em;
-  }
-
-  .contenedor-peliculas {
-    grid-template-columns: repeat(4, 1fr);
-    width: 90%;
-  }
-
-  #pelicula1 {
-    grid-column: 1/3;
-  }
-
-  #pelicula2 {
-    grid-column: 3/5;
-  }
-
-  #pelicula3 {
-    grid-column: 1/3;
-  }
-  #pelicula4 {
-    grid-column: 3/5;
-  }
-  #pelicula5 {
-    grid-column: 2/4;
-  }
-
-  .pelicula {
-    border-radius: 15px;
-  }
-  .titulo-pelicula h {
-    line-height: 0.5cm;
-    font-size: 12px;
-  }
-
-  .titulo-pelicula p {
-    font-size: 10px;
-    padding-left: 30px;
-  }
-  .titulo-pelicula {
-    max-height: 40px;
-    padding-left: 15px;
-    padding-bottom: 30px;
-  }
-
-  .tittle {
-    padding: 0.5em 0;
-    font-size: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-weight: bold;
+  }
+  #divRarezaPokemon .rarezaPokeInicio {
+    display: flex;
+    justify-content: center;
   }
 
-  .tittle img {
-    max-width: 120px;
-    max-height: 90px;
+  .rarezaDiv {
+    grid-template-columns: repeat(1, 1fr);
   }
-
-
-  /*FORMATO AL CHART*/
-
-  .container-chart1,
-  .container-chart3 {
-    width: 90vw;
-    margin: 2em;
+  .rarezaDiv p {
+padding-top: 1em;
     margin: auto;
+    justify-content: center;
   }
 
-  .container-chart2,
-  .container-chart4 {
-    width: 100vw;
-    margin: 2em;
-    margin: auto;
+  @media (max-width: 750px) {
+    .intro_button button {
+      font-size: 0.8em;
+    }
+
+    .intro_content_title {
+      font-size: 0.7em;
+      line-height: 1em;
+    }
+    .intro_content_title {
+      margin-top: 200px;
+    }
+
+    .tipoPokeInicio {
+      margin: auto;
+      width: 50%;
+      justify-content: center;
+    }
+
+    /* cards */
+    .pokemon-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*FORMATO AL CHART*/
+
+    .container-chart1,
+    .container-chart3 {
+      width: 50vw;
+      margin: 2em;
+      margin: auto;
+    }
+
+    .container-chart2,
+    .container-chart4 {
+      width: 70vw;
+      margin: 2em;
+      margin: auto;
+    }
+
+    /* carrusel */
+    .carrusel-item {
+      min-width: 30%;
+      max-height: 30%;
+    }
+
+    .contenido {
+      font-size: 0.7em;
+    }
+
+    .tittle {
+      font-size: 25px;
+    }
+
+    .parrafoCarrusel {
+      font-size: 0.9em;
+      width: 50%;
+    }
+    .carrusel-item {
+      height: 200px;
+    }
+  }
+  @media (max-width: 600px) {
+    .pokemon-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .pokemon-block {
+      width: 60%;
+    }
+
+    .cardInfo {
+      font-size: 0.7em;
+      width: 90%;
+      height: 80%;
+    }
+
+    .containerVista {
+      height: 70%;
+    }
+
+    .parrafoCarrusel {
+      font-size: 1em;
+      width: 60%;
+    }
   }
 
-  /* carrusel */
-  .contenido {
-    font-size: 0.5em;
+  @media (max-width: 500px) {
+    .intro_button button {
+      font-size: 0.6em;
+    }
+
+    .intro_content_title {
+      font-size: 0.7em;
+      line-height: 2em;
+    }
+    .intro_content_title {
+      margin-top: 130px;
+    }
+    .intro_content_description {
+      line-height: 1em;
+      font-size: 0.6em;
+    }
+
+    .contenedor-peliculas {
+      grid-template-columns: repeat(4, 1fr);
+      width: 90%;
+    }
+
+    #pelicula1 {
+      grid-column: 1/3;
+    }
+
+    #pelicula2 {
+      grid-column: 3/5;
+    }
+
+    #pelicula3 {
+      grid-column: 1/3;
+    }
+    #pelicula4 {
+      grid-column: 3/5;
+    }
+    #pelicula5 {
+      grid-column: 2/4;
+    }
+
+    .pelicula {
+      border-radius: 15px;
+    }
+    .titulo-pelicula h {
+      line-height: 0.5cm;
+      font-size: 12px;
+    }
+
+    .titulo-pelicula p {
+      font-size: 10px;
+      padding-left: 30px;
+    }
+    .titulo-pelicula {
+      max-height: 40px;
+      padding-left: 15px;
+      padding-bottom: 30px;
+    }
+
+    .tittle {
+      padding: 0.5em 0;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .tittle img {
+      max-width: 120px;
+      max-height: 90px;
+    }
+
+    /* cards */
+
+    .pokemon-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    /*FORMATO AL CHART*/
+
+    .container-chart1,
+    .container-chart3 {
+      width: 90vw;
+      margin: 2em;
+      margin: auto;
+    }
+
+    .container-chart2,
+    .container-chart4 {
+      width: 100vw;
+      margin: 2em;
+      margin: auto;
+    }
+
+    /* carrusel */
+    .contenido {
+      font-size: 0.5em;
+    }
+
+    .carrusel-item {
+      min-width: 40%;
+      max-height: 40%;
+
+      height: 200px;
+    }
+
+    .tittle {
+      font-size: 20px;
+    }
+
+    .parrafoCarrusel {
+      font-size: 0.7em;
+      width: 70%;
+    }
   }
 
-  .carrusel-item {
-    min-width: 40%;
-    max-height: 40%;
-
-    height: 200px;
+  @media (max-width: 300px) {
+    .parrafoCarrusel {
+      font-size: 0.7em;
+      width: 70%;
+    }
   }
-
-  .tittle {
-    font-size: 20px;
-  }
-
-
-  .parrafoCarrusel {
-    font-size: 0.7em;
-    width: 70%;
-  }
-}
-
-@media (max-width: 300px) {
-  .parrafoCarrusel {
-    font-size: 0.7em;
-    width: 70%;
-  }
-
-
 }
