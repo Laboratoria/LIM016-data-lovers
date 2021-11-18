@@ -16,16 +16,16 @@ import data from './data/rickandmorty/rickandmorty.js';
 // }
 // cardsPersonajes.appendChild(cardPersonaje);
 
-// const cardsPersonajes = document.querySelector('.card');
 
+const cardsPersonajes = document.querySelector('#cards-personajes');
 
- const cardPersonaje = data.results.map(function(result) {
+const cardPersonaje = data.results.map(function (result) {
         return `
-    <div class="datos-personajes">
+    <div class="card-personaje">
         <div class="card-titulo">
             <h3>Name:${result.name} </h3>
         </div>
-        <div class="card-dato">
+        <div class="card-datos">
             <li>Status:${result.status}</li>
             <li>Species:${result.species}</li>
             <li>Gender:${result.gender}</li>
@@ -33,4 +33,11 @@ import data from './data/rickandmorty/rickandmorty.js';
     </div>
     `
  });
-    console.log(cardPersonaje)
+
+cardPersonaje.forEach(function (element) {
+    let card = document.createElement("div")
+   
+        card.innerHTML = element
+            
+    cardsPersonajes.appendChild(card)
+})
