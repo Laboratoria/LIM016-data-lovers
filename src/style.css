@@ -126,76 +126,6 @@ body{
 
     }
   
-/*
-  #filmografia{
-    display: flex;
-  position: absolute;
-  left: 10.28%;
-  right: 72.22%;
-  top: 40.82%;
-  bottom: 52.93%;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  
-  #estrenos {
-  
-  position: absolute;
-  left: 10.28%;
-  right: 72.22%;
-  top: 50%;
-  bottom: 43.75%;
-  
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }   
-  
-  #personajes{
-  
-  position: absolute;
-  left: 10%;
-  right: 72.5%;
-  top: 59.18%;
-  bottom: 34.57%;
-  
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  
-  .btnsFiltradores {
-  position: relative;
-  bottom: 55px ;
-  left: 167px;
-  }
-  
-  .classFilmo {
-    position: relative;
-    text-align: justify;
-    float: left;
-    width: 100%;
-    padding: 2pc;
-    margin-right: 100px;
-  }
-
-.btn {
-
-  border-radius: 4pc;
-  background-color:white; 
-}
-
-
-p {
-  position: relative;
-  
-}
-
-
-#containerFilmografia{
-  position: absolute;
-  display: flex;
-  width: 80%;
-  height: 500px;
-  right: 200px ;
-  top: 56px
-}*/
-
 
 .divbtnsFilter{
 margin:auto;
@@ -261,18 +191,6 @@ list-style: none;
 } 
 
 
-/*h2 {
-  position: relative;
-  font-size: 2em;
-  font-weight: 10px;
-  margin-bottom: 20px;
-  width: 100%;
-  float:right ;
-}
-*/
-
- 
-/*barra de busqueda*/
 .buscar{
   position: absolute;
   top:20%;
@@ -306,7 +224,7 @@ ul, li {
     list-style: none;
 }
 
-ul.slider{
+ul.slider {
   position: relative;
   width: 800px;
   height: 300px;
@@ -337,17 +255,17 @@ ul.slider li:target {
     opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
 }
 
-.menu{
+.menuSlider{
   text-align: center;
   margin: 20px;
 }
 
-.menu li{
+.menuSlider li{
   display: inline-block;
   text-align: center;
 }
 
-.menu li a{
+.menuSlider li a{
   display: inline-block;
   color: white;
   text-decoration: none;

@@ -5,9 +5,12 @@ let films = [];
 films = data.films;
 console.log (filterPeopleLocationsVehicles("people", films))
 
-/*botones para  ingresar a cada seccion*/
+/*botones para  ingresar a cada seccion*/ 
 
-document.getElementById("filmografia").addEventListener("click", ()=>{
+
+
+
+  document.getElementById("filmografia").addEventListener("click", ()=>{
     document.getElementById("filmo").style.display="block";
     document.getElementById("persona").style.display="none";
     document.getElementById("vehiculos").style.display="none";
@@ -132,7 +135,6 @@ filterPeopleLocationsVehicles("vehicles", films).flat(1).forEach((el) => {
   <li>Tipo de Vehículo: ${el.vehicle_class}</li>
   <li>Largo: ${el.length}</li>
   <li>Piloto: ${el.pilot.name}</li>     
-  <div class="box"><img src= ${el.img}></div> 
 </ul>
 </div>
 </div>`;
@@ -151,7 +153,7 @@ return template3;
 
 
 
-let pelicula= data.films
+/*let pelicula= data.films
  const fomulario= document.querySelector ("#fomulario"); 
  const boton= document.querySelector ("#boton");
  const resultado= document.querySelector ("#resultado");
@@ -159,7 +161,7 @@ let pelicula= data.films
 
 
 
- /*const filtrar  =  () =>{
+/*const filtrar  =  () =>{
   //console.log (formulario.value);
   const texto= fomulario.value.toLowerCase();
 
