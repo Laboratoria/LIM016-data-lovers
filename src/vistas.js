@@ -8,6 +8,7 @@ import {mostrarPokemon} from './main.js'
 const container = document.querySelector(".pokemon-container");
 const arrayPokemon = data.pokemon;
 
+
 const btnInicio = document.getElementById("btnInicio");
 const btnPokedex = document.getElementById("btnPokedex");
 const btnTipo = document.getElementById("btnTipo");
@@ -46,7 +47,7 @@ verPokedex.addEventListener("click", () => {
 
 btnPokedex.addEventListener("click", () => { //----------------PASAR A LA VISTA DEL POKEDEX
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon);
+  mostrarPokemon(arrayPokemon, arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "flex";
   document.querySelector("#divTiposPokemones").style.display = "none";
@@ -74,7 +75,7 @@ btnPokedex.addEventListener("click", () => { //----------------PASAR A LA VISTA 
 
 btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon);
+  mostrarPokemon(arrayPokemon, arrayPokemon);
 
   document. querySelector("#welcome").style.display = "none";
   document.querySelector(".container-buscar").style.display = "none";
@@ -103,7 +104,7 @@ btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
 
 btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VISTA REGION
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon);
+  mostrarPokemon(arrayPokemon, arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
   document.querySelector("#divTiposPokemones").style.display = "none";
@@ -132,7 +133,7 @@ btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VIS
 
 btnRareza.addEventListener("click", () => { //-------------------------PASAR A LA VISTA RAREZA
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon);
+  mostrarPokemon(arrayPokemon, arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "none";
   document.querySelector("#divRarezaPokemon").style.display = "grid";

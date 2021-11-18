@@ -1456,7 +1456,7 @@ table {
     height: 200px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .pokemon-container {
     grid-template-columns: repeat(1, 1fr);
   }
