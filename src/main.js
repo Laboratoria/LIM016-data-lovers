@@ -29,16 +29,16 @@ input.addEventListener("keyup",(e)=>{
     
 });
 
-// Filtros
+// FILTROS
 const opcion = document.querySelectorAll('.opcion');
 
-// Permite recorrer cada una de nuestras opciones
+// PERMITE RECORRER CADA UNA DE NUESTRAS OPCIONES
 opcion.forEach(e => {
 
-    // Añadimos un evento a cada elemento seleccionado
+    // AÑADIMOS UN EVENTO A CADA ELEMENTO SELECCIONADO
     e.addEventListener('click', function(e){
 
-        // Alteranmos las clases de nuestros enlaces
+        // ALTERAMOS LAS CLASES DE NUESTROS ENLACES
         const padre = e.target.parentNode;
         padre.children[1].classList.toggle('animation');
         padre.parentNode.children[1].classList.toggle('animation');
@@ -46,7 +46,7 @@ opcion.forEach(e => {
 
 });
 
-// Filtrar data
+// FILTRAR DATA
 const region = document.querySelectorAll('.region');
 region.forEach(e=>{    
     
@@ -77,6 +77,7 @@ elemento.forEach(e=>{
     });
 });
 
+// BOTON SUBIR AL INICIO DE PAGINA
 up.addEventListener("click", scrollUp);
 
 function scrollUp(){
