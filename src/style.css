@@ -34,18 +34,18 @@ header{
 /*INPUT DE BUSCAR POKEMON*/
 input{  
     width: 20%;
-    height: 90px;
+    height: 45px;
 
-    border-radius: 10px;
-    border-width: 6px;
+    border-radius: 5px;
+    border-width: 3px;
     border-color: rgb(61, 92, 138);
     
     text-align: center;
-    font-size: 250%;
+    font-size: 125%;
 
     position: relative;
-    top: -140px;
-    right: 50px;
+    top: -80px;
+    right: 3%;
 }
 
 /*TODOS LOS PLACEHOLDER */
@@ -78,15 +78,15 @@ input{
     border-style: solid;
     border-width: 4px;
 
-    min-width: 300px;
-    min-height: 300px;
-    border-radius: 50px 50px 0px 0px;
+    min-width: 170px;
+    min-height: 150px;
+    border-radius: 15px 15px 0px 0px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.61);
     overflow: hidden;
-    margin: 80px;
+    margin: 15px;
     text-align: center;
     transition: all 0.25s;
-    padding: 15px;
+    padding: 10px 10px 25px 10px;
 }
 
 /*POSICIONARSE EN LA TARJETA POKEMON*/
@@ -97,26 +97,27 @@ input{
 
 /*NUMERO DRE POKEMON*/
 .numPokemon{
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bold;
 }
 
 /*IMAGEN DEL POKEMON*/
 .imgPokemon{
-    width: 90%;
+    /* width: 80%; */
     height: 60%;
-    padding: 20px;
+    padding: 10px 0px;
 }
 
 /*NOMBRE DEL POKEMON*/
 .nomPokemon{
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 /*NOMBRE DE LA REGION*/
 .nomRegion{
-    font-size: 30px;
+    font-size: 15px;
 }
 
 /*BOTON DE IR HACIA ARRIBA*/
@@ -198,9 +199,9 @@ input{
     user-select: none;
 }
 .filtro{
-color: white;
-background-color: rgb(6, 32, 70);
-flex-direction:column;
+    color: white;
+    background-color: rgb(6, 32, 70);
+    flex-direction:column;
 }
 /* .icono{
     background-color: white;
@@ -210,16 +211,16 @@ flex-direction:column;
     border-radius: 5px;
 } */
 .fas{
-display: flex;
-justify-content: center;
-text-align: center;
-color:rgb(6, 32, 70);
-background-color: white;
-font-weight: bold;
-font-size: 22px;
-width: 60px;
-border-radius: 5px;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color:rgb(6, 32, 70);
+    background-color: white;
+    font-weight: bold;
+    font-size: 22px;
+    width: 60px;
+    border-radius: 5px;
+    align-items: center;
 }
 .cont-menu{
     width: 400px;
@@ -278,6 +279,10 @@ align-items: center;
 }
 
 .cont-menu .cont-enlace .enlace a:hover{
+    background-color: #2eccb2;
+    color: white;
+}
+.cont-menu .cont-enlace .enlace a:active{
     background-color: #2eccb2;
     color: white;
 }
