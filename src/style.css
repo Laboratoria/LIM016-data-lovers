@@ -3,3 +3,16 @@
     margin: 0;
     font-family: 'Red Rose', cursive;
 }
+
+#cards-personajes{
+    border: 2px solid green;
+}
+
+.card{
+    padding: 5px;
+    border: 2px indigo solid;
+}
+
+.datos-personajes{
+    border: 2px solid blue;
+}
