@@ -75,9 +75,11 @@ link_female.addEventListener("click", (e)=>{
 
 /*---------------------------------------se trabajan los países*/
 let country= rio_teams(data).sort();  //trayendo a los países y lo ordemo
-let countryCounter= timesRepeated(country); //trayendo la función que me hace el recuento
-let finalCountry= Object.entries(countryCounter); //convirtiendo a array
 
+let countryCounter= timesRepeated(country); //trayendo la función que me hace el recuento
+//console.log(countryCounter)
+let finalCountry= Object.entries(countryCounter); //convirtiendo a array
+//console.log(Array.isArray(country))
 for( let i=0; i<finalCountry.length; i++){
   let country_screen= document.createElement("p");
   country_screen.className="btnGreen"
@@ -94,6 +96,7 @@ let result =sports.reduce(       //un objeto con los deportes y las coincidencia
   )
 
   let arr= Object.entries(result).sort();//ordenando 
+  //console.log(arr)
   const tableBody= document.getElementById("tableData"); //me trae el body de la tabla
   let dataHTML= "";
 
@@ -103,8 +106,9 @@ let result =sports.reduce(       //un objeto con los deportes y las coincidencia
     <td>${"-"+ Object.keys(noRepeated(value)).join("<br>-")}</td>
             <tr>
            `;
+          
 tableBody.innerHTML= dataHTML;
- 
+//console.log(Array.isArray(value))
 }
 
 const searchSport= document.getElementById("search");  //el buscador de deportes
@@ -127,8 +131,6 @@ function searchSportEvent(){
     }       
   }
 }
-
-
 /*------------------------------código de los atletas*/
 /* .....Realizando un nuevo array para motrar en pantalla............. */
 let newListsAthlete= data.athletes.map(item=>{
@@ -142,7 +144,7 @@ let unicos = [...personasMapArr.values()]; // Conversión a un array
 function listName(e) {
   const athlete= document.getElementById("hereAthletes")
 
-let onlyAhtete =e.forEach((index)=>{
+e.forEach((index)=>{
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
     athletes_screen.style.flexDirection = "row"
@@ -230,6 +232,7 @@ let variousMedals =Object.entries(sports.reduce(    //un array con los nombres y
   let medal_athlete= document.getElementById("hereAthletes_multiple_medals");//donde se almacenará la información
 
   for(const [key, value] of Object.values(variousMedals)){
+  //console.log(value)
     if(value.length >2){
       let dataAthleteMedal= document.createElement("ul");
       dataAthleteMedal.className="medal_athletesContainer"
@@ -240,6 +243,7 @@ let variousMedals =Object.entries(sports.reduce(    //un array con los nombres y
                   `;
                   medal_athlete.appendChild(dataAthleteMedal);  
     }
+  // console.log(spliceIntoChunks(value, 2))
   }
 
 let searchM_winners= document.getElementById("searchMultipleWinners");//el buscador 
@@ -261,7 +265,7 @@ function winners(){
 /*------------------------Código de las atletas femeninas*/
 
 let female_athletes= justFemale(sports);
-//console.log(mujeres)
+//console.log(female_athletes)
 
 let womenMap = female_athletes.map(item=>{
   return [item.name,item.sport]

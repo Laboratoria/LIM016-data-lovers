@@ -7,18 +7,6 @@ export const rio_teams = (data) =>{
    
 };
 
-// export const rio_sports = (data) =>{
-
-//   let just_athletes_sport= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
-//   let justSports= just_athletes_sport.map(item=>
-//     [(`
-//   ${item.sport}
-//   `)]
-//   );
-//   return justSports;
-
-// };
-
 export const timesRepeated = arr =>{
   return arr.reduce((acc, item) =>{
     if(!acc[item]){  
@@ -31,8 +19,8 @@ export const timesRepeated = arr =>{
   }, {});
 };
 
-export const noRepeated = arr =>{
-  return arr.reduce((acc, item) =>{
+export const noRepeated = data =>{
+  return data.reduce((acc, item) =>{
     if(!acc[item]){  
       acc[item]= "";
     }
