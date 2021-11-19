@@ -81,7 +81,6 @@ filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {
   <h4>${el.name} </h4>
   <div class="box2"><img src= ${el.img} id ="imgPosterPeople"></div> 
   </div>
-  </div>
   <div class="backCard">
   <ul>
   <li>Genero: ${el.gender}</li>

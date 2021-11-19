@@ -281,23 +281,23 @@ ul.slider li:target {
 
  }
 
- #imgPosterVehicles{
+#imgPosterVehicles{
   width:220px;
   height:130px;
   object-fit: cover;
 
  }
 
- .contenedorCardVehicles{
+.contenedorCardVehicles{
   height: 200px;
   width: 310px;
   margin:auto;
   margin-bottom: 10px;
-  -webkit-perspective: 700;
+  -webkit-perspective: 800;
    
  }
 
- #divCardVehicles {
+#divCardVehicles {
   height: 100%;
   width:100%;
   position: relative;
@@ -305,10 +305,12 @@ ul.slider li:target {
   transition: 2s;
  }
   
-  #divCardVehicles:hover{
+#divCardVehicles:hover{
     transform: rotateY(180deg);
     
     }
+
+
 
 .backCard4,
 .frontCard4{
@@ -342,3 +344,88 @@ ul.slider li:target {
   text-align: center;
   font-size: 0.875em;
 }
+/* seccion personajes*/
+
+
+#conteinerPeople{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around ;
+  margin: auto;
+  max-width: 200px;
+  box-sizing: border-box;
+
+}
+
+.contenedorCardPeople{
+  height: 220px;
+  width: 150px;
+  margin:auto;
+  margin-bottom: 10px;
+  -webkit-perspective:800;
+   
+ }
+
+
+
+#divCardPeople{
+  height: 100%;
+  width:100%;
+  transform-style: preserve-3d;
+  transition: 2s;
+
+}
+
+#divCardPeople:hover{
+  transform: rotateY(180deg);
+  
+  }
+
+.backCard,
+.frontCard{
+  width: 100%;
+  height: 100%;
+  backface-visibility:;
+  position: absolute;
+  border-radius: 20px;
+
+}
+
+.frontCard{
+  background:  rgba(178, 134, 184, 0.37);
+  justify-content: center;
+  text-align: center;
+  top: 0%;
+  left: 0%;
+  margin:0;
+  s
+
+}
+
+.backCard{
+
+  background:honeydew;
+  transform: rotateY(180deg);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.875em;
+}
+
+#imgPosterPeople{
+  width:120px;
+  height:130px;
+  object-fit: cover;
+  border-radius: 10px;
+
+ }
+
+ 
+ .box{
+
+  width:100%;
+  height:100%;
+  
+ }
