@@ -8,11 +8,11 @@ export const anotherExample = () => {
   return 'OMG';
 };
 
-// export const data = () => {
 
-//   console.log(data.results);
+//  export const data = () => {
 
-//   return data.results;
+//    console.log(data.results);
 
-  
+//    return data.results;
+
 // };

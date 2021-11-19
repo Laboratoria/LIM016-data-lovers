@@ -1,6 +1,10 @@
 import { example } from './data.js';
+
+// import filtros from 'data.js'
  
 import data from './data/rickandmorty/rickandmorty.js';
+
+// ---------------- Pruebas DATAS -------------//
 
 // obteniendo la data del objeto results de rickyandmorty.js
 
@@ -16,6 +20,10 @@ import data from './data/rickandmorty/rickandmorty.js';
 // }
 // cardsPersonajes.appendChild(cardPersonaje);
 
+
+// ------------ Fin de Pruebas DATAS -----------//
+
+// ----------- MUESTRA DE CARDS PERSONAJES  ------------//
 
 const cardsPersonajes = document.querySelector('#cards-personajes');
 
@@ -49,56 +57,74 @@ cardPersonaje.forEach(function (element) {
     card.innerHTML = element
     
     cardsPersonajes.appendChild(card)
-})
+});
+// -------- FIN DE CARDS PERSONAJES  ------------//
 
-// Episodios
+// ----------------- PRUEBA - Episodios-----------  ///
 
-const episodio = data.results
+//episodios del 492
 
-let e = []
+// let episodios = data.results;
 
-    episodio.map(function (text) {
-        let rText = text.episode
-       
-        for (let index = 0; index < rText.length; index++) {
+// let arraylinks = []
 
-            e.push(rText[index])
-            console.log(e)
-
-        }
-        
-    })
-
-
-
-// const episodes = data.results.map(function (clave) {
-//     let rEpisodio = clave.episode
-//     for (let i = 0; i < rEpisodio.length ; i++){
+//     episodios.map(function (clave) {
+//         arraylinks.push(clave.episode)
     
-//         console.log(rEpisodio[i])
-//     }
+//     })
 
-    // console.log(rEpisodio)
-    //     console.log(clave.episode.forEach(function (e) {
-    //         console.log(e)
-    //     }))
-    // })
+// console.log(arraylinks) //filtra links del indice 492
+
+// document.write(arraylinks[492]) //filtra links del indice 492
+
+
+// -------- FIN DE PRUEBAS ESPISODIOS ------------//
+
+// -------- PRUEBAS FILTRADO -----------------------//
+
+//filtrando PERSONAJES
+
+let arrayName = []
+    data.results.map(element => {
+    //console.log(element.name)
+    arrayName.push(element.name)
+});
+    console.log(arrayName)
+
+let selectop = document.getElementById("name__personaje")
+//console.log(selectop.value)
+
+for (let i = 0; i < arrayName.length; i++) {
+
+    let op = document.createElement("option")
+    selectop.appendChild(op)
+
+    let valueOption = arrayName[i];
+    op.setAttribute("value", `${valueOption}`)
+    op.textContent = valueOption
+    //console.log(valueOption)
+
+}
+    console.log(selectop)
+
+// let arrayGender = []
+//     data.results.forEach(element => {
+//     //console.log(element.name)
+//     arrayGender.push(element.gender)
 // });
-//     map(function (episode) {
-//     return `
-//             <p>Episode:
-//             <a href=${episode}></a>
-//             </p>
-//         `
-// });
-// console.log(episodes)
+//     console.log(arrayGender)
 
-// episodes.forEach(function (element) {
-//     let episode = document.createElement("div");
-//     episode.setAttribute('class', 'episode')
+// let selectop = document.getElementById("genero__personaje")
+// //console.log(selectop.value)
 
-//     episode.innerHTML = element
+// for (let i = 0; i < arrayGender.length; i++) {
+//     let op = document.createElement("option")
+//     selectop.appendChild(op)
 
-//     cardsPersonajes.appendChild(episode)
-// })
+//     let valueOption = arrayGender[i];
+//     op.setAttribute("value", `${valueOption}`)
+//     op.textContent = valueOption
+//     //console.log(valueOption)
 
+// }
+// console.log(selectop)   
