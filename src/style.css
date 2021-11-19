@@ -555,6 +555,35 @@ width: 15%;
     width: 100%;
     justify-content: center;
   }
+
+  .container-botones-filtro {
+    flex-direction: column;
+    justify-content: space-around !important;
+    height: 100px
+  }
+
+  #pokedex {
+    padding-top: 3em;
+}
+
+.container-buscar {
+  justify-content: center !important;
+  padding-right: 0px !important;
+
+}
+#search {
+  width: 80% !important;
+}
+
+#botonBuscar {
+  margin-left: calc(100% - 35%) !important;
+}
+
+#button-up {
+  width: 4em;
+  height: 4em;
+  left: calc(65% - 5.5em) !important;
+}
 }
 /* evoluciones */
 
@@ -1262,12 +1291,24 @@ table {
   margin: auto;
   width: 90%;
   justify-content: center;
+  margin-bottom: 10px;
+  padding-top: 10px;
 }
 
 #divTiposPokemones div img {
   width: 80%;
   justify-content: center;
 }
+
+.activeTipo{
+  background-image: linear-gradient(to top, #fff1ebcc 0%, #ace0f9d4 100%);
+  font-weight: bold;
+  box-shadow: 1px 1px 2px 2px rgb(78 78 78 / 27%);
+  transition: 0.3s;
+  border: none 1px #605e5e;
+  transform: scale(1.15);
+}
+
 
 /* .regionDiv{
   justify-content: center;
@@ -1305,8 +1346,8 @@ table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  width: 60%;
-  margin-left: calc(100% - 70%);
+  width: 65%;
+  margin-left: calc(100% - 75%);
 }
 
 #divRarezaPokemon div img {
@@ -1324,6 +1365,12 @@ table {
   width: 100%;
 }
 
+/* .rarezaPokeInicio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
 /*FORMATO AL CHART*/
 #container-stats {
   padding-top: 5em;
@@ -1335,9 +1382,10 @@ table {
   background-size: 100% 100%;
   background-attachment: fixed;
   min-height: 100vh;
+  padding-bottom: 15px;
 }
 #container-stats h1 {
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
   background: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
   /* clip informático */
@@ -1347,10 +1395,11 @@ table {
   text-align: center;
   align-items: center;
   margin-top: 25px;
+  font-family: cursive;
 }
 .container-chart1,
 .container-chart3 {
-  width: 25%;
+  width: 400px;
   margin-top: 3em;
   margin-bottom: 3em;
   margin: 3em auto;
@@ -1363,24 +1412,24 @@ table {
 
 .container-chart2,
 .container-chart4 {
-  width: 60%;
+  width: 980px;
   margin: auto;
   background: rgba(225, 225, 225, 0.611);
-
   padding: 2em;
   border-radius: 30px;
   height: 100%;
 }
 
 .container-title {
-  font-size: 14px;
+  font-size: 20px;
   text-align: center;
   line-height: 1.5em;
   font-style: normal;
 }
 .title-chart {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
+  font-style: italic;
 }
 
 /*FOOTER*/
@@ -1420,8 +1469,12 @@ table {
 }
 
 /*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
-
-
+@media (max-width: 1050px) and (min-height:1000px) {
+  #container-stats {
+    padding-top: 4em;  
+    background-image: url("https://w0.peakpx.com/wallpaper/813/772/HD-wallpaper-pikachu-background-go-pika-pokemon.jpg");
+  }
+}
 @media (max-width: 1100px) {
   /* carrusel */
     .carrusel-item {
@@ -1431,9 +1484,8 @@ table {
     }
 }
 
-
-
 @media (max-width: 1000px) {
+
   #divTiposPokemones {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -1491,8 +1543,20 @@ padding-top: 1em;
     width: 40%;
   }
 
-}
-  @media (max-width: 750px) {
+  /*chart*/
+  #container-stats h1 {
+    margin-top: 0px
+  }
+  .container-chart2,
+    .container-chart4 {
+      width: 740px ;
+      margin: 5px auto;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+  @media (max-width: 768px) {
     .intro_button button {
       font-size: 0.8em;
     }
@@ -1517,21 +1581,30 @@ padding-top: 1em;
     }
 
     /*FORMATO AL CHART*/
-
+    #container-stats h1 {
+      font-size: 34px;
+    }
+    .title-chart {
+      font-size: 14px;
+    }
+    .container-title {
+      font-size: 15px;
+      line-height: 1.5em;
+    }
     .container-chart1,
     .container-chart3 {
-      width: 50vw;
-      margin: 2em;
-      margin: auto;
+      width: 300px;
+      margin: 20px auto;
     }
 
     .container-chart2,
     .container-chart4 {
-      width: 70vw;
-      margin: 2em;
-      margin: auto;
+      width: 98%;
+      margin: 5px auto;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
-
     /* carrusel */
     .carrusel-item {
       min-width: 30%;
@@ -1666,19 +1739,31 @@ padding-top: 1em;
       grid-template-columns: repeat(1, 1fr);
     }
     /*FORMATO AL CHART*/
-
+    #container-stats h1 {
+      font-size: 30px;
+      font-family: cursive;
+      margin-top: 0px
+    }
+    .title-chart {
+      font-size: 11px;
+    }
+    .container-title {
+      font-size: 11px;
+      line-height: 1.5em;
+    }
     .container-chart1,
     .container-chart3 {
-      width: 90vw;
-      margin: 2em;
-      margin: auto;
+      width: 70%;
+      margin: 20px auto;
     }
 
     .container-chart2,
     .container-chart4 {
-      width: 100vw;
-      margin: 2em;
-      margin: auto;
+      width: 98%;
+      margin: 5px auto;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
     /* carrusel */
@@ -1710,4 +1795,67 @@ padding-top: 1em;
     }
 
   }
+}
+
+
+@media (max-width: 768px) {
+  .intro_background {
+    padding-top: 3em;
+}
+  .tipos {
+    display: block !important;
+  }
+  .region {
+    display: block !important;
+  }
+
+  .rareza {
+    display: block !important;
+  }
+  #pokedex .container-tipo-rareza-region {
+    display: none !important;
+  }
+
+  #container-filtro {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .container-botones-filtro {
+    flex-direction: column;
+    justify-content: space-around !important;
+    height: 100px
+  }
+
+  #pokedex {
+    padding-top: 3em;
+}
+
+.container-buscar {
+  justify-content: center !important;
+  padding-right: 0px !important;
+
+}
+#search {
+  width: 80% !important;
+}
+
+#botonBuscar {
+  margin-left: calc(100% - 35%) !important;
+}
+
+#button-up {
+  width: 4em;
+  height: 4em;
+  left: calc(65% - 5.5em) !important;
+  bottom: 10px;
+}
+#container-stats {
+padding-top: 4em;
+
+background-image: url("https://w0.peakpx.com/wallpaper/813/772/HD-wallpaper-pikachu-background-go-pika-pokemon.jpg");
+
+}
+
+}
 

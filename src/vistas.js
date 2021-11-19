@@ -8,6 +8,7 @@ import {mostrarPokemon} from './main.js'
 const container = document.querySelector(".pokemon-container");
 const arrayPokemon = data.pokemon;
 
+
 const btnInicio = document.getElementById("btnInicio");
 const btnPokedex = document.getElementById("btnPokedex");
 const btnTipo = document.getElementById("btnTipo");
@@ -58,7 +59,7 @@ verPokedex.addEventListener("click", () => {
 
 btnPokedex.addEventListener("click", () => { //----------------PASAR A LA VISTA DEL POKEDEX
   container.innerHTML = "";
-  mostrarPokemon(arrayPokemon ,arrayPokemon );
+  mostrarPokemon(arrayPokemon, arrayPokemon);
 
   document.querySelector(".container-buscar").style.display = "flex";
   document.querySelector("#divTiposPokemones").style.display = "none";
@@ -114,6 +115,7 @@ btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
 });
 
 btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VISTA REGION
+  
   container.innerHTML = "";
   mostrarPokemon(arrayPokemon, arrayPokemon);
 
@@ -128,7 +130,7 @@ btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VIS
   document.getElementById("region").className="region"
   document.getElementById("tipos").className=""
   document.getElementById("rareza").className=""
-
+  
   if(document.querySelector("#container-filtro").className=="container-filtro"){
     document.querySelector("#container-filtro").className="container-filtro2"
   }
