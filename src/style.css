@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -519,4 +520,134 @@ footer{
 #social1:hover, #social2:hover, #social3:hover{
     cursor: pointer;
     color: #dbf537;
+}
+
+@media only screen and (max-width: 992px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .body{
+        display: flex;
+        flex-direction: column;
+    }
+    .main{
+        display: flex;
+    }
+    header{
+        display: flex;
+    }
+    .navBar{
+        display: none;
+    }
+    #root{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .mascots{
+        width: 20%;
+        height: 60%;
+    }
+    .page-name{
+        font-size: 2.3rem;
+        width: 40%;
+    }
+    /*----------------Sport---------------------*/
+    .sports{
+        display:flex;
+        width: 100%;
+    }
+    .sports_container{
+        width: 100%;
+        padding: 0.6rem;
+    }
+    .deportes{
+        text-align: center;
+        font-size: 4rem;
+        padding-left: 0;
+        margin-bottom: 2rem;
+    }
+    .thead{
+        height: 3.4rem;
+        text-align-last: center;
+    }
+    .header{
+        width: 100%;
+        display: flex;
+        font-size: 2.2rem;
+    }
+    .sportTable{
+        display: flex;
+        flex-direction: column;
+        font-size: 0.6rem;
+    }
+    #tableData{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    .img_sport{
+        border-radius: 0.5rem;
+    }
+    /*----------------Teams---------------------*/
+    .hereCountries{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .btnGreen{
+        padding: 0.1rem;
+    }
+    .countries_container{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .paises{
+        text-align: center;
+        font-size: 4rem;
+        padding-left: 0;
+    }
+     /*----------------Athetes---------------------*/
+    .atletes_container{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .rioAtletas{
+        width: 60%;
+   
+    }
+    .atleta{
+        text-align: center;
+        font-size: 4rem;
+        padding-left: 0;
+        margin-bottom: 1.6rem;
+    }
+    .listAthletes{
+        padding-left: 0;
+    }
+    
+    #hereAthletes{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 2rem;
+        margin-bottom: 4.4rem;
+    }
+    .btnYellow{
+        flex-direction: row;
+        display: flex;
+        width: 40%;
+        margin-right: 1px;
+        padding: 0;
+    }
+    footer{
+        display: flex;
+        position: relative;
+    }
+    
+
 }
