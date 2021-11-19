@@ -252,8 +252,14 @@ background: none;
   font-weight: 500;
   padding: 1em;
   font-size: 1.2em;
-  width: 35%;
+  width: 25%;
 }
+
+
+.parrafoCarrusel img {
+width: 15%;
+}
+
 .carrusel {
   color: white;
   display: flex;
@@ -261,6 +267,7 @@ background: none;
   align-items: center;
   position: relative;
   margin: auto;
+  background-image: url(img/fondo-peliculas.jpg)
 }
 
 .carrusel-items {
@@ -274,16 +281,16 @@ background: none;
 }
 
 .carrusel-item {
-  min-width: 20%;
-  max-width: 20%;
-  height: 300px;
+  min-width: 30%;
+  max-width: 30%;
+  height: 350px;
   outline: 0px solid black;
   background: rgba(1, 1, 71, 1);
 }
 .carrusel-item img {
   width: 100%;
   height: 100%;
-  height: 60%;
+  height: 70%;
   object-fit: cover;
 }
 .contenido {
@@ -677,7 +684,7 @@ height: 50%;
   position: absolute;
   right: 7%;
   top: 15px;
-  font-size: 1.7em;
+  font-size: 1.8em;
   color: rgb(55, 55, 55);
 }
 .btnCerrar .fas:hover {
@@ -1177,7 +1184,7 @@ table {
   display: flex;
   justify-content: right;
   width: 100%;
-  padding-right: 30px;
+  /* padding-right: 10%; */
   align-items: center;
 }
 
@@ -1193,12 +1200,14 @@ table {
 }
 
 #search {
-  border: 0.2em solid rgb(97, 97, 97);
-  border-radius: 0.3em;
+  border-radius: 30px;
+  padding: 0 20px;
   width: 50%;
-  height: 2.7em;
-  background-color: rgba(255, 255, 255, 0.576);
+  height: 2.5em;
+  background-color: rgba(255, 255, 255, 0.763);
   outline: none;
+  border: none;
+
 }
 
 #search:focus {
@@ -1211,19 +1220,20 @@ table {
   background-color: white;
   border: 0.2em solid rgb(28, 28, 28);
   transition: 0.5s;
+  outline: none;
+  border: none;
 }
 
 #botonBuscar {
   position: absolute;
-
-  font-size: 1.1em;
+  font-size: 1.4em;
   width: 1.7em;
   height: 1.7em;
   padding: 0.19em 0.35em;
   border-radius: 50%;
   background-color: rgb(2, 22, 99);
   color: white;
-  margin-right: 5px;
+  margin-right: 0px;
 }
 
 #botonBuscar:hover {
@@ -1464,8 +1474,16 @@ table {
     padding-top: 4em;  
     background-image: url("https://w0.peakpx.com/wallpaper/813/772/HD-wallpaper-pikachu-background-go-pika-pokemon.jpg");
   }
-
 }
+@media (max-width: 1100px) {
+  /* carrusel */
+    .carrusel-item {
+      min-width: 30%;
+      max-height: 30%;
+      height: 300px;
+    }
+}
+
 @media (max-width: 1000px) {
 
   #divTiposPokemones {
@@ -1511,6 +1529,18 @@ table {
 padding-top: 1em;
     margin: auto;
     justify-content: center;
+  }
+  /* carrusel */
+
+
+  .carrusel-item {
+    min-width: 35%;
+    max-width: 35%;
+
+  }
+  .parrafoCarrusel {
+    font-size: 0.9em;
+    width: 40%;
   }
 
   /*chart*/
@@ -1579,6 +1609,7 @@ padding-top: 1em;
     .carrusel-item {
       min-width: 30%;
       max-height: 30%;
+      height: 150px;
     }
 
     .contenido {
@@ -1591,7 +1622,7 @@ padding-top: 1em;
 
     .parrafoCarrusel {
       font-size: 0.9em;
-      width: 50%;
+      width: 40%;
     }
     .carrusel-item {
       height: 200px;
@@ -1619,6 +1650,15 @@ padding-top: 1em;
       font-size: 1em;
       width: 60%;
     }
+
+    .carrusel-item {
+      min-width: 40%;
+      max-width: 40%;
+
+      height: 200px;
+    }
+
+
   }
 
   @media (max-width: 500px) {
@@ -1732,10 +1772,10 @@ padding-top: 1em;
     }
 
     .carrusel-item {
-      min-width: 40%;
-      max-height: 40%;
+      min-width: 50%;
+      max-width: 50%;
 
-      height: 200px;
+      height: 170px;
     }
 
     .tittle {
@@ -1744,15 +1784,16 @@ padding-top: 1em;
 
     .parrafoCarrusel {
       font-size: 0.7em;
-      width: 70%;
+      width: 55%;
     }
   }
 
   @media (max-width: 300px) {
     .parrafoCarrusel {
       font-size: 0.7em;
-      width: 70%;
+      width: 50%;
     }
+
   }
 }
 

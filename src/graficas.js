@@ -42,6 +42,7 @@ const arrayNumeroTipos = tipos.map((element) => {
 
 // eslint-disable-line
 const ctx = document.getElementById("myChart1").getContext("2d");
+// eslint-disable-next-line no-undef
 new Chart(ctx, {
   type: "pie",
   data: {
@@ -54,7 +55,7 @@ new Chart(ctx, {
         borderColor: ["#2d3436"],
         borderWidth: 1,
         hoverBorderWidth: 0,
-        
+
       },
     ],
   },
@@ -74,6 +75,7 @@ new Chart(ctx, {
 
 
 const ctx2 = document.getElementById("myChart2").getContext("2d");
+// eslint-disable-next-line no-undef
 new Chart(ctx2, {
   type: "bar",
   data: {
@@ -137,6 +139,7 @@ let arrayLegendary = arrayPokemon.filter(
 ).length;
 
 let rarezaPoke = document.getElementById("rarezaChart").getContext("2d");
+// eslint-disable-next-line no-undef
 new Chart(rarezaPoke, {
   type: "doughnut",
   data: {
@@ -174,6 +177,7 @@ let array7km = arrayPokemon.filter((array) => array["egg"] == "5 km").length;
 let array10km = arrayPokemon.filter((array) => array["egg"] == "10 km").length;
 
 let egg = document.getElementById("eggChart").getContext("2d");
+// eslint-disable-next-line no-undef
 new Chart(egg, {
   type: "bar",
   data: {
