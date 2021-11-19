@@ -255,9 +255,8 @@ background: none;
   width: 25%;
 }
 
-
 .parrafoCarrusel img {
-width: 15%;
+  width: 15%;
 }
 
 .carrusel {
@@ -267,7 +266,7 @@ width: 15%;
   align-items: center;
   position: relative;
   margin: auto;
-  background-image: url(img/fondo-peliculas.jpg)
+  background-image: url(img/fondo-peliculas.jpg);
 }
 
 .carrusel-items {
@@ -494,7 +493,7 @@ width: 15%;
 .divTotal {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content:space-around;
   margin-top: 1em;
   text-transform: capitalize;
 }
@@ -559,31 +558,30 @@ width: 15%;
   .container-botones-filtro {
     flex-direction: column;
     justify-content: space-around !important;
-    height: 100px
+    height: 100px;
   }
 
   #pokedex {
     padding-top: 3em;
-}
+  }
 
-.container-buscar {
-  justify-content: center !important;
-  padding-right: 0px !important;
+  .container-buscar {
+    justify-content: center !important;
+    padding-right: 0px !important;
+  }
+  #search {
+    width: 80% !important;
+  }
 
-}
-#search {
-  width: 80% !important;
-}
+  #botonBuscar {
+    margin-left: calc(100% - 35%) !important;
+  }
 
-#botonBuscar {
-  margin-left: calc(100% - 35%) !important;
-}
-
-#button-up {
-  width: 4em;
-  height: 4em;
-  left: calc(65% - 5.5em) !important;
-}
+  #button-up {
+    width: 4em;
+    height: 4em;
+    left: calc(65% - 5.5em) !important;
+  }
 }
 /* evoluciones */
 
@@ -727,6 +725,8 @@ height: 50%;
   height: 30px;
   border: 0.1px solid rgb(72, 72, 72);
   margin: 0;
+  font-family: "Spartan", sans-serif;
+
 }
 
 .botones-tarjetas button:hover,
@@ -863,18 +863,20 @@ height: 50%;
 .candyContainerPadre {
   background-color: #e6e6e6;
   height: 3em;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
 
 .palabraEvolucion {
+  display: flex;
+  justify-content: center;
+  margin: auto;
   background: #3fc7aa;
   width: 45%;
   height: 100%;
   border-radius: 2em;
-  margin-left: -7px;
   color: white;
   font-size: 1.2em;
   padding: 3.5% 0px;
@@ -1207,7 +1209,6 @@ table {
   background-color: rgba(255, 255, 255, 0.763);
   outline: none;
   border: none;
-
 }
 
 #search:focus {
@@ -1300,7 +1301,7 @@ table {
   justify-content: center;
 }
 
-.activeTipo{
+.activeTipo {
   background-image: linear-gradient(to top, #fff1ebcc 0%, #ace0f9d4 100%);
   font-weight: bold;
   box-shadow: 1px 1px 2px 2px rgb(78 78 78 / 27%);
@@ -1308,7 +1309,6 @@ table {
   border: none 1px #605e5e;
   transform: scale(1.15);
 }
-
 
 /* .regionDiv{
   justify-content: center;
@@ -1469,23 +1469,71 @@ table {
 }
 
 /*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
-@media (max-width: 1050px) and (min-height:1000px) {
-  #container-stats {
-    padding-top: 4em;  
-    background-image: url("https://w0.peakpx.com/wallpaper/813/772/HD-wallpaper-pikachu-background-go-pika-pokemon.jpg");
+
+@media (max-width: 1300px) {
+/* cards pokemon */
+  .cardInfo {
+    font-size: 0.8em;
+    width: 35%;
+    height: 75%;
+  }
+
+
+  .containerImg img{
+   width: 35%;
+
+  }
+  .description{
+    font-size: 1.3em;
+  }
+
+  .description p{
+    font-size: 0.8em;
+  }
+
+  .botones-tarjetas button{
+    font-size: 0.9em;
+  }
+
+  .containerVista h{
   }
 }
+
 @media (max-width: 1100px) {
   /* carrusel */
-    .carrusel-item {
-      min-width: 30%;
-      max-height: 30%;
-      height: 300px;
-    }
+  .carrusel-item {
+    min-width: 30%;
+    max-height: 30%;
+    height: 300px;
+  }
+  .cardInfo {
+    font-size: 0.7em;
+    width: 35%;
+    height: 90%;
+  }
+}
+@media (max-width: 1050px) and (min-height: 1000px) {
+  #container-stats {
+    padding-top: 4em;
+    background-image: url("https://w0.peakpx.com/wallpaper/813/772/HD-wallpaper-pikachu-background-go-pika-pokemon.jpg");
+  }
+
+
+  /* cards pokemon */
+  .cardInfo {
+    font-size: 1.2em;
+    width: 55%;
+    height: 60%;
+  }
+.description{
+  font-size: 1.2em;
 }
 
+.description p{
+  font-size: 0.7em;
+}
+}
 @media (max-width: 1000px) {
-
   #divTiposPokemones {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -1526,17 +1574,15 @@ table {
     grid-template-columns: repeat(1, 1fr);
   }
   .rarezaDiv p {
-padding-top: 1em;
+    padding-top: 1em;
     margin: auto;
     justify-content: center;
   }
   /* carrusel */
 
-
   .carrusel-item {
     min-width: 35%;
     max-width: 35%;
-
   }
   .parrafoCarrusel {
     font-size: 0.9em;
@@ -1545,90 +1591,186 @@ padding-top: 1em;
 
   /*chart*/
   #container-stats h1 {
-    margin-top: 0px
+    margin-top: 0px;
   }
   .container-chart2,
-    .container-chart4 {
-      width: 740px ;
-      margin: 5px auto;
-      padding-bottom: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+  .container-chart4 {
+    width: 740px;
+    margin: 5px auto;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
 
   @media (max-width: 768px) {
-    .intro_button button {
-      font-size: 0.8em;
+    .intro_background {
+      padding-top: 3em;
+    }
+    .tipos {
+      display: block !important;
+    }
+    .region {
+      display: block !important;
     }
 
-    .intro_content_title {
-      font-size: 0.7em;
-      line-height: 1em;
+    .rareza {
+      display: block !important;
     }
-    .intro_content_title {
-      margin-top: 200px;
+    #pokedex .container-tipo-rareza-region {
+      display: none !important;
     }
 
-    .tipoPokeInicio {
-      margin: auto;
-      width: 50%;
+    #container-filtro {
+      width: 100%;
       justify-content: center;
     }
 
-    /* cards */
-    .pokemon-container {
-      grid-template-columns: repeat(3, 1fr);
+    .container-botones-filtro {
+      flex-direction: column;
+      justify-content: space-around !important;
+      height: 100px;
     }
 
-    /*FORMATO AL CHART*/
-    #container-stats h1 {
-      font-size: 34px;
-    }
-    .title-chart {
-      font-size: 14px;
-    }
-    .container-title {
-      font-size: 15px;
-      line-height: 1.5em;
-    }
-    .container-chart1,
-    .container-chart3 {
-      width: 300px;
-      margin: 20px auto;
+    #pokedex {
+      padding-top: 3em;
     }
 
-    .container-chart2,
-    .container-chart4 {
-      width: 98%;
-      margin: 5px auto;
-      padding-bottom: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
+    .container-buscar {
+      justify-content: center !important;
+      padding-right: 0px !important;
     }
-    /* carrusel */
-    .carrusel-item {
-      min-width: 30%;
-      max-height: 30%;
-      height: 150px;
+    #search {
+      width: 80% !important;
     }
 
-    .contenido {
-      font-size: 0.7em;
+    #botonBuscar {
+      margin-left: calc(100% - 35%) !important;
     }
 
-    .tittle {
-      font-size: 25px;
+    #button-up {
+      width: 4em;
+      height: 4em;
+      left: calc(65% - 5.5em) !important;
+      bottom: 10px;
+    }
+    #container-stats {
+      padding-top: 4em;
+
+      background-image: url("https://w0.peakpx.com/wallpaper/813/772/HD-wallpaper-pikachu-background-go-pika-pokemon.jpg");
     }
 
-    .parrafoCarrusel {
-      font-size: 0.9em;
-      width: 40%;
-    }
-    .carrusel-item {
-      height: 200px;
-    }
+  /* cards pokemon */
+  .cardInfo {
+    font-size: 1.2em;
+    width: 65%;
+    height: 80%;
   }
+
+
+.intro_button button {
+  font-size: 0.8em;
+}
+
+.intro_content_title {
+  font-size: 0.7em;
+  line-height: 1em;
+}
+.intro_content_title {
+  margin-top: 200px;
+}
+
+.tipoPokeInicio {
+  margin: auto;
+  width: 50%;
+  justify-content: center;
+}
+
+/* cards */
+.pokemon-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/*FORMATO AL CHART*/
+#container-stats h1 {
+  font-size: 34px;
+}
+.title-chart {
+  font-size: 14px;
+}
+.container-title {
+  font-size: 15px;
+  line-height: 1.5em;
+}
+.container-chart1,
+.container-chart3 {
+  width: 300px;
+  margin: 20px auto;
+}
+
+.container-chart2,
+.container-chart4 {
+  width: 98%;
+  margin: 5px auto;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* carrusel */
+.carrusel-item {
+  min-width: 30%;
+  max-height: 30%;
+  height: 150px;
+}
+
+.contenido {
+  font-size: 0.7em;
+}
+
+.tittle {
+  font-size: 25px;
+}
+
+.parrafoCarrusel {
+  font-size: 0.9em;
+  width: 40%;
+}
+.carrusel-item {
+  height: 200px;
+}
+
+
+  }
+
+
+
   @media (max-width: 600px) {
+
+
+/* cards pokemon */
+.cardInfo {
+  font-size: 0.8em;
+  width: 70%;
+  height: 90%;
+}
+
+.containerVista h{
+font-size: 1.2em;
+}
+
+.description{
+  font-size: 1.3em;
+}
+
+.description p{
+  font-size: 0.8em;
+}
+
+.botones-tarjetas button{
+  font-size: 1em;
+}
+
+
     .pokemon-container {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -1636,15 +1778,6 @@ padding-top: 1em;
       width: 60%;
     }
 
-    .cardInfo {
-      font-size: 0.7em;
-      width: 90%;
-      height: 80%;
-    }
-
-    .containerVista {
-      height: 70%;
-    }
 
     .parrafoCarrusel {
       font-size: 1em;
@@ -1657,11 +1790,37 @@ padding-top: 1em;
 
       height: 200px;
     }
-
-
   }
 
+
+}
   @media (max-width: 500px) {
+
+/* cards pokemon */
+.cardInfo {
+  font-size: 0.8em;
+  width: 90%;
+  height: 75%;
+}
+
+.containerImg img{
+ width: 40%;
+}
+.description{
+  font-size: 1.2em;
+}
+
+.description p{
+  font-size: 0.8em;
+}
+
+.botones-tarjetas button{
+  font-size: 1em;
+}
+
+
+
+
     .intro_button button {
       font-size: 0.6em;
     }
@@ -1733,6 +1892,11 @@ padding-top: 1em;
       max-height: 90px;
     }
 
+
+
+
+
+
     /* cards */
 
     .pokemon-container {
@@ -1742,7 +1906,7 @@ padding-top: 1em;
     #container-stats h1 {
       font-size: 30px;
       font-family: cursive;
-      margin-top: 0px
+      margin-top: 0px;
     }
     .title-chart {
       font-size: 11px;
@@ -1788,74 +1952,98 @@ padding-top: 1em;
     }
   }
 
-  @media (max-width: 300px) {
-    .parrafoCarrusel {
-      font-size: 0.7em;
-      width: 50%;
-    }
 
+@media (max-width:450px){
+
+
+  /* cards pokemon */
+.cardInfo {
+  font-size: 0.8em;
+  width: 90%;
+  height: 90%;
+}
+
+
+.description{
+  font-size: 1.2em;
+}
+
+
+
+.botones-tarjetas button{
+  font-size: 1em;
+}
+}
+
+
+
+@media (max-width:420px){
+
+
+  /* cards pokemon */
+.cardInfo {
+  font-size: 0.8em;
+  width: 90%;
+  height: 80%;
+}
+}
+
+
+
+@media (max-width:375px){
+
+.solo p{
+font-size: 0.8em;
+}
+
+/* cards pokemon */
+.cardInfo {
+  font-size: 0.8em;
+  width: 90%;
+  height: 90%;
+}
+
+.containerImg img{
+ width: 40%;
+}
+.description{
+  font-size: 1em;
+}
+
+.description p{
+  font-size: 0.8em;
+}
+
+.description h{
+  font-size: 0.8em;
+}
+
+.features{
+  font-size: 0.8em;
+}
+
+.botones-tarjetas button{
+  font-size: 0.9em;
+}
+.palabraEvolucion{
+  font-size: 1em;
+}
+
+
+}
+
+
+
+
+
+@media (max-width: 300px) {
+
+
+
+  .parrafoCarrusel {
+    font-size: 0.7em;
+    width: 50%;
   }
 }
 
-
-@media (max-width: 768px) {
-  .intro_background {
-    padding-top: 3em;
-}
-  .tipos {
-    display: block !important;
-  }
-  .region {
-    display: block !important;
-  }
-
-  .rareza {
-    display: block !important;
-  }
-  #pokedex .container-tipo-rareza-region {
-    display: none !important;
-  }
-
-  #container-filtro {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .container-botones-filtro {
-    flex-direction: column;
-    justify-content: space-around !important;
-    height: 100px
-  }
-
-  #pokedex {
-    padding-top: 3em;
-}
-
-.container-buscar {
-  justify-content: center !important;
-  padding-right: 0px !important;
-
-}
-#search {
-  width: 80% !important;
-}
-
-#botonBuscar {
-  margin-left: calc(100% - 35%) !important;
-}
-
-#button-up {
-  width: 4em;
-  height: 4em;
-  left: calc(65% - 5.5em) !important;
-  bottom: 10px;
-}
-#container-stats {
-padding-top: 4em;
-
-background-image: url("https://w0.peakpx.com/wallpaper/813/772/HD-wallpaper-pikachu-background-go-pika-pokemon.jpg");
-
-}
-
-}
 

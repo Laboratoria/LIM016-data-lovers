@@ -80,7 +80,7 @@ function handleDivRegion(data, arrayPokeP) {
       mostrarPokemon(arrayRegionPoke, arrayPokeP);
 
       document.getElementById(`${regionP}Div`).className = "regionPokeInicio activeTipo";
-        
+
       document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
         const regionP2 = e.target.getAttribute("id");
         if(regionP != regionP2){
@@ -147,7 +147,7 @@ function filtrarTiposPokemon(data, arrayPokeP){
 
         // document.getElementById(tipoP).addEventListener("click",()=>{
         document.getElementById(`${tipoP}Div`).className = "tipoPokeInicio activeTipo";
-        
+
         document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
           const tipoP2 = e.target.getAttribute("id");
           if(tipoP != tipoP2){
@@ -199,7 +199,7 @@ function filtrarRarezaPokemon(data, arrayPokeP) {
       mostrarPokemon(arrayRarezaPoke, arrayPokeP);
       console.log(rarezaP)
       document.getElementById(`${rarezaP}DivP`).className = "rarezaDiv activeTipo";
-        
+
       document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
           const rarezaP2 = e.target.getAttribute("value");
           if(rarezaP != rarezaP2){
