@@ -370,8 +370,10 @@ ul.slider li:target {
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
- 
-
+  max-width: 200px;
+  box-sizing: border-box;
+  position: fixed;
+  grid-template-columns: 1fr 1fr 1fr;
 
 
 }
@@ -379,10 +381,10 @@ ul.slider li:target {
 .contenedorCardPeople{
   height: 220px;
   width: 150px;
-  margin-bottom: 10px;
-  -webkit-perspective:800;
-  display: flex;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin:auto;
+  margin-bottom: 10px
+
+ 
    
  }
 
