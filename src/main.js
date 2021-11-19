@@ -48,9 +48,9 @@ console.log (filterPeopleLocationsVehicles("people", films))
 
 
 const containerFilmo = document.getElementById("filmo");
-const containerPeople = document.getElementById("persona");
+const containerPeople = document.getElementById("containerPeople");
 const containerLocation = document.getElementById("locaciones");
-const containerVehiculos = document.getElementById("vehiculos");
+const containerVehiculos = document.getElementById("conteinerVehicles");
 
 
 const sectionFilm = films.forEach(({title , description , producer, poster , rt_score , release_date, director}) => {
@@ -77,9 +77,10 @@ filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {
   const createElement= document.createElement("div")
   createElement.setAttribute("class", 'contenedorCardPeople');
   const template1= `<div id= "divCardPeople">
-  <div class="frontCard"
-  <h3>${el.name} </h3>
+  <div class="frontCard">
+  <h4>${el.name} </h4>
   <div class="box2"><img src= ${el.img} id ="imgPosterPeople"></div> 
+  </div>
   </div>
   <div class="backCard">
   <ul>
@@ -125,11 +126,11 @@ filterPeopleLocationsVehicles("vehicles", films).flat(1).forEach((el) => {
   const createElement= document.createElement("div");
   createElement.setAttribute("class", 'contenedorCardVehicles');
   const template3= `<div id= "divCardVehicles">
-  <div class="frontCard">
+  <div class="frontCard4">
   <p> ${el.name} </p>
   <div class="box4"><img src= ${el.img} id ="imgPosterVehicles"></div>
   </div>
-  <div class="backCard">
+  <div class="backCard4">
   <ul>
   <li>Descripción: ${el.description}</li>
   <li>Tipo de Vehículo: ${el.vehicle_class}</li>
@@ -142,8 +143,6 @@ createElement.innerHTML= template3;
 containerVehiculos.appendChild(createElement);
 return template3;
 });
-
-
 
 
 
