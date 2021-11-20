@@ -1,4 +1,4 @@
-import { /*anotherExample,*/rio_teams, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
+import { /*anotherExample,sortData,*/rio_teams, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; 
 
@@ -151,7 +151,7 @@ let newListsAthlete= data.athletes.map(item=>{
 
 var personasMapArr= new Map(newListsAthlete); 
 let unicos = [...personasMapArr.values()]; // Conversión a un array
-
+console.log(unicos)
 /* .....Funcion para crear la lista de atletas con el nuevo array...... */
 function listName(e) {
   const athlete= document.getElementById("hereAthletes")
@@ -180,7 +180,7 @@ window.onclick = function(event) {
 
 
 /* .....Funcion para crear el card con el nuevo array................. */
-//const prueba = listName(unicos)
+
 const contAthletes = (event,unicos) => {
   
   let nameAthlete= document.getElementById("name")
@@ -231,6 +231,22 @@ search.addEventListener('input', (event) => {
   search_term = event.target.value.toLowerCase();
   showList();
 });
+
+/* .....Funcion para ordenar los atletas...
+let sortBy = document.getElementById("sortBy");
+sortBy.addEventListener('change', (event) => {
+  const sortValue = event.target.value;
+  let classPoster = document.getElementById("name")
+  let sortBy = sortData(unicos(classPoster), sortValue);
+
+  let ids=unicos.map(item=>item.name);
+  for(let i=0;i<ids.length;i++){
+    let nodoEliminado=posters.removeChild(getById(ids[i]));
+    posters.append(nodoEliminado);
+  }
+  enterInfoMovie(classPoster);
+})... */
+
 
 /*--------------------------------código de los deportistas con diferentes medallas*/
 
@@ -319,4 +335,4 @@ function female(){
     }       
   }
 }
-
+/*----Graficas-----*/

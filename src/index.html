@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-   <div id="root"> 
+  <div id="root">
     <header>
        <div class="head">
          <img src="mascotas.png" alt="aros olímpicos" class="mascots">
@@ -129,8 +129,15 @@
                   id="searchBar"
                   placeholder="Search your athletes"
               />
-             
             </div>
+            <!-----
+            <div id="divSort">
+              <select id="sortBy">
+                <option selected disabled>Sort By</option>
+                <option value="a-to-z">A - Z</option>
+                <option value="z-to-a">Z - A</option>
+              </select>
+            </div>------->
         <div class="listAthletes" id="listAthletes">
           <ul id= "hereAthletes"></ul>
         </div>
@@ -228,6 +235,6 @@
     </footer>
     <script src="main.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </div> 
+  </div>
   </body>
 </html>
