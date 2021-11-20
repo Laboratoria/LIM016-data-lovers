@@ -47,6 +47,14 @@ export const justFemale=(arr)=>{
 // export const anotherExample = (data) => {
 //   return 'OMG';
 // };
+
+export const medalFemale = (data) => {
+  let datos = data.map(item => [/*item.name, item.sport, */item.gender, item.medal]);
+  
+  return datos
+};
+
+
 /*
 export const sortData = (data, items) =>{
   switch(items){
