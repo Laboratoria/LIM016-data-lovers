@@ -1,17 +1,14 @@
 import data from './data/ghibli/ghibli.js';
-import {filterPeopleLocationsVehicles} from  './data.js';
+import {filterPeopleLocationsVehicles, filterItems} from  './data.js';
  
 let films = [];
 films = data.films;
-console.log (filterPeopleLocationsVehicles("people", films))
+/*console.log (filterPeopleLocationsVehicles("people", films))*/
 
 /*botones para  ingresar a cada seccion*/ 
 
-
-
-
   document.getElementById("filmografia").addEventListener("click", ()=>{
-    document.getElementById("filmo").style.display="block";
+    document.getElementById("filmo").style.display="flex";
     document.getElementById("persona").style.display="none";
     document.getElementById("vehiculos").style.display="none";
     document.getElementById("locaciones").style.display="none";
@@ -37,7 +34,7 @@ console.log (filterPeopleLocationsVehicles("people", films))
    
 
    document.getElementById("locations").addEventListener("click", ()=> {
-    document.getElementById("locaciones").style.display="block";
+    document.getElementById("locaciones").style.display="flex";
     document.getElementById("filmo").style.display="none";
     document.getElementById("persona").style.display="none";
     document.getElementById("vehiculos").style.display="none";
@@ -47,9 +44,9 @@ console.log (filterPeopleLocationsVehicles("people", films))
    document.getElementById("logo").addEventListener("click",()=>window.location.reload());
 
 
-const containerFilmo = document.getElementById("filmo");
+const conteinerScrollFilmo = document.getElementById("conteinerScrollFilmo");
 const containerPeople = document.getElementById("persona");
-const containerLocation = document.getElementById("locaciones");
+const conteinerScrollLocations = document.getElementById("conteinerScrollLocations");
 const containerVehiculos = document.getElementById("vehiculos");
 
 
@@ -68,7 +65,7 @@ const sectionFilm = films.forEach(({title , description , producer, poster , rt_
 </div>
 <div class="box1"><img src= ${poster} id ="imgPosterFilm"></div> `;
  createElement.innerHTML= template
- containerFilmo.appendChild(createElement);
+ conteinerScrollFilmo.appendChild(createElement);
  return template;
 } )
 
@@ -101,22 +98,18 @@ filterPeopleLocationsVehicles("locations", films).flat(2).forEach((el) => {
   const createElement= document.createElement("div")
   createElement.setAttribute("class", 'contenedorCardLocations');
   const template2= `<div id= "divCardLocations">
-  <div class="frontCard">
   <p>${el.name} </p>
-  <div class="box3"><img src= ${el.img} id ="imgPosterLocations"></div>
-  </div>
-  <div class="backCard">
+  <div class="box3"><img src= ${el.img} id ="imgPosterLocations"></div
   <ul>
   <li>Clima: ${el.climate}</li>
   <li>Terreno: ${el.terrain}</li>
   <li>Nivel del mar: ${el.surface_water}</li>
-  <li>Residentes: ${el.residents}</li>     
+  <li>Residentes: ${el.residents.map((el) => el.name)}</li>     
 </ul>
-</div>
 </div>`;
 console.log(template2)
 createElement.innerHTML= template2;
-containerLocation.appendChild(createElement);
+conteinerScrollLocations.appendChild(createElement);
 return template2;
 });
 
