@@ -5,8 +5,23 @@
     padding: 0;
     
 }
-/*prueba*/
-
+/*---------------charts------*/
+.charts{
+    display:flex;
+    justify-content: center;
+}
+.clickCharts{
+    background-color: #2be912;
+    width: 20rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border:none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.clickCharts:hover{
+    color:white;
+}
 
 /*-------------------------*/
 
@@ -766,6 +781,12 @@ footer{
         }
         .texTitle{
             font-size: 0.9rem;
+        }
+        .clickCharts{
+            width: 10rem;
+            height: 3rem;
+            font-size: 0.9rem;
+            font-weight: 800;
         }
        
 }
