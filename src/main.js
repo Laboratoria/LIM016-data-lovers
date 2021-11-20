@@ -3,6 +3,14 @@ import { /*anotherExample,*/rio_teams, noRepeated,justFemale, timesRepeated, spl
 import data from './data/athletes/athletes.js'; 
 
 
+let toggle_bar= document.querySelector(".head-toggle");
+let navMenu= document.querySelector(".info");
+toggle_bar.addEventListener("click", ()=>{
+  navMenu.classList.toggle("info_visible");
+})
+
+
+
 let home_click= document.getElementById("home-click");
 home_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
@@ -12,6 +20,7 @@ home_click.addEventListener("click", (e)=>{
   document.getElementById("countries").style.display = "none";
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
+  navMenu.classList.toggle("info_visible");
 });
 
 let sports_click= document.getElementById("sports-click");
@@ -23,6 +32,7 @@ sports_click.addEventListener("click", (e)=>{
   document.getElementById("countries").style.display = "none";
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
+  navMenu.classList.toggle("info_visible");
 });
 
 
@@ -35,6 +45,7 @@ teams_click.addEventListener("click", (e)=>{
   document.getElementById("athletes").style.display = "none";
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
+  navMenu.classList.toggle("info_visible");
 });
 
 let athletes_click= document.getElementById("athletes-click");
@@ -47,6 +58,7 @@ athletes_click.addEventListener("click", (e)=>{
   document.getElementById("sports").style.display = "none";
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
+  navMenu.classList.toggle("info_visible");
 });
 
 let text_click= document.getElementById("link_medals");

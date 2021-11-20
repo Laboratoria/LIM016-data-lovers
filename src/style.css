@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
 }
 /*prueba*/
 
@@ -46,6 +47,13 @@ header{
     padding-right: 14rem;
     letter-spacing: 0.1em;
 }
+.head-toggle{
+    color: white;
+    background: none;
+    padding: auto;
+    border: none;
+    display: none;
+}
 .navBar{
     background-color: black;  /*#3cfa02*/
 }
@@ -83,10 +91,11 @@ a:hover{
 .homeImage{
     width:100%;
     height: 100%;
+    border-top-left-radius:1.3rem ;
+    border-bottom-left-radius: 1.3rem;
 }
 .homeInfo{
     padding: 2em;
-    /* border: 0.19rem solid rgb(214, 214, 214) ;*/
 }
 .rio-info-title{
     font-size: 4ex;
@@ -103,15 +112,10 @@ a:hover{
     font-size:1.5rem;
 }
 .link{
-    color:blue;
     margin-left: 0.8rem;
     text-align: justify;
-    border-bottom: 0.1em solid blue;
 }
-.link:hover{
-cursor: pointer;
 
-}
 .first-row, .second-row, .third-row{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -127,7 +131,7 @@ cursor: pointer;
 }
 /*-------------------------------------------------------CONTAINER-EL PROYECTO--------------------------------------------------------------*/
 h2{
-    text-align: left;
+    text-align: center;
     font-weight: bolder;
     font-size: 50px;
     padding-left: 1ex;
@@ -166,8 +170,16 @@ h2{
     font-size: 5rem;
 }
 .img_sport{
+    width: 20%;
+    height: 20%;
+    border-radius: 1rem;
+    display: block;
+    margin:auto;
+}
+.img_sport_2{
     width: 50%;
     height: 50%;
+    border-radius: 1rem;
     display: block;
     margin:auto;
 }
@@ -180,14 +192,12 @@ h2{
     padding: 1em;
     width:100%;
     outline: none;
-    border:0.2rem solid rgb(139, 139, 139);
+    border:0.2rem solid #18286B ;
 }
 html{
     scroll-behavior: smooth;
 }
-.search:focus{
-    border: 0.2rem solid #18286B ;
-}
+
 .sportTable{
     border-collapse: collapse;
     margin: 1.5rem auto;    
@@ -272,27 +282,25 @@ html{
 #cardAthlete{
     display: flex;
     flex-direction: column;
-    justify-items: center;
-    width: 30%;
+    
+    width: 50%;
     border: 0.4rem solid #F1B839;
     border-radius: 2rem;
     padding: 1.2rem;
-    margin-top: 2rem;
     box-shadow:  16px 16px 44px #5c5606, 
              -16px -16px 44px #282a28;
     transition: 0.3s all ease-in-out;
     /*position: fixed;*/
     background-color: white;
     font-size:1rem;
-    margin: 4rem 32rem;
+    margin: 4rem 20.9rem;
 }
 .texCard{
     display: flex;
     flex-direction: row;
-    align-items: center;
     line-height: 2.4rem;
     color:black;
-    justify-content: center;
+    justify-content: flex-star;
 }
 .title{
     text-align: center;
@@ -328,7 +336,7 @@ html{
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding-left:5rem;
+    padding: 1rem 5rem;
 }
 .atleta{   /*es el título*/
     color: #FF8000;
@@ -351,11 +359,8 @@ html{
     border-radius: 0.5em ;
     padding: 1em;
     width:100%;
-    border:0.2rem solid rgb(139, 139, 139);
+    border:0.2rem solid #FF8000;
     outline: none;
-}
-#searchBar:focus{
-    border: 3px solid #FF8000;
 }
 #searchWrapper::after {
     content: '🔍';
@@ -391,12 +396,9 @@ html{
     border-radius: 0.5em;
     padding: 1em;
     width:100%;
-    border:0.2rem solid rgb(139, 139, 139);
+    border:0.2rem solid #FF6103;
     outline: none;
     margin-bottom: 1rem;
-}
-.searchMultipleWinners:focus{
-    border: 3px solid #FF6103;
 }
 .medal_athletesContainer{  /*este es el ul*/
     list-style:none;
@@ -436,6 +438,8 @@ html{
     width: 100%;
 }
 .female_container{   /*chequear si es el correcto*/
+    display: flex;
+    flex-direction: column;
     padding: 2rem;
 }
 .female_title{   /*verificar con los otros títulos*/
@@ -443,7 +447,8 @@ html{
     font-size:5rem;
 }
 .hereFemaleAthletes{
-    padding: 0rem 20rem;
+   width:100%;
+    margin-top: 1rem;
 }
 .female_table{
     border-collapse: collapse;
@@ -483,10 +488,7 @@ html{
     padding: 1em;
     width:100%;
     outline: none;
-    border:0.2rem solid rgb(139, 139, 139);
-  }
-  .searchFemAthl:focus{
-      border: 0.2rem solid #DD1717;
+    border:0.2rem solid #DD1717
   }
 /*------------------------------------------ FOOTER-----------------------------------------------------------------------*/
 
@@ -522,38 +524,150 @@ footer{
     color: #dbf537;
 }
 
-@media only screen and (max-width: 992px) {
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+@media only screen and (max-width: 768px) {
     .body{
         display: flex;
         flex-direction: column;
     }
     .main{
         display: flex;
-    }
-    header{
-        display: flex;
-    }
-    .navBar{
-        display: none;
-    }
-    #root{
-        width: 100%;
-        display: flex;
         flex-direction: column;
     }
-    .mascots{
-        width: 20%;
-        height: 60%;
+    .head{
+        display:flex;
+        justify-content: space-between;
+        padding: 0 1rem;
     }
     .page-name{
-        font-size: 2.3rem;
-        width: 40%;
+        font-size: 1.4rem;
+        padding-right: 5rem;
     }
+    .navBar a{
+        font-size: 1rem;
+        color: white;
+        font-family: 'Bebas Neue', cursive;
+        text-decoration: none;
+        line-height: 1.5em;   
+        letter-spacing: 0.1ex;            
+    }
+    .navBar a:hover{
+        color:chartreuse;
+    }
+    .info{         /*donde está home, sports, etc.*/
+        display: flex;
+        flex-direction: column;
+        justify-items:  center;
+        height: calc(100%-9%);
+        overflow-y:auto ;
+        transition: 0.7s;
+    }
+    .head-toggle{
+        display: block;
+        cursor: pointer;
+    }
+    .info_visible{
+        display:none;
+    }
+    .rio-info{
+        padding:2rem;
+    }
+    .homeInfo{
+        padding:1rem;
+    }
+    .rio-info-title{
+        font-size: 2ex;
+    }
+    .info-rio-par{
+        text-align: justify;
+        line-height: 0.85em;
+        font-size: 0.74em;
+        font-weight: 501;
+    }
+    .arrow{
+        font-size:0.8rem;
+    }
+    /*footer*/
+    footer{   
+        background-color: black;
+        padding: 1rem 1rem;
+        position:absolute;
+        width: 100%;  
+        padding-left: 1.9rem;  
+    }
+    .foot{
+        display: flex;
+        gap:6.5rem;
+        align-items: center;    
+    }
+    .ring{
+        width: 4.4rem;
+        height: 2rem;
+    }
+    .info-footer{
+        color: white;
+        font-size: 1.1rem; 
+    }
+    .social-media{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-size: 0.7rem;
+    }
+
+    /*multiple medal winners*/
+    
+    .multiple-title{   /*atletas multimedallistas*/
+        font-size: 2rem;
+    }
+    .keyAthlete{ /*salio del js:nombre de atletas*/
+        font-size: 0.97em;
+        margin: 0.3rem;
+    }
+    .medal_athletesContainer{  /*este es el ul*/
+        font-size: 0.85rem;
+    }
+    .searchMultipleWinners{
+        height: 2.5rem;
+    }
+    .medal_athletesContainer:hover{
+        transform: scale(1.02);
+    }
+    #hereAthletes_multiple_medals{
+        padding-left: 0rem;
+    }
+
+    /*only female athletes*/
+    .female{
+        display:flex;
+        width: 100%;
+    }
+    .female_container{
+        width: 100%;
+        padding: 0.6rem;
+    }
+    .female_title{   /*verificar con los otros títulos*/
+        font-size:2rem;  /*chequer por cuanto ha estdoca*/
+    }
+    .header{
+        width: 100%;
+        display: flex;
+        font-size: 2.2rem;
+    }
+    #hereFemale{
+    width: 100%;
+    }
+    .female_table{
+        display: flex;
+        flex-direction: column;
+        font-size: 0.6rem;
+    }
+    .female_table thead tr{
+        font-size: 1.3rem;
+    }
+    .searchFemAthl{   /*comparar con los otro*/
+        height: 2.5rem;
+      }
+    
     /*----------------Sport---------------------*/
     .sports{
         display:flex;
@@ -564,14 +678,7 @@ footer{
         padding: 0.6rem;
     }
     .deportes{
-        text-align: center;
         font-size: 4rem;
-        padding-left: 0;
-        margin-bottom: 2rem;
-    }
-    .thead{
-        height: 3.4rem;
-        text-align-last: center;
     }
     .header{
         width: 100%;
@@ -584,12 +691,17 @@ footer{
         font-size: 0.6rem;
     }
     #tableData{
-        display: flex;
         width: 100%;
-        flex-direction: column;
     }
     .img_sport{
-        border-radius: 0.5rem;
+        width: 60%;
+        height: 60%;
+    }
+    .sportTable thead tr{
+        font-size: 1.3rem;
+    }
+    .search{
+        height: 2.5rem;
     }
     /*----------------Teams---------------------*/
     .hereCountries{
@@ -606,19 +718,16 @@ footer{
         padding: 1rem;
     }
     .paises{
-        text-align: center;
         font-size: 4rem;
-        padding-left: 0;
     }
      /*----------------Athetes---------------------*/
     .atletes_container{
         display: flex;
         flex-direction: column;
-        padding: 1rem;
     }
     .rioAtletas{
-        width: 60%;
-   
+        width: 40%;
+        height: 40%;
     }
     .atleta{
         text-align: center;
@@ -626,10 +735,6 @@ footer{
         padding-left: 0;
         margin-bottom: 1.6rem;
     }
-    .listAthletes{
-        padding-left: 0;
-    }
-    
     #hereAthletes{
         display: flex;
         flex-wrap: wrap;
@@ -644,10 +749,23 @@ footer{
         margin-right: 1px;
         padding: 0;
     }
-    footer{
-        display: flex;
-        position: relative;
+    #searchBar{
+        height: 2.5rem;
     }
-    
-
+           /*modal*/
+    #cardAthlete{
+        width: 57%;
+        margin: 5rem 6.5rem;
+        position:fixed;
+        }
+        .texCard{
+            line-height: 1.8rem;
+        }
+        .title{
+            font-size: 0.9rem;
+        }
+        .texTitle{
+            font-size: 0.9rem;
+        }
+       
 }

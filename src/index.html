@@ -10,18 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-   <!----- <div id="root"> ----->
+   <div id="root"> 
     <header>
        <div class="head">
          <img src="mascotas.png" alt="aros olímpicos" class="mascots">
          <h1 class="page-name"><strong>OLYMPIC HEART</strong></h1>
+         <button class="head-toggle"><i class="fa fa-bars  fa-lg" aria-hidden="true"></i></button>
        </div>
        <div class="navBar">
-         <div class="info">
-          <a href="" id="home-click">Home</a>
-          <a href="" id="sports-click">Sports</a>
-          <a href="" id="teams-click">Teams</a>
-          <a href="" id="athletes-click">Athletes</a>
+         <div class="info info_visible" >
+          <a href="" id="home-click" class="nav_info">Home</a>
+          <a href="" id="sports-click" class="nav_info">Sports</a>
+          <a href="" id="teams-click" class="nav_info">Teams</a>
+          <a href="" id="athletes-click" class="nav_info">Athletes</a>
          </div>
        </div>
     </header>
@@ -37,7 +38,7 @@
              <img src="about.jpg" alt="" class="homeImage">
              </div> 
             <div class="homeInfo">
-              <p class= "rio-info-title">ABOUT RIO</p> <br><br>
+              <p class= "rio-info-title">ABOUT RIO</p> <br>
               <p class="info-rio-par">The 2016 Olympic Games in Rio de Janeiro took place between August 5 and 21. 
                  It was the first time that an Olympic event has been  held in a South American country.<br><br>
               Over 11 000 athletes participated in this edition of the Olympic Games. <br><br>
@@ -50,7 +51,7 @@
                  <img src="venues.jpg" alt="" class="homeImage">
                </div>
               <div class="homeInfo">
-                <p class="rio-info-title">VENUES</p><br><br>
+                <p class="rio-info-title">VENUES</p><br>
                 <p class="info-rio-par">The competitions were held in 33 sports venues in four Rio de Janeiro neighborhoods:<br><br>
                  -Maracanã <br>
                  -Barra da Tijuca <br>
@@ -62,19 +63,19 @@
           </div>
           <div class="third-row">
               <div class="title-container">
-                <img src="theAthletes.jpg" alt="" class="homeImage">
+                <img src="theAthletes.jpg" alt="" class="homeImage" id="img-at">
               </div>
               <div class="homeInfo">
-                <p class="rio-info-title">THE ATHLETES</p> <br><br>
+                <p class="rio-info-title">THE ATHLETES</p> <br>
                 <p class="info-rio-par">There was never a shortage of emotions during the Olympic Games.
-                      After 17 days of intense competitions, the Games left us with many impressive stories,
+                      The Games left us with many impressive stories,
                       new World and Olympic records that will be remembered due to the high-performing athletes. <br><br>
-                     <span class="link" id="link_medals"><span class="arrow">»</span> Check out all the athletes
-                        that won medals competing in more than one event<br><br></span>
+                     <a href="" class="link" id="link_medals"><span class="arrow">»</span> Check out all the athletes
+                        that won medals competing in more than one event<br><br></a>
                       Rio was also a place that saw many women shine in different sports and events such as Simone Biles and Katinka Hozzsu. <br><br>
-                     <span class="link" id="link_female"><span class="arrow">»</span>	Check out all the female athletes
-                        that participated in RIO 2016<br><br></span>
-                      Finally, Rio was a historic opportunity to see the farewell of legends such as Michael Phelps and Usain Bolt.
+                     <a href="" class="link" id="link_female"><span class="arrow">»</span>	Check out all the female athletes
+                        that participated in RIO 2016</a>
+                     
                    </p>
               </div>
           </div>
@@ -84,7 +85,7 @@
   <section class= "todo">
       <section class="countries" id="countries"> <br>
         <div class="countries_container">
-          <img src="countries.png" class="img_sport" alt="">
+          <img src="countries.png" class="img_sport_2" alt="">
           <h2 class="paises">TEAMS</h2>
         <div class= "hereCountries" id= "hereCountries"></div>
         </div>
@@ -92,7 +93,7 @@
  
       <section class="sports" id="sports">
        <div class="sports_container">
-        <img src="simone-home.jpg" class="img_sport" alt="">
+        <img src="simone-home.jpg" class="img_sport_2" alt="">
         <h2 class="deportes">SPORTS</h2>
         
         <div class="sport_ev">
@@ -146,38 +147,40 @@
               </div>   
            </div>              
       </section>
+      <section class="female" id="female"> <br>
+        <div class="female_container">
+           <h2 class="female_title">FEMALE ATHLETES</h2>
+           <div class="img-flex">
+            <img src="katinka.png" alt="" class="phelps">
+          <img src="allyson.png" alt="" class="usain">
+          </div>
+           <div class= "hereFemaleAthletes" > 
+                <div class="searchFemale">
+                    <input type="text" class="searchFemAthl" id="searchFemAthl" placeholder="Search your athlete">
+                
+                <table id="female_table" class="female_table">
+                  <thead>
+                      <tr class= "header">
+                       <th >ATHLETE</th>
+                       <th >SPORT</th> 
+                      </tr>
+                    </thead>
+                    <tbody id= "hereFemale">
+                    </tbody> 
+                </table>
+           </div>
+          </div>
+        </div>
+       </section>
   </section>
 
-  <section class="female" id="female"> <br>
-    <div class="female_container">
-       <h2 class="female_title">FEMALE ATHLETES</h2>
-       <div class="img-flex">
-        <img src="katinka.png" alt="" class="phelps">
-      <img src="allyson.png" alt="" class="usain">
-      </div>
-       <div class= "hereFemaleAthletes" > <br>
-            <div class="searchFemale">
-                <input type="text" class="searchFemAthl" id="searchFemAthl" placeholder="Search your athlete">
-            </div>
-            <table id="female_table" class="female_table">
-              <thead>
-                  <tr class= "header">
-                   <th >ATHLETE</th>
-                   <th >SPORT</th> 
-                  </tr>
-                </thead>
-                <tbody id= "hereFemale">
-                </tbody> 
-            </table>
-       </div>
-    </div>
-   </section>
+  
   <!-------------------------el modal------------------------------>
   <div class="modal" id="modal">
     <div id="cardAthlete">
       <span class="close" id="close">&times;</span>
       <div class="texCard">
-        <h4 class="title" id="title">Name: </h4>
+        <h4 class="title" id="title">Name: </h4> 
         <p class="texTitle" id="name">Giovanni Abagnale</p>
       </div>
       <div class="texCard">
@@ -221,6 +224,6 @@
     </footer>
     <script src="main.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- <!----- </div> ----->
+  </div> 
   </body>
 </html>
