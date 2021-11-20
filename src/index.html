@@ -57,22 +57,34 @@
       <!--Glass contiene toda la data  --> 
       <div class="Glass">
 
-        <div class="portada" id="portada" style=>
-          
-          <h1>Studio Ghibli</h1>
-        <div>
-          <p>Esta exitosa casa de animación fue fundada en 1985 por los directores de cine y animación: Isao Takahata y Hayao Miyazaki,
-             ha producido veintidós largometrajes. <!-- <br>La mayoría de sus películas ocuparon el primer lugar en la taquilla 
-             en Japón en el año en que se estrenaron y cuentan con una gran cantidad de seguidores a nivel mundial, esto debido
-             a que presentan historias fascinantes y se mantienen fieles a la animacion tradicional. 
-             Las producciones se realzan bajo la técnica de dibujo a mano que no trabaja con ordenadores para 
-             generar movimientos entre los diferentes elementos.
-             El nombre del estudio proviene de Ghibli, palabra con que Italia bautizó a los aviones que volaban sobre el Sahara durante
-            la Segunda Guerra Mundial, y que a su vez proviene del término arábico que describe al viento cálido del desierto en Libia </p> -->
+        <div class="portada" id="portada" >
+
+          <div class="divPortadaTitle">
+            <div class="portadaTittle">
+              <h1>Studio Ghibli</h1>
+            </div>
           </div>
 
-
-
+          <div id="conteinerScrollPortada" style="display:flex">
+           <div class="box" style="display:flex">
+        <div class="textBox1" style="display:flex">
+          <p>Esta exitosa casa de animación fue fundada en 1985 por los directores de cine y animación: Isao Takahata y Hayao Miyazaki,
+             ha producido veintidós largometrajes.</p>
+          </div>
+          <div  class="textBox2">
+          <p>La mayoría de sus películas ocuparon el primer lugar en la taquilla en Japón en el año en que se estrenaron y cuentan 
+            con una gran cantidad de seguidores a nivel mundial, esto debido
+             a que presentan historias fascinantes y se mantienen fieles a la animacion tradicional.</p>
+            </div>
+            <div  class="textBox3">
+             <p>Las producciones se realzan bajo la técnica de dibujo a mano que no trabaja con ordenadores para 
+             generar movimientos entre los diferentes elementos.</p>
+            </div>
+            <div  class="textBox4">
+             <p>El nombre del estudio proviene de Ghibli, palabra con que Italia bautizó a los aviones que volaban sobre el Sahara durante
+            la Segunda Guerra Mundial, y que a su vez proviene del término arábico que describe al viento cálido del desierto en Libia </p>
+          </div>
+          </div>
         
          <div class="sliderContainer">
         <ul class="slider">
@@ -103,6 +115,15 @@
           <a href="#slide4">4</a>
         </li>
         </ul>
+      </div>
+
+      <div class="conteinerStatsFilmo">
+        <p>ESTADISTICA 1</p>
+      </div>
+
+      <div class="conteinerStatsPeople">
+        <p>ESTADISTICA 2</p>
+      </div>
 
       </div>
        </div>
@@ -113,22 +134,10 @@
           <div class="divFilmoTitle">
             <div class="filmoTittle">
               <h2> Filmografia </h2>
-
-              <div class="buscar">
-                <input type="text" class="btn-buscar" id="formulario"  required>
-                <div class="btn-search">
-                  <button class="btn-info" id="boton">Buscar</button>
-                </div>
-                <ul id="resultado">
-                  <li></li>
-                </ul>
             </div>
           </div>
- 
-          
 
-      </div>
-
+          <div class="conteinerBtns-buscar">
           <div class="divbtnsFilter">
             <ul class=navBtn> 
 
@@ -167,8 +176,20 @@
               <li><button id="">Clean</button></li>
           </div>
 
-          <div class="conteinerFilmo">
+          <div class="buscar">
+            <input type="text" class="btn-buscar" id="formulario"  required>
+              <button class="btn-info" id="boton">Buscar</button>
+
+            <ul id="resultado">
+              <li>    </li>
+            </ul>
+        </div>     
+       </div>
+
+          <div id="conteinerFilmo" class="conteinerFilmo">
+            <div id="conteinerScrollFilmo">
             <!--Manipulacion dinamica del DOM -->
+          </div>
           </div>
         </div>
 
@@ -305,12 +326,15 @@
               </ul>
           </div>
 
-          <div class="conteinerLocations">
-            <!--Manipulacion dinamica del DOM
+          <div id="conteinerLocations"  class="conteinerLocations">
+            <div id="conteinerScrollLocations">
+              <!--Manipulacion dinamica del DOM -->
+            </div>
           </div>
         </div>
 
       </div>
+
       <div class="divContainerFooter">
         <div class="divFooter">
           <div class="divcolumna1">
@@ -324,7 +348,7 @@
           </div>
           <div class="divcolumna3"></div>
         </div>
-      </div>-->
+      </div>
       </div>
     </div>
     
