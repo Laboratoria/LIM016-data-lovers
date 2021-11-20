@@ -498,6 +498,8 @@ background: none;
   text-transform: capitalize;
 }
 
+
+
 /*DISEÑANDO LOS SELECT*/
 #region,
 #tipos,
@@ -585,10 +587,16 @@ background: none;
 }
 /* evoluciones */
 
+.grupo p{
+  font-size: 0.9em;
+}
+
+
 .solo {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  font-size: 0.9em;
 }
 
 /* .evol {
@@ -599,21 +607,7 @@ background: none;
   width: 50%;
 }
 
-/* .evolucion{
-  background:white;
-  display: flex;
-  flex-direction: row;
 
-}
-.divEvolucion{
-background: yellow;
-}
-.evol{
-width: 50%;
-height: 50%;
-}
-
-*/
 .nombreNumero {
   display: flex;
   justify-content: space-around;
@@ -726,6 +720,7 @@ height: 50%;
   border: 0.1px solid rgb(72, 72, 72);
   margin: 0;
   font-family: "Spartan", sans-serif;
+  font-size: 0.9em;
 
 }
 
@@ -830,7 +825,7 @@ height: 50%;
 
 .description h {
   text-align: left;
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 2.5em;
   padding-left: 10px;
 }
@@ -838,7 +833,7 @@ height: 50%;
 .description p {
   width: 95%;
   margin: auto;
-  font-size: 11px;
+  font-size: 0.8em;
   text-align: justify;
   padding: 0 10px;
   line-height: 1.4em;
@@ -848,6 +843,7 @@ height: 50%;
 .features {
   display: flex;
   justify-content: space-around;
+  font-size: 0.8em;
 }
 
 .features div {
@@ -863,10 +859,10 @@ height: 50%;
 .candyContainerPadre {
   background-color: #e6e6e6;
   height: 3em;
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .palabraEvolucion {
@@ -874,12 +870,13 @@ height: 50%;
   justify-content: center;
   margin: auto;
   background: #3fc7aa;
-  width: 45%;
+  width: 60%;
   height: 100%;
   border-radius: 2em;
   color: white;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 3.5% 0px;
+  margin-left: -1em;
 }
 .candyContainer {
   width: 40%;
@@ -985,6 +982,7 @@ th {
   vertical-align: top;
   caption-side: bottom;
   margin: 0;
+
 }
 
 table {
@@ -993,7 +991,9 @@ table {
   width: 90%;
   justify-content: center;
   margin: auto;
-  font-size: 0.9em;
+  font-size: 0.8em;
+  text-transform: capitalize;
+
 }
 
 /* DANDO ESTILO A LAS TABLAS */
@@ -1002,6 +1002,8 @@ table {
   background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 
 .tabla-normal {
@@ -1013,12 +1015,15 @@ table {
   );
   border-radius: 10px;
   color: white;
+  padding: 0.1em;
 }
 
 .tabla-poison {
   background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 .tabla-dark {
   background: rgb(195, 195, 205);
@@ -1032,22 +1037,30 @@ table {
   );
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 .tabla-electric {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 .tabla-water {
   background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 
 .tabla-dragon {
   background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
   color: rgb(236, 207, 207);
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 .tabla-rock {
   background: #3c3b3f; /* fallback for old browsers */
@@ -1063,17 +1076,22 @@ table {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 .tabla-fighting {
   background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 
 .tabla-ghost {
   background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
 }
 .tabla-flying {
   background-image: linear-gradient(
@@ -1085,6 +1103,8 @@ table {
   );
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 .tabla-bug {
   background: rgb(176, 100, 66);
@@ -1092,45 +1112,61 @@ table {
   background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 .tabla-fairy {
   background-image: linear-gradient(to top, #cc208e 0%, #6713d2 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 .tabla-ice {
   background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 
 .tabla-psychic {
   background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 
 .tabla-steel {
   background-image: linear-gradient(to top, #b3ffab 0%, #12fff7 100%);
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 .tabla-fire {
   background: #d63031;
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 
 .tabla-fight {
   background: #cc8e35;
   color: white;
   border-radius: 10px;
+  padding: 0.1em;
+
 }
 
 .tabla-ground {
   color: white;
   border-radius: 10px;
   background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+  padding: 0.1em;
+
 }
 
 /* tablas */
@@ -1470,34 +1506,7 @@ table {
 
 /*RESPONSOVE DE LAS CARD DE PANTALLA PRINCIPAL */
 
-@media (max-width: 1300px) {
-/* cards pokemon */
-  .cardInfo {
-    font-size: 0.8em;
-    width: 35%;
-    height: 75%;
-  }
 
-
-  .containerImg img{
-   width: 35%;
-
-  }
-  .description{
-    font-size: 1.3em;
-  }
-
-  .description p{
-    font-size: 0.8em;
-  }
-
-  .botones-tarjetas button{
-    font-size: 0.9em;
-  }
-
-  .containerVista h{
-  }
-}
 
 @media (max-width: 1100px) {
   /* carrusel */
@@ -2000,7 +2009,7 @@ font-size: 0.8em;
 .cardInfo {
   font-size: 0.8em;
   width: 90%;
-  height: 90%;
+  height: 80%;
 }
 
 .containerImg img{
