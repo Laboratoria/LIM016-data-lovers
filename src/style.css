@@ -767,6 +767,9 @@ footer{
     #searchBar{
         height: 2.5rem;
     }
+    .listAthletes{
+        padding: 0;
+    }
            /*modal*/
     #cardAthlete{
         width: 57%;
