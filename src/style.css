@@ -169,16 +169,16 @@ body{
       justify-content: center;
       margin-bottom: 10px;
     }
-    .divFilmoTitle, .divLocationsTitle{
+    .divFilmoTitle, .divLocationsTitle, .divPeopleTitle, .divVehiclesTitle {
       display: flex;
       height: 89px;
       margin-left: 34px;
     }
-    .filmoTittle h2, .locationsTittle h2 {
+    .filmoTittle h2, .locationsTittle h2, .PeopleTitle h2, .VehiclesTitle h2  {
       font-family: 'Questrial', sans-serif;
       font-size: 38px;
     }
-    #conteinerFilmo, #conteinerLocations {
+    #conteinerFilmo, #conteinerLocations ,#conteinerVehicles ,#conteinerPeople {
     display: flex;
     align-content: space-around;
     justify-content: center;
@@ -414,6 +414,8 @@ ul.slider li:target {
 }
 
 /* estilos people*/
+
+
 #conteinerScrollPeople {
   display: flex;
   overflow-y: scroll;
@@ -422,6 +424,7 @@ ul.slider li:target {
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
+  perspective: 800;
 }
 
 #containerPeople{
@@ -435,11 +438,12 @@ ul.slider li:target {
  }
 
 .contenedorCardPeople{
+   display:flex ;
    height: 200px;
    width:140px;
    margin:auto;
    margin-bottom: 10px;
-   perspective: 800;
+
   
 }
 #divCardPeople{
