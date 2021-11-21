@@ -48,3 +48,43 @@ export const justFemale=(arr)=>{
 //   return 'OMG';
 // };
 
+export const medalFemale = (data) => {
+  let datos = data.map(item => [item.gender, item.medal]);
+  
+  return datos
+};
+
+
+/*
+export const sortData = (data, items) =>{
+  switch(items){
+    case 'a-to-z':{
+      const fromAtoZ = data.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      })
+      return fromAtoZ;
+    }
+    case 'z-to-a':{
+      const fromZtoA = data.sort((a, b) => {
+        if (a.name < b.name) {
+          return 1;
+        }
+        if (a.name > b.name) {
+          return -1;
+        }
+        return 0;
+      })
+      return fromZtoA;
+    }
+    default:{
+      break;
+    }
+  }
+};*/
+

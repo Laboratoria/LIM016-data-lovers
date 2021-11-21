@@ -1,4 +1,4 @@
-import { /*anotherExample,*/rio_teams, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
+import { /*anotherExample,sortData,*/medalFemale,rio_teams, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; 
 
@@ -14,6 +14,7 @@ let home_click= document.getElementById("home-click");
 home_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "block";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
@@ -26,6 +27,7 @@ let sports_click= document.getElementById("sports-click");
 sports_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("sports").style.display = "block";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
@@ -39,6 +41,7 @@ let teams_click= document.getElementById("teams-click");
 teams_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("countries").style.display = "block";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
@@ -52,6 +55,7 @@ athletes_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
 
   document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("athletes").style.display = "block";
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
@@ -65,6 +69,7 @@ text_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
 
   document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("multipleMedals").style.display = "block";
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
@@ -77,6 +82,7 @@ link_female.addEventListener("click", (e)=>{
   e.preventDefault(); 
 
   document.getElementById("contaiiner").style.display = "none"; 
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("female").style.display = "block";
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("countries").style.display = "none";
@@ -150,7 +156,7 @@ let newListsAthlete= data.athletes.map(item=>{
 
 var personasMapArr= new Map(newListsAthlete); 
 let unicos = [...personasMapArr.values()]; // Conversión a un array
-
+//console.log(unicos)
 /* .....Funcion para crear la lista de atletas con el nuevo array...... */
 function listName(e) {
   const athlete= document.getElementById("hereAthletes")
@@ -179,7 +185,7 @@ window.onclick = function(event) {
 
 
 /* .....Funcion para crear el card con el nuevo array................. */
-//const prueba = listName(unicos)
+
 const contAthletes = (event,unicos) => {
   
   let nameAthlete= document.getElementById("name")
@@ -230,6 +236,22 @@ search.addEventListener('input', (event) => {
   search_term = event.target.value.toLowerCase();
   showList();
 });
+
+/* .....Funcion para ordenar los atletas...
+let sortBy = document.getElementById("sortBy");
+sortBy.addEventListener('change', (event) => {
+  const sortValue = event.target.value;
+  let classPoster = document.getElementById("name")
+  let sortBy = sortData(unicos(classPoster), sortValue);
+
+  let ids=unicos.map(item=>item.name);
+  for(let i=0;i<ids.length;i++){
+    let nodoEliminado=posters.removeChild(getById(ids[i]));
+    posters.append(nodoEliminado);
+  }
+  enterInfoMovie(classPoster);
+})... */
+
 
 /*--------------------------------código de los deportistas con diferentes medallas*/
 
@@ -318,4 +340,56 @@ function female(){
     }       
   }
 }
+/*----Graficas-----*/
+let graficos= document.getElementById('clickCharts');
+graficos.addEventListener("click", (e)=>{
+  e.preventDefault(); 
 
+  document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("graficas").style.display = "flex";
+  document.getElementById("countries").style.display = "none";
+  document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
+  document.getElementById("female").style.display = "none";
+});
+
+let medal = medalFemale(data.athletes);
+let cantMedal = timesRepeated(medal);
+// //console.log(Array.isArray(medal));
+//console.log(cantMedal);
+const ctx = document.getElementById('myChart').getContext('2d');
+
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: 'Medal Winners',
+            data: cantMedal,
+            backgroundColor: [
+                'rgb(255, 205, 86, 0.9)',
+                'rgb(255, 205, 86, 0.9)',
+                'rgba(80, 80, 80, 0.4)',
+                'rgba(255, 159, 64, 0.9)',
+                'rgba(80, 80, 80, 0.4)',
+                'rgba(255, 159, 64, 0.9)'
+            ],
+            borderColor: [
+                'rgba(80, 80, 00, 0.2)',
+                'rgba(80, 80, 00, 0.2)',
+                'rgba(80, 80, 80, 0.2)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(80, 80, 80, 0.2)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});   

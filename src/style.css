@@ -1,4 +1,3 @@
-
 *{
     box-sizing: border-box;
     margin: 0;
@@ -8,7 +7,8 @@
 /*---------------charts------*/
 .charts{
     display:flex;
-    justify-content: center;
+    
+    display:none;
 }
 .clickCharts{
     background-color: #2be912;
@@ -18,7 +18,12 @@
     border:none;
     font-size: 2rem;
     cursor: pointer;
-}git
+    font-weight: 700;
+}
+.chart-center{
+    display:flex;
+    justify-content: center;
+}
 .clickCharts:hover{
     color:white;
 }
@@ -27,17 +32,12 @@
 
 .todo{  /* donde está encerra la info */
     font-weight: bold;
-    /* flex-direction: row;
-    justify-content: space-around; */
     width: 100%;
-    /* background-color: rgb(249, 249, 249);  */
-     /* border-style: solid;*/
 } 
 
 body{
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
-    /* background-color: rgb(241, 240, 240); */
 }
 
 /*-------------------------------------------HEADER--------------------------------------*/
@@ -563,6 +563,39 @@ footer{
     height: 85px;
     padding-top: 1rem;
 }
+/*-----------------------Gráfico----------------------------------------------------------------------*/
+#graficas{
+    flex-direction: row;
+    justify-content: space-between;
+}
+.grafico1{
+    width: 45%;
+    margin-top: 2rem;
+    border-radius: 15px;
+    border: solid;
+    margin: 1rem;
+    border-color: chartreuse;
+    padding: 2rem;
+}
+.genere{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.6rem;
+}
+.text-genero{
+    color: chartreuse;
+    margin-bottom: 1rem;
+    font-size: 2.1rem;
+}
+.medallas{
+    width: 45; 
+}
+.img-medallas{
+    width: 100%;
+    padding: 2rem;
+    margin-top: 30%;
+    border-radius: 3rem;
+}
 
 @media only screen and (max-width: 768px) {
     .body{
@@ -577,11 +610,6 @@ footer{
         display:flex;
         justify-content: space-between;
         padding: 0 1rem;
-        height: 3.5rem;
-    }
-    .mascots{
-        width: 10%;   
-        height: 65%
     }
     .page-name{
         font-size: 1.4rem;
@@ -806,12 +834,22 @@ footer{
         .texTitle{
             font-size: 0.9rem;
         }
-    /*---------charts----*/
-    .clickCharts{
-        width: 10rem;
-        height: 3rem;
-        font-size: 0.9rem;
-        font-weight: 800;
-    }
-       
+        .clickCharts{
+            width: 10rem;
+            height: 3rem;
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+/*-----------------------Grafico----------------------------------------------------------------------*/
+        #graficas{
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .img-medallas{
+            margin-top: 0;
+        }
+        .grafico1{
+            width: 95%;
+        }
 }
