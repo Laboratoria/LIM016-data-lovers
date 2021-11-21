@@ -80,12 +80,18 @@ function handleDivRegion(data, arrayPokeP) {
       mostrarPokemon(arrayRegionPoke, arrayPokeP);
 
       document.getElementById(`${regionP}Div`).className = "regionPokeInicio activeTipo";
-        
+
       document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
         const regionP2 = e.target.getAttribute("id");
         if(regionP != regionP2){
           document.getElementById(`${regionP}Div`).className = "regionPokeInicio";
         }})
+        document.querySelector('.navegador').addEventListener('click',(e)=>{
+          e.preventDefault()
+          document.getElementById(`${regionP}Div`).classList.remove('activeTipo')
+
+        })
+
     }
   });
 }
@@ -138,21 +144,31 @@ function filtrarTiposPokemon(data, arrayPokeP){
   document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
   e.preventDefault();
 
-      if (e.target.getAttribute("id")) {
+      if (e.target.getAttribute("name")) {
         container.innerHTML = "";
         // console.log(e.target.getAttribute('id'))
-        const tipoP = e.target.getAttribute("id");
+        const tipoP = e.target.getAttribute("name");
         const arraytipoPoke = typePokemones(tipoP, data.pokemon);
         mostrarPokemon(arraytipoPoke, arrayPokeP);
 
         // document.getElementById(tipoP).addEventListener("click",()=>{
         document.getElementById(`${tipoP}Div`).className = "tipoPokeInicio activeTipo";
-        
+
         document.getElementById("divTiposPokemones").addEventListener("click", (e) => {
           const tipoP2 = e.target.getAttribute("id");
           if(tipoP != tipoP2){
             document.getElementById(`${tipoP}Div`).className = "tipoPokeInicio";
           }})
+
+
+          document.querySelector('.navegador').addEventListener('click',(e)=>{
+            e.preventDefault()
+            console.log('hola')
+            document.getElementById(`${tipoP}Div`).classList.remove('activeTipo')
+
+          })
+
+
       }
     })}
 
@@ -187,6 +203,7 @@ function filtrarRarezaSelect(data, arrayPokeP) {
     mostrarPokemon(arrayRarezaSelect, arrayPokeP)});
 }
 
+//
 function filtrarRarezaPokemon(data, arrayPokeP) {
   document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
     e.preventDefault();
@@ -198,13 +215,24 @@ function filtrarRarezaPokemon(data, arrayPokeP) {
       const arrayRarezaPoke = rarezaPokemon(rarezaP, pruebaFetch);
       mostrarPokemon(arrayRarezaPoke, arrayPokeP);
       console.log(rarezaP)
-      document.getElementById(`${rarezaP}DivP`).className = "rarezaDiv activeTipo";
-        
+      document.getElementById(`${rarezaP}DivP`).className = 'rarezaDiv activeTipo';
+
       document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
           const rarezaP2 = e.target.getAttribute("value");
           if(rarezaP != rarezaP2){
+
             document.getElementById(`${rarezaP}DivP`).className = "rarezaDiv";
+
+
           }})
+
+          document.querySelector('.navegador').addEventListener('click',(e)=>{
+            e.preventDefault()
+            console.log('hola')
+            document.getElementById(`${rarezaP}DivP`).classList.remove('activeTipo')
+
+          })
+
     }
   });
 }

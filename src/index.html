@@ -22,7 +22,7 @@
 
       <button class="toggle" id="toggle">
       <i class="fas fa-bars"></i></button>
-      <ul class="menu" style="display: flex" >
+      <ul class="menu" style="display: none" >
         <li><button id="btnInicio" class="activeButton">INICIO</button></li>
         <li><button id="btnPokedex" class="btnNav">POKEDEX</button></li>
         <li><button id="btnTipo" class="btnNav">TIPO</button></li>
@@ -284,8 +284,8 @@
       <div class="container-filtro-padre">
         <div class="container-tipo-rareza-region">
           <div id="divTiposPokemones" style="display:none" >
-            <div class="tipoDiv"><div class="tipoPokeInicio" id="ghostDiv">GHOST<img id="ghost" src="./img/tipo-ghost.png"></div></div>
-            <div class="tipoDiv"><div class="tipoPokeInicio" id="waterDiv">WATER<img id="water" src="./img/tipo-agua.png"></div></div>
+            <div class="tipoDiv" ><div class="tipoPokeInicio" id="ghostDiv" name="ghost">GHOST<img name="ghost" id="ghost" src="./img/tipo-ghost.png"></div></div>
+            <div class="tipoDiv"><div class="tipoPokeInicio" id="waterDiv" name="water">WATER<img name="water" id="water" src="./img/tipo-agua.png"></div></div>
             <div class="tipoDiv"><div class="tipoPokeInicio" id="poisonDiv">POISON<img id="poison" src="./img/tipo-poison.png"></div></div>
             <div class="tipoDiv"><div class="tipoPokeInicio" id="flyingDiv">FLYING<img id="flying" src="./img/tipo-flying.png"></div></div>
             <div class="tipoDiv"><div class="tipoPokeInicio" id="rockDiv">ROCK<img id="rock" src="./img/tipo-rock.png"></div></div>
@@ -305,8 +305,8 @@
             </div>
 
             <div id="divRegionPokemon"  style="display:none">
-              <div class="regionDiv"><div class="regionPokeInicio" id="jhotoDiv"><img id="johto" src="./img/jhoto1.png"></div>JOHTO</div>
-              <div class="regionDiv"><div class="regionPokeInicio"><img id="kanto" src="./img/khanto1.png"></div>KANTO</div>
+              <div class="regionDiv"><div class="regionPokeInicio" id="johtoDiv"><img id="johto" src="./img/jhoto1.png"></div>JOHTO</div>
+              <div class="regionDiv"><div class="regionPokeInicio" id="kantoDiv"><img id="kanto" src="./img/khanto1.png"></div>KANTO</div>
             </div>
 
 
@@ -360,7 +360,7 @@
           </select>
 
           <select id="orden">
-            <option value="" disabled selected>ORDEN</option>
+            <option value="" disabled selected>Orden</option>
             <option value="az">a-z</option>
             <option value="za">z-a</option>
             <option value="1_251">001-251</option>
@@ -415,7 +415,7 @@
 
   </footer>
 
-  <div class="lds-roller loader" id="loader" style="display: none"><img src="./img/loader.gif"></div>
+  <div class="lds-roller loader" id="loader"><img src="./img/loader.gif"></div>
 
 <script src="main.js" type="module"></script>
 <script src="vistas.js" type="module"></script>
