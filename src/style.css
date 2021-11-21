@@ -538,6 +538,39 @@ footer{
     cursor: pointer;
     color: #dbf537;
 }
+/*-----------------------Grafico----------------------------------------------------------------------*/
+#graficas{
+    flex-direction: row;
+    justify-content: space-between;
+}
+.grafico1{
+    width: 45%;
+    margin-top: 2rem;
+    border-radius: 15px;
+    border: solid;
+    margin: 1rem;
+    border-color: chartreuse;
+    padding: 2rem;
+}
+.genere{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.6rem;
+}
+.text-genero{
+    color: chartreuse;
+    margin-bottom: 1rem;
+    font-size: 2.1rem;
+}
+.medallas{
+    width: 45; 
+}
+.img-medallas{
+    width: 100%;
+    padding: 2rem;
+    margin-top: 30%;
+    border-radius: 3rem;
+}
 
 @media only screen and (max-width: 768px) {
     .body{
@@ -691,6 +724,7 @@ footer{
     .sports_container{
         width: 100%;
         padding: 0.6rem;
+        margin-bottom: 15rem;
     }
     .deportes{
         font-size: 4rem;
@@ -708,9 +742,10 @@ footer{
     #tableData{
         width: 100%;
     }
-    .img_sport{
-        width: 60%;
-        height: 60%;
+    .img_sport_2{/*ccoloco margin top para cuadrar el footer*/
+       width: 60%;
+     
+       margin-top: 1rem;
     }
     .sportTable thead tr{
         font-size: 1.3rem;
@@ -791,5 +826,16 @@ footer{
             font-size: 0.9rem;
             font-weight: 800;
         }
-       
+/*-----------------------Grafico----------------------------------------------------------------------*/
+        #graficas{
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .img-medallas{
+            margin-top: 0;
+        }
+        .grafico1{
+            width: 95%;
+     
+        }
 }

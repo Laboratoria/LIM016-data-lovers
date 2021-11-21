@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-   <div id="root"> 
+  <div id="root">
     <header>
        <div class="head">
          <img src="mascotas.png" alt="aros olímpicos" class="mascots">
@@ -78,13 +78,27 @@
                      
                    </p>
               </div>
+              
           </div>
-          <section class="charts">
-            <button class="clickCharts">SHOW CHARTS </button>
-          </section>
+          <button class="clickCharts" id="clickCharts">SHOW CHARTS </button>
         </div>
-        
       </div>   <!--aquí termina la primera pantalla-->
+
+      <section class="charts" id="graficas"> 
+        <div class="grafico1">
+          <h1 class="text-genero">Cantidad de medallas ganadas por género</h1>
+          <div class="genere">
+            <h6>F => Femenino</h6>
+            <h6>M => Masculino</h6>
+          </div>
+          <div class="canvas1">
+            <canvas id="myChart" width="221" height="220"></canvas>
+          </div>
+        </div>
+        <div class="medallas">
+          <img class="img-medallas" src="../src/medallas.jpg" alt="">
+        </div>
+      </section>  <!--aquí termina la primera pantalla-->
 
   <section class= "todo">
       <section class="countries" id="countries"> <br>
@@ -129,8 +143,15 @@
                   id="searchBar"
                   placeholder="Search your athletes"
               />
-             
             </div>
+            <!-----
+            <div id="divSort">
+              <select id="sortBy">
+                <option selected disabled>Sort By</option>
+                <option value="a-to-z">A - Z</option>
+                <option value="z-to-a">Z - A</option>
+              </select>
+            </div>------->
         <div class="listAthletes" id="listAthletes">
           <ul id= "hereAthletes"></ul>
         </div>
@@ -228,6 +249,6 @@
     </footer>
     <script src="main.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </div> 
+  </div>
   </body>
 </html>
