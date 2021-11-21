@@ -280,8 +280,8 @@ background: none;
 }
 
 .carrusel-item {
-  min-width: 30%;
-  max-width: 30%;
+  min-width: 20%;
+  max-width: 20%;
   height: 350px;
   outline: 0px solid black;
   background: rgba(1, 1, 71, 1);
@@ -858,11 +858,12 @@ background: none;
 }
 .candyContainerPadre {
   background-color: #e6e6e6;
-  height: 3em;
+  height: 2.5em;
   width: 70%;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
+  margin-top: 0.4em;
 }
 
 .palabraEvolucion {
@@ -1470,15 +1471,36 @@ table {
 
 /*FOOTER*/
 .footer {
-  height: 50px;
+  height: 60px;
   background: linear-gradient(
     90deg,
     rgba(4, 0, 61, 1) 0%,
     rgba(1, 1, 71, 1) 56%,
     rgba(5, 106, 152, 1) 100%
   );
-  z-index: -1;
+
+  /* z-index: -1; */
+position: relative;
 }
+
+.footer .footerTexto{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%,-50%);
+/* background-color:#cc208e; */
+font-size: 0.9em;
+color: white;
+
+}
+
+.footerTexto i {
+  font-size: 1.5em;
+  color: white;
+}
+
 
 /*formato del loading*/
 #loader img {
@@ -1982,6 +2004,11 @@ font-size: 1.2em;
 .botones-tarjetas button{
   font-size: 1em;
 }
+
+/*FOOTER*/
+.footer .footerTexto{
+  font-size: 0.6em;
+  }
 }
 
 
@@ -1995,6 +2022,7 @@ font-size: 1.2em;
   width: 90%;
   height: 80%;
 }
+
 }
 
 
@@ -2037,6 +2065,7 @@ font-size: 0.8em;
 .palabraEvolucion{
   font-size: 1em;
 }
+
 
 
 }
