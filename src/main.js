@@ -86,6 +86,13 @@ function handleDivRegion(data, arrayPokeP) {
         if(regionP != regionP2){
           document.getElementById(`${regionP}Div`).className = "regionPokeInicio";
         }})
+        document.querySelector('.navegador').addEventListener('click',(e)=>{
+          e.preventDefault()
+          console.log('hola')
+          document.getElementById(`${regionP}Div`).classList.remove('activeTipo')
+
+        })
+
     }
   });
 }
@@ -153,6 +160,16 @@ function filtrarTiposPokemon(data, arrayPokeP){
           if(tipoP != tipoP2){
             document.getElementById(`${tipoP}Div`).className = "tipoPokeInicio";
           }})
+
+
+          document.querySelector('.navegador').addEventListener('click',(e)=>{
+            e.preventDefault()
+            console.log('hola')
+            document.getElementById(`${tipoP}Div`).classList.remove('activeTipo')
+
+          })
+
+
       }
     })}
 
@@ -198,13 +215,24 @@ function filtrarRarezaPokemon(data, arrayPokeP) {
       const arrayRarezaPoke = rarezaPokemon(rarezaP, pruebaFetch);
       mostrarPokemon(arrayRarezaPoke, arrayPokeP);
       console.log(rarezaP)
-      document.getElementById(`${rarezaP}DivP`).className = "rarezaDiv activeTipo";
+      document.getElementById(`${rarezaP}DivP`).className = 'rarezaDiv activeTipo';
 
       document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
           const rarezaP2 = e.target.getAttribute("value");
           if(rarezaP != rarezaP2){
+
             document.getElementById(`${rarezaP}DivP`).className = "rarezaDiv";
+
+
           }})
+
+          document.querySelector('.navegador').addEventListener('click',(e)=>{
+            e.preventDefault()
+            console.log('hola')
+            document.getElementById(`${rarezaP}DivP`).classList.remove('activeTipo')
+
+          })
+
     }
   });
 }
