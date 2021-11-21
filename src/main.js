@@ -15,6 +15,7 @@ let home_click= document.getElementById("home-click");
 home_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "block";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
@@ -27,6 +28,7 @@ let sports_click= document.getElementById("sports-click");
 sports_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("sports").style.display = "block";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
@@ -40,6 +42,7 @@ let teams_click= document.getElementById("teams-click");
 teams_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("countries").style.display = "block";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
@@ -53,6 +56,7 @@ athletes_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
 
   document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("athletes").style.display = "block";
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
@@ -66,6 +70,7 @@ text_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
 
   document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("multipleMedals").style.display = "block";
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
@@ -78,6 +83,7 @@ link_female.addEventListener("click", (e)=>{
   e.preventDefault(); 
 
   document.getElementById("contaiiner").style.display = "none"; 
+  document.getElementById("graficas").style.display = "none";
   document.getElementById("female").style.display = "block";
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("countries").style.display = "none";
@@ -336,8 +342,20 @@ function female(){
   }
 }
 /*----Graficas-----*/
-let medal = medalFemale(data.athletes)
+let graficos= document.getElementById('clickCharts');
+graficos.addEventListener("click", (e)=>{
+  e.preventDefault(); 
 
+  document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("graficas").style.display = "flex";
+  document.getElementById("countries").style.display = "none";
+  document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
+  document.getElementById("female").style.display = "none";
+});
+
+let medal = medalFemale(data.athletes)
 let cantMedal = timesRepeated(medal)
 console.log(cantMedal)
 
@@ -350,19 +368,19 @@ const myChart = new Chart(ctx, {
             label: 'Ganadores de medalla',
             data: cantMedal,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgb(255, 205, 86, 0.9)',
+                'rgb(255, 205, 86, 0.9)',
+                'rgba(80, 80, 80, 0.4)',
+                'rgba(255, 159, 64, 0.9)',
+                'rgba(80, 80, 80, 0.4)',
+                'rgba(255, 159, 64, 0.9)'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
+                'rgba(FF, FF, 00, 0.2)',
+                'rgba(FF, FF, 00, 0.2)',
+                'rgba(80, 80, 80, 0.2)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(80, 80, 80, 0.2)',
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1

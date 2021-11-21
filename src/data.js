@@ -49,7 +49,7 @@ export const justFemale=(arr)=>{
 // };
 
 export const medalFemale = (data) => {
-  let datos = data.map(item => [/*item.name, item.sport, */item.gender, item.medal]);
+  let datos = data.map(item => [item.gender, item.medal]);
   
   return datos
 };
