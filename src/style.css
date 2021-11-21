@@ -18,7 +18,7 @@
     border:none;
     font-size: 2rem;
     cursor: pointer;
-}
+}git
 .clickCharts:hover{
     color:white;
 }
@@ -201,7 +201,6 @@ h2{
 html{
     scroll-behavior: smooth;
 }
-
 .sportTable{
     border-collapse: collapse;
     margin: 1.5rem auto;    
