@@ -10,7 +10,6 @@ toggle_bar.addEventListener("click", ()=>{
 })
 
 
-
 let home_click= document.getElementById("home-click");
 home_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
