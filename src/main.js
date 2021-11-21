@@ -16,7 +16,7 @@ films = data.films;
   })
    
    document.getElementById("personajes").addEventListener("click", ()=> {
-     document.getElementById("persona").style.display="block";
+     document.getElementById("persona").style.display="flex";
      document.getElementById("filmo").style.display="none";
      document.getElementById("vehiculos").style.display="none";
      document.getElementById("locaciones").style.display="none";
@@ -25,7 +25,7 @@ films = data.films;
   
    
      document.getElementById("vehicles").addEventListener("click", ()=> {
-     document.getElementById("vehiculos").style.display="block";
+     document.getElementById("vehiculos").style.display="flex";
      document.getElementById("filmo").style.display="none";
      document.getElementById("locaciones").style.display="none";
      document.getElementById("persona").style.display="none";
