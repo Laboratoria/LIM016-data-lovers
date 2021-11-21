@@ -45,9 +45,9 @@ films = data.films;
 
 
 const conteinerScrollFilmo = document.getElementById("conteinerScrollFilmo");
-const containerPeople = document.getElementById("persona");
+const conteinerScrollPeople = document.getElementById("conteinerScrollPeople");
 const conteinerScrollLocations = document.getElementById("conteinerScrollLocations");
-const containerVehiculos = document.getElementById("vehiculos");
+const conteinerScrollVehicles = document.getElementById("conteinerScrollVehicles");
 
 
 const sectionFilm = films.forEach(({title , description , producer, poster , rt_score , release_date, director}) => {
@@ -88,7 +88,7 @@ filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {
 </div>
 </div>`;
 createElement.innerHTML= template1;
-containerPeople.appendChild(createElement);
+conteinerScrollPeople.appendChild(createElement);
 return template1;
 });
 
@@ -132,7 +132,7 @@ filterPeopleLocationsVehicles("vehicles", films).flat(1).forEach((el) => {
 </div>
 </div>`;
 createElement.innerHTML= template3;
-containerVehiculos.appendChild(createElement);
+conteinerScrollVehicles.appendChild(createElement);
 return template3;
 });
 
