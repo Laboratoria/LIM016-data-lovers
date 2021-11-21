@@ -125,7 +125,7 @@ background: none;
     height: calc(100% - 3em);
     overflow-y: auto;
     left: 100%;
-    transition: left 0.5s ease;
+    transition: left 2s ease;
   }
   .menu li {
     line-height: 15px;
@@ -167,11 +167,12 @@ background: none;
     font-weight: bold;
     box-shadow: none;
   }
-  #toggle {
-    display: block;
+  .show{
+    display: block !important;
   }
   .nav-menu_visible {
     left: 0%;
+    transition: all 1s ease-in-out;
   }
 }
 /* VISTA DE LA PAGINA DE INICIO */

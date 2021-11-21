@@ -36,7 +36,7 @@ btnInicio.addEventListener("click", () => {
   document.querySelector("#welcome").style.display = "block";
   document.querySelector("#pokedex").style.display = "none";
   document.querySelector(".menu").style.display = "none";
-  btnInicio.className = "activeButton";
+  btnInicio.className = "";
   window.location.reload();
   document.documentElement.scrollTop = 0;
 });
@@ -49,6 +49,9 @@ verPokedex.addEventListener("click", () => {
   document.querySelector(".menu").style.display = "flex";
   document.querySelector("#pokedex").style.display = "block";
   document.querySelector(".container-tipo-rareza-region").style.display = "none"
+  document.querySelector(".toggle").classList.toggle("show")
+  
+
   btnPokedex.className = "activeButton";
   btnInicio.className = "";
   btnRareza.className = "";
@@ -72,7 +75,8 @@ btnPokedex.addEventListener("click", () => { //----------------PASAR A LA VISTA 
   document.getElementById("rareza").className = "";
   document.getElementById("region").className=""
   document.getElementById("tipos").className=""
-
+  document.querySelector(".menu").classList.toggle("nav-menu_visible")
+  
   if(document.querySelector("#container-filtro").className=="container-filtro2"){
     document.querySelector("#container-filtro").className="container-filtro"
   }
@@ -98,6 +102,7 @@ btnTipo.addEventListener("click", () => { //-----PASAR A LA VISTA TIPO
   document.querySelector("#container-stats").style.display = "none";
   document.querySelector("#egg").style.display="none";
   document.querySelector("#pokedex").style.display = "block";
+  document.querySelector(".menu").classList.toggle("nav-menu_visible")
   document.getElementById("tipos").className="tipos"
   document.getElementById("region").className=""
   document.getElementById("rareza").className=""
@@ -130,6 +135,7 @@ btnRegion.addEventListener("click", () => { //--------------------PASAR A LA VIS
   document.getElementById("region").className="region"
   document.getElementById("tipos").className=""
   document.getElementById("rareza").className=""
+  document.querySelector(".menu").classList.toggle("nav-menu_visible")
   
   if(document.querySelector("#container-filtro").className=="container-filtro"){
     document.querySelector("#container-filtro").className="container-filtro2"
@@ -159,6 +165,7 @@ btnRareza.addEventListener("click", () => { //-------------------------PASAR A L
   document.getElementById("rareza").className = "rareza";
   document.getElementById("region").className=""
   document.getElementById("tipos").className=""
+  document.querySelector(".menu").classList.toggle("nav-menu_visible")
 
   if(document.querySelector("#container-filtro").className=="container-filtro"){
     document.querySelector("#container-filtro").className="container-filtro2"
@@ -182,6 +189,7 @@ btnStats.addEventListener("click", () => { //----------------PASAR A LA VISTA RA
   document.querySelector("#divRegionPokemon").style.display = "none";
   document.querySelector("#pokedex").style.display = "none";
   document.querySelector("#container-stats").style.display = "block";
+  document.querySelector(".menu").classList.toggle("nav-menu_visible")
 
 
   btnRareza.className = "";
