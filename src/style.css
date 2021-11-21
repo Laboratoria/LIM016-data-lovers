@@ -160,7 +160,7 @@ body{
 
     /*Container Filmografia*/
 
-    .divFilmo, .divLocations {
+    .divFilmo, .divLocations , .divPeople , .divVehicles{
       flex-direction: column;
       flex-wrap: wrap;
     }
@@ -174,7 +174,7 @@ body{
       height: 89px;
       margin-left: 34px;
     }
-    .filmoTittle h2, .locationsTittle h2, .PeopleTitle h2, .VehiclesTitle h2  {
+    .filmoTittle h2, .locationsTittle h2, .peopleTitle h2, .vehiclesTitle h2  {
       font-family: 'Questrial', sans-serif;
       font-size: 38px;
     }
@@ -287,7 +287,6 @@ body{
 
 
 .divbtnsFilter{
-width: 510px;
 font-family:Arial, Helvetica, sans-serif;
 }
 ul{
@@ -416,6 +415,7 @@ ul.slider li:target {
 /* estilos people*/
 
 
+
 #conteinerScrollPeople {
   display: flex;
   overflow-y: scroll;
@@ -425,6 +425,7 @@ ul.slider li:target {
   align-content: flex-start;
   justify-content: center;
   perspective: 800;
+  position: relative;
 }
 
 #containerPeople{
@@ -435,6 +436,7 @@ ul.slider li:target {
    margin: auto;
    max-width: 800px;
    box-sizing: border-box;
+   position: relative;
  }
 
 .contenedorCardPeople{
@@ -443,6 +445,7 @@ ul.slider li:target {
    width:140px;
    margin:auto;
    margin-bottom: 10px;
+   position: relative;
 
   
 }
@@ -452,6 +455,7 @@ ul.slider li:target {
    position: relative;
    transform-style: preserve-3d;
    transition: 2s;
+   flex-direction: column;
 }
 
 #divCardPeople:hover{
@@ -546,7 +550,7 @@ ul.slider li:target {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-around ;
+  justify-content:center ;
   margin: auto;
   max-width: 800px;
   box-sizing: border-box;
@@ -571,6 +575,7 @@ ul.slider li:target {
   margin:auto;
   margin-bottom: 10px;
   perspective: 800;
+  display: flex;
    
  }
 
