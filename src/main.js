@@ -74,8 +74,8 @@ filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {
   const createElement= document.createElement("div")
   createElement.setAttribute("class", 'contenedorCardPeople');
   const template1= `<div id= "divCardPeople">
-  <div class="frontCard"
-  <h3>${el.name} </h3>
+  <div class="frontCard">
+  <h4>${el.name} </h4>
   <div class="box2"><img src= ${el.img} id ="imgPosterPeople"></div> 
   </div>
   <div class="backCard">
@@ -118,11 +118,11 @@ filterPeopleLocationsVehicles("vehicles", films).flat(1).forEach((el) => {
   const createElement= document.createElement("div");
   createElement.setAttribute("class", 'contenedorCardVehicles');
   const template3= `<div id= "divCardVehicles">
-  <div class="frontCard">
+  <div class="frontCard4">
   <p> ${el.name} </p>
   <div class="box4"><img src= ${el.img} id ="imgPosterVehicles"></div>
   </div>
-  <div class="backCard">
+  <div class="backCard4">
   <ul>
   <li>Descripción: ${el.description}</li>
   <li>Tipo de Vehículo: ${el.vehicle_class}</li>
@@ -138,10 +138,19 @@ return template3;
 
 
 
+function compareTitle(a, b )
+{
+if ( a.title.toLowerCase() < b.title.toLowerCase()){
+  return -1;
+}
+if ( a.title.toLowerCase() > b.title.toLowerCase()){
+  return 1;
+}
+return 0;
+}
 
-
-
-
+films.sort(compareTitle);
+console.log(films);
 
 
 

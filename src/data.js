@@ -24,4 +24,3 @@ export const computeStats = (data) => {
   return 
 }
 
- 
