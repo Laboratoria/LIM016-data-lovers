@@ -1,6 +1,6 @@
 import data from './data/ghibli/ghibli.js';
-import {filterPeopleLocationsVehicles, filterItems} from  './data.js';
- 
+import {filterPeopleLocationsVehicles, sortData} from  './data.js';
+
 let films = [];
 films = data.films;
 /*console.log (filterPeopleLocationsVehicles("people", films))*/
@@ -48,8 +48,9 @@ const conteinerScrollFilmo = document.getElementById("conteinerScrollFilmo");
 const conteinerScrollPeople = document.getElementById("conteinerScrollPeople");
 const conteinerScrollLocations = document.getElementById("conteinerScrollLocations");
 const conteinerScrollVehicles = document.getElementById("conteinerScrollVehicles");
+let btnContainerDirector= document.querySelector(".btnContainerDirector")
 
-
+function filmoItems (films){
 const sectionFilm = films.forEach(({title , description , producer, poster , rt_score , release_date, director}) => {
   const createElement= document.createElement("div")
   createElement.setAttribute("class", 'contenedorCardFilm');
@@ -68,7 +69,8 @@ const sectionFilm = films.forEach(({title , description , producer, poster , rt_
  conteinerScrollFilmo.appendChild(createElement);
  return template;
 } )
-
+};
+filmoItems(films);
 
 filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {    
   const createElement= document.createElement("div")
@@ -107,7 +109,6 @@ filterPeopleLocationsVehicles("locations", films).flat(2).forEach((el) => {
   <li>Residentes: ${el.residents.map((el) => el.name)}</li>     
 </ul>
 </div>`;
-console.log(template2)
 createElement.innerHTML= template2;
 conteinerScrollLocations.appendChild(createElement);
 return template2;
@@ -149,8 +150,46 @@ if ( a.title.toLowerCase() > b.title.toLowerCase()){
 return 0;
 }
 
-films.sort(compareTitle);
-console.log(films);
+films.sort(compareTitle) 
+
+const filterButtons = btnContainerDirector.querySelectorAll(".filterDirector")
+filterButtons.forEach((el) => {  
+  el.addEventListener("click",function(e) {
+    const property= e.currentTarget.dataset.id;
+   /*let newData= sortData(films , property)
+   filmoItems(newData)*/
+   sortData(films , propert,filmoItems)
+
+
+
+    console.log(property);
+  })
+  return filterButtons;
+    })
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -191,3 +230,4 @@ console.log(films);
  boton.addEventListener("click", filtrar);
  fomulario.addEventListener("keyup", filtrar);
  filtrar ();*/
+
