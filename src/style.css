@@ -538,54 +538,7 @@ background: none;
 #rareza {
   display: none;
 }
-@media (max-width: 768px) {
-  .tipos {
-    display: block !important;
-  }
-  .region {
-    display: block !important;
-  }
 
-  .rareza {
-    display: block !important;
-  }
-  #pokedex .container-tipo-rareza-region {
-    display: none !important;
-  }
-
-  #container-filtro {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .container-botones-filtro {
-    flex-direction: column;
-    justify-content: space-around !important;
-    height: 100px;
-  }
-
-  #pokedex {
-    padding-top: 3em;
-  }
-
-  .container-buscar {
-    justify-content: center !important;
-    padding-right: 0px !important;
-  }
-  #search {
-    width: 80% !important;
-  }
-
-  #botonBuscar {
-    margin-left: calc(100% - 35%) !important;
-  }
-
-  #button-up {
-    width: 4em;
-    height: 4em;
-    left: calc(65% - 5.5em) !important;
-  }
-}
 /* evoluciones */
 
 .grupo p{
@@ -1345,6 +1298,7 @@ table {
   transition: 0.3s;
   border: none 1px #605e5e;
   transform: scale(1.15);
+  
 }
 
 /* .regionDiv{
@@ -1375,6 +1329,7 @@ table {
   margin: auto;
   font-size: 0.8em;
   align-items: center;
+  width:90%
 }
 
 /*--------------por rareza------------*/
@@ -1383,8 +1338,8 @@ table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  width: 65%;
-  margin-left: calc(100% - 75%);
+  width: 75%;
+  margin-left: calc(100% - 78%);
 }
 
 #divRarezaPokemon div img {
@@ -1399,7 +1354,7 @@ table {
   margin: auto;
   font-size: 0.8em;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
 
 /* .rarezaPokeInicio{
@@ -1651,11 +1606,11 @@ table {
       padding-right: 0px !important;
     }
     #search {
-      width: 80% !important;
+      width: 330px !important;
     }
 
     #botonBuscar {
-      margin-left: calc(100% - 35%) !important;
+      margin-left: calc(100% - 60%) !important;
     }
 
     #button-up {
@@ -1756,6 +1711,13 @@ table {
 
   @media (max-width: 600px) {
 
+    #search {
+      width: 60% !important;
+    }
+  
+    #botonBuscar {
+      margin-left: calc(100% - 45%) !important;
+    }
 
 /* cards pokemon */
 .cardInfo {
@@ -1806,6 +1768,13 @@ font-size: 1.2em;
 }
   @media (max-width: 500px) {
 
+  #search {
+    width: 80% !important;
+  }
+
+  #botonBuscar {
+    margin-left: calc(100% - 30%) !important;
+  }
 /* cards pokemon */
 .cardInfo {
   font-size: 0.8em;

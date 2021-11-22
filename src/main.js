@@ -79,12 +79,12 @@ function handleDivRegion(data, arrayPokeP) {
       const arrayRegionPoke = regionFuncion(regionP, data.pokemon);
       mostrarPokemon(arrayRegionPoke, arrayPokeP);
 
-      document.getElementById(`${regionP}Div`).className = "regionPokeInicio activeTipo";
+      document.getElementById(`${regionP}Div`).className = "regionDiv activeTipo";
 
       document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
         const regionP2 = e.target.getAttribute("id");
         if(regionP != regionP2){
-          document.getElementById(`${regionP}Div`).className = "regionPokeInicio";
+          document.getElementById(`${regionP}Div`).className = "regionDiv";
         }})
         document.querySelector('.navegador').addEventListener('click',(e)=>{
           e.preventDefault()
