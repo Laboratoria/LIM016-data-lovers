@@ -13,7 +13,6 @@ let home_click= document.getElementById("home-click");
 home_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "block";
-  document.getElementById("graficas").style.display = "none";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
@@ -26,7 +25,6 @@ let sports_click= document.getElementById("sports-click");
 sports_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
-  document.getElementById("graficas").style.display = "none";
   document.getElementById("sports").style.display = "block";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("countries").style.display = "none";
@@ -40,7 +38,6 @@ let teams_click= document.getElementById("teams-click");
 teams_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
   document.getElementById("contaiiner").style.display = "none";
-  document.getElementById("graficas").style.display = "none";
   document.getElementById("countries").style.display = "block";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
@@ -54,7 +51,6 @@ athletes_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
 
   document.getElementById("contaiiner").style.display = "none";
-  document.getElementById("graficas").style.display = "none";
   document.getElementById("athletes").style.display = "block";
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
@@ -68,7 +64,6 @@ text_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
 
   document.getElementById("contaiiner").style.display = "none";
-  document.getElementById("graficas").style.display = "none";
   document.getElementById("multipleMedals").style.display = "block";
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
@@ -79,9 +74,7 @@ text_click.addEventListener("click", (e)=>{
 let link_female= document.getElementById("link_female");
 link_female.addEventListener("click", (e)=>{
   e.preventDefault(); 
-
   document.getElementById("contaiiner").style.display = "none"; 
-  document.getElementById("graficas").style.display = "none";
   document.getElementById("female").style.display = "block";
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("countries").style.display = "none";
