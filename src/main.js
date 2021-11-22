@@ -1,10 +1,10 @@
 import datos from "./data/athletes/athletes.js";
-import {computeData} from "./data.js";
-import { sortData } from './data.js';
-import { functionAll } from './data.js';
+import {sortData, computeDataTwo} from "./data.js";
+import athletes from "./data/athletes/athletes.js";
 
 
-console.log(functionAll(datos));
+
+//console.log(functionAll(datos));
 //----------------SELECTOR DINÁMICO PARA EL FILTRO DE PAÍSES----------------
 //Para esconder y mostrar las opciones
 const select = document.querySelector('.select');
@@ -105,28 +105,73 @@ const sortByCountry = (athlete1,athlete2) => {
         return -1;
       }
       return 0;
-};
+};]
  
-const htmlAthletes = sortData(arrayAthletes, sortByName,).map(generateAthleteTemplate).join('');
+const htmlAthletes = sortData(arrayAthletes, sortByName,).map(generateAthleteTemplate).join(''); */
 ////////////////////////////////////
 
-*/
-computeData(datos.athletes,"Gold") 
-computeData(datos.athletes,"Silver") 
-computeData(datos.athletes,"Bronze") 
 
-/*
-const open = document.getElementById("open");
-const modalContainer = document.getElementById("modal-container");
-const close = document.getElementById("close");
+//FUNCION PARA CREAR TABLA DE RANKING DE PAISES 
+let tableMedals = computeDataTwo(datos.athletes); //Meto mi funcion en una variable 
+
+let tableRankingTeam = document.getElementById("tableMedals"); //accedo a la tabla en el html 
+let tableBody = document.createElement("tbody"); //accedo a crear el cuerpo de la tabla,contiene a un bloque de filas ( tr )
+
+//No se muestra en la tabla REVISAR 
+//Este for es para que se impriman las posiciones 
+for (let index = 1; index <= 10; index++) {
+  const posit = index;
+  let row1 = document.createElement("tr"); 
+  let td1 = document.createElement("td");
+  td1.innerText = posit; 
+  row1.appendChild(td1);
+  console.log(posit);
+}
+tableRankingTeam.appendChild(tableBody);
+
+for (let i = 0; i <= 9; i++) { //Con un for recorro mi var que tiene el objeto hasta las posicion 9 
+  const posititionTable = tableMedals[i]; //
+
+  let row = document.createElement("tr"); 
+    
+  let td = document.createElement("td");
+  td.innerText = posititionTable.team; 
+  row.appendChild(td);
+  
+    td = document.createElement("td");
+    td.innerText = posititionTable.gold;
+    row.appendChild(td);
+
+    td = document.createElement("td");
+    td.innerText = posititionTable.silver;
+    row.appendChild(td);
+
+    td = document.createElement("td");
+    td.innerText = posititionTable.bronce;
+    row.appendChild(td);
+
+    td = document.createElement("td");
+    td.innerText = posititionTable.total;
+    row.appendChild(td);
+  
+    tableBody.appendChild(row);
+
+  //console.log(posititionTable);
+
+}
+tableRankingTeam.appendChild(tableBody);
 
 
-open.addEventListener("click", () =>{
-    modalContainer.classList.add("show");
-});
-close.addEventListener("click", ()=>{
-    modalContainer.classList.remove("show");
-});
-*/
+
+  
+
+
+
+ 
+
+
+
+
+
 
 
