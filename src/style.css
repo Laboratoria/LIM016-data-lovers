@@ -1,13 +1,94 @@
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing:border-box;
     font-family: 'Red Rose', cursive;
 }
 
-#cards-personajes{
-    border: 2px solid green;
+body{
+    background-image: url(./imagenesRM/fondo/Sky.jpg);
+    background-repeat: repeat;
+    background-size: 100% 100%;
+}
+
+.filtrado-de-datos{
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fill,minmax(10rem, 13rem));
+    grid-auto-flow: row;
+    grid-auto-rows: 15rem;
+    column-gap: 5rem;
+    justify-content: center;
 }
 
 .card-personaje{
-    border: 2px solid blue;
+    background-color: transparent;
+    perspective: 1000px;
+}
+
+.div-personaje{
+    position: relative;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card-personaje:hover .div-personaje {
+    transform: rotateX(180deg);
+}
+  
+.div-personaje, .card-personaje, .data-frente-personaje , .data-atras-personaje{
+    width: 13rem;
+    height: 13rem;
+    border-radius: 0.8rem;  
+}
+
+.data-frente-personaje , .data-atras-personaje {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;      
+}
+
+.div-personaje:hover{
+    box-shadow: 0 8px 16px 0 rgba(168, 164, 164, 0.2);
+}
+
+.data-frente-personaje{   
+    background-size: 100% 100%;    
+    color: black;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid green;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-repeat: no-repeat;
+    justify-content: flex-end;
+}
+
+.data-atras-personaje{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    transform: rotateX(180deg);
+}
+
+.data-atras-personaje>p{
+    font-size: 0.8rem;
+    padding: 0 1.5rem;  
+}
+
+.name-personaje-frente{
+    color: #fff;
+    background-color: rgba(97, 83, 83, 0.575);
+    padding: 0.7rem;
+    border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.name-personaje-atras{
+    padding: 1rem;
+    color: rgb(58, 221, 17);
+}
+
+.filters>label{
+    color: #fff;
 }

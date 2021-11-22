@@ -39,19 +39,64 @@
         <h2>PERSONAJES</h2>
       </div>
       
-      <div class="filtro">
+      <div class="filter">
+        <div class="filters">
+          <button id="getAll">Mostrar todos</button>
 
-        <select name="nombre" id="name__personaje">
-            
-        </select>
-         <!-- <select name="genero" id="genero__personaje">
-                
-          </select> -->
-        <!-- <h3 class="Titulo2">Buscar personajes</h2>
+          <label for="">Filtrar por:</label>
+
+          <select name="type" id="filterType">
+            <option value="" disabled selected>Seleccione el tipo</option>
+            <option value="G">Género</option>
+            <option value="E">Especie</option>
+            <option value="S">Estado de vida</option>
+            <option value="O">Lugar de origen</option>
+            <option value="L">Lugar donde vive</option>
+          </select>
+
+          <select name="genero" id="genero">
+            <option value="" disabled selected>Seleccione un género</option>
+            <option value="F">Femenino</option>
+            <option value="M">Masculino</option>
+          </select>
+
+          <select name="especie" id="especie">
+            <option value="" disabled selected>Seleccione una especie</option>
+              <option value="Animal">Animal</option>
+              <option value="Cronenberg">Mutante</option>
+              <option value="unknown">Desconocido</option>
+              <option value="Disease">Enfermedad</option>
+              <option value="Alien">Extraterrestre</option>
+              <option value="Human">Humano</option>
+              <option value="Humanoid">Humanoide</option>
+              <option value="Mytholog">Mitología</option>
+              <option value="Parasite">Parásito</option>
+              <option value="Poopybutthole">Poopybutthole</option>
+              <option value="Robot">Robot</option>
+              <option value="Vampire">Vampiro</option>
+
+            </select>
+
+        </div>
+
+ 
+          <p id="generoSelect"></p>
+          <button id="filtrarDataPersonaje"> Filtrar</button>
+
+
+          <div id="showFilterCharacters"></div>
+
+
+    <!-- <div id="filtrado-de-datos"></div>
+
+        <h3 class="Titulo2">Buscar personajes</h2>
+
         <div id="buscador-name"class="buscar">
-          <input type="search" placeholder="Buscar por nombre" class="card-filtro">
-        </div> -->
-      </div>
+          <input type="search" id="search" placeholder="Buscar por nombre" class="card-filtro">
+          <button id = "btnSearch"class="btn">Buscar</button>
+          <p id="result"></p>
+        </div>
+      </div> -->
 
       <div id="cards-personajes" class="cards">
 <ul>

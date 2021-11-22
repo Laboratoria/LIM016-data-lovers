@@ -1,64 +1,90 @@
 import { example } from './data.js';
 
-// import filtros from 'data.js'
+import filtros from './data.js'
  
 import data from './data/rickandmorty/rickandmorty.js';
 
-// ---------------- Pruebas DATAS -------------//
 
-// obteniendo la data del objeto results de rickyandmorty.js
-
-// let cardsPersonajes = document.querySelector('.card');
-
-// let cardPersonaje = document.createDocumentFragment();
-//     for (let id = 0; id < 494; id++) {
-    
-//         let datos = document.createElement('p');
-//             datos.textContent = `Nombre:${id}`;
-        
-//         cardPersonaje.appendChild(datos);
-// }
-// cardsPersonajes.appendChild(cardPersonaje);
-
-
-// ------------ Fin de Pruebas DATAS -----------//
 
 // ----------- MUESTRA DE CARDS PERSONAJES  ------------//
 
-const cardsPersonajes = document.querySelector('#cards-personajes');
+// const cardsPersonajes = document.querySelector('#cards-personajes');
 
-const cardPersonaje = data.results.map(function (result) {
+// const cardPersonaje = data.results.map(function (result) {
 
-    return `
+//     return `
               
-        <div class="card-titulo">
-            <h3>Name:${result.name} </h3>
-        </div>
-        <div class="card-imagen">
-            <img src="${result.image}" alt="imagen">
-        </div>
-        <div class="card-datos">
-        <ul>
-            <li>Status:${result.status}</li>
-            <li>Species:${result.species}</li>
-            <li>Gender:${result.gender}</li>
-            <li>Origin:${result.origin.name}</li>
-            <li>Location:${result.location.name}</li>
-        </ul>
+//         <div class="card-titulo">
+//             <h3>Name:${result.name} </h3>
+//         </div>
+//         <div class="card-imagen">
+//             <img src="${result.image}" alt="imagen">
+//         </div>
+//         <div class="card-datos">
+//         <ul>
+//             <li>Status:${result.status}</li>
+//             <li>Species:${result.species}</li>
+//             <li>Gender:${result.gender}</li>
+//             <li>Origin:${result.origin.name}</li>
+//             <li>Location:${result.location.name}</li>
+//         </ul>
 
-        </div>
-    `
-});
+//         </div>
+//     `
+// });
 
-cardPersonaje.forEach(function (element) {
-    let card = document.createElement("div");
-    card.setAttribute('class', 'card-personaje')
+// cardPersonaje.forEach(function (element) {
+//     let card = document.createElement("div");
+//     card.setAttribute('class', 'card-personaje')
 
-    card.innerHTML = element
+//     card.innerHTML = element
     
-    cardsPersonajes.appendChild(card)
-});
+//     cardsPersonajes.appendChild(card)
+// });
+
 // -------- FIN DE CARDS PERSONAJES  ------------//
+
+
+//---------> FILTRO GENERO <------------------- //
+
+//obteniendo el valor del genero seleccionado
+// let btnfiltrar = document.getElementById("filtrarDataPersonaje");
+
+// //obteniendo el div de filtrado
+// const filtrarData = document.getElementById("filtrado-de-datos")
+// filtrarData.setAttribute("class", "filtrado-de-datos")
+
+// filtrarData.style.display = "none";
+
+// btnfiltrar.addEventListener("click", () => {
+//     //filtrando por genero
+//     let genero = document.getElementById("genero").value;
+//     document.getElementById("generoSelect").textContent = genero;
+//     filtrarData.style.display = "grid";
+
+    
+//     let cardPersonaje = data.results.map(function (dp) {
+//         return console.log(dp.name)
+  
+//     });
+//     //     let texto = document.createElement("h1");
+     
+//     //     cardPersonaje.appendChild(texto)
+
+//     //     alert("test")
+//     document.getElementById("showFilterCharacters").innerHTML = filtros.genero(genero);
+    
+//     // });
+// });
+
+
+   // let tituloFiltrado = document.createElement("h3");
+    // tituloFiltrado.textContent="Filtrado  por Genero";
+    // tituloFiltrado.setAttribute("class", "titulo-filtrado");
+    // filtrarData.appendChild(tituloFiltrado);
+
+//---------> FIN FILTRO GENERO <---------------- //
+
 
 // ----------------- PRUEBA - Episodios-----------  ///
 
@@ -80,51 +106,41 @@ cardPersonaje.forEach(function (element) {
 
 // -------- FIN DE PRUEBAS ESPISODIOS ------------//
 
+
 // -------- PRUEBAS FILTRADO -----------------------//
 
-//filtrando PERSONAJES
+///--------   Prueba busqueda por personaje"------------------
 
-let arrayName = []
-    data.results.map(element => {
-    //console.log(element.name)
-    arrayName.push(element.name)
-});
-    console.log(arrayName)
+// const search = document.getElementById("btnSearch");
 
-let selectop = document.getElementById("name__personaje")
-//console.log(selectop.value)
+// search.addEventListener('click', function () {
+    
+//     let text = document.getElementById("search").value
 
-for (let i = 0; i < arrayName.length; i++) {
-
-    let op = document.createElement("option")
-    selectop.appendChild(op)
-
-    let valueOption = arrayName[i];
-    op.setAttribute("value", `${valueOption}`)
-    op.textContent = valueOption
-    //console.log(valueOption)
-
-}
-    console.log(selectop)
-
-// let arrayGender = []
-//     data.results.forEach(element => {
-//     //console.log(element.name)
-//     arrayGender.push(element.gender)
+//     document.getElementById('result').value = filtros.search(text);
+        
 // });
-//     console.log(arrayGender)
+    
+/////-----------  Fin busqueda por personaje
 
-// let selectop = document.getElementById("genero__personaje")
+//filtrando
+let arrayEspecie = []
+data.results.forEach(element => {
+    //console.log(element.name)
+    arrayEspecie.push(element.species)
+});
+console.log(arrayEspecie)
+
+// let selectop = document.getElementById("name__personaje")
 // //console.log(selectop.value)
 
-// for (let i = 0; i < arrayGender.length; i++) {
+// for (let i = 0; i < arrayEspecie.length; i++) {
 //     let op = document.createElement("option")
 //     selectop.appendChild(op)
-
-//     let valueOption = arrayGender[i];
+//     let valueOption = arrayEspecie[i];
 //     op.setAttribute("value", `${valueOption}`)
 //     op.textContent = valueOption
 //     //console.log(valueOption)
 
 // }
-// console.log(selectop)   
+// console.log(selectop)
