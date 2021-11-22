@@ -230,4 +230,3 @@ filterButtons.forEach((el) => {
  boton.addEventListener("click", filtrar);
  fomulario.addEventListener("keyup", filtrar);
  filtrar ();*/
-
