@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/c47856f5c7.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body>
+  <header>
+    <section>
+      <!--<img src="./imagenes/headerFondo2.png" alt="HF2" class="HeaderFondo2">-->
+      <img src="./imagenes/headerFondo.png" alt="HF" class="HeaderFondo">
+      <a href="">
+        <img src="./imagenes/headerLogo.png" alt="headerLogo" class="headerLogo">
+      </a>
+    </section>
+
+    <!--CARRUSEL DE FOTOS-->
+    <div class="carouselContainer" id="carousel">
+      <ul class="sliderImg">
+        <li id="slide1"><img src="./imagenes/carousel1.jpeg" alt="Photo1">
+          <p class="txt">Presentación de las mascotas VINICIUS y TOM</p>
+        </li>
+        <li id="slide2"><img src="./imagenes/carousel2.jpeg" alt="Photo2">
+          <p class="txt">Ceremonia de clausura de los Juegos Olimpicos Rio 2016</p>
+        </li>
+        <li id="slide3"><img src="./imagenes/carousel5.jpeg" alt="Photo3">
+          <p class="txt">La atleta colombiana Caterine Ibarguen realiza su triple salto.</p>
+        </li>
+        <li id="slide4"><img src="./imagenes/carousel4.jpeg" alt="Photo4">
+          <p class="txt">Debut de atletas peruanas</p>
+        </li>
+        <li id="slide5"><img src="./imagenes/carousel3.jpeg" alt="Photo5">
+          <p class="txt">Complejo deportivo "Parque Olímpico de Barra de Tijuca", Brasil</p>
+        </li>
+      </ul>
+      <ul class="indicator">
+        <li><a href="#slide1">1</a></li>
+        <li><a href="#slide2">2</a></li>
+        <li><a href="#slide3">3</a></li>
+        <li><a href="#slide4">4</a></li>
+        <li><a href="#slide5">5</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <br>
+  <!--aqui va el filtro y el ordenar-->
+  <section id="filterContainer" class="filterContainer">
+
+
+    <div class="filterTeamAndSport">
+      <label class="taitelFilter">¡SELECCIONA TU PAIS FAVORITO!</label>
+      <select id="team">
+        <!--filtro de pais-->
+      </select>
+    </div>
+
+
+    <div id="displaySport" class="filterTeamAndSport">
+      <label class="taitelFilter">DEPORTE:</label>
+      <select id="sport">
+        <!--filtro de deporte-->
+      </select>
+    </div>
+
+    <!-- Lista de selección  para ordenar-->
+
+    <div id="displayOrder" class="filterTeamAndSport">
+      <label class="taitelFilter">ORDENAR:</label>
+      <select id="orderBySelect" name="combo">
+        <!-- Opciones de la lista (*con selected puedo colocar una opcion por defecto* OJO) -->
+        <option value="1">Edad</option>
+        <option value="2">nombres de manera ascendente</option>
+        <option value="3">nombres de manera descendente</option>
+      </select>
+    </div>
+
+
+
+
+  </section>
+
+  <!----platilla de los atletas-->
+  <section id="gridForTest" class="grid">
+
+  </section>
+
+
+  <main>
+
+    <section id="containerFatherMain" class="containerFatherMain">
+
+      <section id="mainPage" class="mainPage">
+        <!--- <h1>aqui va el medallero</h1>--->
+      </section>
+      <section class="sectionImgWord">
+        <img id="imgBetterWord" class="betterWorld" src="./imagenes/un mundo mejor.png" alt="mensaje de directora">
+      </section>
+
+    </section>
+
+  </main>
+
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
