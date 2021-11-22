@@ -1,12 +1,156 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/c47856f5c7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <section>
+      <img src="./imagenes/headerOne.PNG" alt="Header Logo" class="headerLogo">
+    </section>
+
+     <!--CARRUSEL DE FOTOS-->
+    <div class="carouselContainer">
+      <ul class="sliderImg">
+        <li id="slide1"><img src="./imagenes/carousel6.jpg" alt="Photo1"><p class="txt">Presentación de las mascotas VINICIUS y TOM</p></li>
+        <li id="slide2"><img src="./imagenes/carousel9.jpg" alt="Photo2"><p  class="txt">Ceremonia de clausura de los Juegos Olimpicos Rio 2016</p></li>
+        <li id="slide3"><img src="./imagenes/carousel4.jpg" alt="Photo3" ><p  class="txt">La atleta colombiana Caterine Ibarguen realiza su triple salto.</p></li>
+        <li id="slide4"><img src="./imagenes/carruselThree.jpg" alt="Photo4"><p  class="txt">Debut de atletas peruanas</p></li>
+        <li id="slide5"><img src="./imagenes/carruselFour.jpg" alt="Photo5"><p  class="txt">Complejo deportivo "Parque Olímpico de Barra de Tijuca", Brasil</p></li>
+      </ul>
+      <ul class="indicator">
+        <li><a href="#slide1">1</a></li>
+        <li><a href="#slide2">2</a></li>
+        <li><a href="#slide3">3</a></li>
+        <li><a href="#slide4">4</a></li>
+        <li><a href="#slide5">5</a></li>
+      </ul>
+    </div>
+
+   
+    <section id="filterContainer" class="filterContainer">
+      <!--MENÚ-->
+
+      <div id="filter" class="filter">
+        <!--LO QUE CONTIENE A TODO-->
+
+        <div id="select" class="select">
+          <div id="contentSelect" class="contentSelect">
+            <!--EL CONTENIDO (escrito)-->
+            <h3 class="titulo">Selecciona un país</h3>
+          </div>
+          <i class="fas fa-angle-down"></i>
+        </div>
+
+        <div class="options" id="options">
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/united-states.png" alt="Estados Unidos" title="Estados Unidos">
+              <div class="texts">
+                <h3 class="titulo">Estados Unidos</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/francia.png" alt="Francia" title="Francia">
+              <div class="texts">
+                <h3 class="titulo">Francia</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/peru.png" alt="Perú" title="Perú">
+              <div class="texts">
+                <h3 class="titulo">Perú</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/venezuela.png" alt="Venezuela" title="Venezuela">
+              <div class="texts">
+                <h3 class="titulo">Venezuela</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/alemania.png" alt="Alemania" title="Alemania">
+              <div class="texts">
+                <h3 class="titulo">Alemania</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/espana.png" alt="España" title="España">
+              <div class="texts">
+                <h3 class="titulo">España</h3>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="option">
+            <div class="contentOption">
+              <img src="./imagenes/banderas/brasil.png" alt="Brasil" title="Brasil">
+              <div class="texts">
+                <h3 class="titulo">Brasil</h3>
+              </div>
+            </div>
+          </a>
+        </div>
+        <input type="hidden" name="pais" id="inputSelect" value="">
+      </div>
+    </section>
+  </header>
+  <main>
+  <div class="table">
+    <table class="tableMedals" id="tableMedals" border="1">
+      <caption>🥇🥈🥉<br>Tabla de Medallas</caption>
+      <tr>
+        <!--th>Posición</th-->
+        <th>Equipos</th>
+        <th>Oro</th>
+        <th>Plata</th>
+        <th>Bronce</th>
+        <th><!--img src="./imagenes/medallas.png" alt=""><br-->Total</th>
+      </tr>
+    </table>
+    <button>ver mas</button>
+  </div>
+    <!------------------------------------------------>
+    <!-- Lista de selección -->
+    <section>
+      <h2>Ordenar por:</h2>
+      <select id="orderBySelect" name="combo" class="orderBy">
+        <!-- Opciones de la lista (*con selected puedo colocar una opcion por defecto* OJO) -->
+        <option id="optionAge" value="1">Edad</option>
+        <option id="nameOpward" value="2">nombres de manera ascendente</option>
+        <option id="nameFalling" value="3">nombres de manera descendente</option>
+      </select>
+
+      <section id="gridForTest" class="grid">
+        <section class="grid">
+        </section>
+      </section>
+    </section>
+
+
+  </main>
+  <footer class="footer">
+    <p>© Todos los derechos reservados | Juegos Olímpicos - Río 2016</p>
+    <!-- <img src="./imagenes/facebook.jpg" alt="facebook" class="facebook">
+    <img src="./imagenes/instagram.jpg" alt="instagram" class="instagram">
+    <img src="./imagenes/twitter.jpg" alt="twitter" class="twitter">
+    <img src="./imagenes/youtube.jpg" alt="youtube" class="youtube"> -->
+  </footer>
+  <script src="main.js" type="module" defer></script>
+</body>
+
 </html>
