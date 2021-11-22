@@ -14,13 +14,26 @@ export const filterItems = (textInputSearch, array) => {
   );
 }
 
-export const sortData = (array, sortBy, sortOrder) => {
- 
-  return
-}
+
 
 export const computeStats = (data) => {
-
   return 
 }
+
+export const sortData = (array,property,callback) => {  
+ 
+    const arrayProperty = array.filter((arrayItem)=> {
+       
+       return arrayItem.property === property
+    });
+ console.log(arrayProperty);
+      if(property === "clean")
+      {
+        callback(films)       }
+      else{
+        return(arrayProperty);        
+      }   
+
+  };
+
 
