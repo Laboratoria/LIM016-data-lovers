@@ -20,11 +20,11 @@ export const computeStats = (data) => {
   return 
 }
 
-export const sortData = (array,property,callback) => {  
+export const sortData = (array, property,callback) => {  
  
     const arrayProperty = array.filter((arrayItem)=> {
        
-       return arrayItem.property === property
+       return arrayItem.director === property
     });
  console.log(arrayProperty);
       if(property === "clean")

@@ -158,7 +158,7 @@ filterButtons.forEach((el) => {
     const property= e.currentTarget.dataset.id;
    /*let newData= sortData(films , property)
    filmoItems(newData)*/
-   sortData(films , propert,filmoItems)
+   sortData(films , property, filmoItems)
 
 
 
