@@ -68,6 +68,7 @@ const sectionFilm = films.forEach(({title , description , producer, poster , rt_
  conteinerScrollFilmo.appendChild(createElement);
  return template;
 } )
+console.log(sectionFilm);
 
 
 filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {    
