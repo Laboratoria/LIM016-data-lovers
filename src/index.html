@@ -19,84 +19,86 @@
 
       <!-- BUSCADOR DE POKEMON -->
       <section class="buscador">
-        <input type="search" name="inputBuscador" class="buscarPokemon" placeholder="Ejemplo: pikachu">
+        <input type="search" name="inputBuscador" class="buscarPokemon" placeholder="Ejemplo: pikachu"><i class="fas fa-search"></i>
       </section>
     </header>
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="home">
+
       <!-- CONTENEDOR DEL MENU DESPLEGABLE -->
       <div class="cont-menu">
+        <!-- CONTENIDO DE FILTRAR -->
+        <div class="cont-filtrar">
+          <div class="filtrar opcion">
+            <p class="filtro">FILTRAR POR</p>
+            <p class="icono"><i class="fas fa-filter"></i></p>
+          </div>
+          <div class="cont-tipo-filtrado">
+            <!-- FILTRADO POR REGION -->
+            <div class="cont-filtrar-region">
+              <div class="opcion-filtrar opcion">
+                <p> REGIÓN </p>
+                <p class="icono"> + </p>
+              </div>
+              <div class="cont-enlaces" id="cont-enlaces1">
+                <a class="region" href="#" region="kanto">KANTO</a>
+                <a class="region" href="#" region="johto">JOHTO</a>
+              </div>
+            </div> 
 
-          <div class="cont-enlace">
-            <div class="opcion ">
-                <p >FILTRAR POR</p>
-                <p class="icono"><i class="fas fa-filter"></i></p>
-            </div>
-            <div class="enlace">
-                <div class="cont-enlace">
-                    <div class="opcion filtrar ">
-                        <p> REGIÓN </p>
-                        <p class="icono"> + </p>
-                    </div>
-                    <div class="enlace">
-                        <a class="region" href="#" region="kanto">KANTO</a>
-                        <a class="region" href="#" region="johto">JOHTO</a>
-                    </div>
-                </div>      
-                <div class="cont-enlace">
-                    <div class="opcion filtrar ">
-                        <p> ELEMENTO </p>
-                        <p class="icono"> + </p>
-                    </div>
-                    <div class="enlace">
-                        <a class="elemento" href="#" elemento="water">AGUA</a>
-                        <a class="elemento" href="#" elemento="fire">FUEGO</a>
-                        <a class="elemento" href="#" elemento="grass">HIERBA</a>
-                        <a class="elemento" href="#"  elemento="ground">SUELO</a>
-                        <a class="elemento" href="#"  elemento="rock">ROCA</a>
-                        <a class="elemento" href="#"  elemento="ice">HIELO</a>
-                        <a class="elemento" href="#"  elemento="electric">ELECTRICO</a>
-                        <a class="elemento" href="#"  elemento="dragon">DRAGON</a>
-                        <a class="elemento" href="#"  elemento="ghost">FANTASMA</a>
-                        <a class="elemento" href="#"  elemento="psychic">PSIQUICO</a>
-                        <a class="elemento" href="#"  elemento="normal">NORMAL</a>
-                        <a class="elemento" href="#"  elemento="fighting">LUCHA</a>
-                        <a class="elemento" href="#"  elemento="poison">VENENO</a>
-                        <a  class="elemento" href="#" elemento="bug">BICHO</a>
-                        <a class="elemento" href="#"  elemento="flying">VOLADOR</a>
-                    </div>
-                </div>
+            <!-- FILTRADO POR ELEMENTO   -->   
+            <div class="cont-filtrar-elemento">
+              <div class="opcion-filtrar opcion">
+                <p> ELEMENTO </p>
+                <p class="icono"> + </p>
+              </div>
+              <div class="cont-enlaces" id="cont-enlaces2">
+                <a class="elemento" href="#" elemento="water">AGUA</a>
+                <a class="elemento" href="#" elemento="fire">FUEGO</a>
+                <a class="elemento" href="#" elemento="grass">HIERBA</a>
+                <a class="elemento" href="#" elemento="ground">SUELO</a>
+                <a class="elemento" href="#" elemento="rock">ROCA</a>
+                <a class="elemento" href="#" elemento="ice">HIELO</a>
+                <a class="elemento" href="#" elemento="electric">ELECTRICO</a>
+                <a class="elemento" href="#" elemento="dragon">DRAGON</a>
+                <a class="elemento" href="#" elemento="ghost">FANTASMA</a>
+                <a class="elemento" href="#" elemento="psychic">PSIQUICO</a>
+                <a class="elemento" href="#" elemento="normal">NORMAL</a>
+                <a class="elemento" href="#" elemento="fighting">LUCHA</a>
+                <a class="elemento" href="#" elemento="poison">VENENO</a>
+                <a class="elemento" href="#" elemento="bug">BICHO</a>
+                <a class="elemento" href="#" elemento="flying">VOLADOR</a>
+              </div>
             </div>
           </div>
-
-
-          <div class="cont-enlace">
-            <div class="opcion">
-                <p> ORDENAR POR </p>
-                <p class="icono"> <i class="fas fa-sort-amount-up-alt"></i> </p>
-            </div>
-            <div class="enlace">
-                <a class="ordenar" href="#" ordenar="az-ascendente">A - Z</a>
-                <a class="ordenar" href="#" ordenar="za-descendente">Z - A</a>
-                <a class="ordenar" href="#" ordenar="pc-ascendente">PC ASCENDENTE</a>
-                <a class="ordenar" href="#" ordenar="pc-descendente">PC DESCENDENTE</a>
-            </div>
-          </div>   
-
-          <div class="cont-enlace">
-            <div class="opcion">
-                <p> ESTADÍSTICA </p>
-                <p class="icono"> <i class="fas fa-chart-pie"></i> </p>
-            </div>
-            <div class="enlace">
-                <a class="estadistica" href="#" estadistica="todo">TODO</a>
-                <a class="estadistica" href="#" estadistica="por-región">POR REGIÓN</a>
-                <a class="estadistica" href="#" estadistica="por-elemento">POR ELEMENTO</a>
-            </div>
-          </div>          
-            
         </div>
+        <!-- CONTENIDO DE ORDENAR -->
+        <div class="cont-ordenar">
+          <div class="ordenar opcion">
+            <p> ORDENAR POR </p>
+            <p class="icono"> <i class="fas fa-sort-amount-up-alt"></i> </p>
+          </div>
+          <div class="cont-enlaces" id="cont-enlaces3">
+            <a class="ordenar" href="#" ordenar="az">A - Z</a>
+            <a class="ordenar" href="#" ordenar="za">Z - A</a>
+            <a class="ordenar" href="#" ordenar="pc-as">PC ASCENDENTE</a>
+            <a class="ordenar" href="#" ordenar="pc-des">PC DESCENDENTE</a>
+          </div>
+        </div> 
+        <!-- CONTENIDO DE ESTADISTICA -->
+        <div class="cont-estadistica">
+          <div class="estadistica opcion">
+            <p> ESTADÍSTICA </p>
+            <p class="icono"> <i class="fas fa-chart-pie"></i> </p>
+          </div>
+          <div class="cont-enlaces" id="cont-enlaces4">
+            <a class="estadistica" href="#" estadistica="todo">TODO</a>
+            <a class="estadistica" href="#" estadistica="por-región">POR REGIÓN</a>
+            <a class="estadistica" href="#" estadistica="por-elemento">POR ELEMENTO</a>
+          </div>
+        </div>                     
+      </div>
 
       <!-- CONTENEDOR DE TODOS LOS CARDS DE POKEMONES -->
       <div class="container-pokemons" id="container-pokemons">
