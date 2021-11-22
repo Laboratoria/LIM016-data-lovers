@@ -1,4 +1,4 @@
-import {rio_teams, noRepeated, justFemale, timesRepeated, spliceIntoChunks, medalFemale} from '../src/data.js';
+import {rio_teams, noRepeated, justFemale, timesRepeated, spliceIntoChunks} from '../src/data.js';
 
 describe('rio_teams', () => {  /*ya salió*/
   it('is a function', () => {
@@ -78,23 +78,5 @@ describe('spliceIntoChunks', ()=>{
   });
 });
 
-describe('medalFemale', ()=>{
-  it('is a function', ()=>{
-    expect(typeof medalFemale).toBe('function');
-  })
-  const medalFemaleTest=[
-    {
-      "gender": "F",
-      "medal": "gold"
-    },
-    {
-        "gender": "M",
-        "medal": "silver"
-    }
-];
-it('returns [["F", "gold"], ["M", "silver"]]', ()=>{
-  expect(medalFemale(medalFemaleTest)).toEqual([["F", "gold"], ["M", "silver"]]);
-});
-});
 
 
