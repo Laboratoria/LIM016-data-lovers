@@ -356,11 +356,10 @@ graficos.addEventListener("click", (e)=>{
 
 let medal = medalFemale(data.athletes);
 let cantMedal = timesRepeated(medal);
-// //console.log(Array.isArray(medal));
-//console.log(cantMedal);
-const ctx = document.getElementById('myChart').getContext('2d');
 
-const myChart = new Chart(ctx, {
+const ctx = document.getElementById('myChart').getContext('2d');
+// eslint-disable-next-line no-use-before-define
+ new Chart(ctx, {
     type: 'bar',
     data: {
         datasets: [{
