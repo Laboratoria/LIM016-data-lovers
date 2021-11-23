@@ -53,7 +53,7 @@ describe('justFemale', ()=>{   /*ya salió*/
           "gender": "F"
       }
   ];
-  it('returns [{"name": "Patimat Abakarova","gender": "F"}]', () => {
+  it('retorna lo esperado', () => {
     expect(justFemale(justFemaleTest)).toEqual([{"name": "Patimat Abakarova","gender": "F"}]);
   });
 });
