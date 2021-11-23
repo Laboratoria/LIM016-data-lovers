@@ -90,12 +90,5 @@ const filtros = {
 
 
 
-//  export const data = () => {
-
-//    console.log(data.results);
-
-//    return data.results;
-
-// };
 
 export default filtros;

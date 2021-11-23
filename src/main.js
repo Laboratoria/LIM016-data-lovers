@@ -8,7 +8,7 @@ import data from './data/rickandmorty/rickandmorty.js';
 
 let filterByCategory = {};
 
-filterByCategory['gender'] = ['Femenino', 'Masculino', 'Sin genero', 'Desconocido'];
+filterByCategory['gender'] = ['Femenino', 'Masculino', 'Sin género', 'Desconocido'];
 filterByCategory['species'] = ['Animal', 'Mutante', 'Desconocido', 'Enfermedad', 'Extraterrestre', 'Humano', 'Humanoide', 'Mitologia', 'Parásito', 'Poopybutthole', 'Robot', 'Vampiro'];
 filterByCategory['status'] = ['Desconocido', 'Muerto', 'Vivo'];
 
@@ -53,7 +53,7 @@ function changeFilterList() {
 
                     <div class="name-personaje-atras">
                         <h4>${result.name}</h4>
-                        <h6>${result.type}</h6>
+                        <h6 class="type-character">${result.type}</h6>
                     </div>
                         
                     <div>
