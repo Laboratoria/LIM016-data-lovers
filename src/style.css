@@ -292,7 +292,6 @@ background: none;
 }
 .carrusel-item img {
   width: 100%;
-  height: 100%;
   height: 70%;
   object-fit: cover;
 }
@@ -773,10 +772,12 @@ background: none;
   flex-direction: column;
 }
 
+
 .divTipo p {
   margin-top: auto;
   margin-bottom: auto;
 }
+
 
 /*DANDO ESTILOS A LA VISTA1*/
 
@@ -1391,7 +1392,6 @@ table {
   text-align: center;
   align-items: center;
   margin-top: 25px;
-  font-family: cursive;
 }
 .container-chart1,
 .container-chart3 {
@@ -1428,6 +1428,29 @@ table {
   font-style: italic;
 }
 
+/* ranking*/
+.titulo-ranking{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.titulo-ranking h{
+  font-weight: bold;
+  background: linear-gradient(to bottom, #030041 0%, #010a4e 1%, #045689 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(3px 3px 1px rgba(124, 124, 124, 0.59));
+  font-size: 40px;
+}
+
+.titulo-ranking p{
+  color: black;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
 /*FOOTER*/
 .footer {
   height: 60px;
@@ -1736,6 +1759,13 @@ color: white;
 
   @media (max-width: 600px) {
 
+  .titulo-ranking h{
+    font-size: 25px;
+  }
+
+  .titulo-ranking p{
+    font-size: 15px;
+  }
     #search {
       width: 60% !important;
     }
@@ -1909,7 +1939,7 @@ font-size: 1.2em;
     /*FORMATO AL CHART*/
     #container-stats h1 {
       font-size: 30px;
-      font-family: cursive;
+  
       margin-top: 0px;
     }
     .title-chart {
