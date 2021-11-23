@@ -29,7 +29,7 @@ verPokedex.addEventListener("click", () => {
   
 
   btnPokedex.className = "activeButton";
-  btnInicio.className = "";
+  //btnInicio.className = "";
   btnRareza.className = "";
   btnRegion.className = "";
   btnTipo.className = "";
@@ -44,7 +44,7 @@ btnInicioLogo.addEventListener('click',()=>{
   document.querySelector("#pokedex").style.display = "none";
   document.querySelector(".menu").style.display = "none";
 
-  btnInicio.className = "activeButton";
+  //btnInicio.className = "activeButton";
   window.location.reload();
   document.documentElement.scrollTop = 0;
 })
@@ -53,14 +53,14 @@ btnInicioLogo.addEventListener('click',()=>{
 
 //--------BOTON PARA VOLVER AL INICIO
 
-btnInicio.addEventListener("click", () => {
-  document.querySelector("#welcome").style.display = "block";
-  document.querySelector("#pokedex").style.display = "none";
-  document.querySelector(".menu").style.display = "none";
-  btnInicio.className = "";
-  window.location.reload();
-  document.documentElement.scrollTop = 0;
-});
+// btnInicio.addEventListener("click", () => {
+//   document.querySelector("#welcome").style.display = "block";
+//   document.querySelector("#pokedex").style.display = "none";
+//   document.querySelector(".menu").style.display = "none";
+//   btnInicio.className = "";
+//   window.location.reload();
+//   document.documentElement.scrollTop = 0;
+// });
 
 
 //----------------PASAR A LA VISTA DEL POKEDEX
