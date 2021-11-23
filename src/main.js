@@ -50,27 +50,29 @@ const conteinerScrollLocations = document.getElementById("conteinerScrollLocatio
 const conteinerScrollVehicles = document.getElementById("conteinerScrollVehicles");
 let btnContainerDirector= document.querySelector(".btnContainerDirector")
 
+
 function filmoItems (films){
-const sectionFilm = films.forEach(({title , description , producer, poster , rt_score , release_date, director}) => {
+const sectionFilm = films.forEach((el) => {
   const createElement= document.createElement("div")
   createElement.setAttribute("class", 'contenedorCardFilm');
     const template= ` <div class = "conteinerTextFilm">
     <ul>
-   <li>Titulo: ${title} </li>
-   <li>Descripción: ${description}</li>
-   <li>Productor: ${producer}</li>
-   <li>Score: ${rt_score}</li>
-   <li>Director ${director}</li>
-   <li>Año: ${release_date}</li>
+   <li>Titulo: ${el.title} </li>
+   <li>Descripción: ${el.description}</li>
+   <li>Productor: ${el.producer}</li>
+   <li>Score: ${el.rt_score}</li>
+   <li>Director ${el.director}</li>
+   <li>Año: ${el.release_date}</li>
 </ul>
 </div>
-<div class="box1"><img src= ${poster} id ="imgPosterFilm"></div> `;
+<div class="box1"><img src= ${el.poster} id ="imgPosterFilm"></div> `;
  createElement.innerHTML= template
  conteinerScrollFilmo.appendChild(createElement);
  return template;
 } )
 };
 filmoItems(films);
+
 
 filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {    
   const createElement= document.createElement("div")
@@ -156,16 +158,35 @@ const filterButtons = btnContainerDirector.querySelectorAll(".filterDirector")
 filterButtons.forEach((el) => {  
   el.addEventListener("click",function(e) {
     const property= e.currentTarget.dataset.id;
+<<<<<<< HEAD
    /*let newData= sortData(films , property)
    filmoItems(newData)*/
    sortData(films , property, filmoItems)
 
-
-
-    console.log(property);
+=======
+    let newData= sortData(films,property,"director")
+    if(property === property)
+    {
+      conteinerScrollFilmo.innerHTML=" ";
+      return filmoItems(newData)    
+    }
+    //filmoItems(newData)
   })
   return filterButtons;
     })
+>>>>>>> be65427192dbdf720cbfb29ca07f18108e0578d9
+
+
+/*const filterButtons = btnContainerDirector.querySelectorAll(".filterDirector")
+filterButtons.forEach((el) => {  
+  el.addEventListener("click",function(e) {
+    const property= e.currentTarget.dataset.id;
+   sortData(films,property,filmoItems,"director")
+    console.log(property);
+  })
+  return filterButtons;
+    })*/
+
  
  
 
