@@ -297,7 +297,7 @@ align-items: center;
 
 /* ESTILO AL POSICIONARSE EN LOS ENLACES */
 .cont-enlaces a:hover{
-    background-color: rgb(152, 171, 201);
+    background-color: rgb(121, 159, 216);
     color: white;
 }
 

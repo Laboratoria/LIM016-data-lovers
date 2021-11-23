@@ -37,7 +37,7 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
   if(evento==pokemon[i].num){
       conteModal.querySelector(".nomPokemonMod").textContent=pokemon[i].name.toUpperCase();
       conteModal.querySelector(".tipoPokemonMod").textContent="TIPO: "+pokemon[i].type;
-      conteModal.querySelector(".cpPokemonMod").textContent="CP: "+pokemon[i].stats["max-cp"];
+      conteModal.querySelector(".cpPokemonMod").textContent="PC: "+pokemon[i].stats["max-cp"];
       conteModal.querySelector(".peso").textContent=pokemon[i].size.weight;
       conteModal.querySelector(".altura").textContent=pokemon[i].size.height;
       conteModal.querySelector(".huevos").textContent=pokemon[i].egg;
@@ -63,13 +63,10 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
             /* IMAGEN DE LA PRIMERA O PRIMERAS EVOLUCIONES */
             const imagenEvolucion=document.createElement("img");
             imagenEvolucion.className="imagenEvolucion";
-            // BUSCAR DIRECCION DE LA IMAGEN DE LA PRIMERA EVOLUCION
-            let direccionImagenPriEvolucion;
-            for(let k=0; k<251; k++){
-              if(numEvolucion===pokemon[k].num){
-                direccionImagenPriEvolucion=pokemon[k].img;
-              }}
-            imagenEvolucion.src=direccionImagenPriEvolucion;
+
+            let img = pokemon.find(e=>parseInt(e.num)==parseInt(numEvolucion)).img;
+            imagenEvolucion.src=img;
+            
             conteModal.querySelector(".imgEvolucion1").appendChild(imagenEvolucion);
             /* NOMBRE DE LA PRIMERA O PRIMERAS EVOLUCIONES */
             const nomEvolucion = document.createElement("p");
@@ -108,13 +105,11 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
           if(parseInt(numEvolucion)<=251){
             const imagenEvolucion=document.createElement("img");
             imagenEvolucion.className="imagenEvolucion";
-            // BUSCAR DIRECCION DE LA IMAGEN DE LA SEGUNDA EVOLUCION
-            let direccionImagenSeguEvolucion;
-            for(let k=0; k<251; k++){
-              if(numEvolucion===pokemon[k].num){
-                direccionImagenSeguEvolucion=pokemon[k].img;
-              }}
-            imagenEvolucion.src=direccionImagenSeguEvolucion;
+
+            // imagenEvolucion.src=pokemon[parseInt(numEvolucion)-1].img;
+            let img = pokemon.find(e=>parseInt(e.num)==parseInt(numEvolucion)).img;
+            imagenEvolucion.src=img;
+
             conteModal.querySelector(".imgEvolucion2").appendChild(imagenEvolucion);
             /* NOMBRE DE LA SEGUNDA EVOLUCION */
             const nomNextEvolucion = document.createElement("p");
