@@ -1,4 +1,4 @@
-# POKEMON GO
+# POKEMON GO <img src="https://cdn-icons-png.flaticon.com/512/287/287221.png" width=45px>
 
 ## Índice
 
@@ -16,7 +16,7 @@
 
 <div align=center><img src="https://github.com/MerlyAnco/LIM016-data-lovers/blob/main/src/img/logo.png?raw=true" width=30%></div>
 
-# 1. Pokemon Go
+# 1. Pokemon Go ✐ · · · · · · · · · · · · · · · · · · · · :ear_of_rice:
 
 Pokémon GO es una experiencia de juego internacional que cuenta con más de mil millones de descargas y ha sido nombrada "el mejor juego para móviles" por Game Developers Choice Awards y "la mejor aplicación del año" por TechCrunch (tomado de Google Play). Los usuarios del juego se convierten en "Maestros/ entrenadores de Pokémon" y pueden:
 
@@ -149,19 +149,19 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
 
 ## 4. Diseño de la Interfaz de Usuario<img src="https://cdn-icons-png.flaticon.com/512/188/188937.png" width=40px>
 
-### Prototipo de baja fidelidad
+### Prototipo de baja fidelidad 📄
 
-### Prototipo de alta fidelidad
+### Prototipo de alta fidelidad 📱
 
 ***
 
-## 5. Testeos de Usabilidad
+## 5. Testeos de Usabilidad 💻
 ### La interfaz pasa el 100% de los test.
 ![image](https://user-images.githubusercontent.com/87873460/142967623-8963457e-87d3-4f76-8059-aa5e5a1149c1.png)
 
 ***
 
-## 6. Checklist
+## 6. Checklist ✔️
 
 * ✅ Usa VanillaJS.
 * ✅ Pasa linter (`npm run pretest`)
@@ -184,20 +184,64 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
 
 ***
 
-## 7. Producto final <img src="https://cdn-icons-png.flaticon.com/512/188/188931.png" width=20px>
+## 7. Producto final <img src="https://cdn-icons-png.flaticon.com/512/188/188931.png" width=35px>
 
+### PAGINA DE INICIO
 <div align="center">
-<img  src=""  width="800">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/inicio1.PNG"  width="600"></div>
 
-<img  src=""  width="800">
+### VISTA DE FILTRADO Y ORDENAMIENTO 
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/pokedex.PNG"  width="600"></div>
 
-<img  src=""  width="800">
+### VISTA DE BUSQUEDA POR NOMBRE O NUMERO
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/pokedex-buscar.PNG"  width="600"></div>
+
+  
+### VISTA DE FILTRADO POR TIPO
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/filtrar-tipo.PNG"  width="600"></div>
+
+  
+ ### VISTA DE FILTRADO POR REGION
+ <div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/filtrar-region.PNG"  width="600"></div>
+
+
+ ### VISTA DE FILTRADO POR RAREZA
+ <div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/filtrar-rareza.PNG"  width="600"></div>
+
+
+### VISTA DE RANKING
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/ranking.png"  width="600"></div>
+
+
+### VISTA DE ESTADISTICAS
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/estadisticas.png"  width="600"></div>
 
 </div>
 
+### POKEMON CARD INFORMATIVA
+
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-1.PNG"  width="300">
+
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-2.PNG"  width="300">
+
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-3.PNG"  width="300">
+  
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-4.PNG"  width="300">
+
+</div>
+
+
 ## 8. Fuente 📄
 
-Data Lovers del [Repositorio de Laboratoria](https://github.com/Laboratoria/LIM016-data-lovers) 
+Data Lovers del [Repositorio de Laboratoria](https://github.com/Laboratoria/LIM016-data-lovers) <img src="https://scontent.flim4-2.fna.fbcdn.net/v/t1.6435-9/130980793_1690922481082152_7942209969687939916_n.png?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFFDsavO8fBBY62GsNsF_IsYehI860yPFhh6EjzrTI8WNi08hyHHv66WO3DZVHiJKe0OfHMVx75hdTyIhUJrKWj&_nc_ohc=SPrI62bCQ7oAX8m0Y9Q&_nc_ht=scontent.flim4-2.fna&oh=4fa48b9d3cc250c1ee9457f2f3c63622&oe=61C360F2" width=20px>
 
 ## 9. Autores
 
