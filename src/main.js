@@ -19,6 +19,7 @@ home_click.addEventListener("click", (e)=>{
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
   navMenu.classList.toggle("info_visible");
+  document.getElementById("graficas").style.display = "none";
 });
 
 let sports_click= document.getElementById("sports-click");
@@ -31,8 +32,8 @@ sports_click.addEventListener("click", (e)=>{
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
   navMenu.classList.toggle("info_visible");
+  document.getElementById("graficas").style.display = "none";
 });
-
 
 let teams_click= document.getElementById("teams-click");
 teams_click.addEventListener("click", (e)=>{
@@ -44,6 +45,7 @@ teams_click.addEventListener("click", (e)=>{
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
   navMenu.classList.toggle("info_visible");
+  document.getElementById("graficas").style.display = "none";
 });
 
 let athletes_click= document.getElementById("athletes-click");
@@ -57,6 +59,7 @@ athletes_click.addEventListener("click", (e)=>{
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
   navMenu.classList.toggle("info_visible");
+  document.getElementById("graficas").style.display = "none";
 });
 
 let text_click= document.getElementById("link_medals");
@@ -69,6 +72,7 @@ text_click.addEventListener("click", (e)=>{
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("female").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
 });
 
 let link_female= document.getElementById("link_female");
@@ -81,6 +85,7 @@ link_female.addEventListener("click", (e)=>{
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
 });
 
 /*---------------------------------------se trabajan los países*/
@@ -153,8 +158,7 @@ let unicos = [...personasMapArr.values()]; // Conversión a un array
 /* .....Funcion para crear la lista de atletas con el nuevo array...... */
 function listName(e) {
   const athlete= document.getElementById("hereAthletes")
-
-e.forEach((index)=>{
+  e.forEach((index)=>{
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
     athletes_screen.style.flexDirection = "row"
@@ -162,24 +166,22 @@ e.forEach((index)=>{
     athletes_screen.onclick= (e)=>contAthletes(e,index);
     athlete.appendChild(athletes_screen)
     
-athletes_screen.addEventListener("click", showModal);
+athletes_screen.addEventListener("click", showModal); //mostrar el modal cada que se hace click en los atletas
 function showModal(){
   modalAthlete.style.display="block";
 }
-
 })
 }
-const modalAthlete= document.getElementById("modal");
+const modalAthlete= document.getElementById("modal"); //al hacer click en la pantalla se cierra el modal
 window.onclick = function(event) {
   if (event.target == modalAthlete) {
     modalAthlete.style.display = "none";
   }
 }
 
-
 /* .....Funcion para crear el card con el nuevo array................. */
 
-const contAthletes = (event,unicos) => {
+const contAthletes = (e,unicos) => {
   
   let nameAthlete= document.getElementById("name")
   nameAthlete.innerHTML= unicos.name; 
@@ -201,9 +203,6 @@ const contAthletes = (event,unicos) => {
   
   let ageAthlete= document.getElementById("age")
   ageAthlete.innerHTML= unicos.age;
-  
-  let eventAthlete= document.getElementById("event")
-  eventAthlete.innerHTML= unicos.event; 
 }
 
 
@@ -317,3 +316,63 @@ function female(){
     }       
   }
 }
+
+/*----Graficas-----*/
+let graficos= document.getElementById('clickCharts');
+graficos.addEventListener("click", (e)=>{
+  e.preventDefault(); 
+
+  document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("graficas").style.display = "flex";
+  document.getElementById("countries").style.display = "none";
+  document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
+  document.getElementById("female").style.display = "none";
+});
+
+
+const medalFemale = (data) => {
+  let datos = data.map(item => [item.gender, item.medal]);
+
+  return datos
+};
+
+let medal = medalFemale(data.athletes);
+let cantMedal = timesRepeated(medal);
+
+const ctx = document.getElementById('myChart').getContext('2d');
+// eslint-disable-next-line
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: 'Medal Winners',
+            data: cantMedal,
+            backgroundColor: [
+                'rgb(255, 205, 86, 0.9)',
+                'rgb(255, 205, 86, 0.9)',
+                'rgba(80, 80, 80, 0.4)',
+                'rgba(255, 159, 64, 0.9)',
+                'rgba(80, 80, 80, 0.4)',
+                'rgba(255, 159, 64, 0.9)'
+            ],
+            borderColor: [
+                'rgba(80, 80, 00, 0.2)',
+                'rgba(80, 80, 00, 0.2)',
+                'rgba(80, 80, 80, 0.2)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(80, 80, 80, 0.2)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});   
