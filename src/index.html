@@ -19,7 +19,7 @@
 
       <!-- BUSCADOR DE POKEMON -->
       <section class="buscador">
-        <input type="search" name="inputBuscador" class="buscarPokemon" placeholder="Ejemplo: pikachu"><i class="fas fa-search"></i>
+        <input type="text" name="inputBuscador" class="buscarPokemon" placeholder="Ejemplo: pikachu"><i class="fas fa-search"></i>
       </section>
     </header>
 
@@ -112,6 +112,49 @@
           </div>
         </template>
           
+      </div>
+
+      <!-- CONTENEDOR DE MODAL -->
+      <div class="containerModal ocultar" id="containerModal">
+        <div class="modal">
+          <h1 class="nomPokemonMod"></h1>
+          <h2 class="tipoPokemonMod"></h2>
+          <h3 class="cpPokemonMod"></h3>
+          <section class="datos-basicos">
+            <div class="cont-peso">
+              <h3>PESO</h3>
+              <p class="peso"></p>
+            </div>
+            <div class="cont-altura">
+              <h3>ALTURA</h3>
+              <p class="altura"></p>
+            </div>
+            <div class="cont-huevos">
+              <h3>HUEVOS</h3>
+              <p class="huevos"></p>
+            </div>
+          </section>
+          <section class="cont-debilidad">
+            <h3>DEBILIDAD</h3>
+            <p class="debilidad"></p>
+          </section>
+          <section class="cont-evoluciones">
+            <h3>EVOLUCIONES</h3>
+            <div class="contAmbasEvoluciones">
+              <div class="contPriEvolucion" id="contPriEvolucion">
+                <div class="imgEvolucion1"></div>
+                <div class="nombreEvolucion1"></div>
+                <div class="contCaramelos1"></div>
+              </div>
+              <div class="contSegEvolucion" id="contSegEvolucion">
+                <div class="imgEvolucion2"></div>
+                <div class="nombreEvolucion2"></div>
+                <div class="contCaramelos2"></div>
+              </div>
+            </div>
+          </section>
+          <button type="button" id="close">X</button>
+        </div>
       </div>
 
     </main>

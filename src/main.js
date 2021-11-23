@@ -1,6 +1,6 @@
 // IMPORTAR DATA DE POKEMON.JS
 import data from './data/pokemon/pokemon.js';
-import { buscarPokemon, mostraPokemon } from './data.js';
+import { buscarPokemon, mostraPokemon, masInfoPokemon } from './data.js';
 
 // DECLARACION DE VARIABLES
 const input=document.querySelector(".buscarPokemon");
@@ -12,17 +12,46 @@ const template=document.getElementById("templateCard");
 const up=document.querySelector(".button-up");
 
 // FUNCIÓN PARA LIMPIAR LAS TARJETAS
-function limpiar(){ 
+function limpiarCards(){ 
     let nodosEliminar=document.querySelectorAll(".card");
     nodosEliminar.forEach(nodo => nodo.remove());
 }
+
+// FUNCION PARA LIMPIAR EL MODAL
+function limpiarModal(){
+    document.querySelector(".nomPokemonMod").textContent="";
+    document.querySelector(".tipoPokemonMod").textContent="TIPO: ";
+    document.querySelector(".cpPokemonMod").textContent="CP: ";
+    document.querySelector(".peso").textContent="";
+    document.querySelector(".altura").textContent="";
+    document.querySelector(".huevos").textContent="";
+    document.querySelector(".debilidad").textContent="";
+
+    let menNoTieneEvo = document.querySelectorAll(".cont-evoluciones .mensaje");
+    menNoTieneEvo.forEach(nodo=>nodo.remove());
+
+    let nombreEvolucion = document.querySelectorAll(".cont-evoluciones .nomEvolucion");
+    nombreEvolucion.forEach(nodo=>nodo.remove());
+
+    let caramelosEvolucion = document.querySelectorAll(".cont-evoluciones .caramelosEvolucion");
+    caramelosEvolucion.forEach(nodo=>nodo.remove());
+
+    let imagenCaramelos = document.querySelectorAll(".cont-evoluciones .imgCaramelos");
+    imagenCaramelos.forEach(nodo=>nodo.remove());
+    
+    let imagenEvolucion = document.querySelectorAll(".cont-evoluciones .imagenEvolucion");
+    imagenEvolucion.forEach(nodo=>nodo.remove());
+
+    document.querySelector(".contAmbasEvoluciones .contSegEvolucion").style.display="block";
+}
+
 
 // CUANDO CARGA LA PAGINA
 window.onload = () => mostraPokemon(data.pokemon, fragment, template, container);
 
 // EVENTO AL PRESIONAR UNA TECLA EN EL INPUT BUSCADOR
 input.addEventListener("keyup",(e)=>{
-        limpiar();
+        limpiarCards();
         let valorInput = e.target.value;
         input.value = valorInput;
         buscarPokemon(data.pokemon,valorInput,fragment, template, container);
@@ -51,7 +80,7 @@ const region = document.querySelectorAll('.region');
 region.forEach(e=>{    
     
     e.addEventListener("click", e => {
-        limpiar();
+        limpiarCards();
         let regionOption = e.target.getAttribute("region");
         let pokemons =  data.pokemon;
         let pokemonsFilter = pokemons.filter(pokemon => pokemon.generation.name == regionOption);
@@ -66,7 +95,7 @@ const elemento = document.querySelectorAll('.elemento');
 elemento.forEach(e=>{    
     
     e.addEventListener("click", e => {
-        limpiar();
+        limpiarCards();
         let elementoOption = e.target.getAttribute("elemento");
         let pokemons =  data.pokemon;
         let pokemonsFilter = pokemons.filter(pokemon => pokemon.type[0] == elementoOption || pokemon.type[1] == elementoOption);
@@ -95,3 +124,21 @@ window.onscroll=function(){
         up.style.visibility="visible";}
     else {up.style.visibility="hidden";}
 }
+
+// MODAL
+const containerModal=document.getElementById("containerModal");
+const btnModal=document.getElementById("close");
+
+// ABRE MODAL CUANDO LE HACES CLICK EN UNA IMAGEN DE POKEMON
+container.addEventListener("click", e =>{
+    if(e.target.classList.contains("imgPokemon")){
+        limpiarModal();
+        masInfoPokemon(data.pokemon, e.target.id, containerModal);
+        containerModal.classList.add("show");
+    }
+});
+
+// CIERRA MODAL
+btnModal.addEventListener("click", (e)=>{
+    containerModal.classList.remove("show");
+});

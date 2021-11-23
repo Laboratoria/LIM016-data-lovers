@@ -117,6 +117,11 @@ input{
     padding: 20px;
 }
 
+/* CAMBIAR EL CURSOR AL POSICIONARSE EN LA IMAGEN DEL POKEMON */
+.imgPokemon:hover{
+    cursor: pointer;
+}
+
 /* NOMBRE DEL POKEMON */
 .nomPokemon{
     text-transform: uppercase;
@@ -201,6 +206,9 @@ input{
 /* CONTENEDOR DE MENU DESPLEGABLE */
 .cont-menu{
     width: 400px;
+    position: relative;
+    top: -35px;
+    left: 10px;
 }
 
 /* CABECERAS DEL MENU DESPLEGABLE (FILTRAR POR, ORDENAR POR, ESTADISTICA) */
@@ -238,7 +246,7 @@ align-items: center;
 .opcion-filtrar{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(25,112,231) !important;
+    background-color: rgb(57, 82, 119) !important;
     color: white;
     padding: 13px 15px;
     font-size: 22px;
@@ -290,6 +298,188 @@ align-items: center;
 
 /* ESTILO AL POSICIONARSE EN LOS ENLACES */
 .cont-enlaces a:hover{
-    background-color: rgb(154, 196, 255);
+    background-color: rgb(141, 145, 151);
     color: white;
+}
+
+/* CONTENEDOR DEL MODAL */
+.containerModal{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0; /* OCULTAR MODAL AL INICIO */
+}
+
+/* MODAL */
+.modal{
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    max-width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MOSTRAR MODAL */
+.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/* BOTON CERRAR */
+#close{
+    background-color: rgb(6, 32, 70);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 5%;
+    font-size: 120%;
+}
+
+/* POSICIONARSE EN EL BOTON MODAL */
+#close:hover{
+    cursor: pointer;
+}
+
+/* NOMBRE DEL POKEMON EN EL MODAL */
+.nomPokemonMod{
+    margin-bottom: 10px;
+}
+
+/* TIPO POKEMON EN EL MODAL */
+.tipoPokemonMod{
+    font-size: 110%;
+}
+
+/* PUNTOS DE COMBATE Y SUBTITULOS */
+.modal h3{
+    font-size: 90%;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* CONTENEDOR DE DATOS BASICOS */
+.datos-basicos{
+    background-color: rgb(189,243,207);
+    border-radius: 10px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 60px;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+}
+
+/* CONTENEDOR DE PESO, ALTURA Y HUEVOS */
+.cont-peso, .cont-altura, .cont-huevos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CONTENEDOR DE DEBILIDAD */
+.cont-debilidad{
+    background-color: rgb(245,228,165);
+    border-radius: 10px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90%;
+    height: 60px;
+    margin-bottom: 10px;    
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* CONTENEDOR DE EVOLUCIONES */
+.cont-evoluciones{
+    background-color: rgb(215,198,233);
+    border-radius: 10px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    min-height: 180px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTENEDOR DE PRIMERA Y SEGUNDA EVOLUCION */
+.contAmbasEvoluciones{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* CONTENEDOR DE LA PRIMERA EVOLUCION Y CONTENEDOR DE LA SEGUNDA EVOLUCION*/
+.contPriEvolucion, .contSegEvolucion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* IMAGEN DE EVOLUCIONES */
+.imagenEvolucion{
+    width: 80px;
+}
+
+/* CONTENEDOR DEL NOMBRE DE LA PRIMERA EVOLUCION  */
+.nombreEvolucion1{
+    display: flex;
+    flex-direction: row;
+}
+
+/* NOMBRE DE LA EVOLUCION */
+.nomEvolucion{
+    padding-inline: 12px;
+}
+
+/* CONTENEDOR DE CARAMELOS DE PRIMERA EVOLUCION Y CONTENEDOR DE CARAMELOS DE SEGUNDA EVOLUCION */
+.contCaramelos1, .contCaramelos2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMAGEN DE CARAMELOS POKEMON */
+.imgCaramelos{
+    width: 15px;
+    height: 15px;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    background: rgb(6, 32, 70);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(255,255,255);
+    border-radius: 20px;
 }
