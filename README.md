@@ -1,21 +1,14 @@
 # OLYMPIC HEART
 
 
-En este proyecto se realizó la página web Olympic Heart, aquí se puede visualizar data relacionada a los juegos olímpicos de Rio 2016. Como, los países participantes y el número de atletas por pais, los deportes con sus respectivos eventos, así como información detallada de cada atleta.
+En este proyecto se realizó la página web Olympic Heart, aquí se puede visualizar data relacionada a los juegos olímpicos de Rio 2016. Como, los países participantes y el número de atletas por cada uno, los deportes con sus respectivos eventos, así como información detallada de cada atleta.
 
-## 1. El producto
+## 1. Los usuarios
 
-* ¿Quiénes son los principales usuarios de producto? <br>
-El público en general, así como los aficionados a los juegos de Rio 2016 como a los juegos olímpicos en general.
-
-* ¿Cuáles son los objetivos de estos usuarios en relación con el producto? <br>
-Los objetivos son conocer más a detalle información relevante a Rio 2016, como los deportes y eventos, atletas y países participantes.
-
-* ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué? <br>
-Los países, deportes y atletas. Porque estos tres forman en si el core de los juegos olímpicos, estos no pueden existir sin lo otro. Por ejemplo, no existiría Rio 2016 sin los atletas pertenecientes a sus respectivas naciones.
-
-* ¿Cuándo utilizan o utilizarían el producto? <br>
-Lo utilizarían cada que quieran recordar información relacionada a Rio 2016, cada que comienza otros juegos olímpicos, para así comparar los deportes entre un juego olímpico y otro y a los atletas que participan.
+Los juegos olímpicos son un evento que capta la atención tanto de pequeños como grandes, que con cada edición inspira a miles a algún día poder ser partícipe de estos y obtener una medalla.<br> 
+Dicho lo anterior, los principales usuarios de la página es el público en general ya que cualquiera que quiera saber información relacionada a los atletas o los deportes lo puede hacer aquí. Los aficionados podrán aquí conocer a más detalle información relevante a Rio 2016, como los deportes y eventos, atletas y países participantes. <br> 
+La información más relevante que podrán ver en la interfaz son: los países, deportes y atletas. Porque estos tres forman en si el pilar de los juegos olímpicos, estos no pueden existir sin lo otro y viceversa. <br> 
+La página podrá ser usada cada que quieran recordar información relacionada a Rio 2016, cada que comiencen otros juegos olímpicos, para así comparar los deportes entre un juego olímpico y otro (ya que estos suelen variar) y a los atletas que participan.<br> 
 
 ### Historia de usuario 1 <br>
 Como: usuario
@@ -93,19 +86,30 @@ Criterios de Aceptación:
 
 ### Prototipo de baja fidelidad
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+<img
+src=“desktop-P.png”
+raw=true
+style=“height: 50%;”
+/>
+
+<img
+src=“mobile-P.png”
+raw=true
+style=“height: 50%;”
+/>
 
 ### Prototipo de alta fidelidad
 
 ### Testeos de usabilidad
 
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+Luego de los testeos de usabilidad se detectaron dos problemas y un comentario general.<br>
+* El primero era que no había una opción para regresar a la página principal en la barra de navegación. <br>
+Al hacer el diseño se pensó que al hacer click en el logo uno regresaría a la página principal, pero los usuarios no lo tenían muy claro y se recomendó añadir la opción de “Home” a la barra de navegación, lo que se realizó y se puede observar en el prototipo final.<br>
+* El segundo era que se usaban muchos colores en la información de atletas, teams, deportes y así. <br>
+Con esa observación se decidió usar solo dos tipos de colores para mostrar esa información. <br>
+
+* Como comentario generale se mencionó que al footer se le debería agregar información de las autoras de la página y que a las imágenes se les dé un borde 
+
 
 
 
