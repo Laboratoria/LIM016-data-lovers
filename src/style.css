@@ -125,7 +125,7 @@ background: none;
     height: calc(100% - 3em);
     overflow-y: auto;
     left: 100%;
-    transition: left 0.5s ease;
+    transition: left 2s ease;
   }
   .menu li {
     line-height: 15px;
@@ -167,11 +167,12 @@ background: none;
     font-weight: bold;
     box-shadow: none;
   }
-  #toggle {
-    display: block;
+  .show{
+    display: block !important;
   }
   .nav-menu_visible {
     left: 0%;
+    transition: all 1s ease-in-out;
   }
 }
 /* VISTA DE LA PAGINA DE INICIO */
@@ -243,16 +244,19 @@ background: none;
   flex-direction: row;
   align-items: center;
   background: linear-gradient(
-    90deg,
-    rgba(4, 0, 61, 1) 0%,
-    rgba(1, 1, 71, 1) 56%,
-    rgba(5, 106, 152, 1) 100%
-  );
+  90deg,
+  rgba(4, 0, 61, 1) 0%,
+  rgba(1, 1, 71, 1) 56%,
+  rgba(5, 106, 152, 1) 100%
+);
   color: white;
   font-weight: 500;
-  padding: 1em;
+  padding: 0px 1em;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
   font-size: 1.2em;
-  width: 25%;
+  width: 35%;
 }
 
 .parrafoCarrusel img {
@@ -274,7 +278,7 @@ background: none;
   display: flex;
   overflow-x: hidden;
   overflow-y: hidden;
-  padding: 20px 0px;
+  padding-bottom: 20px;
   justify-content: center;
   height: 50%;
 }
@@ -284,7 +288,7 @@ background: none;
   max-width: 20%;
   height: 350px;
   outline: 0px solid black;
-  background: rgba(1, 1, 71, 1);
+  background-image: linear-gradient( to right,    rgba(4, 0, 61, 1) 0%,    rgba(1, 3, 71, 1) 56%,    rgba(5, 106, 152, 1) 100%  );
 }
 .carrusel-item img {
   width: 100%;
@@ -536,54 +540,7 @@ background: none;
 #rareza {
   display: none;
 }
-@media (max-width: 768px) {
-  .tipos {
-    display: block !important;
-  }
-  .region {
-    display: block !important;
-  }
 
-  .rareza {
-    display: block !important;
-  }
-  #pokedex .container-tipo-rareza-region {
-    display: none !important;
-  }
-
-  #container-filtro {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .container-botones-filtro {
-    flex-direction: column;
-    justify-content: space-around !important;
-    height: 100px;
-  }
-
-  #pokedex {
-    padding-top: 3em;
-  }
-
-  .container-buscar {
-    justify-content: center !important;
-    padding-right: 0px !important;
-  }
-  #search {
-    width: 80% !important;
-  }
-
-  #botonBuscar {
-    margin-left: calc(100% - 35%) !important;
-  }
-
-  #button-up {
-    width: 4em;
-    height: 4em;
-    left: calc(65% - 5.5em) !important;
-  }
-}
 /* evoluciones */
 
 .grupo p{
@@ -1346,6 +1303,7 @@ table {
   transition: 0.3s;
   border: none 1px #605e5e;
   transform: scale(1.15);
+  
 }
 
 /* .regionDiv{
@@ -1376,6 +1334,7 @@ table {
   margin: auto;
   font-size: 0.8em;
   align-items: center;
+  width:90%
 }
 
 /*--------------por rareza------------*/
@@ -1384,8 +1343,8 @@ table {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  width: 65%;
-  margin-left: calc(100% - 75%);
+  width: 75%;
+  margin-left: calc(100% - 78%);
 }
 
 #divRarezaPokemon div img {
@@ -1400,7 +1359,7 @@ table {
   margin: auto;
   font-size: 0.8em;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
 
 /* .rarezaPokeInicio{
@@ -1433,7 +1392,6 @@ table {
   text-align: center;
   align-items: center;
   margin-top: 25px;
-  font-family: cursive;
 }
 .container-chart1,
 .container-chart3 {
@@ -1470,6 +1428,29 @@ table {
   font-style: italic;
 }
 
+/* ranking*/
+.titulo-ranking{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.titulo-ranking h{
+  font-weight: bold;
+  background: linear-gradient(to bottom, #030041 0%, #010a4e 1%, #045689 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow(3px 3px 1px rgba(124, 124, 124, 0.59));
+  font-size: 40px;
+}
+
+.titulo-ranking p{
+  color: black;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+}
 /*FOOTER*/
 .footer {
   height: 60px;
@@ -1673,11 +1654,11 @@ color: white;
       padding-right: 0px !important;
     }
     #search {
-      width: 80% !important;
+      width: 330px !important;
     }
 
     #botonBuscar {
-      margin-left: calc(100% - 35%) !important;
+      margin-left: calc(100% - 60%) !important;
     }
 
     #button-up {
@@ -1778,6 +1759,20 @@ color: white;
 
   @media (max-width: 600px) {
 
+  .titulo-ranking h{
+    font-size: 25px;
+  }
+
+  .titulo-ranking p{
+    font-size: 15px;
+  }
+    #search {
+      width: 60% !important;
+    }
+  
+    #botonBuscar {
+      margin-left: calc(100% - 45%) !important;
+    }
 
 /* cards pokemon */
 .cardInfo {
@@ -1828,6 +1823,13 @@ font-size: 1.2em;
 }
   @media (max-width: 500px) {
 
+  #search {
+    width: 80% !important;
+  }
+
+  #botonBuscar {
+    margin-left: calc(100% - 30%) !important;
+  }
 /* cards pokemon */
 .cardInfo {
   font-size: 0.8em;
@@ -1937,7 +1939,7 @@ font-size: 1.2em;
     /*FORMATO AL CHART*/
     #container-stats h1 {
       font-size: 30px;
-      font-family: cursive;
+  
       margin-top: 0px;
     }
     .title-chart {

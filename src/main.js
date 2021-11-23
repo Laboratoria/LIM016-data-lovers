@@ -101,23 +101,18 @@ function handleDivRegion(data, arrayPokeP) {
       const arrayRegionPoke = regionFuncion(regionP, data.pokemon);
       mostrarPokemon(arrayRegionPoke, arrayPokeP);
 
-      document.getElementById(`${regionP}Div`).className =
-        "regionPokeInicio activeTipo";
+      document.getElementById(`${regionP}Div`).className = "regionDiv activeTipo";
 
-      document
-        .getElementById("divRegionPokemon")
-        .addEventListener("click", (e) => {
-          const regionP2 = e.target.getAttribute("id");
-          if (regionP != regionP2) {
-            document.getElementById(`${regionP}Div`).className =
-              "regionPokeInicio";
-          }
-        });
-      document.querySelector(".navegador").addEventListener("click", (e) => {
-        e.preventDefault();
-        console.log("hola");
-        document.getElementById(`${regionP}Div`).classList.remove("activeTipo");
-      });
+      document.getElementById("divRegionPokemon").addEventListener("click", (e) => {
+        const regionP2 = e.target.getAttribute("id");
+        if(regionP != regionP2){
+          document.getElementById(`${regionP}Div`).className = "regionDiv";
+        }})
+        document.querySelector('.navegador').addEventListener('click',(e)=>{
+          e.preventDefault()
+          document.getElementById(`${regionP}Div`).classList.remove('activeTipo')
+
+        })
     }
   });
 }
@@ -172,10 +167,10 @@ function filtrarTiposPokemon(data, arrayPokeP) {
     .addEventListener("click", (e) => {
       e.preventDefault();
 
-      if (e.target.getAttribute("id")) {
+      if (e.target.getAttribute("name")) {
         container.innerHTML = "";
         // console.log(e.target.getAttribute('id'))
-        const tipoP = e.target.getAttribute("id");
+        const tipoP = e.target.getAttribute("name");
         const arraytipoPoke = typePokemones(tipoP, data.pokemon);
         mostrarPokemon(arraytipoPoke, arrayPokeP);
 
@@ -234,6 +229,7 @@ function filtrarRarezaSelect(data, arrayPokeP) {
   });
 }
 
+//
 function filtrarRarezaPokemon(data, arrayPokeP) {
   document.getElementById("divRarezaPokemon").addEventListener("click", (e) => {
     e.preventDefault();
