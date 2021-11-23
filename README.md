@@ -1,4 +1,4 @@
-# POKEMON GO 
+# POKEMON GO
 
 ## Índice
 
@@ -17,12 +17,12 @@
 # 1. Pokemon Go
 
 Pokémon GO es una experiencia de juego internacional que cuenta con más de mil millones de descargas y ha sido nombrada "el mejor juego para móviles" por Game Developers Choice Awards y "la mejor aplicación del año" por TechCrunch (tomado de Google Play). Los usuarios del juego se convierten en "Maestros/ entrenadores de Pokémon" y pueden:
-  
+
   * Descubrir el mundo Pokémon: explorar y descubrir nuevos Pokémon allá donde vayan.
   * Atrapar distintos Pokémon para completar su Pokédex.
   * Pelear contra Pokémon de otros entrenadores y conquistar un gimnasio.
   * Competir en épicos combates contra otros entrenadores.
-  * Hacer equipo con otros entrenadores para atrapar poderosos Pokémon durante las 
+  * Hacer equipo con otros entrenadores para atrapar poderosos Pokémon durante las
     incursiones.
 
 # 2. Definición del producto
@@ -58,12 +58,86 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
  >Yo como usuario me gustaría poder visualizar toda la información necesaria de mi        pokemon (ataques, fortalezas, debilidades, tipo, cp, hp ) para una batalla pokemon.
  >#### Definición de Terminado
  >✅ Visualización detallada de cada pokémon en cards
- > 
+ >
  >✅ Información clara y ordenada en secciones.
- > 
+ >
  >✅ Visualización de ataques y poderes detallados en las cards.
- > 
+ >
  >✅ Diseño responsive.
+
+#### Usuario 2: Ana (jugadora activo de Pokemon Go)
+
+ >Yo como usuario quiero realizar una búsqueda específica de algún pokémon y poder ver su información detallada.
+
+ >#### Definición de Terminado
+ >✅ Diseño responsive.
+ >
+ >✅El usuario puede visualizar la barra de búsqueda.
+ >
+ >✅Se van filtrando los pokemones de acuerdo a lo especificado por el usuario en la barra de búsqueda.
+ >
+ >✅Se visualiza la información detallada de cada pokémon buscado.
+
+
+ #### Usuario 3: Miguel (jugador nuevo)
+
+ >Yo como usuario nuevo quisiera poder ordenar (numéricamente  y alfabéticamente) a los pokemones para hacer más óptima mi búsqueda; también poder saber que pokemons podría recibir en caso  el aplicativo me regale un huevo pokémon.
+
+ >#### Definición de Terminado
+ >✅ El filtro de “orden” ( numérico y alfabético ) se ubica en cada  sección  en la parte superior y es de fácil visualización.
+ >
+ >✅ El filtro es  desplegable y le permite al usuario elegir el orden que desee filtrar los pokemones.
+ >
+ >✅ Al cambiar de sección el  filtrado de “orden”  se resetea.
+ >
+ >✅ Se implementó el filtrado por tipos de huevo y la cantidad de  kilómetros a caminar.
+
+ #### Usuario 4: Joel (jugador activo de PokemonGo)
+
+ >Yo como jugador me sería útil saber cuántos kilómetros debería recorrer para evolucionar un huevo pokémon.
+
+ >#### Definición de Terminado
+ >✅ El filtro de “egg”(“2km”, “5km”, “7km”, “10km”) se ubica en cada sección  en la parte superior y es de fácil visualización.
+ >
+ >✅ El filtro es  desplegable y le permite al usuario poder clasificar a los  pokemones por los km que debe de recorrer.
+ >
+ >✅ Al cambiar de sección el  filtrado de “egg”  se resetea.
+ >
+ >✅ El diseño es responsive.
+
+ #### Usuario 5:  Max (jugador nuevo de Pokemon Go)
+
+ >Yo como usuario me resultaría muy útil poder visualizar a los pokemones por secciones (tipo , región , rareza ) para así poder optimizar mi búsqueda.
+ >#### Definición de Terminado
+ >✅ Las secciones se encuentran definidas y son de fácil visualización para el usuario.
+ >
+ >✅ De acuerdo a la sección seleccionada , se cuenta con filtros gráficos para una mejor experiencia .
+ >
+ >✅ Cada sección cuenta a la vez con filtros de ‘orden’ , ‘Cp’ y ‘Egg’ .
+ >
+ >✅ El diseño es responsive.
+
+ #### Usuario 6: Lucía (jugador activo de Pokemon Go)
+
+ >Yo como usuario sería útil poder visualizar estadísticas de los pokemones de acuerdo a los tipos , región , rareza y km por recorrer , para así tener una mejor investigación del mundo de PokemonGo.
+ >#### Definición de Terminado
+ >✅ Se cuenta con una sección  específica de las estadísticas del mundo de PokémonGo.
+ >
+ >✅ Las gráficas estadísticas se encuentran diferenciadas y en cada una se señala su significado
+ >
+ >✅ El diseño es responsive y se puede visualizar en cualquier dispositivo.
+
+
+ #### Usuario 7: Roxana (jugadora nueva de Pokemon Go)
+
+ >Yo como usuario me gustaría saber cuántos caramelos necesito para evolucionar y cuáles son sus pre evoluciones y siguientes evoluciones de cada pokémon para así conocer la línea de  evolución de cada uno.
+
+ >#### Definición de Terminado
+ >✅ Las cards de cada pokémon contienen los caramelos que necesita para evolucionar.
+ >
+ >✅ Las cards contienen información de las pre y siguientes evoluciones de cada pokemon .
+ >
+ >✅ El diseño es responsive y se puede visualizar en cualquier dispositivo.
 
 
 # 4. Diseño de la Interfaz de Usuario
@@ -73,6 +147,8 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
 ### Prototipo de alta fidelidad
 
 # 5. Testeos de Usabilidad
+## La interfaz pasa el 100% de los test.
+![image](https://user-images.githubusercontent.com/87873460/142967623-8963457e-87d3-4f76-8059-aa5e5a1149c1.png)
 
 # 6. Checklist
 
