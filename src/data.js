@@ -19,13 +19,6 @@ export const computeStats = (data) => {
   return 
 }
 
-<<<<<<< HEAD
-export const sortData = (array, property) => {  
- 
-    const arrayProperty = array.filter((arrayItem)=> {
-      conteinerScrollFilmo.innertHtml=""
-       return arrayItem.director === property
-=======
 export const sortData = (array,property,parametro) => {  
   const arrayProperty = array.filter((arrayItem)=> {
      return arrayItem[parametro]=== property
@@ -39,7 +32,6 @@ export const sortData = (array,property,parametro) => {
 
     const arrayProperty = array.filter((arrayItem)=> {
        return arrayItem[parametro]=== property
->>>>>>> be65427192dbdf720cbfb29ca07f18108e0578d9
     });
  console.log(arrayProperty);
       if(property === "clean")

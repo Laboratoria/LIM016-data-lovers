@@ -158,12 +158,6 @@ const filterButtons = btnContainerDirector.querySelectorAll(".filterDirector")
 filterButtons.forEach((el) => {  
   el.addEventListener("click",function(e) {
     const property= e.currentTarget.dataset.id;
-<<<<<<< HEAD
-   /*let newData= sortData(films , property)
-   filmoItems(newData)*/
-   sortData(films , property, filmoItems)
-
-=======
     let newData= sortData(films,property,"director")
     if(property === property)
     {
@@ -174,7 +168,6 @@ filterButtons.forEach((el) => {
   })
   return filterButtons;
     })
->>>>>>> be65427192dbdf720cbfb29ca07f18108e0578d9
 
 
 /*const filterButtons = btnContainerDirector.querySelectorAll(".filterDirector")
