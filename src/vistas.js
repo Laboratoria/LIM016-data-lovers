@@ -249,6 +249,7 @@ document.getElementById("btnRanking").addEventListener('click',()=>{
   document.querySelector("#parrafo").style.display="none";
   document.getElementById("region").className=""
   document.getElementById("tipos").className=""
+  document.getElementById("rareza").className=""
 
   document.getElementById('cp').value=""
   document.getElementById('orden').value=""

@@ -1,20 +1,22 @@
-# POKEMON GO
+# POKEMON GO <img src="https://cdn-icons-png.flaticon.com/512/287/287221.png" width=45px>
 
 ## Índice
 
 * [1. Pokemon Go](#1-pokemon-go)
 * [2. Definición del producto](#2-definición-del-producto)
 * [3. Historias de usuario](#3-historias-de-usuario)
-* [4. Diseño de la interfaz](#4-diseño-de-la-interfaz)
-* [5. Tests](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. CheckList](#6-hacker-edition)
-* [7. Producto Finak](#7-consideraciones-técnicas)
-* [8. Fuente](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Autores](#9-checklist)
+* [4. Diseño de la interfaz de usuario](#4-diseño-de-la-interfaz-de-usuario)
+* [5. Testeos de usabilidad](#5-testeos-de-usabilidad)
+* [6. CheckList](#6-checklist)
+* [7. Producto Final](#7-producto-final)
+* [8. Fuente](#8-fuente)
+* [9. Autores](#9-autores)
 
 ***
 
-# 1. Pokemon Go
+<div align=center><img src="https://github.com/MerlyAnco/LIM016-data-lovers/blob/main/src/img/logo.png?raw=true" width=30%></div>
+
+# 1. Pokemon Go ✐ · · · · · · · · · · · · · · · · · · · · :ear_of_rice:
 
 Pokémon GO es una experiencia de juego internacional que cuenta con más de mil millones de descargas y ha sido nombrada "el mejor juego para móviles" por Game Developers Choice Awards y "la mejor aplicación del año" por TechCrunch (tomado de Google Play). Los usuarios del juego se convierten en "Maestros/ entrenadores de Pokémon" y pueden:
 
@@ -25,19 +27,23 @@ Pokémon GO es una experiencia de juego internacional que cuenta con más de mil
   * Hacer equipo con otros entrenadores para atrapar poderosos Pokémon durante las
     incursiones.
 
-# 2. Definición del producto
+***
 
-## 2.1. ¿Quiénes son los principales usuarios del producto?
+## 2. Definición del producto 🤓
 
-El producto está dirigido tanto para nuevos y antiguos jugadores de Pokemon Go.
+### 2.1. ¿Quiénes son los principales usuarios del producto?
 
-## 2.2. ¿Cuáles son los objetivos de los usuarios al usar el producto?
+El producto está dirigido tanto para nuevos y antiguos jugadores de Pokemon Go. 👫
+
+### 2.2. ¿Cuáles son los objetivos de los usuarios al usar el producto?
 
 El producto tiene como objetivo ser una web informativa que da  a conocer la variedad de pokemones existentes en el mundo de PokemoGo .Los usuarios podrán visualizar la información acerca de los ataques, poderes, línea de evolución , debilidades y fortalezas de los pokemones  además de poder tener acceso a enlaces de las películas .Asimismo se tiene una sección de estadísticas donde se visualiza los datos acerca de las regiones, tipos y km por recorrer .
 
-# 3. Historias de usuario
+***
 
-## 3.1. ¿Cuáles son los datos que quisieran ver los usuarios?
+## 3. Historias de usuario 👫
+
+### 3.1. ¿Cuáles son los datos que quisieran ver los usuarios?
 
 Para entender mejor qué necesidades complementarias a la app tienen los usuarios, hicimos una rápida investigación (research) y estos son algunos de los hallazgos.
 
@@ -49,11 +55,11 @@ Para entender mejor qué necesidades complementarias a la app tienen los usuario
      ❥ Información sobre las evoluciones y los caramelos que necesitan
      ❥ Sección peliculas
 
-## 3.2. ¿Qué dicen los usuarios?
+### 3.2. ¿Qué dicen los usuarios?
 
 Se ha consultado a 5 personas que usan o se animarian a descargar y usar el aplicativo Pokemon Go y mencionan lo que necesitarian lo siguiente en una página informativa:
 
-#### Usuario 1: Alex (jugador activo de Pokemon Go)
+#### Usuario 1: Alex <img src="https://cdn-icons-png.flaticon.com/512/287/287226.png" width=18px> (jugador activo de Pokemon Go)
 
  >Yo como usuario me gustaría poder visualizar toda la información necesaria de mi        pokemon (ataques, fortalezas, debilidades, tipo, cp, hp ) para una batalla pokemon.
  >#### Definición de Terminado
@@ -65,7 +71,7 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
  >
  >✅ Diseño responsive.
 
-#### Usuario 2: Ana (jugadora activo de Pokemon Go)
+#### Usuario 2: Ana <img src="https://cdn-icons-png.flaticon.com/512/188/188979.png" width=18px> (jugadora activo de Pokemon Go)
 
  >Yo como usuario quiero realizar una búsqueda específica de algún pokémon y poder ver su información detallada.
 
@@ -79,7 +85,7 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
  >✅Se visualiza la información detallada de cada pokémon buscado.
 
 
- #### Usuario 3: Miguel (jugador nuevo)
+ #### Usuario 3: Miguel <img src="https://cdn-icons-png.flaticon.com/512/287/287226.png" width=18px> (jugador nuevo)
 
  >Yo como usuario nuevo quisiera poder ordenar (numéricamente  y alfabéticamente) a los pokemones para hacer más óptima mi búsqueda; también poder saber que pokemons podría recibir en caso  el aplicativo me regale un huevo pokémon.
 
@@ -92,7 +98,7 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
  >
  >✅ Se implementó el filtrado por tipos de huevo y la cantidad de  kilómetros a caminar.
 
- #### Usuario 4: Joel (jugador activo de PokemonGo)
+ #### Usuario 4: Joel <img src="https://cdn-icons-png.flaticon.com/512/287/287226.png" width=18px> (jugador activo de PokemonGo)
 
  >Yo como jugador me sería útil saber cuántos kilómetros debería recorrer para evolucionar un huevo pokémon.
 
@@ -105,7 +111,7 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
  >
  >✅ El diseño es responsive.
 
- #### Usuario 5:  Max (jugador nuevo de Pokemon Go)
+ #### Usuario 5:  Max <img src="https://cdn-icons-png.flaticon.com/512/287/287226.png" width=18px> (jugador nuevo de Pokemon Go)
 
  >Yo como usuario me resultaría muy útil poder visualizar a los pokemones por secciones (tipo , región , rareza ) para así poder optimizar mi búsqueda.
  >#### Definición de Terminado
@@ -117,7 +123,7 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
  >
  >✅ El diseño es responsive.
 
- #### Usuario 6: Lucía (jugador activo de Pokemon Go)
+ #### Usuario 6: Lucía  <img src="https://cdn-icons-png.flaticon.com/512/188/188979.png" width=18px> (jugador activo de Pokemon Go)
 
  >Yo como usuario sería útil poder visualizar estadísticas de los pokemones de acuerdo a los tipos , región , rareza y km por recorrer , para así tener una mejor investigación del mundo de PokemonGo.
  >#### Definición de Terminado
@@ -128,7 +134,7 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
  >✅ El diseño es responsive y se puede visualizar en cualquier dispositivo.
 
 
- #### Usuario 7: Roxana (jugadora nueva de Pokemon Go)
+ #### Usuario 7: Roxana <img src="https://cdn-icons-png.flaticon.com/512/188/188979.png" width=18px> (jugadora nueva de Pokemon Go)
 
  >Yo como usuario me gustaría saber cuántos caramelos necesito para evolucionar y cuáles son sus pre evoluciones y siguientes evoluciones de cada pokémon para así conocer la línea de  evolución de cada uno.
 
@@ -139,18 +145,23 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
  >
  >✅ El diseño es responsive y se puede visualizar en cualquier dispositivo.
 
+***
 
-# 4. Diseño de la Interfaz de Usuario
+## 4. Diseño de la Interfaz de Usuario<img src="https://cdn-icons-png.flaticon.com/512/188/188937.png" width=40px>
 
-### Prototipo de baja fidelidad
+### Prototipo de baja fidelidad 📄
 
-### Prototipo de alta fidelidad
+### Prototipo de alta fidelidad 📱
 
-# 5. Testeos de Usabilidad
-## La interfaz pasa el 100% de los test.
+***
+
+## 5. Testeos de Usabilidad 💻
+### La interfaz pasa el 100% de los test.
 ![image](https://user-images.githubusercontent.com/87873460/142967623-8963457e-87d3-4f76-8059-aa5e5a1149c1.png)
 
-# 6. Checklist
+***
+
+## 6. Checklist ✔️
 
 * ✅ Usa VanillaJS.
 * ✅ Pasa linter (`npm run pretest`)
@@ -171,8 +182,68 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
 * ✅ UI: Permite filtrar data en base a una condición.
 * ✅ UI: Es _responsive_.
 
-# 7. Producto final
+***
 
-# 8. Fuentes
+## 7. Producto final <img src="https://cdn-icons-png.flaticon.com/512/188/188931.png" width=35px>
 
-# 9. Autores
+### PAGINA DE INICIO
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/inicio1.PNG"  width="600"></div>
+
+### VISTA DE FILTRADO Y ORDENAMIENTO 
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/pokedex.PNG"  width="600"></div>
+
+### VISTA DE BUSQUEDA POR NOMBRE O NUMERO
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/pokedex-buscar.PNG"  width="600"></div>
+
+  
+### VISTA DE FILTRADO POR TIPO
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/filtrar-tipo.PNG"  width="600"></div>
+
+  
+ ### VISTA DE FILTRADO POR REGION
+ <div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/filtrar-region.PNG"  width="600"></div>
+
+
+ ### VISTA DE FILTRADO POR RAREZA
+ <div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/filtrar-rareza.PNG"  width="600"></div>
+
+
+### VISTA DE RANKING
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/ranking.png"  width="600"></div>
+
+
+### VISTA DE ESTADISTICAS
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/estadisticas.png"  width="600"></div>
+
+</div>
+
+### POKEMON CARD INFORMATIVA
+
+<div align="center">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-1.PNG"  width="300">
+
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-2.PNG"  width="300">
+
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-3.PNG"  width="300">
+  
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-4.PNG"  width="300">
+
+</div>
+
+
+## 8. Fuente 📄
+
+Data Lovers del [Repositorio de Laboratoria](https://github.com/Laboratoria/LIM016-data-lovers) <img src="https://scontent.flim4-2.fna.fbcdn.net/v/t1.6435-9/130980793_1690922481082152_7942209969687939916_n.png?_nc_cat=111&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeFFDsavO8fBBY62GsNsF_IsYehI860yPFhh6EjzrTI8WNi08hyHHv66WO3DZVHiJKe0OfHMVx75hdTyIhUJrKWj&_nc_ohc=SPrI62bCQ7oAX8m0Y9Q&_nc_ht=scontent.flim4-2.fna&oh=4fa48b9d3cc250c1ee9457f2f3c63622&oe=61C360F2" width=20px>
+
+## 9. Autores
+
+- [Nicol Mendoza](https://github.com/nicolmendoza) <img src="https://cdn-icons-png.flaticon.com/512/2570/2570280.png" width=20px>
+- [Merly Anco](https://github.com/MerlyAnco) <img src="https://cdn-icons-png.flaticon.com/512/2570/2570280.png" width=20px>
