@@ -6,12 +6,12 @@
 }
 
 body{
-    background-image: url(./imagenesRM/fondo/Sky.jpg);
-    background-repeat: repeat;
+    /* background-image: url(./imagenesRM/fondo/Sky.jpg);
+    background-repeat: no-repeat; */
     background-size: 100% 100%;
 }
 
-.filtrado-de-datos{
+.cards{
     padding: 1rem;
     grid-template-columns: repeat(auto-fill,minmax(10rem, 13rem));
     grid-auto-flow: row;
@@ -87,6 +87,14 @@ body{
 .name-personaje-atras{
     padding: 1rem;
     color: rgb(58, 221, 17);
+}
+
+.filters{
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 1rem;
 }
 
 .filters>label{

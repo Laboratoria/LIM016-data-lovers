@@ -4,6 +4,80 @@ import filtros from './data.js'
  
 import data from './data/rickandmorty/rickandmorty.js';
 
+//SELECT DINAMICO
+
+let filterByCategory = {};
+
+filterByCategory['gender'] = ['Femenino', 'Masculino', 'Sin genero', 'Desconocido'];
+filterByCategory['species'] = ['Animal', 'Mutante', 'Desconocido', 'Enfermedad', 'Extraterrestre', 'Humano', 'Humanoide', 'Mitologia', 'Parásito', 'Poopybutthole', 'Robot', 'Vampiro'];
+filterByCategory['status'] = ['Desconocido', 'Muerto', 'Vivo'];
+
+document.getElementById("filterType").addEventListener("change", changeFilterList);
+
+function changeFilterList() {
+
+    let filterTypeList = document.getElementById("filterType");
+    let categoryList = document.getElementById("byCategory");
+    let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
+    let filters = filterByCategory[selFilter];
+
+    while (categoryList.options.length) {
+        categoryList.remove(0);
+    }
+
+    if (filters) {
+        for (let i = 0; i < filters.length; i++) {
+            let filter = new Option(filters[i], i);
+            categoryList.options.add(filter);
+        }
+    }
+}
+
+// let arraydata;
+// function printData() {
+
+    let dataPersonajes = document.querySelector('#showAllCharacters');
+
+    let dataPersonaje = data.results.map(function (result) {
+        
+        return `
+        <div class="card-personaje">
+            <div class="div-personaje">
+                <div class="data-frente-personaje" style="background-image:url(${result.image })">
+                
+                    <div class="name-personaje-frente">
+                    <h5>${result.name}</h5>
+                    </div>
+
+                </div>
+               
+                <div class="data-atras-personaje">
+
+                    <div class="name-personaje-atras">
+                        <h5>${result.name}</h5>
+                    </div>
+  
+                    <div>
+                        <p>Status: ${result.status}</p>
+                        <p>Species: ${result.species}</p>
+                        <p>Gender: ${result.gender}</p>
+                        <p>Origin: ${result.origin.name}</p>
+                        <p>Location: ${result.location.name}</p>
+                    </div>
+                </div>
+    `
+     
+    })
+    // console.log(printData())
+    dataPersonaje.forEach(function (element) {
+        let card = document.createElement("div");
+        card.setAttribute('class', 'card-personaje')
+
+        card.innerHTML = element
+
+        dataPersonajes.appendChild(card)
+    });
+// }
 
 
 // ----------- MUESTRA DE CARDS PERSONAJES  ------------//
@@ -124,12 +198,12 @@ import data from './data/rickandmorty/rickandmorty.js';
 /////-----------  Fin busqueda por personaje
 
 //filtrando
-let arrayEspecie = []
-data.results.forEach(element => {
-    //console.log(element.name)
-    arrayEspecie.push(element.species)
-});
-console.log(arrayEspecie)
+// let arrayEspecie = []
+// data.results.forEach(element => {
+//     //console.log(element.name)
+//     arrayEspecie.push(element.species)
+// });
+// console.log(arrayEspecie)
 
 // let selectop = document.getElementById("name__personaje")
 // //console.log(selectop.value)

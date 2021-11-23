@@ -16,16 +16,7 @@ const filtros = {
 
     if (gender == "F") {
       
-      generoSelect = `
-          <div class="card-personaje">
-            <div class="div-personaje">
-              <div class="data-frente-personaje">
-                <h5 class="name-personaje-frente">Nombre</h5>
-              </div>
-              <div class="data-atras-personaje"></div>
-            </div>
-          </div>
-`
+      
          
     }
 
