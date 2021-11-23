@@ -45,7 +45,6 @@ function limpiarModal(){
     document.querySelector(".contAmbasEvoluciones .contSegEvolucion").style.display="block";
 }
 
-
 // CUANDO CARGA LA PAGINA
 window.onload = () => mostraPokemon(data.pokemon, fragment, template, container);
 
@@ -75,7 +74,7 @@ opcion.forEach(e => {
 
 });
 
-// FILTRAR DATA
+// FILTRAR DATA POR REGION
 const region = document.querySelectorAll('.region');
 region.forEach(e=>{    
     
@@ -90,7 +89,7 @@ region.forEach(e=>{
     });
 });
 
-
+// FILTRAR DATA POR ELEMENTO
 const elemento = document.querySelectorAll('.elemento');
 elemento.forEach(e=>{    
     
@@ -105,44 +104,45 @@ elemento.forEach(e=>{
         buscarPokemon(pokemonsFilter,input.value,fragment, template, container);
     });
 });
+
 // ORDENAR DATA
 const ordenar = document.querySelectorAll('.ordenar');
+
 ordenar.forEach(e=>{    
     
     e.addEventListener("click", e => {
         limpiarCards();
+
         let ordenarOption = e.target.getAttribute("ordenar");
         let pokemonsFilter =  data.pokemon;
+
         // ORDENAR ALFABETICAMENTE A - Z
         if (ordenarOption == "az") {
             pokemonsFilter = pokemonsFilter.sort(function (a, b) {
-                if (a.name > b.name) {
-                    return 1;
-                }
-                if (a.name < b.name) {
-                    return -1;
-                }
+
+                if (a.name > b.name) { return 1; }
+                if (a.name < b.name) { return -1; }
+
                 return 0;
             });  
         }
+
         // ORDENAR ALFABETICAMENTE Z - A
         if (ordenarOption == "za") {
             pokemonsFilter = pokemonsFilter.sort(function (a, b) {
-                if (a.name > b.name) {
-                    return -1;
-                }
-                if (a.name < b.name) {
-                    return 1;
-                }
+                if (a.name > b.name) { return -1; }
+                if (a.name < b.name) { return 1; }
                 return 0;
             });  
         } 
+      
         // ORDENAR POR PUNTOS DE COMBATE ASCENDENTE
         if (ordenarOption == "pc-as") {
             pokemonsFilter = pokemonsFilter.sort(function (a, b) {
                 return a.stats["max-cp"] - b.stats["max-cp"];
             });  
         }  
+      
         // ORDENAR POR PUNTOS DE COMBATE DESCENDENTE
         if (ordenarOption == "pc-des") {
             pokemonsFilter = pokemonsFilter.sort(function (a, b) {
@@ -154,6 +154,7 @@ ordenar.forEach(e=>{
         buscarPokemon(pokemonsFilter,input.value,fragment, template, container);
     });
 });
+
 // ESTADÍSTICA DE LOS POKEMONES
 
 // BOTON SUBIR AL INICIO DE PAGINA

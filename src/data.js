@@ -63,9 +63,7 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
             /* IMAGEN DE LA PRIMERA O PRIMERAS EVOLUCIONES */
             const imagenEvolucion=document.createElement("img");
             imagenEvolucion.className="imagenEvolucion";
-            // imagenEvolucion.src=pokemon[parseInt(numEvolucion)-1].img;
-            //console.log(pokemon[parseInt(numEvolucion)-1]);
-            // console.log(numEvolucion);
+
             let img = pokemon.find(e=>parseInt(e.num)==parseInt(numEvolucion)).img;
             imagenEvolucion.src=img;
             
@@ -107,6 +105,7 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
           if(parseInt(numEvolucion)<=251){
             const imagenEvolucion=document.createElement("img");
             imagenEvolucion.className="imagenEvolucion";
+
             // imagenEvolucion.src=pokemon[parseInt(numEvolucion)-1].img;
             let img = pokemon.find(e=>parseInt(e.num)==parseInt(numEvolucion)).img;
             imagenEvolucion.src=img;
