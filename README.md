@@ -86,25 +86,45 @@ Criterios de Aceptación:
 
 ### Prototipo de baja fidelidad
 
-<img
-src=“desktop-P.png”
-raw=true
-style=“height: 50%;”
-/>
+Versión desktop
+![image](https://user-images.githubusercontent.com/91893006/142956620-9d91c1cd-0e2c-45c6-9c3a-dad03a08c2fe.png)
 
-<img
-src=“mobile-P.png”
-raw=true
-style=“height: 50%;”
-/>
+ Versión Mobile
+ ![image](https://user-images.githubusercontent.com/91893006/142956645-129a35e1-77ea-4e45-a708-02833bfc988f.png)
+
 
 ### Prototipo de alta fidelidad
+
+Versión desktop
+![image](https://user-images.githubusercontent.com/91893006/142956938-d74a3a05-af70-44e6-975d-17063be71352.png)
+
+Versión mobile
+![image](https://user-images.githubusercontent.com/91893006/142958186-b57307d5-4a74-4391-bb0e-82e8d5dcfe05.png)
+
+
+VERSIÓN FINAL DESKTOP
+
+Pantalla de inicio
+
+![image](https://user-images.githubusercontent.com/91893006/142957355-c1185f5d-4310-4a41-a043-e8361f4ee6f6.png)
+![image](https://user-images.githubusercontent.com/91893006/142957307-142ecc16-acc0-438d-9701-46bc20bafc34.png)
+
+La sección de atletas
+
+![image](https://user-images.githubusercontent.com/91893006/142957187-132fc3f4-0d4a-4a37-a9b1-44d59a0f632d.png)
+
+VERSIÓN FINAL MOBILE
+
+![image](https://user-images.githubusercontent.com/91893006/142958760-ecf823e2-9983-4abf-92e2-6b0865222e2f.png)
+
 
 ### Testeos de usabilidad
 
 Luego de los testeos de usabilidad se detectaron dos problemas y un comentario general.<br>
+
 * El primero era que no había una opción para regresar a la página principal en la barra de navegación. <br>
 Al hacer el diseño se pensó que al hacer click en el logo uno regresaría a la página principal, pero los usuarios no lo tenían muy claro y se recomendó añadir la opción de “Home” a la barra de navegación, lo que se realizó y se puede observar en el prototipo final.<br>
+
 * El segundo era que se usaban muchos colores en la información de atletas, teams, deportes y así. <br>
 Con esa observación se decidió usar solo dos tipos de colores para mostrar esa información. <br>
 
