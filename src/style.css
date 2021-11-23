@@ -36,7 +36,7 @@ input{
     width: 20%;
     height: 40%;
 
-    border-radius: 8px;
+    border-radius: 50px;
     border-width: 4px;
     border-color: rgb(61, 92, 138);
     
@@ -298,7 +298,7 @@ align-items: center;
 
 /* ESTILO AL POSICIONARSE EN LOS ENLACES */
 .cont-enlaces a:hover{
-    background-color: rgb(141, 145, 151);
+    background-color: rgb(121, 159, 216);
     color: white;
 }
 

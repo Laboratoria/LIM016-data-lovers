@@ -101,7 +101,7 @@ elemento.forEach(e=>{
         let pokemonsFilter = pokemons.filter(pokemon => pokemon.type[0] == elementoOption || pokemon.type[1] == elementoOption);
         //buscar con cual comparar
         // alert(e.target.getAttribute('elemento'));
-        console.log(pokemonsFilter);
+        // console.log(pokemonsFilter);
         buscarPokemon(pokemonsFilter,input.value,fragment, template, container);
     });
 });
@@ -110,57 +110,45 @@ const ordenar = document.querySelectorAll('.ordenar');
 ordenar.forEach(e=>{    
     
     e.addEventListener("click", e => {
-        limpiar();
+        limpiarCards();
         let ordenarOption = e.target.getAttribute("ordenar");
         let pokemonsFilter =  data.pokemon;
         // ORDENAR ALFABETICAMENTE A - Z
         if (ordenarOption == "az") {
-         pokemonsFilter = pokemonsFilter.sort(function (a, b) {
-             if (a.name > b.name) {
-             return 1;
-             }
-             if (a.name < b.name) {
-            return -1;
-             }
-              return 0;
-    });  
+            pokemonsFilter = pokemonsFilter.sort(function (a, b) {
+                if (a.name > b.name) {
+                    return 1;
+                }
+                if (a.name < b.name) {
+                    return -1;
+                }
+                return 0;
+            });  
         }
         // ORDENAR ALFABETICAMENTE Z - A
         if (ordenarOption == "za") {
             pokemonsFilter = pokemonsFilter.sort(function (a, b) {
                 if (a.name > b.name) {
-                return -1;
+                    return -1;
                 }
                 if (a.name < b.name) {
-               return 1;
+                    return 1;
                 }
-                 return 0;
-       });  
-           } 
-           // ORDENAR POR PUNTOS DE COMBATE ASCENDENTE
-     if (ordenarOption == "pc-as") {
+                return 0;
+            });  
+        } 
+        // ORDENAR POR PUNTOS DE COMBATE ASCENDENTE
+        if (ordenarOption == "pc-as") {
             pokemonsFilter = pokemonsFilter.sort(function (a, b) {
-                if (a.stats["max-cp"] > b.stats["max-cp"]) {
-                return -1;
-                }
-                if (a.stats["max-cp"] < b.stats["max-cp"]) {
-               return 1;
-                }
-                 return 0;
-       });  
-           }  
-                // ORDENAR POR PUNTOS DE COMBATE DESCENDENTE
-           if (ordenarOption == "pc-des") {
+                return a.stats["max-cp"] - b.stats["max-cp"];
+            });  
+        }  
+        // ORDENAR POR PUNTOS DE COMBATE DESCENDENTE
+        if (ordenarOption == "pc-des") {
             pokemonsFilter = pokemonsFilter.sort(function (a, b) {
-                if (a.stats["max-cp"] > b.stats["max-cp"]) {
-                return 1;
-                }
-                if (a.stats["max-cp"] < b.stats["max-cp"]) {
-                return -1;
-                }
-                 return 0;
-       });  
-           }       
+                return b.stats["max-cp"] - a.stats["max-cp"];
+            });  
+        }       
         // alert(e.target.getAttribute('region'));
         // console.log(pokemonsFilter);
         buscarPokemon(pokemonsFilter,input.value,fragment, template, container);
