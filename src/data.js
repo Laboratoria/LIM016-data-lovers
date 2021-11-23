@@ -1,5 +1,6 @@
 // estas funciones son de ejemplo
 
+//Filtro de people, vehiculo, locations
 export const filterPeopleLocationsVehicles = (property, array) => {
   let arrayPeople = [];
   for(let i=0; i<array.length;i++){
@@ -8,17 +9,40 @@ export const filterPeopleLocationsVehicles = (property, array) => {
     return arrayPeople
 };
 
+//Barra de navegacion
 export const filterItems = (textInputSearch, array) => {
-  return array.filter((el) =>
+  const searchInput = array.filter((el) =>
     el.toLowerCase().indexOf(textInputSearch.toLowerCase()) > -1
   );
+  return searchInput
 }
 
-
-export const computeStats = (data) => {
-  return 
+//Ordenar alfabticamente ascendente y descendente
+export const ordenAlfabeticoAsc = (array,parametro) => {
+  const compareTitle = array.sort((a, b ) => {
+    if ( a[parametro].toLowerCase() < b[parametro].toLowerCase()){
+      return -1;
+    }
+    else {
+      return 0;
+    }
+})
+return compareTitle
 }
 
+export const ordenAlfabeticoDesc = (array,parametro) => {
+  const compareTitle = array.sort((a, b ) => {
+    if ( a[parametro].toLowerCase() > b[parametro].toLowerCase()){
+      return -1;
+    }
+    else {
+      return 0;
+    }
+})
+return compareTitle
+}
+
+//Filtrar por productores y directores
 export const sortData = (array,property,parametro) => {  
   const arrayProperty = array.filter((arrayItem)=> {
      return arrayItem[parametro]=== property
@@ -27,20 +51,17 @@ export const sortData = (array,property,parametro) => {
   return arrayProperty
 };
 
-
-/*export const sortData = (array,property,callback, parametro) => {  
-
-    const arrayProperty = array.filter((arrayItem)=> {
-       return arrayItem[parametro]=== property
-    });
- console.log(arrayProperty);
-      if(property === "clean")
-      {
-        return callback(films)      
-      }
-      else{
-        return arrayProperty;        
-      }   
-  };*/
-
-
+//Filtrar por Score y Año de Lanzamiento ascendente
+export const ordenNumericoAsc = (array,parametro) => {
+  const compareNumber = array.sort((a, b) => {
+    return b[parametro] - a[parametro];
+  });
+  return compareNumber
+}
+//Filtrar por Score y Año de Lanzamiento descendente
+export const ordenNumericoDesc = (array,parametro) => {
+  const compareNumber = array.sort((a, b) => {
+    return a[parametro] - b[parametro];
+  });
+  return compareNumber
+}

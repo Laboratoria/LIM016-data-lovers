@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import {filterPeopleLocationsVehicles, sortData} from  './data.js';
+import {filterPeopleLocationsVehicles, sortData, ordenAlfabeticoAsc, ordenAlfabeticoDesc, ordenNumericoAsc, ordenNumericoDesc, filterItems} from  './data.js';
 
 let films = [];
 films = data.films;
@@ -48,8 +48,9 @@ const conteinerScrollFilmo = document.getElementById("conteinerScrollFilmo");
 const conteinerScrollPeople = document.getElementById("conteinerScrollPeople");
 const conteinerScrollLocations = document.getElementById("conteinerScrollLocations");
 const conteinerScrollVehicles = document.getElementById("conteinerScrollVehicles");
-let btnContainerDirector= document.querySelector(".btnContainerDirector")
 
+let btnContainerDirector= document.querySelector(".btnContainerDirector")
+let btnContainerProducer=document.querySelector(".btnContainerProducer")
 
 function filmoItems (films){
 const sectionFilm = films.forEach((el) => {
@@ -137,107 +138,113 @@ filterPeopleLocationsVehicles("vehicles", films).flat(1).forEach((el) => {
 createElement.innerHTML= template3;
 conteinerScrollVehicles.appendChild(createElement);
 return template3;
-});
+}); 
 
 
+const filterButtonsDirector = btnContainerDirector.querySelectorAll(".filterDirector")
+const filterButtonsProducer = btnContainerProducer.querySelectorAll(".filterProducer")
 
-function compareTitle(a, b )
-{
-if ( a.title.toLowerCase() < b.title.toLowerCase()){
-  return -1;
-}
-if ( a.title.toLowerCase() > b.title.toLowerCase()){
-  return 1;
-}
-return 0;
-}
-
-films.sort(compareTitle) 
-
-const filterButtons = btnContainerDirector.querySelectorAll(".filterDirector")
-filterButtons.forEach((el) => {  
+//Funcion para filtrar por directores
+filterButtonsDirector.forEach((el) => {  
   el.addEventListener("click",function(e) {
     const property= e.currentTarget.dataset.id;
     let newData= sortData(films,property,"director")
-    if(property === property)
-    {
-      conteinerScrollFilmo.innerHTML=" ";
-      return filmoItems(newData)    
-    }
-    //filmoItems(newData)
+        conteinerScrollFilmo.innerHTML=" ";
+        return filmoItems(newData)    
   })
-  return filterButtons;
+  return filterButtonsDirector;
+    })
+
+//Funcion para filtrar por productores
+filterButtonsProducer.forEach((el) => {  
+  el.addEventListener("click",function(e) {
+    const property= e.currentTarget.dataset.id;
+    let newData= sortData(films,property,"producer")
+          conteinerScrollFilmo.innerHTML=" ";
+          return filmoItems(newData)    
+  })
+  return filterButtonsProducer;
+   })
+
+ //funcion para ordenar las peliculas alfabeticamente 
+const filterButtonAsc =document.getElementById("asc");
+const filterButtonDesc =document.getElementById("desc");
+
+   filterButtonAsc.addEventListener("click",function() {
+      let newData= ordenAlfabeticoAsc(films,"title")
+          conteinerScrollFilmo.innerHTML=" ";
+          return filmoItems(newData)   
+    })
+
+    filterButtonDesc.addEventListener("click",function() {
+      let newData= ordenAlfabeticoDesc(films,"title")
+          conteinerScrollFilmo.innerHTML=" ";
+          return filmoItems(newData)   
+    })
+
+  //Funcion para ordenar score 
+  
+  const filterButtonScoreAsc =document.getElementById("scoreAsc");
+  const filterButtonScoreDesc =document.getElementById("scoreDesc");
+
+  filterButtonScoreAsc.addEventListener("click",function() {
+      let newData=ordenNumericoDesc(films,"rt_score")
+          conteinerScrollFilmo.innerHTML=" ";
+          return filmoItems(newData)   
+    })
+    filterButtonScoreDesc.addEventListener("click",function() {
+      let newData=ordenNumericoAsc(films,"rt_score")
+          conteinerScrollFilmo.innerHTML=" ";
+          return filmoItems(newData)   
+    })
+
+  //Funcion para ordenar año de lanzamiento
+  
+  const filterButtonYearAsc =document.getElementById("yearAsc");
+  const filterButtonYearDesc =document.getElementById("yearDesc");
+
+  filterButtonYearAsc.addEventListener("click",function() {
+      let newData=ordenNumericoDesc(films,"release_date")
+          conteinerScrollFilmo.innerHTML=" ";
+          return filmoItems(newData)   
+    })
+    filterButtonYearDesc.addEventListener("click",function() {
+      let newData=ordenNumericoAsc(films,"release_date")
+          conteinerScrollFilmo.innerHTML=" ";
+          return filmoItems(newData)   
     })
 
 
-/*const filterButtons = btnContainerDirector.querySelectorAll(".filterDirector")
-filterButtons.forEach((el) => {  
-  el.addEventListener("click",function(e) {
-    const property= e.currentTarget.dataset.id;
-   sortData(films,property,filmoItems,"director")
-    console.log(property);
-  })
-  return filterButtons;
-    })*/
+    //funcion para la barra de busqueda
+    const formulario= document.querySelector("#fomulario"); 
+    const boton= document.querySelector("#boton");
 
+    boton.addEventListener("click",function(e) {
+      let textInputSearch = formulario.e.value;
+      let newData=filterItems(textInputSearch, films)
+          conteinerScrollFilmo.innerHTML=" ";
+          return filmoItems(newData) 
+    })
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*let pelicula= data.films
- const fomulario= document.querySelector ("#fomulario"); 
- const boton= document.querySelector ("#boton");
+//document.getElementBy
+/*
  const resultado= document.querySelector ("#resultado");
-
-
-
 
 /*const filtrar  =  () =>{
   //console.log (formulario.value);
   const texto= fomulario.value.toLowerCase();
 
-
   for( let titulo of films ){
-
    let title= films.title.toLowerCase();
-   
    if ( title.indexOf(texto)  !== -1){
-
    resultado.innerHTML += `
-
    <li>${titulo.title}<li>
    `
    }
   }
-
     if (resultado.innerHtml === ""){
     resultado.innerHtml += `
         <li> Producto no encontrado... <li>`
-
    } 
  }
  /*
