@@ -20,10 +20,10 @@ export const computeStats = (data) => {
   return 
 }
 
-export const sortData = (array, property,callback) => {  
+export const sortData = (array, property) => {  
  
     const arrayProperty = array.filter((arrayItem)=> {
-       
+      conteinerScrollFilmo.innertHtml=""
        return arrayItem.director === property
     });
  console.log(arrayProperty);
