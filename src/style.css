@@ -4,14 +4,23 @@
     box-sizing:border-box;
     font-family: 'Red Rose', cursive;
 }
+header{
+    background-image: url(./imagenesRM/fondo/Sky.jpg);
+    display: flex;
+}
+.titulo >h2{
+    text-align: center;
+    color:#7cfc00;
+    font-weight: bold;
+    padding: 1rem;
+}
 
-body{
-    /* background-image: url(./imagenesRM/fondo/Sky.jpg);
-    background-repeat: no-repeat; */
-    background-size: 100% 100%;
+.data{
+    background-image: url(./imagenesRM/fondo/Sky.jpg);
 }
 
 .cards{
+    display: grid;
     padding: 1rem;
     grid-template-columns: repeat(auto-fill,minmax(10rem, 13rem));
     grid-auto-flow: row;
@@ -38,8 +47,8 @@ body{
 }
   
 .div-personaje, .card-personaje, .data-frente-personaje , .data-atras-personaje{
-    width: 13rem;
-    height: 13rem;
+    width: 12rem;
+    height: 12rem;
     border-radius: 0.8rem;  
 }
 
@@ -70,10 +79,11 @@ body{
     justify-content: center;
     background-color: #fff;
     transform: rotateX(180deg);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.data-atras-personaje>p{
-    font-size: 0.8rem;
+.data-atras-personaje>div>p{
+    font-size: 0.7rem;
     padding: 0 1.5rem;  
 }
 
@@ -89,14 +99,43 @@ body{
     color: rgb(58, 221, 17);
 }
 
+
 .filters{
+    border: 1px solid #7cfc00;
+    background-color: transparent;
     display: flex;
-    justify-content: flex-end;
-    align-items: stretch;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
     flex-wrap: wrap;
     padding: 1rem;
 }
 
 .filters>label{
-    color: #fff;
+    color:#7cfc00;
+    padding: 0 1rem;
+}
+
+.filters>button{
+    border: 1px solid #7cfc00;
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0 1rem;
+    color:#7cfc00;
+}
+
+.filters>select{
+    border: 1px solid #7cfc00;
+    background-color: transparent;
+    border-radius: 5px;
+    margin: 0 1rem;
+    padding: 0.5rem;
+    color: #7cfc00;
+}
+
+.showFilterCharacters{
+    border: 1px solid #7cfc00;
+    border-radius: 5px;
+    padding: 1.5rem 0;
 }

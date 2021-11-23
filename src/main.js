@@ -39,24 +39,23 @@ function changeFilterList() {
     let dataPersonajes = document.querySelector('#showAllCharacters');
 
     let dataPersonaje = data.results.map(function (result) {
-        
+        console.log(result.type)
         return `
-        <div class="card-personaje">
+        
             <div class="div-personaje">
                 <div class="data-frente-personaje" style="background-image:url(${result.image })">
-                
                     <div class="name-personaje-frente">
-                    <h5>${result.name}</h5>
+                        <h5>${result.name}</h5>
                     </div>
-
                 </div>
                
                 <div class="data-atras-personaje">
 
                     <div class="name-personaje-atras">
-                        <h5>${result.name}</h5>
+                        <h4>${result.name}</h4>
+                        <h6>${result.type}</h6>
                     </div>
-  
+                        
                     <div>
                         <p>Status: ${result.status}</p>
                         <p>Species: ${result.species}</p>
@@ -65,11 +64,13 @@ function changeFilterList() {
                         <p>Location: ${result.location.name}</p>
                     </div>
                 </div>
+            </div>
     `
      
     })
     // console.log(printData())
     dataPersonaje.forEach(function (element) {
+        
         let card = document.createElement("div");
         card.setAttribute('class', 'card-personaje')
 
