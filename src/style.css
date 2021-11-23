@@ -1303,7 +1303,7 @@ table {
   transition: 0.3s;
   border: none 1px #605e5e;
   transform: scale(1.15);
-  
+
 }
 
 /* .regionDiv{
@@ -1769,7 +1769,7 @@ color: white;
     #search {
       width: 60% !important;
     }
-  
+
     #botonBuscar {
       margin-left: calc(100% - 45%) !important;
     }
@@ -1939,7 +1939,7 @@ font-size: 1.2em;
     /*FORMATO AL CHART*/
     #container-stats h1 {
       font-size: 30px;
-  
+
       margin-top: 0px;
     }
     .title-chart {
