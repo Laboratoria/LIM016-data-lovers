@@ -63,7 +63,13 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
             /* IMAGEN DE LA PRIMERA O PRIMERAS EVOLUCIONES */
             const imagenEvolucion=document.createElement("img");
             imagenEvolucion.className="imagenEvolucion";
-            imagenEvolucion.src=pokemon[parseInt(numEvolucion)-1].img;
+            // BUSCAR DIRECCION DE LA IMAGEN DE LA PRIMERA EVOLUCION
+            let direccionImagenPriEvolucion;
+            for(let k=0; k<251; k++){
+              if(numEvolucion===pokemon[k].num){
+                direccionImagenPriEvolucion=pokemon[k].img;
+              }}
+            imagenEvolucion.src=direccionImagenPriEvolucion;
             conteModal.querySelector(".imgEvolucion1").appendChild(imagenEvolucion);
             /* NOMBRE DE LA PRIMERA O PRIMERAS EVOLUCIONES */
             const nomEvolucion = document.createElement("p");
@@ -102,7 +108,13 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
           if(parseInt(numEvolucion)<=251){
             const imagenEvolucion=document.createElement("img");
             imagenEvolucion.className="imagenEvolucion";
-            imagenEvolucion.src=pokemon[parseInt(numEvolucion)-1].img;
+            // BUSCAR DIRECCION DE LA IMAGEN DE LA SEGUNDA EVOLUCION
+            let direccionImagenSeguEvolucion;
+            for(let k=0; k<251; k++){
+              if(numEvolucion===pokemon[k].num){
+                direccionImagenSeguEvolucion=pokemon[k].img;
+              }}
+            imagenEvolucion.src=direccionImagenSeguEvolucion;
             conteModal.querySelector(".imgEvolucion2").appendChild(imagenEvolucion);
             /* NOMBRE DE LA SEGUNDA EVOLUCION */
             const nomNextEvolucion = document.createElement("p");
