@@ -4,6 +4,27 @@
     padding: 0;
     
 }
+
+/*---------------charts------*/
+.charts{
+    display:flex;
+
+    display:none;
+}
+.clickCharts{
+    background-color: #2be912;
+    border:none;
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: 700;
+}
+.chart-center{
+    display:flex;
+    justify-content: center;
+}
+.clickCharts:hover{
+    color:white;
+}
 .todo{  /* donde está encerra la info */
     font-weight: bold;
     width: 100%;
@@ -814,5 +835,16 @@ footer{
             height: 3rem;
             font-size: 0.9rem;
             font-weight: 800;
+        }
+        /*-----------------------Grafico----------------------------------------------------------------------*/
+        #graficas{
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .img-medallas{
+            margin-top: 0;
+        }
+        .grafico1{
+            width: 95%;
         }
 }
