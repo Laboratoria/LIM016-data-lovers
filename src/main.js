@@ -202,8 +202,6 @@ const contAthletes = (event,unicos) => {
   let ageAthlete= document.getElementById("age")
   ageAthlete.innerHTML= unicos.age;
   
-  let eventAthlete= document.getElementById("event")
-  eventAthlete.innerHTML= unicos.event; 
 }
 
 
