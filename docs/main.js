@@ -74,7 +74,6 @@ text_click.addEventListener("click", (e)=>{
 let link_female= document.getElementById("link_female");
 link_female.addEventListener("click", (e)=>{
   e.preventDefault(); 
-
   document.getElementById("contaiiner").style.display = "none"; 
   document.getElementById("female").style.display = "block";
   document.getElementById("multipleMedals").style.display = "none";
