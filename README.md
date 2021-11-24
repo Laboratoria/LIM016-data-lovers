@@ -57,7 +57,7 @@ Para entender mejor qué necesidades complementarias a la app tienen los usuario
 
 ### 3.2. ¿Qué dicen los usuarios?
 
-Se ha consultado a 5 personas que usan o se animarian a descargar y usar el aplicativo Pokemon Go y mencionan lo que necesitarian lo siguiente en una página informativa:
+Se ha consultado a 7 personas que usan o se animarian a descargar y usar el aplicativo Pokemon Go y mencionan lo que necesitarian lo siguiente en una página informativa:
 
 #### Usuario 1: Alex <img src="https://cdn-icons-png.flaticon.com/512/287/287226.png" width=18px> (jugador activo de Pokemon Go)
 
@@ -150,6 +150,11 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
 ## 4. Diseño de la Interfaz de Usuario<img src="https://cdn-icons-png.flaticon.com/512/188/188937.png" width=40px>
 
 ### Prototipo de baja fidelidad 📄
+### Pagina de inicio
+<div align=center><img src="https://user-images.githubusercontent.com/87873460/143137499-c5ed671e-ed7a-45df-9548-bb6a5631e4a8.png" width=40%></div>
+
+### Pagina de pokedex
+<div align=center><img src="https://user-images.githubusercontent.com/87873460/143137636-8000c412-016b-46b5-a83d-d79b9b47b962.png" width=40%></div>
 
 ### Prototipo de alta fidelidad 📱
 
