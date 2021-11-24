@@ -150,13 +150,34 @@ Se ha consultado a 7 personas que usan o se animarian a descargar y usar el apli
 ## 4. Diseño de la Interfaz de Usuario<img src="https://cdn-icons-png.flaticon.com/512/188/188937.png" width=40px>
 
 ### Prototipo de baja fidelidad 📄
-### Pagina de inicio
+#### Pagina de inicio
 <div align=center><img src="https://user-images.githubusercontent.com/87873460/143137499-c5ed671e-ed7a-45df-9548-bb6a5631e4a8.png" width=40%></div>
 
-### Pagina de pokedex
+#### Pagina de pokedex
 <div align=center><img src="https://user-images.githubusercontent.com/87873460/143137636-8000c412-016b-46b5-a83d-d79b9b47b962.png" width=40%></div>
 
 ### Prototipo de alta fidelidad 📱
+<div align="center">
+  
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/Desktop%20-%202.png"  width="600"><br><br>
+
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/Desktop%20-%207.png"  width="600"><br><br>
+
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/Desktop%20-%204.png"  width="600"><br><br>
+  
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/Desktop%20-%206.png"  width="600"><br><br>
+
+</div>
+
+<div align="center">
+  
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/iPhone%208%20-%202.png"  width="250">
+
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/iPhone%208%20-%203.png"  width="250">
+
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/iPhone%208%20-%204.png"  width="250">
+
+</div>
 
 ***
 
@@ -243,7 +264,7 @@ Se ha consultado a 7 personas que usan o se animarian a descargar y usar el apli
 
 <img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-ranking.PNG"  width="300">
 
-<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-stats.PNG"  width="300">
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-card.PNG"  width="300">
 
 <img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-stats.PNG"  width="300">
   
