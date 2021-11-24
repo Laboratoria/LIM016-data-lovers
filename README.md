@@ -186,6 +186,8 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
 
 ## 7. Producto final <img src="https://cdn-icons-png.flaticon.com/512/188/188931.png" width=35px>
 
+## PAGINA WEB EN COMPUTADORA
+
 ### PAGINA DE INICIO
 <div align="center">
 <img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/inicio1.PNG"  width="600"></div>
@@ -225,7 +227,26 @@ Se ha consultado a 5 personas que usan o se animarian a descargar y usar el apli
 
 </div>
 
-### POKEMON CARD INFORMATIVA
+## PAGINA WEB RESPONSIVE 
+
+<div align="center">
+<img  src=""  width="600"></div>
+
+<img  src=""  width="600"></div>
+
+<img  src=""  width="600"></div>
+
+<img  src=""  width="600"></div>
+
+<img  src=""  width="600"></div>
+
+<img  src=""  width="600"></div>
+
+<img  src=""  width="600"></div>
+
+</div>
+
+## POKEMON CARD INFORMATIVA
 
 <div align="center">
 <img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-1.PNG"  width="300">
