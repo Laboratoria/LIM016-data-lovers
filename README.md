@@ -235,25 +235,28 @@ Se ha consultado a 7 personas que usan o se animarian a descargar y usar el apli
 ## PAGINA WEB RESPONSIVE 
 
 <div align="center">
-<img  src=""  width="600"></div>
+<img  src="https://github.com/MerlyAnco/LIM016-data-lovers/blob/main/prototipo%20y%20final/responsive-intro.PNG"  width="300">
 
-<img  src=""  width="600"></div>
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-pokedex.PNG"  width="300">
 
-<img  src=""  width="600"></div>
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-menu.PNG"  width="300">
 
-<img  src=""  width="600"></div>
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-ranking.PNG"  width="300">
 
-<img  src=""  width="600"></div>
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-stats.PNG"  width="300">
 
-<img  src=""  width="600"></div>
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-stats.PNG"  width="300">
+  
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-tipos.PNG"  width="300">
 
-<img  src=""  width="600"></div>
+<img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/responsive-rareza.PNG"  width="300">
 
 </div>
 
 ## POKEMON CARD INFORMATIVA
 
 <div align="center">
+  
 <img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-1.PNG"  width="300">
 
 <img  src="https://raw.githubusercontent.com/MerlyAnco/LIM016-data-lovers/main/prototipo%20y%20final/card-2.PNG"  width="300">
