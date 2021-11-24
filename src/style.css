@@ -14,6 +14,18 @@ body {
   cursor: url("//rw-designer.com/cursor-view/45695.gif") 10 10, pointer;
 }
 
+::-webkit-scrollbar{
+  padding-top: 10px;
+  width: 12px;
+  background: rgba(235, 235, 235, 0.919);
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  border-radius:6px;
+  height:100px;
+}
+
 /* .activeButton:hover{
 background: none;
 } */
