@@ -1,6 +1,6 @@
 import { example } from './data.js';
 
-import filtros from './data.js'
+import filters from './data.js'
  
 import data from './data/rickandmorty/rickandmorty.js';
 
@@ -33,14 +33,26 @@ function changeFilterList() {
     }
 }
 
-// let arraydata;
-// function printData() {
+//------- MOSTRAR PERSONAJES ------>>>>>>>>>>>
+
+let arrayData = [];
+let dataRM = data.results.map(function (result) {
+    return arrayData.push(result)
+
+});
+// console.log(dataRM)
+
+
+// -------- FUNCION PrintData --------->
+
+function printData() {
 
     let dataPersonajes = document.querySelector('#showAllCharacters');
 
     let dataPersonaje = data.results.map(function (result) {
-        console.log(result.type)
-        return `
+        // console.log(result.type)
+        
+        let showCards = `
         
             <div class="div-personaje">
                 <div class="data-frente-personaje" style="background-image:url(${result.image })">
@@ -66,7 +78,8 @@ function changeFilterList() {
                 </div>
             </div>
     `
-     
+       return showCards;
+       
     })
     // console.log(printData())
     dataPersonaje.forEach(function (element) {
@@ -77,47 +90,140 @@ function changeFilterList() {
         card.innerHTML = element
 
         dataPersonajes.appendChild(card)
-    });
+    }); 
+ }
+// printData()
+
+//-------------------  BOTON "MOSTRAR TODO" -------------->>>>>
+
+
+let btnAll = document.getElementById("getAll");
+btnAll.addEventListener("click", function () {
+    document.getElementById("showFilters").style.display = "none";
+    printData()
+});
+
+
+//-------------------  BOTON "FILTRADO" -------------->>>>>
+
+let btnFilter = document.getElementById("filtrarDataPersonaje");
+btnFilter.addEventListener("click", function () {
+    document.getElementById("showFilters").style.display = "block";
+});
+
+
+// let filterByCategory = {};
+
+// filterByCategory['gender'] = ['Femenino', 'Masculino', 'Sin género', 'Desconocido'];
+// filterByCategory['species'] = ['Animal', 'Mutante', 'Desconocido', 'Enfermedad', 'Extraterrestre', 'Humano', 'Humanoide', 'Mitologia', 'Parásito', 'Poopybutthole', 'Robot', 'Vampiro'];
+// filterByCategory['status'] = ['Desconocido', 'Muerto', 'Vivo'];
+
+// document.getElementById("filterType").addEventListener("change", changeFilterList);
+
+// function changeFilterList() {
+
+//     let filterTypeList = document.getElementById("filterType");
+//     let categoryList = document.getElementById("byCategory");
+//     let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
+//     let filters = filterByCategory[selFilter];
+
+//     while (categoryList.options.length) {
+//         categoryList.remove(0);
+//     }
+
+//     if (filters) {
+//         for (let i = 0; i < filters.length; i++) {
+//             let filter = new Option(filters[i], i);
+//             categoryList.options.add(filter);
+//         }
+//     }
 // }
 
 
-// ----------- MUESTRA DE CARDS PERSONAJES  ------------//
 
-// const cardsPersonajes = document.querySelector('#cards-personajes');
+// let filterType = document.getElementById("filterType");
+// let category = document.getElementById("byCategory");
 
-// const cardPersonaje = data.results.map(function (result) {
+// ['Femenino', 'Masculino', 'Sin género', 'Desconocido'];
+ 
 
-//     return `
-              
-//         <div class="card-titulo">
-//             <h3>Name:${result.name} </h3>
-//         </div>
-//         <div class="card-imagen">
-//             <img src="${result.image}" alt="imagen">
-//         </div>
-//         <div class="card-datos">
-//         <ul>
-//             <li>Status:${result.status}</li>
-//             <li>Species:${result.species}</li>
-//             <li>Gender:${result.gender}</li>
-//             <li>Origin:${result.origin.name}</li>
-//             <li>Location:${result.location.name}</li>
-//         </ul>
 
-//         </div>
-//     `
-// });
+document.getElementById("filterType").addEventListener("change",filterGender)
+let arrayFilters = [];
 
-// cardPersonaje.forEach(function (element) {
-//     let card = document.createElement("div");
-//     card.setAttribute('class', 'card-personaje')
+function filterGender() {
+        
 
-//     card.innerHTML = element
+        let filterTypeList = document.getElementById("filterType");
+        let category = document.getElementById("byCategory");
+        let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
+        let filters = filterByCategory[selFilter];
     
-//     cardsPersonajes.appendChild(card)
-// });
+        while (category.options.length) {
+            category.remove(0);
+        }
 
-// -------- FIN DE CARDS PERSONAJES  ------------//
+        if (filters) {
+            for (let i = 0; i < filters.length; i++) {
+                console.log(filters[i])
+                // arrayFilters.push(filters[i])
+                // category.options.add(filters);
+
+                }
+        } console.log(arrayFilters)
+}
+     
+
+    
+    // filterGender()
+// filterType.addEventListener("change",
+    // function () {
+    //     const selectOption = this.options[filterType.selectedIndex].value;
+
+    //     switch (selectOption) {
+    //         case "gender":
+    //             alert(selectOption);
+
+
+
+    //             break;
+            
+    //         case "species":
+
+    //             alert("PRueba1")
+    //             break;
+            
+    //         case "status":
+    //             alert("PRueba2")
+    //             break;
+            
+    //         default:
+    //             console.log("sigue funcionando, tranquila")
+    //             break;
+    //     }
+    
+    // }
+// );
+
+
+
+// if (filterTypeList == gender) {
+//     if (condition) {
+        
+//     }
+    
+// }
+
+
+//---------- PRUEBAS DE CONECTAR DATA CON MAIN ------------>>>
+
+
+
+let parrafo = document.getElementById("resultado")
+
+parrafo.innerHTML = filters(dataRM);
+
+// console.log(parrafo.innerHTML);
 
 
 //---------> FILTRO GENERO <------------------- //
@@ -197,25 +303,3 @@ function changeFilterList() {
 // });
     
 /////-----------  Fin busqueda por personaje
-
-//filtrando
-// let arrayEspecie = []
-// data.results.forEach(element => {
-//     //console.log(element.name)
-//     arrayEspecie.push(element.species)
-// });
-// console.log(arrayEspecie)
-
-// let selectop = document.getElementById("name__personaje")
-// //console.log(selectop.value)
-
-// for (let i = 0; i < arrayEspecie.length; i++) {
-//     let op = document.createElement("option")
-//     selectop.appendChild(op)
-//     let valueOption = arrayEspecie[i];
-//     op.setAttribute("value", `${valueOption}`)
-//     op.textContent = valueOption
-//     //console.log(valueOption)
-
-// }
-// console.log(selectop)

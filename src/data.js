@@ -8,26 +8,24 @@ export const anotherExample = () => {
   return 'OMG';
 };
 
-const filtros = {
+const filters = function (data) {
+ 
+//   const femaleCharacters = data.filter(genderCharacter => {
+      
+//     // if (genderCharacter.gender == condition) {
+//     //   return genderCharacter
+//     // }
+     
+//     return femaleCharacters
+
+//   })
+  
+  return  console.log("hola")
+}
+
+  
     
-  genero: function (gender) {
-
-    let generoSelect;
-
-    if (gender == "F") {
-      
-      
-         
-    }
-
-    else {
-
-      generoSelect = "Male"
-
-    }
-
-    return generoSelect
-  }
+  
 
   // data.results.map((dp) => {
   //   if (genero == "F" && dp.gender == "Female") {
@@ -85,10 +83,10 @@ const filtros = {
   // })
 
 
-};
 
 
 
 
 
-export default filtros;
+
+export default filters;
