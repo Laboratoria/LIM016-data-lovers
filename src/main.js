@@ -165,7 +165,7 @@ filterButtonsProducer.forEach((el) => {
   })
   return filterButtonsProducer;
    })
-   
+
  //funcion para ordenar las peliculas alfabeticamente 
 const filterButtonAsc =document.getElementById("asc");
 const filterButtonDesc =document.getElementById("desc");
@@ -226,6 +226,9 @@ const filterButtonDesc =document.getElementById("desc");
           return filmoItems(newData) 
     })
  
+
+
+  
 //document.getElementBy
 /*
  const resultado= document.querySelector ("#resultado");
