@@ -93,4 +93,4 @@ export const sortPeopleLocationsVehicles = (array,llave,property,parametro) => {
      return arrayItem[parametro]=== property 
   });
   return arrayProperty
-};
+}
