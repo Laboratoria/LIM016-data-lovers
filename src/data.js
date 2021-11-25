@@ -47,7 +47,6 @@ export const sortData = (array,property,parametro) => {
   const arrayProperty = array.filter((arrayItem)=> {
      return arrayItem[parametro]=== property
   });
-  console.log(arrayProperty);
   return arrayProperty
 };
 

@@ -53,25 +53,7 @@ let btnContainerDirector= document.querySelector(".btnContainerDirector")
 let btnContainerProducer=document.querySelector(".btnContainerProducer")
 
 function filmoItems (films){
-const sectionFilm = films.forEach((el) => {
-  const createElement= document.createElement("div")
-  createElement.setAttribute("class", 'contenedorCardFilm');
-    const template= ` <div class = "conteinerTextFilm">
-    <ul>
-   <li>Titulo: ${el.title} </li>
-   <li>Descripción: ${el.description}</li>
-   <li>Productor: ${el.producer}</li>
-   <li>Score: ${el.rt_score}</li>
-   <li>Director ${el.director}</li>
-   <li>Año: ${el.release_date}</li>
-</ul>
-</div>
-<div class="box1"><img src= ${el.poster} id ="imgPosterFilm"></div> `;
- createElement.innerHTML= template
- conteinerScrollFilmo.appendChild(createElement);
- return template;
-} )
-};
+}
 filmoItems(films);
 
 
@@ -219,8 +201,8 @@ const filterButtonDesc =document.getElementById("desc");
     const formulario= document.querySelector("#fomulario"); 
     const boton= document.querySelector("#boton");
 
-    boton.addEventListener("click",function(e) {
-      let textInputSearch = formulario.e.value;
+    boton.addEventListener("click",function() {
+      let textInputSearch = formulario.e.value; 
       let newData=filterItems(textInputSearch, films)
           conteinerScrollFilmo.innerHTML=" ";
           return filmoItems(newData) 
