@@ -186,9 +186,6 @@
             <input type="search" placeholder="Buscar..." class="btn-buscar" id="formulario">
               <button class="btn-info" id="boton">Buscar</button>
 
-            <ul id="resultado">
-              <li>    </li>
-            </ul>
         </div>     
        </div>
 
@@ -212,27 +209,33 @@
             <ul class=navBtn> 
 
               <li><button id="">Género</button>
-                <ul>
-                    <li><button id="Mujer">Mujer</button></li>
-                    <li><button id="Hombre">Hombre</button></li>
-                    <li><button id="NA">NA</button></li>
+                <ul class="btnContainerGenero">
+                    <li><button class="filterGenero" data-id="Female">Mujer</button></li>
+                    <li><button class="filterGenero" data-id="Male">Hombre</button></li>
+                    <li><button class="filterGenero" data-id="NA">NA</button></li>
                 </ul>
               </li>
               <li><button id="">Color de Ojos</button>
-              <ul>
-                    <li><button id="Oscuros">Oscuros</button>
+              <ul class="btnContainerColorDeOjos">
+                    <li><button class="filterColorDeOjos" data-id="Female">Oscuros</button>
                     </li>
-                    <li><button id="Otros Colores">Otros Colores</button> 
+                     <!-- EN EL BOTON SE AGREGARA BLACK. BROWN, DARK BROWN, LIGHT BROWN, DARK BROWN/BLACK!-->
+                    <li><button class="filterColorDeOjos" data-id="Female">Otros Colores</button> 
                     </li>
-                    <li><button id="NA">NA</button></li>
+                     <!-- EN EL BOTON SE AGREGARA UNA FUNCION QUE SOLICITE AQUELLOS COLORES DE OJOS QUE NO SEAN SELECCIONADOS!-->
+                    <li><button class="filterColorDeOjos" data-id="Female">NA</button></li>
               </ul>
               </li>
               <li><button id="">Color de Cabello</button>
-                <ul>  
-                  <li><button type="button" id="Negros">Negros</button></li>
-                    <li><button id="Marron">Marron</button></li>
-                    <li><button id="Otros Colores">Otros Colores</button> </li>
-                    <li><button id="NA">NA</button></li>
+                <ul class="btnContainerColorDeCabello">  
+                  <li><button class="filterColorDeCabello" data-id="Female">Negros</button></li>
+                   <!-- EN EL BOTON SE AGREGARA BLACK. BROWN, DARK BROWN, LIGHT BROWN, DARK BROWN/BLACK!-->
+                    <li><button class="filterColorDeCabello" data-id="Female">Marron</button></li>
+                     <!-- EN EL BOTON SE AGREGARA UNA FUNCION QUE SOLICITE AQUELLOS COLORES DE CABELLO QUE NO SEAN SELECCIONADOS!-->
+                    <li><button class="filterColorDeCabello" data-id="Female">Otros Colores</button> </li>
+                     <!-- EN EL BOTON SE AGREGARA BLACK. BROWN, DARK BROWN, LIGHT BROWN, DARK BROWN/BLACK!-->
+                    <li><button class="filterColorDeCabello" data-id="Female">NA</button></li>
+                     <!-- EN EL BOTON SE AGREGARA BLACK. BROWN, DARK BROWN, LIGHT BROWN, DARK BROWN/BLACK!-->
               </ul>
               <li><button id="">Edad</button>
                 <ul>  
@@ -290,8 +293,8 @@
                   </ul>
                     <li><button id="Longitud"> Longitud </button>
                       <ul>
-                        <li><button id="Ascendente">⇅ Ascendente  </button></li>
-                        <li><button id="Descendente">⇵ Descendente </button></li>
+                        <li><button id="scoreAscL">⇅ Ascendente  </button></li>
+                        <li><button  id="scoreDescL">⇵ Descendente </button></li>
                       </ul>
               <li><button id="Clean">Clean</button></li>
               </ul>
@@ -343,7 +346,7 @@
                 <!-- EN EL BOTON NA SE AGREGARA THE UNDER FLOATS!-->
               </ul>
               </li>
-              <li><button id="Clean">Clean</button></li>
+              <li><button id="clean">Clean</button></li>
               </ul>
           </div>
 
