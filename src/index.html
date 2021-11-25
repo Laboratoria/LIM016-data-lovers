@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400&display=swap" rel="stylesheet">
   </head>
   
-
   <body>
     <!-- <header class="header">
       <nav>
@@ -37,63 +36,51 @@
     </section> -->
       
     <section id="personajes" class="data">
-          <!-- titulo -->
-          <div class="titulo">
-            <h2>PERSONAJES</h2>
-          </div>
-          <!-- filtrado -->
-          <div class="filter">
-            <!-- seccion de filtrado -->
-            <div class="filters">
-              <label for="">Filtrar por:</label>
-              
-              <select name="type" id="filterType">
-                <option value="" disabled selected>Seleccione el tipo</option>
-                <option value="gender">Género</option>
-                <option value="species">Especie</option>
-                <option value="status">Estado de vida</option>
-                <!-- <option value="origin">Lugar de origen</option> -->
-                <!-- <option value="localization">Lugar donde vive</option> -->
-              </select>
-              <select name="" id="byCategory">
-                <option value="" disabled selected>Seleccione la categoría</option>
-              </select>
-              
-              <button id="filtrarDataPersonaje"> Filtrar</button>
-              
-              <button id="getAll">Mostrar todo</button>
-
-              <div class="search"></div>
-
-              <label for="">Ordenar por nombre</label>
-              <select name="sort" id="sort">
-                <option value="ascendente">A-Z</option>
-                <option value="descendente">Z-A</option>
-              </select>
-            </div>
-
-            <!-- seccion de resultado del filtrado -->
-            
-            <div id="showFilterCharacters" class="showFilterCharacters">
-              <div id="showFilters" class="showFilters">
-                <p id="resultado"></p>
-              </div>
-              
-              <div id="showAllCharacters" class="cards">
-              </div>
-
-            </div>
-       
-
-          </div>
-
-        </select>
-
-      <div class="paginacion">
-        
+      <!-- titulo -->
+      <div class="titulo">
+        <h2>PERSONAJES</h2>
       </div>
+      <!-- filtrado -->
+      <div class="filter">
+        <!-- sección de filtrado -->
+        <div class="filters">
+          <label for="">Filtrar por:</label>
+          
+          <select name="type" id="filterType">
+            <option value="" disabled selected>Seleccione el tipo</option>
+            <option value="gender">Género</option>
+            <option value="species">Especie</option>
+            <option value="status">Estado de vida</option>
+            <!-- <option value="origin">Lugar de origen</option> -->
+            <!-- <option value="localization">Lugar donde vive</option> -->
+          </select>
 
+          <select name="" id="byCategory">
+            <option value="" disabled selected>Seleccione la categoría</option>
+          </select>
+          <!-- Botones de filtrado -->
+          <button id="filtrarDataPersonaje"> Filtrar</button>
+          
+          <button id="getAll">Mostrar todo</button>
+
+          <div class="search"></div>
+
+          <label for="">Ordenar por nombre</label>
+          <select name="sort" id="sort">
+            <option value="ascendente">A-Z</option>
+            <option value="descendente">Z-A</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- seccion de resultado del filtrado -->
+      <div id="showAllCharacters" class="cards"></div> 
+         
+      <!-- paginación -->
+      <div class="paginacion"></div>
+                
     </section>
+    
     <script src="main.js" type="module"></script>
 
   </body>
