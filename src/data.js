@@ -42,7 +42,7 @@ export const ordenAlfabeticoDesc = (array,parametro) => {
 return compareTitle
 }
 
-//Filtrar por productores y directores
+//Filtrar por productores y directores!!
 export const sortData = (array,property,parametro) => {  
   const arrayProperty = array.filter((arrayItem)=> {
      return arrayItem[parametro]=== property
