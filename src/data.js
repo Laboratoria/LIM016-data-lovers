@@ -42,12 +42,11 @@ export const ordenAlfabeticoDesc = (array,parametro) => {
 return compareTitle
 }
 
-//Filtrar por productores y directores!!
+//Filtrar por productores y directores
 export const sortData = (array,property,parametro) => {  
   const arrayProperty = array.filter((arrayItem)=> {
      return arrayItem[parametro]=== property
   });
-  //nuevo comentario
   return arrayProperty
 };
 
@@ -66,8 +65,27 @@ export const ordenNumericoDesc = (array,parametro) => {
   return compareNumber
 }
 
+//Filtrar por lenght ascendente
+export const ordenNumericoAscL = (array,parametro,llave) => {
+  let sortArray = [];
+  for(let i=0; i<array.length;i++){
+    sortArray.push(array[i][llave])
+  }
+
+  if ((sortArray.includes(Number))!) {
+  const compareNumber = sortArray.flat(1).sort((a, b) => {
+    return b[parametro] - a[parametro];
+  });
+  return compareNumber
+  }
+}
+
+
+
+
+
+
 export const sortPeopleLocationsVehicles = (array,llave,property,parametro) => { 
-//nuevo comentario
     let sortArray = [];
     for(let i=0; i<array.length;i++){
       sortArray.push(array[i][llave])
@@ -77,5 +95,3 @@ export const sortPeopleLocationsVehicles = (array,llave,property,parametro) => {
   });
   return arrayProperty
 };
-
-/*prueba xxxxxx*/

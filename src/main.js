@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import {filterPeopleLocationsVehicles, sortData, ordenAlfabeticoAsc, ordenAlfabeticoDesc, ordenNumericoAsc, ordenNumericoDesc, sortPeopleLocationsVehicles} from  './data.js';
+import {filterPeopleLocationsVehicles, sortData, ordenAlfabeticoAsc, ordenAlfabeticoDesc, ordenNumericoAsc, ordenNumericoDesc, sortPeopleLocationsVehicles, ordenNumericoAscL} from  './data.js';
 
 let films = [];
 films = data.films;
@@ -51,8 +51,9 @@ const conteinerScrollVehicles = document.getElementById("conteinerScrollVehicles
 
 let btnContainerDirector= document.querySelector(".btnContainerDirector");
 let btnContainerProducer=document.querySelector(".btnContainerProducer");
-//let btnContainerTerreno= document.querySelector(".btnContainerTerreno");
+let btnContainerTerreno= document.querySelector(".btnContainerTerreno");
 let btnContainerClima=document.querySelector(".btnContainerClima");
+let btnContainerGenero= document.querySelector(".btnContainerGenero");
 
 function filmoItems (films){
 films.forEach((el) => {
@@ -76,9 +77,9 @@ films.forEach((el) => {
 }
 
 filmoItems(films);
-//Comengtario para git
 
-filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {    
+function peopleItems (callback) {
+callback.forEach((el) => {    
   const createElement= document.createElement("div")
   createElement.setAttribute("class", 'contenedorCardPeople');
   const template1= `<div id= "divCardPeople">
@@ -99,9 +100,9 @@ createElement.innerHTML= template1;
 conteinerScrollPeople.appendChild(createElement);
 return template1;
 });
+}
+peopleItems (filterPeopleLocationsVehicles("people", films).flat(1))
 
-
-  /* <li>Residentes: ${el.residents[0].name}</li> */
   function locationItems (callback) {
 callback.forEach((el) => {    
   const createElement= document.createElement("div")
@@ -123,7 +124,8 @@ return template2;
   }
 locationItems(filterPeopleLocationsVehicles("locations", films).flat(2))
 
-filterPeopleLocationsVehicles("vehicles", films).flat(1).forEach((el) => {    
+function vehicleItems (callback) {
+callback.forEach((el) => {    
   const createElement= document.createElement("div");
   createElement.setAttribute("class", 'contenedorCardVehicles');
   const template3= `<div id= "divCardVehicles">
@@ -144,7 +146,9 @@ createElement.innerHTML= template3;
 conteinerScrollVehicles.appendChild(createElement);
 return template3;
 }); 
+}
 
+vehicleItems(filterPeopleLocationsVehicles("vehicles", films).flat(1))
 
 const filterButtonsDirector = btnContainerDirector.querySelectorAll(".filterDirector")
 const filterButtonsProducer = btnContainerProducer.querySelectorAll(".filterProducer")
@@ -248,8 +252,7 @@ const filterButtonDesc =document.getElementById("desc");
 
     boton.addEventListener("click", filtrar)
 
-    //Funcion para filtrar por clima!!
-    //const filterButtonsTerreno = btnContainerTerreno.querySelectorAll(".filterTerreno")
+    //Funcion para filtrar por clima
     const filterButtonsClima = btnContainerClima.querySelectorAll(".filterClima")
 
     filterButtonsClima.forEach((el) => {  
@@ -262,4 +265,62 @@ const filterButtonDesc =document.getElementById("desc");
           })
           return filterButtonsClima;
             })
+
+     //Funcion para filtrar por terreno
+     const filterButtonsTerreno = btnContainerTerreno.querySelectorAll(".filterTerreno")
+
+     filterButtonsTerreno.forEach((el) => {  
+      el.addEventListener("click",function(e) {
+        const property= e.currentTarget.dataset.id;
+        let newData= sortPeopleLocationsVehicles(films,"locations",property,"terrain")
+        conteinerScrollLocations.innerHTML=" ";
+            return locationItems(newData)    
+      })
+      return filterButtonsClima;
+        })
+
+      //boton clean
+        document.getElementById("clean").addEventListener("click",function() {
+          conteinerScrollLocations.innerHTML=" ";
+          locationItems(filterPeopleLocationsVehicles("locations", films).flat(2))   
+        })
+
+      //filtrar por genero
+      const filterButtonsGenero = btnContainerGenero.querySelectorAll(".filterGenero")
+
+      filterButtonsGenero.forEach((el) => {  
+      el.addEventListener("click",function(e) {
+        const property= e.currentTarget.dataset.id;
+        let newData= sortPeopleLocationsVehicles(films,"people",property,"gender")
+        conteinerScrollPeople.innerHTML=" ";
+            return peopleItems (newData)    
+      })
+      return filterButtonsGenero;
+        })
+
+        //filtrar por color de ojos
+      /*const filterButtonsGenero = btnContainerGenero.querySelectorAll(".filterGenero")
+
+      filterButtonsGenero.forEach((el) => {  
+      el.addEventListener("click",function(e) {
+        const property= e.currentTarget.dataset.id;
+        let newData= sortPeopleLocationsVehicles(films,"people",property,"gender")
+        conteinerScrollPeople.innerHTML=" ";
+            return peopleItems (newData)    
+      })
+      return filterButtonsGenero;
+        })*/
+
+
+  //filtrar por lenght ascendente y descendente
+  
+  const filterButtonscoreAscL =document.getElementById("scoreAscL");
+  //const filterButtonscoreDescL =document.getElementById("scoreDescL");
+
+  filterButtonscoreAscL.addEventListener("click",function() {
+      let newData=ordenNumericoAscL(films,"length","vehicles")
+          conteinerScrollVehicles.innerHTML=" ";
+          return vehicleItems(newData)   
+    })
+    
 
