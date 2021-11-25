@@ -47,6 +47,7 @@ export const sortData = (array,property,parametro) => {
   const arrayProperty = array.filter((arrayItem)=> {
      return arrayItem[parametro]=== property
   });
+  //nuevo comentario
   return arrayProperty
 };
 
@@ -66,7 +67,7 @@ export const ordenNumericoDesc = (array,parametro) => {
 }
 
 export const sortPeopleLocationsVehicles = (array,llave,property,parametro) => { 
-
+//nuevo comentario
     let sortArray = [];
     for(let i=0; i<array.length;i++){
       sortArray.push(array[i][llave])

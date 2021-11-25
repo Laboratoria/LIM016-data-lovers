@@ -224,7 +224,7 @@ const filterButtonDesc =document.getElementById("desc");
 
     let formulario= document.getElementById("formulario"); 
     const boton= document.getElementById("boton");
-
+//nuevo comentario
     const filtrar = () => {
       const texto= formulario.value.toLowerCase();
       const arrayFilms = [];
@@ -248,7 +248,7 @@ const filterButtonDesc =document.getElementById("desc");
 
     boton.addEventListener("click", filtrar)
 
-    //Funcion para filtrar por clima
+    //Funcion para filtrar por clima!!
     //const filterButtonsTerreno = btnContainerTerreno.querySelectorAll(".filterTerreno")
     const filterButtonsClima = btnContainerClima.querySelectorAll(".filterClima")
 
