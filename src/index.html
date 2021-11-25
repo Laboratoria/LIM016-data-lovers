@@ -183,7 +183,7 @@
           </div>
 
           <div class="buscar">
-            <input type="text" class="btn-buscar" id="formulario"  required>
+            <input type="search" placeholder="Buscar..." class="btn-buscar" id="formulario">
               <button class="btn-info" id="boton">Buscar</button>
 
             <ul id="resultado">
@@ -318,19 +318,29 @@
           <div class="divbtnsFilter">
             <ul class=navBtn> 
 
-              <li><button id=""> Clima </button>
-                <ul>
-                    <li><button id="Tropical">Tropical</button></li>
-                    <li><button  id="Frio">Frio</button></li> 
-                    <li><button  id="Cálido">Cálido</button></li>
-                    <li><button  id="Continental">Continental</button></li>
-                </ul>
+              <li><button> Clima </button>
+                <ul class="btnContainerClima">
+                    <li><button class="filterClima" data-id="Tropical">Tropical</button></li>
+                    <li><button class="filterClima" data-id="Wet">Húmedo</button></li> 
+                    <!-- EN EL BOTON SE AGREGARA DUMP!-->
+                    <li><button class="filterClima" data-id="Warm">Cálido</button></li>
+                    <!-- EN EL BOTON SE AGREGARA DRY Y MILD!-->
+                    <li><button class="filterClima" data-id="Continental">Continental</button></li>
+                  </ul>
               </li>
-              <li><button  id="">Terrenos</button>
-              <ul>
-                <li><button id="Mar">Mar</button></li>
-                <li><button  id="Montañoso"> Montañoso </button></li>
-                <li><button  id="Ciudad"> Ciudad </button></li>
+              <li><button>Terrenos</button>
+              <ul class="btnContainerTerreno">
+                <li><button class="filterTerreno" data-id="Ocean">Maritimo</button></li>
+                <!-- EN EL BOTON SE AGREGARA EARTHSEA!-->
+                <li><button class="filterTerreno" data-id="Mountain"> Montañoso </button></li>
+                <!-- EN EL BOTON SE AGREGARA HILL!-->
+                <li><button class="filterTerreno" data-id="City"> Ciudad </button></li>
+                <!-- EN EL BOTON SE AGREGARA PLAIN!-->
+                <li><button class="filterTerreno" data-id="River">Fluvial</button></li>
+                <li><button class="filterTerreno" data-id="Forest">Bosques</button></li>
+                <li><button class="filterTerreno" data-id="Marsh">Pantanoso</button></li>
+                <li><button class="filterTerreno" data-id="TODO">NA</button></li>
+                <!-- EN EL BOTON NA SE AGREGARA THE UNDER FLOATS!-->
               </ul>
               </li>
               <li><button id="Clean">Clean</button></li>
