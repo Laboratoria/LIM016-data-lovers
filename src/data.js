@@ -10,12 +10,12 @@ export const filterPeopleLocationsVehicles = (property, array) => {
 };
 
 //Barra de navegacion
-export const filterItems = (textInputSearch, array) => {
-  const searchInput = array.filter((el) =>
-    el.toLowerCase().indexOf(textInputSearch.toLowerCase()) > -1
-  );
+/*export const filterItems = (textInputSearch, array) => {
+  const searchInput = array.forEach((el) => {
+   return el.toLowerCase().indexOf(textInputSearch.toLowerCase()) > -1
+  });
   return searchInput
-}
+}*/
 
 //Ordenar alfabticamente ascendente y descendente
 export const ordenAlfabeticoAsc = (array,parametro) => {
@@ -64,3 +64,15 @@ export const ordenNumericoDesc = (array,parametro) => {
   });
   return compareNumber
 }
+
+export const sortPeopleLocationsVehicles = (array,llave,property,parametro) => { 
+
+    let sortArray = [];
+    for(let i=0; i<array.length;i++){
+      sortArray.push(array[i][llave])
+    }
+    const arrayProperty = sortArray.flat(2).filter((arrayItem)=> {
+     return arrayItem[parametro]=== property 
+  });
+  return arrayProperty
+};
