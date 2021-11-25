@@ -9,20 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400&display=swap" rel="stylesheet">
   </head>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="">Inicio</a></li>
-        <li><a href="">Personajes</a></li>
-        <li><a href="">Temporadas</a></li>
-      </ul>
-    </nav>
-  </header>
-
+  
   <body>
-    <section>
+    <!-- <header class="header">
+      <nav>
+        <ul>
+          <li><a href="">Inicio</a></li>
+          <li><a href="">Personajes</a></li>
+          <li><a href="">Temporadas</a></li>
+        </ul>
+      </nav>
+    </header> -->
+
+    <!-- <section id="home">
       <div id="home-personajes" class="carrusel">
         <h2 class="home-titulo">PERSONAJES</h2>
+
         <div>
           <img id="btn-anterior" class="btn-carrusel" src="#" alt="btnanterior">
           <img id="btn-siguiente" class="btn-carrusel" src="#" alt="btnsiguiente">
@@ -31,13 +33,57 @@
           </div>
         </div>
       </div>
+    </section> -->
+      
+    <section id="personajes" class="data">
+      <!-- titulo -->
+      <div class="titulo">
+        <h2>PERSONAJES</h2>
+      </div>
+      <!-- filtrado -->
+      <div class="filter">
+        <!-- sección de filtrado -->
+        <div class="filters">
+          <label for="">Filtrar por:</label>
+          
+          <select name="type" id="filterType">
+            <option value="" disabled selected>Seleccione el tipo</option>
+            <option value="gender">Género</option>
+            <option value="species">Especie</option>
+            <option value="status">Estado de vida</option>
+            <!-- <option value="origin">Lugar de origen</option> -->
+            <!-- <option value="localization">Lugar donde vive</option> -->
+          </select>
 
+          <select name="" id="byCategory">
+            <option value="" disabled selected>Seleccione la categoría</option>
+          </select>
+          <!-- Botones de filtrado -->
+          <!-- <button id="filtrarDataPersonaje"> Filtrar</button> -->
+          
+          <button id="getAll">Mostrar todo</button>
+
+          <div class="search"></div>
+
+          <label for="">Ordenar por nombre</label>
+          <select name="sort" id="sort">
+            <option value="ascendente">A-Z</option>
+            <option value="descendente">Z-A</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- seccion de resultado del filtrado -->
+      <div id="showAllCharacters" class="cards"></div> 
+         
+      <!-- paginación -->
+      <div class="paginacion"></div>
+                
     </section>
-    <div id="root"></div>
-    <section class="data">
-      <p id="data-personaje"></p>
-    </section>
+
     <script src="main.js" type="module"></script>
 
   </body>
 </html>
+
+

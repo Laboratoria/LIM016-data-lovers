@@ -1,13 +1,12 @@
-// estas funciones son de ejemplo
-
 export const example = () => {
+
   return 'example';
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+export const filters = function (data, condicion) {
 
-export const data = () => {
-  return data;
+  return console.log(data, condicion)
+  // return data.results.filter((filtro) => filtro.gender == condicion)
+
+  //  arrayData.filter((personaje) => personaje.gender === "Female");
 };
