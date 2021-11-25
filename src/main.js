@@ -305,6 +305,8 @@ const filterButtonDesc =document.getElementById("desc");
       el.addEventListener("click",function(e) {
         const property= e.currentTarget.dataset.id;
         let newData= sortPeopleLocationsVehicles(films,"people",property,"gender")
+        let x= 
+        
         conteinerScrollPeople.innerHTML=" ";
             return peopleItems (newData)    
       })
