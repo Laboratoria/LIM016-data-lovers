@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import {filterPeopleLocationsVehicles, sortData, ordenAlfabeticoAsc, ordenAlfabeticoDesc, ordenNumericoAsc, ordenNumericoDesc, sortPeopleLocationsVehicles} from  './data.js';
+import {filterPeopleLocationsVehicles, sortData, ordenAlfabeticoAsc, ordenAlfabeticoDesc, ordenNumericoAsc, ordenNumericoDesc, filterItems} from  './data.js';
 
 let films = [];
 films = data.films;
@@ -49,40 +49,13 @@ const conteinerScrollPeople = document.getElementById("conteinerScrollPeople");
 const conteinerScrollLocations = document.getElementById("conteinerScrollLocations");
 const conteinerScrollVehicles = document.getElementById("conteinerScrollVehicles");
 
-let btnContainerDirector= document.querySelector(".btnContainerDirector");
-let btnContainerProducer=document.querySelector(".btnContainerProducer");
-//let btnContainerTerreno= document.querySelector(".btnContainerTerreno");
-let btnContainerClima=document.querySelector(".btnContainerClima");
+let btnContainerDirector= document.querySelector(".btnContainerDirector")
+let btnContainerProducer=document.querySelector(".btnContainerProducer")
 
-<<<<<<< HEAD
-function filmoItems (filterItems){
+function filmoItems (filma){
 }
 filmoItems(films);
-=======
-function filmoItems (films){
-films.forEach((el) => {
-  const createElement= document.createElement("div")
-  createElement.setAttribute("class", 'contenedorCardFilm');
-    const template= ` <div class = "conteinerTextFilm">
-    <ul>
-   <li>Titulo: ${el.title} </li>
-   <li>Descripción: ${el.description}</li>
-   <li>Productor: ${el.producer}</li>
-   <li>Score: ${el.rt_score}</li>
-   <li>Director ${el.director}</li>
-   <li>Año: ${el.release_date}</li>
-</ul>
-</div>
-<div class="box1"><img src= ${el.poster} id ="imgPosterFilm"></div> `;
- createElement.innerHTML= template
- conteinerScrollFilmo.appendChild(createElement);
- return template;
-} )
-}
->>>>>>> e2454501d659a41f42f73b22af3c4102bce44905
 
-filmoItems(films);
-//Comengtario para git
 
 filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {    
   const createElement= document.createElement("div")
@@ -108,8 +81,7 @@ return template1;
 
 
   /* <li>Residentes: ${el.residents[0].name}</li> */
-  function locationItems (callback) {
-callback.forEach((el) => {    
+filterPeopleLocationsVehicles("locations", films).flat(2).forEach((el) => {    
   const createElement= document.createElement("div")
   createElement.setAttribute("class", 'contenedorCardLocations');
   const template2= `<div id= "divCardLocations">
@@ -126,8 +98,7 @@ createElement.innerHTML= template2;
 conteinerScrollLocations.appendChild(createElement);
 return template2;
 });
-  }
-locationItems(filterPeopleLocationsVehicles("locations", films).flat(2))
+
 
 filterPeopleLocationsVehicles("vehicles", films).flat(1).forEach((el) => {    
   const createElement= document.createElement("div");
@@ -227,8 +198,9 @@ const filterButtonDesc =document.getElementById("desc");
 
 
     //funcion para la barra de busqueda
+    const formulario= document.querySelector("#fomulario"); 
+    const boton= document.querySelector("#boton");
 
-<<<<<<< HEAD
     boton.addEventListener("click",function() {
       let textInputSearch = formulario.e.value; 
       let newData=filterItems(textInputSearch, films)
@@ -264,49 +236,3 @@ const filterButtonDesc =document.getElementById("desc");
  boton.addEventListener("click", filtrar);
  fomulario.addEventListener("keyup", filtrar);
  filtrar ();*/
-=======
-    let formulario= document.getElementById("formulario"); 
-    const boton= document.getElementById("boton");
-
-    const filtrar = () => {
-      const texto= formulario.value.toLowerCase();
-      const arrayFilms = [];
-     //console.log("texto escrito", texto)
-          films.forEach((film) => {
-          let textTitle= film.title.toLowerCase();
-         //console.log("titulo escrito", textTitle)
-            if (textTitle.includes(texto)){
-              arrayFilms.push(film)
-            //conteinerScrollFilmo.innerHTML=" Lo encontraste";
-            }
-           /* else {
-              console.log("no lo encontro")
-            //conteinerScrollFilmo.innerHTML=" Lo sentimos pon algo";
-           }*/
-        })
-        //console.log(arrayFilms)
-        conteinerScrollFilmo.innerHTML=" ";
-        filmoItems(arrayFilms) 
-    }
-
-    boton.addEventListener("click", filtrar)
-
-    //Funcion para filtrar por clima
-    //const filterButtonsTerreno = btnContainerTerreno.querySelectorAll(".filterTerreno")
-    const filterButtonsClima = btnContainerClima.querySelectorAll(".filterClima")
-
-    filterButtonsClima.forEach((el) => {  
-          el.addEventListener("click",function(e) {
-            const property= e.currentTarget.dataset.id;
-            let newData= sortPeopleLocationsVehicles(films,"locations",property,"climate")
-            
-            conteinerScrollLocations.innerHTML=" ";
-                return locationItems(newData)    
-          })
-          return filterButtonsClima;
-            })
-          
-            
-
-   
->>>>>>> e2454501d659a41f42f73b22af3c4102bce44905
