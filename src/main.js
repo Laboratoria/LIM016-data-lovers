@@ -7,6 +7,7 @@ import data from "./data/rickandmorty/rickandmorty.js";
 let filterByCategory = {};
 
 filterByCategory["gender"] = [
+  "Seleccione un género",
   "Femenino",
   "Masculino",
   "Sin género",
@@ -41,75 +42,68 @@ function changeFilterList() {
 
   let filters = filterByCategory[selFilter];
 
-  console.log(filters);
-
   while (categoryList.options.length) {
-    categoryList.remove(0);
-  }
-
-  if (filters) {
-    for (let i = 0; i < filters.length; i++) {
-      let filter = new Option(filters[i], i);
-      categoryList.options.add(filter);
+      categoryList.remove(0);
     }
+    
+    if (filters) {
+        for (let i = 0; i < filters.length; i++) {
+            let filter = new Option(filters[i], i);
+            categoryList.options.add(filter);
+        }
     console.log(categoryList);
   }
 }
 
 //------- MOSTRAR PERSONAJES ------>>>>>>>>>>>
 
-let arrayData = data.results;
+let allData = data.results; // Data general
 
-let dataRM = data.results.map((result) => result);
-
-console.log(dataRM);
+let filterData = data.results; // Data filtrada
 
 //---------- PRUEBAS DE CONECTAR DATA CON MAIN ------------>>>
 
 // seltCategoria.addEventListener("change", (e) => {
 //     let options = e.target.value
 
-//     filters(dataRM, options);
+//     filters(filterData, options);
 // });
-
 
 let selCategoria = document.getElementById("byCategory");
 
 selCategoria.addEventListener("change",
 
   function () {
-    document.getElementById("conteinerCharacters").remove();
 
     let category = this.options[selCategoria.selectedIndex].value;
 
     // console.log(category);
 
     switch (category) {
-      case "0":
-        dataRM = arrayData.filter((personaje) => personaje.gender === "Female");
-
-        console.log("FEMENINO");
-
-        printData(dataRM);
+        case "1":
+        filterData = allData.filter((personaje) => personaje.gender === "Female");
+            printData(filterData);
+            
         break;
 
-      case "1":
-        dataRM = arrayData.filter((personaje) => personaje.gender === "Male");
+      case "2":
+        filterData = allData.filter((personaje) => personaje.gender === "Male");
 
-        console.log(dataRM);
-        console.log("MASCULINO");
-
-        printData(dataRM);
-
-        break;
-
-      case "status":
-        console.log("Genderless");
+        printData(filterData);
 
         break;
 
       case "3":
-        console.log("unknown");
+        filterData = allData.filter((personaje) => personaje.gender === "Genderless");
+
+        printData(filterData);
+
+        break;
+
+      case "4":
+        filterData = allData.filter((personaje) => personaje.gender === "unknown");
+
+        printData(filterData);
 
         break;
 
@@ -165,15 +159,18 @@ function printData(data) {
     dataPersonajes.appendChild(card);
   });
 }
-printData(arrayData);
+printData(allData);
 
 //-------------------  BOTON "MOSTRAR TODO" -------------->>>>>
 
-// let btnAll = document.getElementById("getAll");
-// btnAll.addEventListener("click", function () {
-//     document.getElementById("showFilters").style.display = "none";
-//     printData()
-// });
+let btnAll = document.getElementById("getAll");
+btnAll.addEventListener("click", function () {
+    let dataPersonajes = document.querySelector("#showAllCharacters");
+    dataPersonajes.innerHTML = "";
+
+    printData(allData)
+
+});
 
 //-------------------  BOTON "FILTRADO" -------------->>>>>
 
