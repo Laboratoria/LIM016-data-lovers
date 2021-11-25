@@ -1,6 +1,6 @@
-import { example } from './data.js';
+import { example, filters } from './data.js';
 
-import filters from './data.js'
+// import filters from './data.js'
  
 import data from './data/rickandmorty/rickandmorty.js';
 
@@ -36,11 +36,33 @@ function changeFilterList() {
 //------- MOSTRAR PERSONAJES ------>>>>>>>>>>>
 
 let arrayData = [];
-let dataRM = data.results.map(function (result) {
-    return arrayData.push(result)
 
+let dataRM = data.results.map(result => result);
+
+    arrayData.push(dataRM)
+
+console.log(arrayData)
+ 
+// let filtrando = arrayData.filter(e => e.gender == "Male");
+
+
+//---------- PRUEBAS DE CONECTAR DATA CON MAIN ------------>>>
+
+let seltCategoria = document.getElementById("byCategory")
+
+seltCategoria.addEventListener("change", (e) => {
+    let options = e.target.value
+  
+    filters(dataRM, options);
 });
-// console.log(dataRM)
+
+
+
+//----------- Mostrar resultado----------------------------------->>>
+
+let parrafo = document.getElementById("resultado")
+
+parrafo.innerHTML = filters(dataRM);
 
 
 // -------- FUNCION PrintData --------->
@@ -112,68 +134,34 @@ btnFilter.addEventListener("click", function () {
 });
 
 
-// let filterByCategory = {};
+// -------------------  Pruebas filtros 2---------------------->>>>>>
 
-// filterByCategory['gender'] = ['Femenino', 'Masculino', 'Sin género', 'Desconocido'];
-// filterByCategory['species'] = ['Animal', 'Mutante', 'Desconocido', 'Enfermedad', 'Extraterrestre', 'Humano', 'Humanoide', 'Mitologia', 'Parásito', 'Poopybutthole', 'Robot', 'Vampiro'];
-// filterByCategory['status'] = ['Desconocido', 'Muerto', 'Vivo'];
+// document.getElementById("filterType").addEventListener("change",filterGender)
+// let arrayFilters = [];
 
-// document.getElementById("filterType").addEventListener("change", changeFilterList);
-
-// function changeFilterList() {
-
-//     let filterTypeList = document.getElementById("filterType");
-//     let categoryList = document.getElementById("byCategory");
-//     let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
-//     let filters = filterByCategory[selFilter];
-
-//     while (categoryList.options.length) {
-//         categoryList.remove(0);
-//     }
-
-//     if (filters) {
-//         for (let i = 0; i < filters.length; i++) {
-//             let filter = new Option(filters[i], i);
-//             categoryList.options.add(filter);
-//         }
-//     }
-// }
-
-
-
-// let filterType = document.getElementById("filterType");
-// let category = document.getElementById("byCategory");
-
-// ['Femenino', 'Masculino', 'Sin género', 'Desconocido'];
- 
-
-
-document.getElementById("filterType").addEventListener("change",filterGender)
-let arrayFilters = [];
-
-function filterGender() {
+// function filterGender() {
         
 
-        let filterTypeList = document.getElementById("filterType");
-        let category = document.getElementById("byCategory");
-        let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
-        let filters = filterByCategory[selFilter];
+//         let filterTypeList = document.getElementById("filterType");
+//         let category = document.getElementById("byCategory");
+//         let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
+//         let filters = filterByCategory[selFilter];
     
-        while (category.options.length) {
-            category.remove(0);
-        }
+//         while (category.options.length) {
+//             category.remove(0);
+//         }
 
-        if (filters) {
-            for (let i = 0; i < filters.length; i++) {
-                console.log(filters[i])
-                // arrayFilters.push(filters[i])
-                // category.options.add(filters);
+//         if (filters) {
+//             for (let i = 0; i < filters.length; i++) {
+//                 console.log(filters[i])
+//                 // arrayFilters.push(filters[i])
+//                 // category.options.add(filters);
 
-                }
-        } console.log(arrayFilters)
-}
+//                 }
+//         } console.log(arrayFilters)
+// }
      
-
+// -------------------  Pruebas filtros 2---------------------->>>>>>
     
     // filterGender()
 // filterType.addEventListener("change",
@@ -204,67 +192,6 @@ function filterGender() {
     
     // }
 // );
-
-
-
-// if (filterTypeList == gender) {
-//     if (condition) {
-        
-//     }
-    
-// }
-
-
-//---------- PRUEBAS DE CONECTAR DATA CON MAIN ------------>>>
-
-
-
-let parrafo = document.getElementById("resultado")
-
-parrafo.innerHTML = filters(dataRM);
-
-// console.log(parrafo.innerHTML);
-
-
-//---------> FILTRO GENERO <------------------- //
-
-//obteniendo el valor del genero seleccionado
-// let btnfiltrar = document.getElementById("filtrarDataPersonaje");
-
-// //obteniendo el div de filtrado
-// const filtrarData = document.getElementById("filtrado-de-datos")
-// filtrarData.setAttribute("class", "filtrado-de-datos")
-
-// filtrarData.style.display = "none";
-
-// btnfiltrar.addEventListener("click", () => {
-//     //filtrando por genero
-//     let genero = document.getElementById("genero").value;
-//     document.getElementById("generoSelect").textContent = genero;
-//     filtrarData.style.display = "grid";
-
-    
-//     let cardPersonaje = data.results.map(function (dp) {
-//         return console.log(dp.name)
-  
-//     });
-//     //     let texto = document.createElement("h1");
-     
-//     //     cardPersonaje.appendChild(texto)
-
-//     //     alert("test")
-//     document.getElementById("showFilterCharacters").innerHTML = filtros.genero(genero);
-    
-//     // });
-// });
-
-
-   // let tituloFiltrado = document.createElement("h3");
-    // tituloFiltrado.textContent="Filtrado  por Genero";
-    // tituloFiltrado.setAttribute("class", "titulo-filtrado");
-    // filtrarData.appendChild(tituloFiltrado);
-
-//---------> FIN FILTRO GENERO <---------------- //
 
 
 // ----------------- PRUEBA - Episodios-----------  ///
