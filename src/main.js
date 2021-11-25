@@ -262,7 +262,4 @@ const filterButtonDesc =document.getElementById("desc");
           })
           return filterButtonsClima;
             })
-          
-            
 
-   
