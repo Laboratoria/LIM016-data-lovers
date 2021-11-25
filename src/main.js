@@ -76,7 +76,7 @@ films.forEach((el) => {
 }
 
 filmoItems(films);
-
+//Comengtario para git
 
 filterPeopleLocationsVehicles("people", films).flat(1).forEach((el) => {    
   const createElement= document.createElement("div")
