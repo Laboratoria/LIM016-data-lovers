@@ -80,10 +80,12 @@ selCategoria.addEventListener("change",
     // console.log(category);
 
     switch (category) {
-        case "1":
-        filterData = allData.filter((personaje) => personaje.gender === "Female");
-            printData(filterData);
-            
+      case "1":
+        filterData = allData.filter(
+          (personaje) => personaje.gender === "Female"
+        );
+        printData(filterData);
+
         break;
 
       case "2":
@@ -94,18 +96,23 @@ selCategoria.addEventListener("change",
         break;
 
       case "3":
-        filterData = allData.filter((personaje) => personaje.gender === "Genderless");
+        filterData = allData.filter(
+          (personaje) => personaje.gender === "Genderless"
+        );
 
         printData(filterData);
 
         break;
 
       case "4":
-        filterData = allData.filter((personaje) => personaje.gender === "unknown");
+        filterData = allData.filter(
+          (personaje) => personaje.gender === "unknown"
+        );
 
         printData(filterData);
 
         break;
+
 
       default:
         break;
