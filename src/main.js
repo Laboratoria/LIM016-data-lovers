@@ -52,7 +52,7 @@ const conteinerScrollVehicles = document.getElementById("conteinerScrollVehicles
 let btnContainerDirector= document.querySelector(".btnContainerDirector")
 let btnContainerProducer=document.querySelector(".btnContainerProducer")
 
-function filmoItems (films){
+function filmoItems (filterItems){
 }
 filmoItems(films);
 
