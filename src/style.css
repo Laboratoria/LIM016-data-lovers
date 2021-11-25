@@ -230,6 +230,7 @@ body{
       display: flex;
       justify-content:center;
       margin-bottom: 10px;
+      z-index: 5;
     }
     #conteinerScrollLocations {
       display: flex;
