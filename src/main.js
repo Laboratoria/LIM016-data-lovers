@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import {filterPeopleLocationsVehicles, sortData, ordenAlfabeticoAsc, ordenAlfabeticoDesc, ordenNumericoAsc, ordenNumericoDesc, sortPeopleLocationsVehicles, ordenNumericoAscL} from  './data.js';
+import {filterPeopleLocationsVehicles, sortData, ordenAlfabeticoAsc, ordenAlfabeticoDesc, ordenNumericoAsc, ordenNumericoDesc, sortPeopleLocationsVehicles, ordenNumericoAscV} from  './data.js';
 
 let films = [];
 films = data.films;
@@ -314,13 +314,16 @@ const filterButtonDesc =document.getElementById("desc");
 
   //filtrar por lenght ascendente y descendente
   
-  const filterButtonscoreAscL =document.getElementById("scoreAscL");
+  /*const filterButtonscoreAscV =document.getElementById("scoreAscV");
   //const filterButtonscoreDescL =document.getElementById("scoreDescL");
 
-  filterButtonscoreAscL.addEventListener("click",function() {
-      let newData=ordenNumericoAscL(films,"length","vehicles")
+  filterButtonscoreAscV.addEventListener("click",function() {
+      let newData=ordenNumericoAscV(films,"length","vehicles")
           conteinerScrollVehicles.innerHTML=" ";
-          return vehicleItems(newData)   
-    })
+          console.log(newData);    
+          return vehicleItems(newData)
+    })*/
+
+    
     
 

@@ -66,19 +66,20 @@ export const ordenNumericoDesc = (array,parametro) => {
 }
 
 //Filtrar por lenght ascendente
-export const ordenNumericoAscL = (array,parametro,llave) => {
+export const ordenNumericoAscV = (array,parametro,llave) => {
   let sortArray = [];
   for(let i=0; i<array.length;i++){
     sortArray.push(array[i][llave])
+
   }
 
-  if ((sortArray.includes(Number))!) {
-  const compareNumber = sortArray.flat(1).sort((a, b) => {
+  /*const compareNumber = sortArray.flat(1).sort((a,b) => {
+   if(a.parametro !== "NA" )
     return b[parametro] - a[parametro];
   });
   return compareNumber
-  }
-}
+  }*/
+
 
 
 
