@@ -1,13 +1,13 @@
 /* MOSTRAR TODOS LOS CARDS DE TODOS LOS POKEMONES */
 export const mostraPokemon = (pokemon, fragment, template, container) => {
   for(let i=0; i<pokemon.length; i++){
-  template.content.querySelector(".numPokemon").textContent=pokemon[i].num;
-  template.content.querySelector(".imgPokemon").src=pokemon[i].img;
-  template.content.querySelector(".nomPokemon").textContent=pokemon[i].name;
-  template.content.querySelector(".nomRegion").textContent=pokemon[i].generation.name;
-  template.content.querySelector(".imgPokemon").id=pokemon[i].num;
-  const clone=template.content.cloneNode(true);
-  fragment.appendChild(clone); 
+    template.content.querySelector(".numPokemon").textContent=pokemon[i].num;
+    template.content.querySelector(".imgPokemon").src=pokemon[i].img;
+    template.content.querySelector(".nomPokemon").textContent=pokemon[i].name;
+    template.content.querySelector(".nomRegion").textContent=pokemon[i].generation.name;
+    template.content.querySelector(".imgPokemon").id=pokemon[i].num;
+    const clone=template.content.cloneNode(true);
+    fragment.appendChild(clone); 
   }
   container.appendChild(fragment);
 };
@@ -106,7 +106,7 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
             const imagenEvolucion=document.createElement("img");
             imagenEvolucion.className="imagenEvolucion";
 
-            // imagenEvolucion.src=pokemon[parseInt(numEvolucion)-1].img;
+   
             let img = pokemon.find(e=>parseInt(e.num)==parseInt(numEvolucion)).img;
             imagenEvolucion.src=img;
 
