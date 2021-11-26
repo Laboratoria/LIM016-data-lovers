@@ -1,7 +1,7 @@
 // estas funciones son de ejemplo
 
-//Filtro de people, vehiculo, locations para mostrar los items
-export const filterItems = (property, array) => {
+//Filtro de people, vehiculo, locations
+export const filterPeopleLocationsVehicles = (property, array) => {
   let arrayPeople = [];
   for(let i=0; i<array.length;i++){
       arrayPeople.push(array[i][property])
@@ -18,7 +18,7 @@ export const filterItems = (property, array) => {
 }*/
 
 //Ordenar alfabticamente ascendente y descendente
-export const sortOrdenAlfabeticoAsc = (array,parametro) => {
+export const ordenAlfabeticoAsc = (array,parametro) => {
   const compareTitle = array.sort((a, b ) => {
     if ( a[parametro].toLowerCase() < b[parametro].toLowerCase()){
       return -1;
@@ -30,7 +30,7 @@ export const sortOrdenAlfabeticoAsc = (array,parametro) => {
 return compareTitle
 }
 
-export const sortOrdenAlfabeticoDesc = (array,parametro) => {
+export const ordenAlfabeticoDesc = (array,parametro) => {
   const compareTitle = array.sort((a, b ) => {
     if ( a[parametro].toLowerCase() > b[parametro].toLowerCase()){
       return -1;
@@ -43,7 +43,7 @@ return compareTitle
 }
 
 //Filtrar por productores y directores
-export const filterData = (array,property,parametro) => {  
+export const sortData = (array,property,parametro) => {  
   const arrayProperty = array.filter((arrayItem)=> {
      return arrayItem[parametro]=== property
   });
@@ -51,20 +51,27 @@ export const filterData = (array,property,parametro) => {
 };
 
 //Filtrar por Score y Año de Lanzamiento ascendente
-export const sortOrdenNumericoAsc = (array,parametro) => {
+export const ordenNumericoAsc = (array,parametro) => {
   const compareNumber = array.sort((a, b) => {
     return b[parametro] - a[parametro];
   });
   return compareNumber
 }
 //Filtrar por Score y Año de Lanzamiento descendente
-export const sortOrdenNumericoDesc = (array,parametro) => {
+export const ordenNumericoDesc = (array,parametro) => {
   const compareNumber = array.sort((a, b) => {
     return a[parametro] - b[parametro];
   });
   return compareNumber
 }
 
+//Filtrar por lenght ascendente
+export const ordenNumericoAscV = (array,parametro,llave) => {
+  let sortArray = [];
+  for(let i=0; i<array.length;i++){
+    sortArray.push(array[i][llave])
+
+  }}
 
   /*const compareNumber = sortArray.flat(1).sort((a,b) => {
    if(a.parametro !== "NA" )
@@ -74,7 +81,12 @@ export const sortOrdenNumericoDesc = (array,parametro) => {
   }*/
 
 
-   export const filterPeopleLocationsVehicles = (array,llave,property,parametro) => { 
+
+
+
+
+
+export const sortPeopleLocationsVehicles = (array,llave,property,parametro) => { 
     let sortArray = [];
     for(let i=0; i<array.length;i++){
       sortArray.push(array[i][llave])
@@ -82,5 +94,5 @@ export const sortOrdenNumericoDesc = (array,parametro) => {
     const arrayProperty = sortArray.flat(2).filter((arrayItem)=> {
      return arrayItem[parametro]=== property 
   });
-      return arrayProperty
-    }
+  return arrayProperty
+}
