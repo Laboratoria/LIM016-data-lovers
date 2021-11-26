@@ -1,86 +1,86 @@
-// estas funciones son de ejemplo
 
-// Filtro de personas, vehiculo, ubicaciones para mostrar los elementos
-exportar  const  filterItems  =  ( propiedad ,  matriz )  =>  {
-  let  arrayPeople  =  [ ] ;
-  para ( dejo  i = 0 ;  i < array . longitud ; i ++ ) {
-      arrayPeople . empujar ( matriz [ i ] [ propiedad ] )
+
+//Filtro de people, vehiculo, locations para mostrar los items
+export const filterItems = (property, array) => {
+  let arrayPeople = [];
+  for(let i=0; i<array.length;i++){
+      arrayPeople.push(array[i][property])
   }
-    return  arrayPeople
-} ;
+    return arrayPeople
+};
 
-// Barra de navegacion
-/ * exportar const filterItems = (textInputSearch, array) => {
-  const searchInput = array.forEach ((el) => {
-   return el.toLowerCase (). indexOf (textInputSearch.toLowerCase ())> -1
+//Barra de navegacion
+/*export const filterItems = (textInputSearch, array) => {
+  const searchInput = array.forEach((el) => {
+   return el.toLowerCase().indexOf(textInputSearch.toLowerCase()) > -1
   });
-  retorno searchInput
-} * /
+  return searchInput
+}*/
 
-// Ordenar alfabticamente ascendente y descendente
-export  const  sortOrdenAlfabeticoAsc  =  ( matriz , parámetro )  =>  {
-  const  compareTitle  =  matriz . ordenar ( ( a ,  b  )  =>  {
-    if  (  a [ parametro ] . toLowerCase ( )  <  b [ parametro ] . toLowerCase ( ) ) {
-      retorno  - 1 ;
+//Ordenar alfabticamente ascendente y descendente
+export const sortOrdenAlfabeticoAsc = (array,parametro) => {
+  const compareTitle = array.sort((a, b ) => {
+    if ( a[parametro].toLowerCase() < b[parametro].toLowerCase()){
+      return -1;
     }
-    else  {
-      return  0 ;
+    else {
+      return 0;
     }
-} )
-return  compareTitle
+})
+return compareTitle
 }
 
-export  const  sortOrdenAlfabeticoDesc  =  ( matriz , parámetro )  =>  {
-  const  compareTitle  =  matriz . ordenar ( ( a ,  b  )  =>  {
-    if  (  a [ parametro ] . toLowerCase ( )  >  b [ parametro ] . toLowerCase ( ) ) {
-      retorno  - 1 ;
+export const sortOrdenAlfabeticoDesc = (array,parametro) => {
+  const compareTitle = array.sort((a, b ) => {
+    if ( a[parametro].toLowerCase() > b[parametro].toLowerCase()){
+      return -1;
     }
-    else  {
-      return  0 ;
+    else {
+      return 0;
     }
-} )
-return  compareTitle
+})
+return compareTitle
 }
 
-// Filtrar por productores y directores
-exportar  const  filterData  =  ( matriz , propiedad , parámetro )  =>  {  
-  const  propiedad de  matriz =  matriz . filter ( ( arrayItem ) =>  {
-     return  arrayItem [ parametro ] ===  propiedad
-  } ) ;
-  return  arrayProperty
-} ;
+//Filtrar por productores y directores
+export const filterData = (array,property,parametro) => {  
+  const arrayProperty = array.filter((arrayItem)=> {
+     return arrayItem[parametro]=== property
+  });
+  return arrayProperty
+};
 
-// Filtrar por Score y Año de Lanzamiento ascendente
-export  const  sortOrdenNumericoAsc  =  ( matriz , parámetro )  =>  {
-  const  compareNumber  =  matriz . ordenar ( ( a ,  b )  =>  {
-    return  b [ parametro ]  -  a [ parametro ] ;
-  } ) ;
-  return  compareNumber
-}
-// Filtrar por Score y Año de Lanzamiento descendente
-export  const  sortOrdenNumericoDesc  =  ( matriz , parámetro )  =>  {
-  const  compareNumber  =  matriz . ordenar ( ( a ,  b )  =>  {
-    devuelve  a [ parametro ]  -  b [ parametro ] ;
-  } ) ;
-  return  compareNumber
-}
-
-
-  / * const compareNumber = sortArray.flat (1) .sort ((a, b) => {
-   if (a.parametro! == "NA")
-    return b [parametro] - a [parametro];
+//Filtrar por Score y Año de Lanzamiento ascendente
+export const sortOrdenNumericoAsc = (array,parametro) => {
+  const compareNumber = array.sort((a, b) => {
+    return b[parametro] - a[parametro];
   });
   return compareNumber
-  
+}
+//Filtrar por Score y Año de Lanzamiento descendente
+export const sortOrdenNumericoDesc = (array,parametro) => {
+  const compareNumber = array.sort((a, b) => {
+    return a[parametro] - b[parametro];
+  });
+  return compareNumber
+}
 
 
-   exportar  const  filterPeopleLocationsVehicles  =  ( matriz , llave , propiedad , parámetro )  =>  { 
-    deje  sortArray  =  [ ] ;
-    para ( dejo  i = 0 ;  i < array . longitud ; i ++ ) {
-      sortArray . empujar ( matriz [ i ] [ llave ] )
+  /*const compareNumber = sortArray.flat(1).sort((a,b) => {
+   if(a.parametro !== "NA" )
+    return b[parametro] - a[parametro];
+  });
+  return compareNumber
+  }*/
+
+
+   export const filterPeopleLocationsVehicles = (array,llave,property,parametro) => { 
+    let sortArray = [];
+    for(let i=0; i<array.length;i++){
+      sortArray.push(array[i][llave])
     }
-    const  arrayProperty  =  sortArray . plano ( 2 ) . filter ( ( arrayItem ) =>  {
-     return  arrayItem [ parametro ] ===  propiedad 
-  } ) ;
-      return  arrayProperty
+    const arrayProperty = sortArray.flat(2).filter((arrayItem)=> {
+     return arrayItem[parametro]=== property 
+  });
+      return arrayProperty
     }
