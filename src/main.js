@@ -14,6 +14,7 @@ filterByCategory["gender"] = [
   "Desconocido",
 ];
 filterByCategory["species"] = [
+  "Seleccione una especie",
   "Animal",
   "Mutante",
   "Desconocido",
@@ -21,13 +22,13 @@ filterByCategory["species"] = [
   "Extraterrestre",
   "Humano",
   "Humanoide",
-  "Mitologia",
+  "Mitologico",
   "Parásito",
   "Poopybutthole",
   "Robot",
   "Vampiro",
 ];
-filterByCategory["status"] = ["Desconocido", "Muerto", "Vivo"];
+filterByCategory["status"] = ["Selecione un estado de vida","Desconocido", "Muerto", "Vivo"];
 
 document
   .getElementById("filterType")
@@ -37,8 +38,6 @@ function changeFilterList() {
   let filterTypeList = document.getElementById("filterType");
   let categoryList = document.getElementById("byCategory");
   let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
-
-  console.log(selFilter);
 
   let filters = filterByCategory[selFilter];
 
@@ -61,57 +60,164 @@ let allData = data.results; // Data general
 
 let filterData = data.results; // Data filtrada
 
-//---------- PRUEBAS DE CONECTAR DATA CON MAIN ------------>>>
-
-// seltCategoria.addEventListener("change", (e) => {
-//     let options = e.target.value
-
-//     filters(filterData, options);
-// });
+//---------- FILTRADO DE PERSONAJES ------------>>>
 
 let selCategoria = document.getElementById("byCategory");
 
-selCategoria.addEventListener("change",
+let selTipo = document.getElementById("filterType");
 
-  function () {
+function filterCharacters() {
+  
+  selTipo.addEventListener("change", (e) => {
+  
+    let options = e.target.value;
+    console.log(options);
+ 
+    if (options === "gender") {
 
-    let category = this.options[selCategoria.selectedIndex].value;
+      selCategoria.addEventListener("change",
+        function () {
+          let gender = this.options[selCategoria.selectedIndex].value;
+      
+          switch (gender) {
+            case "1":
+              filterData = allData.filter((personaje) => personaje.gender === "Female");
+              break;
+            case "2":
+              filterData = allData.filter((personaje) => personaje.gender === "Male");
+              break;
+            case "3":
+              filterData = allData.filter((personaje) => personaje.gender === "Genderless");
+              break;
+            case "4":
+              filterData = allData.filter((personaje) => personaje.gender === "unknown");
+              break;
+            default:
+              break;
+    
+          } return printData(filterData);
+        }
+      );
+    } else if (options === "species") {
+      
+      selCategoria.addEventListener("change",
+        function () {
+          let species = this.options[selCategoria.selectedIndex].value;
+      
+          switch (species) {
+            case "1":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Animal"
+              );
+              break;
+            case "2":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Mutant"
+              );
+              break;
+            case "3":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "unknown"
+              );
+              break;
+            case "4":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Disease"
+              );
+              break;
+            case "5":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Alien"
+              );
+              break;
+            case "6":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Human"
+              );
+              break;
+            case "7":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Humanoid"
+              );
+              break;
+            case "8":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Mytholog"
+              );
+              break;
+            case "9":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Parasite"
+              );
+              break;
+            case "10":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Poopybutthole"
+              );
+              break;
+            case "11":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Robot"
+              );
+              break;
+            case "12":
+              filterData = allData.filter(
+                (personaje) => personaje.species === "Vampire"
+              );
+              break;
 
-    // console.log(category);
+            default:
+              break;
+          } return printData(filterData);
+        });
+      
+    } else {
+      
+      selCategoria.addEventListener("change",
+        function () {
+          let status = this.options[selCategoria.selectedIndex].value;
+      
+          switch (status) {
+            case "1":
+              filterData = allData.filter(
+                (personaje) => personaje.status === "unknown"
+              );
+              break;
+            case "2":
+              filterData = allData.filter(
+                (personaje) => personaje.status === "Dead"
+              );
+              break;
+            case "3":
+              filterData = allData.filter(
+                (personaje) => personaje.status === "Alive"
+              );
+              break;
+            default:
+              break;
+          } return printData(filterData);
+        });
+    };
+  });
+} filterCharacters();
+ 
 
-    switch (category) {
-        case "1":
-        filterData = allData.filter((personaje) => personaje.gender === "Female");
-            printData(filterData);
-            
-        break;
 
-      case "2":
-        filterData = allData.filter((personaje) => personaje.gender === "Male");
+// let selTipo = document.getElementById("filterType");
 
-        printData(filterData);
+// selTipo.addEventListener("change",
+//   function allFilter() {
+//     let type = this.options[selTipo.selectedIndex].value;
+    
+//       if (type === "gender") {
+//       console.log("Hola");  
+//       } else {
+//       }
+//     }
 
-        break;
+//   );
 
-      case "3":
-        filterData = allData.filter((personaje) => personaje.gender === "Genderless");
 
-        printData(filterData);
-
-        break;
-
-      case "4":
-        filterData = allData.filter((personaje) => personaje.gender === "unknown");
-
-        printData(filterData);
-
-        break;
-
-      default:
-        break;
-    }
-  }
-);
 
 // -------- FUNCION PrintData --------->
 

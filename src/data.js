@@ -3,10 +3,9 @@ export const example = () => {
   return 'example';
 };
 
-export const filters = function (data, condicion) {
+export const filters =  (data, condicion) => {
 
-  return console.log(data, condicion)
-  // return data.results.filter((filtro) => filtro.gender == condicion)
+  return data.filter((personaje) => personaje.gender === condicion);
 
-  //  arrayData.filter((personaje) => personaje.gender === "Female");
 };
+
