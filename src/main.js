@@ -45,6 +45,16 @@ function limpiarModal(){
 
     document.querySelector(".contAmbasEvoluciones .contSegEvolucion").style.display="block";
 }
+// EVENTO AL REALIZAR CLICK EN EL MENU HAMBURGUESA
+const iconoHamburguesa = document.querySelector(".menuHamburguesa");
+const menu = document.querySelector(".cont-menu");
+iconoHamburguesa.addEventListener("click", (e)=>{
+    if (menu.style.display == 'none') {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }    
+});
 
 // CUANDO CARGA LA PAGINA
 window.onload = () => {

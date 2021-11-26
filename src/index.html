@@ -17,7 +17,11 @@
       <section class="banner">
         <img class="imgBanner" src="../IMAGENES/encabezadoPok.jpg" alt="">
       </section>
-
+ <!-- MENÚ HAMBURGUESA -->
+      <section id="desplegable">
+        <span class="icono menuHamburguesa" href=""><i class="fas fa-bars"></i></span>
+        <!-- <p class="icono"> <i class="fas fa-bars"></i> </p> -->
+      </section>
       <!-- BUSCADOR DE POKEMON -->
       <section class="buscador">
         <input type="text" name="inputBuscador" class="buscarPokemon" placeholder="Ej: pikachu"><i class="fas fa-search"></i>
@@ -43,8 +47,8 @@
                 <p class="icono"> + </p>
               </div>
               <div class="cont-enlaces" id="cont-enlaces1">
-                <a class="region" href="#" region="kanto">KANTO</a>
-                <a class="region" href="#" region="johto">JOHTO</a>
+                <span class="region" href="#" region="kanto">KANTO</span>
+                <span class="region" href="#" region="johto">JOHTO</span>
               </div>
             </div> 
 
@@ -55,21 +59,21 @@
                 <p class="icono"> + </p>
               </div>
               <div class="cont-enlaces" id="cont-enlaces2">
-                <a class="elemento" href="#" elemento="water">AGUA</a>
-                <a class="elemento" href="#" elemento="fire">FUEGO</a>
-                <a class="elemento" href="#" elemento="grass">PLANTA</a>
-                <a class="elemento" href="#" elemento="ground">TIERRA</a>
-                <a class="elemento" href="#" elemento="rock">ROCA</a>
-                <a class="elemento" href="#" elemento="ice">HIELO</a>
-                <a class="elemento" href="#" elemento="electric">ELECTRICO</a>
-                <a class="elemento" href="#" elemento="dragon">DRAGON</a>
-                <a class="elemento" href="#" elemento="ghost">FANTASMA</a>
-                <a class="elemento" href="#" elemento="psychic">PSIQUICO</a>
-                <a class="elemento" href="#" elemento="normal">NORMAL</a>
-                <a class="elemento" href="#" elemento="fighting">LUCHA</a>
-                <a class="elemento" href="#" elemento="poison">VENENO</a>
-                <a class="elemento" href="#" elemento="bug">BICHO</a>
-                <a class="elemento" href="#" elemento="flying">VOLADOR</a>
+                <span class="elemento" href="#" elemento="water">AGUA</span>
+                <span class="elemento" href="#" elemento="fire">FUEGO</span>
+                <span class="elemento" href="#" elemento="grass">HIERBA</span>
+                <span class="elemento" href="#" elemento="ground">SUELO</span>
+                <span class="elemento" href="#" elemento="rock">ROCA</span>
+                <span class="elemento" href="#" elemento="ice">HIELO</span>
+                <span class="elemento" href="#" elemento="electric">ELECTRICO</span>
+                <span class="elemento" href="#" elemento="dragon">DRAGON</span>
+                <span class="elemento" href="#" elemento="ghost">FANTASMA</span>
+                <span class="elemento" href="#" elemento="psychic">PSIQUICO</span>
+                <span class="elemento" href="#" elemento="normal">NORMAL</span>
+                <span class="elemento" href="#" elemento="fighting">LUCHA</span>
+                <span class="elemento" href="#" elemento="poison">VENENO</span>
+                <span class="elemento" href="#" elemento="bug">BICHO</span>
+                <span class="elemento" href="#" elemento="flying">VOLADOR</span>
               </div>
             </div>
           </div>
@@ -81,10 +85,10 @@
             <p class="icono"> <i class="fas fa-sort-amount-up-alt"></i> </p>
           </div>
           <div class="cont-enlaces" id="cont-enlaces3">
-            <a class="ordenar" href="#" ordenar="az">A - Z</a>
-            <a class="ordenar" href="#" ordenar="za">Z - A</a>
-            <a class="ordenar" href="#" ordenar="pc-as">PC ASCENDENTE</a>
-            <a class="ordenar" href="#" ordenar="pc-des">PC DESCENDENTE</a>
+            <span class="ordenar" href="#" ordenar="az">A - Z</span>
+            <span class="ordenar" href="#" ordenar="za">Z - A</span>
+            <span class="ordenar" href="#" ordenar="pc-as">PUNTOS COMBATE ASC.</span>
+            <span class="ordenar" href="#" ordenar="pc-des">PUNTOS COMBATE DESC.</span>
           </div>
         </div> 
         <!-- CONTENIDO DE ESTADISTICA -->
@@ -94,12 +98,12 @@
             <p class="icono"> <i class="fas fa-chart-pie"></i> </p>
           </div>
           <div class="cont-enlaces" id="cont-enlaces4">
-            <a class="estadistica" href="#" estadistica="todo">TODO</a>
-            <a class="estadistica" href="#" estadistica="por-región">POR REGIÓN</a>
-            <a class="estadistica" href="#" estadistica="por-elemento">POR ELEMENTO</a>
-            <a class="estadistica" href="#" estadistica="por-huevos">POR HUEVOS</a>
-            <a class="estadistica" href="#" estadistica="por-recorrido">POR RECORRIDO</a>
-            <a class="estadistica" href="#" estadistica="por-debilidad">POR DEBILIDAD</a>
+            <span class="estadistica" href="#" estadistica="todo">TODO</span>
+            <span class="estadistica" href="#" estadistica="por-región">POR REGIÓN</span>
+            <span class="estadistica" href="#" estadistica="por-elemento">POR ELEMENTO</span>
+            <span class="estadistica" href="#" estadistica="por-huevos">POR HUEVOS</span>
+            <span class="estadistica" href="#" estadistica="por-recorrido">POR RECORRIDO</span>
+            <span class="estadistica" href="#" estadistica="por-debilidad">POR DEBILIDAD</span>
           </div>
         </div>                     
       </div>
@@ -192,12 +196,14 @@
 
     </main>
 
-    
-
     <!-- CONTENEDOR DEL BOTON DE SUBIR -->
     <div class="button-up">
       <i class="fas fa-arrow-up"></i> <!-- ICONO DE SUBIR -->
     </div>
+    <!-- CONTENEDOR DEL BOTON DE SUBIR -->
+    <a class="button-refresh"  href="index.html">
+      <i class="fas fa-redo-alt"></i> <!-- ICONO DE SUBIR -->
+    </a>
 
     <!-- CONTENEDOR DEL PIE DE PAGINA -->
     <footer class="foot">
