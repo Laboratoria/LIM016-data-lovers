@@ -1,9 +1,8 @@
 import data from './data/ghibli/ghibli.js';
-import {filterPeopleLocationsVehicles, sortData, ordenAlfabeticoAsc, ordenAlfabeticoDesc, ordenNumericoAsc, ordenNumericoDesc, sortPeopleLocationsVehicles, ordenNumericoAscV} from  './data.js';
+import {filterItems, sortOrdenAlfabeticoAsc, sortOrdenAlfabeticoDesc, filterData, sortOrdenNumericoAsc, sortOrdenNumericoDesc, filterPeopleLocationsVehicles} from  './data.js';
 
 let films = [];
 films = data.films;
-/*console.log (filterPeopleLocationsVehicles("people", films))*/
 
 /*botones para  ingresar a cada seccion*/ 
 
@@ -54,6 +53,12 @@ let btnContainerProducer=document.querySelector(".btnContainerProducer");
 let btnContainerTerreno= document.querySelector(".btnContainerTerreno");
 let btnContainerClima=document.querySelector(".btnContainerClima");
 let btnContainerGenero= document.querySelector(".btnContainerGenero");
+let btnContainerAéreo= document.querySelector(".btnContainerAéreo");
+let btnContainerMarítimo= document.querySelector(".btnContainerMarítimo");
+let btnContainerHumanos= document.querySelector(".btnContainerHumanos");
+let btnContainerAnimales= document.querySelector(".btnContainerAnimales");
+let btnContainerHibridos= document.querySelector(".btnContainerHibridos");
+let btnContainerMiticos= document.querySelector(".btnContainerMiticos");
 
 function filmoItems (films){
 films.forEach((el) => {
@@ -75,8 +80,8 @@ films.forEach((el) => {
  return template;
 } )
 }
-
 filmoItems(films);
+
 
 function peopleItems (callback) {
 callback.forEach((el) => {    
@@ -101,9 +106,10 @@ conteinerScrollPeople.appendChild(createElement);
 return template1;
 });
 }
-peopleItems (filterPeopleLocationsVehicles("people", films).flat(1))
+peopleItems (filterItems("people", films).flat(1))
 
-  function locationItems (callback) {
+
+function locationItems (callback) {
 callback.forEach((el) => {    
   const createElement= document.createElement("div")
   createElement.setAttribute("class", 'contenedorCardLocations');
@@ -122,7 +128,8 @@ conteinerScrollLocations.appendChild(createElement);
 return template2;
 });
   }
-locationItems(filterPeopleLocationsVehicles("locations", films).flat(2))
+locationItems(filterItems("locations", films).flat(2))
+
 
 function vehicleItems (callback) {
 callback.forEach((el) => {    
@@ -147,9 +154,11 @@ conteinerScrollVehicles.appendChild(createElement);
 return template3;
 }); 
 }
+vehicleItems(filterItems("vehicles", films).flat(1))
 
-vehicleItems(filterPeopleLocationsVehicles("vehicles", films).flat(1))
 
+
+//FILTRAR/ORDENAR EN LA SECCION FILMOGRAFIA
 const filterButtonsDirector = btnContainerDirector.querySelectorAll(".filterDirector")
 const filterButtonsProducer = btnContainerProducer.querySelectorAll(".filterProducer")
 
@@ -157,7 +166,7 @@ const filterButtonsProducer = btnContainerProducer.querySelectorAll(".filterProd
 filterButtonsDirector.forEach((el) => {  
   el.addEventListener("click",function(e) {
     const property= e.currentTarget.dataset.id;
-    let newData= sortData(films,property,"director")
+    let newData= filterData(films,property,"director")
         conteinerScrollFilmo.innerHTML=" ";
         return filmoItems(newData)    
   })
@@ -168,7 +177,7 @@ filterButtonsDirector.forEach((el) => {
 filterButtonsProducer.forEach((el) => {  
   el.addEventListener("click",function(e) {
     const property= e.currentTarget.dataset.id;
-    let newData= sortData(films,property,"producer")
+    let newData= filterData(films,property,"producer")
           conteinerScrollFilmo.innerHTML=" ";
           return filmoItems(newData)    
   })
@@ -180,52 +189,49 @@ const filterButtonAsc =document.getElementById("asc");
 const filterButtonDesc =document.getElementById("desc");
 
    filterButtonAsc.addEventListener("click",function() {
-      let newData= ordenAlfabeticoAsc(films,"title")
+      let newData= sortOrdenAlfabeticoAsc(films,"title")
           conteinerScrollFilmo.innerHTML=" ";
           return filmoItems(newData)   
     })
 
     filterButtonDesc.addEventListener("click",function() {
-      let newData= ordenAlfabeticoDesc(films,"title")
+      let newData= sortOrdenAlfabeticoDesc(films,"title")
           conteinerScrollFilmo.innerHTML=" ";
           return filmoItems(newData)   
     })
 
   //Funcion para ordenar score 
-  
   const filterButtonScoreAsc =document.getElementById("scoreAsc");
   const filterButtonScoreDesc =document.getElementById("scoreDesc");
 
   filterButtonScoreAsc.addEventListener("click",function() {
-      let newData=ordenNumericoDesc(films,"rt_score")
+      let newData=sortOrdenNumericoDesc(films,"rt_score")
           conteinerScrollFilmo.innerHTML=" ";
           return filmoItems(newData)   
     })
     filterButtonScoreDesc.addEventListener("click",function() {
-      let newData=ordenNumericoAsc(films,"rt_score")
+      let newData=sortOrdenNumericoAsc(films,"rt_score")
           conteinerScrollFilmo.innerHTML=" ";
           return filmoItems(newData)   
     })
 
   //Funcion para ordenar año de lanzamiento
-  
   const filterButtonYearAsc =document.getElementById("yearAsc");
   const filterButtonYearDesc =document.getElementById("yearDesc");
 
   filterButtonYearAsc.addEventListener("click",function() {
-      let newData=ordenNumericoDesc(films,"release_date")
+      let newData=sortOrdenNumericoDesc(films,"release_date")
           conteinerScrollFilmo.innerHTML=" ";
           return filmoItems(newData)   
     })
     filterButtonYearDesc.addEventListener("click",function() {
-      let newData=ordenNumericoAsc(films,"release_date")
+      let newData=sortOrdenNumericoAsc(films,"release_date")
           conteinerScrollFilmo.innerHTML=" ";
           return filmoItems(newData)   
     })
 
 
     //funcion para la barra de busqueda
-
     let formulario= document.getElementById("formulario"); 
     const boton= document.getElementById("boton");
 //nuevo comentario
@@ -252,80 +258,149 @@ const filterButtonDesc =document.getElementById("desc");
 
     boton.addEventListener("click", filtrar)
 
-    //Funcion para filtrar por clima
-    const filterButtonsClima = btnContainerClima.querySelectorAll(".filterClima")
 
-    filterButtonsClima.forEach((el) => {  
-          el.addEventListener("click",function(e) {
-            const property= e.currentTarget.dataset.id;
-            let newData= sortPeopleLocationsVehicles(films,"locations",property,"climate")
-            
-            conteinerScrollLocations.innerHTML=" ";
-                return locationItems(newData)    
-          })
-          return filterButtonsClima;
-            })
+//FILTRAR/ORDENAR EN LA SECCION LOCACIONES
 
-     //Funcion para filtrar por terreno
-     const filterButtonsTerreno = btnContainerTerreno.querySelectorAll(".filterTerreno")
+//Funcion para filtrar por clima
+  const filterButtonsClima = btnContainerClima.querySelectorAll(".filterClima")
 
-     filterButtonsTerreno.forEach((el) => {  
-      el.addEventListener("click",function(e) {
-        const property= e.currentTarget.dataset.id;
-        let newData= sortPeopleLocationsVehicles(films,"locations",property,"terrain")
-        conteinerScrollLocations.innerHTML=" ";
-            return locationItems(newData)    
-      })
+  filterButtonsClima.forEach((el) => {  
+    el.addEventListener("click",function(e) {
+      const property= e.currentTarget.dataset.id;
+      let newData= filterPeopleLocationsVehicles(films,"locations",property,"climate")
+      conteinerScrollLocations.innerHTML=" ";
+        return locationItems(newData)    
+    })
       return filterButtonsClima;
-        })
+  })
 
-      //boton clean
-        document.getElementById("clean").addEventListener("click",function() {
-          conteinerScrollLocations.innerHTML=" ";
-          locationItems(filterPeopleLocationsVehicles("locations", films).flat(2))   
-        })
+//Funcion para filtrar por terreno
+  const filterButtonsTerreno = btnContainerTerreno.querySelectorAll(".filterTerreno")
 
-      //filtrar por genero
-      const filterButtonsGenero = btnContainerGenero.querySelectorAll(".filterGenero")
+  filterButtonsTerreno.forEach((el) => {  
+    el.addEventListener("click",function(e) {
+      const property= e.currentTarget.dataset.id;
+      let newData= filterPeopleLocationsVehicles(films,"locations",property,"terrain")
+       conteinerScrollLocations.innerHTML=" ";
+        return locationItems(newData)    
+    })
+      return filterButtonsClima;
+  })
 
-      filterButtonsGenero.forEach((el) => {  
-      el.addEventListener("click",function(e) {
-        const property= e.currentTarget.dataset.id;
-        let newData= sortPeopleLocationsVehicles(films,"people",property,"gender")
-        conteinerScrollPeople.innerHTML=" ";
-            return peopleItems (newData)    
-      })
+//Funcion para el boton clean
+   document.getElementById("cleanLocations").addEventListener("click",function() {
+    conteinerScrollLocations.innerHTML=" ";
+    locationItems(filterItems("locations", films).flat(2))   
+  })
+
+
+//FILTRAR/ORDENAR EN LA SECCION PERSONAJES
+
+//filtrar por genero
+const filterButtonsGenero = btnContainerGenero.querySelectorAll(".filterGenero")
+
+  filterButtonsGenero.forEach((el) => {  
+    el.addEventListener("click",function(e) {
+      const property= e.currentTarget.dataset.id;
+      let newData= filterPeopleLocationsVehicles(films,"people",property,"gender")
+      conteinerScrollPeople.innerHTML=" ";
+        return peopleItems (newData)    
+    })
       return filterButtonsGenero;
-        })
+  })
 
-        //filtrar por color de ojos
-      /*const filterButtonsGenero = btnContainerGenero.querySelectorAll(".filterGenero")
+//filtrar por humanos
+const filterButtonsHumano = btnContainerHumanos.querySelectorAll(".filterHumano")
 
-      filterButtonsGenero.forEach((el) => {  
-      el.addEventListener("click",function(e) {
-        const property= e.currentTarget.dataset.id;
-        let newData= sortPeopleLocationsVehicles(films,"people",property,"gender")
-        let x= 
-        
-        conteinerScrollPeople.innerHTML=" ";
-            return peopleItems (newData)    
-      })
-      return filterButtonsGenero;
-        })*/
+filterButtonsHumano.forEach((el) => {  
+    el.addEventListener("click",function(e) {
+      const property= e.currentTarget.dataset.id;
+      let newData= filterPeopleLocationsVehicles(films,"people",property,"specie")
+      conteinerScrollPeople.innerHTML=" ";
+        return peopleItems (newData)    
+    })
+      return filterButtonsHumano;
+  })
+
+//filtrar por animales
+const filterButtonsAnimal = btnContainerAnimales.querySelectorAll(".filterAnimal")
+
+filterButtonsAnimal.forEach((el) => {  
+    el.addEventListener("click",function(e) {
+      const property= e.currentTarget.dataset.id;
+      let newData= filterPeopleLocationsVehicles(films,"people",property,"specie")
+      conteinerScrollPeople.innerHTML=" ";
+        return peopleItems (newData)    
+    })
+      return filterButtonsAnimal;
+  })
+
+//filtrar por hibridos
+const filterButtonsHibrido = btnContainerHibridos.querySelectorAll(".filterHibrido")
+
+filterButtonsHibrido.forEach((el) => {  
+    el.addEventListener("click",function(e) {
+      const property= e.currentTarget.dataset.id;
+      let newData= filterPeopleLocationsVehicles(films,"people",property,"specie")
+      conteinerScrollPeople.innerHTML=" ";
+        return peopleItems (newData)    
+    })
+      return filterButtonsHibrido;
+  })
+
+//filtrar por miticos
+const filterButtonsMiticos = btnContainerMiticos.querySelectorAll(".filterMitico")
+
+filterButtonsMiticos.forEach((el) => {  
+    el.addEventListener("click",function(e) {
+      const property= e.currentTarget.dataset.id;
+      let newData= filterPeopleLocationsVehicles(films,"people",property,"specie")
+      conteinerScrollPeople.innerHTML=" ";
+        return peopleItems (newData)    
+    })
+      return filterButtonsMiticos;
+  })
+
+//Funcion para el boton clean
+document.getElementById("cleanPeople").addEventListener("click",function() {
+  conteinerScrollPeople.innerHTML=" ";
+  peopleItems(filterItems("people", films).flat(2))   
+})
 
 
-  //filtrar por lenght ascendente y descendente
-  
-  /*const filterButtonscoreAscV =document.getElementById("scoreAscV");
-  //const filterButtonscoreDescL =document.getElementById("scoreDescL");
+//FILTRAR/ORDENAR EN LA SECCION VEHICULOS
 
-  filterButtonscoreAscV.addEventListener("click",function() {
-      let newData=ordenNumericoAscV(films,"length","vehicles")
-          conteinerScrollVehicles.innerHTML=" ";
-          console.log(newData);    
-          return vehicleItems(newData)
-    })*/
+//filtrar por tipo de vehiculo
+  const filterButtonsAéreo = btnContainerAéreo.querySelectorAll(".filterAéreo")
 
+  filterButtonsAéreo.forEach((el) => {  
+    el.addEventListener("click",function(e) {
+      const property= e.currentTarget.dataset.id;
+      let newData= filterPeopleLocationsVehicles(films,"vehicles",property,"vehicle_class")
+      conteinerScrollVehicles.innerHTML=" ";
+        return vehicleItems (newData)    
+    })
+      return filterButtonsAéreo;
+  })
+
+//filtrar por tipo de vehiculo
+  const filterButtonsMarítimo = btnContainerMarítimo.querySelectorAll(".filterMarítimo")
+
+  filterButtonsMarítimo.forEach((el) => {  
+    el.addEventListener("click",function(e) {
+      const property= e.currentTarget.dataset.id;
+      let newData= filterPeopleLocationsVehicles(films,"vehicles",property,"vehicle_class")
+      conteinerScrollVehicles.innerHTML=" ";
+        return vehicleItems (newData)    
+    })
+       return filterButtonsMarítimo;
+  })
+
+//Funcion para el boton clean
+document.getElementById("cleanVehicles").addEventListener("click",function() {
+  conteinerScrollVehicles.innerHTML=" ";
+  vehicleItems(filterItems("vehicles", films).flat(2))   
+})
     
     
 
