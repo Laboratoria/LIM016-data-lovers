@@ -6,28 +6,8 @@ import data from "./data/rickandmorty/rickandmorty.js";
 
 let filterByCategory = {};
 
-filterByCategory["gender"] = [
-  "Seleccione un género",
-  "Femenino",
-  "Masculino",
-  "Sin género",
-  "Desconocido",
-];
-filterByCategory["species"] = [
-  "Seleccione una especie",
-  "Animal",
-  "Mutante",
-  "Desconocido",
-  "Enfermedad",
-  "Extraterrestre",
-  "Humano",
-  "Humanoide",
-  "Mitologico",
-  "Parásito",
-  "Poopybutthole",
-  "Robot",
-  "Vampiro",
-];
+filterByCategory["gender"] = ["Seleccione un género","Femenino","Masculino","Sin género","Desconocido",];
+filterByCategory["species"] = [ "Seleccione una especie","Animal","Mutante","Desconocido","Enfermedad","Extraterrestre","Humano","Humanoide","Mitologico",  "Parásito","Poopybutthole","Robot","Vampiro" ];
 filterByCategory["status"] = ["Selecione un estado de vida","Desconocido", "Muerto", "Vivo"];
 
 document
@@ -40,6 +20,7 @@ function changeFilterList() {
   let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
 
   let filters = filterByCategory[selFilter];
+  let filter;
 
   while (categoryList.options.length) {
       categoryList.remove(0);
@@ -47,10 +28,9 @@ function changeFilterList() {
     
     if (filters) {
         for (let i = 0; i < filters.length; i++) {
-            let filter = new Option(filters[i], i);
+            filter = new Option(filters[i], i);
             categoryList.options.add(filter);
-        }
-    console.log(categoryList);
+      }
   }
 }
 
@@ -66,9 +46,9 @@ let selCategoria = document.getElementById("byCategory");
 
 let selTipo = document.getElementById("filterType");
 
-function filterCharacters() {
-  
-  selTipo.addEventListener("change", (e) => {
+function filterCharacters()
+{
+    selTipo.addEventListener("change", (e) => {
   
     let options = e.target.value;
     console.log(options);
@@ -199,26 +179,9 @@ function filterCharacters() {
         });
     };
   });
-} filterCharacters();
+}
+filterCharacters();
  
-
-
-// let selTipo = document.getElementById("filterType");
-
-// selTipo.addEventListener("change",
-//   function allFilter() {
-//     let type = this.options[selTipo.selectedIndex].value;
-    
-//       if (type === "gender") {
-//       console.log("Hola");  
-//       } else {
-//       }
-//     }
-
-//   );
-
-
-
 // -------- FUNCION PrintData --------->
 
 function printData(data) {
@@ -261,7 +224,7 @@ function printData(data) {
     card.setAttribute("class", "card-personaje");
 
     card.innerHTML = element;
-
+    
     dataPersonajes.appendChild(card);
   });
 }
@@ -276,12 +239,5 @@ btnAll.addEventListener("click", function () {
 
     printData(allData)
 
-});
-
-//-------------------  BOTON "FILTRADO" -------------->>>>>
-
-// let btnFilter = document.getElementById("filtrarDataPersonaje");
-// btnFilter.addEventListener("click", function () {
-//     document.getElementById("showFilters").style.display = "block";
-// });
-
+}
+);
