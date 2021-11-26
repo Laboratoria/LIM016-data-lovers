@@ -106,7 +106,6 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
             const imagenEvolucion=document.createElement("img");
             imagenEvolucion.className="imagenEvolucion";
 
-            // imagenEvolucion.src=pokemon[parseInt(numEvolucion)-1].img;
             let img = pokemon.find(e=>parseInt(e.num)==parseInt(numEvolucion)).img;
             imagenEvolucion.src=img;
 
