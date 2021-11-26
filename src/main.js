@@ -2,7 +2,19 @@ import { example, filters } from "./data.js";
 
 import data from "./data/rickandmorty/rickandmorty.js";
 
-//SELECT DINAMICO
+// --- Declaración de variables:
+
+const allData = data.results; // Data general
+let filterData = data.results; // Data filtrada
+
+let dataPersonajes = document.querySelector("#showAllCharacters");
+let characterType = document.getElementById("filterType");  // Lista de tipos de personaje seleccionado
+let CharacterCategory = document.getElementById("byCategory"); // Lista de categorias de los personajes 
+
+// --- Botones: 
+const btnAll = document.getElementById("getAll");
+
+//----------- SELECT DINAMICO ------------>>>>
 
 let filterByCategory = {};
 
@@ -15,49 +27,52 @@ document
   .addEventListener("change", changeFilterList);
 
 function changeFilterList() {
-  let filterTypeList = document.getElementById("filterType");
-  let categoryList = document.getElementById("byCategory");
-  let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
-
+  let selFilter = characterType.options[characterType.selectedIndex].value;
   let filters = filterByCategory[selFilter];
   let filter;
 
-  while (categoryList.options.length) {
-      categoryList.remove(0);
-    }
+  while (CharacterCategory.options.length) {
+    CharacterCategory.remove(0);
+  };
     
     if (filters) {
         for (let i = 0; i < filters.length; i++) {
             filter = new Option(filters[i], i);
-            categoryList.options.add(filter);
-      }
-  }
-}
-
-//------- MOSTRAR PERSONAJES ------>>>>>>>>>>>
-
-let allData = data.results; // Data general
-
-let filterData = data.results; // Data filtrada
+            CharacterCategory.options.add(filter);
+      };
+  };
+};
 
 //---------- FILTRADO DE PERSONAJES ------------>>>
 
-let selCategoria = document.getElementById("byCategory");
+// const filter = document.getElementById("filter");
 
-let selTipo = document.getElementById("filterType");
+// // filter.addEventListener('click', (e) => {
+// //   let Tipo = document.getElementById("filterType");
+
+// //   // characterType.addEventListener("change", (e) => {
+
+// //   //     let options = e.target.value;
+
+// //   let Categoria = document.getElementById("byCategory").value;
+
+// //   console.log(characterType, CharacterCategory);
+// // })
+
+
 
 function filterCharacters()
-{
-    selTipo.addEventListener("change", (e) => {
+{ 
+    characterType.addEventListener("change", (e) => {
   
     let options = e.target.value;
     console.log(options);
  
     if (options === "gender") {
 
-      selCategoria.addEventListener("change",
+      CharacterCategory.addEventListener("change",
         function () {
-          let gender = this.options[selCategoria.selectedIndex].value;
+          let gender = this.options[CharacterCategory.selectedIndex].value;
       
           switch (gender) {
             case "1":
@@ -80,70 +95,46 @@ function filterCharacters()
       );
     } else if (options === "species") {
       
-      selCategoria.addEventListener("change",
+      CharacterCategory.addEventListener("change",
         function () {
-          let species = this.options[selCategoria.selectedIndex].value;
+          let species = this.options[CharacterCategory.selectedIndex].value;
       
           switch (species) {
             case "1":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Animal"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Animal");
               break;
             case "2":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Mutant"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Mutant");
               break;
             case "3":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "unknown"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "unknown");
               break;
             case "4":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Disease"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Disease");
               break;
             case "5":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Alien"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Alien");
               break;
             case "6":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Human"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Human");
               break;
             case "7":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Humanoid"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Humanoid");
               break;
             case "8":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Mytholog"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Mytholog");
               break;
             case "9":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Parasite"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Parasite");
               break;
             case "10":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Poopybutthole"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Poopybutthole");
               break;
             case "11":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Robot"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Robot");
               break;
             case "12":
-              filterData = allData.filter(
-                (personaje) => personaje.species === "Vampire"
-              );
+              filterData = allData.filter((personaje) => personaje.species === "Vampire");
               break;
 
             default:
@@ -153,25 +144,19 @@ function filterCharacters()
       
     } else {
       
-      selCategoria.addEventListener("change",
+      CharacterCategory.addEventListener("change",
         function () {
-          let status = this.options[selCategoria.selectedIndex].value;
-      
+          let status = this.options[CharacterCategory.selectedIndex].value;
+
           switch (status) {
             case "1":
-              filterData = allData.filter(
-                (personaje) => personaje.status === "unknown"
-              );
+              filterData = allData.filter((personaje) => personaje.status === "unknown");
               break;
             case "2":
-              filterData = allData.filter(
-                (personaje) => personaje.status === "Dead"
-              );
+              filterData = allData.filter((personaje) => personaje.status === "Dead");
               break;
             case "3":
-              filterData = allData.filter(
-                (personaje) => personaje.status === "Alive"
-              );
+              filterData = allData.filter((personaje) => personaje.status === "Alive");
               break;
             default:
               break;
@@ -179,19 +164,15 @@ function filterCharacters()
         });
     };
   });
-}
-filterCharacters();
+} filterCharacters();
  
 // -------- FUNCION PrintData --------->
 
 function printData(data) {
-  let dataPersonajes = document.querySelector("#showAllCharacters");
-  dataPersonajes.innerHTML = "";
+  clearCharacters()
+  let dataPersonaje = data.map((result) => {
+      let showCards = `
 
-  let dataPersonaje = data.map(function (result) {
-   
-    let showCards = `
-        
             <div id="conteinerCharacters" class="div-personaje">
                 <div class="data-frente-personaje" style="background-image:url(${result.image})">
                     <div class="name-personaje-frente">
@@ -216,28 +197,28 @@ function printData(data) {
                 </div>
             </div>
     `;
-    return showCards;
+      return showCards;
   });
   
-  dataPersonaje.forEach(function (element) {
-    let card = document.createElement("div");
+  dataPersonaje.forEach((element) => {
+      let card = document.createElement("div");
     card.setAttribute("class", "card-personaje");
-
+    
     card.innerHTML = element;
     
-    dataPersonajes.appendChild(card);
+      dataPersonajes.appendChild(card);
   });
-}
-printData(allData);
+} printData(allData);
 
 //-------------------  BOTON "MOSTRAR TODO" -------------->>>>>
 
-let btnAll = document.getElementById("getAll");
-btnAll.addEventListener("click", function () {
-    let dataPersonajes = document.querySelector("#showAllCharacters");
-    dataPersonajes.innerHTML = "";
+function showAllCharacters() {
+  btnAll.addEventListener("click", () => {
+    clearCharacters();
+    printData(allData);
+  });
+} showAllCharacters();
 
-    printData(allData)
-
-}
-);
+function clearCharacters() {
+  dataPersonajes.innerHTML = "";
+};
