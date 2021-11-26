@@ -105,8 +105,7 @@ export const masInfoPokemon = (pokemon, evento, conteModal) => {
           if(parseInt(numEvolucion)<=251){
             const imagenEvolucion=document.createElement("img");
             imagenEvolucion.className="imagenEvolucion";
-
-   
+            
             let img = pokemon.find(e=>parseInt(e.num)==parseInt(numEvolucion)).img;
             imagenEvolucion.src=img;
 

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" /> <!-- LINKEAR EL ARCHIVO CSS -->
     <link rel="shortcut icon" href="../IMAGENES/pokebola.png" type="png" /> <!-- ICONO EN LA PESTAÑA DEL NAVEGADOR -->
     <script src="https://kit.fontawesome.com/15c8445c30.js" crossorigin="anonymous"></script> <!-- USAR LOS ICONOS DE FONTAWESOME -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
   </head>
 
   <body>
@@ -103,7 +104,6 @@
             <span class="estadistica" href="#" estadistica="por-huevos">POR HUEVOS</span>
             <span class="estadistica" href="#" estadistica="por-recorrido">POR RECORRIDO</span>
             <span class="estadistica" href="#" estadistica="por-debilidad">POR DEBILIDAD</span>
-
           </div>
         </div>                     
       </div>
@@ -165,9 +165,39 @@
         </div>
       </div>
 
+      <!-- CONTENEDOR DE GRAFICOS ESTADISTICOS -->
+    <div class="containerEstadistica">
+      <!-- GRAFICO DE REGIONES -->
+      <div class="graficoRegion contGraficos" id="contRegiones">
+        <h1 class="tituloGraficos"> ESTADISTICA POR REGIÓN </h1>
+        <canvas id="chartRegion" width="100" height="100"></canvas>
+      </div>
+      <!-- GRAFICO DE ELEMENTOS -->
+      <div class="graficoElemento contGraficos" id="contElementos">
+        <h1 class="tituloGraficos"> ESTADISTICA POR ELEMENTO </h1>
+        <canvas id="chartElemento" width="100" height="100"></canvas>
+      </div>
+      <!-- GRAFICO DE HUEVOS -->
+      <div class="graficoHuevos contGraficos" id="contHuevos">
+        <h1 class="tituloGraficos"> ESTADISTICA POR HUEVOS </h1>
+        <canvas id="chartHuevos" width="100" height="100"></canvas>
+      </div>  
+      <!-- GRAFICO DE RECORRIDO -->
+      <div class="graficoRecorrido contGraficos" id="contRecorrido">
+        <h1 class="tituloGraficos"> ESTADISTICA POR RECORRIDO </h1>
+        <canvas id="chartRecorrido" width="100" height="100"></canvas>
+      </div>  
+      <!-- GRAFICO DE DEBILIDADES -->
+      <div class="graficoDebilidad contGraficos" id="contDebilidades">
+        <h1 class="tituloGraficos"> ESTADISTICA POR DEBILIDAD </h1>
+        <canvas id="chartDebilidad" width="100" height="100"></canvas>
+      </div>   
+    </div>
+
     </main>
-     <!-- CONTENEDOR DEL BOTON DE SUBIR -->
-     <div class="button-up">
+
+    <!-- CONTENEDOR DEL BOTON DE SUBIR -->
+    <div class="button-up">
       <i class="fas fa-arrow-up"></i> <!-- ICONO DE SUBIR -->
     </div>
     <!-- CONTENEDOR DEL BOTON DE SUBIR -->
