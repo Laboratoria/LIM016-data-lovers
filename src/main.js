@@ -8,9 +8,9 @@ const allData = data.results; // Data general
 let filterData = data.results; // Data filtrada
 
 let dataPersonajes = document.querySelector("#showAllCharacters");
-let characterType = document.getElementById("filterType");  // Lista de tipos de personaje seleccionado
-let CharacterCategory = document.getElementById("byCategory"); // Lista de categorias de los personajes 
-
+const characterType = document.getElementById("filterType");  // Lista de tipos de personaje seleccionado
+const CharacterCategory = document.getElementById("byCategory"); // Lista de categorias de los personajes 
+const sortCharacters = document.getElementById("sort"); //Ordenar de personajes.
 // --- Botones: 
 const btnAll = document.getElementById("getAll");
 
@@ -59,112 +59,106 @@ function changeFilterList() {
 // //   console.log(characterType, CharacterCategory);
 // // })
 
-
-
-function filterCharacters()
-{ 
+function filterCharacters(){ 
     characterType.addEventListener("change", (e) => {
   
-    let options = e.target.value;
-    console.log(options);
- 
-    if (options === "gender") {
+    let options = e.target.value
+          
+      if (options === "gender") {
 
-      CharacterCategory.addEventListener("change",
-        function () {
-          let gender = this.options[CharacterCategory.selectedIndex].value;
+        CharacterCategory.addEventListener("change", () => {
+            let gender = this.options[CharacterCategory.selectedIndex].value;
+        
+            switch (gender) {
+              case "1":
+                filterData = allData.filter((personaje) => personaje.gender === "Female");
+                break;
+              case "2":
+                filterData = allData.filter((personaje) => personaje.gender === "Male");
+                break;
+              case "3":
+                filterData = allData.filter((personaje) => personaje.gender === "Genderless");
+                break;
+              case "4":
+                filterData = allData.filter((personaje) => personaje.gender === "unknown");
+                break;
+              default:
+                break;
       
-          switch (gender) {
-            case "1":
-              filterData = allData.filter((personaje) => personaje.gender === "Female");
-              break;
-            case "2":
-              filterData = allData.filter((personaje) => personaje.gender === "Male");
-              break;
-            case "3":
-              filterData = allData.filter((personaje) => personaje.gender === "Genderless");
-              break;
-            case "4":
-              filterData = allData.filter((personaje) => personaje.gender === "unknown");
-              break;
-            default:
-              break;
-    
-          } return printData(filterData);
-        }
-      );
-    } else if (options === "species") {
-      
-      CharacterCategory.addEventListener("change",
-        function () {
-          let species = this.options[CharacterCategory.selectedIndex].value;
-      
-          switch (species) {
-            case "1":
-              filterData = allData.filter((personaje) => personaje.species === "Animal");
-              break;
-            case "2":
-              filterData = allData.filter((personaje) => personaje.species === "Mutant");
-              break;
-            case "3":
-              filterData = allData.filter((personaje) => personaje.species === "unknown");
-              break;
-            case "4":
-              filterData = allData.filter((personaje) => personaje.species === "Disease");
-              break;
-            case "5":
-              filterData = allData.filter((personaje) => personaje.species === "Alien");
-              break;
-            case "6":
-              filterData = allData.filter((personaje) => personaje.species === "Human");
-              break;
-            case "7":
-              filterData = allData.filter((personaje) => personaje.species === "Humanoid");
-              break;
-            case "8":
-              filterData = allData.filter((personaje) => personaje.species === "Mytholog");
-              break;
-            case "9":
-              filterData = allData.filter((personaje) => personaje.species === "Parasite");
-              break;
-            case "10":
-              filterData = allData.filter((personaje) => personaje.species === "Poopybutthole");
-              break;
-            case "11":
-              filterData = allData.filter((personaje) => personaje.species === "Robot");
-              break;
-            case "12":
-              filterData = allData.filter((personaje) => personaje.species === "Vampire");
-              break;
+            } return printData(filterData);
+          }
+        );
+      } else if (options === "species") {
+        
+        CharacterCategory.addEventListener("change", () => {
+            let species = this.options[CharacterCategory.selectedIndex].value;
+        
+            switch (species) {
+              case "1":
+                filterData = allData.filter((personaje) => personaje.species === "Animal");
+                break;
+              case "2":
+                filterData = allData.filter((personaje) => personaje.species === "Mutant");
+                break;
+              case "3":
+                filterData = allData.filter((personaje) => personaje.species === "unknown");
+                break;
+              case "4":
+                filterData = allData.filter((personaje) => personaje.species === "Disease");
+                break;
+              case "5":
+                filterData = allData.filter((personaje) => personaje.species === "Alien");
+                break;
+              case "6":
+                filterData = allData.filter((personaje) => personaje.species === "Human");
+                break;
+              case "7":
+                filterData = allData.filter((personaje) => personaje.species === "Humanoid");
+                break;
+              case "8":
+                filterData = allData.filter((personaje) => personaje.species === "Mytholog");
+                break;
+              case "9":
+                filterData = allData.filter((personaje) => personaje.species === "Parasite");
+                break;
+              case "10":
+                filterData = allData.filter((personaje) => personaje.species === "Poopybutthole");
+                break;
+              case "11":
+                filterData = allData.filter((personaje) => personaje.species === "Robot");
+                break;
+              case "12":
+                filterData = allData.filter((personaje) => personaje.species === "Vampire");
+                break;
 
-            default:
-              break;
-          } return printData(filterData);
-        });
-      
-    } else {
-      
-      CharacterCategory.addEventListener("change",
-        function () {
-          let status = this.options[CharacterCategory.selectedIndex].value;
+              default:
+                break;
+            } return printData(filterData);
+          });
+        
+      } else {
+        
+        CharacterCategory.addEventListener("change", () => {
+            let status = this.options[CharacterCategory.selectedIndex].value;
 
-          switch (status) {
-            case "1":
-              filterData = allData.filter((personaje) => personaje.status === "unknown");
-              break;
-            case "2":
-              filterData = allData.filter((personaje) => personaje.status === "Dead");
-              break;
-            case "3":
-              filterData = allData.filter((personaje) => personaje.status === "Alive");
-              break;
-            default:
-              break;
-          } return printData(filterData);
-        });
-    };
-  });
+            switch (status) {
+              case "1":
+                filterData = allData.filter((personaje) => personaje.status === "unknown");
+                break;
+              case "2":
+                filterData = allData.filter((personaje) => personaje.status === "Dead");
+                break;
+              case "3":
+                filterData = allData.filter((personaje) => personaje.status === "Alive");
+                break;
+              default:
+                break;
+            } return printData(filterData);
+          });
+      };
+    });
 } filterCharacters();
+
  
 // -------- FUNCION PrintData --------->
 
@@ -222,3 +216,12 @@ function showAllCharacters() {
 function clearCharacters() {
   dataPersonajes.innerHTML = "";
 };
+
+// -------- ORDENAR PERSONAJES ------------------>>>
+
+// console.table(filterData);
+
+let name = filterData.map((data) => data.name)
+
+console.log(name);
+// console.table(filterData.sort((a, b) => b.name < a.name));
