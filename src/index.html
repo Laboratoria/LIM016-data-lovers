@@ -205,45 +205,25 @@
             </div>
           </div>
 
-          <div class="divbtnsFilter">
-            <ul class=navBtn> 
+            <div class="containerEdadPeople">
+              <div class="containerSlider">
+                <label>Edad</label>
+              <input type="range" id="slider" min="0" step="1" max="100" value="50">
+              <div id="selector">
+                <div class="selectBtn"></div>
+                <div id="selectValue"></div>
+              </div>
+              </div>
+            </div>
+            
+            <div class="divbtnsFilter">
+              <ul class=navBtn> 
 
               <li><button id="">Género</button>
                 <ul class="btnContainerGenero">
                     <li><button class="filterGenero" data-id="Female">Mujer</button></li>
                     <li><button class="filterGenero" data-id="Male">Hombre</button></li>
                     <li><button class="filterGenero" data-id="NA">NA</button></li>
-                </ul>
-              </li>
-              <li><button id="">Color de Ojos</button>
-              <ul class="btnContainerColorDeOjos">
-                    <li><button class="filterColorDeOjos" data-id="Oscuros">Oscuros</button>
-                    </li>
-                     <!-- EN EL BOTON SE AGREGARA BLACK. BROWN, DARK BROWN, LIGHT BROWN, DARK BROWN/BLACK!-->
-                    <li><button class="filterColorDeOjos" data-id="Otros Colores">Otros Colores</button> 
-                    </li>
-                     <!-- EN EL BOTON SE AGREGARA UNA FUNCION QUE SOLICITE AQUELLOS COLORES DE OJOS QUE NO SEAN SELECCIONADOS!-->
-                    <li><button class="filterColorDeOjos" data-id="NA">NA</button></li>
-              </ul>
-              </li>
-              <li><button id="">Color de Cabello</button>
-                <ul class="btnContainerColorDeCabello">  
-                  <li><button class="filterColorDeCabello" data-id="Negros">Negros</button></li>
-                   <!-- EN EL BOTON SE AGREGARA !-->
-                    <li><button class="filterColorDeCabello" data-id="Marrones">Marrones</button></li>
-                     <!-- EN EL BOTON SE AGREGARA!-->
-                    <li><button class="filterColorDeCabello" data-id="Otros Colores">Otros Colores</button> </li>
-                     <!-- EN EL BOTON SE AGREGARA !-->
-                    <li><button class="filterColorDeCabello" data-id="NA">NA</button></li>
-                     <!-- EN EL BOTON SE AGREGARA !-->
-              </ul>
-              </li>
-              <li><button>Edad</button>
-                <ul class="btnContainerEdad">  
-                  <li><button class="filterEdad" data-id="Niños">Niños</button></li>
-                  <li><button class="filterEdad" data-id="Teens">Teens</button></li>
-                  <li><button class="filterEdad" data-id="button">Adultos</button>
-                  <li><button class="filterEdad" data-id="Adulto Mayor"> Adulto Mayor</button></li>
                 </ul>
               </li>
               <li><button>Humanos</button>
