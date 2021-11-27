@@ -25,7 +25,7 @@ body{
     display: grid;
     grid-area: dashboard; 
     width: 335px;
-    height: 560px;
+    height: 570px;
     background: rgb(250, 250, 252);
     color: black;
     border-top-left-radius : 70px;
@@ -40,7 +40,7 @@ body{
     border-top-right-radius : 70px;
     border-bottom-right-radius : 70px;
     width: 900px;
-    height: 560px;
+    height: 570px;
     
   }
   .conteinerDashboard {
@@ -169,7 +169,7 @@ body{
       justify-content: center;
       margin-bottom: 10px;
     }
-    .divFilmoTitle, .divLocationsTitle, .divPeopleTitle, .divVehiclesTitle {
+    .divFilmoTitle, .divLocationsTitle, .divVehiclesTitle {
       display: flex;
       height: 89px;
       margin-left: 34px;
@@ -416,7 +416,11 @@ ul.slider li:target {
 
 /* estilos people*/
 
-
+.divPeopleTitle {
+  display: flex;
+  height: 70px;
+  margin-left: 34px;
+}
 
 #conteinerScrollPeople {
   display: flex;
@@ -522,7 +526,79 @@ ul.slider li:target {
   border-radius: 5px;
 }
 
-
+.containerEdadPeople{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.containerSlider {
+  position: relative;
+  width: 78%;
+}
+#slider {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 7px;
+  outline: none;
+  border-radius: 3px; 
+}
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+}
+#selector {
+  height: 104px;
+  width: 48px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-200%);
+  z-index: 2;
+}
+.selectBtn {
+  height: 48px;
+  width: 38px;
+  background-image: url(img/botonslider.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+}
+#selectValue {
+  width: 70%;
+  height: 25%;
+  position: absolute;
+  top: 19px;
+  background: rgb(79, 79, 79);
+  border-radius: 4px;
+  line-height: 45px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 2px;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#selectValue::after {
+  content: '';
+  border-top: 12px solid rgb(79, 79, 79);
+  border-left: 17px solid rgba(178, 134, 184, 0.37); 
+  border-right: 18px solid rgba(178, 134, 184, 0.37); 
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+label {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
 /* seccion vehiculos*/
 
 

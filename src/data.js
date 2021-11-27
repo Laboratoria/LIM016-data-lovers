@@ -65,15 +65,6 @@ export const sortOrdenNumericoDesc = (array,parametro) => {
   return compareNumber
 }
 
-
-  /*const compareNumber = sortArray.flat(1).sort((a,b) => {
-   if(a.parametro !== "NA" )
-    return b[parametro] - a[parametro];
-  });
-  return compareNumber
-  }*/
-
-
    export const filterPeopleLocationsVehicles = (array,llave,property,parametro) => { 
     let sortArray = [];
     for(let i=0; i<array.length;i++){
@@ -83,4 +74,29 @@ export const sortOrdenNumericoDesc = (array,parametro) => {
      return arrayItem[parametro]=== property 
   });
       return arrayProperty
+    }
+
+    /*export const filterAge = (array, parametro, slider) => { 
+    const arrayPeople = array.map((el) => el[parametro])
+    const age = arrayPeople.forEach((people) => {
+      if (people.age === slider.value) {
+        return people.age    
+      }
+    })
+    console.log(age)
+    return age
+    }*/
+
+    export const filterAge = (array, parametro, sliderValue) => {
+
+      let arrayPeople = array.map((el) => el[parametro]);
+      //const intento = slider.value;
+      const arrayAges = [];
+      arrayPeople.flat(1).forEach((p) => {
+          let edades= p.age;
+            if (edades.includes(sliderValue)){
+              arrayAges.push(p)
+            }
+      })
+      return arrayAges
     }

@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import {filterItems, sortOrdenAlfabeticoAsc, sortOrdenAlfabeticoDesc, filterData, sortOrdenNumericoAsc, sortOrdenNumericoDesc, filterPeopleLocationsVehicles} from  './data.js';
+import {filterItems, sortOrdenAlfabeticoAsc, sortOrdenAlfabeticoDesc, filterData, sortOrdenNumericoAsc, sortOrdenNumericoDesc, filterPeopleLocationsVehicles, filterAge} from  './data.js';
 
 let films = [];
 films = data.films;
@@ -81,6 +81,8 @@ films.forEach((el) => {
 } )
 }
 filmoItems(films);
+
+//let title = films.map(el => el.title);
 
 
 function peopleItems (callback) {
@@ -234,14 +236,11 @@ const filterButtonDesc =document.getElementById("desc");
     //funcion para la barra de busqueda
     let formulario= document.getElementById("formulario"); 
     const boton= document.getElementById("boton");
-//nuevo comentario
     const filtrar = () => {
       const texto= formulario.value.toLowerCase();
       const arrayFilms = [];
-     //console.log("texto escrito", texto)
           films.forEach((film) => {
           let textTitle= film.title.toLowerCase();
-         //console.log("titulo escrito", textTitle)
             if (textTitle.includes(texto)){
               arrayFilms.push(film)
             //conteinerScrollFilmo.innerHTML=" Lo encontraste";
@@ -361,10 +360,34 @@ filterButtonsMiticos.forEach((el) => {
       return filterButtonsMiticos;
   })
 
+//Funcionalidad para el boton slider
+const slider = document.getElementById("slider");
+const selector = document.getElementById("selector");
+const selectValue =document.getElementById("selectValue");
+
+selectValue.innerHTML = slider.value;
+
+slider.oninput = function () {
+  selectValue.innerHTML = this.value;
+  selector.style.left = this.value + "%";
+}
+
+//Funcion para la barra de edad
+slider.addEventListener("change", function() {
+  const newData = filterAge(films,"people", slider.value);
+    conteinerScrollPeople.innerHTML=" ";
+    peopleItems (newData)  
+  if (conteinerScrollPeople.innerHTML== " ") {
+    conteinerScrollPeople.innerHTML="No hay personajes con esta edad, sigue buscando :)";
+  }
+
+})
+//console.log(filterAge(films,"people", slider.value))
+
 //Funcion para el boton clean
 document.getElementById("cleanPeople").addEventListener("click",function() {
   conteinerScrollPeople.innerHTML=" ";
-  peopleItems(filterItems("people", films).flat(2))   
+  peopleItems(filterItems("people", films).flat(1))   
 })
 
 
