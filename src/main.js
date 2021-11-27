@@ -9,8 +9,7 @@ let filterData = data.results; // Data filtrada
 
 let dataPersonajes = document.querySelector("#showAllCharacters");
 const characterType = document.getElementById("filterType");  // Lista de tipos de personaje seleccionado
-const CharacterCategory = document.getElementById("byCategory"); // Lista de categorias de los personajes 
-const sortCharacters = document.getElementById("sort"); //Ordenar de personajes.
+const characterCategory = document.getElementById("byCategory"); // Lista de categorias de los personajes 
 // --- Botones: 
 const btnAll = document.getElementById("getAll");
 
@@ -31,14 +30,14 @@ function changeFilterList() {
   let filters = filterByCategory[selFilter];
   let filter;
 
-  while (CharacterCategory.options.length) {
-    CharacterCategory.remove(0);
+  while (characterCategory.options.length) {
+    characterCategory.remove(0);
   };
     
     if (filters) {
         for (let i = 0; i < filters.length; i++) {
             filter = new Option(filters[i], i);
-            CharacterCategory.options.add(filter);
+            characterCategory.options.add(filter);
       };
   };
 };
@@ -62,12 +61,14 @@ function changeFilterList() {
 function filterCharacters(){ 
     characterType.addEventListener("change", (e) => {
   
-    let options = e.target.value
-          
+      let options = e.target.value;
+      
       if (options === "gender") {
 
-        CharacterCategory.addEventListener("change", () => {
-            let gender = this.options[CharacterCategory.selectedIndex].value;
+        characterCategory.addEventListener("change", 
+        function() {
+
+            let gender = this.options[characterCategory.selectedIndex].value;
         
             switch (gender) {
               case "1":
@@ -90,8 +91,8 @@ function filterCharacters(){
         );
       } else if (options === "species") {
         
-        CharacterCategory.addEventListener("change", () => {
-            let species = this.options[CharacterCategory.selectedIndex].value;
+        characterCategory.addEventListener("change", function() {
+            let species = this.options[characterCategory.selectedIndex].value;
         
             switch (species) {
               case "1":
@@ -138,8 +139,8 @@ function filterCharacters(){
         
       } else {
         
-        CharacterCategory.addEventListener("change", () => {
-            let status = this.options[CharacterCategory.selectedIndex].value;
+        characterCategory.addEventListener("change", function () {
+            let status = this.options[characterCategory.selectedIndex].value;
 
             switch (status) {
               case "1":
@@ -221,7 +222,7 @@ function clearCharacters() {
 
 // console.table(filterData);
 
-let name = filterData.map((data) => data.name)
+// let name = filterData.map((data) => data.name)
 
-console.log(name);
+// console.log(name);
 // console.table(filterData.sort((a, b) => b.name < a.name));
