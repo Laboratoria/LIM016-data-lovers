@@ -445,7 +445,7 @@ ul.slider li:target {
    display:flex ;
    height: 200px;
    width:140px;
-   margin: 5px;
+   margin:auto;
    margin-bottom: 10px;
    position: relative;
 

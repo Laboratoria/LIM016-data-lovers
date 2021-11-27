@@ -403,4 +403,7 @@ document.getElementById("cleanVehicles").addEventListener("click",function() {
 })
     
     
+let people= films.people
+let colorDeOjos = people.filter(people => carro.eye_color === "Black");
 
+console.log(colorDeOjos);
