@@ -9,7 +9,7 @@ const container=document.querySelector(".container-pokemons");
 const fragment=document.createDocumentFragment();
 const template=document.getElementById("templateCard");
 
-const up=document.querySelector(".button-up");
+
 
 
 // FUNCIÓN PARA LIMPIAR LAS TARJETAS
@@ -49,10 +49,10 @@ function limpiarModal(){
 const iconoHamburguesa = document.querySelector(".menuHamburguesa");
 const menu = document.querySelector(".cont-menu");
 iconoHamburguesa.addEventListener("click", (e)=>{
-    if (menu.style.display == 'none') {
-        menu.style.display = 'block';
-    } else {
+    if (menu.style.display == 'block') {
         menu.style.display = 'none';
+    } else {
+        menu.style.display = 'block';
     }    
 });
 
@@ -67,6 +67,7 @@ input.addEventListener("keyup",(e)=>{
         let valorInput = e.target.value;
         input.value = valorInput;
         buscarPokemon(data.pokemon,valorInput,fragment, template, container);
+        buscarPokemon1(data.pokemon,valorInput);
     
 });
 
@@ -173,6 +174,7 @@ ordenar.forEach(e=>{
 });
 
 // BOTON SUBIR AL INICIO DE PAGINA
+const up=document.querySelector(".button-up");
 up.addEventListener("click", scrollUp);
 
 function scrollUp(){
@@ -579,7 +581,6 @@ const estadistica = document.querySelectorAll('.estadistica');
 estadistica.forEach(e=>{    
     
     e.addEventListener("click", e => {
-            
             let estadisticaOption = e.target.getAttribute("estadistica");
 
         // ESTADISTICA TODO
@@ -597,11 +598,6 @@ estadistica.forEach(e=>{
         if (estadisticaOption == "por-región") {
             container.style.display="none";
             containerEstadistica.style.display="block";
-            contenidoRegion.style.display="block";
-            contenidoElemento.style.display="none";
-            contenidoHuevos.style.display="none";
-            contenidoRecorrido.style.display="none";
-            contenidoDebilidad.style.display="none";
         } 
         
         // ESTADISTICA POR ELEMENTO
@@ -647,8 +643,6 @@ estadistica.forEach(e=>{
             contenidoRecorrido.style.display="none";
             contenidoDebilidad.style.display="block";
         }  
-        
-        
         
     });
 });
