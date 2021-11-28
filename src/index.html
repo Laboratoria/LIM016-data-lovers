@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Exo&family=Questrial&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
     
   <body>
@@ -364,6 +365,26 @@
 
       </div>
 
+      <section id="statistics">
+        <div class="statisticsContainer">
+        <div class="tittle"></div>
+        <h1></h1>
+        <p></p>
+        </div>
+       <div class="ChartDirector">
+         <h2>El Director Preferido por Studio Ghibli</h2>
+         <br>
+         <canvas id="myChart" width="400" height="400"></canvas>
+       </div>
+       <div class="Chart2">
+        <h2>Las Mejores Películas</h2>
+        <br>
+        <canvas id="myChart1" width="400" height="400"></canvas>
+      </div>
+
+
+      </section>
+
       <div class="divContainerFooter">
         <div class="divFooter">
           <div class="divcolumna1">
@@ -383,5 +404,6 @@
     
 
     <script src="main.js" type="module"></script>
+    <script src="chart.js" type="module"></script>
     </body>
 </html>

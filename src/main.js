@@ -429,4 +429,27 @@ document.getElementById("cleanVehicles").addEventListener("click",function() {
 let people= films.people
 let colorDeOjos = people.filter(people => carro.eye_color === "Black");
 
-console.log(colorDeOjos);
+
+
+
+let ctx= document.getElementById("myChart").getContext("2d");
+let myChart = new Chart(ctx,{
+    type:"bar",
+    data: {
+        labels:["Yoshifumi Kondō", "Isao Takahata", "Hiromasa Yonebayashi", "Gorō Miyazaki",  "Hiroyuki Morita", "Hayao Miyazaki" ],
+        datasets:[{
+          label:"Número de Películas",
+          data:[1,5,2,2,1,9],
+          backgroundColor: [
+            'rgba(129, 66, 204, 0.49)',
+            'rgba(247, 250, 60, 0.75)',
+            'rgba(70, 235, 242, 0.41)',
+            'rgba(157, 237, 109, 0.93)',
+            'rgba(240, 155, 66, 0.49)',
+            'rgba(237, 109, 234, 0.49)',
+        
+            ]
+
+          }]
+     } 
+    })
