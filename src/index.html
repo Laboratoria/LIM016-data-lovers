@@ -52,27 +52,27 @@
             </div> 
 
             <!-- FILTRADO POR ELEMENTO   -->   
-            <div class="cont-filtrar-elemento">
+            <div class="cont-filtrar-tipo">
               <div class="opcion-filtrar opcion">
-                <p> ELEMENTO </p>
+                <p> TIPO </p>
                 <p class="icono"> + </p>
               </div>
               <div class="cont-enlaces" id="cont-enlaces2">
-                <span class="elemento" href="#" elemento="water">AGUA</span>
-                <span class="elemento" href="#" elemento="fire">FUEGO</span>
-                <span class="elemento" href="#" elemento="grass">HIERBA</span>
-                <span class="elemento" href="#" elemento="ground">SUELO</span>
-                <span class="elemento" href="#" elemento="rock">ROCA</span>
-                <span class="elemento" href="#" elemento="ice">HIELO</span>
-                <span class="elemento" href="#" elemento="electric">ELECTRICO</span>
-                <span class="elemento" href="#" elemento="dragon">DRAGON</span>
-                <span class="elemento" href="#" elemento="ghost">FANTASMA</span>
-                <span class="elemento" href="#" elemento="psychic">PSIQUICO</span>
-                <span class="elemento" href="#" elemento="normal">NORMAL</span>
-                <span class="elemento" href="#" elemento="fighting">LUCHA</span>
-                <span class="elemento" href="#" elemento="poison">VENENO</span>
-                <span class="elemento" href="#" elemento="bug">BICHO</span>
-                <span class="elemento" href="#" elemento="flying">VOLADOR</span>
+                <span class="tipo" href="#" tipo="water">AGUA</span>
+                <span class="tipo" href="#" tipo="fire">FUEGO</span>
+                <span class="tipo" href="#" tipo="grass">HIERBA</span>
+                <span class="tipo" href="#" tipo="ground">TIERRA</span>
+                <span class="tipo" href="#" tipo="rock">ROCA</span>
+                <span class="tipo" href="#" tipo="ice">HIELO</span>
+                <span class="tipo" href="#" tipo="electric">ELECTRICO</span>
+                <span class="tipo" href="#" tipo="dragon">DRAGON</span>
+                <span class="tipo" href="#" tipo="ghost">FANTASMA</span>
+                <span class="tipo" href="#" tipo="psychic">PSIQUICO</span>
+                <span class="tipo" href="#" tipo="normal">NORMAL</span>
+                <span class="tipo" href="#" tipo="fighting">LUCHA</span>
+                <span class="tipo" href="#" tipo="poison">VENENO</span>
+                <span class="tipo" href="#" tipo="bug">BICHO</span>
+                <span class="tipo" href="#" tipo="flying">VOLADOR</span>
               </div>
             </div>
           </div>
@@ -97,12 +97,11 @@
             <p class="icono"> <i class="fas fa-chart-pie"></i> </p>
           </div>
           <div class="cont-enlaces" id="cont-enlaces4">
-            <span class="estadistica" href="#" estadistica="todo">TODO</span>
+            <span class="estadistica" href="#" estadistica="todos">TODOS</span>
             <span class="estadistica" href="#" estadistica="por-región">POR REGIÓN</span>
             <span class="estadistica" href="#" estadistica="por-elemento">POR ELEMENTO</span>
             <span class="estadistica" href="#" estadistica="por-huevos">POR HUEVOS</span>
             <span class="estadistica" href="#" estadistica="por-recorrido">POR RECORRIDO</span>
-            <span class="estadistica" href="#" estadistica="por-debilidad">POR DEBILIDAD</span>
           </div>
         </div>                     
       </nav>
@@ -152,12 +151,22 @@
               <div class="contPriEvolucion" id="contPriEvolucion">
                 <div class="imgEvolucion1"></div>
                 <div class="nombreEvolucion1"></div>
-                <div class="contCaramelos1"></div>
+                <div class="contCaramelos1">
+                    <p class="caramelosEvolucion1"></p>
+                    <img class="imgCaramelos" src="../IMAGENES/caramelo.png" alt="">
+                </div>
               </div>
               <div class="contSegEvolucion" id="contSegEvolucion">
-                <div class="imgEvolucion2"></div>
-                <div class="nombreEvolucion2"></div>
-                <div class="contCaramelos2"></div>
+                <div class="imgEvolucion2">
+                    <img class="imagenEvolucion2" src="" alt="">
+                </div>
+                <div class="nombreEvolucion2">
+                    <p class="nomEvolucion2"></p>
+                </div>
+                <div class="contCaramelos2">
+                    <p class="caramelosEvolucion2"></p>
+                    <img class="imgCaramelos" src="../IMAGENES/caramelo.png" alt="">
+                </div>
               </div>
             </div>
           </section>
@@ -187,11 +196,6 @@
         <h1 class="tituloGraficos"> ESTADISTICA POR RECORRIDO </h1>
         <canvas id="chartRecorrido" width="100" height="100"></canvas>
       </div>  
-      <!-- GRAFICO DE DEBILIDADES -->
-      <div class="graficoDebilidad contGraficos" id="contDebilidades">
-        <h1 class="tituloGraficos"> ESTADISTICA POR DEBILIDAD </h1>
-        <canvas id="chartDebilidad" width="100" height="100"></canvas>
-      </div>   
     </div>
 
     </main>

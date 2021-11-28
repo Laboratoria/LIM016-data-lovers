@@ -1,74 +1,56 @@
 // IMPORTAR DATA DE POKEMON.JS
 import data from './data/pokemon/pokemon.js';
-import { buscarPokemon, mostraPokemon, masInfoPokemon } from './data.js';
+import { buscarPokemon, filtrarRegion, filtrarElemento, ordenarPokemons, obtenerPokemon} from './data.js';
 
-// DECLARACION DE VARIABLES
-const input=document.querySelector(".buscarPokemon");
-const container=document.querySelector(".container-pokemons");
+// CUANDO CARGA LA PAGINA
+window.onload = () => {
+    llenarCard(data.pokemon);
+}
 
-const fragment=document.createDocumentFragment();
-const template=document.getElementById("templateCard");
-
-
-
-
-// FUNCIÓN PARA LIMPIAR LAS TARJETAS
+// FUNCIÓN PARA LIMPIAR LOS CARDS
 function limpiarCards(){ 
     let nodosEliminar=document.querySelectorAll(".card");
     nodosEliminar.forEach(nodo => nodo.remove());
 }
 
-// FUNCION PARA LIMPIAR EL MODAL
-function limpiarModal(){
-    document.querySelector(".nomPokemonMod").textContent="";
-    document.querySelector(".tipoPokemonMod").textContent="TIPO: ";
-    document.querySelector(".cpPokemonMod").textContent="CP: ";
-    document.querySelector(".peso").textContent="";
-    document.querySelector(".altura").textContent="";
-    document.querySelector(".huevos").textContent="";
-    document.querySelector(".debilidad").textContent="";
-
-    let menNoTieneEvo = document.querySelectorAll(".cont-evoluciones .mensaje");
-    menNoTieneEvo.forEach(nodo=>nodo.remove());
-
-    let nombreEvolucion = document.querySelectorAll(".cont-evoluciones .nomEvolucion");
-    nombreEvolucion.forEach(nodo=>nodo.remove());
-
-    let caramelosEvolucion = document.querySelectorAll(".cont-evoluciones .caramelosEvolucion");
-    caramelosEvolucion.forEach(nodo=>nodo.remove());
-
-    let imagenCaramelos = document.querySelectorAll(".cont-evoluciones .imgCaramelos");
-    imagenCaramelos.forEach(nodo=>nodo.remove());
-    
-    let imagenEvolucion = document.querySelectorAll(".cont-evoluciones .imagenEvolucion");
-    imagenEvolucion.forEach(nodo=>nodo.remove());
-
-    document.querySelector(".contAmbasEvoluciones .contSegEvolucion").style.display="block";
+// LLENAR CARDS
+function llenarCard(dataFiltrada) {
+    const templateCard=document.getElementById("templateCard");
+    const fragment=document.createDocumentFragment();
+    dataFiltrada.forEach(function(element) {
+        templateCard.content.querySelector(".numPokemon").textContent=element.num;
+        templateCard.content.querySelector(".nomPokemon").textContent=element.name;
+        templateCard.content.querySelector(".imgPokemon").src=element.img;
+        templateCard.content.querySelector(".cpPokemon").textContent="PC: "+element.stats['max-cp'];
+        templateCard.content.querySelector(".nomRegion").textContent=element.generation.name;
+        templateCard.content.querySelector(".imgPokemon").id=element.num;
+        const clone=templateCard.content.cloneNode(true);
+        fragment.appendChild(clone);
+    });
+    containerPokemons.appendChild(fragment);   
 }
+
+// BUSCAR POKEMON
+const inputBuscador=document.querySelector(".buscarPokemon");
+const containerPokemons=document.querySelector(".container-pokemons");
+
+// EVENTO AL PRESIONAR UNA TECLA EN EL INPUT BUSCADOR
+inputBuscador.addEventListener("keyup",(e)=>{
+    limpiarCards();
+    let valorInput = e.target.value;
+    llenarCard(buscarPokemon(data.pokemon,valorInput));
+});
+
 // EVENTO AL REALIZAR CLICK EN EL MENU HAMBURGUESA
 const iconoHamburguesa = document.querySelector(".menuHamburguesa");
 const menu = document.querySelector(".cont-menu");
 iconoHamburguesa.addEventListener("click", (e)=>{
     if (menu.style.display == 'block') {
         menu.style.display = 'none';
-    } else {
+    } 
+    else {
         menu.style.display = 'block';
     }    
-});
-
-// CUANDO CARGA LA PAGINA
-window.onload = () => {
-    mostraPokemon(data.pokemon, fragment, template, container);
-}
-
-// EVENTO AL PRESIONAR UNA TECLA EN EL INPUT BUSCADOR
-input.addEventListener("keyup",(e)=>{
-        limpiarCards();
-        let valorInput = e.target.value;
-        input.value = valorInput;
-        buscarPokemon(data.pokemon,valorInput,fragment, template, container);
-        buscarPokemon1(data.pokemon,valorInput);
-    
 });
 
 // FILTROS
@@ -79,7 +61,7 @@ opcion.forEach(e => {
 
     // AÑADIMOS UN EVENTO A CADA ELEMENTO SELECCIONADO
     e.addEventListener('click', function(e){
-        container.style.display="flex";
+        containerPokemons.style.display="flex";
         containerEstadistica.style.display="none";
         // ALTERAMOS LAS CLASES DE NUESTROS ENLACES
         const padre = e.target.parentNode;
@@ -92,35 +74,24 @@ opcion.forEach(e => {
 // FILTRAR DATA POR REGION
 const region = document.querySelectorAll('.region');
 region.forEach(e=>{    
-    
     e.addEventListener("click", e => {
         limpiarCards();
-        container.style.display="flex";
+        containerPokemons.style.display="flex";
         containerEstadistica.style.display="none";
-        let regionOption = e.target.getAttribute("region");
-        let pokemons =  data.pokemon;
-        let pokemonsFilter = pokemons.filter(pokemon => pokemon.generation.name == regionOption);
-        // alert(e.target.getAttribute('region'));
-        // console.log(pokemonsFilter);
-        buscarPokemon(pokemonsFilter,input.value,fragment, template, container);
+        let opcionRegion = e.target.getAttribute("region");
+        llenarCard(filtrarRegion(data.pokemon, opcionRegion));
     });
 });
 
-// FILTRAR DATA POR ELEMENTO
-const elemento = document.querySelectorAll('.elemento');
-elemento.forEach(e=>{    
-    
+// FILTRAR DATA POR TIPO
+const tipo = document.querySelectorAll('.tipo');
+tipo.forEach(e=>{    
     e.addEventListener("click", e => {
         limpiarCards();
-        container.style.display="flex";
+        containerPokemons.style.display="flex";
         containerEstadistica.style.display="none";
-        let elementoOption = e.target.getAttribute("elemento");
-        let pokemons =  data.pokemon;
-        let pokemonsFilter = pokemons.filter(pokemon => pokemon.type[0] == elementoOption || pokemon.type[1] == elementoOption);
-        //buscar con cual comparar
-        // alert(e.target.getAttribute('elemento'));
-        // console.log(pokemonsFilter);
-        buscarPokemon(pokemonsFilter,input.value,fragment, template, container);
+        let opcionTipo = e.target.getAttribute("tipo");
+        llenarCard(filtrarElemento(data.pokemon, opcionTipo));
     });
 });
 
@@ -131,50 +102,16 @@ ordenar.forEach(e=>{
     
     e.addEventListener("click", e => {
         limpiarCards();
-        container.style.display="flex";
+        containerPokemons.style.display="flex";
         containerEstadistica.style.display="none";
-        let ordenarOption = e.target.getAttribute("ordenar");
-        let pokemonsFilter =  data.pokemon;
-
-        // ORDENAR ALFABETICAMENTE A - Z
-        if (ordenarOption == "az") {
-            pokemonsFilter = pokemonsFilter.sort(function (a, b) {
-                if (a.name > b.name) { return 1; }
-                if (a.name < b.name) { return -1; }
-                return 0;
-            });  
-        }
-
-        // ORDENAR ALFABETICAMENTE Z - A
-        if (ordenarOption == "za") {
-            pokemonsFilter = pokemonsFilter.sort(function (a, b) {
-                if (a.name > b.name) { return -1; }
-                if (a.name < b.name) { return 1; }
-                return 0;
-            });  
-        } 
-        
-        // ORDENAR POR PUNTOS DE COMBATE ASCENDENTE
-        if (ordenarOption == "pc-as") {
-            pokemonsFilter = pokemonsFilter.sort(function (a, b) {
-                return a.stats["max-cp"] - b.stats["max-cp"];
-            });  
-        }  
-        
-        // ORDENAR POR PUNTOS DE COMBATE DESCENDENTE
-        if (ordenarOption == "pc-des") {
-            pokemonsFilter = pokemonsFilter.sort(function (a, b) {
-                return b.stats["max-cp"] - a.stats["max-cp"];
-            });  
-        }       
-        // alert(e.target.getAttribute('region'));
-        // console.log(pokemonsFilter);
-        buscarPokemon(pokemonsFilter,input.value,fragment, template, container);
+        let opcionOrdenar = e.target.getAttribute("ordenar");
+        llenarCard(ordenarPokemons(data.pokemon, opcionOrdenar));
     });
 });
 
 // BOTON SUBIR AL INICIO DE PAGINA
 const up=document.querySelector(".button-up");
+
 up.addEventListener("click", scrollUp);
 
 function scrollUp(){
@@ -196,18 +133,100 @@ window.onscroll=function(){
 // MODAL
 const containerModal=document.getElementById("containerModal");
 const btnModal=document.getElementById("close");
+const imgEvolucion1=document.querySelector(".imgEvolucion1");
+const nombreEvolucion1=document.querySelector(".nombreEvolucion1");
+const containerCaramelos1=document.querySelector(".contCaramelos1");
+const cantCaramelos1=document.querySelector(".caramelosEvolucion1");
+const containerSeguEvolucion=document.querySelector(".contSegEvolucion");
+const imagenEvolucion2=document.querySelector(".imgEvolucion2 .imagenEvolucion2");
+const nomNextEvolucion=document.querySelector(".nomEvolucion2");
+const caramelosNextEvolucion=document.querySelector(".caramelosEvolucion2");
+
+// FUNCION PARA LIMPIAR EL MODAL
+function limpiarModal(){
+    let menNoTieneEvo = document.querySelectorAll(".cont-evoluciones .mensajeEvolucion");
+    menNoTieneEvo.forEach(nodo=>nodo.remove());
+
+    let imagenEvolucion1 = document.querySelectorAll(".cont-evoluciones .imagenEvolucion1");
+    imagenEvolucion1.forEach(nodo=>nodo.remove());
+
+    let nombreEvolucion = document.querySelectorAll(".cont-evoluciones .nomEvolucion1");
+    nombreEvolucion.forEach(nodo=>nodo.remove());
+}
+
+
+// LLENAR MODAL
+function llenarModal(pokemons, pokemonSeleccionado) {
+        containerModal.querySelector(".nomPokemonMod").textContent=pokemonSeleccionado.name.toUpperCase();
+        containerModal.querySelector(".tipoPokemonMod").textContent="TIPO: "+pokemonSeleccionado.type;
+        containerModal.querySelector(".cpPokemonMod").textContent="PC: "+pokemonSeleccionado.stats["max-cp"];
+        containerModal.querySelector(".peso").textContent=pokemonSeleccionado.size.weight;
+        containerModal.querySelector(".altura").textContent=pokemonSeleccionado.size.height;
+        containerModal.querySelector(".huevos").textContent=pokemonSeleccionado.egg;
+        containerModal.querySelector(".debilidad").textContent=pokemonSeleccionado.weaknesses;
+        
+        // SI NO TIENE PRIMERA EVOLUCION POSTERIOR
+        if(pokemonSeleccionado.evolution["next-evolution"]==undefined){
+            let mensajeEvolucion = document.createElement("p");
+            mensajeEvolucion.className ="mensajeEvolucion";
+            mensajeEvolucion.textContent="Este pokemon no cuenta con evoluciones posteriores.";
+            containerModal.querySelector(".contPriEvolucion").appendChild(mensajeEvolucion);
+            imgEvolucion1.style.display="none";
+            nombreEvolucion1.style.display="none";
+            containerCaramelos1.style.display="none";
+            containerSeguEvolucion.style.display="none";
+        }
+
+        // SI TIENE PRIMERA EVOLUCION POSTERIOR
+        else {
+            imgEvolucion1.style.display="flex";
+            nombreEvolucion1.style.display="flex";
+            containerCaramelos1.style.display="flex";
+            containerSeguEvolucion.style.display="none";
+            let cantEvoluciones=pokemonSeleccionado.evolution["next-evolution"].length; // CANTIDAD DE EVOLUCIONES EN LA PRIMERA EVOL
+            if(cantEvoluciones>5){cantEvoluciones=5} // SOLO APAREZCAN COMO MAXIMO 5 EVOLUCIONES
+            for(let j=0; j<cantEvoluciones; j++){
+                let numEvolucion1=pokemonSeleccionado.evolution["next-evolution"][j].num;
+                // IMAGEN DE LA PRIMERA O PRIMERAS EVOLUCIONES
+                const imagenEvolucion1=document.createElement("img");
+                imagenEvolucion1.className="imagenEvolucion1";
+                (parseInt(numEvolucion1)<=251) ? imagenEvolucion1.src=pokemons.find(e=>parseInt(e.num)==parseInt(numEvolucion1)).img : imagenEvolucion1.src="https://canalpokemon.files.wordpress.com/2008/11/kawax-pokeball-3097.png?w=256&h=256";
+                containerModal.querySelector(".imgEvolucion1").appendChild(imagenEvolucion1);
+                // NOMBRE DE LA PRIMERA O PRIMERAS EVOLUCIONES
+                const nomEvolucion1 = document.createElement("p");
+                nomEvolucion1.className ="nomEvolucion1";
+                nomEvolucion1.textContent=pokemonSeleccionado.evolution["next-evolution"][j].name;
+                containerModal.querySelector(".nombreEvolucion1").appendChild(nomEvolucion1);            
+            }
+                // CANTIDAD DE CARAMELOS DE LA EVOLUCION
+                cantCaramelos1.textContent=pokemonSeleccionado.evolution["next-evolution"][0]["candy-cost"];
+            
+            // SI TIENE SEGUNDA EVOLUCION POSTERIOR
+            if(pokemonSeleccionado.evolution["next-evolution"][0]["next-evolution"]!=undefined){
+                containerSeguEvolucion.style.display="flex";
+                // IMAGEN DE LA SEGUNDA EVOLUCION
+                let numEvolucion2=pokemonSeleccionado.evolution["next-evolution"][0]["next-evolution"][0].num;
+                (parseInt(numEvolucion2)<=251) ?  imagenEvolucion2.src=pokemons.find(e=>parseInt(e.num)==parseInt(numEvolucion2)).img : imagenEvolucion2.src="https://canalpokemon.files.wordpress.com/2008/11/kawax-pokeball-3097.png?w=256&h=256";
+                // NOMBRE DE LA SEGUNDA EVOLUCION
+                nomNextEvolucion.textContent=pokemonSeleccionado.evolution["next-evolution"][0]["next-evolution"][0].name;
+                // CARAMELOS DE LA SEGUNDA EVOLUCION
+                caramelosNextEvolucion.textContent=pokemonSeleccionado.evolution["next-evolution"][0]["next-evolution"][0]["candy-cost"];           
+            }
+        }
+}
 
 // ABRE MODAL CUANDO LE HACES CLICK EN UNA IMAGEN DE POKEMON
-container.addEventListener("click", e =>{
+containerPokemons.addEventListener("click", e =>{
     if(e.target.classList.contains("imgPokemon")){
         limpiarModal();
-        masInfoPokemon(data.pokemon, e.target.id, containerModal);
+        llenarModal(data.pokemon,obtenerPokemon(data.pokemon, e.target.id));
+        //masInfoPokemon(data.pokemon, e.target.id, containerModal);
         containerModal.classList.add("show");
     }
 });
 
 // CIERRA MODAL
-btnModal.addEventListener("click", (e)=>{
+btnModal.addEventListener("click", ()=>{
     containerModal.classList.remove("show");
 });
 
@@ -216,26 +235,20 @@ const ctxRegion=document.getElementById("chartRegion").getContext("2d");
 const ctxElemento=document.getElementById("chartElemento").getContext("2d");
 const ctxHuevos=document.getElementById("chartHuevos").getContext("2d");
 const ctxRecorrido=document.getElementById("chartRecorrido").getContext("2d");
-const ctxDebilidad=document.getElementById("chartDebilidad").getContext("2d");
 
-
-// CANTIDAD DE KANTO
+// CANTIDAD DE POKEMONES DE KANTO
 const filterKanto=data.pokemon.filter(function(element){
     return element.generation.name=="kanto";
 });
 
 let cantidadKanto=filterKanto.length;
-// console.log(filterKanto);
-// console.log(cantidadKanto);
 
-// CANTIDAD DE JOHTO
+// CANTIDAD DE POKEMONES DE JOHTO
 const filterJohto=data.pokemon.filter(function(element){
     return element.generation.name=="johto";
 });
 
 let cantidadJohto=filterJohto.length;
-// console.log(filterJohto);
-// console.log(cantidadJohto);
 
 // GRAFICO DE PIE DE CANTIDAD DE POKEMONES POR REGION
 let chartRegion= new Chart(ctxRegion,{
@@ -250,113 +263,112 @@ let chartRegion= new Chart(ctxRegion,{
     },
 });
 
-
-// CANTIDAD DE POKEMONES DE AGUA
+// CANTIDAD DE POKEMONES DE TIPO AGUA
 const filterAgua=data.pokemon.filter(function(element){
     return element.type.includes("water");
 });
 
 let cantidadAgua=filterAgua.length;
 
-// CANTIDAD DE POKEMONES DE FUEGO
+// CANTIDAD DE POKEMONES DE TIPO FUEGO
 const filterFuego=data.pokemon.filter(function(element){
     return element.type.includes("fire");
 });
 
 let cantidadFuego=filterFuego.length;
 
-// CANTIDAD DE POKEMONES DE PLANTA
+// CANTIDAD DE POKEMONES DE TIPO PLANTA
 const filterPlanta=data.pokemon.filter(function(element){
     return element.type.includes("grass");
 });
 
 let cantidadPlanta=filterPlanta.length;
 
-// CANTIDAD DE POKEMONES DE TIERRA
+// CANTIDAD DE POKEMONES DE TIPO TIERRA
 const filterTierra=data.pokemon.filter(function(element){
     return element.type.includes("ground");
 });
 
 let cantidadTierra=filterTierra.length;
 
-// CANTIDAD DE POKEMONES DE ROCA
+// CANTIDAD DE POKEMONES DE TIPO ROCA
 const filterRoca=data.pokemon.filter(function(element){
     return element.type.includes("rock");
 });
 
 let cantidadRoca=filterRoca.length;
 
-// CANTIDAD DE POKEMONES DE HIELO
+// CANTIDAD DE POKEMONES DE TIPO HIELO
 const filterHielo=data.pokemon.filter(function(element){
     return element.type.includes("ice");
 });
 
 let cantidadHielo=filterHielo.length;
 
-// CANTIDAD DE POKEMONES DE ELECTRICO
+// CANTIDAD DE POKEMONES DE TIPO ELECTRICO
 const filterElectrico=data.pokemon.filter(function(element){
     return element.type.includes("electric");
 });
 
 let cantidadElectrico=filterElectrico.length;
 
-// CANTIDAD DE POKEMONES DE DRAGON
+// CANTIDAD DE POKEMONES DE TIPO DRAGON
 const filterDragon=data.pokemon.filter(function(element){
     return element.type.includes("dragon");
 });
 
 let cantidadDragon=filterDragon.length;
 
-// CANTIDAD DE POKEMONES DE FANTASMA
+// CANTIDAD DE POKEMONES DE TIPO FANTASMA
 const filterFantasma=data.pokemon.filter(function(element){
     return element.type.includes("ghost");
 });
 
 let cantidadFantasma=filterFantasma.length;
 
-// CANTIDAD DE POKEMONES DE PSIQUICO
+// CANTIDAD DE POKEMONES DE TIPO PSIQUICO
 const filterPsiquico=data.pokemon.filter(function(element){
     return element.type.includes("psychic");
 });
 
 let cantidadPsiquico=filterPsiquico.length;
 
-// CANTIDAD DE POKEMONES DE NORMAL
+// CANTIDAD DE POKEMONES DE TIPO NORMAL
 const filterNormal=data.pokemon.filter(function(element){
     return element.type.includes("normal");
 });
 
 let cantidadNormal=filterNormal.length;
 
-// CANTIDAD DE POKEMONES DE LUCHA
+// CANTIDAD DE POKEMONES DE TIPO LUCHA
 const filterLucha=data.pokemon.filter(function(element){
     return element.type.includes("fighting");
 });
 
 let cantidadLucha=filterLucha.length;
 
-// CANTIDAD DE POKEMONES DE VENENO
+// CANTIDAD DE POKEMONES DE TIPO VENENO
 const filterVeneno=data.pokemon.filter(function(element){
     return element.type.includes("poison");
 });
 
 let cantidadVeneno=filterVeneno.length;
 
-// CANTIDAD DE POKEMONES DE BICHO
+// CANTIDAD DE POKEMONES DE TIPO BICHO
 const filterBicho=data.pokemon.filter(function(element){
     return element.type.includes("bug");
 });
 
 let cantidadBicho=filterBicho.length;
 
-// CANTIDAD DE POKEMONES DE VOLADOR
+// CANTIDAD DE POKEMONES DE TIPO VOLADOR
 const filterVolador=data.pokemon.filter(function(element){
     return element.type.includes("flying");
 });
 
 let cantidadVolador=filterVolador.length;
 
-// GRAFICO DE BARRAS DE CANTIDAD DE POKEMONES POR ELEMENTO
+// GRAFICO DE BARRAS DE CANTIDAD DE POKEMONES POR TIPO
 let chartElemento= new Chart(ctxElemento,{
     type:'bar',
     data: {
@@ -369,34 +381,28 @@ let chartElemento= new Chart(ctxElemento,{
     },
 });
 
-// CANTIDAD DE HUEVOS DE 2KM
+// CANTIDAD DE POKEMONES QUE ECLOSIONAN DE HUEVOS DE 2KM
 const filter2Km=data.pokemon.filter(function(element){
     return element.egg=="2 km";
 });
 
 let cantidad2Km=filter2Km.length;
-// console.log(filter2Km);
-// console.log(cantidad2Km);
 
-// CANTIDAD DE HUEVOS DE 5KM
+// CANTIDAD DE POKEMONES QUE ECLOSIONAN DE HUEVOS DE 5KM
 const filter5Km=data.pokemon.filter(function(element){
     return element.egg=="5 km";
 });
 
 let cantidad5Km=filter5Km.length;
-// console.log(filter5Km);
-// console.log(cantidad5Km);
 
-// CANTIDAD DE HUEVOS DE 10KM
+// CANTIDAD DE POKEMONES QUE ECLOSIONAN DE HUEVOS DE 10KM
 const filter10Km=data.pokemon.filter(function(element){
     return element.egg=="10 km";
 });
 
 let cantidad10Km=filter10Km.length;
-// console.log(filter10Km);
-// console.log(cantidad10Km);
 
-// GRAFICO DE PIE DE CANTIDAD DE POKEMONES POR HUEVOS
+// GRAFICO DE PIE DE CANTIDAD DE POKEMONES QUE ECLOSIONAN POR CADA KM DE HUEVO
 let chartHuevos= new Chart(ctxHuevos,{
     type:'doughnut',
     data: {
@@ -409,35 +415,35 @@ let chartHuevos= new Chart(ctxHuevos,{
     },
 });
 
-// CANTIDAD DE POKEMONES QUE RECORREN 1KM
+// CANTIDAD DE POKEMONES QUE PARA CONSEGUIR 1 CARAMELO RECORREN 1KM 
 const filterRecorrido1Km=data.pokemon.filter(function(element){
     return element['buddy-distance-km']=="1";
 });
 
 let cantidadRecorrido1Km=filterRecorrido1Km.length;
 
-// CANTIDAD DE POKEMONES QUE RECORREN 3KM
+// CANTIDAD DE POKEMONES QUE PARA CONSEGUIR 1 CARAMELO RECORREN 3KM
 const filterRecorrido3Km=data.pokemon.filter(function(element){
     return element['buddy-distance-km']=="3";
 });
 
 let cantidadRecorrido3Km=filterRecorrido3Km.length;
 
-// CANTIDAD DE POKEMONES QUE RECORREN 5KM
+// CANTIDAD DE POKEMONES QUE PARA CONSEGUIR 1 CARAMELO RECORREN 5KM
 const filterRecorrido5Km=data.pokemon.filter(function(element){
     return element['buddy-distance-km']=="5";
 });
 
 let cantidadRecorrido5Km=filterRecorrido5Km.length;
 
-// CANTIDAD DE POKEMONES QUE RECORREN 20KM
+// CANTIDAD DE POKEMONES QUE PARA CONSEGUIR 1 CARAMELO RECORREN 20KM
 const filterRecorrido20Km=data.pokemon.filter(function(element){
     return element['buddy-distance-km']=="20";
 });
 
 let cantidadRecorrido20Km=filterRecorrido20Km.length;
  
-// GRAFICO DE PIE DE CANTIDAD DE POKEMONES POR HUEVOS
+// GRAFICO DE PIE DE CANTIDAD DE POKEMONES POR RECORRIDO
 let chartRecorrido= new Chart(ctxRecorrido,{
     type:'polarArea',
     data: {
@@ -450,130 +456,12 @@ let chartRecorrido= new Chart(ctxRecorrido,{
     },
 }); 
 
-
-
-
-
-
-
-
-
-
-
-
-// CANTIDAD DE POKEMONES DE AGUA
-const filterDebilidadAgua=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("water");
-});
-
-let cantidadDebilidadAgua=filterDebilidadAgua.length;
-
-// CANTIDAD DE POKEMONES DE FUEGO
-const filterDebilidadFuego=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("fire");
-});
-
-let cantidadDebilidadFuego=filterDebilidadFuego.length;
-
-// CANTIDAD DE POKEMONES DE PLANTA
-const filterDebilidadPlanta=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("grass");
-});
-
-let cantidadDebilidadPlanta=filterDebilidadPlanta.length;
-
-// CANTIDAD DE POKEMONES DE TIERRA
-const filterDebilidadTierra=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("ground");
-});
-
-let cantidadDebilidadTierra=filterDebilidadTierra.length;
-
-// CANTIDAD DE POKEMONES DE ROCA
-const filterDebilidadRoca=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("rock");
-});
-
-let cantidadDebilidadRoca=filterDebilidadRoca.length;
-
-// CANTIDAD DE POKEMONES DE HIELO
-const filterDebilidadHielo=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("ice");
-});
-
-let cantidadDebilidadHielo=filterDebilidadHielo.length;
-
-// CANTIDAD DE POKEMONES DE ELECTRICO
-const filterDebilidadElectrico=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("electric");
-});
-
-let cantidadDebilidadElectrico=filterDebilidadElectrico.length;
-
-// CANTIDAD DE POKEMONES DE FANTASMA
-const filterDebilidadFantasma=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("ghost");
-});
-
-let cantidadDebilidadFantasma=filterDebilidadFantasma.length;
-
-// CANTIDAD DE POKEMONES DE PSIQUICO
-const filterDebilidadPsiquico=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("psychic");
-});
-
-let cantidadDebilidadPsiquico=filterDebilidadPsiquico.length;
-
-// CANTIDAD DE POKEMONES DE LUCHA
-const filterDebilidadLucha=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("fighting");
-});
-
-let cantidadDebilidadLucha=filterDebilidadLucha.length;
-
-// CANTIDAD DE POKEMONES DE VENENO
-const filterDebilidadVeneno=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("poison");
-});
-
-let cantidadDebilidadVeneno=filterDebilidadVeneno.length;
-
-// CANTIDAD DE POKEMONES DE BICHO
-const filterDebilidadBicho=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("bug");
-});
-
-let cantidadDebilidadBicho=filterDebilidadBicho.length;
-
-// CANTIDAD DE POKEMONES DE VOLADOR
-const filterDebilidadVolador=data.pokemon.filter(function(element){
-    return element.weaknesses.includes("flying");
-});
-
-let cantidadDebilidadVolador=filterDebilidadVolador.length;
-
-// GRAFICO DE BARRAS DE CANTIDAD DE POKEMONES POR ELEMENTO
-let chartDebilidad= new Chart(ctxDebilidad,{
-    type:'polarArea',
-    data: {
-        labels:[ 'Agua', 'Fuego', 'Hierba', 'Tierra', 'Roca', 'Hielo', 'Electrico', 'Fantasma', 'Psiquico', 'Lucha', 'Veneno', 'Bicho', 'Volador'],
-        datasets:[{
-            label:'Cantidad de pokemones',
-            data:[cantidadDebilidadAgua, cantidadDebilidadFuego, cantidadDebilidadPlanta, cantidadDebilidadTierra, cantidadDebilidadRoca, cantidadDebilidadHielo, cantidadDebilidadElectrico, cantidadDebilidadFantasma, cantidadDebilidadPsiquico, cantidadDebilidadLucha, cantidadDebilidadVeneno, cantidadDebilidadBicho, cantidadDebilidadVolador],
-            backgroundColor:['#56A0E0', '#F9A251', '#5DC05D', '#CABC89', '#D38F61', '#FFFFFF', '#F4DD5D', '#596BB3', '#F67D79', '#E14350', '#ED96E5', '#A2C52E', '#9CB4E6'],
-        }]
-    },
-});
-
-
+// ESTADISTICA
+const containerEstadistica=document.querySelector(".containerEstadistica");
 const contenidoRegion=document.getElementById("contRegiones");
 const contenidoElemento=document.getElementById("contElementos");
 const contenidoHuevos=document.getElementById("contHuevos");
 const contenidoRecorrido=document.getElementById("contRecorrido");
-const contenidoDebilidad=document.getElementById("contDebilidades");
-const containerEstadistica=document.querySelector(".containerEstadistica");
-
-
 
 // DESPLEGABLE ESTADISTICA
 const estadistica = document.querySelectorAll('.estadistica');
@@ -581,67 +469,56 @@ const estadistica = document.querySelectorAll('.estadistica');
 estadistica.forEach(e=>{    
     
     e.addEventListener("click", e => {
-            let estadisticaOption = e.target.getAttribute("estadistica");
+            let opcionEstadistica = e.target.getAttribute("estadistica");
 
         // ESTADISTICA TODO
-        if (estadisticaOption == "todo") {
-            container.style.display="none";
+        if (opcionEstadistica == "todos") {
+            containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
             contenidoRegion.style.display="block";
             contenidoElemento.style.display="block";
             contenidoHuevos.style.display="block";
             contenidoRecorrido.style.display="block";
-            contenidoDebilidad.style.display="block";
         }
 
         // ESTADISTICA POR REGION
-        if (estadisticaOption == "por-región") {
-            container.style.display="none";
+        if (opcionEstadistica == "por-región") {
+            containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
+            contenidoRegion.style.display="block";
+            contenidoElemento.style.display="none";
+            contenidoHuevos.style.display="none";
+            contenidoRecorrido.style.display="none";
         } 
         
         // ESTADISTICA POR ELEMENTO
-        if (estadisticaOption == "por-elemento") {
-            container.style.display="none";
+        if (opcionEstadistica == "por-elemento") {
+            containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
             contenidoRegion.style.display="none";
             contenidoElemento.style.display="block";
             contenidoHuevos.style.display="none";
             contenidoRecorrido.style.display="none";
-            contenidoDebilidad.style.display="none";
         }  
 
         // ESTADISTICA POR HUEVO
-        if (estadisticaOption == "por-huevos") {
-            container.style.display="none";
+        if (opcionEstadistica == "por-huevos") {
+            containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
             contenidoRegion.style.display="none";
             contenidoElemento.style.display="none";
             contenidoHuevos.style.display="block";
             contenidoRecorrido.style.display="none";
-            contenidoDebilidad.style.display="none";
         }  
 
         // ESTADISTICA POR RECORRIDO
-        if (estadisticaOption == "por-recorrido") {
-            container.style.display="none";
+        if (opcionEstadistica == "por-recorrido") {
+            containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
             contenidoRegion.style.display="none";
             contenidoElemento.style.display="none";
             contenidoHuevos.style.display="none";
             contenidoRecorrido.style.display="block";
-            contenidoDebilidad.style.display="none";
-        }  
-
-        // ESTADISTICA POR DEBILIDAD
-        if (estadisticaOption == "por-debilidad") {
-            container.style.display="none";
-            containerEstadistica.style.display="block";
-            contenidoRegion.style.display="none";
-            contenidoElemento.style.display="none";
-            contenidoHuevos.style.display="none";
-            contenidoRecorrido.style.display="none";
-            contenidoDebilidad.style.display="block";
         }  
         
     });
