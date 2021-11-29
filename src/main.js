@@ -423,9 +423,12 @@ document.getElementById("cleanVehicles").addEventListener("click",function() {
   conteinerScrollVehicles.innerHTML=" ";
   vehicleItems(filterItems("vehicles", films).flat(2))   
 })
+<<<<<<< HEAD
     
 
 
+=======
+>>>>>>> 77c6ab790ce00f09222ebd882ff46a3e5356663b
 
 function statisticsScore(ctx) {
  // eslint-disable-next-line no-undef

@@ -18,7 +18,6 @@ body{
     gap: 0px 0px; 
     grid-template-areas: 
       "dashboard Glass Glass"
-      "divContainerFooter divContainerFooter divContainerFooter"; 
   }
 
   .dashboard{
@@ -125,32 +124,49 @@ body{
 
     .portada{
       display: flex;
-      padding: 20px;
+      padding: 15px;
       flex-direction: column;
       flex-wrap: nowrap;
     }
+    #conteinerScrollPortada {
+      overflow-y: scroll;
+      height: 460px;
+      max-width: 870px;;
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+    #conteinerScrollPortada::-webkit-scrollbar{
+      width: 9px;
+      margin: 4px;
+    }
+    #conteinerScrollPortada::-webkit-scrollbar-thumb{
+      background-color: rgb(79, 79, 79);
+      border-radius: 5px;
+    }
     .divPortadaTitle{
       display: flex;
-      height: 9%;
+      height: 14%;
       justify-content: center;
     }
     .portadaTittle h1{
       display: flex;
       font-family: 'Questrial', sans-serif;
       font-size: 57px;
-      margin: 12px;
+      margin: 15px;
     }
-    #conteinerScrollPortada {
-      flex-direction: column;
-      flex-wrap: nowrap;
+    .box {
+      flex-direction: row;
+      max-width: 850px;
+      justify-content: center;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
     }
-    .textBox1{
-      display:flex;
+    .box p{
       font-family: 'Exo', sans-serif;
-      font-size: 12px;
+      font-size: 16px;
       font-weight: bold;
-      max-width: 490px;
-      flex-direction: column;
+      max-width: 790px;
+      text-align: center;
     }
     
 
@@ -356,9 +372,11 @@ button.btn-info:hover {
 
 /* slider */
 .sliderContainer{
-  margin: auto;
-  background-color: white;
-  width: 800px;
+  margin: 5px;
+  margin-top: 7px;
+  background-color: rgba(8, 7, 7, 0.192);
+  border-radius: 30px;
+  width: 790px;
   padding: 30px;
 }
 ul, li {
@@ -368,7 +386,7 @@ ul, li {
 }
 ul.slider {
   position: relative;
-  width: 800px;
+  width: 779px;
   height: 300px;
 }
 ul.slider li {
@@ -378,13 +396,13 @@ ul.slider li {
     opacity: 0;
     width: inherit;
     height: inherit;
-    transition: opacity .5s;
+    transition: opacity .3s;
     background:#fff;
 }
 ul.slider li img{
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit:fill;
 }
 ul.slider li:first-child {
     opacity: 1; /*Mostramos el primer <li>*/
@@ -396,7 +414,7 @@ ul.slider li:target {
 
 .menuSlider{
     text-align: center;
-    margin: 20px;
+    margin: 10px;
 }
 .menuSlider li{
    display: inline-block;
@@ -404,13 +422,13 @@ ul.slider li:target {
 }
 .menuSlider li a{
    display: inline-block;
-   color: white;
+   color: rgb(0, 0, 0);
    text-decoration: none;
-   background-color: grey;
-   padding: 10px;
-   width: 20px;
-   height: 20px;
-   font-size: 20px;
+   background-color: rgba(253, 251, 251, 0.377);
+   padding: 8px;
+   width: 18px;
+   height: 18px;
+   font-size: 18px;
    border-radius: 100%;
 }
 
@@ -701,6 +719,59 @@ label {
   text-align: center;
   font-size: 0.875em;
   font-family: 'Inter', sans-serif;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(27, 20, 112, 1);
+}
+.divContainerFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.divcolumna1 {
+  font-family: 'Questrial', sans-serif;
+  font-weight: bold;
+  font-size: 21px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.divcolumna1 p{
+  margin:auto;
+}
+.boxAU {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  width: 230px;
+  display: flex;
+}
+
+.divcolumna2 {
+  font-family: 'Questrial', sans-serif;
+  display: flex;
+  width: 600px;
+  align-items: center;
+  color: #fff;
+}
+.formFooter {
+  align-items: center;
+}
+.divcolumna2 input {
+  border-radius: 20px;
+  border: 0px solid white;
+  padding: 8px;
+  margin: 3px;
+}
+.divcolumna2 button {
+  background-color:rgba(27, 20, 112, 1);
+  border: 1px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 8px;
+  color: #fff;
 }
 
 figure {
