@@ -19,10 +19,11 @@ body{
     grid-template-rows: 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-      "dashboard Glass Glass"
-
+    
   }
+  
   .container--flex{
+
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -36,8 +37,7 @@ body{
 
   .dashboard{
     display: grid;
-    grid-area: dashboard; 
-    width: 335px;
+    width: 380px;
     height: 570px;
     background: rgb(250, 250, 252);
     color: black;
