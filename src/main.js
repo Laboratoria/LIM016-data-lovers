@@ -558,4 +558,3 @@ function statisticsGender(ctx) {
  
  mostrarCharts3();
  
- 
