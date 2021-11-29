@@ -1,6 +1,7 @@
 import {rio_teams,medals, sportsEvents, multipleMedalsWinners, athletes_rio, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; 
+import team from './data/athletes/teams.js'; 
 
 let toggle_bar= document.querySelector(".head-toggle");
 let navMenu= document.querySelector(".info");
@@ -90,17 +91,69 @@ link_female.addEventListener("click", (e)=>{
 
 /*---------------------------------------se trabajan los países*/
 let country= rio_teams(data).sort();  //trayendo a los países y lo ordemo
-
+//console.log(country)
 let countryCounter= timesRepeated(country); //trayendo la función que me hace el recuento
-
+//console.log(countryCounter)
 let finalCountry= Object.entries(countryCounter); //convirtiendo a array
-//console.log(Array.isArray(country))
-for( let i=0; i<finalCountry.length; i++){
-  let country_screen= document.createElement("p");
-  country_screen.className="btnGreen"
-  country_screen.innerHTML= finalCountry[i].join("<br>")+ " athlete(s)";
-  document.getElementById("hereCountries").appendChild(country_screen)
+//console.log(finalCountry)
+const url1= fetch("https://restcountries.com/v2/all").then(res=>res.json()).then(res=>{ 
+ //console.log(res.length)
+  for( let i=0; i<finalCountry.length; i++){
+    res.find((item) => {
+      if(item.name==finalCountry[i][0]){
+        let countriesElem=document.createElement("div") ;
+        countriesElem.classList.add("country");
+        countriesElem.innerHTML= `
+           <div class="country>
+           <div class= "country-info">
+               <h6 class="btnGreen">${finalCountry[i].join("<br>")+ " athlete(s)"}</h6>
+             </div>
+             <div class="country-img">
+               <img src="${item.flag}" id="some" alt="">
+             </div>
+             
+           </div> `
+           document.querySelector(".hereCountries").appendChild(countriesElem);
+      }
+    })
+  }
+})
+ 
+let otherCountries= team.teams;
+otherCountries.forEach(item => {
+  let countriesElem=document.createElement("div") ;
+  countriesElem.classList.add("country");
+  countriesElem.innerHTML= `
+     <div class="country>
+     <div class= "country-info">
+         <h6 class="btnGreen">${item.team.join("<br>")+ " athlete(s)"}</h6>
+       </div>
+       <div class="country-img">
+         <img src="${item.flag}" id="some" alt="">
+       </div>
+       
+     </div> `
+     document.querySelector(".hereCountries").appendChild(countriesElem);
+});
+
+let searchTeams= document.getElementById("searchTeam");  /*buscador*/
+
+searchTeams.addEventListener("keyup", ()=>{
+
+let teamToFind, i;
+let search_team= searchTeams.value.toLowerCase();
+
+teamToFind= document.getElementsByClassName("country");
+
+for( i=0; i< teamToFind.length; i++) {
+  if(teamToFind[i].innerText.toLowerCase().includes(search_team)){
+    teamToFind[i].style.display="block";
+  }else{
+    teamToFind[i].style.display="none";
+  }
 }
+})
+
 
 /*--------------------------------se trabajan los deportes y eventos*/
   let sports_Events= sportsEvents(data);
@@ -311,12 +364,6 @@ graficos.addEventListener("click", (e)=>{
   document.getElementById("female").style.display = "none";
 });
 
-
-// const medalFemale = (data) => {
-//   let datos = data.map(item => [item.gender, item.medal]);
-
-//   return datos
-// };
 
 let medal = medals(data);
 let cantMedal = timesRepeated(medal);
