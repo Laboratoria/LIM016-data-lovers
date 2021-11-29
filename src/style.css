@@ -1,12 +1,14 @@
 body{
-  min-height: 100vh;
+  min-height: 75vh;
   background-image: url(img/backgroundTotoro.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  grid-template-rows: auto;
   }
 
   .conteiner {
+  
     display: grid;
     width: 85%;
     max-width: 1000px;
@@ -724,6 +726,9 @@ label {
 /* Footer */
 footer {
   background-color: rgba(27, 20, 112, 1);
+  width: 100%;
+  margin:auto;
+ 
 }
 .divContainerFooter {
   display: flex;
@@ -731,6 +736,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   padding: 10px;
+
 }
 
 .divcolumna1 {
