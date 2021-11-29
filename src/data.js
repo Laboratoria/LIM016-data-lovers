@@ -86,16 +86,23 @@ export const filters =  (data,filtro,condicion) => {
   return (filterCharacters);
 }
 
-export const sortCharacters = (data)=>{
-  let o;
-  function sortArray(a,b) {
-    if (a.name < b.name) {return -1}
-    else if (a.name > b.name) {return 1}
-    else {return 0}
-  }
-  console.log(data);
-  o = data.sort(sortArray)
-  console.log(o)
-  return o 
-}
+export const sortData = (data, sortBy, sortOrder) => {
   
+  let o;
+  // function sortArray(a,b) {
+  //   if (a.name < b.name) {return -1}
+  //   else if (a.name > b.name) {return 1}
+  //   else {return 0}
+  // }
+  // console.log(data);
+  // o = data.sort(sortArray)
+
+  function AZ(a, b) {
+    if (a.name < b.name) { return -1 }
+  };
+  
+  o = data.sort(AZ);
+  console.log(o);
+  return o
+};
+

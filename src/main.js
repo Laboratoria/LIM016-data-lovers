@@ -1,4 +1,4 @@
-import { example, filters,sortCharacters } from "./data.js";
+import { example, filters, sortData } from "./data.js";
 
 import data from "./data/rickandmorty/rickandmorty.js";
 
@@ -10,6 +10,8 @@ let filterData = data.results; // Data filtrada
 let dataPersonajes = document.querySelector("#showAllCharacters");
 const characterType = document.getElementById("filterType");  // Lista de tipos de personaje seleccionado
 const characterCategory = document.getElementById("byCategory"); // Lista de categorias de los personajes 
+let orden = document.getElementById("sort"); // Select "ORDENANDO"
+
 // --- Botones: 
 const btnAll = document.getElementById("getAll");
 
@@ -45,25 +47,32 @@ function changeFilterList() {
 //---------- FILTRADO DE PERSONAJES ------------>>>
 
 // FUNCION PARA FILTRAR PERSONAJES POR CATEGORIAS
- 
-characterType.addEventListener("change", (e) => {
-  let selectFilter = e.target.value;
 
-  if (selectFilter ==="gender" || selectFilter ==="species" || selectFilter==="status")  {
+function filterCharacters() {
+  
+  characterType.addEventListener("change", (e) => {
+    clearSort();
 
-    characterCategory.addEventListener("change",(category)=>{
-      category = category.target.value
-      filterData= filters(allData,selectFilter,category);
-      printData(filterData);
-    });
-  }
+    let selectFilter = e.target.value;
 
-});     
+    if (((selectFilter === "gender") || (selectFilter === "species" ))|| (selectFilter === "status")) {
+
+      characterCategory.addEventListener("change", (category) => {
+        category = category.target.value
+        filterData = filters(allData, selectFilter, category);
+        printData(filterData);
+        clearSort();
+      });
+    }
+
+  });
+} filterCharacters();
 
 // -------- FUNCION PrintData --------->
 
 function printData(data) {
   clearCharacters()
+
   let dataPersonaje = data.map((result) => {
     let showCards = `
       <div id="conteinerCharacters" class="div-personaje">
@@ -105,6 +114,7 @@ function printData(data) {
 
 function showAllCharacters() {
   btnAll.addEventListener("click", () => {
+    clearSort();
     clearCharacters();
     printData(allData);
   });
@@ -114,20 +124,28 @@ function clearCharacters() {
   dataPersonajes.innerHTML = "";
 };
 
+function clearSort() {
+  orden.value = "";
+};
+
 // -------- ORDENAR PERSONAJES ------------------>>>
 
-let orden = document.getElementById("sort");
-orden.addEventListener("change", ()=>{
-  let opcionorden =orden.value
-    let orderCharacters = filterData.map(personaje => personaje);
-  if (opcionorden=="AZ" ) {
-    let f = sortCharacters(orderCharacters);
-    
-    return printData(f)
-  }
-  
-  
-});
+function sortCharacters() {
+
+  orden.addEventListener("change", () => {
+    let f;
+    let opcionOrden = orden.value;
+    let orderCharacters = filterData.map((personaje) => personaje);
+    if (opcionOrden == "AZ") {
+      f = sortAZ(orderCharacters);
+    } else if (opcionOrden == "ZA") {
+      f = sortZA(orderCharacters);
+    }
+    return printData(f);
+  });
+} sortCharacters();
+
+
 
 // let name = filterData.map((data) => data.name)
 
