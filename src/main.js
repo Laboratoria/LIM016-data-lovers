@@ -96,7 +96,7 @@ let countryCounter= timesRepeated(country); //trayendo la función que me hace e
 //console.log(countryCounter)
 let finalCountry= Object.entries(countryCounter); //convirtiendo a array
 //console.log(finalCountry)
-const url1= fetch("https://restcountries.com/v2/all").then(res=>res.json()).then(res=>{ 
+fetch("https://restcountries.com/v2/all").then(res=>res.json()).then(res=>{ 
  //console.log(res.length)
   for( let i=0; i<finalCountry.length; i++){
     res.find((item) => {
@@ -117,6 +117,7 @@ const url1= fetch("https://restcountries.com/v2/all").then(res=>res.json()).then
       }
     })
   }
+
 })
  
 let otherCountries= team.teams;
@@ -153,6 +154,7 @@ for( i=0; i< teamToFind.length; i++) {
   }
 }
 })
+
 
 
 /*--------------------------------se trabajan los deportes y eventos*/

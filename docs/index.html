@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-  <div id="root">
     <header>
        <div class="head">
          <img src="./img/mascotas.png" alt="aros olímpicos" class="mascots">
@@ -26,17 +25,16 @@
          </div>
        </div>
     </header>
-    <main>  
-      <div class="container" id="contaiiner">
+<main>  
+<div class="container" id="contaiiner">
         <div class="home-img">
            <img src="./img/riocenter.jpg" class="slide_img" alt="">        
         </div>
-        <div class="rio-info">
+    <div class="rio-info">
           <div class="first-row">
-
-           <div class="title-container">
+            <div class="title-container">
              <img src="./img/about.jpg" alt="" class="homeImage">
-             </div> 
+            </div> 
             <div class="homeInfo">
               <p class= "rio-info-title">ABOUT RIO</p> <br>
               <p class="info-rio-par">The 2016 Olympic Games in Rio de Janeiro took place between August 5 and 21. 
@@ -61,6 +59,7 @@
                 </p>
               </div>
           </div>
+
           <div class="third-row">
               <div class="title-container">
                 <img src="./img/theAthletes.jpg" alt="" class="homeImage" id="img-at">
@@ -75,24 +74,42 @@
                       Rio was also a place that saw many women shine in different sports and events such as Simone Biles and Katinka Hozzsu. <br><br>
                      <a href="" class="link" id="link_female"><span class="arrow">»</span>	Check out all the female athletes
                         that participated in RIO 2016</a>
-                     
-                   </p>
+                </p>
               </div>
-              
+          </div>
+    </div>  
+            <div class="chart-center">
+              <button class="clickCharts" id="clickCharts">SHOW CHARTS </button>
+            </div>
+  </div>   
+  
+      <section class="charts" id="graficas"> 
+        <div class="grafico1">
+          <h1 class="text-genero">Number of Medals won by Gender</h1>
+          <div class="genere">
+            <h6>F = Female</h6>
+            <h6>M = Male</h6>
+          </div>
+          <div class="canvas1">
+            <canvas id="myChart" width="221" height="220"></canvas>
           </div>
         </div>
-      </div>  <!--aquí termina la primera pantalla-->
+        <div class="medallas">
+          <img class="img-medallas" src="./img/medallas.jpg" alt="">
+        </div>
+      </section> 
+       
+     
+ <!--aquí termina la primera pantalla-->
 
   <section class= "todo">
-    <section class="countries" id="countries"> <br>
-      <div class="countries_container">
-        <img src="./img/countries.png" class="img_sport_2" alt="">
-        <h2 class="paises">TEAMS</h2>
-        <input type="text" class="searchTeam" id="searchTeam" placeholder="Search your athletes">
-        <div class= "hereCountries" id= "hereCountries">
+      <section class="countries" id="countries"> <br>
+        <div class="countries_container">
+          <img src="./img/countries.png" class="img_sport_2" alt="">
+          <h2 class="paises">TEAMS</h2>
+          <input type="text" class="searchTeam" id="searchTeam" placeholder="Search your teams" >
+        <div class= "hereCountries" id= "hereCountries"></div>
         </div>
-      </div>
-    </section>
       </section>
  
       <section class="sports" id="sports">
@@ -158,6 +175,7 @@
               </div>   
            </div>              
       </section>
+
       <section class="female" id="female"> <br>
         <div class="female_container">
            <h2 class="female_title">FEMALE ATHLETES</h2>
@@ -168,7 +186,6 @@
            <div class= "hereFemaleAthletes" > 
                 <div class="searchFemale">
                     <input type="text" class="searchFemAthl" id="searchFemAthl" placeholder="Search your athlete">
-                
                 <table id="female_table" class="female_table">
                   <thead>
                       <tr class= "header">
@@ -182,7 +199,7 @@
            </div>
           </div>
         </div>
-       </section>
+      </section>
   </section>
 
   
@@ -221,37 +238,36 @@
     </div>
 </div>
 
-    </main>  
-    <footer>
-      <div class="foot_row1">
-        <h3 class="info-footer" id="madeBy"> MADE BY</h3>
-        <div class="authors">
-          <div class="natalia">
-            <p class="foot-para">Natalia Bravo</p>
-            <a href="https://github.com/Natalia7919" target="_blank"><i class="fa fa-github fa-2x id" aria-hidden="true" id="github-n"></i></a>
-          </div>
-          <div class="brisset">
-            <p class="foot-para">Brisset Corcino</p>
-            <a href="https://github.com/Brisset-91" target="_blank"><i class="fa fa-github fa-2x id" aria-hidden="true" id="github-b"></i></a>
-          </div> 
+  </main>  
+  <footer>
+    <div class="foot_row1">
+      <h3 class="info-footer" id="madeBy"> MADE BY</h3>
+      <div class="authors">
+        <div class="natalia">
+          <p class="foot-para">Natalia Bravo</p>
+          <a href="https://github.com/Natalia7919" target="_blank"><i class="fa fa-github fa-2x id" aria-hidden="true" id="github-n"></i></a>
         </div>
+        <div class="brisset">
+          <p class="foot-para">Brisset Corcino</p>
+          <a href="https://github.com/Brisset-91" target="_blank"><i class="fa fa-github fa-2x id" aria-hidden="true" id="github-b"></i></a>
+        </div> 
       </div>
-      <div class="foot_row2">
-        <h3 class="info-footer">RIO 2016</h3>
-        <p class="foot-para">Follow our social media</p>
-          <div class="social-media">
-            <a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook-official fa-2x" aria-hidden="true" id="social1"></i></a>
-            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true" id="social2"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true" id="social3"></i></a>
-          </div>
-      </div>
-      <div class="foot_row3">
-        <img src="./img/arosblancos.png" alt="aros olímpicos" class="ring">
-      </div>
-      
-    </footer>
-    <script src="main.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </div>
-  </body>
+    </div>
+    <div class="foot_row2">
+      <h3 class="info-footer">RIO 2016</h3>
+      <p class="foot-para">Follow our social media</p>
+        <div class="social-media">
+          <a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook-official fa-2x" aria-hidden="true" id="social1"></i></a>
+          <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true" id="social2"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true" id="social3"></i></a>
+        </div>
+    </div>
+    <div class="foot_row3">
+      <img src="./img/arosblancos.png" alt="aros olímpicos" class="ring">
+    </div>
+  </footer>
+  <script src="main.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
 </html>
