@@ -1,6 +1,7 @@
-import {rio_teams, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
+import {rio_teams,medals, sportsEvents, multipleMedalsWinners, athletes_rio, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; 
+import team from './data/athletes/teams.js'; 
 
 let toggle_bar= document.querySelector(".head-toggle");
 let navMenu= document.querySelector(".info");
@@ -19,6 +20,7 @@ home_click.addEventListener("click", (e)=>{
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
   navMenu.classList.toggle("info_visible");
+  document.getElementById("graficas").style.display = "none";
 });
 
 let sports_click= document.getElementById("sports-click");
@@ -31,8 +33,8 @@ sports_click.addEventListener("click", (e)=>{
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
   navMenu.classList.toggle("info_visible");
+  document.getElementById("graficas").style.display = "none";
 });
-
 
 let teams_click= document.getElementById("teams-click");
 teams_click.addEventListener("click", (e)=>{
@@ -44,6 +46,7 @@ teams_click.addEventListener("click", (e)=>{
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
   navMenu.classList.toggle("info_visible");
+  document.getElementById("graficas").style.display = "none";
 });
 
 let athletes_click= document.getElementById("athletes-click");
@@ -57,6 +60,7 @@ athletes_click.addEventListener("click", (e)=>{
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("female").style.display = "none";
   navMenu.classList.toggle("info_visible");
+  document.getElementById("graficas").style.display = "none";
 });
 
 let text_click= document.getElementById("link_medals");
@@ -69,42 +73,93 @@ text_click.addEventListener("click", (e)=>{
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
   document.getElementById("female").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
 });
 
 let link_female= document.getElementById("link_female");
 link_female.addEventListener("click", (e)=>{
   e.preventDefault(); 
+
   document.getElementById("contaiiner").style.display = "none"; 
   document.getElementById("female").style.display = "block";
   document.getElementById("multipleMedals").style.display = "none";
   document.getElementById("countries").style.display = "none";
   document.getElementById("sports").style.display = "none";
   document.getElementById("athletes").style.display = "none";
+  document.getElementById("graficas").style.display = "none";
 });
 
 /*---------------------------------------se trabajan los países*/
 let country= rio_teams(data).sort();  //trayendo a los países y lo ordemo
-
+//console.log(country)
 let countryCounter= timesRepeated(country); //trayendo la función que me hace el recuento
 //console.log(countryCounter)
 let finalCountry= Object.entries(countryCounter); //convirtiendo a array
-//console.log(Array.isArray(country))
-for( let i=0; i<finalCountry.length; i++){
-  let country_screen= document.createElement("p");
-  country_screen.className="btnGreen"
-  country_screen.innerHTML= finalCountry[i].join("<br>")+ " athlete(s)";
-  document.getElementById("hereCountries").appendChild(country_screen)
-}
-/*--------------------------------se trabajan los deportes y eventos*/
-let sports= data["athletes"]; //utilizando solo los atletas
-let result =sports.reduce(       //un objeto con los deportes y las coincidencias de los eventos
-  (acc, element) => 
-  Object.assign(acc, {[element.sport]:(acc[element.sport] || [])
-    .concat([element.event])
-  }), {}
-  )
+//console.log(finalCountry)
+fetch("https://restcountries.com/v2/all").then(res=>res.json()).then(res=>{ 
+ //console.log(res.length)
+  for( let i=0; i<finalCountry.length; i++){
+    res.find((item) => {
+      if(item.name==finalCountry[i][0]){
+        let countriesElem=document.createElement("div") ;
+        countriesElem.classList.add("country");
+        countriesElem.innerHTML= `
+           <div class="country>
+           <div class= "country-info">
+               <h6 class="btnGreen">${finalCountry[i].join("<br>")+ " athlete(s)"}</h6>
+             </div>
+             <div class="country-img">
+               <img src="${item.flag}" id="some" alt="">
+             </div>
+             
+           </div> `
+           document.querySelector(".hereCountries").appendChild(countriesElem);
+      }
+    })
+  }
 
-  let arr= Object.entries(result).sort();//ordenando 
+})
+ 
+let otherCountries= team.teams;
+otherCountries.forEach(item => {
+  let countriesElem=document.createElement("div") ;
+  countriesElem.classList.add("country");
+  countriesElem.innerHTML= `
+     <div class="country>
+     <div class= "country-info">
+         <h6 class="btnGreen">${item.team.join("<br>")+ " athlete(s)"}</h6>
+       </div>
+       <div class="country-img">
+         <img src="${item.flag}" id="some" alt="">
+       </div>
+       
+     </div> `
+     document.querySelector(".hereCountries").appendChild(countriesElem);
+});
+
+let searchTeams= document.getElementById("searchTeam");  /*buscador*/
+
+searchTeams.addEventListener("keyup", ()=>{
+
+let teamToFind, i;
+let search_team= searchTeams.value.toLowerCase();
+
+teamToFind= document.getElementsByClassName("country");
+
+for( i=0; i< teamToFind.length; i++) {
+  if(teamToFind[i].innerText.toLowerCase().includes(search_team)){
+    teamToFind[i].style.display="block";
+  }else{
+    teamToFind[i].style.display="none";
+  }
+}
+})
+
+
+
+/*--------------------------------se trabajan los deportes y eventos*/
+  let sports_Events= sportsEvents(data);
+  let arr= Object.entries(sports_Events).sort();//ordenando 
   //console.log(arr)
   const tableBody= document.getElementById("tableData"); //me trae el body de la tabla
   let dataHTML= "";
@@ -142,18 +197,15 @@ function searchSportEvent(){
 }
 /*------------------------------código de los atletas*/
 /* .....Realizando un nuevo array para motrar en pantalla............. */
-let newListsAthlete= data.athletes.map(item=>{
-  return [item.name,item]
-});
-
-var personasMapArr= new Map(newListsAthlete); 
+let newListsAthlete= athletes_rio(data);
+//console.log(newListsAthlete)
+let personasMapArr= new Map(newListsAthlete); 
 let unicos = [...personasMapArr.values()]; // Conversión a un array
 //console.log(unicos)
 /* .....Funcion para crear la lista de atletas con el nuevo array...... */
 function listName(e) {
   const athlete= document.getElementById("hereAthletes")
-
-e.forEach((index)=>{
+  e.forEach((index)=>{
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
     athletes_screen.style.flexDirection = "row"
@@ -161,24 +213,22 @@ e.forEach((index)=>{
     athletes_screen.onclick= (e)=>contAthletes(e,index);
     athlete.appendChild(athletes_screen)
     
-athletes_screen.addEventListener("click", showModal);
+athletes_screen.addEventListener("click", showModal); //mostrar el modal cada que se hace click en los atletas
 function showModal(){
   modalAthlete.style.display="block";
 }
-
 })
 }
-const modalAthlete= document.getElementById("modal");
+const modalAthlete= document.getElementById("modal"); //al hacer click en la pantalla se cierra el modal
 window.onclick = function(event) {
   if (event.target == modalAthlete) {
     modalAthlete.style.display = "none";
   }
 }
 
-
 /* .....Funcion para crear el card con el nuevo array................. */
 
-const contAthletes = (event,unicos) => {
+const contAthletes = (e,unicos) => {
   
   let nameAthlete= document.getElementById("name")
   nameAthlete.innerHTML= unicos.name; 
@@ -200,9 +250,6 @@ const contAthletes = (event,unicos) => {
   
   let ageAthlete= document.getElementById("age")
   ageAthlete.innerHTML= unicos.age;
-  
-  let eventAthlete= document.getElementById("event")
-  eventAthlete.innerHTML= unicos.event; 
 }
 
 
@@ -231,13 +278,7 @@ search.addEventListener('input', (event) => {
 
 /*--------------------------------código de los deportistas con diferentes medallas*/
 
-let variousMedals =Object.entries(sports.reduce(    //un array con los nombres y acumulando los eventos y medallas
-  (acc, element) => 
-  Object.assign(acc, {[element.name]:(acc[element.name] || [])
-    .concat([element.event]).concat([element.medal])
-  }), {}
-  ));
-
+let variousMedals= Object.entries(multipleMedalsWinners(data));
   let medal_athlete= document.getElementById("hereAthletes_multiple_medals");//donde se almacenará la información
 
   for(const [key, value] of Object.values(variousMedals)){
@@ -273,14 +314,8 @@ function winners(){
 }
 /*------------------------Código de las atletas femeninas*/
 
-let female_athletes= justFemale(sports);
-//console.log(female_athletes)
-
-let womenMap = female_athletes.map(item=>{
-  return [item.name,item.sport]
-});
-
-var womenMapArr = new Map(womenMap); // Pares de clave y valor sin repetición
+let womenMap= justFemale(data);
+let womenMapArr = new Map(womenMap); // Pares de clave y valor sin repetición
 
 let womenFinal = [...womenMapArr.entries()]; // Conversión a un array
 
@@ -316,3 +351,57 @@ function female(){
     }       
   }
 }
+
+/*----Graficas-----*/
+let graficos= document.getElementById('clickCharts');
+graficos.addEventListener("click", (e)=>{
+  e.preventDefault(); 
+
+  document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("graficas").style.display = "flex";
+  document.getElementById("countries").style.display = "none";
+  document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
+  document.getElementById("female").style.display = "none";
+});
+
+
+let medal = medals(data);
+let cantMedal = timesRepeated(medal);
+
+const ctx = document.getElementById('myChart').getContext('2d');
+// eslint-disable-next-line
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: 'Medal Winners',
+            data: cantMedal,
+            backgroundColor: [
+                'rgb(255, 205, 86, 0.9)',
+                'rgb(255, 205, 86, 0.9)',
+                'rgba(80, 80, 80, 0.4)',
+                'rgba(255, 159, 64, 0.9)',
+                'rgba(80, 80, 80, 0.4)',
+                'rgba(255, 159, 64, 0.9)'
+            ],
+            borderColor: [
+                'rgba(80, 80, 00, 0.2)',
+                'rgba(80, 80, 00, 0.2)',
+                'rgba(80, 80, 80, 0.2)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(80, 80, 80, 0.2)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});   

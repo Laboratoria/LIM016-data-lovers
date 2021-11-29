@@ -1,11 +1,38 @@
 
-export const rio_teams = (data) =>{
+export const rio_teams = (data) =>{  //pasó test
 
-  let just_athletes_team= Object.entries(data)[4][1]; //convierto al objeto en array, luego me quedé solo con el último elemento del array
-  let justCountries= just_athletes_team.map(item=>item.team);
+  let justCountries= data.athletes.map(item=>item.team);
    return justCountries;
    
 };
+
+export const sportsEvents = (data) =>{  //pasó test
+
+  let justSportsEvents= data.athletes.reduce(       //un objeto con los deportes y las coincidencias de los eventos
+    (acc, element) => 
+    Object.assign(acc, {[element.sport]:(acc[element.sport] || [])
+      .concat([element.event])
+    }), {}
+    )
+   return justSportsEvents;
+   
+};
+
+export const athletes_rio = (data)=>{  //pasó test
+
+  let justAthletes= data.athletes.map(item=>[item.name,item]);
+  return justAthletes;
+}
+
+export const multipleMedalsWinners = (data)=>{
+  let multipleMedals= data.athletes.reduce(
+    (acc, element) => 
+    Object.assign(acc, {[element.name]:(acc[element.name] || [])
+      .concat([element.event]).concat([element.medal])
+    }), {}
+    )
+    return multipleMedals;
+}
 
 export const timesRepeated = arr =>{
   return arr.reduce((acc, item) =>{
@@ -30,6 +57,7 @@ export const noRepeated = data =>{
     return acc
   }, {});
 };
+
 export const spliceIntoChunks= (arr, chunkSize) =>{
   const res = [];
   while (arr.length > 0) {
@@ -39,14 +67,20 @@ export const spliceIntoChunks= (arr, chunkSize) =>{
   return res;
 }
 
-export const justFemale=(arr)=>{
-  let female= Object.values(arr.filter(item=> (item.gender=== "F")));
-  return female;
+export const justFemale=(data)=>{ // pasó test
+  let female= data.athletes.filter(item=> (item.gender=== "F"));
+  let female_sport= female.map(item=>[item.name,item.sport]);
+  return female_sport;
 }
 
 // export const anotherExample = (data) => {
 //   return 'OMG';
 // };
+
+export const medals = (data) => {
+   let datos = data.athletes.map(item => [item.gender, item.medal]);
+   return datos;
+};
 
 
 

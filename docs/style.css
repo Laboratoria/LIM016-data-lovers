@@ -2,6 +2,31 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
+}
+
+/*---------------charts------*/
+.charts{
+    display:flex;
+
+    display:none;
+}
+.clickCharts{
+    background-color: #2be912;
+    border:none;
+    font-size: 2rem;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+.chart-center{
+    display:flex;
+    justify-content: center;
+}
+.clickCharts:hover{
+    color:white;
 }
 .todo{  /* donde está encerra la info */
     font-weight: bold;
@@ -211,7 +236,6 @@ html{
    
 }
 .countries{
-    display:none;
     display:flex;
     flex-direction:column;
 }
@@ -222,20 +246,41 @@ html{
     color: #39f077 ;/* #6CC45E; */
     font-size: 5rem;
 }
-.btnGreen{   /*la info de cada uno*/
-    border-bottom: #d0fa5e .3rem solid;
-    margin: 1.5rem;
-    padding: 0.2rem;
-    text-align: center;
-    background-color: white;
-    /* border-radius: 0.5em; */
-    background-color: white;
-}
-.hereCountries{  /*donde están los países*/
+.hereCountries{  /*donde están los países y banderas*/
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto ;
+    gap:2rem;
 }
+.country{   /*se queda*/
+   border: #d0fa5e .3rem solid;
+   padding: 1rem;
+   margin-top: 2rem;
+}
+.btnGreen{
+    
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+}
+.country-img{
 
+display: flex;
+justify-content: center;
+
+}
+#some{ /*se queda*/
+    margin-top: 1rem;
+    width: 25%;
+    height: 25%;
+    margin-bottom: 0.5rem;
+}
+.searchTeam{
+    border-radius: 0.5em ;
+    padding: 1em;
+    width:100%;
+    outline: none;
+    border:0.2rem solid #FF8000;
+}
 /*------------------------------------------------------Donde se encierran los ATLETAS-------------------------------*/
 /* --------el MODAL--------*/
 .modal{
@@ -755,6 +800,13 @@ footer{
     .paises{
         font-size: 2rem;
     }
+    #some{ /*se queda*/
+        width: 20%;
+        height: 20%;
+    }
+    .searchTeam{
+        height: 2rem;
+    }
      /*----------------Athletes---------------------*/
     .atletes_container{
         display: flex;
@@ -813,5 +865,16 @@ footer{
             height: 3rem;
             font-size: 0.9rem;
             font-weight: 800;
+        }
+        /*-----------------------Grafico----------------------------------------------------------------------*/
+        #graficas{
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .img-medallas{
+            margin-top: 0;
+        }
+        .grafico1{
+            width: 95%;
         }
 }

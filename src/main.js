@@ -117,6 +117,7 @@ fetch("https://restcountries.com/v2/all").then(res=>res.json()).then(res=>{
       }
     })
   }
+
 })
  
 let otherCountries= team.teams;
@@ -153,6 +154,7 @@ for( i=0; i< teamToFind.length; i++) {
   }
 }
 })
+
 
 
 /*--------------------------------se trabajan los deportes y eventos*/
