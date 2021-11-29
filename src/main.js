@@ -1,4 +1,4 @@
-import {rio_teams, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
+import {rio_teams,medals, sportsEvents, multipleMedalsWinners, athletes_rio, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; 
 
@@ -92,7 +92,7 @@ link_female.addEventListener("click", (e)=>{
 let country= rio_teams(data).sort();  //trayendo a los países y lo ordemo
 
 let countryCounter= timesRepeated(country); //trayendo la función que me hace el recuento
-//console.log(countryCounter)
+
 let finalCountry= Object.entries(countryCounter); //convirtiendo a array
 //console.log(Array.isArray(country))
 for( let i=0; i<finalCountry.length; i++){
@@ -101,16 +101,10 @@ for( let i=0; i<finalCountry.length; i++){
   country_screen.innerHTML= finalCountry[i].join("<br>")+ " athlete(s)";
   document.getElementById("hereCountries").appendChild(country_screen)
 }
-/*--------------------------------se trabajan los deportes y eventos*/
-let sports= data["athletes"]; //utilizando solo los atletas
-let result =sports.reduce(       //un objeto con los deportes y las coincidencias de los eventos
-  (acc, element) => 
-  Object.assign(acc, {[element.sport]:(acc[element.sport] || [])
-    .concat([element.event])
-  }), {}
-  )
 
-  let arr= Object.entries(result).sort();//ordenando 
+/*--------------------------------se trabajan los deportes y eventos*/
+  let sports_Events= sportsEvents(data);
+  let arr= Object.entries(sports_Events).sort();//ordenando 
   //console.log(arr)
   const tableBody= document.getElementById("tableData"); //me trae el body de la tabla
   let dataHTML= "";
@@ -148,11 +142,9 @@ function searchSportEvent(){
 }
 /*------------------------------código de los atletas*/
 /* .....Realizando un nuevo array para motrar en pantalla............. */
-let newListsAthlete= data.athletes.map(item=>{
-  return [item.name,item]
-});
-
-var personasMapArr= new Map(newListsAthlete); 
+let newListsAthlete= athletes_rio(data);
+//console.log(newListsAthlete)
+let personasMapArr= new Map(newListsAthlete); 
 let unicos = [...personasMapArr.values()]; // Conversión a un array
 //console.log(unicos)
 /* .....Funcion para crear la lista de atletas con el nuevo array...... */
@@ -231,13 +223,7 @@ search.addEventListener('input', (event) => {
 
 /*--------------------------------código de los deportistas con diferentes medallas*/
 
-let variousMedals =Object.entries(sports.reduce(    //un array con los nombres y acumulando los eventos y medallas
-  (acc, element) => 
-  Object.assign(acc, {[element.name]:(acc[element.name] || [])
-    .concat([element.event]).concat([element.medal])
-  }), {}
-  ));
-
+let variousMedals= Object.entries(multipleMedalsWinners(data));
   let medal_athlete= document.getElementById("hereAthletes_multiple_medals");//donde se almacenará la información
 
   for(const [key, value] of Object.values(variousMedals)){
@@ -273,14 +259,8 @@ function winners(){
 }
 /*------------------------Código de las atletas femeninas*/
 
-let female_athletes= justFemale(sports);
-//console.log(female_athletes)
-
-let womenMap = female_athletes.map(item=>{
-  return [item.name,item.sport]
-});
-
-var womenMapArr = new Map(womenMap); // Pares de clave y valor sin repetición
+let womenMap= justFemale(data);
+let womenMapArr = new Map(womenMap); // Pares de clave y valor sin repetición
 
 let womenFinal = [...womenMapArr.entries()]; // Conversión a un array
 
@@ -332,13 +312,13 @@ graficos.addEventListener("click", (e)=>{
 });
 
 
-const medalFemale = (data) => {
-  let datos = data.map(item => [item.gender, item.medal]);
+// const medalFemale = (data) => {
+//   let datos = data.map(item => [item.gender, item.medal]);
 
-  return datos
-};
+//   return datos
+// };
 
-let medal = medalFemale(data.athletes);
+let medal = medals(data);
 let cantMedal = timesRepeated(medal);
 
 const ctx = document.getElementById('myChart').getContext('2d');
