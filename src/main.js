@@ -426,17 +426,22 @@ document.getElementById("cleanVehicles").addEventListener("click",function() {
     
 
 
-    
-function statisticsScore(ctx) {
-  new Chart(ctx, {
+/*function statisticsDirector(ctx) {
+new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: films.map(el => el.title),
+      labels:["Yoshifumi Kondō", "Isao Takahata", "Hiromasa Yonebayashi", "Gorō Miyazaki",  "Hiroyuki Morita", "Hayao Miyazaki" ],
       datasets: [
         {
-          label: "Ranking por peliculas",
-          data: films.map(el => el.rt_score),
+          label: "Número de Películas Dirigidas",
+          data: [1,5,2,2,1,9],
           backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
            
           ],
           borderColor: [
@@ -444,22 +449,73 @@ function statisticsScore(ctx) {
             'rgba(54, 162, 235, 1)',
             'rgba(255, 206, 86, 1)',
             'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+         
           ],
           borderWidth: 1
         }
       ]
     },
-    /*options:{
+    options:{
+      indexAxis: 'x',
+    }   
+  })
+}
+// Llamando desde el DOM
+function mostrarCharts() {
+  const ctx = document.getElementById('myChart').getContext('2d');
+  statisticsDirector(ctx)
+}
+
+mostrarCharts();*/
+
+
+function statisticsScore(ctx) {
+ // eslint-disable-next-line no-undef
+ new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: films.map(el => el.title),
+      datasets: [{
+        
+          label: "Ranking por peliculas",
+          data: films.map(el => el.rt_score),
+          backgroundColor: [
+
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+           
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+
+          ],
+          borderWidth: 1
+          
+        }
+      ]
+    },
+    options:{
       indexAxis: 'y',
-      responsive: true,
+  
  
-    }*/
+    }   
+   
   })
 }
 // Llamando desde el DOM
 function mostrarCharts2() {
-  const ctx = document.querySelector('#myChart2').getContext('2d');
+  const ctx = document.getElementById('myChart2').getContext('2d');
   statisticsScore(ctx)
 }
 
@@ -468,13 +524,9 @@ mostrarCharts2();
 
 
 
-
-
-
-
-
-/*const ctx= document.getElementById("myChart").getContext("2d");
-let myChart = new Chart(ctx,{
+const ctx= document.getElementById("myChart").getContext("2d");
+ // eslint-disable-next-line no-undef
+ new Chart(ctx,{
     type:"bar",
     data: {
         labels:["Yoshifumi Kondō", "Isao Takahata", "Hiromasa Yonebayashi", "Gorō Miyazaki",  "Hiroyuki Morita", "Hayao Miyazaki" ],
@@ -482,61 +534,75 @@ let myChart = new Chart(ctx,{
           label:"Número de Películas",
           data:[1,5,2,2,1,9],
           backgroundColor: [
-            'rgba(129, 66, 204, 0.49)',
-            'rgba(247, 250, 60, 0.75)',
-            'rgba(70, 235, 242, 0.41)',
-            'rgba(157, 237, 109, 0.93)',
-            'rgba(240, 155, 66, 0.49)',
-            'rgba(237, 109, 234, 0.49)',
-        
-            ]
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+  
+            ],
+            borderWidth: 1
 
           }
         ]
      } 
     }
-    )*/
+    )
 
-/*function mostrarChart(){
-//const ctxUno = document.getElementById('myChart2').getContext('2d');
-return rankingScore();
 
-}
-
-mostrarChart();
-
- function rankingScore(){
-   const data= {
+function statisticsGender(ctx) {
+  // eslint-disable-next-line no-undef
+  new Chart(ctx, {
+     type: 'doughnut',
+     data: {
+       labels: ["Female","Male","NA"],
+       datasets: [{
          
-        label:films.map(el => el.title),
-            datasets:[{
-            label:"Ranking",
-            data: [films.map(el =>el.rt_score )],
-            backgroundColor:[
-              'rgba(129, 66, 204, 0.49)',
-              'rgba(247, 250, 60, 0.75)',
-              'rgba(70, 235, 242, 0.41)',
-              'rgba(157, 237, 109, 0.93)',
-              'rgba(240, 155, 66, 0.49)',
-              'rgba(237, 109, 234, 0.49)',
-
-            ],
-            borderColor:["black"],
-            borderWidth:1,
+           label: "Genero",
+           data: [81,87,3],
+           backgroundColor: [
+ 
+             'rgba(255, 99, 132, 0.2)',
+             'rgba(54, 162, 235, 0.2)',
+             'rgba(255, 206, 86, 0.2)',
+             'rgba(75, 192, 192, 0.2)',
+             'rgba(153, 102, 255, 0.2)',
+             'rgba(255, 159, 64, 0.2)'
             
-          }]
-        }
-      
-       const options ={
-       
-        indexAxis: "y",
-       responsive: true ,
-       maintainAspecRatio: false,
-
-       }
-      
-      new Chart("myChart2", { type: 'bar', data, options })
-      }*/
-
-
-
+           ],
+           borderColor: [
+             'rgba(255, 99, 132, 1)',
+             'rgba(54, 162, 235, 1)',
+             'rgba(255, 206, 86, 1)',
+             'rgba(75, 192, 192, 1)',
+             'rgba(153, 102, 255, 1)',
+             'rgba(255, 159, 64, 1)'
+ 
+           ],
+           borderWidth: 1
+           
+         }
+       ]
+     }
+   
+    
+   })
+ }
+ // Llamando desde el DOM
+ function mostrarCharts3() {
+   const ctx = document.getElementById('myChart3').getContext('2d');
+   statisticsGender(ctx)
+ }
+ 
+ mostrarCharts3();
+ 
+ 
