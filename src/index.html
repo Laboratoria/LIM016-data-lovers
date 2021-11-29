@@ -12,6 +12,7 @@
   <body>
     <div class="conteiner">
 
+      <header>
     <!-- dasboard contiene el menu para navegar por todas las secciones, el logo y los iconos-->
       <nav class="dashboard" >
 <div class = "conteinerDashboard">
@@ -52,8 +53,9 @@
 
         </div>
       </nav>
-    
+    </header>
   
+    <main>
       <!--Glass contiene toda la data  --> 
       <div class="Glass">
 
@@ -67,11 +69,10 @@
 
           <div id="conteinerScrollPortada" style="display:flex">
            <div class="box" style="display:flex">
-        <div class="textBox1" style="display:flex">
           <p>Esta exitosa casa de animación fue fundada en 1985 por los directores de cine y animación: Isao Takahata y Hayao Miyazaki,
              ha producido veintidós largometrajes.</p>
-          </div>
-          <div  class="textBox2">
+        </div>
+         <!-- <div  class="textBox2">
           <p>La mayoría de sus películas ocuparon el primer lugar en la taquilla en Japón en el año en que se estrenaron y cuentan 
             con una gran cantidad de seguidores a nivel mundial, esto debido
              a que presentan historias fascinantes y se mantienen fieles a la animacion tradicional.</p>
@@ -81,26 +82,31 @@
              generar movimientos entre los diferentes elementos.</p>
             </div>
             <div  class="textBox4">
-            <!-- <p>El nombre del estudio proviene de Ghibli, palabra con que Italia bautizó a los aviones que volaban sobre el Sahara durante
-            la Segunda Guerra Mundial, y que a su vez proviene del término arábico que describe al viento cálido del desierto en Libia </p> --> 
-          </div>
-          </div>
+            <p>El nombre del estudio proviene de Ghibli, palabra con que Italia bautizó a los aviones que volaban sobre el Sahara durante
+            la Segunda Guerra Mundial, y que a su vez proviene del término arábico que describe al viento cálido del desierto en Libia </p> 
+          </div>!-->
         
+
          <div class="sliderContainer">
+
         <ul class="slider">
           <li id="slide1">
-          <img src="img/studio 1.2.jpg" alt="">
+          <img src="img/slider1.jpg" alt="">
         </li>
         <li id="slide2">
-          <img src="img/studio 2.jpg" alt="">
+          <img src="img/slider2.jpg" alt="">
         </li>
         <li id="slide3">
-          <img src="img/studio 9.jpg" alt="">
+          <img src="img/slider3.jpg" alt="">
         </li>
         <li id="slide4">
-          <img src="img/studio 4.jpg" alt="">
+          <img src="img/slider4.jpg" alt="">
+        </li>
+        <li id="slide5">
+          <img src="img/slider5.jpg" alt="">
         </li>
         </ul>
+
          <ul class="menuSlider">
          <li>
            <a href="#slide1">1</a>
@@ -114,8 +120,13 @@
         <li>
           <a href="#slide4">4</a>
         </li>
+        <li>
+          <a href="#slide5">5</a>
+        </li>
         </ul>
+
       </div>
+
 
       <div class="conteinerStatsFilmo">
         <p>ESTADISTICA 1</p>
@@ -128,7 +139,6 @@
       </div>
        </div>
         
-            
         <div class="divFilmo" id="filmo" style="display:none">
 
           <div class="divFilmoTitle">
@@ -363,23 +373,36 @@
         </div>
 
       </div>
-
-      <div class="divContainerFooter">
-        <div class="divFooter">
-          <div class="divcolumna1">
-            <div class="divContactanos"></div>
-            <div class="divFAQs"></div>
-          </div>
-          <div class="divcolumna2">
-            <div class="divbtnSubscribe"></div>
-            <div class="divform"></div>
-            <div class="divContactFAQs"></div>
-          </div>
-          <div class="divcolumna3"></div>
-        </div>
-      </div>
-      </div>
+    </main>
     </div>
+
+    <footer>
+      <div class="divContainerFooter">
+
+          <div class="divcolumna1">
+            <div class="boxAU">
+              <p>ABOUT US</p>
+            </div>
+              <p>FAQs</p>
+          </div>
+
+          <div class="divcolumna2">
+              <p>Ingrese su correo electrónico para recibir las últimas noticias sobre Studio Ghibli en videos caseros
+               y en cines.</p>
+              <div class="formFooter">
+                <input type="search" placeholder="E-mail">
+                <input type="search" placeholder="Nombre">
+                <input type="search" placeholder="Apellido">
+              </div>
+              <button>Subscribirse</button>
+          </div>
+
+          <div class="divcolumna3">
+            <input type="image" src="img/footerLogo.png">
+          </div>
+
+      </div>
+    </footer>
     
 
     <script src="main.js" type="module"></script>
