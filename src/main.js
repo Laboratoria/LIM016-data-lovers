@@ -10,7 +10,7 @@ let filterData = data.results; // Data filtrada
 let dataPersonajes = document.querySelector("#showAllCharacters");
 const characterType = document.getElementById("filterType");  // Lista de tipos de personaje seleccionado
 const characterCategory = document.getElementById("byCategory"); // Lista de categorias de los personajes 
-let orden = document.getElementById("sort"); // Select "ORDENANDO"
+let order = document.getElementById("sort"); // Select "ORDENANDO"
 
 // --- Botones: 
 const btnAll = document.getElementById("getAll");
@@ -110,44 +110,44 @@ function printData(data) {
   });
 } printData(allData);
 
+// -------- ORDENAR PERSONAJES ------------------>>>
+
+function sortCharacters() {
+  clearSort();
+
+  order.addEventListener("change", (o) => {
+
+    let sortOrder = o.target.value;
+    
+    let sortCharacter = sortData(filterData, sortOrder);
+    printData(sortCharacter);
+  }); 
+
+} sortCharacters();
+
 //-------------------  BOTON "MOSTRAR TODO" -------------->>>>>
 
 function showAllCharacters() {
   btnAll.addEventListener("click", () => {
     clearSort();
+    clearSelect();
     clearCharacters();
     printData(allData);
   });
 } showAllCharacters();
 
+
+//-------------------  LIMPIAR CAMPOS -------------->>>>>
+
 function clearCharacters() {
   dataPersonajes.innerHTML = "";
 };
 
-function clearSort() {
-  orden.value = "";
+function clearSelect() {
+  characterType.value = "";
+  characterCategory.value = "";
 };
 
-// -------- ORDENAR PERSONAJES ------------------>>>
-
-function sortCharacters() {
-
-  orden.addEventListener("change", () => {
-    let f;
-    let opcionOrden = orden.value;
-    let orderCharacters = filterData.map((personaje) => personaje);
-    if (opcionOrden == "AZ") {
-      f = sortAZ(orderCharacters);
-    } else if (opcionOrden == "ZA") {
-      f = sortZA(orderCharacters);
-    }
-    return printData(f);
-  });
-} sortCharacters();
-
-
-
-// let name = filterData.map((data) => data.name)
-
-// console.log(name);
-// console.table(filterData.sort((a, b) => b.name < a.name));
+function clearSort() {
+  order.value = "";
+};

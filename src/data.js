@@ -3,10 +3,10 @@ export const example = () => {
   return 'example';
 };
 
-export const filters =  (data,filtro,condicion) => {
+export const filters = (data, filtro, condicion) => {
   let filterCharacters;
 
-  if (filtro==="gender"){
+  if (filtro === "gender") {
     switch (condicion) {
       case "1":
         filterCharacters = data.filter((personaje) => personaje.gender === "Female");
@@ -24,7 +24,7 @@ export const filters =  (data,filtro,condicion) => {
         break;
     }
   }
-  else if (filtro==="species") {
+  else if (filtro === "species") {
     switch (condicion) {
       case "1":
         filterCharacters = data.filter((personaje) => personaje.species === "Animal");
@@ -65,9 +65,9 @@ export const filters =  (data,filtro,condicion) => {
 
       default:
         break;
-    } 
+    }
   }
-  else if(filtro==="status"){
+  else if (filtro === "status") {
     switch (condicion) {
       case "1":
         filterCharacters = data.filter((personaje) => personaje.status === "unknown");
@@ -84,25 +84,27 @@ export const filters =  (data,filtro,condicion) => {
   }
   // console.log(filterCharacters)
   return (filterCharacters);
-}
-
-export const sortData = (data, sortBy, sortOrder) => {
-  
-  let o;
-  // function sortArray(a,b) {
-  //   if (a.name < b.name) {return -1}
-  //   else if (a.name > b.name) {return 1}
-  //   else {return 0}
-  // }
-  // console.log(data);
-  // o = data.sort(sortArray)
-
-  function AZ(a, b) {
-    if (a.name < b.name) { return -1 }
-  };
-  
-  o = data.sort(AZ);
-  console.log(o);
-  return o
 };
 
+export const sortData = (data, sortOrder) => {
+  let orden;
+  switch (sortOrder) {
+    case "AZ":
+      orden = data.sort((a, b) => {
+        return a.name < b.name ? -1 : 1;
+      });
+      // console.table(orden);
+      break;
+
+    case "ZA":
+      orden = data.sort((a, b) => {
+        return b.name < a.name ? -1 : 1;
+      });
+      // console.table(orden);
+      break;
+
+    default:
+      break;
+  }
+  return (orden);
+};
