@@ -703,3 +703,9 @@ label {
   font-family: 'Inter', sans-serif;
 }
 
+figure {
+  background-color: rgba(255,255,255,.05);
+  padding: 10px 10px 30px;
+}
+
+
