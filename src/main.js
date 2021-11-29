@@ -1,4 +1,4 @@
-import { example, filters, sortData } from "./data.js";
+import { filters, sortData } from "./data.js";
 
 import data from "./data/rickandmorty/rickandmorty.js";
 
@@ -21,32 +21,31 @@ let filterByCategory = {};
 
 filterByCategory["gender"] = ["Seleccione un género","Femenino","Masculino","Sin género","Desconocido"];
 filterByCategory["species"] = [ "Seleccione una especie","Animal","Mutante","Desconocido","Enfermedad","Extraterrestre","Humano","Humanoide","Mitologico",  "Parásito","Poopybutthole","Robot","Vampiro" ];
-filterByCategory["status"] = ["Selecione un estado de vida","Desconocido", "Muerto", "Vivo"];
-
-document
-  .getElementById("filterType")
-  .addEventListener("change", changeFilterList);
+filterByCategory["status"] = ["Selecione un estado de vida", "Desconocido", "Muerto", "Vivo"];
 
 function changeFilterList() {
-  let selFilter = characterType.options[characterType.selectedIndex].value;
-  let filters = filterByCategory[selFilter];
-  let filter;
+  
+  characterType.addEventListener("change", () => {
 
-  while (characterCategory.options.length) {
-    characterCategory.remove(0);
-  };
+    let selFilter = characterType.options[characterType.selectedIndex].value;
+    let filters = filterByCategory[selFilter];
     
-  if (filters) {
-    for (let i = 0; i < filters.length; i++) {
-      filter = new Option(filters[i], i);
-      characterCategory.options.add(filter);
+    while (characterCategory.options.length) {
+      characterCategory.remove(0);
+      // characterCategory.innerHTML = "";
     };
-  };
-};
+    
+    if (filters) {
+      for (let i = 0; i < filters.length; i++) {
+        let filter = new Option(filters[i], i);
+
+        characterCategory.options.add(filter);
+      }; 
+    };
+  });
+}changeFilterList();
 
 //---------- FILTRADO DE PERSONAJES ------------>>>
-
-// FUNCION PARA FILTRAR PERSONAJES POR CATEGORIAS
 
 function filterCharacters() {
   
@@ -65,7 +64,8 @@ function filterCharacters() {
       });
     }
 
-  });
+  })
+
 } filterCharacters();
 
 // -------- FUNCION PrintData --------->
@@ -136,7 +136,6 @@ function showAllCharacters() {
   });
 } showAllCharacters();
 
-
 //-------------------  LIMPIAR CAMPOS -------------->>>>>
 
 function clearCharacters() {
@@ -144,9 +143,10 @@ function clearCharacters() {
 };
 
 function clearSelect() {
+  // characterCategory.value = "";
   characterType.value = "";
-  characterCategory.value = "";
-};
+
+}; 
 
 function clearSort() {
   order.value = "";

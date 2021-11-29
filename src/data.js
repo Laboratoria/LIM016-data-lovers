@@ -1,8 +1,3 @@
-export const example = () => {
-
-  return 'example';
-};
-
 export const filters = (data, filtro, condicion) => {
   let filterCharacters;
 
