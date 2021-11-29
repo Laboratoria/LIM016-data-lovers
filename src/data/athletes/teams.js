@@ -21,10 +21,6 @@ export default {
         "flag": "https://flagcdn.com/cz.svg"
       },
       {
-        "team": ['Brazil-1', 4],
-        "flag": "https://flagcdn.com/br.svg"
-      },
-      {
         "team": ['Germany-1', 2],
         "flag": "https://flagcdn.com/de.svg"
       },
