@@ -1,4 +1,4 @@
-// estas funciones son de ejemplo
+
 
 //Filtro de people, vehiculo, locations para mostrar los items
 export const filterItems = (property, array) => {
@@ -100,3 +100,17 @@ export const sortOrdenNumericoDesc = (array,parametro) => {
       })
       return arrayAges
     }
+
+   
+    export const inputSearch = (array,texto) => {
+      const arrayFilms = [ ];
+      array.forEach((film) => {
+        let textTitle = film.title.toLowerCase() ;
+        if (textTitle.includes(texto.toLowerCase())) {
+          arrayFilms.push(film)
+      }
+    })
+     return arrayFilms;
+    }
+    
+  

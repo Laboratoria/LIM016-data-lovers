@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Exo&family=Questrial&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js" integrity="sha512-CWVDkca3f3uAWgDNVzW+W4XJbiC3CH84P2aWZXj+DqI6PNbTzXbl1dIzEHeNJpYSn4B6U8miSZb/hCws7FnUZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
     
   <body>
@@ -364,6 +365,32 @@
 
       </div>
 
+      <section id="statistics">
+        <figure>
+        <div class="Chart1">
+         <h2>El Director Preferido por Studio Ghibli</h2>
+         <br>
+         <canvas id="myChart" width="800" height="400"></canvas>
+         </div>
+        </figure>
+        <figure>
+       <div class="Chart2">
+        <h2>Ranking de todas las peliculas de Studio Ghibli</h2>
+        <br>
+        <canvas id="myChart2" width="500" height="500"></canvas>
+      </div>
+      </figure>
+      <figure>  
+      <div class="Chart3">
+      <h2>Personajes por Género</h2>
+      <br>
+      <canvas id="myChart3" width="200" height="200"></canvas>
+      </div>
+      </figure>
+    
+
+      </section>
+
       <div class="divContainerFooter">
         <div class="divFooter">
           <div class="divcolumna1">
@@ -383,5 +410,6 @@
     
 
     <script src="main.js" type="module"></script>
+   
     </body>
 </html>

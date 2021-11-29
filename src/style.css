@@ -449,7 +449,7 @@ ul.slider li:target {
    display:flex ;
    height: 200px;
    width:140px;
-   margin: 5px;
+   margin:auto;
    margin-bottom: 10px;
    position: relative;
 
@@ -702,4 +702,10 @@ label {
   font-size: 0.875em;
   font-family: 'Inter', sans-serif;
 }
+
+figure {
+  background-color: rgba(255,255,255,.05);
+  padding: 10px 10px 30px;
+}
+
 
