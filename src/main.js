@@ -84,7 +84,6 @@ filmoItems(films);
 
 //let title = films.map(el => el.title);
 
-
 function peopleItems (callback) {
 callback.forEach((el) => {    
   const createElement= document.createElement("div")
@@ -425,14 +424,56 @@ document.getElementById("cleanVehicles").addEventListener("click",function() {
   vehicleItems(filterItems("vehicles", films).flat(2))   
 })
     
+
+
     
-let people= films.people
-let colorDeOjos = people.filter(people => carro.eye_color === "Black");
+function statisticsScore(ctx) {
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: films.map(el => el.title),
+      datasets: [
+        {
+          label: "Ranking por peliculas",
+          data: films.map(el => el.rt_score),
+          backgroundColor: [
+           
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    /*options:{
+      indexAxis: 'y',
+      responsive: true,
+ 
+    }*/
+  })
+}
+// Llamando desde el DOM
+function mostrarCharts2() {
+  const ctx = document.querySelector('#myChart2').getContext('2d');
+  statisticsScore(ctx)
+}
+
+mostrarCharts2();
 
 
 
 
-let ctx= document.getElementById("myChart").getContext("2d");
+
+
+
+
+
+/*const ctx= document.getElementById("myChart").getContext("2d");
 let myChart = new Chart(ctx,{
     type:"bar",
     data: {
@@ -450,6 +491,52 @@ let myChart = new Chart(ctx,{
         
             ]
 
-          }]
+          }
+        ]
      } 
-    })
+    }
+    )*/
+
+/*function mostrarChart(){
+//const ctxUno = document.getElementById('myChart2').getContext('2d');
+return rankingScore();
+
+}
+
+mostrarChart();
+
+ function rankingScore(){
+   const data= {
+         
+        label:films.map(el => el.title),
+            datasets:[{
+            label:"Ranking",
+            data: [films.map(el =>el.rt_score )],
+            backgroundColor:[
+              'rgba(129, 66, 204, 0.49)',
+              'rgba(247, 250, 60, 0.75)',
+              'rgba(70, 235, 242, 0.41)',
+              'rgba(157, 237, 109, 0.93)',
+              'rgba(240, 155, 66, 0.49)',
+              'rgba(237, 109, 234, 0.49)',
+
+            ],
+            borderColor:["black"],
+            borderWidth:1,
+            
+          }]
+        }
+      
+       const options ={
+       
+        indexAxis: "y",
+       responsive: true ,
+       maintainAspecRatio: false,
+
+       }
+      
+      new Chart("myChart2", { type: 'bar', data, options })
+      }*/
+
+
+
