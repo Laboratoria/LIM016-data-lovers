@@ -467,7 +467,7 @@ ul.slider li:target {
    display:flex ;
    height: 200px;
    width:140px;
-   margin: 5px;
+   margin:auto;
    margin-bottom: 10px;
    position: relative;
 
@@ -772,6 +772,11 @@ footer {
   border-radius: 15px;
   padding: 8px;
   color: #fff;
+}
+
+figure {
+  background-color: rgba(255,255,255,.05);
+  padding: 10px 10px 30px;
 }
 
 

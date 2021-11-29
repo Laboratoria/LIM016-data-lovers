@@ -1884,7 +1884,7 @@ export default {
           "name": "Sho (Shawn)",
           "img": "https://static.wikia.nocookie.net/studio-ghibli/images/0/04/Sho.jpg",
           "gender": "Male",
-          "age": "12-14",
+          "age": "12",
           "eye_color": "Brown",
           "hair_color": "Navy blue/black",
           "specie": "Human"
