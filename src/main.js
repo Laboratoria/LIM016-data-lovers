@@ -99,7 +99,7 @@ function filterCharacters(){
                 filterData = allData.filter((personaje) => personaje.species === "Animal");
                 break;
               case "2":
-                filterData = allData.filter((personaje) => personaje.species === "Mutant");
+                filterData = allData.filter((personaje) => personaje.species === "Cronenberg");
                 break;
               case "3":
                 filterData = allData.filter((personaje) => personaje.species === "unknown");
