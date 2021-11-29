@@ -1,5 +1,5 @@
 import data from './data/ghibli/ghibli.js';
-import {filterItems, sortOrdenAlfabeticoAsc, sortOrdenAlfabeticoDesc, filterData, sortOrdenNumericoAsc, sortOrdenNumericoDesc, filterPeopleLocationsVehicles, filterAge} from  './data.js';
+import {filterItems, sortOrdenAlfabeticoAsc, sortOrdenAlfabeticoDesc, filterData, sortOrdenNumericoAsc, sortOrdenNumericoDesc, filterPeopleLocationsVehicles, filterAge, inputSearch} from  './data.js';
 
 let films = [];
 films = data.films;
@@ -235,23 +235,16 @@ const filterButtonDesc =document.getElementById("desc");
     //funcion para la barra de busqueda
     let formulario= document.getElementById("formulario"); 
     const boton= document.getElementById("boton");
+
     const filtrar = () => {
       const texto= formulario.value.toLowerCase();
-      const arrayFilms = [];
-          films.forEach((film) => {
-          let textTitle= film.title.toLowerCase();
-            if (textTitle.includes(texto)){
-              arrayFilms.push(film)
-            //conteinerScrollFilmo.innerHTML=" Lo encontraste";
-            }
-           /* else {
-              console.log("no lo encontro")
-            //conteinerScrollFilmo.innerHTML=" Lo sentimos pon algo";
-           }*/
-        })
-        //console.log(arrayFilms)
+      conteinerScrollFilmo.innerHTML=" ";
+      filmoItems(inputSearch(films, texto)) 
+
+      if (conteinerScrollFilmo.innerHTML== " ") {
         conteinerScrollFilmo.innerHTML=" ";
-        filmoItems(arrayFilms) 
+        conteinerScrollFilmo.innerHTML="Lo sentimos, ingresa otro criterio de busqueda. Recuerda que la busqueda es por títulos de peliculas.";
+      }
     }
 
     boton.addEventListener("click", filtrar)

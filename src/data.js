@@ -9,14 +9,6 @@ export const filterItems = (property, array) => {
     return arrayPeople
 };
 
-//Barra de navegacion
-/*export const filterItems = (textInputSearch, array) => {
-  const searchInput = array.forEach((el) => {
-   return el.toLowerCase().indexOf(textInputSearch.toLowerCase()) > -1
-  });
-  return searchInput
-}*/
-
 //Ordenar alfabticamente ascendente y descendente
 export const sortOrdenAlfabeticoAsc = (array,parametro) => {
   const compareTitle = array.sort((a, b ) => {
