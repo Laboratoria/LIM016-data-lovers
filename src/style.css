@@ -12,7 +12,7 @@ body{
     display: grid;
     width: 85%;
     max-width: 1000px;
-    margin: 25px;
+    margin: auto;
     margin-left: 50px;
     margin-right: 50px;
     grid-template-columns: repeat(2, 1fr); 
@@ -20,7 +20,19 @@ body{
     gap: 0px 0px; 
     grid-template-areas: 
       "dashboard Glass Glass"
+
   }
+  .container--flex{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center ;
+    padding: 20px;
+  
+  }
+
+
+
 
   .dashboard{
     display: grid;
