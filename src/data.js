@@ -4,16 +4,16 @@ export const filters = (data, filtro, condicion) => {
   if (filtro === "gender") {
     switch (condicion) {
       case "1":
-        filterCharacters = data.filter((personaje) => personaje.gender === "Female");
+        filterCharacters = data.filter((personaje) => personaje.gender === "unknown");
         break;
       case "2":
-        filterCharacters = data.filter((personaje) => personaje.gender === "Male");
+        filterCharacters = data.filter((personaje) => personaje.gender === "Female");
         break;
       case "3":
-        filterCharacters = data.filter((personaje) => personaje.gender === "Genderless");
+        filterCharacters = data.filter((personaje) => personaje.gender === "Male");
         break;
       case "4":
-        filterCharacters = data.filter((personaje) => personaje.gender === "unknown");
+        filterCharacters = data.filter((personaje) => personaje.gender === "Genderless");
         break;
       default:
         break;
@@ -25,26 +25,25 @@ export const filters = (data, filtro, condicion) => {
         filterCharacters = data.filter((personaje) => personaje.species === "Animal");
         break;
       case "2":
-        filterCharacters = data.filter((personaje) => personaje.species === "Cronenberg");
-        break;
-      case "3":
         filterCharacters = data.filter((personaje) => personaje.species === "unknown");
         break;
-      case "4":
+      case "3":
         filterCharacters = data.filter((personaje) => personaje.species === "Disease");
         break;
-      case "5":
+      case "4":
         filterCharacters = data.filter((personaje) => personaje.species === "Alien");
         break;
-      case "6":
+      case "5":
         filterCharacters = data.filter((personaje) => personaje.species === "Human");
         break;
-      case "7":
+      case "6":
         filterCharacters = data.filter((personaje) => personaje.species === "Humanoid");
         break;
-      case "8":
+      case "7":
         filterCharacters = data.filter((personaje) => personaje.species === "Mytholog");
         break;
+      case "8":
+        filterCharacters = data.filter((personaje) => personaje.species === "Cronenberg");
       case "9":
         filterCharacters = data.filter((personaje) => personaje.species === "Parasite");
         break;

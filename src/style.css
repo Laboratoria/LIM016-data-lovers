@@ -144,3 +144,10 @@ option{
     padding: 0.5rem; 
     color: #7cfc00;
 }
+
+/* Carrusel ----------> */
+
+.carrusel{
+  width: 100%;
+  position: relative;
+}

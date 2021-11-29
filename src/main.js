@@ -19,8 +19,8 @@ const btnAll = document.getElementById("getAll");
 
 let filterByCategory = {};
 
-filterByCategory["gender"] = ["Seleccione un género","Femenino","Masculino","Sin género","Desconocido"];
-filterByCategory["species"] = [ "Seleccione una especie","Animal","Mutante","Desconocido","Enfermedad","Extraterrestre","Humano","Humanoide","Mitologico",  "Parásito","Poopybutthole","Robot","Vampiro" ];
+filterByCategory["gender"] = ["Seleccione un género","Desconocido","Femenino","Masculino","Sin género"];
+filterByCategory["species"] = [ "Seleccione una especie","Animal","Desconocido","Enfermedad","Extraterrestre","Humano","Humanoide","Mitologico","Mutante", "Parásito","Poopybutthole","Robot","Vampiro" ];
 filterByCategory["status"] = ["Selecione un estado de vida", "Desconocido", "Muerto", "Vivo"];
 
 function changeFilterList() {
