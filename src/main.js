@@ -1,188 +1,151 @@
-import { example, filters } from "./data.js";
+import { filters, sortData } from "./data.js";
 
 import data from "./data/rickandmorty/rickandmorty.js";
 
-//SELECT DINAMICO
+// --- Declaración de variables:
+
+const allData = data.results; // Data general
+let filterData = data.results; // Data filtrada
+
+let dataPersonajes = document.querySelector("#showAllCharacters");
+const characterType = document.getElementById("filterType");  // Lista de tipos de personaje seleccionado
+const characterCategory = document.getElementById("byCategory"); // Lista de categorias de los personajes 
+let order = document.getElementById("sort"); // Select "ORDENANDO"
+
+// --- Botones: 
+const btnAll = document.getElementById("getAll");
+
+//----------- SELECT DINAMICO ------------>>>>
 
 let filterByCategory = {};
 
-filterByCategory["gender"] = [
-  "Seleccione un género",
-  "Femenino",
-  "Masculino",
-  "Sin género",
-  "Desconocido",
-];
-filterByCategory["species"] = [
-  "Animal",
-  "Mutante",
-  "Desconocido",
-  "Enfermedad",
-  "Extraterrestre",
-  "Humano",
-  "Humanoide",
-  "Mitologia",
-  "Parásito",
-  "Poopybutthole",
-  "Robot",
-  "Vampiro",
-];
-filterByCategory["status"] = ["Desconocido", "Muerto", "Vivo"];
-
-document
-  .getElementById("filterType")
-  .addEventListener("change", changeFilterList);
+filterByCategory["gender"] = ["Seleccione un género","Desconocido","Femenino","Masculino","Sin género"];
+filterByCategory["species"] = [ "Seleccione una especie","Animal","Desconocido","Enfermedad","Extraterrestre","Humano","Humanoide","Mitologico","Mutante", "Parásito","Poopybutthole","Robot","Vampiro" ];
+filterByCategory["status"] = ["Selecione un estado de vida", "Desconocido", "Muerto", "Vivo"];
 
 function changeFilterList() {
-  let filterTypeList = document.getElementById("filterType");
-  let categoryList = document.getElementById("byCategory");
-  let selFilter = filterTypeList.options[filterTypeList.selectedIndex].value;
+  
+  characterType.addEventListener("change", () => {
 
-  console.log(selFilter);
-
-  let filters = filterByCategory[selFilter];
-
-  while (categoryList.options.length) {
-      categoryList.remove(0);
-    }
+    let selFilter = characterType.options[characterType.selectedIndex].value;
+    let filters = filterByCategory[selFilter];
+    
+    while (characterCategory.options.length) {
+      characterCategory.remove(0);
+    };
     
     if (filters) {
-        for (let i = 0; i < filters.length; i++) {
-            let filter = new Option(filters[i], i);
-            categoryList.options.add(filter);
-        }
-    console.log(categoryList);
-  }
-}
+      for (let i = 0; i < filters.length; i++) {
+        let filter = new Option(filters[i], i);
+        
+        characterCategory.options.add(filter);
+        characterCategory.options[0].disabled=true;
+      }; 
+    };
+  });
+}changeFilterList();
 
-//------- MOSTRAR PERSONAJES ------>>>>>>>>>>>
+//---------- FILTRADO DE PERSONAJES ------------>>>
 
-let allData = data.results; // Data general
+function filterCharacters() {
+  
+  characterType.addEventListener("change", (e) => {
+    clearSort();
 
-let filterData = data.results; // Data filtrada
+    let selectFilter = e.target.value;
 
-//---------- PRUEBAS DE CONECTAR DATA CON MAIN ------------>>>
-
-// seltCategoria.addEventListener("change", (e) => {
-//     let options = e.target.value
-
-//     filters(filterData, options);
-// });
-
-let selCategoria = document.getElementById("byCategory");
-
-selCategoria.addEventListener("change",
-
-  function () {
-
-    let category = this.options[selCategoria.selectedIndex].value;
-
-    // console.log(category);
-
-    switch (category) {
-      case "1":
-        filterData = allData.filter(
-          (personaje) => personaje.gender === "Female"
-        );
+      characterCategory.addEventListener("change", (category) => {
+        category = category.target.value
+        filterData = filters(allData, selectFilter, category);
         printData(filterData);
-
-        break;
-
-      case "2":
-        filterData = allData.filter((personaje) => personaje.gender === "Male");
-
-        printData(filterData);
-
-        break;
-
-      case "3":
-        filterData = allData.filter(
-          (personaje) => personaje.gender === "Genderless"
-        );
-
-        printData(filterData);
-
-        break;
-
-      case "4":
-        filterData = allData.filter(
-          (personaje) => personaje.gender === "unknown"
-        );
-
-        printData(filterData);
-
-        break;
-
-
-      default:
-        break;
+        clearSort();
+      });
     }
-  }
-);
+
+  })
+
+} filterCharacters();
+
 
 // -------- FUNCION PrintData --------->
 
 function printData(data) {
-  let dataPersonajes = document.querySelector("#showAllCharacters");
-  dataPersonajes.innerHTML = "";
+  clearCharacters()
 
-  let dataPersonaje = data.map(function (result) {
-   
+  let dataPersonaje = data.map((result) => {
     let showCards = `
+      <div id="conteinerCharacters" class="div-personaje">
+        <div class="data-frente-personaje" style="background-image:url(${result.image})">
+          <div class="name-personaje-frente">
+            <h5>${result.name}</h5>
+          </div>
+        </div>
         
-            <div id="conteinerCharacters" class="div-personaje">
-                <div class="data-frente-personaje" style="background-image:url(${result.image})">
-                    <div class="name-personaje-frente">
-                        <h5>${result.name}</h5>
-                    </div>
-                </div>
-               
-                <div class="data-atras-personaje">
+        <div class="data-atras-personaje">
+          <div class="name-personaje-atras">
+              <h4>${result.name}</h4>
+              <h6 class="type-character">${result.type}</h6>
+          </div>
+              
+          <div>
+              <p>Status: ${result.status}</p>
+              <p>Species: ${result.species}</p>
+              <p>Gender: ${result.gender}</p>
+              <p>Origin: ${result.origin.name}</p>
+              <p>Location: ${result.location.name}</p>
+          </div>
+        </div>
 
-                    <div class="name-personaje-atras">
-                        <h4>${result.name}</h4>
-                        <h6 class="type-character">${result.type}</h6>
-                    </div>
-                        
-                    <div>
-                        <p>Status: ${result.status}</p>
-                        <p>Species: ${result.species}</p>
-                        <p>Gender: ${result.gender}</p>
-                        <p>Origin: ${result.origin.name}</p>
-                        <p>Location: ${result.location.name}</p>
-                    </div>
-                </div>
-            </div>
+      </div>
     `;
     return showCards;
   });
   
-  dataPersonaje.forEach(function (element) {
+  dataPersonaje.forEach((element) => {
     let card = document.createElement("div");
     card.setAttribute("class", "card-personaje");
-
     card.innerHTML = element;
-
     dataPersonajes.appendChild(card);
   });
-}
-printData(allData);
+} printData(allData);
+
+// -------- ORDENAR PERSONAJES ------------------>>>
+
+function sortCharacters() {
+  clearSort();
+
+  order.addEventListener("change", (o) => {
+
+    let sortOrder = o.target.value;
+    
+    let sortCharacter = sortData(filterData, sortOrder);
+    printData(sortCharacter);
+  }); 
+
+} sortCharacters();
 
 //-------------------  BOTON "MOSTRAR TODO" -------------->>>>>
 
-let btnAll = document.getElementById("getAll");
-btnAll.addEventListener("click", function () {
-    let dataPersonajes = document.querySelector("#showAllCharacters");
-    dataPersonajes.innerHTML = "";
+function showAllCharacters() {
+  btnAll.addEventListener("click", () => {
+    clearSort();
+    clearSelect();
+    clearCharacters();
+    printData(allData);
+  });
+} showAllCharacters();
 
-    printData(allData)
+//-------------------  LIMPIAR CAMPOS -------------->>>>>
 
-});
+function clearCharacters() {
+  dataPersonajes.innerHTML = "";
+};
 
-//-------------------  BOTON "FILTRADO" -------------->>>>>
+function clearSelect() {
+  characterCategory.value = 0;
+  characterType.value = "";
+}; 
 
-// let btnFilter = document.getElementById("filtrarDataPersonaje");
-// btnFilter.addEventListener("click", function () {
-//     document.getElementById("showFilters").style.display = "block";
-// });
-
+function clearSort() {
+  order.value = "";
+};

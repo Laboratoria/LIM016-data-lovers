@@ -3,26 +3,48 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="imagenesRM/Logo/RM.png">
+    <title>DL| Rick and Morty</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400&display=swap" rel="stylesheet">
   </head>
   
   <body>
-    <!-- <header class="header">
-      <nav>
+    <header class="header">
+      <!-- <nav>
         <ul>
           <li><a href="">Inicio</a></li>
           <li><a href="">Personajes</a></li>
           <li><a href="">Temporadas</a></li>
         </ul>
-      </nav>
-    </header> -->
+      </nav> -->
+    </header>
 
     <!-- <section id="home">
-      <div id="home-personajes" class="carrusel">
+      <div class="carrusel">
+        <div class="carrusel-1">
+          <img src="imagenesRM/carrusel/RM_carrusel_1.jpg">
+        </div>
+
+        <div class="carrusel-1">
+          <img src="imagenesRM/carrusel/RM_carrusel_2.jpg">
+        </div>
+        
+        <div class="carrusel-1">    
+          <img src="imagenesRM/carrusel/RM_carrusel_3.jpg">
+        </div>
+
+        <div style="text-align:center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+ 
+      </div> -->
+
+       <!-- <div id="home-personajes" class="carrusel">
         <h2 class="home-titulo">PERSONAJES</h2>
 
         <div>
@@ -32,8 +54,8 @@
             <img id="" class="home-personaje" src="./data/rickandmorty/rickandmorty.js" alt="">
           </div>
         </div>
-      </div>
-    </section> -->
+      </div> -->
+    <!-- </section>  -->
       
     <section id="personajes" class="data">
       <!-- titulo -->
@@ -55,21 +77,22 @@
             <!-- <option value="localization">Lugar donde vive</option> -->
           </select>
 
-          <select name="" id="byCategory">
+          <select id="byCategory">
             <option value="" disabled selected>Seleccione la categoría</option>
           </select>
           <!-- Botones de filtrado -->
-          <!-- <button id="filtrarDataPersonaje"> Filtrar</button> -->
-          
-          <button id="getAll">Mostrar todo</button>
 
           <div class="search"></div>
 
-          <label for="">Ordenar por nombre</label>
+          <label >Ordenar por nombre</label>
           <select name="sort" id="sort">
-            <option value="ascendente">A-Z</option>
-            <option value="descendente">Z-A</option>
+            <option value="" disabled selected>Ordenar</option>
+            <option value="AZ">A-Z</option>
+            <option value="ZA">Z-A</option>
           </select>
+
+          <button id="getAll">Mostrar todo</button>
+
         </div>
       </div>
       
