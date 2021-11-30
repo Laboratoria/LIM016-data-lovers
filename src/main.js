@@ -32,14 +32,14 @@ function changeFilterList() {
     
     while (characterCategory.options.length) {
       characterCategory.remove(0);
-      // characterCategory.innerHTML = "";
     };
     
     if (filters) {
       for (let i = 0; i < filters.length; i++) {
         let filter = new Option(filters[i], i);
-
+        
         characterCategory.options.add(filter);
+        characterCategory.options[0].disabled=true;
       }; 
     };
   });
@@ -143,9 +143,8 @@ function clearCharacters() {
 };
 
 function clearSelect() {
-  // characterCategory.value = "";
+  characterCategory.value = 0;
   characterType.value = "";
-
 }; 
 
 function clearSort() {
