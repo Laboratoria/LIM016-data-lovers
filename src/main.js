@@ -54,8 +54,6 @@ function filterCharacters() {
 
     let selectFilter = e.target.value;
 
-    if (((selectFilter === "gender") || (selectFilter === "species" ))|| (selectFilter === "status")) {
-
       characterCategory.addEventListener("change", (category) => {
         category = category.target.value
         filterData = filters(allData, selectFilter, category);
@@ -67,6 +65,7 @@ function filterCharacters() {
   })
 
 } filterCharacters();
+
 
 // -------- FUNCION PrintData --------->
 
