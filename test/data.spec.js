@@ -1,14 +1,17 @@
-import { example, anotherExample } from '../src/data.js';
+import { sortOrdenAlfabeticoAsc, anotherExample } from '../src/data.js';
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+describe('sortOrdenAlfabeticoAsc', () => {
+  it('is a function ', () => {
+    expect(typeof sortOrdenAlfabeticoAsc).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+
+
+  it('returns `a-z`', () => {
+    const compareTitle = [{"title": "Castle in the Sky"},{"title": "Whisper of the Heart"}]
+    expect(sortOrdenAlfabeticoAsc(compareTitle)).toEqual('example');
+  }); 
 });
 
 
