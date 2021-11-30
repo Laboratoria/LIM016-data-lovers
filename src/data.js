@@ -11,7 +11,7 @@ export const filtrarRegion =  (pokemons, opcion) =>{
 }
 
 // FILTRAR POKEMONS POR TIPO
-export const filtrarElemento =  (pokemons, opcion) =>{
+export const filtrarTipo =  (pokemons, opcion) =>{
   const pokemonsFiltradosE=pokemons.filter( function(pokemon) { return pokemon.type[0] == opcion || pokemon.type[1] == opcion; } );
   return pokemonsFiltradosE;
 }

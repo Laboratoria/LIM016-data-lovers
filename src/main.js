@@ -1,6 +1,6 @@
 // IMPORTAR DATA DE POKEMON.JS
 import data from './data/pokemon/pokemon.js';
-import { buscarPokemon, filtrarRegion, filtrarElemento, ordenarPokemons, obtenerPokemon} from './data.js';
+import { buscarPokemon, filtrarRegion, filtrarTipo, ordenarPokemons, obtenerPokemon} from './data.js';
 
 // CUANDO CARGA LA PAGINA
 window.onload = () => {
@@ -39,12 +39,15 @@ inputBuscador.addEventListener("keyup",(e)=>{
     limpiarCards();
     let valorInput = e.target.value;
     llenarCard(buscarPokemon(data.pokemon,valorInput));
+    /* console.log(buscarPokemon(data.pokemon,valorInput));
+    console.log(typeof buscarPokemon(data.pokemon,valorInput))
+    console.log(typeof buscarPokemon); */
 });
 
 // EVENTO AL REALIZAR CLICK EN EL MENU HAMBURGUESA
 const iconoHamburguesa = document.querySelector(".menuHamburguesa");
 const menu = document.querySelector(".cont-menu");
-iconoHamburguesa.addEventListener("click", (e)=>{
+iconoHamburguesa.addEventListener("click", ()=>{
     if (menu.style.display == 'block') {
         menu.style.display = 'none';
     } 
@@ -91,7 +94,7 @@ tipo.forEach(e=>{
         containerPokemons.style.display="flex";
         containerEstadistica.style.display="none";
         let opcionTipo = e.target.getAttribute("tipo");
-        llenarCard(filtrarElemento(data.pokemon, opcionTipo));
+        llenarCard(filtrarTipo(data.pokemon, opcionTipo));
     });
 });
 
@@ -106,6 +109,15 @@ ordenar.forEach(e=>{
         containerEstadistica.style.display="none";
         let opcionOrdenar = e.target.getAttribute("ordenar");
         llenarCard(ordenarPokemons(data.pokemon, opcionOrdenar));
+        /* 
+        //PARA VER EN CONSOLA EL ARREGLO DE LOS POKEMONES ORDENADOS
+        let arre=[];
+        for(let i=180;i<=250;i++){
+            let mientras=ordenarPokemons(data.pokemon, opcionOrdenar)[i];
+            arre.push(`data.pokemon[${parseInt(mientras.num)-1}]`);
+        }   
+        console.log(arre);*/
+
     });
 });
 
@@ -220,7 +232,6 @@ containerPokemons.addEventListener("click", e =>{
     if(e.target.classList.contains("imgPokemon")){
         limpiarModal();
         llenarModal(data.pokemon,obtenerPokemon(data.pokemon, e.target.id));
-        //masInfoPokemon(data.pokemon, e.target.id, containerModal);
         containerModal.classList.add("show");
     }
 });
@@ -251,7 +262,7 @@ const filterJohto=data.pokemon.filter(function(element){
 let cantidadJohto=filterJohto.length;
 
 // GRAFICO DE PIE DE CANTIDAD DE POKEMONES POR REGION
-let chartRegion= new Chart(ctxRegion,{
+new Chart(ctxRegion,{
     type:'pie',
     data: {
         labels:['Kanto', 'Johto'],
@@ -369,7 +380,7 @@ const filterVolador=data.pokemon.filter(function(element){
 let cantidadVolador=filterVolador.length;
 
 // GRAFICO DE BARRAS DE CANTIDAD DE POKEMONES POR TIPO
-let chartElemento= new Chart(ctxElemento,{
+new Chart(ctxElemento,{
     type:'bar',
     data: {
         labels:[ 'Agua', 'Fuego', 'Hierba', 'Tierra', 'Roca', 'Hielo', 'Electrico', 'Dragon', 'Fantasma', 'Psiquico', 'Normal', 'Lucha', 'Veneno', 'Bicho', 'Volador'],
@@ -403,7 +414,7 @@ const filter10Km=data.pokemon.filter(function(element){
 let cantidad10Km=filter10Km.length;
 
 // GRAFICO DE PIE DE CANTIDAD DE POKEMONES QUE ECLOSIONAN POR CADA KM DE HUEVO
-let chartHuevos= new Chart(ctxHuevos,{
+new Chart(ctxHuevos,{
     type:'doughnut',
     data: {
         labels:['Huevos de 2Km', 'Huevos de 5Km', 'Huevos de 10Km'],
@@ -444,7 +455,7 @@ const filterRecorrido20Km=data.pokemon.filter(function(element){
 let cantidadRecorrido20Km=filterRecorrido20Km.length;
  
 // GRAFICO DE PIE DE CANTIDAD DE POKEMONES POR RECORRIDO
-let chartRecorrido= new Chart(ctxRecorrido,{
+new Chart(ctxRecorrido,{
     type:'polarArea',
     data: {
         labels:['Recorrido de 1Km', 'Recorrido de 3Km', 'Recorrido de 5Km', 'Recorrido de 20Km'],

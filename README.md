@@ -199,7 +199,7 @@ Para el diseño de las interfaces usamos como herramienta a Figma, el cual le da
 
 **Paleta de colores:**
 
-![Paleta de colores](../ImagenesReadme/paleta.png)
+![Paleta de colores](/ImagenesReadme/paleta.png)
 
   
 
