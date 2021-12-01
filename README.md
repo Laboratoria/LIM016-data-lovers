@@ -8,9 +8,9 @@
 
 *  [2. Resumen del proyecto](#2-Resumen-del-proyecto)
 
-*  [3. Criterios del proyecto](#3-criterios-del-proyeto)
+*  [3. Criterios del proyecto](#3-criterios-del-proyecto)
 
-*  [4. Consideraciones técnicas](#4-consideraciones-tecnicas)
+*  [4. Consideraciones técnicas](#4-consideraciones-t%C3%A9cnicas)
 
 *  [5. Checklist de criterios cumplidos](#5-checklist-de-criterios-cumplidos)
 
@@ -40,7 +40,7 @@ En el pie de pagina tendrá los links de descarga del juego para dispositivos An
 
   
 **Dirección del desplegable:**
-
+https://jocelyncamero.github.io/LIM016-data-lovers/
 
 **Realizado por:**
 
@@ -185,11 +185,17 @@ Tenemos la vista tanto para desktop como para mobile.
 
 **Vista Desktop**
 
-  
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoPInicio.jpeg?raw=true)
 
 **Vista Mobile**
 
-  
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoPInicioResp.jpeg?raw=true)
+
+
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoPHamburguesaResp.jpeg?raw=true)
+
+
+
 
 #### 3.3.2 Prototipo de alta fidelidad
 
@@ -211,11 +217,32 @@ Fuente: Aldrich
 
 **Vista Desktop**
 
-  
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoInicio.jpg?raw=true)
 
-**Vista Mobile**
 
-  
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoHamburguesa.jpg?raw=true)
+
+
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoFiltrarRegion.jpg?raw=true)
+
+
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoFiltrar.jpg?raw=true)
+
+
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoOrdenar.jpg?raw=true)
+
+
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoEstadistica.jpg?raw=true)
+
+
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoBuscar.jpg?raw=true)
+
+
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/prototipoModal.jpg?raw=true)
+
+
+  ![]()
+
 
 #### 3.3.3 Testeos de usabilidad
 
@@ -229,7 +256,10 @@ Fuente: Aldrich
 
 ### 3.4 Pruebas unitarias
 
-  
+  #### RESULTADOS DEL TEST
+
+
+  ![](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/resultadosTest.jpg?raw=true)
 
 ## 4. Consideraciones técnicas
 
@@ -273,23 +303,23 @@ Fuente: Aldrich
 
 - [x] Usa VanillaJS.
 
-- [ ] Pasa linter (`npm run pretest`)
+- [x] Pasa linter (`npm run pretest`)
 
-- [ ] Pasa tests (`npm test`)
+- [x] Pasa tests (`npm test`)
 
-- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y lines y branches.
+- [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y lines y branches.
 
-- [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
+- [x] Incluye _Definición del producto_ clara e informativa en `README.md`.
 
-- [ ] Incluye historias de usuario en `README.md`.
+- [x] Incluye historias de usuario en `README.md`.
 
-- [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en `README.md`.
+- [x] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en `README.md`.
 
-- [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad) en `README.md`.
+- [x] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad) en `README.md`.
 
 - [ ] Incluye link a Zeplin en `README.md`.
 
-- [ ] Incluye el listado de problemas que detectaste a través de tests de usabilidad en el `README.md`.
+- [x] Incluye el listado de problemas que detectaste a través de tests de usabilidad en el `README.md`.
 
 - [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
 
@@ -297,4 +327,4 @@ Fuente: Aldrich
 
 - [x] UI: Permite filtrar data en base a una condición.
 
-- [ ] UI: Es _responsive_.
+- [x] UI: Es _responsive_.
