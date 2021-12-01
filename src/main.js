@@ -1,22 +1,30 @@
+/* eslint-disable no-undef */
 // IMPORTAR DATA DE POKEMON.JS
 import data from './data/pokemon/pokemon.js';
 import { buscarPokemon, filtrarRegion, filtrarTipo, ordenarPokemons, obtenerPokemon} from './data.js';
 
+//VARIABLES GLOBALES
+let filterByRegion = false;
+let filterByType = false;
+let filterBySearch = false;
+let orderBy = false;
+
+
 // CUANDO CARGA LA PAGINA
 window.onload = () => {
-    llenarCard(data.pokemon);
+    llenarCards(data.pokemon);
 }
 
 // FUNCIÓN PARA LIMPIAR LOS CARDS
 function limpiarCards(){ 
-    let nodosEliminar=document.querySelectorAll(".card");
+    let nodosEliminar = document.querySelectorAll(".card");
     nodosEliminar.forEach(nodo => nodo.remove());
 }
 
 // LLENAR CARDS
-function llenarCard(dataFiltrada) {
-    const templateCard=document.getElementById("templateCard");
-    const fragment=document.createDocumentFragment();
+function llenarCards(dataFiltrada) {
+    const templateCard = document.getElementById("templateCard");
+    const fragment = document.createDocumentFragment();
     dataFiltrada.forEach(function(element) {
         templateCard.content.querySelector(".numPokemon").textContent=element.num;
         templateCard.content.querySelector(".nomPokemon").textContent=element.name;
@@ -24,24 +32,34 @@ function llenarCard(dataFiltrada) {
         templateCard.content.querySelector(".cpPokemon").textContent="PC: "+element.stats['max-cp'];
         templateCard.content.querySelector(".nomRegion").textContent=element.generation.name;
         templateCard.content.querySelector(".imgPokemon").id=element.num;
-        const clone=templateCard.content.cloneNode(true);
+        const clone = templateCard.content.cloneNode(true);
         fragment.appendChild(clone);
     });
     containerPokemons.appendChild(fragment);   
 }
 
 // BUSCAR POKEMON
-const inputBuscador=document.querySelector(".buscarPokemon");
-const containerPokemons=document.querySelector(".container-pokemons");
+const inputBuscador = document.querySelector(".buscarPokemon");
+const containerPokemons = document.querySelector(".container-pokemons");
 
 // EVENTO AL PRESIONAR UNA TECLA EN EL INPUT BUSCADOR
 inputBuscador.addEventListener("keyup",(e)=>{
     limpiarCards();
-    let valorInput = e.target.value;
-    llenarCard(buscarPokemon(data.pokemon,valorInput));
-    /* console.log(buscarPokemon(data.pokemon,valorInput));
-    console.log(typeof buscarPokemon(data.pokemon,valorInput))
-    console.log(typeof buscarPokemon); */
+    filterBySearch = e.target.value;
+    let dataPokemons = data.pokemon;
+    //OPCIONES DE FILTROS
+    if (filterByRegion) {
+        dataPokemons = filtrarRegion(dataPokemons, filterByRegion);
+    }
+    if (filterByType) {
+        dataPokemons = filtrarTipo(dataPokemons, filterBySearch);
+    }
+    //OPCION DE ORDENAR
+    if (orderBy) {
+        dataPokemons = ordenarPokemons(dataPokemons, orderBy);
+    }
+    dataPokemons = buscarPokemon(dataPokemons, filterBySearch);
+    llenarCards(dataPokemons); //Para cruzar data filtrada
 });
 
 // EVENTO AL REALIZAR CLICK EN EL MENU HAMBURGUESA
@@ -76,13 +94,26 @@ opcion.forEach(e => {
 
 // FILTRAR DATA POR REGION
 const region = document.querySelectorAll('.region');
-region.forEach(e=>{    
+region.forEach(e => {    
     e.addEventListener("click", e => {
         limpiarCards();
-        containerPokemons.style.display="flex";
-        containerEstadistica.style.display="none";
-        let opcionRegion = e.target.getAttribute("region");
-        llenarCard(filtrarRegion(data.pokemon, opcionRegion));
+        containerPokemons.style.display = "flex";
+        containerEstadistica.style.display = "none";
+        let dataPokemons = data.pokemon;
+        filterByRegion = e.target.getAttribute("region"); //Para guardar la opcion de filtrado
+        //OPCIONES DE FILTROS
+        if (filterBySearch && filterBySearch !== "") {
+            dataPokemons = buscarPokemon(dataPokemons, filterBySearch);
+        }
+        if (filterByType) {
+            dataPokemons = filtrarTipo(dataPokemons, filterByType);
+        }
+        //OPCION DE ORDENAR
+        if (orderBy) {
+            dataPokemons = ordenarPokemons(dataPokemons, orderBy);
+        }
+        dataPokemons = filtrarRegion(dataPokemons, filterByRegion);
+        llenarCards(dataPokemons);
     });
 });
 
@@ -93,31 +124,46 @@ tipo.forEach(e=>{
         limpiarCards();
         containerPokemons.style.display="flex";
         containerEstadistica.style.display="none";
-        let opcionTipo = e.target.getAttribute("tipo");
-        llenarCard(filtrarTipo(data.pokemon, opcionTipo));
+        let dataPokemons = data.pokemon;
+        filterByType = e.target.getAttribute("tipo");   //Para guardar la opcion de filtrado
+        //OPCIONES DE FILTROS
+        if (filterBySearch && filterBySearch !== "") {
+            dataPokemons = buscarPokemon(dataPokemons, filterBySearch);
+        }
+        if (filterByRegion) {
+            dataPokemons = filtrarRegion(dataPokemons, filterByRegion);
+        }
+        //OPCION DE ORDENAR
+        if (orderBy) {
+            dataPokemons = ordenarPokemons(dataPokemons, orderBy);
+        }
+        dataPokemons = filtrarTipo(dataPokemons, filterByType);
+        llenarCards(dataPokemons);
     });
 });
 
 // ORDENAR DATA
 const ordenar = document.querySelectorAll('.ordenar');
 
-ordenar.forEach(e=>{    
-    
+ordenar.forEach( e => {
     e.addEventListener("click", e => {
         limpiarCards();
         containerPokemons.style.display="flex";
         containerEstadistica.style.display="none";
-        let opcionOrdenar = e.target.getAttribute("ordenar");
-        llenarCard(ordenarPokemons(data.pokemon, opcionOrdenar));
-        /* 
-        //PARA VER EN CONSOLA EL ARREGLO DE LOS POKEMONES ORDENADOS
-        let arre=[];
-        for(let i=180;i<=250;i++){
-            let mientras=ordenarPokemons(data.pokemon, opcionOrdenar)[i];
-            arre.push(`data.pokemon[${parseInt(mientras.num)-1}]`);
-        }   
-        console.log(arre);*/
-
+        let dataPokemons = data.pokemon;
+        orderBy = e.target.getAttribute("ordenar");
+        //OPCIONES DE FILTROS
+        if (filterBySearch && filterBySearch !== "") {
+            dataPokemons = buscarPokemon(dataPokemons, filterBySearch);
+        }
+        if (filterByRegion) {
+            dataPokemons = filtrarRegion(dataPokemons, filterByRegion);
+        }
+        if (filterByType) {
+            dataPokemons = filtrarTipo(dataPokemons, filterByType);
+        }
+        dataPokemons = ordenarPokemons(dataPokemons, orderBy);
+        llenarCards(dataPokemons);
     });
 });
 
@@ -468,11 +514,11 @@ new Chart(ctxRecorrido,{
 }); 
 
 // ESTADISTICA
-const containerEstadistica=document.querySelector(".containerEstadistica");
-const contenidoRegion=document.getElementById("contRegiones");
-const contenidoElemento=document.getElementById("contElementos");
-const contenidoHuevos=document.getElementById("contHuevos");
-const contenidoRecorrido=document.getElementById("contRecorrido");
+const containerEstadistica = document.querySelector(".containerEstadistica");
+const contenidoRegion = document.getElementById("contRegiones");
+const contenidoElemento = document.getElementById("contElementos");
+const contenidoHuevos = document.getElementById("contHuevos");
+const contenidoRecorrido = document.getElementById("contRecorrido");
 
 // DESPLEGABLE ESTADISTICA
 const estadistica = document.querySelectorAll('.estadistica');
@@ -480,11 +526,12 @@ const estadistica = document.querySelectorAll('.estadistica');
 estadistica.forEach(e=>{    
     
     e.addEventListener("click", e => {
-            let opcionEstadistica = e.target.getAttribute("estadistica");
+        let opcionEstadistica = e.target.getAttribute("estadistica");
+        containerPokemons.style.display="none"; //ocultar simempre que haga click en estadisticas
 
         // ESTADISTICA TODO
         if (opcionEstadistica == "todos") {
-            containerPokemons.style.display="none";
+            // containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
             contenidoRegion.style.display="block";
             contenidoElemento.style.display="block";
@@ -494,7 +541,7 @@ estadistica.forEach(e=>{
 
         // ESTADISTICA POR REGION
         if (opcionEstadistica == "por-región") {
-            containerPokemons.style.display="none";
+            // containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
             contenidoRegion.style.display="block";
             contenidoElemento.style.display="none";
@@ -504,7 +551,7 @@ estadistica.forEach(e=>{
         
         // ESTADISTICA POR ELEMENTO
         if (opcionEstadistica == "por-elemento") {
-            containerPokemons.style.display="none";
+            // containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
             contenidoRegion.style.display="none";
             contenidoElemento.style.display="block";
@@ -514,7 +561,7 @@ estadistica.forEach(e=>{
 
         // ESTADISTICA POR HUEVO
         if (opcionEstadistica == "por-huevos") {
-            containerPokemons.style.display="none";
+            // containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
             contenidoRegion.style.display="none";
             contenidoElemento.style.display="none";
@@ -524,7 +571,7 @@ estadistica.forEach(e=>{
 
         // ESTADISTICA POR RECORRIDO
         if (opcionEstadistica == "por-recorrido") {
-            containerPokemons.style.display="none";
+            // containerPokemons.style.display="none";
             containerEstadistica.style.display="block";
             contenidoRegion.style.display="none";
             contenidoElemento.style.display="none";

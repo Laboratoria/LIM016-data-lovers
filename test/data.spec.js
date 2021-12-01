@@ -1,5 +1,7 @@
+// IMPORTAR FUNCIONES DE DATA.JS
 import { buscarPokemon, obtenerPokemon, filtrarRegion, filtrarTipo, ordenarPokemons } from '../src/data.js';
 
+// DATA FICTICIA
 const dataEjemplo=[{
   "num": "001",
   "name": "bulbasaur",
@@ -77,13 +79,14 @@ const dataEjemplo=[{
     }
 
 ];
+
 // TEST PARA FUNCION BUSCARPOKEMON POR NOMBRE
 describe('buscarPokemon', () => {
   it('Debería ser una función', () => {
     expect(typeof buscarPokemon).toBe('function');
   });
 
-  it('Debería retornar el objeto "bulbasaur"', () => {
+  it('Debería retornar a "bulbasaur"', () => {
     let pok=[];
     pok.push(dataEjemplo[0]);
     expect(buscarPokemon(dataEjemplo, 'bulbasaur')).toStrictEqual(pok);
@@ -97,7 +100,7 @@ describe('obtenerPokemon', () => {
     expect(typeof obtenerPokemon).toBe('function');
   });
 
-  it('Debería retornar el objeto "004"', () => {
+  it('Debería retornar el pokemon numero "004"', () => {
     expect(obtenerPokemon(dataEjemplo, '004')).toStrictEqual(dataEjemplo[1]);
   });
 });
@@ -138,26 +141,25 @@ describe('ordenarPokemons', () => {
     expect(typeof ordenarPokemons).toBe('function');
   });
   
-  let pok2=[dataEjemplo[3], dataEjemplo[1], dataEjemplo[2], dataEjemplo[0]];
-  let pok3=[dataEjemplo[3], dataEjemplo[1], dataEjemplo[0], dataEjemplo[2]];
+  let dataOrdenadaZA=[dataEjemplo[3], dataEjemplo[1], dataEjemplo[2], dataEjemplo[0]];
+  let dataOrdenadaPcAs=[dataEjemplo[3], dataEjemplo[1], dataEjemplo[0], dataEjemplo[2]];
 
   // ORDEN ALFABETICO
-  it('Debería ordenar los pokemones de la Z - A', () => {
-    expect(ordenarPokemons(dataEjemplo, 'za')).toStrictEqual(pok2);
+  it('Debería ordenar los pokemons de la Z - A', () => {
+    expect(ordenarPokemons(dataEjemplo, 'za')).toStrictEqual(dataOrdenadaZA);
   });
 
-  it('Debería ordenar los pokemones de la A - Z"', () => {
-    expect(ordenarPokemons(dataEjemplo, 'az')).toStrictEqual(pok2.reverse());
+  it('Debería ordenar los pokemons de la A - Z"', () => {
+    expect(ordenarPokemons(dataEjemplo, 'az')).toStrictEqual(dataOrdenadaZA.reverse());
   });
 
   //ORDEN POR PUNTOS DE COMBATE
-  it('Debería ordenar los pokemones por puntos de combate ascendente"', () => {
-    expect(ordenarPokemons(dataEjemplo, 'pc-as')).toStrictEqual(pok3);
+  it('Debería ordenar los pokemons por puntos de combate ascendente"', () => {
+    expect(ordenarPokemons(dataEjemplo, 'pc-as')).toStrictEqual(dataOrdenadaPcAs);
   });
 
-  it('Debería ordenar los pokemones por puntos de combate descendente"', () => {
-    expect(ordenarPokemons(dataEjemplo, 'pc-des')).toStrictEqual(pok3.reverse());
+  it('Debería ordenar los pokemons por puntos de combate descendente"', () => {
+    expect(ordenarPokemons(dataEjemplo, 'pc-des')).toStrictEqual(dataOrdenadaPcAs.reverse());
   });
 
 });
-
