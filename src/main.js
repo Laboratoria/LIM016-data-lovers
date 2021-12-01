@@ -62,7 +62,7 @@ function filterCharacters() {
       });
     }
 
-  })
+)
 
 } filterCharacters();
 
