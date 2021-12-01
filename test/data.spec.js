@@ -1,9 +1,17 @@
 import { inputSearch } from '../src/data.js';
 import  data from '../src/data/ghibli/ghibli.js';
 
+const filterItems = require('./filterItems')
 
+describe('filterItems', () => {
+  it('is a function', () => {
+    expect(typeof filterItems).toBe('function');
+  });
 
- 
+  it('returns `filterItems`', () => {
+    expect(filterItems()).toBe('example');
+  });
+});
 
 
 const array = data.films
