@@ -8,7 +8,7 @@
 
 *  [2. Resumen del proyecto](#2-Resumen-del-proyecto)
 
-*  [3. Criterios del proyecto](#3-criterios-del-proyeto)
+*  [3. Criterios del proyecto](https://github.com/JocelynCamero/LIM016-data-lovers/blob/main/ImagenesReadme/resultadosTest.jpg?raw=true)
 
 *  [4. Consideraciones técnicas](#4-consideraciones-tecnicas)
 
