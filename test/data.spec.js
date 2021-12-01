@@ -1,36 +1,37 @@
-import { sortOrdenNumericoAsc} from '../src/data.js';
-
-
-describe('sort ordena score numerico en forma ascendente', () => {
-  it('is a function sortOrdenNumericoAsc', () => {
-    expect(typeof sortOrdenNumericoAsc).toBe('function');
-  });
+import { inputSearch } from '../src/data.js';
+import  data from '../src/data/ghibli/ghibli.js';
 
 
 
-  /*it('returns ``', () => {
-    const compareTitle = [{"title": "Castle in the Sky"},{"title": "Whisper of the Heart"}]
-    expect(sortOrdenAlfabeticoAsc(compareTitle)).toEqual([{"title": "Castle in the Sky"},{"title": "Whisper of the Heart"}]);
-  }); */
-});
+ 
 
 
-describe('searchData', () => {
+const array = data.films
+  
+describe('inputSearch', () => {
   it('is a function', () => {
-    expect(typeof searchData).toBe('function');
+    expect(typeof inputSearch).toBe('function');
   });
-  const dataPrueba = [{title: "Whisper of the Heart",rt_score:85,release_date:1995}, {  title: "Castle in the Sky", rt_score:100, release_date:2000}];
-  it('should return the search result title',()=>{
-    expect(searchData(dataPrueba,`title`,`whisper`)).toEqual([{"title": "Whisper of the Heart","rt_score":85,"release_date":1995}])
-  })
+
+
+  it('returns true para titulo `Whisper of the Heart`', () => {
+    expect(inputSearch(array,"Whisper of the Heart")[0].title.includes("Whisper of the Heart")).toBe(true);
+  });
+
+
+  it('returns 0 para titulo `la caperucita roja', () => {
+    expect(inputSearch(array,"la caperucita roja").length).toBe(0);
+  });
+  
 });
 
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
+
+
+
+
+ 
+
+  
+
+

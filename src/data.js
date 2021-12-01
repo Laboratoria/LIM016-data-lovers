@@ -2,20 +2,11 @@
 
 //Filtro de people, vehiculo, locations para mostrar los items
 export const filterItems = (property, array) => {
-  let arrayPeople = [];
-  for(let i=0; i<array.length;i++){
-      arrayPeople.push(array[i][property])
-  }
-    return arrayPeople
+  let arrayItems = array.map((ele) => ele[property])
+  return arrayItems
 };
 
-//Barra de navegacion
-/*export const filterItems = (textInputSearch, array) => {
-  const searchInput = array.forEach((el) => {
-   return el.toLowerCase().indexOf(textInputSearch.toLowerCase()) > -1
-  });
-  return searchInput
-}*/
+
 
 //Ordenar alfabticamente ascendente y descendente
 export const sortOrdenAlfabeticoAsc = (array,parametro) => {
@@ -76,16 +67,7 @@ export const sortOrdenNumericoDesc = (array,parametro) => {
       return arrayProperty
     }
 
-    /*export const filterAge = (array, parametro, slider) => { 
-    const arrayPeople = array.map((el) => el[parametro])
-    const age = arrayPeople.forEach((people) => {
-      if (people.age === slider.value) {
-        return people.age    
-      }
-    })
-    console.log(age)
-    return age
-    }*/
+    
 
     export const filterAge = (array, parametro, sliderValue) => {
 
