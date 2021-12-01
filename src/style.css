@@ -4,26 +4,24 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  margin-top: 20px;
+  margin-bottom: 0px;
   }
 
   .conteiner {
     display: grid;
-    width: 85%;
-    max-width: 1000px;
-    margin: 25px;
-    margin-left: 50px;
-    margin-right: 50px;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: 1fr; 
+    margin: auto;
+    justify-content: center;
+    width: 90%;
     gap: 0px 0px; 
     grid-template-areas: 
-      "dashboard Glass Glass"
+      "header"
+      "main"
+      "footer"
   }
 
-  .dashboard{
-    display: grid;
-    grid-area: dashboard; 
-    width: 335px;
+  .header{
+    grid-area: header;
     height: 570px;
     background: rgb(250, 250, 252);
     color: black;
@@ -31,14 +29,13 @@ body{
     border-bottom-left-radius : 70px;
   }
   
-  .Glass{
+  .main{
     display: grid;
-    grid-area: Glass;
+    grid-area: main;
     backGround-color: rgba(188, 247, 255, 0.580);
     backdrop-filter: blur(3px);
     border-top-right-radius : 70px;
     border-bottom-right-radius : 70px;
-    width: 900px;
     height: 570px;
     
   }
@@ -722,15 +719,16 @@ label {
 }
 
 /* Footer */
-footer {
-  background-color: rgba(27, 20, 112, 1);
-}
-.divContainerFooter {
+
+.footer {
+  grid-area: footer;
+  margin-top: 32px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
+  background-color: rgba(27, 20, 112, 1);
 }
 
 .divcolumna1 {
@@ -773,10 +771,19 @@ footer {
   padding: 8px;
   color: #fff;
 }
-
 figure {
   background-color: rgba(255,255,255,.05);
   padding: 10px 10px 30px;
 }
 
+/*RESPONSIVE
+@media screen and (max-width: 375px){
+  .conteiner {
+    grid-template-areas: 
+    "header header header"
+      "main main main"
+      "footer footer footer"
+  }
 
+}
+*/
