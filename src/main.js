@@ -171,7 +171,7 @@ filterButtonsDirector.forEach((el) => {
         return filmoItems(newData)    
   })
   return filterButtonsDirector;
-    })
+})
 
 //Funcion para filtrar por productores
 filterButtonsProducer.forEach((el) => {  
@@ -182,7 +182,7 @@ filterButtonsProducer.forEach((el) => {
           return filmoItems(newData)    
   })
   return filterButtonsProducer;
-   })
+})
 
  //funcion para ordenar las peliculas alfabeticamente 
 const filterButtonAsc =document.getElementById("asc");

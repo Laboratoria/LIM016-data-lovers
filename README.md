@@ -395,12 +395,15 @@ implementadas en el archivo `data.js`.
 ### Definición del Producto
 
 * ¿Quiénes son los principales usuarios de producto?
+
 Los usuarios de esta página son fans de Studio Ghibli asi como personas interesadas en explorar cada una de sus animaciones y personajes.
 
 * ¿Cuáles son los objetivos de estos usuarios en relación con el producto?
+
 Los usuarios desean tener información veraz y visualmente atractiva, explorar una web que les permita conocer mas de detalles de sus animaciones favoritas (personajes, vehiculos, locaciones).
 
 * ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?
+
 Nuestros  usuarios desean ver todas las animaciones producidas por el estudio, el año en que realizaron estas producciones, los  directores , productores además de una pequeña sinopsis de cada una de estas.
 También desean informacion de sus personajes favoritos, aquellos seres miticos y entrañables que despertaron su interes en esta casa animadora y les permitieron convertirla en su favorita.
 
