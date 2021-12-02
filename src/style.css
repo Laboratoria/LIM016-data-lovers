@@ -10,8 +10,6 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  grid-template-rows: auto;
-  justify-content: center;
   }
 
 .conteiner {
@@ -739,6 +737,7 @@ footer {
   width: 100%;
   margin:0;
   padding:10px ;
+  grid-area:footer ;
  
 }
 .divContainerFooter {
