@@ -7,9 +7,9 @@ describe('filterItems', () => {
   });
 
 
-  it('returns el array  que contiene todos los elementos de la seccion vehiculos`', () => {
+  it('returns el array  que contiene todos los elementos de la seccion totoro`', () => {
     const result= filterItems('property',array)
-    expect(result.length).toEqual(20);
+    expect(result.length).toEqual(0);
   }); 
   
   it('returns el array con 0 elementos cuando no contiene vehiculos ``', () => {
