@@ -445,8 +445,13 @@ Este primer  prototipo se  sometio a encuesta en la cual se levantaron las sigui
 
 Historias de Usuario.
 
- 
+ [![Historia-de-Usuario-Secciones-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-46-41.png](https://i.postimg.cc/kMKyyJz0/Historia-de-Usuario-Secciones-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-46-41.png)](https://postimg.cc/RqCfSBMd)
 
+
+[![Historia-de-Usuario-Secciones-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-44-14.png](https://i.postimg.cc/1Xrw1tZ4/Historia-de-Usuario-Secciones-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-44-14.png)](https://postimg.cc/zH3Vnqv1)
+
+
+[![Historia-de-Usuario-Portada-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-49-30.png](https://i.postimg.cc/28CnF44W/Historia-de-Usuario-Portada-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-49-30.png)](https://postimg.cc/DmYW74pf)
 
 
 
