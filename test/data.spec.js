@@ -1,4 +1,4 @@
-import { inputSearch, filterItems, filterDirector, filterProducer, filterClima, filterTerreno, filterGenero, filterEspecie, filterVehiculo ,filterAge, sortOrdenAlfabeticoAsc, sortOrdenAlfabeticoDesc, sortOrdenNumericoAscScore, sortOrdenNumericoDescScore ,sortOrdenNumericoAscAñoLanz, sortOrdenNumericoDescAñoLanz} from '../src/data.js';
+import { inputSearch,filterItems, filterDirector, filterProducer, filterClima, filterTerreno, filterGenero, filterEspecie, filterVehiculo ,filterAge, sortOrdenAlfabeticoAsc, sortOrdenAlfabeticoDesc, sortOrdenNumericoAscScore, sortOrdenNumericoDescScore ,sortOrdenNumericoAscAñoLanz, sortOrdenNumericoDescAñoLanz} from '../src/data.js';
 import  data from '../src/data/ghibli/ghibli.js';
 
 describe('filterItems', () => {
@@ -6,10 +6,9 @@ describe('filterItems', () => {
     expect(typeof filterItems).toBe('function');
   });
 
-
-  it('returns el array  que contiene todos los elementos de la seccion totoro`', () => {
+  it('returns el array  que contiene todos los elementos de la seccion vehicles`', () => {
     const result= filterItems('property',array)
-    expect(result.length).toEqual(0);
+    expect(result.length).toEqual(20);
   }); 
   
   it('returns el array con 0 elementos cuando no contiene vehiculos ``', () => {

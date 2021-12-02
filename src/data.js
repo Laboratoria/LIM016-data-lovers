@@ -1,8 +1,8 @@
 
 //Filtro de people, vehiculo, locations para mostrar los items
 export const filterItems = (property, array) => {
-  let intento= array.some(elemento => property in elemento);
-  if(property === "" || intento === false ){
+
+  if(property === ""){
     return[]
   }
   let arrayItems= array.map((ele) => ele[property])
