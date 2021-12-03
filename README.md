@@ -374,7 +374,6 @@ Features/características extra sugeridas:
 * 100% Coverage
 
 
-
 En esta carpeta están los datos de las diferentes fuentes. Encontrarás una
 carpeta por cada fuente, y dentro de cada carpeta dos archivos: uno con la
 extensión `.js` y otro `.json`. Ambos archivos contienen la misma data; la
@@ -408,6 +407,7 @@ Nuestros  usuarios desean ver todas las animaciones producidas por el estudio, e
 También desean informacion de sus personajes favoritos, aquellos seres miticos y entrañables que despertaron su interes en esta casa animadora y les permitieron convertirla en su favorita.
 
 * ¿Cuándo utilizan o utilizarían el producto?
+
 El usuario puede  acceder al producto desde un movil, una pc o laptop en su tiempo libre.
 
 ### Prototipos
@@ -432,6 +432,8 @@ Prototipo de alta fidelidad
 
 [![Prototipo-datalovers.png](https://i.postimg.cc/ncLLXPPG/Prototipo-datalovers.png)](https://postimg.cc/XXTWhQ3r)
 
+Testeo de Usabilidad
+
 Este primer  prototipo se  sometio a encuesta en la cual se levantaron las siguientes observaciones: 
 •	Corregir imágenes png del footer.
 •	Corregir fondo de pantalla para no saturar los colores.
@@ -447,13 +449,22 @@ Historias de Usuario.
 
  [![Historia-de-Usuario-Secciones-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-46-41.png](https://i.postimg.cc/kMKyyJz0/Historia-de-Usuario-Secciones-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-46-41.png)](https://postimg.cc/RqCfSBMd)
 
-
-[![Historia-de-Usuario-Secciones-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-44-14.png](https://i.postimg.cc/1Xrw1tZ4/Historia-de-Usuario-Secciones-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-44-14.png)](https://postimg.cc/zH3Vnqv1)
-
+[![Historia-de-Usuario-Portada-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-57-37.png](https://i.postimg.cc/prw74sRP/Historia-de-Usuario-Portada-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-57-37.png)](https://postimg.cc/sGJwZ9ML)
 
 [![Historia-de-Usuario-Portada-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-49-30.png](https://i.postimg.cc/28CnF44W/Historia-de-Usuario-Portada-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-49-30.png)](https://postimg.cc/DmYW74pf)
 
 
+[![Historia-de-Usuario-Test-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-56-21.png](https://i.postimg.cc/wTsY2mg6/Historia-de-Usuario-Test-en-Scrum-Board-Trello-Google-Chrome-2-12-2021-18-56-21.png)](https://postimg.cc/SJqPNjn5)
+
+### Tecnologias
+
+ Trabajamos este proreyecto haciendo uso de :
+* HTML
+* CSS
+* JavaScript
+* Eslint
+* Jest
+* Chart.js
 
 ## 9. Checklist
 
