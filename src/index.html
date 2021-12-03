@@ -66,41 +66,49 @@
       <div class="filter">
         <!-- sección de filtrado -->
         <div class="filters">
-          <label for="">Filtrar por:</label>
+          <div class="caja">
+            <select name="type" id="filterType" >
+              <option value="" disabled selected>Seleccione tipo </option>
+              <option value="gender">Género</option>
+              <option value="species">Especie</option>
+              <option value="status">Estado de vida</option>
+              <!-- <option value="origin">Lugar de origen</option> -->
+              <!-- <option value="localization">Lugar donde vive</option> -->
+            </select>
+          </div>
+          <div class="caja">
+            <select id="byCategory">
+              <option value="" disabled selected>Seleccione la categoría</option>
+            </select> 
+          </div>
+
+          <div class="buscador">
+            <input type="search" name="search" id="search" class="search" placeholder="Search..">
+          </div>
+      
           
-          <select name="type" id="filterType">
-            <option value="" disabled selected>Seleccione el tipo</option>
-            <option value="gender">Género</option>
-            <option value="species">Especie</option>
-            <option value="status">Estado de vida</option>
-            <!-- <option value="origin">Lugar de origen</option> -->
-            <!-- <option value="localization">Lugar donde vive</option> -->
-          </select>
-
-          <select id="byCategory">
-            <option value="" disabled selected>Seleccione la categoría</option>
-          </select>
-          <!-- Botones de filtrado -->
-
-          <div class="search"></div>
-
-          <label >Ordenar por nombre</label>
-          <select name="sort" id="sort">
-            <option value="" disabled selected>Ordenar</option>
-            <option value="AZ">A-Z</option>
-            <option value="ZA">Z-A</option>
-          </select>
-
-          <button id="getAll">Mostrar todo</button>
-
+            
+            <!-- Botones de filtrado -->
+            <div class="caja">
+              <select id="sort" class="orden">
+                <option value="" disabled selected>Ordenar</option>
+                <option value="AZ"> A-Z </option>
+                <option value="ZA">Z-A</option>
+              </select>
+              <i></i>
+            </div>
+            <button id="getAll" class="btnall">Mostrar todo</button>
         </div>
+
       </div>
       
       <!-- seccion de resultado del filtrado -->
       <div id="showAllCharacters" class="cards"></div> 
          
       <!-- paginación -->
-      <div class="paginacion"></div>
+      <div class="pagination">
+
+      </div>
                 
     </section>
 

@@ -60,11 +60,11 @@ function filterCharacters() {
         printData(filterData);
         clearSort();
       });
-    }
+  
 
   })
 
-} filterCharacters();
+}filterCharacters();
 
 
 // -------- FUNCION PrintData --------->
@@ -149,3 +149,5 @@ function clearSelect() {
 function clearSort() {
   order.value = "";
 };
+
+// select
