@@ -13,12 +13,14 @@ body{
 header{
     display: flex;
 }
-
+.titulo{
+    margin-top: 1.5rem;
+}
 .titulo >h2{
     text-align: center;
-    color:#7cfc00;
-    font-weight: bold;
-    padding: 1rem;
+    color:#fff;
+    padding: 1.2rem;
+    
 }
 
 .cards{
@@ -97,7 +99,7 @@ header{
 
 .name-personaje-atras{
     padding: 1rem;
-    color: rgb(58, 221, 17);
+    color: #7cfc00;
 }
 
 .type-character{
@@ -106,43 +108,74 @@ header{
 }
 
 .filters{
-    background-color: transparent;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(7rem, 13.75rem));
+    grid-auto-flow: row;
+    column-gap:1rem;
+    row-gap:0;
     justify-content: center;
-    align-content: stretch;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1rem;
 }
 
-.filters>label{
+label{
     color:#7cfc00;
     padding: 0 1rem;
 }
 
-.filters>button{
+button{
     border: 1px solid #7cfc00;
+    background-image: url('./imagenesRM/botones/todoverde.png');
+    background-repeat: no-repeat;
+    background-position: 1rem;
     background-color: transparent;
-    padding: 0.5rem;
+    padding-right: 1rem;
     border-radius: 5px;
-    margin: 0 1rem;
+    margin: 20px 0;
     color:#7cfc00;
+    height: 30px;
+    width: 80%;
+    text-align: right;
 }
 
-.filters>select{
+
+
+/* boton mostrar todos los personajes */
+.btnall{
+    transition-duration: 0.4s;
+}
+.btnall:hover{
+    background-color: rgb(124, 252, 0,0.4); /* Green */
+    color:#fff;
+    box-shadow: 0 12px 16px 0 rgba(124,252,0,0.24), 0 17px 50px 0 rgba(124,252,0,0.19);
+}
+
+
+/* search */
+
+.search{
+    width: 220px;
+    height: 30px;
+    /* margin-top: 20px; */
+    color:#7cfc00;
     border: 1px solid #7cfc00;
-    background-color: transparent;
     border-radius: 5px;
-    margin: 0 1rem;
+    background-color: transparent;
+    background-image: url('./imagenesRM/botones/search.png');
+    background-position: 0.5rem; 
+    background-repeat: no-repeat;
     padding: 0.5rem;
-    color: #7cfc00;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    text-align: center;
+  }
+.buscador{
+    margin:20px auto 40px auto;	
 }
-
-option{
-    background-color: black;
-    margin: 0 1rem;
-    padding: 0.5rem; 
-    color: #7cfc00;
+/* orden */
+.orden{
+    background-image: url('./imagenesRM/botones/ordenar.png');
+    background-position: 1rem;
+    background-repeat: no-repeat;
+    text-align: center;
 }
 
 /* Carrusel ----------> */
@@ -150,4 +183,60 @@ option{
 .carrusel{
   width: 100%;
   position: relative;
+}
+
+/* select */
+
+/*the container must be positioned relative:*/
+
+.caja{
+    margin:20px auto 40px auto;	
+    border:1px solid #7cfc00;
+    border-radius: 5px;
+    height:30px;
+    overflow: hidden;
+    width: 220px;
+    position:relative;
+    
+}
+.caja::after{
+	content:"\025be";
+	display:table-cell;
+    color: #fff;
+    padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color: rgb(124, 252, 0,0.3);
+    border: 1px solid #7cfc00;
+    border-radius: 0 5px 0 5px;
+	position:absolute;
+	top:0;
+	right:0px;	
+	pointer-events: none;
+    
+}
+select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #fff;
+    background: transparent;
+    border: none;
+    font-size: 0.8rem;
+    height: 30px;
+    padding: 0.4rem;
+    width: 220px;
+    text-align: justify;
+}
+select:focus > option:checked { 
+    background: #000 !important;
+}
+select option{
+    background-color: #448300
+}
+select option:checked,
+select option:hover {
+    box-shadow: 0 0 10px 100px #000 inset;
+    
 }
