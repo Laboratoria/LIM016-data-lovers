@@ -16,7 +16,6 @@ body{
   display: grid;
   margin: auto;
   min-width: 100%;
-  justify-content: center;
   gap: 0px 0px; 
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, auto);
@@ -41,8 +40,8 @@ body{
     grid-area: main;
     backGround-color: rgba(188, 247, 255, 0.580);
     backdrop-filter: blur(3px);
-    border-top-right-radius : 70px;
-    border-bottom-right-radius : 70px;
+    border-top-right-radius : 90px;
+    border-bottom-right-radius : 90px;
     height: 570px;
     width: 900px;
   }
@@ -255,6 +254,7 @@ body{
      .divbtnsFilter{
       display: flex;
       justify-content:center;
+      font-family: Arial, Helvetica, sans-serif;
       margin-bottom: 10px;
       z-index: 5;
     }
@@ -312,11 +312,6 @@ body{
     }
     /*Fin del Container Locaciones*/
 
-
-
-.divbtnsFilter{
-font-family:Arial, Helvetica, sans-serif;
-}
 ul{
 list-style: none;
 }
@@ -547,10 +542,6 @@ ul.slider li:target {
   font-size: 0.875em;
   font-family: 'Inter', sans-serif;
 }
-#conteinerScrollPeople{
-  overflow-y: scroll;
-  height: 391px;
-}
 #conteinerScrollPeople::-webkit-scrollbar{
   width: 12px;
 }
@@ -643,10 +634,6 @@ label {
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
-}
-#conteinerScrollVehicles{
-  overflow-y: scroll;
-  height: 391px;
 }
 #conteinerScrollVehicles::-webkit-scrollbar{
   width: 12px;
@@ -799,14 +786,205 @@ figure {
 }
 
 @media screen and (max-width: 360px){
-  .conteiner {
-    grid-template-columns: 360px;
-    grid-template-rows: 200px auto 300px;
-    grid-template-areas: 
-    "header" 
-    "main"   
-    "footer"  
-  }
+.conteiner {
+  display: grid;
+  width: 942px;
+  gap: 25px 25px;
+  align-items: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 300px  970px 100px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+html {
+  height: 100%;
+}
+body{
+  min-height: 100vh;
+  margin-top: 0px;
+}
 
+.header {
+  grid-area: header;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+  border-top-left-radius: 0px;
+}
+.conteinerDashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 900px;
+}
+.conteinerLogo {
+  justify-content: center;
+  margin: 0px;
+}
+.socialIcons {
+  justify-content: space-evenly;
+  width: 45%;
+}
+.conteinerBtns {
+  flex-direction: row;
+  column-gap: 10px;
+}
+.boton-menu-colapsed {
+  width: 70%;
+}
+#filmografia, #locations, #personajes, #vehicles {
+  margin-top:0px;
+}
+
+.main {
+  grid-area: main;
+  height: 100%;
+  width: 95%;
+  margin-left: 2.5%;
+  border-top-left-radius: 90px;
+  border-bottom-left-radius: 90px;
+}
+.portada {
+  align-items: center;
+}
+.portadaTittle h1 {
+  font-size: 500%;
+}
+#conteinerScrollPortada {
+  height: 750px;
+}
+#conteinerScrollLocations {
+  height: 700px;
+}
+#conteinerScrollFilmo, #conteinerScrollPeople, #conteinerScrollVehicles {
+  height: 600px;
+}
+.box p {
+  font-size: 170%;
+}
+ul.slider {
+  height: 460px;
+}
+ul.slider li img {
+  height: 460px;
+}
+.divFilmo {
+  margin-top: 15px;
+  height: 19%;
+  flex-direction: row;
+}
+.divFilmoTitle, .divLocationsTitle, .divVehiclesTitle, .divPeopleTitle {
+  margin-bottom: 7%;
+}
+.filmoTittle h2, .locationsTittle h2, .peopleTitle h2, .vehiclesTitle h2 {
+  font-size: 399%;
+}
+.conteinerBtns-buscar {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.navBtn li button {
+  font-size: 150%;
+}
+input.btn-buscar {
+  width: 100%;
+  height: 80%;
+}
+button.btn-info {
+  width: 20%;
+}
+#conteinerFilmo, #conteinerLocations {
+  margin-left: 15px;
+}
+#slider {
+  height: 20px;
+}
+label {
+  font-size: 40px;
+}
+.selectBtn {
+  height: 78px;
+  width: 68px;
+}
+#selectValue {
+  width: 90%;
+  height: 45%;
+}
+#selector {
+  height: 164px;
+  width: 58px;
+}
+.boxAU {
+  width: 160px;
+}
+.contenedorCardFilm {
+  max-height: 450px;
+  display: flex;
+  align-items: center;
+}
+#imgPosterFilm {
+  width: 225px;
+  min-height: 270px;
+}
+.conteinerTextFilm ul li {
+    font-size: 19px;
+}
+.contenedorCardPeople {
+  height: 600px;
+  width: 390px;
+}
+.frontCard {
+  font-size: 2.1em;
+}
+.backCard {
+  font-size: 1.875em;
+}
+#imgPosterPeople {
+  height: 75%;
+}
+.contenedorCardLocations {
+  min-width: 400px;
+  min-height: 700px;
+}
+#divCardLocations p {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+#imgPosterLocations {
+  width: 430px;
+  height: 334px;
+}
+#divCardLocations li {
+  font-size: 30px;
+}
+#conteinerVehicles {
+  margin: 40px;
+}
+.contenedorCardVehicles {
+  min-height: 365px;
+  min-width: 700px;
+  margin: 20px;
+}
+.frontCard4 p {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+#imgPosterVehicles {
+  width: 390px;
+  height: 200px;
+}
+.backCard4 {
+  font-size: 1.875em;
+}
+.footer {
+  grid-area: footer;
+}
 }
 
