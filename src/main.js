@@ -124,7 +124,7 @@ function sortCharacters() {
 
 } sortCharacters();
 
-//-------------------  BOTON "MOSTRAR TODO" -------------->>>>>
+//--------------  BOTON "MOSTRAR TODO" ---------->>>>>
 
 function showAllCharacters() {
   btnAll.addEventListener("click", () => {
@@ -135,7 +135,7 @@ function showAllCharacters() {
   });
 } showAllCharacters();
 
-//-------------------  LIMPIAR CAMPOS -------------->>>>>
+//----------------  LIMPIAR CAMPOS -------------->>>>>
 
 function clearCharacters() {
   dataPersonajes.innerHTML = "";
@@ -149,3 +149,54 @@ function clearSelect() {
 function clearSort() {
   order.value = "";
 };
+
+//----------------  Carrusel -------------->>>>>
+
+const carruselPrincipal = document.getElementById("SliderPrincipal");
+const carruselPersonajes = document.getElementById("sliderPersonajes");
+
+let imagenesPrincipal = [
+  "imagenesRM/carrusel/RM_carrusel_1.jpg",
+  "imagenesRM/carrusel/RM_carrusel_2.jpg",
+  "imagenesRM/carrusel/RM_carrusel_3.jpg"
+];
+
+let imagenesPersonajes = [
+  "imagenesRM/Personajes/png/1_rick_sanchez.png",
+  "imagenesRM/Personajes/png/2_morty_smith.png",
+  "imagenesRM/Personajes/png/3_beth_smith.png",
+  "imagenesRM/Personajes/png/4_jerry_smith.png",
+  "imagenesRM/Personajes/png/5_summer_smith.png",
+];
+let contar = 0;
+
+function carrusel(contendor,imagenes) {
+  contendor.addEventListener('click', (e) => {
+    let back = contendor.querySelector('.back'),
+        next = contendor.querySelector('.next'),
+        imagen = contendor.querySelector('.imagen'),
+        boton = e.target;
+
+    if (boton == back) {
+      if (contar > 0) {
+        imagen.src = imagenes[contar - 1];
+        contar--;
+      } else {
+        imagen.src = imagenes[imagenes.length - 1];
+        contar = imagenes.length - 1;
+      }
+    } else if (boton == next) {
+      if (contar < imagenes.length - 1) {
+        imagen.src = imagenes[contar + 1];
+        contar++;
+      } else {
+        imagen.src = imagenes[0];
+        contar = 0;
+      }
+    };
+  });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  carrusel(carruselPrincipal, imagenesPrincipal);
+  carrusel(carruselPersonajes, imagenesPersonajes);
+});
