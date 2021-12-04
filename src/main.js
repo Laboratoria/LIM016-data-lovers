@@ -54,18 +54,15 @@ function filterCharacters() {
 
     let selectFilter = e.target.value;
 
-      characterCategory.addEventListener("change", (category) => {
-        category = category.target.value
-        filterData = filters(allData, selectFilter, category);
-        printData(filterData);
-        clearSort();
-      });
-    }
-
-)
-
-} filterCharacters();
-
+    characterCategory.addEventListener("change", (category) => {
+      category = category.target.value
+      filterData = filters(allData, selectFilter, category);
+      printData(filterData);
+      clearSort();
+    });
+  
+  });
+};   filterCharacters();
 
 // -------- FUNCION PrintData --------->
 
@@ -200,3 +197,4 @@ document.addEventListener("DOMContentLoaded", () => {
   carrusel(carruselPrincipal, imagenesPrincipal);
   carrusel(carruselPersonajes, imagenesPersonajes);
 });
+// select
