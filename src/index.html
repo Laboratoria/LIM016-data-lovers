@@ -24,18 +24,20 @@
 
     <section id="home">
 
-      <div id="SliderPrincipal" class="slider principal">
-        <div class="btn back">&#60</div>
-        <div class="btn next">&#62</div>
-        <img src="imagenesRM/carrusel/RM_carrusel_1.jpg" class="imagen">
+      <div id="SliderPrincipal" >
+          <div class="btn back">&#60</div>
+          <div class="btn next">&#62</div>
+       
+          <img src="imagenesRM/carrusel/RM_carrusel_1.jpg" class="imagen">
       </div>
 
       <div id="sliderPersonajes" class="slider personajes">
         <h2 class="home-titulo">PERSONAJES</h2>
       
-        <div class="btn back"></div>
-        <div class="btn next"></div>
+        <div class="btn back">&#60</div>
         <img src="imagenesRM/Personajes/png/1_rick_sanchez.png" class="imagen">
+        <div class="btn next">&#62</div>
+
       </div>
 
     </section> 
@@ -46,43 +48,39 @@
         <h2>PERSONAJES</h2>
       </div>
       <!-- filtrado -->
-      <div class="filter">
+      <div class="filters">
         <!-- sección de filtrado -->
-        <div class="filters">
-          <div class="caja">
-            <select name="type" id="filterType" >
-              <option value="" disabled selected>Seleccione tipo </option>
-              <option value="gender">Género</option>
-              <option value="species">Especie</option>
-              <option value="status">Estado de vida</option>
+        <div class="caja">
+          <select name="type" id="filterType" >
+            <option value="" disabled selected>Seleccione tipo </option>
+            <option value="gender">Género</option>
+            <option value="species">Especie</option>
+            <option value="status">Estado de vida</option>
               <!-- <option value="origin">Lugar de origen</option> -->
               <!-- <option value="localization">Lugar donde vive</option> -->
-            </select>
-          </div>
-          <div class="caja">
-            <select id="byCategory">
-              <option value="" disabled selected>Seleccione la categoría</option>
-            </select> 
-          </div>
-
-          <div class="buscador">
-            <input type="search" name="search" id="search" class="search" placeholder="Search..">
-          </div>
-      
-          
-            
-            <!-- Botones de filtrado -->
-            <div class="caja">
-              <select id="sort" class="orden">
-                <option value="" disabled selected>Ordenar</option>
-                <option value="AZ"> A-Z </option>
-                <option value="ZA">Z-A</option>
-              </select>
-              <i></i>
-            </div>
-            <button id="getAll" class="btnall">Mostrar todo</button>
+          </select>
+        </div>
+        <div class="caja">
+          <select id="byCategory">
+            <option value="" disabled selected>Seleccione la categoría</option>
+          </select> 
         </div>
 
+        <!-- <div class="buscador">
+          <input type="search" name="search" id="search" class="search" placeholder="Search..">
+        </div> -->
+               
+          <!-- Botones de filtrado -->
+        <div class="caja">
+          <select id="sort" class="orden">
+            <option value="" disabled selected>Ordenar</option>
+            <option value="AZ"> A-Z </option>
+            <option value="ZA">Z-A</option>
+          </select>
+            <i></i>
+        </div>
+
+        <button id="getAll" class="btnall">Mostrar todo</button>
       </div>
       
       <!-- seccion de resultado del filtrado -->

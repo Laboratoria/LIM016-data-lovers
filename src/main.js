@@ -197,4 +197,3 @@ document.addEventListener("DOMContentLoaded", () => {
   carrusel(carruselPrincipal, imagenesPrincipal);
   carrusel(carruselPersonajes, imagenesPersonajes);
 });
-// select
