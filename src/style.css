@@ -380,9 +380,9 @@ button.btn-info:hover {
   background-color: rgb(79, 79, 79)
 }
 
-/* slider */
+ slider 
 .sliderContainer{
-  margin: 5px;
+  /* margin: 5px;
   margin-top: 7px;
   background-color: rgba(8, 7, 7, 0.192);
   border-radius: 30px;
@@ -415,11 +415,11 @@ ul.slider li img{
   object-fit:fill;
 }
 ul.slider li:first-child {
-    opacity: 1; /*Mostramos el primer <li>*/
+    opacity: 1; /*Mostramos el primer <li>
 }
 ul.slider li:target {
     opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
-}
+/* } 
 
 
 .menuSlider{
@@ -440,7 +440,12 @@ ul.slider li:target {
    height: 18px;
    font-size: 18px;
    border-radius: 100%;
-}
+} 
+
+
+
+
+
 
 /* estilos people*/
 
