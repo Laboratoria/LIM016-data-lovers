@@ -399,7 +399,6 @@ ul.slider li {
     width: inherit;
     height: inherit;
     transition: opacity .3s;
-    background:#fff;
 }
 ul.slider li img{
   width: 100%;
@@ -776,11 +775,11 @@ figure {
 @media screen and (max-width: 360px){
 .conteiner {
   display: grid;
-  width: 942px;
-  gap: 25px 25px;
+  width: 100%;
   align-items: center;
+  row-gap: 10px;
   grid-template-columns: 100%;
-  grid-template-rows: 300px  970px 100px;
+  grid-template-rows:  repeat(3,auto);
   grid-template-areas:
     "header"
     "main"
@@ -799,52 +798,67 @@ body{
   display:flex;
   align-items: center;
   justify-content: center;
-  border-bottom-left-radius: 70px;
-  border-bottom-right-radius: 70px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   border-top-left-radius: 0px;
 }
 .conteinerDashboard {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  width: 900px;
 }
 .conteinerLogo {
   justify-content: center;
   margin: 0px;
 }
+#logo {
+  width: 250px;
+}
 .socialIcons {
-  justify-content: space-evenly;
-  width: 45%;
+  width: 60%;
+  margin: 0%;
 }
 .conteinerBtns {
   flex-direction: row;
-  column-gap: 10px;
+  column-gap: 5px;
+  display: flex;
+  justify-content: space-evenly;
 }
 .boton-menu-colapsed {
-  width: 70%;
+  width: 40%;
 }
 #filmografia, #locations, #personajes, #vehicles {
   margin-top:0px;
+  font-size: 10px;
+  font-weight: bold;
+  width: 77%;
+  height: 40px;
+  border-radius: 50px;
 }
 
 .main {
   grid-area: main;
   height: 100%;
-  width: 95%;
-  margin-left: 2.5%;
+  width: 100%;
   border-top-left-radius: 90px;
   border-bottom-left-radius: 90px;
 }
 .portada {
   align-items: center;
+  width: 90%;
+}
+.divPortadaTitle {
+  height: 7%;
 }
 .portadaTittle h1 {
-  font-size: 500%;
+  font-size: 30px;
 }
 #conteinerScrollPortada {
-  height: 750px;
+  max-width: 300px;
+  height: 800px;
 }
 #conteinerScrollLocations {
   height: 700px;
@@ -852,25 +866,65 @@ body{
 #conteinerScrollFilmo, #conteinerScrollPeople, #conteinerScrollVehicles {
   height: 600px;
 }
+.box {
+  max-width: 100%;
+}
 .box p {
-  font-size: 170%;
+  font-size: 100%;
+  max-width: 100%;
+}
+.sliderContainer {
+  width: 85%;
+  padding: 17px;
+  height: 100%;
 }
 ul.slider {
-  height: 460px;
+  height: 200px;
+  width: 250px;
 }
 ul.slider li img {
-  height: 460px;
+  height: 100%;
 }
-.divFilmo {
+figure {
+  padding: 0px;
+  margin: 0px;
+}
+.divFilmo, .divPeople, .divVehicles{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin-top: 15px;
   height: 19%;
+  width: 100%;
+}
+.divLocations {
+  display: flex;
   flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+  height: 19%;
+  width: 100%;
 }
 .divFilmoTitle, .divLocationsTitle, .divVehiclesTitle, .divPeopleTitle {
   margin-bottom: 7%;
+  margin-left: 0px;
 }
 .filmoTittle h2, .locationsTittle h2, .peopleTitle h2, .vehiclesTitle h2 {
-  font-size: 399%;
+  font-size: 300%;
+}
+.contenedorCardFilm {
+  max-height: 350px;
+  display: flex;
+  width: 91%;
+  margin: 0px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#imgPosterFilm {
+  height: 270px;
+}
+.conteinerTextFilm ul li {
+    font-size: 10px;
 }
 .conteinerBtns-buscar {
   width: 100%;
@@ -879,100 +933,111 @@ ul.slider li img {
   margin-bottom: 30px;
 }
 .navBtn li button {
-  font-size: 150%;
+  font-size: 60%;
+  margin-right: 0px;
 }
 input.btn-buscar {
-  width: 100%;
-  height: 80%;
+  width: 75%;
+  height: 90%;
 }
 button.btn-info {
   width: 20%;
 }
-#conteinerFilmo, #conteinerLocations {
-  margin-left: 15px;
+#conteinerFilmo{
+  margin-left: 0px;
+  width: 100%;
+}
+#conteinerLocations {
+  margin-left: 0px;
+  width: 90%;
+}
+.containerEdadPeople {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 90%;
+}
+.containerSlider {
+  position: relative;
+  width: 100%;
 }
 #slider {
-  height: 20px;
+  height: 10px;
 }
 label {
-  font-size: 40px;
+  font-size: 20px;
 }
 .selectBtn {
-  height: 78px;
-  width: 68px;
+  height: 48px;
+  width: 48px;
 }
 #selectValue {
   width: 90%;
-  height: 45%;
+  height: 15%;
 }
 #selector {
-  height: 164px;
-  width: 58px;
+  height: 154px;
+  width: 40px;
 }
-.boxAU {
-  width: 160px;
-}
-.contenedorCardFilm {
-  max-height: 450px;
-  display: flex;
-  align-items: center;
-}
-#imgPosterFilm {
-  width: 225px;
-  min-height: 270px;
-}
-.conteinerTextFilm ul li {
-    font-size: 19px;
+#containerPeople {
+  width: 90%;
 }
 .contenedorCardPeople {
-  height: 600px;
-  width: 390px;
+  height: 270px;
+  width: 200px;
 }
 .frontCard {
-  font-size: 2.1em;
-}
-.backCard {
-  font-size: 1.875em;
+  font-size: 1.0em;
 }
 #imgPosterPeople {
   height: 75%;
 }
 .contenedorCardLocations {
-  min-width: 400px;
-  min-height: 700px;
+  max-width: 380px;
+  max-height: 360px;
 }
 #divCardLocations p {
-  font-size: 45px;
-  margin-bottom: 20px;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 #imgPosterLocations {
-  width: 430px;
-  height: 334px;
+  width: 200px;
+  height: 180px;
 }
 #divCardLocations li {
-  font-size: 30px;
+  font-size: 20px;
 }
 #conteinerVehicles {
-  margin: 40px;
+  width: 90%;
 }
 .contenedorCardVehicles {
-  min-height: 365px;
-  min-width: 700px;
+  min-height: 230px;
   margin: 20px;
 }
 .frontCard4 p {
-  font-size: 35px;
+  font-size: 25px;
   margin-bottom: 15px;
-}
-#imgPosterVehicles {
-  width: 390px;
-  height: 200px;
-}
-.backCard4 {
-  font-size: 1.875em;
 }
 .footer {
   grid-area: footer;
+  width: 94%;
+  justify-content: space-between;
 }
+.divcolumna1 {
+  font-size: 18px;
+}
+.boxAU {
+  width: 100px;
+}
+.divcolumna2 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.divcolumna2 input {
+  width: 70px;
+}
+
 }
 
