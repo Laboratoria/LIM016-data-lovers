@@ -79,7 +79,7 @@ films.forEach((el) => {
  return template;
 } )
 }
-filmoItems(films);
+  filmoItems(films);
 
 //let title = films.map(el => el.title);
 
@@ -171,7 +171,7 @@ filterButtonsDirector.forEach((el) => {
         return filmoItems(newData)    
   })
   return filterButtonsDirector;
-    })
+})
 
 //Funcion para filtrar por productores
 filterButtonsProducer.forEach((el) => {  
@@ -182,7 +182,7 @@ filterButtonsProducer.forEach((el) => {
           return filmoItems(newData)    
   })
   return filterButtonsProducer;
-   })
+})
 
  //funcion para ordenar las peliculas alfabeticamente 
 const filterButtonAsc =document.getElementById("asc");
@@ -415,104 +415,17 @@ document.getElementById("cleanVehicles").addEventListener("click",function() {
   vehicleItems(filterItems("vehicles", films).flat(2))   
 })
 
+
 function statisticsScore(ctx) {
- // eslint-disable-next-line no-undef
- new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: films.map(el => el.title),
-      datasets: [{
-        
-          label: "Ranking por peliculas",
-          data: films.map(el => el.rt_score),
-          backgroundColor: [
-
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-           
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-
-          ],
-          borderWidth: 1
-          
-        }
-      ]
-    },
-    options:{
-      indexAxis: 'y',
-  
- 
-    }   
-   
-  })
-}
-// Llamando desde el DOM
-function mostrarCharts2() {
-  const ctx = document.getElementById('myChart2').getContext('2d');
-  statisticsScore(ctx)
-}
-
-mostrarCharts2();
-
-
-
-
-const ctx= document.getElementById("myChart").getContext("2d");
- // eslint-disable-next-line no-undef
- new Chart(ctx,{
-    type:"bar",
-    data: {
-        labels:["Yoshifumi Kondō", "Isao Takahata", "Hiromasa Yonebayashi", "Gorō Miyazaki",  "Hiroyuki Morita", "Hayao Miyazaki" ],
-        datasets:[{
-          label:"Número de Películas",
-          data:[1,5,2,2,1,9],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-  
-            ],
-            borderWidth: 1
-
-          }
-        ]
-     } 
-    }
-    )
-
-
-function statisticsGender(ctx) {
   // eslint-disable-next-line no-undef
   new Chart(ctx, {
-     type: 'doughnut',
+     type: 'bar',
      data: {
-       labels: ["Female","Male","NA"],
+       labels: films.map(el => el.title),
        datasets: [{
          
-           label: "Genero",
-           data: [81,87,3],
+           label: "Ranking por peliculas",
+           data: films.map(el => el.rt_score),
            backgroundColor: [
  
              'rgba(255, 99, 132, 0.2)',
@@ -536,17 +449,171 @@ function statisticsGender(ctx) {
            
          }
        ]
-     }
+     },
+     options:{
+       indexAxis: 'y',
    
+  
+     }   
     
    })
  }
  // Llamando desde el DOM
- function mostrarCharts3() {
-   const ctx = document.getElementById('myChart3').getContext('2d');
-   statisticsGender(ctx)
+ function mostrarCharts2() {
+   const ctx = document.getElementById('myChart2').getContext('2d');
+   statisticsScore(ctx)
  }
  
- mostrarCharts3();
+ mostrarCharts2();
  
  
+ 
+ 
+ const ctx= document.getElementById("myChart").getContext("2d");
+  // eslint-disable-next-line no-undef
+  new Chart(ctx,{
+     type:"bar",
+     data: {
+         labels:["Yoshifumi Kondō", "Isao Takahata", "Hiromasa Yonebayashi", "Gorō Miyazaki",  "Hiroyuki Morita", "Hayao Miyazaki" ],
+         datasets:[{
+           label:"Número de Películas",
+           data:[1,5,2,2,1,9],
+           backgroundColor: [
+             'rgba(255, 99, 132, 0.2)',
+             'rgba(54, 162, 235, 0.2)',
+             'rgba(255, 206, 86, 0.2)',
+             'rgba(75, 192, 192, 0.2)',
+             'rgba(153, 102, 255, 0.2)',
+             'rgba(255, 159, 64, 0.2)'
+             ],
+             borderColor: [
+               'rgba(255, 99, 132, 1)',
+               'rgba(54, 162, 235, 1)',
+               'rgba(255, 206, 86, 1)',
+               'rgba(75, 192, 192, 1)',
+               'rgba(153, 102, 255, 1)',
+               'rgba(255, 159, 64, 1)'
+   
+             ],
+             borderWidth: 1
+ 
+           }
+         ]
+      } 
+     }
+     )
+ 
+ 
+ function statisticsGender(ctx) {
+   // eslint-disable-next-line no-undef
+   new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ["Female","Male","NA"],
+        datasets: [{
+          
+            label: "Genero",
+            data: [81,87,3],
+            backgroundColor: [
+  
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)'
+             
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+  
+            ],
+            borderWidth: 1
+            
+          }
+        ]
+      }
+    
+     
+    })
+  }
+  // Llamando desde el DOM
+  function mostrarCharts3() {
+    const ctx = document.getElementById('myChart3').getContext('2d');
+    statisticsGender(ctx)
+  }
+  
+  mostrarCharts3();
+
+
+
+  // funcion para slider
+
+  /*const sliderPortada = document.querySelector("#slider");
+  let sliderSection = document.querySelectorAll(".slider__section");
+  let sliderSectionLast = sliderSection[sliderSection.length -1];
+  const btnLeft = document.querySelector("#btn-left");
+  const btnRight = document.querySelector("#btn-right");
+  sliderPortada.insertAdjacentElement("afterbegin", sliderSectionLast);
+
+  function Next(){
+   let sliderSectionFirst=document.querySelectorAll(".slider__section")[0];
+   sliderPortada.style.marginLeft="-200 %";
+   sliderPortada.style.transition="all 0.50s";
+   setTimeout(function(){
+
+  sliderPortada.style.transition="none";
+  sliderPortada.insertAdjacentElement("beforeend", sliderSectionFirst);
+  sliderPortada.style.marginLeft="-100%";
+   },500);
+  }
+  btnRight.addEventListener("click", function (){
+
+   Next();
+
+  });
+
+  function Prev(){
+    let sliderSection = document.querySelectorAll(".slider__section");
+    let sliderSectionLast = sliderSection[sliderSection.length -1];
+    sliderPortada.style.marginLeft="0";
+    sliderPortada.style.transition="all 0.50s";
+    setTimeout(function(){
+ 
+    sliderPortada.style.transition="none";
+    sliderPortada.insertAdjacentElement("afterbegin", sliderSectionLast);
+    sliderPortada.style.marginLeft="-100%";
+    },500);
+   }
+   btnRight.addEventListener("click", function (){
+ 
+   Next();
+ 
+   });
+
+   btnLeft.addEventListener("click", function (){
+ 
+    Prev();
+  
+    });
+
+    setInterval(function(){
+    
+    Next();
+
+    },3000);*/
+   
+   
+
+
+
+
+  
+
+
+

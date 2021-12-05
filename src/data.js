@@ -1,8 +1,12 @@
 
 //Filtro de people, vehiculo, locations para mostrar los items
 export const filterItems = (property, array) => {
-  let x= array.map((ele) => ele[property])
-  return x
+
+  if(property === ""){
+    return[]
+  }
+  let arrayItems= array.map((ele) => ele[property])
+  return arrayItems
 };
 
 
@@ -53,8 +57,8 @@ return compareTitle
 }
 
 
-//Filtrar por Score  ascendente
-export const sortOrdenNumericoAscScore = (array) => {
+//Filtrar por Score  descendente
+export const sortOrdenNumericoDescScore = (array) => {
   const compareNumber = array.sort((a, b) => {
     return b.rt_score - a.rt_score;
   });
@@ -62,8 +66,8 @@ export const sortOrdenNumericoAscScore = (array) => {
 }
 
 
-//Filtrar por Score descendente
-export const sortOrdenNumericoDescScore = (array) => {
+//Filtrar por Score ascendente
+export const sortOrdenNumericoAscScore = (array) => {
   const compareNumber = array.sort((a, b) => {
     return a.rt_score - b.rt_score;
   });
@@ -71,7 +75,7 @@ export const sortOrdenNumericoDescScore = (array) => {
 } 
 
 //Filtrar por año de lanzamiento ascendente
-export const sortOrdenNumericoAscAñoLanz = (array) => {
+export const sortOrdenNumericoDescAñoLanz = (array) => {
   const compareNumber = array.sort((a, b) => {
     return b.release_date - a.release_date;
   });
@@ -79,7 +83,7 @@ export const sortOrdenNumericoAscAñoLanz = (array) => {
 }
 
 //Filtrarpor año de lanzamiento descendente
-export const sortOrdenNumericoDescAñoLanz = (array) => {
+export const sortOrdenNumericoAscAñoLanz = (array) => {
   const compareNumber = array.sort((a, b) => {
     return a.release_date - b.release_date;
   });
