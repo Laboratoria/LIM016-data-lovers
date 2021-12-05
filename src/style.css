@@ -390,6 +390,8 @@ ul.slider {
   position: relative;
   width: 779px;
   height: 300px;
+
+  
 }
 ul.slider li {
     position: absolute;
@@ -433,6 +435,10 @@ ul.slider li:target {
    font-size: 18px;
    border-radius: 100%;
 }
+
+
+  
+
 
 /* estilos people*/
 
