@@ -67,23 +67,13 @@
               <h1>Studio Ghibli</h1>
             </div>
           </div>
-        
+
           <div id="conteinerScrollPortada" style="display:flex">
            <div class="box" style="display:flex">
           <p>Esta exitosa casa de animación fue fundada en 1985 por los directores de cine y animación: Isao Takahata y Hayao Miyazaki,
              ha producido veintidós largometrajes.</p>
-          </div>
-        
-            </div>
-        
         </div>
-      
-         
-
-
-
-
-    <!--     
+        
          <div class="sliderContainer">
 
         <ul class="slider">
@@ -123,9 +113,8 @@
         </ul>
 
       </div>
-     -->
 
-      <section id="statistics container--flex">
+      <section id="statistics">
 
         <figure>
         <div class="Chart1">
@@ -137,7 +126,7 @@
 
         <figure>
        <div class="Chart2">
-        <h2>Ranking de Películas </h2>
+        <h2>Ranking de todas las peliculas de Studio Ghibli</h2>
         <br>
         <canvas id="myChart2" width="500" height="500"></canvas>
       </div>
@@ -145,16 +134,16 @@
 
       <figure>  
       <div class="Chart3">
-        <h2>Personajes por Género</h2>
-        <br>
-        <canvas id="myChart3" width="200" height="200"></canvas>
+      <h2>Personajes por Género</h2>
+      <br>
+      <canvas id="myChart3" width="200" height="200"></canvas>
       </div>
-    </figure>
-    
-  </section>
-</div>
+      </figure>
+
+      </section>
 
 
+      </div>
        </div>
         
         <div class="divFilmo" id="filmo" style="display:none">
@@ -165,28 +154,28 @@
             </div>
           </div>
 
-        <div class="conteinerBtns-buscar">
+          <div class="conteinerBtns-buscar">
           <div class="divbtnsFilter">
-            <ul class="navBtn"> 
+            <ul class=navBtn> 
 
               <li><button>Directores</button>
 
                 <ul  class="btnContainerDirector">
-                      <li> <button class="filterDirector"  data-id="Hayao Miyazaki"> Hayao Miyazaki </button> </li>
-                      <li> <button class="filterDirector"  data-id="Hiroyuki Morita"> Hiroyuki Morita </button> </li>
-                      <li> <button class="filterDirector"  data-id="Gorō Miyazaki"> Gorō Miyazaki </button> </li>
-                      <li> <button class="filterDirector"  data-id="Hiromasa Yonebayashi"> Hiromasa Yonebayashi </button> </li>
-                      <li> <button class="filterDirector"  data-id="Isao Takahata"> Isao Takahata </button> </li>
-                      <li> <button class="filterDirector"  data-id="Yoshifumi Kondō"> Yoshifumi Kondō </button> </li>
+                      <li><button class="filterDirector" data-id="Hayao Miyazaki">Hayao Miyazaki</button></li>
+                      <li><button class="filterDirector"data-id="Hiroyuki Morita">Hiroyuki Morita</button></li>
+                      <li><button class="filterDirector"data-id="Gorō Miyazaki">Gorō Miyazaki</button></li>
+                      <li><button class="filterDirector"data-id="Hiromasa Yonebayashi">Hiromasa Yonebayashi</button></li>
+                      <li><button class="filterDirector"data-id="Isao Takahata">Isao Takahata</button></li>
+                      <li><button class="filterDirector"data-id="Yoshifumi Kondō">Yoshifumi Kondō</button></li>
                 </ul>
               </li>
               <li><button>Productores</button>
                   <ul class="btnContainerProducer">
-                      <li> <button class="filterProducer" data-id="Toshio Suzuki"> Toshio Suzuki </button> </li>
-                      <li> <button class="filterProducer" data-id="Hayao Miyazaki"> Hayao Miyazaki </button> </li>
-                      <li> <button class="filterProducer" data-id="Toru Hara"> Toru Hara </button> </li>
-                      <li> <button class="filterProducer" data-id="Yoshiaki Nishimura"> Yoshiaki Nishimura </button> </li>
-                      <li> <button class="filterProducer" data-id="Isao Takahata"> Isao Takahata </button> </li>
+                      <li><button class="filterProducer"data-id="Toshio Suzuki">Toshio Suzuki</button></li>
+                      <li><button class="filterProducer"data-id="Hayao Miyazaki">Hayao Miyazaki</button></li>
+                      <li><button class="filterProducer"data-id="Toru Hara">Toru Hara</button></li>
+                      <li><button class="filterProducer"data-id="Yoshiaki Nishimura">Yoshiaki Nishimura</button></li>
+                      <li><button class="filterProducer"data-id="Isao Takahata">Isao Takahata</button></li>
                   </ul>
               </li>
               <li><button>Año de Lanzamiento</button>
@@ -204,11 +193,10 @@
               </li>
               <li><button>Alfabético ⇅ ⇵</button>
                 <ul>
-                  <li> <button class="filterAlfabetic" id="asc"> A-Z ⇅ </button></li>
-                  <li> <button class="filterAlfabetic" id="desc"> Z-A ⇵ </button></li>
+                  <li><button class="filterAlfabetic"id="asc">A-Z ⇅</button></li>
+                  <li><button class="filterAlfabetic"id="desc">Z-A ⇵</button></li>
                 </ul>
               </li>
-            </ul>
           </div>
 
           <div class="buscar">
@@ -218,7 +206,7 @@
         </div>     
        </div>
 
-          <div id="conteinerFilmo" class="conteinerFilmo ">
+          <div id="conteinerFilmo" class="conteinerFilmo">
             <div id="conteinerScrollFilmo">
             <!--Manipulacion dinamica del DOM -->
           </div>
@@ -246,7 +234,7 @@
             </div>
             
             <div class="divbtnsFilter">
-              <ul class="navBtn"> 
+              <ul class=navBtn> 
 
               <li><button id="">Género</button>
                 <ul class="btnContainerGenero">
@@ -291,6 +279,7 @@
                     <li><button class="filterMitico" data-id="unknown">Unknown</button> </li>
                 </ul>
               </li>                                                                     
+              </li>
               <li><button id="cleanPeople">Clean</button></li>
             </ul>
           </div>
@@ -313,7 +302,7 @@
           </div>
 
           <div class="divbtnsFilter">
-            <ul class ="navBtn"> 
+            <ul class=navBtn> 
 
               <li><button>Aéreo</button>
                 <ul class="btnContainerAereo">
@@ -351,7 +340,7 @@
           </div>
 
           <div class="divbtnsFilter">
-            <ul class = "navBtn"> 
+            <ul class=navBtn> 
 
               <li><button> Clima </button>
                 <ul class="btnContainerClima">
@@ -422,5 +411,6 @@
 
 
     <script src="main.js" type="module"></script>
-</body>
+   
+    </body>
 </html>
