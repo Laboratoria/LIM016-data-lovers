@@ -32,7 +32,7 @@ function changeFilterList() {
     
     while (characterCategory.options.length) {
       characterCategory.remove(0);
-    };
+    }
     
     if (filters) {
       for (let i = 0; i < filters.length; i++) {
@@ -40,8 +40,8 @@ function changeFilterList() {
         
         characterCategory.options.add(filter);
         characterCategory.options[0].disabled=true;
-      }; 
-    };
+      }
+    }
   });
 }changeFilterList();
 
@@ -62,7 +62,7 @@ function filterCharacters() {
     });
   
   });
-};   filterCharacters();
+}   filterCharacters();
 
 // -------- FUNCION PrintData --------->
 
@@ -136,16 +136,16 @@ function showAllCharacters() {
 
 function clearCharacters() {
   dataPersonajes.innerHTML = "";
-};
+}
 
 function clearSelect() {
   characterCategory.value = 0;
   characterType.value = "";
-}; 
+}
 
 function clearSort() {
   order.value = "";
-};
+}
 
 //----------------  Carrusel -------------->>>>>
 
@@ -190,7 +190,7 @@ function carrusel(contendor,imagenes) {
         imagen.src = imagenes[0];
         contar = 0;
       }
-    };
+    }
   });
 }
 document.addEventListener("DOMContentLoaded", () => {

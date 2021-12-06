@@ -1,35 +1,35 @@
-import { example, anotherExample, data } from '../src/data.js';
+import { filters } from '../src/data.js';
+//import data from '../src/data/rickandmorty/rickandmorty';
 
-
-describe('example', () => {
+describe('should to be function', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filters).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
 });
 
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
+//let arrayDataRM=data.results;
+//console.log(arrayDataRM);
 
 
-describe('data ejm', () => {
-  it('is a function', () => {
-    expect(typeof data).toBe('function');
-  });
+// describe('anotherExample', () => {
+//   it('is a function', () => {
+//     expect(typeof anotherExample).toBe('function');
+//   });
 
-  it('returns data', () => {
-    expect(data()).toBe(data);
-  });
-});
+//   it('returns `anotherExample`', () => {
+//     expect(anotherExample()).toBe('OMG');
+//   });
+// });
+
+
+// describe('data ejm', () => {
+//   it('is a function', () => {
+//     expect(typeof data).toBe('function');
+//   });
+
+//   it('returns data', () => {
+//     expect(data()).toBe(data);
+//   });
+// });
 

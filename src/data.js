@@ -44,6 +44,7 @@ export const filters = (data, filtro, condicion) => {
         break;
       case "8":
         filterCharacters = data.filter((personaje) => personaje.species === "Cronenberg");
+        break;
       case "9":
         filterCharacters = data.filter((personaje) => personaje.species === "Parasite");
         break;
