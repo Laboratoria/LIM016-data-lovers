@@ -24,7 +24,7 @@ filterByCategory["species"] = [ "Seleccione una especie","Animal","Desconocido",
 filterByCategory["status"] = ["Selecione un estado de vida", "Desconocido", "Muerto", "Vivo"];
 
 function changeFilterList() {
-  
+   clearSort()
   characterType.addEventListener("change", () => {
 
     let selFilter = characterType.options[characterType.selectedIndex].value;
@@ -57,12 +57,13 @@ function filterCharacters() {
     characterCategory.addEventListener("change", (category) => {
       category = category.target.value
       filterData = filters(allData, selectFilter, category);
+      console.log(filterData);
       printData(filterData);
       clearSort();
     });
   
-  });
-}   filterCharacters();
+  }); 
+} filterCharacters();
 
 // -------- FUNCION PrintData --------->
 
@@ -139,18 +140,18 @@ function clearCharacters() {
 }
 
 function clearSelect() {
-  characterCategory.value = 0;
-  characterType.value = "";
+  characterType.value = "0";
+  // characterCategory.value = "0";
+  characterCategory.innerHTML = "";
 }
 
 function clearSort() {
-  order.value = "";
+  order.value = 0;
 }
 
 //----------------  Carrusel -------------->>>>>
 
 const carruselPrincipal = document.getElementById("SliderPrincipal");
-const carruselPersonajes = document.getElementById("sliderPersonajes");
 
 let imagenesPrincipal = [
   "imagenesRM/carrusel/RM_carrusel_1.jpg",
@@ -158,13 +159,6 @@ let imagenesPrincipal = [
   "imagenesRM/carrusel/RM_carrusel_3.jpg"
 ];
 
-let imagenesPersonajes = [
-  "imagenesRM/Personajes/png/1_rick_sanchez.png",
-  "imagenesRM/Personajes/png/2_morty_smith.png",
-  "imagenesRM/Personajes/png/3_beth_smith.png",
-  "imagenesRM/Personajes/png/4_jerry_smith.png",
-  "imagenesRM/Personajes/png/5_summer_smith.png",
-];
 let contar = 0;
 
 function carrusel(contendor,imagenes) {
@@ -195,5 +189,4 @@ function carrusel(contendor,imagenes) {
 }
 document.addEventListener("DOMContentLoaded", () => {
   carrusel(carruselPrincipal, imagenesPrincipal);
-  carrusel(carruselPersonajes, imagenesPersonajes);
 });

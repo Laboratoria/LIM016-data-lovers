@@ -121,16 +121,16 @@ export const sortData = (data, sortOrder) => {
       });
       // console.table(orden);
       break;
-
     case "ZA":
       orden = data.sort((a, b) => {
-        return b.name < a.name ? -1 : 1;
+        return a.name > b.name ? -1 : 1;
       });
       // console.table(orden);
       break;
 
     default:
-      break;
+      return (data);
+       // break;
   }
   return orden;
 };

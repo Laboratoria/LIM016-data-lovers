@@ -111,12 +111,15 @@ header{
 /* Barra de filtros ----->  */
 
 .filters{
+    
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(7rem, 13.75rem));
     grid-auto-flow: row;
-    column-gap:1rem;
+    column-gap:4.5rem;
     row-gap:0;
-    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    margin:  auto 8rem;
 } 
 
 label{
@@ -150,27 +153,6 @@ button{
     box-shadow: 0 12px 16px 0 rgba(124,252,0,0.24), 0 17px 50px 0 rgba(124,252,0,0.19);
 }
 
-/* search */
-
-.search{
-    width: 220px;
-    height: 30px;
-    /* margin-top: 20px; */
-    color:#7cfc00;
-    border: 1px solid #7cfc00;
-    border-radius: 5px;
-    background-color: transparent;
-    background-image: url('./imagenesRM/botones/search.png');
-    background-position: 0.5rem; 
-    background-repeat: no-repeat;
-    padding: 0.5rem;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    text-align: center;
-  }
-.buscador{
-    margin:20px auto 40px auto;	
-}
 /* orden */
 .orden{
     background-image: url('./imagenesRM/botones/ordenar.png');
@@ -184,7 +166,7 @@ button{
 /*the container must be positioned relative:*/
 
 .caja{
-    margin:20px auto 40px auto;	
+    margin:20px 0 20px 50px;	
     border:1px solid #7cfc00;
     border-radius: 5px;
     height:30px;
@@ -236,24 +218,23 @@ select option:hover {
 
 /* Carrusel ----------> */
 
-.slider{
+.SliderPrincipal{
     width: 100%;
     position: relative;
-    height: 500px;
+    height: 600px, minmax(7rem, 13.75rem);
+    box-sizing: content-box;
+
 }
 
 .imagen{
     width: 100%;
-    height: 500px;
+    height: 600px, minmax(7rem, 13.75rem);
 }
 
 .btn{
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
-}
-
-.principal>div{
     position: absolute;
     width: 70px;
     height: 70px;
@@ -264,6 +245,7 @@ select option:hover {
     text-align: center;
     font-weight: bold;
     border-radius: 50%;
+    justify-content: center;
 }
 
 .btn:hover{
@@ -279,41 +261,4 @@ select option:hover {
 .next{
     right: 2%;
     top:calc(50% - 70px);
-}
-
-.personajes{
-    justify-content: center;
-    display: inline-block;
-}
-
-
-.personajes>div{
-    /* width: 250px;
-    height: 400px;
-    background-image: url(imagenesRM/botones/Portal.png);
-    background-size: cover;
-    display: inline-block; */
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    font-size: 30px;
-    background-color:#7cfc00;
-    color: #fff;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 50%;
-} 
-
-.personajes>img{
-    width: 50%;
-    height: 300px;
-    line-height: 150px;
-    display: inline-block;
-}
-
-.personajes>h2{
-    margin: 20px 0;
-    color: #7cfc00;
-    text-align: center; 
 }

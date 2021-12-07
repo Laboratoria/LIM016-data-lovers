@@ -13,13 +13,19 @@
   
   <body>
     <header class="header">
-      <!-- <nav>
-        <ul>
-          <li><a href="">Inicio</a></li>
-          <li><a href="">Personajes</a></li>
-          <li><a href="">Temporadas</a></li>
-        </ul>
-      </nav> -->
+      <div class="header">
+        <div class="logo">
+          <!-- <img src="imagenesRM/Logo/RM.png" alt="logo html" title="logo Health Clinic"> -->
+        </div>
+      </div>
+      <div class="navedador">
+        <nav>
+          <ul>
+            <li class= "menu">Inicio</li>
+            <li class= "menu">Personajes</li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <section id="home">
@@ -29,15 +35,6 @@
           <div class="btn next">&#62</div>
        
           <img src="imagenesRM/carrusel/RM_carrusel_1.jpg" class="imagen">
-      </div>
-
-      <div id="sliderPersonajes" class="slider personajes">
-        <h2 class="home-titulo">PERSONAJES</h2>
-      
-        <div class="btn back">&#60</div>
-        <img src="imagenesRM/Personajes/png/1_rick_sanchez.png" class="imagen">
-        <div class="btn next">&#62</div>
-
       </div>
 
     </section> 
@@ -52,7 +49,7 @@
         <!-- sección de filtrado -->
         <div class="caja">
           <select name="type" id="filterType" >
-            <option value="" disabled selected>Seleccione tipo </option>
+            <option value="0" disabled selected>Seleccione tipo </option>
             <option value="gender">Género</option>
             <option value="species">Especie</option>
             <option value="status">Estado de vida</option>
@@ -65,21 +62,16 @@
             <option value="" disabled selected>Seleccione la categoría</option>
           </select> 
         </div>
-
-        <!-- <div class="buscador">
-          <input type="search" name="search" id="search" class="search" placeholder="Search..">
-        </div> -->
                
-          <!-- Botones de filtrado -->
+      <!-- Botones de filtrado -->
         <div class="caja">
           <select id="sort" class="orden">
-            <option value="" disabled selected>Ordenar</option>
+            <option value="0" disabled selected>Ordenar</option>
             <option value="AZ"> A-Z </option>
             <option value="ZA">Z-A</option>
           </select>
             <i></i>
         </div>
-
         <button id="getAll" class="btnall">Mostrar todo</button>
       </div>
       
