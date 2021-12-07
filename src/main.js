@@ -190,3 +190,4 @@ function carrusel(contendor,imagenes) {
 document.addEventListener("DOMContentLoaded", () => {
   carrusel(carruselPrincipal, imagenesPrincipal);
 });
+
