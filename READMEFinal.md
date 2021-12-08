@@ -13,7 +13,6 @@
 - [9. Checklist del Proyecto](#9-checklist-del-proyecto)
 
 *
-
 ## 1. Nombre del Producto
     RMpedia.
 
