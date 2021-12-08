@@ -21,8 +21,14 @@ de todo este fandom hay un grupo que desea poder interactuar y ver la informaci�
 ## 3. Definición del Producto
 Para conocer las necesidades del público de la serie, realizamos una encuesta virtual, encontrando como resultado:
 -   Efectivamente el público final estaría entre los 15 y 40 años, siendo en su mayoría personas entre 25 y 30 años.
+
+![Encuesta-edad](https://user-images.githubusercontent.com/91750603/145142969-780e35c9-fd88-4d80-9a00-134c5861ded4.jpg)
+
 -   Existe una mayor preferencia por conocer a los personajes de la serie, considera mas importante la siguiente información: 
     *Nombre, Imagen, Género, Especie y Lugar de origen. * 
+
+![Encuesta-personajes](https://user-images.githubusercontent.com/91750603/145142997-1437ef6c-5915-40bd-8a64-fbeab157a0bb.jpg)
+    
 Es por este motivo se decidió enfocarnos en la manipulación de la información de los personajes.
 
 ## 4. Organización del Proyecto
