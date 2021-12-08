@@ -22,8 +22,15 @@
     de todo este fandom hay un grupo que desea poder interactuar y ver la información sobre esta serie.
 
 ## 3. Definición del Producto
+    Para conocer las necesidades del público de la serie, realizamos una encuesta virtual, encontrando como resultado:
+-	Efectivamente el público final estaría entre los 15 y 40 años, siendo en su mayoría personas entre 25 y 30 años.
+-	Existe una mayor preferencia por conocer a los personajes de la serie, considera mas importante la siguiente información: 
+    *Nombre, Imagen, Género, Especie y Lugar de origen.* 
+Es por este motivo se decidió enfocarnos en la manipulación de la información de los personajes.
 
 ## 4. Organización del Proyecto
+Para organización del proyecto el equipo optó por trabajar en base a la metodologia aguil *Scrum*, 
+para ello se empleó la herramita [Trello](https://trello.com/invite/b/CEPkKv4H/bfd2fc0fce23a11dc8aa3439cc99cec9/proyecto-data-lovers "Trello")
 
 ## 5. Historias de Usuario
 
