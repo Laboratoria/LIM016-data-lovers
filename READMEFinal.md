@@ -10,7 +10,7 @@
 - [6. Prototipos de baja fidelidad](#6-prototipos-de-baja-fidelidad)
 - [7. Prototipos de alta fidelidad](#7-prototipos-de-alta-fidelidad)
 - [8. Tests de usabilidad](#8-test-de-usabilidad)
-- [9. Checklist del Proyecto](#8-checklist-del-proyecto)
+- [9. Checklist del Proyecto](#9-checklist-del-proyecto)
 
 *
 
