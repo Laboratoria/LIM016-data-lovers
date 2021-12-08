@@ -141,7 +141,6 @@ function clearCharacters() {
 
 function clearSelect() {
   characterType.value = "0";
-  // characterCategory.value = "0";
   characterCategory.innerHTML = "";
 }
 
@@ -190,4 +189,3 @@ function carrusel(contendor,imagenes) {
 document.addEventListener("DOMContentLoaded", () => {
   carrusel(carruselPrincipal, imagenesPrincipal);
 });
-

@@ -108,7 +108,6 @@ export const filters = (data, filtro, condicion) => {
   } else {
     filterCharacters = data.filter((personaje) => personaje);
   }
-  //console.log(filterCharacters);
   return filterCharacters;
 };
 
@@ -119,18 +118,15 @@ export const sortData = (data, sortOrder) => {
       orden = data.sort((a, b) => {
         return a.name < b.name ? -1 : 1;
       });
-      // console.table(orden);
       break;
     case "ZA":
       orden = data.sort((a, b) => {
         return a.name > b.name ? -1 : 1;
       });
-      // console.table(orden);
       break;
 
     default:
       return (data);
-       // break;
   }
   return orden;
 };
