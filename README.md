@@ -12,16 +12,16 @@
 - [6.2. Prototipos de Alta Fidelidad](#6.2-prototipos-de-alta-fidelidad)
 - [7. Test de Usabilidad](#7-test-de-usabilidad)
 - [8. Checklist del Proyecto](#8-checklist-del-proyecto)
-*
+
 ## 1. Nombre del Producto
-    RMpedia.
+RMpedia.
 
 ## 2. Consideraciones Generales
-    Rick y Morty es una serie de televisión estadounidense de animación para adultos. La serie tiene gran acogida a nivel mundial,
-    de todo este fandom hay un grupo que desea poder interactuar y ver la información sobre esta serie.
+Rick y Morty es una serie de televisión estadounidense de animación para adultos. La serie tiene gran acogida a nivel mundial,
+de todo este fandom hay un grupo que desea poder interactuar y ver la información sobre esta serie.
 
 ## 3. Definición del Producto
-    Para conocer las necesidades del público de la serie, realizamos una encuesta virtual, encontrando como resultado:
+Para conocer las necesidades del público de la serie, realizamos una encuesta virtual, encontrando como resultado:
 -   Efectivamente el público final estaría entre los 15 y 40 años, siendo en su mayoría personas entre 25 y 30 años.
 -   Existe una mayor preferencia por conocer a los personajes de la serie, considera mas importante la siguiente información: 
     *Nombre, Imagen, Género, Especie y Lugar de origen. * 
@@ -40,33 +40,34 @@ para ello se empleó la herramienta [Trello](https://trello.com/invite/b/CEPkKv4
 | HU 4 | Como espectador - quiero ordenar de forma ascendente o descendente a los nombres de los personajes para poder identificarlos mejor. |
 
 ## 6. Diseño de la Interfaz de Usuario
-    En base a los resultados se diseñaron los siguientes prototipos.
+En base a los resultados se diseñaron los siguientes prototipos.
 
 ### 6.1 Prototipos de Baja Fidelidad
-    Para el diseño del prototipo inicial se empleó la aplicación Microsoft PowerPoint (prototipo de baja fidelidad)
+Para el diseño del prototipo inicial se empleó la aplicación Microsoft PowerPoint (prototipo de baja fidelidad)
     
  *Imagen N°1: Interfaz inicial*
+ 
 ![PrototipoBajaFidelidadHome](https://user-images.githubusercontent.com/91750603/145139047-247c1269-cb38-4b4c-883f-f5c12da34425.jpg)
 
  *Imagen N°2: Interfaz Sección Personajes*
+ 
 ![PrototipoBajaFidelidadPersonajes](https://user-images.githubusercontent.com/91750603/145139273-8c6f4cd9-d271-4541-8ffb-535625ce055a.jpg)
 
  *Imagen N°3: Elección de patrón de colores*
+ 
 ![PrototipoBajaFidelidadPatronColores](https://user-images.githubusercontent.com/91750603/145139610-e18c28d8-9f44-49e3-8211-7cfc56fd7048.jpg)
 
 ### 6.2 Prototipos de Alta Fidelidad
-    El Diseño de la Interfaz de Usuario (prototipo de alta fidelidad) se empleó la herramienta Figma. 
+El Diseño de la Interfaz de Usuario (prototipo de alta fidelidad) se empleó la herramienta Figma. 
 [Prototipo](https://www.figma.com/file/J84alZJLUSfXrqJQEhqv2m/Web?node-id=0%3A1 "Prototipo")
 
 ## 7. Test de Usabilidad
-
-    El listado de problemas que se detectaron a través del test de usabilidad fueron los siguientes:
+El listado de problemas que se detectaron a través del test de usabilidad fueron los siguientes:
 - Con respecto a las imágenes mostradas el usuario prefería que el fondo de las imágenes sea blanco.
 - En relación al tamaño de las letras de los filtros, evidenció que le costaba leerlos.
 - De igual manera, prefería que los filtros estuvieran ordenados alfabéticamente. 
  
 ## 8. Checklist del Proyecto
-
     [x] Usa VanillaJS.
     [x] Pasa linter (`npm run pretest`)
     [x] Pasa tests (`npm test`)
