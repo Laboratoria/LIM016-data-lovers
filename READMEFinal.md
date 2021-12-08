@@ -18,7 +18,8 @@
     RMpedia.
 
 ## 2. Consideraciones Generales
-    Rick y Morty es una serie de televisión estadounidense de animación para adultos. La serie tiene gran acogida a nivel mundial, de todo este fandom hay un grupo que desea poder interactuar y ver la información sobre esta serie.
+    Rick y Morty es una serie de televisión estadounidense de animación para adultos. La serie tiene gran acogida a nivel mundial,
+    de todo este fandom hay un grupo que desea poder interactuar y ver la información sobre esta serie.
 
 ## 3. Definición del Producto
 
