@@ -22,7 +22,7 @@ de todo este fandom hay un grupo que desea poder interactuar y ver la informaci�
 Para conocer las necesidades del público de la serie, realizamos una encuesta virtual, encontrando como resultado:
 
 *a. ¿Quiénes son los principales usuarios de producto?*
-- Personas entre 15 y 40 años, siendo en su mayoría adultos jóvenes entre 25 y 35 años.
+- Personas entre 15 y 40 años, siendo en su mayoría adultos jóvenes entre 25 y 30 años.
 
 ![Encuesta-edad](https://user-images.githubusercontent.com/91750603/145142969-780e35c9-fd88-4d80-9a00-134c5861ded4.jpg)
 
