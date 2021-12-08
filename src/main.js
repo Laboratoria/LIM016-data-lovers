@@ -24,7 +24,7 @@ filterByCategory["species"] = [ "Seleccione una especie","Animal","Desconocido",
 filterByCategory["status"] = ["Selecione un estado de vida", "Desconocido", "Muerto", "Vivo"];
 
 function changeFilterList() {
-  
+   clearSort()
   characterType.addEventListener("change", () => {
 
     let selFilter = characterType.options[characterType.selectedIndex].value;
@@ -32,7 +32,7 @@ function changeFilterList() {
     
     while (characterCategory.options.length) {
       characterCategory.remove(0);
-    };
+    }
     
     if (filters) {
       for (let i = 0; i < filters.length; i++) {
@@ -40,8 +40,8 @@ function changeFilterList() {
         
         characterCategory.options.add(filter);
         characterCategory.options[0].disabled=true;
-      }; 
-    };
+      }
+    }
   });
 }changeFilterList();
 
@@ -54,18 +54,16 @@ function filterCharacters() {
 
     let selectFilter = e.target.value;
 
-      characterCategory.addEventListener("change", (category) => {
-        category = category.target.value
-        filterData = filters(allData, selectFilter, category);
-        printData(filterData);
-        clearSort();
-      });
-    }
-
-  })
-
+    characterCategory.addEventListener("change", (category) => {
+      category = category.target.value
+      filterData = filters(allData, selectFilter, category);
+      console.log(filterData);
+      printData(filterData);
+      clearSort();
+    });
+  
+  }); 
 } filterCharacters();
-
 
 // -------- FUNCION PrintData --------->
 
@@ -124,7 +122,7 @@ function sortCharacters() {
 
 } sortCharacters();
 
-//-------------------  BOTON "MOSTRAR TODO" -------------->>>>>
+//--------------  BOTON "MOSTRAR TODO" ---------->>>>>
 
 function showAllCharacters() {
   btnAll.addEventListener("click", () => {
@@ -135,17 +133,59 @@ function showAllCharacters() {
   });
 } showAllCharacters();
 
-//-------------------  LIMPIAR CAMPOS -------------->>>>>
+//----------------  LIMPIAR CAMPOS -------------->>>>>
 
 function clearCharacters() {
   dataPersonajes.innerHTML = "";
-};
+}
 
 function clearSelect() {
-  characterCategory.value = 0;
-  characterType.value = "";
-}; 
+  characterType.value = "0";
+  characterCategory.innerHTML = "";
+}
 
 function clearSort() {
-  order.value = "";
-};
+  order.value = 0;
+}
+
+//----------------  Carrusel -------------->>>>>
+
+const carruselPrincipal = document.getElementById("SliderPrincipal");
+
+let imagenesPrincipal = [
+  "imagenesRM/carrusel/RM_carrusel_1.jpg",
+  "imagenesRM/carrusel/RM_carrusel_2.jpg",
+  "imagenesRM/carrusel/RM_carrusel_3.jpg"
+];
+
+let contar = 0;
+
+function carrusel(contendor,imagenes) {
+  contendor.addEventListener('click', (e) => {
+    let back = contendor.querySelector('.back'),
+        next = contendor.querySelector('.next'),
+        imagen = contendor.querySelector('.imagen'),
+        boton = e.target;
+
+    if (boton == back) {
+      if (contar > 0) {
+        imagen.src = imagenes[contar - 1];
+        contar--;
+      } else {
+        imagen.src = imagenes[imagenes.length - 1];
+        contar = imagenes.length - 1;
+      }
+    } else if (boton == next) {
+      if (contar < imagenes.length - 1) {
+        imagen.src = imagenes[contar + 1];
+        contar++;
+      } else {
+        imagen.src = imagenes[0];
+        contar = 0;
+      }
+    }
+  });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  carrusel(carruselPrincipal, imagenesPrincipal);
+});

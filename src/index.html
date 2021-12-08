@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <link rel="icon" href="imagenesRM/Logo/RM.png">
-    <title>DL| Rick and Morty</title>
+    <title>RMpedia</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,50 +12,30 @@
   </head>
   
   <body>
-    <header class="header">
-      <!-- <nav>
-        <ul>
-          <li><a href="">Inicio</a></li>
-          <li><a href="">Personajes</a></li>
-          <li><a href="">Temporadas</a></li>
-        </ul>
-      </nav> -->
+    <header>
+      <div class="header">
+        <div class="logo">
+          <img src="imagenesRM/Logo/RM.png" alt="logo html" title="logo Health Clinic">
+        </div>
+        <div class="tituloPrincipal">
+          <h1>RMpedia</h1>
+        </div>
+      </div>
+
     </header>
 
-    <!-- <section id="home">
-      <div class="carrusel">
-        <div class="carrusel-1">
-          <img src="imagenesRM/carrusel/RM_carrusel_1.jpg">
-        </div>
+    <section id="home">
+      <div class="introduccion">
+        <h3>Aquí encontrarás toda la información sobre los personajes de Rick y Morty.</h3>
+      </div>
 
-        <div class="carrusel-1">
-          <img src="imagenesRM/carrusel/RM_carrusel_2.jpg">
-        </div>
-        
-        <div class="carrusel-1">    
-          <img src="imagenesRM/carrusel/RM_carrusel_3.jpg">
-        </div>
-
-        <div style="text-align:center">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
- 
-      </div> -->
-
-       <!-- <div id="home-personajes" class="carrusel">
-        <h2 class="home-titulo">PERSONAJES</h2>
-
-        <div>
-          <img id="btn-anterior" class="btn-carrusel" src="#" alt="btnanterior">
-          <img id="btn-siguiente" class="btn-carrusel" src="#" alt="btnsiguiente">
-          <div>
-            <img id="" class="home-personaje" src="./data/rickandmorty/rickandmorty.js" alt="">
-          </div>
-        </div>
-      </div> -->
-    <!-- </section>  -->
+      <div id="SliderPrincipal" class="slider">
+          <div class="btn back">&#60</div>
+          <div class="btn next">&#62</div>
+       
+          <img src="imagenesRM/carrusel/RM_carrusel_1.jpg" class="imagen">
+      </div>
+    </section> 
       
     <section id="personajes" class="data">
       <!-- titulo -->
@@ -63,45 +43,39 @@
         <h2>PERSONAJES</h2>
       </div>
       <!-- filtrado -->
-      <div class="filter">
+      <div class="filters">
+
+        <label for="">Filtrar por:</label>
+
         <!-- sección de filtrado -->
-        <div class="filters">
-          <label for="">Filtrar por:</label>
-          
-          <select name="type" id="filterType">
-            <option value="" disabled selected>Seleccione el tipo</option>
+        <div class="caja">
+          <select name="type" id="filterType" >
+            <option value="0" disabled selected>Seleccione tipo </option>
             <option value="gender">Género</option>
             <option value="species">Especie</option>
             <option value="status">Estado de vida</option>
-            <!-- <option value="origin">Lugar de origen</option> -->
-            <!-- <option value="localization">Lugar donde vive</option> -->
           </select>
-
+        </div>
+        <div class="caja">
           <select id="byCategory">
             <option value="" disabled selected>Seleccione la categoría</option>
-          </select>
-          <!-- Botones de filtrado -->
-
-          <div class="search"></div>
-
-          <label >Ordenar por nombre</label>
-          <select name="sort" id="sort">
-            <option value="" disabled selected>Ordenar</option>
-            <option value="AZ">A-Z</option>
+          </select> 
+        </div>
+               
+      <!-- Botones de filtrado -->
+        <div class="caja">
+          <select id="sort" class="orden">
+            <option value="0" disabled selected>Ordenar</option>
+            <option value="AZ"> A-Z </option>
             <option value="ZA">Z-A</option>
           </select>
-
-          <button id="getAll">Mostrar todo</button>
-
         </div>
+        <button id="getAll" class="btnall">Mostrar todo</button>
       </div>
       
       <!-- seccion de resultado del filtrado -->
       <div id="showAllCharacters" class="cards"></div> 
-         
-      <!-- paginación -->
-      <div class="paginacion"></div>
-                
+                        
     </section>
 
     <script src="main.js" type="module"></script>

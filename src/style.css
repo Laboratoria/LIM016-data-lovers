@@ -10,16 +10,19 @@ body{
     background-repeat: repeat;
     background-size: 100%;
 }
-header{
-    display: flex;
+
+.titulo{
+    margin-top: 1.5rem;
 }
 
 .titulo >h2{
     text-align: center;
     color:#7cfc00;
-    font-weight: bold;
-    padding: 1rem;
+    font-size: 2rem;
+    padding: 1.2rem;
 }
+
+/* >------ Cards de los personajes -----> */
 
 .cards{
     display: grid;
@@ -97,7 +100,7 @@ header{
 
 .name-personaje-atras{
     padding: 1rem;
-    color: rgb(58, 221, 17);
+    color: #7cfc00;
 }
 
 .type-character{
@@ -105,49 +108,193 @@ header{
     font-style: italic;
 }
 
+/* >------ Barra de filtros ----------> */
+
 .filters{
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-content: stretch;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1rem;
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(7rem, 13.75rem));
+    grid-auto-flow: row;
+    column-gap:3rem;
+    row-gap:0;
+    text-align: center;
+    justify-items: center;
+    margin:  auto 4rem;
+} 
 
 .filters>label{
+    margin:20px 0 20px 20px;	
     color:#7cfc00;
     padding: 0 1rem;
 }
 
-.filters>button{
+/* Boton mostrar todos los personajes */
+
+.btnall{
+    transition-duration: 0.4s;
     border: 1px solid #7cfc00;
+    background-image: url('./imagenesRM/botones/todoverde.png');
+    background-repeat: no-repeat;
+    background-position: 1rem;
     background-color: transparent;
-    padding: 0.5rem;
+    padding-right: 1rem;
     border-radius: 5px;
-    margin: 0 1rem;
+    margin: 20px 0;
     color:#7cfc00;
+    height: 30px;
+    width: 80%;
+    text-align: right;
 }
 
-.filters>select{
-    border: 1px solid #7cfc00;
-    background-color: transparent;
+.btnall:hover{
+    background-color: rgb(124, 252, 0,0.4); /* Green */
+    color:#fff;
+    box-shadow: 0 12px 16px 0 rgba(124,252,0,0.24), 0 17px 50px 0 rgba(124,252,0,0.19);
+}
+
+/* Select para ordenar los personajes */
+.orden{
+    background-image: url('./imagenesRM/botones/ordenar.png');
+    background-position: 1rem;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+/* Estilos para los selects */
+
+.caja{
+    margin:20px 0 20px 50px;	
+    border:1px solid #7cfc00;
     border-radius: 5px;
-    margin: 0 1rem;
-    padding: 0.5rem;
-    color: #7cfc00;
+    height:30px;
+    overflow: hidden;
+    width: 220px;
+    position:relative;
 }
 
-option{
-    background-color: black;
-    margin: 0 1rem;
-    padding: 0.5rem; 
-    color: #7cfc00;
+.caja::after{
+	content:"\025be";
+	display:table-cell;
+    color: #fff;
+    padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color: rgb(124, 252, 0,0.3);
+    border: 1px solid #7cfc00;
+    border-radius: 0 5px 0 5px;
+	position:absolute;
+	top:0;
+	right:0px;	
+	pointer-events: none;
 }
 
-/* Carrusel ----------> */
+select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #fff;
+    background: transparent;
+    border: none;
+    font-size: 0.8rem;
+    height: 30px;
+    padding: 0.4rem;
+    width: 220px;
+    text-align: justify;
+}
+select:focus > option:checked { 
+    background: #000 !important;
+}
+select option{
+    background-color: #448300;
+}
+select option:checked,
+select option:hover {
+    box-shadow: 0 0 10px 100px #000 inset;
+}
 
-.carrusel{
-  width: 100%;
-  position: relative;
+/* >-----Carrusel página de inicio -------> */
+
+.introduccion{
+    margin: 1rem;
+    padding: 1rem;
+    color: #7cfc00;
+    font-size: 1rem;
+	text-align:center;
+    justify-content: center;
+}
+
+/*Estilo del carrusel*/
+
+.slider{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    position: relative;
+    height: 4rem, minmax(2rem, 4rem);
+    box-sizing: content-box;
+    margin-bottom: 1rem;
+}
+
+.imagen{
+    width: 100%;
+    height: 34rem;
+    margin-bottom: 1rem;
+}
+
+.btn{
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    position: absolute;
+    width: 3rem;
+    height: 3rem, minmax(1.5rem, 3rem);
+    line-height: 3rem;
+    font-size: 2rem;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 100%;
+}
+
+/* Botones del carrusel*/
+
+.btn:hover{
+    cursor:pointer;
+    transform: scale(1.2,1.2);
+}
+
+.back{
+    left: 2%;
+    top:calc(50% - 4rem);
+}
+
+.next{
+    right: 2%;
+    top:calc(50% - 4rem);
+}
+
+/*-------- HEADER ----->*/
+
+.header{
+    display: flex;
+}
+
+.logo{
+    padding: 1rem;
+    flex-shrink: 3;
+}
+
+.logo>img{
+    width: 4rem;
+    height: 4rem;
+    float: left;
+}
+
+.tituloPrincipal{
+    color: #7cfc00;
+    font-size: 2rem;
+    text-align: center;
 }
