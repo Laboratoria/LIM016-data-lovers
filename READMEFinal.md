@@ -40,7 +40,8 @@ para ello se empleó la herramienta [Trello](https://trello.com/invite/b/CEPkKv4
     Para el diseño del prototipo inicial se empleo la aplicación Microsoft PowerPoint (prototipo de baja fidelidad)
 
 ### 6.2 Prototipos de  Alta Fidelidad
-    El Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
+    El Diseño de la Interfaz de Usuario (prototipo de alta fidelidad) se empleo la herramienta Figma. 
+[Prototipo](https://www.figma.com/file/J84alZJLUSfXrqJQEhqv2m/Web?node-id=0%3A1 "Prototipo")
 
 ## 7. Tests de Usabilidad
 
