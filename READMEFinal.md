@@ -35,8 +35,9 @@ para ello se empleó la herramienta [Trello](https://trello.com/invite/b/CEPkKv4
 
 ## 6. Diseño de la Interfaz de Usuario
     En base a los resultados se diseñaron los siguientes prototipos.
-    
-    ![PrototipoBajaFidelidadHome](https://user-images.githubusercontent.com/91750603/145137831-0847e962-cc6a-472e-98b1-dc3abd957233.jpg)
+
+
+![PrototipoBajaFidelidadHome](https://user-images.githubusercontent.com/91750603/145139047-247c1269-cb38-4b4c-883f-f5c12da34425.jpg)
 
 ### 6.1 Prototipos de Baja Fidelidad
     Para el diseño del prototipo inicial se empleo la aplicación Microsoft PowerPoint (prototipo de baja fidelidad)
