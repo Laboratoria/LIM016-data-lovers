@@ -40,6 +40,8 @@ Información de:
 *d. ¿Cuándo utilizan o utilizarían el producto?*
 - El usuario lo usaría en momentos libres, a través de dispositivos móviles y web.
 
+![EncuestaDispositivo](https://user-images.githubusercontent.com/91750603/145143785-8d061005-807a-492e-ba82-5efa7ce02996.jpg)
+
 ## 4. Organización del Proyecto
 Para organización del proyecto el equipo optó por trabajar en base a la metodología ágil *Scrum*, 
 para ello se empleó la herramienta [Trello](https://trello.com/invite/b/CEPkKv4H/bfd2fc0fce23a11dc8aa3439cc99cec9/proyecto-data-lovers "Trello").
