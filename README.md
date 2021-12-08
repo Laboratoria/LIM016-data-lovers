@@ -8,8 +8,6 @@
 - [4. Organización del Proyecto](#4-organización-del-proyecto)
 - [5. Historias de Usuario](#5-historias-de-usuario)
 - [6. Diseño de la Interfaz de Usuario](#6-diseño-de-la-interfaz-de-usuario)
-- [6.1. Prototipos de Baja Fidelidad](#6.1-prototipos-de-baja-fidelidad)
-- [6.2. Prototipos de Alta Fidelidad](#6.2-prototipos-de-alta-fidelidad)
 - [7. Test de Usabilidad](#7-test-de-usabilidad)
 - [8. Checklist del Proyecto](#8-checklist-del-proyecto)
 
