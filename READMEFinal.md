@@ -7,11 +7,11 @@
 - [3. Definición del Producto](#3-definición-del-producto)
 - [4. Organización del Proyecto](#4-organización-del-proyecto)
 - [5. Historias de Usuario](#5-historias-de-usuario)
-- [6. Prototipos de baja fidelidad](#6-prototipos-de-baja-fidelidad)
-- [7. Prototipos de alta fidelidad](#7-prototipos-de-alta-fidelidad)
-- [8. Tests de usabilidad](#8-tests-de-usabilidad)
-- [9. Checklist del Proyecto](#9-checklist-del-proyecto)
-
+- [6. Diseño de la Interfaz de Usuario](#6-diseño-de-la-interfaz-de-usuario)
+- [6.1. Prototipos de Baja Fidelidad](#6.1-prototipos-de-baja-fidelidad)
+- [6.2. Prototipos de Alta Fidelidad](#6.2-prototipos-de-alta-fidelidad)
+- [7. Tests de Usabilidad](#7-tests-de-usabilidad)
+- [8. Checklist del Proyecto](#8-checklist-del-proyecto)
 *
 ## 1. Nombre del Producto
     RMpedia.
@@ -28,22 +28,25 @@
 Es por este motivo se decidió enfocarnos en la manipulación de la información de los personajes.
 
 ## 4. Organización del Proyecto
-Para organización del proyecto el equipo optó por trabajar en base a la metodologia aguil *Scrum*, 
-para ello se empleó la herramienta [Trello](https://trello.com/invite/b/CEPkKv4H/bfd2fc0fce23a11dc8aa3439cc99cec9/proyecto-data-lovers "Trello")
+    Para organización del proyecto el equipo optó por trabajar en base a la metodologia aguil *Scrum*, 
+para ello se empleó la herramienta [Trello](https://trello.com/invite/b/CEPkKv4H/bfd2fc0fce23a11dc8aa3439cc99cec9/proyecto-data-lovers "Trello").
 
 ## 5. Historias de Usuario
 
-## 6. Prototipos de baja fidelidad
+## 6. Diseño de la Interfaz de Usuario
+    En base a los resultados se diseñaron los siguientes prototipos.
 
-## 7. Prototipos de alta fidelidad
+### 6.1 Prototipos de Baja Fidelidad
+    Para el diseño del prototipo inicial se empleo la aplicación Microsoft PowerPoint (prototipo de baja fidelidad)
 
+### 6.2 Prototipos de  Alta Fidelidad
     El Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
-## 8. Tests de usabilidad
+## 7. Tests de Usabilidad
 
     El listado de problemas que se detectaron a través de tests de usabilidad fueron los siguienetes:
 
-## 9. Checklist del Proyecto
+## 8. Checklist del Proyecto
 
         * [x] Usa VanillaJS.
         * [x] Pasa linter (`npm run pretest`)
