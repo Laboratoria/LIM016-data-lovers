@@ -35,8 +35,8 @@ Información de:
 - Episodios, el usuario desea saber la trama de los episodios y los personajes que participan en ellos.
 - Lugares, la serie que cuenta con muchas lugares (planetas, viajes en el tiempo, otras realidades) el usuario quiere conocer sobre ello.
 
-![Encuesta-personajes](https://user-images.githubusercontent.com/91750603/145142997-1437ef6c-5915-40bd-8a64-fbeab157a0bb.jpg)
-    
+![EncuestaInterfaz](https://user-images.githubusercontent.com/91750603/145144280-47e12c41-c4ce-4497-bcfc-ad7ecd9be78f.jpg)
+
 *d. ¿Cuándo utilizan o utilizarían el producto?*
 - El usuario lo usaría en momentos libres, a través de dispositivos móviles y web.
 
