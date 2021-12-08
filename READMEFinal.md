@@ -3,22 +3,24 @@
 ## Índice
 
 - [1. Nombre del Producto](#1-nombre-del-producto)
-- [2. Definición del Producto](#2-definición-del-producto)
-- [3. Resumen del Producto](#3-resumen-del-producto)
+- [2. Consideraciones Generales](#2-consideraciones-generales)
+- [3. Definición del Producto](#3-definición-del-producto)
 - [4. Organización del Proyecto](#4-organización-del-proyecto)
 - [5. Historias de Usuario](#5-historias-de-usuario)
 - [6. Prototipos de baja fidelidad](#6-prototipos-de-baja-fidelidad)
 - [7. Prototipos de alta fidelidad](#7-prototipos-de-alta-fidelidad)
-- [8. Tests de usabilidad](#8-test-de-usabilidad)
+- [8. Tests de usabilidad](#8-tests-de-usabilidad)
 - [9. Checklist del Proyecto](#9-checklist-del-proyecto)
 
 *
 
 ## 1. Nombre del Producto
+    RMpedia.
 
-## 2. Definición del Producto
+## 2. Consideraciones Generales
+    Rick y Morty es una serie de televisión estadounidense de animación para adultos. La serie tiene gran acogida a nivel mundial, de todo este fandom hay un grupo que desea poder interactuar y ver la información sobre esta serie.
 
-## 3. Resumen del Producto
+## 3. Definición del Producto
 
 ## 4. Organización del Proyecto
 
