@@ -38,6 +38,15 @@ para ello se empleó la herramienta [Trello](https://trello.com/invite/b/CEPkKv4
 
 ### 6.1 Prototipos de Baja Fidelidad
     Para el diseño del prototipo inicial se empleo la aplicación Microsoft PowerPoint (prototipo de baja fidelidad)
+    
+    *Imagen N°1: Interfaz inicial*
+![PrototipoBajaFidelidadHome](https://user-images.githubusercontent.com/91750603/145139047-247c1269-cb38-4b4c-883f-f5c12da34425.jpg)
+
+    *Imagen N°2: Interfaz Sección Personajes*
+![PrototipoBajaFidelidadPersonajes](https://user-images.githubusercontent.com/91750603/145139273-8c6f4cd9-d271-4541-8ffb-535625ce055a.jpg)
+
+    *Imagen N°3: Elección de patrón de colores*
+![PrototipoBajaFidelidadPatronColores](https://user-images.githubusercontent.com/91750603/145139610-e18c28d8-9f44-49e3-8211-7cfc56fd7048.jpg)
 
 ### 6.2 Prototipos de  Alta Fidelidad
     El Diseño de la Interfaz de Usuario (prototipo de alta fidelidad) se empleo la herramienta Figma. 
