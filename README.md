@@ -26,7 +26,7 @@ Para conocer las necesidades del público de la serie, realizamos una encuesta v
 Es por este motivo se decidió enfocarnos en la manipulación de la información de los personajes.
 
 ## 4. Organización del Proyecto
-    Para organización del proyecto el equipo optó por trabajar en base a la metodología ágil *Scrum*, 
+Para organización del proyecto el equipo optó por trabajar en base a la metodología ágil *Scrum*, 
 para ello se empleó la herramienta [Trello](https://trello.com/invite/b/CEPkKv4H/bfd2fc0fce23a11dc8aa3439cc99cec9/proyecto-data-lovers "Trello").
 
 ## 5. Historias de Usuario
