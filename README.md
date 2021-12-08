@@ -20,16 +20,25 @@ de todo este fandom hay un grupo que desea poder interactuar y ver la informaci�
 
 ## 3. Definición del Producto
 Para conocer las necesidades del público de la serie, realizamos una encuesta virtual, encontrando como resultado:
--   Efectivamente el público final estaría entre los 15 y 40 años, siendo en su mayoría personas entre 25 y 30 años.
+
+*a. ¿Quiénes son los principales usuarios de producto?*
+- Personas entre 15 y 40 años, siendo en su mayoría adultos jóvenes entre 25 y 35 años.
 
 ![Encuesta-edad](https://user-images.githubusercontent.com/91750603/145142969-780e35c9-fd88-4d80-9a00-134c5861ded4.jpg)
 
--   Existe una mayor preferencia por conocer a los personajes de la serie, considera mas importante la siguiente información: 
-    *Nombre, Imagen, Género, Especie y Lugar de origen. * 
+*b. ¿Cuáles son los objetivos de estos usuarios en relación con el producto?*
+- Conocer más de la serie (personajes, temporadas y otros)
+
+*c. ¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?*
+Información de:
+- Personajes, porque aparecen más de 200 personajes durante toda la serie y el usuario quiere saber sobre ellos.
+- Episodios, el usuario desea saber la trama de los episodios y los personajes que participan en ellos.
+- Lugares, la serie que cuenta con muchas lugares (planetas, viajes en el tiempo, otras realidades) el usuario quiere conocer sobre ello.
 
 ![Encuesta-personajes](https://user-images.githubusercontent.com/91750603/145142997-1437ef6c-5915-40bd-8a64-fbeab157a0bb.jpg)
     
-Es por este motivo se decidió enfocarnos en la manipulación de la información de los personajes.
+*d. ¿Cuándo utilizan o utilizarían el producto?*
+- El usuario lo usaría en momentos libres, a través de dispositivos móviles y web.
 
 ## 4. Organización del Proyecto
 Para organización del proyecto el equipo optó por trabajar en base a la metodología ágil *Scrum*, 
