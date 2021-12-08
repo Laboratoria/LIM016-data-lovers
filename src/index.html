@@ -12,26 +12,19 @@
   </head>
   
   <body>
-    <header class="header">
+    <header>
       <div class="header">
         <div class="logo">
           <img src="imagenesRM/Logo/RM.png" alt="logo html" title="logo Health Clinic">
         </div>
-        <div class="Titulo">
+        <div class="tituloPrincipal">
           <h1>RMpedia</h1>
         </div>
       </div>
-      <div class="navedador">
-        <nav>
-          <ul>
-            <li id="inicio" class= "menu">Inicio</li>
-            <li id="personajes" class= "menu">Personajes</li>
-          </ul>
-        </nav>
-      </div>
+
     </header>
 
-    <section id="home content-hide">
+    <section id="home">
       <div class="introduccion">
         <h3>Aquí encontrarás toda la información sobre los personajes de Rick y Morty.</h3>
       </div>
@@ -51,6 +44,9 @@
       </div>
       <!-- filtrado -->
       <div class="filters">
+
+        <label for="">Filtrar por:</label>
+
         <!-- sección de filtrado -->
         <div class="caja">
           <select name="type" id="filterType" >
@@ -58,8 +54,6 @@
             <option value="gender">Género</option>
             <option value="species">Especie</option>
             <option value="status">Estado de vida</option>
-              <!-- <option value="origin">Lugar de origen</option> -->
-              <!-- <option value="localization">Lugar donde vive</option> -->
           </select>
         </div>
         <div class="caja">
@@ -75,7 +69,6 @@
             <option value="AZ"> A-Z </option>
             <option value="ZA">Z-A</option>
           </select>
-            <i></i>
         </div>
         <button id="getAll" class="btnall">Mostrar todo</button>
       </div>

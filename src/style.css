@@ -10,9 +10,7 @@ body{
     background-repeat: repeat;
     background-size: 100%;
 }
-header{
-    display: flex;
-}
+
 
 .titulo{
     margin-top: 1.5rem;
@@ -115,14 +113,15 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(7rem, 13.75rem));
     grid-auto-flow: row;
-    column-gap:4.5rem;
+    column-gap:3rem;
     row-gap:0;
     text-align: center;
     justify-items: center;
-    margin:  auto 8rem;
+    margin:  auto 4rem;
 } 
 
 label{
+    margin:20px 0 20px 20px;	
     color:#7cfc00;
     padding: 0 1rem;
 }
@@ -258,7 +257,6 @@ select option:hover {
     text-align: center;
     font-weight: bold;
     border-radius: 100%;
-    /* justify-content: center; */
 }
 
 .btn:hover{
@@ -279,42 +277,21 @@ select option:hover {
 /* Header ----->*/
 .header{
     display: flex;
-    align-items: center;
 }
+
 .logo{
     padding: 1rem;
-    justify-content: left;
+    flex-shrink: 3;
 }
 
 .logo>img{
     width: 4rem;
     height: 4rem;
+    float: left;
 }
 
-.Titulo{
+.tituloPrincipal{
     color: #7cfc00;
     font-size: 2rem;
+    text-align: center;
 }
-
-/* Navegador */
-/* nav{
-    float: left;
-
-}
-nav ul {
-    list-style: none;
-    overflow: hidden; 
-    text-decoration: none;
-}
-nav ul li {
-    float: left;
-    font-size: 20px;
-    padding: 0px 15px;
-}
-
-.navedador{
-    color: #7cfc00;
-    font-size: 2rem;
-   	display:table-cell; 
-	vertical-align: middle; 
-} 
