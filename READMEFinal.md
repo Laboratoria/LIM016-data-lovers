@@ -13,7 +13,6 @@
 - [9. Checklist del Proyecto](#9-checklist-del-proyecto)
 
 *
-
 ## 1. Nombre del Producto
     RMpedia.
 
@@ -33,7 +32,8 @@
 
 ## 4. Organización del Proyecto
     Para organización del proyecto el equipo optó por trabajar en base a la metodologia aguil *Scrum*, 
-    para ello se empleó la herramita *[Trello](https://trello.com/invite/b/CEPkKv4H/bfd2fc0fce23a11dc8aa3439cc99cec9/proyecto-data-lovers "Trello")*
+    para ello se empleó la herramita [Trello]
+    (https://trello.com/invite/b/CEPkKv4H/bfd2fc0fce23a11dc8aa3439cc99cec9/proyecto-data-lovers "Trello")
     
 ## 5. Historias de Usuario
 
