@@ -351,28 +351,30 @@ filterButtonsMiticos.forEach((el) => {
       return filterButtonsMiticos;
   })
 
-//Funcionalidad para el boton slider
-const slider = document.getElementById("slider");
-const selector = document.getElementById("selector");
-const selectValue =document.getElementById("selectValue");
+// Comentar funcion de slide para edad
 
-selectValue.innerHTML = slider.value;
+// //Funcionalidad para el boton slider
+// const slider = document.getElementById("slider");
+// const selector = document.getElementById("selector");
+// const selectValue =document.getElementById("selectValue");
 
-slider.oninput = function () {
-  selectValue.innerHTML = this.value;
-  selector.style.left = this.value + "%";
-}
+// selectValue.innerHTML = slider.value;
 
-//Funcion para la barra de edad
-slider.addEventListener("change", function() {
-  const newData = filterAge(films, slider.value);
-    conteinerScrollPeople.innerHTML=" ";
-    peopleItems (newData)  
-  if (conteinerScrollPeople.innerHTML== " ") {
-    conteinerScrollPeople.innerHTML="No hay personajes con esta edad, sigue buscando :)";
-  }
+// slider.oninput = function () {
+//   selectValue.innerHTML = this.value;
+//   selector.style.left = this.value + "%";
+// }
+// -
+// //Funcion para la barra de edad
+// slider.addEventListener("change", function() {
+//   const newData = filterAge(films, slider.value);
+//     conteinerScrollPeople.innerHTML=" ";
+//     peopleItems (newData)  
+//   if (conteinerScrollPeople.innerHTML== " ") {
+//     conteinerScrollPeople.innerHTML="No hay personajes con esta edad, sigue buscando :)";
+//   }
 
-})
+// })
 
 //Funcion para el boton clean
 document.getElementById("cleanPeople").addEventListener("click",function() {
