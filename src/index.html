@@ -1,12 +1,233 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Data Lovers - POKEMON</title> <!-- TITULO EN LA PESTAÑA DEL NAVEGADOR -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" /> <!-- LINKEAR EL ARCHIVO CSS -->
+    <link rel="shortcut icon" href="pokebola.png" type="png" /> <!-- ICONO EN LA PESTAÑA DEL NAVEGADOR -->
+    <script src="https://kit.fontawesome.com/15c8445c30.js" crossorigin="anonymous"></script> <!-- USAR LOS ICONOS DE FONTAWESOME -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
   </head>
+
   <body>
-    <div id="root"></div>
+    <!-- CABECERA (BANNER Y BUSCADOR DE POKEMON) -->
+    <header>
+      <!-- BANNER -->
+      <section class="banner">
+        <img class="imgBanner" src="encabezadoPok.jpg" alt="">
+      </section>
+      <!-- BUSCADOR DE POKEMON -->
+      <section class="buscador">
+        <input type="text" name="inputBuscador" class="buscarPokemon" placeholder="Ej: pikachu"><i class="fas fa-search"></i>
+      </section>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="home">
+      <!-- MENÚ HAMBURGUESA -->
+      <section id="desplegable">
+        <span class="iconoH menuHamburguesa" href=""><i class="fas fa-bars"></i></span>
+      <!-- <p class="icono"> <i class="fas fa-bars"></i> </p> -->
+      </section>
+      <!-- CONTENEDOR DEL MENU DESPLEGABLE -->
+      <nav class="cont-menu">
+        <!-- CONTENIDO DE FILTRAR -->
+        <div class="cont-filtrar">
+          <div class="filtrar opcion">
+            <p class="filtro">FILTRAR POR</p>
+            <p class="icono"><i class="fas fa-filter"></i></p>
+          </div>
+          <div class="cont-tipo-filtrado">
+            <!-- FILTRADO POR REGION -->
+            <div class="cont-filtrar-region">
+              <div class="opcion-filtrar opcion">
+                <p> REGIÓN </p>
+                <p class="icono"> + </p>
+              </div>
+              <div class="cont-enlaces" id="cont-enlaces1">
+                <span class="region" href="#" region="kanto">KANTO</span>
+                <span class="region" href="#" region="johto">JOHTO</span>
+              </div>
+            </div> 
+
+            <!-- FILTRADO POR ELEMENTO   -->   
+            <div class="cont-filtrar-tipo">
+              <div class="opcion-filtrar opcion">
+                <p> TIPO </p>
+                <p class="icono"> + </p>
+              </div>
+              <div class="cont-enlaces" id="cont-enlaces2">
+                <span class="tipo" href="#" tipo="water">AGUA</span>
+                <span class="tipo" href="#" tipo="fire">FUEGO</span>
+                <span class="tipo" href="#" tipo="grass">HIERBA</span>
+                <span class="tipo" href="#" tipo="ground">TIERRA</span>
+                <span class="tipo" href="#" tipo="rock">ROCA</span>
+                <span class="tipo" href="#" tipo="ice">HIELO</span>
+                <span class="tipo" href="#" tipo="electric">ELECTRICO</span>
+                <span class="tipo" href="#" tipo="dragon">DRAGON</span>
+                <span class="tipo" href="#" tipo="ghost">FANTASMA</span>
+                <span class="tipo" href="#" tipo="psychic">PSIQUICO</span>
+                <span class="tipo" href="#" tipo="normal">NORMAL</span>
+                <span class="tipo" href="#" tipo="fighting">LUCHA</span>
+                <span class="tipo" href="#" tipo="poison">VENENO</span>
+                <span class="tipo" href="#" tipo="bug">BICHO</span>
+                <span class="tipo" href="#" tipo="flying">VOLADOR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CONTENIDO DE ORDENAR -->
+        <div class="cont-ordenar">
+          <div class="ordenar opcion">
+            <p> ORDENAR POR </p>
+            <p class="icono"> <i class="fas fa-sort-amount-up-alt"></i> </p>
+          </div>
+          <div class="cont-enlaces" id="cont-enlaces3">
+            <span class="ordenar" href="#" ordenar="az">A - Z</span>
+            <span class="ordenar" href="#" ordenar="za">Z - A</span>
+            <span class="ordenar" href="#" ordenar="pc-as">PUNTOS COMBATE ASC.</span>
+            <span class="ordenar" href="#" ordenar="pc-des">PUNTOS COMBATE DESC.</span>
+          </div>
+        </div> 
+        <!-- CONTENIDO DE ESTADISTICA -->
+        <div class="cont-estadistica">
+          <div class="estadistica opcion">
+            <p> ESTADÍSTICA </p>
+            <p class="icono"> <i class="fas fa-chart-pie"></i> </p>
+          </div>
+          <div class="cont-enlaces" id="cont-enlaces4">
+            <span class="estadistica" href="#" estadistica="todos">TODOS</span>
+            <span class="estadistica" href="#" estadistica="por-región">POR REGIÓN</span>
+            <span class="estadistica" href="#" estadistica="por-elemento">POR ELEMENTO</span>
+            <span class="estadistica" href="#" estadistica="por-huevos">POR HUEVOS</span>
+            <span class="estadistica" href="#" estadistica="por-recorrido">POR RECORRIDO</span>
+          </div>
+        </div>                     
+      </nav>
+
+      <!-- CONTENEDOR DE TODOS LOS CARDS DE POKEMONES -->
+      <div class="container-pokemons" id="container-pokemons">
+        <!-- PLANTILLA DE CARD DE POKEMON -->
+        <template id="templateCard">
+          <div class="card">
+            <p class="numPokemon"></p>
+            <p class="nomPokemon"></p>
+            <img src=" " alt="" class="imgPokemon">
+            <p class="cpPokemon"></p>
+            <p class="nomRegion"></p>
+          </div>
+        </template>
+          
+      </div>
+
+      <!-- CONTENEDOR DE MODAL -->
+      <div class="containerModal ocultar" id="containerModal">
+        <div class="modal">
+          <h1 class="nomPokemonMod"></h1>
+          <h2 class="tipoPokemonMod"></h2>
+          <h3 class="cpPokemonMod"></h3>
+          <section class="datos-basicos">
+            <div class="cont-peso">
+              <h3>PESO</h3>
+              <p class="peso"></p>
+            </div>
+            <div class="cont-altura">
+              <h3>ALTURA</h3>
+              <p class="altura"></p>
+            </div>
+            <div class="cont-huevos">
+              <h3>HUEVOS</h3>
+              <p class="huevos"></p>
+            </div>
+          </section>
+          <section class="cont-debilidad">
+            <h3>DEBILIDAD</h3>
+            <p class="debilidad"></p>
+          </section>
+          <section class="cont-evoluciones">
+            <h3>EVOLUCIONES</h3>
+            <div class="contAmbasEvoluciones">
+              <div class="contPriEvolucion" id="contPriEvolucion">
+                <div class="imgEvolucion1"></div>
+                <div class="nombreEvolucion1"></div>
+                <div class="contCaramelos1">
+                    <p class="caramelosEvolucion1"></p>
+                    <img class="imgCaramelos" src="caramelo.png" alt="">
+                </div>
+              </div>
+              <div class="contSegEvolucion" id="contSegEvolucion">
+                <div class="imgEvolucion2">
+                    <img class="imagenEvolucion2" src=" " alt="">
+                </div>
+                <div class="nombreEvolucion2">
+                    <p class="nomEvolucion2"></p>
+                </div>
+                <div class="contCaramelos2">
+                    <p class="caramelosEvolucion2"></p>
+                    <img class="imgCaramelos" src="caramelo.png" alt="">
+                </div>
+              </div>
+            </div>
+          </section>
+          <button type="button" id="close">X</button>
+        </div>
+      </div>
+
+      <!-- CONTENEDOR DE GRAFICOS ESTADISTICOS -->
+    <div class="containerEstadistica">
+      <!-- GRAFICO DE REGIONES -->
+      <div class="graficoRegion contGraficos" id="contRegiones">
+        <h1 class="tituloGraficos"> ESTADISTICA POR REGIÓN </h1>
+        <canvas id="chartRegion" width="100" height="100"></canvas>
+      </div>
+      <!-- GRAFICO DE ELEMENTOS -->
+      <div class="graficoElemento contGraficos" id="contElementos">
+        <h1 class="tituloGraficos"> ESTADISTICA POR ELEMENTO </h1>
+        <canvas id="chartElemento" width="100" height="100"></canvas>
+      </div>
+      <!-- GRAFICO DE HUEVOS -->
+      <div class="graficoHuevos contGraficos" id="contHuevos">
+        <h1 class="tituloGraficos"> ESTADISTICA POR HUEVOS </h1>
+        <canvas id="chartHuevos" width="100" height="100"></canvas>
+      </div>  
+      <!-- GRAFICO DE RECORRIDO -->
+      <div class="graficoRecorrido contGraficos" id="contRecorrido">
+        <h1 class="tituloGraficos"> ESTADISTICA POR RECORRIDO </h1>
+        <canvas id="chartRecorrido" width="100" height="100"></canvas>
+      </div>  
+    </div>
+
+    </main>
+
+    <!-- CONTENEDOR DEL BOTON DE SUBIR -->
+    <div class="button-up">
+      <i class="fas fa-arrow-up"></i> <!-- ICONO DE SUBIR -->
+    </div>
+    <!-- CONTENEDOR DEL BOTON DE SUBIR -->
+    <a class="button-refresh"  href="index.html">
+      <i class="fas fa-redo-alt"></i> <!-- ICONO DE SUBIR -->
+    </a>
+
+    <!-- CONTENEDOR DEL PIE DE PAGINA -->
+    <footer class="foot">
+      <!-- SECCION DE MAS INFORMACION -->
+      <section class="information">
+        <a href="https://pokemongolive.com/es/"><p class="informationMore">Más información</p></a>
+      </section>
+      <!-- SECCION DE COPYRIGHT -->
+      <section class="copyright">
+        <p class="authors"> Copyright © 2021 - Derechos reservados</p>
+      </section>
+      <!-- SECCION DE ENLACES DE DESCARGA DEL JUEGO -->
+      <section class="downloands">
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=es_PE&gl=US"> <img class="iconDownloands" src="googlePlay.png" alt="" srcset=""></a>
+        <a target="_blank" href="https://apps.apple.com/es/app/pok%C3%A9mon-go/id1094591345"> <img class="iconDownloands" src="appStore.png" alt="" srcset=""></a>
+      </section>
+    </footer>
+    
+    <!-- LINKEAR ARCHIVO MAIN.JS -->
     <script src="main.js" type="module"></script>
   </body>
 </html>
